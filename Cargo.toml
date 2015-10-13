@@ -1,0 +1,10 @@
+[package]
+name = "zoneinfo_data"
+version = "0.1.0"
+authors = ["Ben S <ogham@bsago.me>"]
+
+[lib]
+name = "zoneinfo_data"
+
+[dependencies]
+datetime = "*"
