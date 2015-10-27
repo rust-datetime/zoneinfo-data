@@ -8,3 +8,4 @@ name = "zoneinfo_data"
 
 [dependencies]
 datetime = "*"
+locale = "*"

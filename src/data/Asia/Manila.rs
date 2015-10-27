@@ -6,49 +6,21 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Asia/Manila",
-    timespans: &[
-        Timespan {
-            offset: -50640,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-3944678400),
-        },
-        Timespan {
-            offset: 29040,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: Some(-3944678400),
-            end_time:   Some(-2229292800),
-        },
-        Timespan {
-            offset: 28800,
-            format: "PH%sT",
-            saving: Saving::Multiple(&rulesets::Phil),
-            start_time: Some(-2229292800),
-            end_time:   Some(-873244800),
-        },
-        Timespan {
-            offset: 32400,
-            format: "JST",
-            saving: Saving::NoSaving,
-            start_time: Some(-873244800),
-            end_time:   Some(-794188800),
-        },
-        Timespan {
-            offset: 28800,
-            format: "PH%sT",
-            saving: Saving::Multiple(&rulesets::Phil),
-            start_time: Some(-794188800),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: -50640, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-3944627760), utc_offset: 29040, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-2229321840), utc_offset: 28800, dst_offset: 0, name: "PHT" },
+        Transition { occurs_at: Some(-1046678400), utc_offset: 28800, dst_offset: 3600, name: "PHST" },
+        Transition { occurs_at: Some(-1038733200), utc_offset: 28800, dst_offset: 0, name: "PHT" },
+        Transition { occurs_at: Some(-873273600), utc_offset: 32400, dst_offset: 0, name: "JST" },
+        Transition { occurs_at: Some(-794221200), utc_offset: 28800, dst_offset: 0, name: "PHT" },
+        Transition { occurs_at: Some(-496224000), utc_offset: 28800, dst_offset: 3600, name: "PHST" },
+        Transition { occurs_at: Some(-489315600), utc_offset: 28800, dst_offset: 0, name: "PHT" },
+        Transition { occurs_at: Some(259344000), utc_offset: 28800, dst_offset: 3600, name: "PHST" },
+        Transition { occurs_at: Some(275151600), utc_offset: 28800, dst_offset: 0, name: "PHT" },
     ],
 };
 

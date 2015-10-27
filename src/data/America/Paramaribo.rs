@@ -6,56 +6,15 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "America/Paramaribo",
-    timespans: &[
-        Timespan {
-            offset: -8360,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-1861920000),
-        },
-        Timespan {
-            offset: -8348,
-            format: "PMT",
-            saving: Saving::NoSaving,
-            start_time: Some(-1861920000),
-            end_time:   Some(-1104537600),
-        },
-        Timespan {
-            offset: -8364,
-            format: "PMT",
-            saving: Saving::NoSaving,
-            start_time: Some(-1104537600),
-            end_time:   Some(-765331200),
-        },
-        Timespan {
-            offset: -9000,
-            format: "NEGT",
-            saving: Saving::NoSaving,
-            start_time: Some(-765331200),
-            end_time:   Some(185673600),
-        },
-        Timespan {
-            offset: -9000,
-            format: "SRT",
-            saving: Saving::NoSaving,
-            start_time: Some(185673600),
-            end_time:   Some(465436800),
-        },
-        Timespan {
-            offset: -10800,
-            format: "SRT",
-            saving: Saving::NoSaving,
-            start_time: Some(465436800),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: -8360, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-1861911640), utc_offset: -8348, dst_offset: 0, name: "PMT" },
+        Transition { occurs_at: Some(-1104529252), utc_offset: -8364, dst_offset: 0, name: "PMT" },
+        Transition { occurs_at: Some(-765322836), utc_offset: -9000, dst_offset: 0, name: "NEGT" },
+        Transition { occurs_at: Some(465445800), utc_offset: -10800, dst_offset: 0, name: "SRT" },
     ],
 };
 

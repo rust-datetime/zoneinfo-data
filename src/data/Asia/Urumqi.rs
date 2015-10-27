@@ -6,28 +6,12 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Asia/Urumqi",
-    timespans: &[
-        Timespan {
-            offset: 21020,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-1325462400),
-        },
-        Timespan {
-            offset: 21600,
-            format: "XJT",
-            saving: Saving::NoSaving,
-            start_time: Some(-1325462400),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: 21020, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-1325483420), utc_offset: 21600, dst_offset: 0, name: "XJT" },
     ],
 };
 

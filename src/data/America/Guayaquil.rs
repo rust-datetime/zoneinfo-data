@@ -6,35 +6,13 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "America/Guayaquil",
-    timespans: &[
-        Timespan {
-            offset: -16840,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-2524521600),
-        },
-        Timespan {
-            offset: -17160,
-            format: "QMT",
-            saving: Saving::NoSaving,
-            start_time: Some(-2524521600),
-            end_time:   Some(-1230768000),
-        },
-        Timespan {
-            offset: -18000,
-            format: "ECT",
-            saving: Saving::NoSaving,
-            start_time: Some(-1230768000),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: -16840, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-2524504760), utc_offset: -17160, dst_offset: 0, name: "QMT" },
+        Transition { occurs_at: Some(-1230750840), utc_offset: -18000, dst_offset: 0, name: "ECT" },
     ],
 };
 

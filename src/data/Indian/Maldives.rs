@@ -6,35 +6,12 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Indian/Maldives",
-    timespans: &[
-        Timespan {
-            offset: 17640,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-2840140800),
-        },
-        Timespan {
-            offset: 17640,
-            format: "MMT",
-            saving: Saving::NoSaving,
-            start_time: Some(-2840140800),
-            end_time:   Some(-315619200),
-        },
-        Timespan {
-            offset: 18000,
-            format: "MVT",
-            saving: Saving::NoSaving,
-            start_time: Some(-315619200),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: 17640, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-315636840), utc_offset: 18000, dst_offset: 0, name: "MVT" },
     ],
 };
 

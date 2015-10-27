@@ -6,21 +6,11 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "HST",
-    timespans: &[
-        Timespan {
-            offset: -36000,
-            format: "HST",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: -36000, dst_offset: 0, name: "HST" },
     ],
 };
 

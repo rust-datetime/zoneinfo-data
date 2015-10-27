@@ -6,35 +6,30 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Australia/Eucla",
-    timespans: &[
-        Timespan {
-            offset: 30928,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-2337897600),
-        },
-        Timespan {
-            offset: 31500,
-            format: "ACW%sT",
-            saving: Saving::Multiple(&rulesets::Aus),
-            start_time: Some(-2337897600),
-            end_time:   Some(-836438400),
-        },
-        Timespan {
-            offset: 31500,
-            format: "ACW%sT",
-            saving: Saving::Multiple(&rulesets::AW),
-            start_time: Some(-836438400),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: 30928, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-2337928528), utc_offset: 31500, dst_offset: 0, name: "ACWST" },
+        Transition { occurs_at: Some(-1672562640), utc_offset: 31500, dst_offset: 3600, name: "ACWDT" },
+        Transition { occurs_at: Some(-1665387900), utc_offset: 31500, dst_offset: 0, name: "ACWST" },
+        Transition { occurs_at: Some(-883637100), utc_offset: 31500, dst_offset: 3600, name: "ACWDT" },
+        Transition { occurs_at: Some(-876123900), utc_offset: 31500, dst_offset: 0, name: "ACWST" },
+        Transition { occurs_at: Some(-860395500), utc_offset: 31500, dst_offset: 3600, name: "ACWDT" },
+        Transition { occurs_at: Some(-844674300), utc_offset: 31500, dst_offset: 0, name: "ACWST" },
+        Transition { occurs_at: Some(152039700), utc_offset: 31500, dst_offset: 3600, name: "ACWDT" },
+        Transition { occurs_at: Some(162926100), utc_offset: 31500, dst_offset: 0, name: "ACWST" },
+        Transition { occurs_at: Some(436295700), utc_offset: 31500, dst_offset: 3600, name: "ACWDT" },
+        Transition { occurs_at: Some(447182100), utc_offset: 31500, dst_offset: 0, name: "ACWST" },
+        Transition { occurs_at: Some(690311700), utc_offset: 31500, dst_offset: 3600, name: "ACWDT" },
+        Transition { occurs_at: Some(699470100), utc_offset: 31500, dst_offset: 0, name: "ACWST" },
+        Transition { occurs_at: Some(1165079700), utc_offset: 31500, dst_offset: 3600, name: "ACWDT" },
+        Transition { occurs_at: Some(1174756500), utc_offset: 31500, dst_offset: 0, name: "ACWST" },
+        Transition { occurs_at: Some(1193505300), utc_offset: 31500, dst_offset: 3600, name: "ACWDT" },
+        Transition { occurs_at: Some(1206810900), utc_offset: 31500, dst_offset: 0, name: "ACWST" },
+        Transition { occurs_at: Some(1224954900), utc_offset: 31500, dst_offset: 3600, name: "ACWDT" },
+        Transition { occurs_at: Some(1238260500), utc_offset: 31500, dst_offset: 0, name: "ACWST" },
     ],
 };
 

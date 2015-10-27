@@ -6,70 +6,35 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Asia/Samarkand",
-    timespans: &[
-        Timespan {
-            offset: 16073,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-1441152000),
-        },
-        Timespan {
-            offset: 14400,
-            format: "SAMT",
-            saving: Saving::NoSaving,
-            start_time: Some(-1441152000),
-            end_time:   Some(-1247529600),
-        },
-        Timespan {
-            offset: 18000,
-            format: "SAMT",
-            saving: Saving::NoSaving,
-            start_time: Some(-1247529600),
-            end_time:   Some(354931200),
-        },
-        Timespan {
-            offset: 18000,
-            format: "SAMST",
-            saving: Saving::OneOff(3600),
-            start_time: Some(354931200),
-            end_time:   Some(370742400),
-        },
-        Timespan {
-            offset: 21600,
-            format: "TAST",
-            saving: Saving::NoSaving,
-            start_time: Some(370742400),
-            end_time:   Some(386467200),
-        },
-        Timespan {
-            offset: 18000,
-            format: "SAM%sT",
-            saving: Saving::Multiple(&rulesets::RussiaAsia),
-            start_time: Some(386467200),
-            end_time:   Some(683683200),
-        },
-        Timespan {
-            offset: 18000,
-            format: "UZ%sT",
-            saving: Saving::Multiple(&rulesets::RussiaAsia),
-            start_time: Some(683683200),
-            end_time:   Some(694224000),
-        },
-        Timespan {
-            offset: 18000,
-            format: "UZT",
-            saving: Saving::NoSaving,
-            start_time: Some(694224000),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: 16073, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-1441168073), utc_offset: 14400, dst_offset: 0, name: "SAMT" },
+        Transition { occurs_at: Some(-1247544000), utc_offset: 18000, dst_offset: 0, name: "SAMT" },
+        Transition { occurs_at: Some(354913200), utc_offset: 18000, dst_offset: 3600, name: "SAMST" },
+        Transition { occurs_at: Some(370720800), utc_offset: 21600, dst_offset: 0, name: "TAST" },
+        Transition { occurs_at: Some(386445600), utc_offset: 18000, dst_offset: 3600, name: "SAMST" },
+        Transition { occurs_at: Some(402256800), utc_offset: 18000, dst_offset: 0, name: "SAMT" },
+        Transition { occurs_at: Some(417985200), utc_offset: 18000, dst_offset: 3600, name: "SAMST" },
+        Transition { occurs_at: Some(433792800), utc_offset: 18000, dst_offset: 0, name: "SAMT" },
+        Transition { occurs_at: Some(449607600), utc_offset: 18000, dst_offset: 3600, name: "SAMST" },
+        Transition { occurs_at: Some(465339600), utc_offset: 18000, dst_offset: 0, name: "SAMT" },
+        Transition { occurs_at: Some(481064400), utc_offset: 18000, dst_offset: 3600, name: "SAMST" },
+        Transition { occurs_at: Some(496789200), utc_offset: 18000, dst_offset: 0, name: "SAMT" },
+        Transition { occurs_at: Some(512514000), utc_offset: 18000, dst_offset: 3600, name: "SAMST" },
+        Transition { occurs_at: Some(528238800), utc_offset: 18000, dst_offset: 0, name: "SAMT" },
+        Transition { occurs_at: Some(543963600), utc_offset: 18000, dst_offset: 3600, name: "SAMST" },
+        Transition { occurs_at: Some(559688400), utc_offset: 18000, dst_offset: 0, name: "SAMT" },
+        Transition { occurs_at: Some(575413200), utc_offset: 18000, dst_offset: 3600, name: "SAMST" },
+        Transition { occurs_at: Some(591138000), utc_offset: 18000, dst_offset: 0, name: "SAMT" },
+        Transition { occurs_at: Some(606862800), utc_offset: 18000, dst_offset: 3600, name: "SAMST" },
+        Transition { occurs_at: Some(622587600), utc_offset: 18000, dst_offset: 0, name: "SAMT" },
+        Transition { occurs_at: Some(638312400), utc_offset: 18000, dst_offset: 3600, name: "SAMST" },
+        Transition { occurs_at: Some(654642000), utc_offset: 18000, dst_offset: 0, name: "SAMT" },
+        Transition { occurs_at: Some(670366800), utc_offset: 18000, dst_offset: 3600, name: "SAMST" },
+        Transition { occurs_at: Some(686091600), utc_offset: 18000, dst_offset: 0, name: "UZT" },
     ],
 };
 

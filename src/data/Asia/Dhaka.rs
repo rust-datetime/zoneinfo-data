@@ -6,70 +6,18 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Asia/Dhaka",
-    timespans: &[
-        Timespan {
-            offset: 21700,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-2524521600),
-        },
-        Timespan {
-            offset: 21200,
-            format: "HMT",
-            saving: Saving::NoSaving,
-            start_time: Some(-2524521600),
-            end_time:   Some(-891561600),
-        },
-        Timespan {
-            offset: 23400,
-            format: "BURT",
-            saving: Saving::NoSaving,
-            start_time: Some(-891561600),
-            end_time:   Some(-872035200),
-        },
-        Timespan {
-            offset: 19800,
-            format: "IST",
-            saving: Saving::NoSaving,
-            start_time: Some(-872035200),
-            end_time:   Some(-862617600),
-        },
-        Timespan {
-            offset: 23400,
-            format: "BURT",
-            saving: Saving::NoSaving,
-            start_time: Some(-862617600),
-            end_time:   Some(-576115200),
-        },
-        Timespan {
-            offset: 21600,
-            format: "DACT",
-            saving: Saving::NoSaving,
-            start_time: Some(-576115200),
-            end_time:   Some(38793600),
-        },
-        Timespan {
-            offset: 21600,
-            format: "BDT",
-            saving: Saving::NoSaving,
-            start_time: Some(38793600),
-            end_time:   Some(1230768000),
-        },
-        Timespan {
-            offset: 21600,
-            format: "BD%sT",
-            saving: Saving::Multiple(&rulesets::Dhaka),
-            start_time: Some(1230768000),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: 21700, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-2524543300), utc_offset: 21200, dst_offset: 0, name: "HMT" },
+        Transition { occurs_at: Some(-891582800), utc_offset: 23400, dst_offset: 0, name: "BURT" },
+        Transition { occurs_at: Some(-872058600), utc_offset: 19800, dst_offset: 0, name: "IST" },
+        Transition { occurs_at: Some(-862637400), utc_offset: 23400, dst_offset: 0, name: "BURT" },
+        Transition { occurs_at: Some(-576138600), utc_offset: 21600, dst_offset: 0, name: "DACT" },
+        Transition { occurs_at: Some(1245430800), utc_offset: 21600, dst_offset: 3600, name: "BDST" },
+        Transition { occurs_at: Some(1262278800), utc_offset: 21600, dst_offset: 0, name: "BDT" },
     ],
 };
 

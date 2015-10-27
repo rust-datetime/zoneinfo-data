@@ -6,77 +6,43 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Africa/Tripoli",
-    timespans: &[
-        Timespan {
-            offset: 3164,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-1577923200),
-        },
-        Timespan {
-            offset: 3600,
-            format: "CE%sT",
-            saving: Saving::Multiple(&rulesets::Libya),
-            start_time: Some(-1577923200),
-            end_time:   Some(-347155200),
-        },
-        Timespan {
-            offset: 7200,
-            format: "EET",
-            saving: Saving::NoSaving,
-            start_time: Some(-347155200),
-            end_time:   Some(378691200),
-        },
-        Timespan {
-            offset: 3600,
-            format: "CE%sT",
-            saving: Saving::Multiple(&rulesets::Libya),
-            start_time: Some(378691200),
-            end_time:   Some(641779200),
-        },
-        Timespan {
-            offset: 7200,
-            format: "EET",
-            saving: Saving::NoSaving,
-            start_time: Some(641779200),
-            end_time:   Some(844041600),
-        },
-        Timespan {
-            offset: 3600,
-            format: "CE%sT",
-            saving: Saving::Multiple(&rulesets::Libya),
-            start_time: Some(844041600),
-            end_time:   Some(875923200),
-        },
-        Timespan {
-            offset: 7200,
-            format: "EET",
-            saving: Saving::NoSaving,
-            start_time: Some(875923200),
-            end_time:   Some(1352512800),
-        },
-        Timespan {
-            offset: 3600,
-            format: "CE%sT",
-            saving: Saving::Multiple(&rulesets::Libya),
-            start_time: Some(1352512800),
-            end_time:   Some(1382666400),
-        },
-        Timespan {
-            offset: 7200,
-            format: "EET",
-            saving: Saving::NoSaving,
-            start_time: Some(1382666400),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: 3164, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-1577926364), utc_offset: 3600, dst_offset: 0, name: "CET" },
+        Transition { occurs_at: Some(-574902000), utc_offset: 3600, dst_offset: 3600, name: "CEST" },
+        Transition { occurs_at: Some(-568087200), utc_offset: 3600, dst_offset: 0, name: "CET" },
+        Transition { occurs_at: Some(-512175600), utc_offset: 3600, dst_offset: 3600, name: "CEST" },
+        Transition { occurs_at: Some(-504928800), utc_offset: 3600, dst_offset: 0, name: "CET" },
+        Transition { occurs_at: Some(-449888400), utc_offset: 3600, dst_offset: 3600, name: "CEST" },
+        Transition { occurs_at: Some(-441856800), utc_offset: 3600, dst_offset: 0, name: "CET" },
+        Transition { occurs_at: Some(-347158800), utc_offset: 7200, dst_offset: 0, name: "EET" },
+        Transition { occurs_at: Some(378684000), utc_offset: 3600, dst_offset: 0, name: "CET" },
+        Transition { occurs_at: Some(386463600), utc_offset: 3600, dst_offset: 3600, name: "CEST" },
+        Transition { occurs_at: Some(402271200), utc_offset: 3600, dst_offset: 0, name: "CET" },
+        Transition { occurs_at: Some(417999600), utc_offset: 3600, dst_offset: 3600, name: "CEST" },
+        Transition { occurs_at: Some(433807200), utc_offset: 3600, dst_offset: 0, name: "CET" },
+        Transition { occurs_at: Some(449622000), utc_offset: 3600, dst_offset: 3600, name: "CEST" },
+        Transition { occurs_at: Some(465429600), utc_offset: 3600, dst_offset: 0, name: "CET" },
+        Transition { occurs_at: Some(481590000), utc_offset: 3600, dst_offset: 3600, name: "CEST" },
+        Transition { occurs_at: Some(496965600), utc_offset: 3600, dst_offset: 0, name: "CET" },
+        Transition { occurs_at: Some(512953200), utc_offset: 3600, dst_offset: 3600, name: "CEST" },
+        Transition { occurs_at: Some(528674400), utc_offset: 3600, dst_offset: 0, name: "CET" },
+        Transition { occurs_at: Some(544230000), utc_offset: 3600, dst_offset: 3600, name: "CEST" },
+        Transition { occurs_at: Some(560037600), utc_offset: 3600, dst_offset: 0, name: "CET" },
+        Transition { occurs_at: Some(575852400), utc_offset: 3600, dst_offset: 3600, name: "CEST" },
+        Transition { occurs_at: Some(591660000), utc_offset: 3600, dst_offset: 0, name: "CET" },
+        Transition { occurs_at: Some(607388400), utc_offset: 3600, dst_offset: 3600, name: "CEST" },
+        Transition { occurs_at: Some(623196000), utc_offset: 3600, dst_offset: 0, name: "CET" },
+        Transition { occurs_at: Some(641775600), utc_offset: 7200, dst_offset: 0, name: "EET" },
+        Transition { occurs_at: Some(844034400), utc_offset: 3600, dst_offset: 0, name: "CET" },
+        Transition { occurs_at: Some(860108400), utc_offset: 3600, dst_offset: 3600, name: "CEST" },
+        Transition { occurs_at: Some(875916000), utc_offset: 7200, dst_offset: 0, name: "EET" },
+        Transition { occurs_at: Some(1352505600), utc_offset: 3600, dst_offset: 0, name: "CET" },
+        Transition { occurs_at: Some(1364515200), utc_offset: 3600, dst_offset: 3600, name: "CEST" },
+        Transition { occurs_at: Some(1382659200), utc_offset: 7200, dst_offset: 0, name: "EET" },
     ],
 };
 

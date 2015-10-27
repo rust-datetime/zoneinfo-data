@@ -6,84 +6,45 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Africa/Algiers",
-    timespans: &[
-        Timespan {
-            offset: 732,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-2486678340),
-        },
-        Timespan {
-            offset: 561,
-            format: "PMT",
-            saving: Saving::NoSaving,
-            start_time: Some(-2486678340),
-            end_time:   Some(-1855958400),
-        },
-        Timespan {
-            offset: 0,
-            format: "WE%sT",
-            saving: Saving::Multiple(&rulesets::Algeria),
-            start_time: Some(-1855958400),
-            end_time:   Some(-942012000),
-        },
-        Timespan {
-            offset: 3600,
-            format: "CE%sT",
-            saving: Saving::Multiple(&rulesets::Algeria),
-            start_time: Some(-942012000),
-            end_time:   Some(-733276800),
-        },
-        Timespan {
-            offset: 0,
-            format: "WET",
-            saving: Saving::NoSaving,
-            start_time: Some(-733276800),
-            end_time:   Some(-439430400),
-        },
-        Timespan {
-            offset: 3600,
-            format: "CET",
-            saving: Saving::NoSaving,
-            start_time: Some(-439430400),
-            end_time:   Some(-212025600),
-        },
-        Timespan {
-            offset: 0,
-            format: "WE%sT",
-            saving: Saving::Multiple(&rulesets::Algeria),
-            start_time: Some(-212025600),
-            end_time:   Some(246240000),
-        },
-        Timespan {
-            offset: 3600,
-            format: "CE%sT",
-            saving: Saving::Multiple(&rulesets::Algeria),
-            start_time: Some(246240000),
-            end_time:   Some(309744000),
-        },
-        Timespan {
-            offset: 0,
-            format: "WE%sT",
-            saving: Saving::Multiple(&rulesets::Algeria),
-            start_time: Some(309744000),
-            end_time:   Some(357523200),
-        },
-        Timespan {
-            offset: 3600,
-            format: "CET",
-            saving: Saving::NoSaving,
-            start_time: Some(357523200),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: 732, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-2486679072), utc_offset: 561, dst_offset: 0, name: "PMT" },
+        Transition { occurs_at: Some(-1855958961), utc_offset: 0, dst_offset: 0, name: "WET" },
+        Transition { occurs_at: Some(-1689814800), utc_offset: 0, dst_offset: 3600, name: "WEST" },
+        Transition { occurs_at: Some(-1680397200), utc_offset: 0, dst_offset: 0, name: "WET" },
+        Transition { occurs_at: Some(-1665363600), utc_offset: 0, dst_offset: 3600, name: "WEST" },
+        Transition { occurs_at: Some(-1648342800), utc_offset: 0, dst_offset: 0, name: "WET" },
+        Transition { occurs_at: Some(-1635123600), utc_offset: 0, dst_offset: 3600, name: "WEST" },
+        Transition { occurs_at: Some(-1616893200), utc_offset: 0, dst_offset: 0, name: "WET" },
+        Transition { occurs_at: Some(-1604278800), utc_offset: 0, dst_offset: 3600, name: "WEST" },
+        Transition { occurs_at: Some(-1585443600), utc_offset: 0, dst_offset: 0, name: "WET" },
+        Transition { occurs_at: Some(-1574038800), utc_offset: 0, dst_offset: 3600, name: "WEST" },
+        Transition { occurs_at: Some(-1552266000), utc_offset: 0, dst_offset: 0, name: "WET" },
+        Transition { occurs_at: Some(-1539997200), utc_offset: 0, dst_offset: 3600, name: "WEST" },
+        Transition { occurs_at: Some(-1531443600), utc_offset: 0, dst_offset: 0, name: "WET" },
+        Transition { occurs_at: Some(-956365200), utc_offset: 0, dst_offset: 3600, name: "WEST" },
+        Transition { occurs_at: Some(-950486400), utc_offset: 0, dst_offset: 0, name: "WET" },
+        Transition { occurs_at: Some(-942012000), utc_offset: 3600, dst_offset: 0, name: "CET" },
+        Transition { occurs_at: Some(-812502000), utc_offset: 3600, dst_offset: 3600, name: "CEST" },
+        Transition { occurs_at: Some(-796262400), utc_offset: 3600, dst_offset: 0, name: "CET" },
+        Transition { occurs_at: Some(-781052400), utc_offset: 3600, dst_offset: 3600, name: "CEST" },
+        Transition { occurs_at: Some(-766630800), utc_offset: 3600, dst_offset: 0, name: "CET" },
+        Transition { occurs_at: Some(-733280400), utc_offset: 0, dst_offset: 0, name: "WET" },
+        Transition { occurs_at: Some(-439430400), utc_offset: 3600, dst_offset: 0, name: "CET" },
+        Transition { occurs_at: Some(-212029200), utc_offset: 0, dst_offset: 0, name: "WET" },
+        Transition { occurs_at: Some(41468400), utc_offset: 0, dst_offset: 3600, name: "WEST" },
+        Transition { occurs_at: Some(54774000), utc_offset: 0, dst_offset: 0, name: "WET" },
+        Transition { occurs_at: Some(231724800), utc_offset: 0, dst_offset: 3600, name: "WEST" },
+        Transition { occurs_at: Some(246236400), utc_offset: 3600, dst_offset: 0, name: "CET" },
+        Transition { occurs_at: Some(259545600), utc_offset: 3600, dst_offset: 3600, name: "CEST" },
+        Transition { occurs_at: Some(275274000), utc_offset: 3600, dst_offset: 0, name: "CET" },
+        Transition { occurs_at: Some(309740400), utc_offset: 0, dst_offset: 0, name: "WET" },
+        Transition { occurs_at: Some(325468800), utc_offset: 0, dst_offset: 3600, name: "WEST" },
+        Transition { occurs_at: Some(341802000), utc_offset: 0, dst_offset: 0, name: "WET" },
+        Transition { occurs_at: Some(357523200), utc_offset: 3600, dst_offset: 0, name: "CET" },
     ],
 };
 

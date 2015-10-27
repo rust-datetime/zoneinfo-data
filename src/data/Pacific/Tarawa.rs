@@ -6,28 +6,12 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Pacific/Tarawa",
-    timespans: &[
-        Timespan {
-            offset: 41524,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-2177452800),
-        },
-        Timespan {
-            offset: 43200,
-            format: "GILT",
-            saving: Saving::NoSaving,
-            start_time: Some(-2177452800),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: 41524, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-2177494324), utc_offset: 43200, dst_offset: 0, name: "GILT" },
     ],
 };
 

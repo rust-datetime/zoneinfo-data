@@ -6,49 +6,15 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Africa/Nairobi",
-    timespans: &[
-        Timespan {
-            offset: 8836,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-1309737600),
-        },
-        Timespan {
-            offset: 10800,
-            format: "EAT",
-            saving: Saving::NoSaving,
-            start_time: Some(-1309737600),
-            end_time:   Some(-1262304000),
-        },
-        Timespan {
-            offset: 9000,
-            format: "BEAT",
-            saving: Saving::NoSaving,
-            start_time: Some(-1262304000),
-            end_time:   Some(-946771200),
-        },
-        Timespan {
-            offset: 9900,
-            format: "BEAUT",
-            saving: Saving::NoSaving,
-            start_time: Some(-946771200),
-            end_time:   Some(-315619200),
-        },
-        Timespan {
-            offset: 10800,
-            format: "EAT",
-            saving: Saving::NoSaving,
-            start_time: Some(-315619200),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: 8836, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-1309746436), utc_offset: 10800, dst_offset: 0, name: "EAT" },
+        Transition { occurs_at: Some(-1262314800), utc_offset: 9000, dst_offset: 0, name: "BEAT" },
+        Transition { occurs_at: Some(-946780200), utc_offset: 9900, dst_offset: 0, name: "BEAUT" },
+        Transition { occurs_at: Some(-315629100), utc_offset: 10800, dst_offset: 0, name: "EAT" },
     ],
 };
 

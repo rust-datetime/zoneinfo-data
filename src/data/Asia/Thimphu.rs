@@ -6,35 +6,13 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Asia/Thimphu",
-    timespans: &[
-        Timespan {
-            offset: 21516,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-706320000),
-        },
-        Timespan {
-            offset: 19800,
-            format: "IST",
-            saving: Saving::NoSaving,
-            start_time: Some(-706320000),
-            end_time:   Some(560044800),
-        },
-        Timespan {
-            offset: 21600,
-            format: "BTT",
-            saving: Saving::NoSaving,
-            start_time: Some(560044800),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: 21516, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-706341516), utc_offset: 19800, dst_offset: 0, name: "IST" },
+        Transition { occurs_at: Some(560025000), utc_offset: 21600, dst_offset: 0, name: "BTT" },
     ],
 };
 

@@ -6,49 +6,17 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "America/Atikokan",
-    timespans: &[
-        Timespan {
-            offset: -21212,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-2366755200),
-        },
-        Timespan {
-            offset: -21600,
-            format: "C%sT",
-            saving: Saving::Multiple(&rulesets::Canada),
-            start_time: Some(-2366755200),
-            end_time:   Some(-923270400),
-        },
-        Timespan {
-            offset: -21600,
-            format: "CDT",
-            saving: Saving::OneOff(3600),
-            start_time: Some(-923270400),
-            end_time:   Some(-880236000),
-        },
-        Timespan {
-            offset: -21600,
-            format: "C%sT",
-            saving: Saving::Multiple(&rulesets::Canada),
-            start_time: Some(-880236000),
-            end_time:   Some(-765410400),
-        },
-        Timespan {
-            offset: -18000,
-            format: "EST",
-            saving: Saving::NoSaving,
-            start_time: Some(-765410400),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: -21212, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-2366733988), utc_offset: -21600, dst_offset: 0, name: "CST" },
+        Transition { occurs_at: Some(-1632067200), utc_offset: -21600, dst_offset: 3600, name: "CDT" },
+        Transition { occurs_at: Some(-1615136400), utc_offset: -21600, dst_offset: 0, name: "CST" },
+        Transition { occurs_at: Some(-923248800), utc_offset: -21600, dst_offset: 3600, name: "CDT" },
+        Transition { occurs_at: Some(-880218000), utc_offset: -21600, dst_offset: 3600, name: "CWT" },
+        Transition { occurs_at: Some(-765392400), utc_offset: -18000, dst_offset: 0, name: "EST" },
     ],
 };
 

@@ -6,35 +6,13 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Indian/Chagos",
-    timespans: &[
-        Timespan {
-            offset: 17380,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-1988150400),
-        },
-        Timespan {
-            offset: 18000,
-            format: "IOT",
-            saving: Saving::NoSaving,
-            start_time: Some(-1988150400),
-            end_time:   Some(820454400),
-        },
-        Timespan {
-            offset: 21600,
-            format: "IOT",
-            saving: Saving::NoSaving,
-            start_time: Some(820454400),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: 17380, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-1988167780), utc_offset: 18000, dst_offset: 0, name: "IOT" },
+        Transition { occurs_at: Some(820436400), utc_offset: 21600, dst_offset: 0, name: "IOT" },
     ],
 };
 

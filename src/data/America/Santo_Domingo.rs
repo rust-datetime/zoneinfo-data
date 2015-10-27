@@ -6,56 +6,28 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "America/Santo_Domingo",
-    timespans: &[
-        Timespan {
-            offset: -12024,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-2524521600),
-        },
-        Timespan {
-            offset: -12000,
-            format: "SDMT",
-            saving: Saving::NoSaving,
-            start_time: Some(-2524521600),
-            end_time:   Some(-1159790400),
-        },
-        Timespan {
-            offset: -18000,
-            format: "E%sT",
-            saving: Saving::Multiple(&rulesets::DR),
-            start_time: Some(-1159790400),
-            end_time:   Some(152064000),
-        },
-        Timespan {
-            offset: -14400,
-            format: "AST",
-            saving: Saving::NoSaving,
-            start_time: Some(152064000),
-            end_time:   Some(972784800),
-        },
-        Timespan {
-            offset: -18000,
-            format: "E%sT",
-            saving: Saving::Multiple(&rulesets::US),
-            start_time: Some(972784800),
-            end_time:   Some(975805200),
-        },
-        Timespan {
-            offset: -14400,
-            format: "AST",
-            saving: Saving::NoSaving,
-            start_time: Some(975805200),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: -12024, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-2524509576), utc_offset: -12000, dst_offset: 0, name: "SDMT" },
+        Transition { occurs_at: Some(-1159778400), utc_offset: -18000, dst_offset: 0, name: "EST" },
+        Transition { occurs_at: Some(-100119600), utc_offset: -18000, dst_offset: 3600, name: "EDT" },
+        Transition { occurs_at: Some(-89668800), utc_offset: -18000, dst_offset: 0, name: "EST" },
+        Transition { occurs_at: Some(-5770800), utc_offset: -18000, dst_offset: 1800, name: "EHDT" },
+        Transition { occurs_at: Some(4422600), utc_offset: -18000, dst_offset: 0, name: "EST" },
+        Transition { occurs_at: Some(25678800), utc_offset: -18000, dst_offset: 1800, name: "EHDT" },
+        Transition { occurs_at: Some(33193800), utc_offset: -18000, dst_offset: 0, name: "EST" },
+        Transition { occurs_at: Some(57733200), utc_offset: -18000, dst_offset: 1800, name: "EHDT" },
+        Transition { occurs_at: Some(64816200), utc_offset: -18000, dst_offset: 0, name: "EST" },
+        Transition { occurs_at: Some(89182800), utc_offset: -18000, dst_offset: 1800, name: "EHDT" },
+        Transition { occurs_at: Some(96438600), utc_offset: -18000, dst_offset: 0, name: "EST" },
+        Transition { occurs_at: Some(120632400), utc_offset: -18000, dst_offset: 1800, name: "EHDT" },
+        Transition { occurs_at: Some(127974600), utc_offset: -18000, dst_offset: 0, name: "EST" },
+        Transition { occurs_at: Some(152082000), utc_offset: -14400, dst_offset: 0, name: "AST" },
+        Transition { occurs_at: Some(972799200), utc_offset: -18000, dst_offset: 0, name: "EST" },
+        Transition { occurs_at: Some(975823200), utc_offset: -14400, dst_offset: 0, name: "AST" },
     ],
 };
 

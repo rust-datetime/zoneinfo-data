@@ -6,28 +6,12 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Atlantic/South_Georgia",
-    timespans: &[
-        Timespan {
-            offset: -5632,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-2524521600),
-        },
-        Timespan {
-            offset: -7200,
-            format: "GST",
-            saving: Saving::NoSaving,
-            start_time: Some(-2524521600),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: -5632, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-2524515968), utc_offset: -7200, dst_offset: 0, name: "GST" },
     ],
 };
 

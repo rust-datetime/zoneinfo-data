@@ -6,28 +6,12 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Indian/Kerguelen",
-    timespans: &[
-        Timespan {
-            offset: 0,
-            format: "zzz",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-631152000),
-        },
-        Timespan {
-            offset: 18000,
-            format: "TFT",
-            saving: Saving::NoSaving,
-            start_time: Some(-631152000),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: 0, dst_offset: 0, name: "zzz" },
+        Transition { occurs_at: Some(-631152000), utc_offset: 18000, dst_offset: 0, name: "TFT" },
     ],
 };
 

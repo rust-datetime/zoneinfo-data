@@ -6,56 +6,16 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Antarctica/Casey",
-    timespans: &[
-        Timespan {
-            offset: 0,
-            format: "zzz",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-31536000),
-        },
-        Timespan {
-            offset: 28800,
-            format: "AWST",
-            saving: Saving::NoSaving,
-            start_time: Some(-31536000),
-            end_time:   Some(1255831200),
-        },
-        Timespan {
-            offset: 39600,
-            format: "CAST",
-            saving: Saving::NoSaving,
-            start_time: Some(1255831200),
-            end_time:   Some(1267754400),
-        },
-        Timespan {
-            offset: 28800,
-            format: "AWST",
-            saving: Saving::NoSaving,
-            start_time: Some(1267754400),
-            end_time:   Some(1319767200),
-        },
-        Timespan {
-            offset: 39600,
-            format: "CAST",
-            saving: Saving::NoSaving,
-            start_time: Some(1319767200),
-            end_time:   Some(1329843600),
-        },
-        Timespan {
-            offset: 28800,
-            format: "AWST",
-            saving: Saving::NoSaving,
-            start_time: Some(1329843600),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: 0, dst_offset: 0, name: "zzz" },
+        Transition { occurs_at: Some(-31536000), utc_offset: 28800, dst_offset: 0, name: "AWST" },
+        Transition { occurs_at: Some(1255802400), utc_offset: 39600, dst_offset: 0, name: "CAST" },
+        Transition { occurs_at: Some(1267714800), utc_offset: 28800, dst_offset: 0, name: "AWST" },
+        Transition { occurs_at: Some(1319738400), utc_offset: 39600, dst_offset: 0, name: "CAST" },
+        Transition { occurs_at: Some(1329804000), utc_offset: 28800, dst_offset: 0, name: "AWST" },
     ],
 };
 

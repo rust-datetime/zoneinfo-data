@@ -6,28 +6,12 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Pacific/Marquesas",
-    timespans: &[
-        Timespan {
-            offset: -31320,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-1806710400),
-        },
-        Timespan {
-            offset: -30600,
-            format: "MART",
-            saving: Saving::NoSaving,
-            start_time: Some(-1806710400),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: -31320, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-1806679080), utc_offset: -30600, dst_offset: 0, name: "MART" },
     ],
 };
 

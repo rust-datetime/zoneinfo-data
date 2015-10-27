@@ -6,28 +6,12 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Antarctica/Vostok",
-    timespans: &[
-        Timespan {
-            offset: 0,
-            format: "zzz",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-380073600),
-        },
-        Timespan {
-            offset: 21600,
-            format: "VOST",
-            saving: Saving::NoSaving,
-            start_time: Some(-380073600),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: 0, dst_offset: 0, name: "zzz" },
+        Transition { occurs_at: Some(-380073600), utc_offset: 21600, dst_offset: 0, name: "VOST" },
     ],
 };
 

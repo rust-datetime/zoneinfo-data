@@ -6,42 +6,14 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Asia/Jayapura",
-    timespans: &[
-        Timespan {
-            offset: 33768,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-1172880000),
-        },
-        Timespan {
-            offset: 32400,
-            format: "WIT",
-            saving: Saving::NoSaving,
-            start_time: Some(-1172880000),
-            end_time:   Some(-799459200),
-        },
-        Timespan {
-            offset: 34200,
-            format: "ACST",
-            saving: Saving::NoSaving,
-            start_time: Some(-799459200),
-            end_time:   Some(-189388800),
-        },
-        Timespan {
-            offset: 32400,
-            format: "WIT",
-            saving: Saving::NoSaving,
-            start_time: Some(-189388800),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: 33768, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-1172913768), utc_offset: 32400, dst_offset: 0, name: "WIT" },
+        Transition { occurs_at: Some(-799491600), utc_offset: 34200, dst_offset: 0, name: "ACST" },
+        Transition { occurs_at: Some(-189423000), utc_offset: 32400, dst_offset: 0, name: "WIT" },
     ],
 };
 

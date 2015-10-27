@@ -6,49 +6,14 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Asia/Makassar",
-    timespans: &[
-        Timespan {
-            offset: 28656,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-1577923200),
-        },
-        Timespan {
-            offset: 28656,
-            format: "MMT",
-            saving: Saving::NoSaving,
-            start_time: Some(-1577923200),
-            end_time:   Some(-1172880000),
-        },
-        Timespan {
-            offset: 28800,
-            format: "WITA",
-            saving: Saving::NoSaving,
-            start_time: Some(-1172880000),
-            end_time:   Some(-880243200),
-        },
-        Timespan {
-            offset: 32400,
-            format: "JST",
-            saving: Saving::NoSaving,
-            start_time: Some(-880243200),
-            end_time:   Some(-766022400),
-        },
-        Timespan {
-            offset: 28800,
-            format: "WITA",
-            saving: Saving::NoSaving,
-            start_time: Some(-766022400),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: 28656, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-1172908656), utc_offset: 28800, dst_offset: 0, name: "WITA" },
+        Transition { occurs_at: Some(-880272000), utc_offset: 32400, dst_offset: 0, name: "JST" },
+        Transition { occurs_at: Some(-766054800), utc_offset: 28800, dst_offset: 0, name: "WITA" },
     ],
 };
 

@@ -6,42 +6,14 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "America/Creston",
-    timespans: &[
-        Timespan {
-            offset: -22436,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-2713910400),
-        },
-        Timespan {
-            offset: -25200,
-            format: "MST",
-            saving: Saving::NoSaving,
-            start_time: Some(-2713910400),
-            end_time:   Some(-1680480000),
-        },
-        Timespan {
-            offset: -28800,
-            format: "PST",
-            saving: Saving::NoSaving,
-            start_time: Some(-1680480000),
-            end_time:   Some(-1627862400),
-        },
-        Timespan {
-            offset: -25200,
-            format: "MST",
-            saving: Saving::NoSaving,
-            start_time: Some(-1627862400),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: -22436, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-2713887964), utc_offset: -25200, dst_offset: 0, name: "MST" },
+        Transition { occurs_at: Some(-1680454800), utc_offset: -28800, dst_offset: 0, name: "PST" },
+        Transition { occurs_at: Some(-1627833600), utc_offset: -25200, dst_offset: 0, name: "MST" },
     ],
 };
 

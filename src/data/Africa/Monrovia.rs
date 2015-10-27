@@ -6,42 +6,13 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Africa/Monrovia",
-    timespans: &[
-        Timespan {
-            offset: 2588,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-2776982400),
-        },
-        Timespan {
-            offset: 2588,
-            format: "MMT",
-            saving: Saving::NoSaving,
-            start_time: Some(-2776982400),
-            end_time:   Some(-1604361600),
-        },
-        Timespan {
-            offset: 2670,
-            format: "LRT",
-            saving: Saving::NoSaving,
-            start_time: Some(-1604361600),
-            end_time:   Some(73526400),
-        },
-        Timespan {
-            offset: 0,
-            format: "GMT",
-            saving: Saving::NoSaving,
-            start_time: Some(73526400),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: 2588, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-1604364188), utc_offset: 2670, dst_offset: 0, name: "LRT" },
+        Transition { occurs_at: Some(73523730), utc_offset: 0, dst_offset: 0, name: "GMT" },
     ],
 };
 

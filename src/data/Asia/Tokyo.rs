@@ -6,42 +6,20 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Asia/Tokyo",
-    timespans: &[
-        Timespan {
-            offset: 33539,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-2587712400),
-        },
-        Timespan {
-            offset: 32400,
-            format: "JST",
-            saving: Saving::NoSaving,
-            start_time: Some(-2587712400),
-            end_time:   Some(-2335219200),
-        },
-        Timespan {
-            offset: 32400,
-            format: "JCST",
-            saving: Saving::NoSaving,
-            start_time: Some(-2335219200),
-            end_time:   Some(-1017792000),
-        },
-        Timespan {
-            offset: 32400,
-            format: "J%sT",
-            saving: Saving::Multiple(&rulesets::Japan),
-            start_time: Some(-1017792000),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: 33539, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-2587745939), utc_offset: 32400, dst_offset: 0, name: "JST" },
+        Transition { occurs_at: Some(-683794800), utc_offset: 32400, dst_offset: 3600, name: "JDT" },
+        Transition { occurs_at: Some(-672393600), utc_offset: 32400, dst_offset: 0, name: "JST" },
+        Transition { occurs_at: Some(-654764400), utc_offset: 32400, dst_offset: 3600, name: "JDT" },
+        Transition { occurs_at: Some(-640944000), utc_offset: 32400, dst_offset: 0, name: "JST" },
+        Transition { occurs_at: Some(-620290800), utc_offset: 32400, dst_offset: 3600, name: "JDT" },
+        Transition { occurs_at: Some(-609494400), utc_offset: 32400, dst_offset: 0, name: "JST" },
+        Transition { occurs_at: Some(-588841200), utc_offset: 32400, dst_offset: 3600, name: "JDT" },
+        Transition { occurs_at: Some(-578044800), utc_offset: 32400, dst_offset: 0, name: "JST" },
     ],
 };
 

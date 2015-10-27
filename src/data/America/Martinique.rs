@@ -6,49 +6,14 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "America/Martinique",
-    timespans: &[
-        Timespan {
-            offset: -14140,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-2524521600),
-        },
-        Timespan {
-            offset: -14140,
-            format: "FFMT",
-            saving: Saving::NoSaving,
-            start_time: Some(-2524521600),
-            end_time:   Some(-1851552000),
-        },
-        Timespan {
-            offset: -14400,
-            format: "AST",
-            saving: Saving::NoSaving,
-            start_time: Some(-1851552000),
-            end_time:   Some(323827200),
-        },
-        Timespan {
-            offset: -14400,
-            format: "ADT",
-            saving: Saving::OneOff(3600),
-            start_time: Some(323827200),
-            end_time:   Some(338947200),
-        },
-        Timespan {
-            offset: -14400,
-            format: "AST",
-            saving: Saving::NoSaving,
-            start_time: Some(338947200),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: -14140, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-1851537860), utc_offset: -14400, dst_offset: 0, name: "AST" },
+        Transition { occurs_at: Some(323841600), utc_offset: -14400, dst_offset: 3600, name: "ADT" },
+        Transition { occurs_at: Some(338958000), utc_offset: -14400, dst_offset: 0, name: "AST" },
     ],
 };
 

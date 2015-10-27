@@ -6,42 +6,14 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Pacific/Kiritimati",
-    timespans: &[
-        Timespan {
-            offset: -34240,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-2177452800),
-        },
-        Timespan {
-            offset: -33600,
-            format: "LINT",
-            saving: Saving::NoSaving,
-            start_time: Some(-2177452800),
-            end_time:   Some(307584000),
-        },
-        Timespan {
-            offset: -36000,
-            format: "LINT",
-            saving: Saving::NoSaving,
-            start_time: Some(307584000),
-            end_time:   Some(788918400),
-        },
-        Timespan {
-            offset: 50400,
-            format: "LINT",
-            saving: Saving::NoSaving,
-            start_time: Some(788918400),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: -34240, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-2177418560), utc_offset: -33600, dst_offset: 0, name: "LINT" },
+        Transition { occurs_at: Some(307617600), utc_offset: -36000, dst_offset: 0, name: "LINT" },
+        Transition { occurs_at: Some(788954400), utc_offset: 50400, dst_offset: 0, name: "LINT" },
     ],
 };
 

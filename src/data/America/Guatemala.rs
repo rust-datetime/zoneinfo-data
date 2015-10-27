@@ -6,28 +6,20 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "America/Guatemala",
-    timespans: &[
-        Timespan {
-            offset: -21476,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-1617062400),
-        },
-        Timespan {
-            offset: -21600,
-            format: "C%sT",
-            saving: Saving::Multiple(&rulesets::Guat),
-            start_time: Some(-1617062400),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: -21476, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-1617040924), utc_offset: -21600, dst_offset: 0, name: "CST" },
+        Transition { occurs_at: Some(123055200), utc_offset: -21600, dst_offset: 3600, name: "CDT" },
+        Transition { occurs_at: Some(130914000), utc_offset: -21600, dst_offset: 0, name: "CST" },
+        Transition { occurs_at: Some(422344800), utc_offset: -21600, dst_offset: 3600, name: "CDT" },
+        Transition { occurs_at: Some(433054800), utc_offset: -21600, dst_offset: 0, name: "CST" },
+        Transition { occurs_at: Some(669708000), utc_offset: -21600, dst_offset: 3600, name: "CDT" },
+        Transition { occurs_at: Some(684219600), utc_offset: -21600, dst_offset: 0, name: "CST" },
+        Transition { occurs_at: Some(1146376800), utc_offset: -21600, dst_offset: 3600, name: "CDT" },
+        Transition { occurs_at: Some(1159678800), utc_offset: -21600, dst_offset: 0, name: "CST" },
     ],
 };
 

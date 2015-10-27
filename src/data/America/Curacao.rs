@@ -6,35 +6,13 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "America/Curacao",
-    timespans: &[
-        Timespan {
-            offset: -12253,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-1826755200),
-        },
-        Timespan {
-            offset: -12600,
-            format: "ANT",
-            saving: Saving::NoSaving,
-            start_time: Some(-1826755200),
-            end_time:   Some(-157766400),
-        },
-        Timespan {
-            offset: -14400,
-            format: "AST",
-            saving: Saving::NoSaving,
-            start_time: Some(-157766400),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: -12253, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-1826742947), utc_offset: -12600, dst_offset: 0, name: "ANT" },
+        Transition { occurs_at: Some(-157753800), utc_offset: -14400, dst_offset: 0, name: "AST" },
     ],
 };
 

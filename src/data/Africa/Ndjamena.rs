@@ -6,42 +6,14 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Africa/Ndjamena",
-    timespans: &[
-        Timespan {
-            offset: 3612,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-1830384000),
-        },
-        Timespan {
-            offset: 3600,
-            format: "WAT",
-            saving: Saving::NoSaving,
-            start_time: Some(-1830384000),
-            end_time:   Some(308707200),
-        },
-        Timespan {
-            offset: 3600,
-            format: "WAST",
-            saving: Saving::OneOff(3600),
-            start_time: Some(308707200),
-            end_time:   Some(321321600),
-        },
-        Timespan {
-            offset: 3600,
-            format: "WAT",
-            saving: Saving::NoSaving,
-            start_time: Some(321321600),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: 3612, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-1830387612), utc_offset: 3600, dst_offset: 0, name: "WAT" },
+        Transition { occurs_at: Some(308703600), utc_offset: 3600, dst_offset: 3600, name: "WAST" },
+        Transition { occurs_at: Some(321314400), utc_offset: 3600, dst_offset: 0, name: "WAT" },
     ],
 };
 

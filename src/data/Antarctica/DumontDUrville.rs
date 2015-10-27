@@ -6,42 +6,14 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Antarctica/DumontDUrville",
-    timespans: &[
-        Timespan {
-            offset: 0,
-            format: "zzz",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-725846400),
-        },
-        Timespan {
-            offset: 36000,
-            format: "PMT",
-            saving: Saving::NoSaving,
-            start_time: Some(-725846400),
-            end_time:   Some(-566956800),
-        },
-        Timespan {
-            offset: 0,
-            format: "zzz",
-            saving: Saving::NoSaving,
-            start_time: Some(-566956800),
-            end_time:   Some(-415497600),
-        },
-        Timespan {
-            offset: 36000,
-            format: "DDUT",
-            saving: Saving::NoSaving,
-            start_time: Some(-415497600),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: 0, dst_offset: 0, name: "zzz" },
+        Transition { occurs_at: Some(-725846400), utc_offset: 36000, dst_offset: 0, name: "PMT" },
+        Transition { occurs_at: Some(-566992800), utc_offset: 0, dst_offset: 0, name: "zzz" },
+        Transition { occurs_at: Some(-415497600), utc_offset: 36000, dst_offset: 0, name: "DDUT" },
     ],
 };
 

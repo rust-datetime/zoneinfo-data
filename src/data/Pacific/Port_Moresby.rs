@@ -6,35 +6,13 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Pacific/Port_Moresby",
-    timespans: &[
-        Timespan {
-            offset: 35320,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-2840140800),
-        },
-        Timespan {
-            offset: 35312,
-            format: "PMMT",
-            saving: Saving::NoSaving,
-            start_time: Some(-2840140800),
-            end_time:   Some(-2366755200),
-        },
-        Timespan {
-            offset: 36000,
-            format: "PGT",
-            saving: Saving::NoSaving,
-            start_time: Some(-2366755200),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: 35320, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-2840176120), utc_offset: 35312, dst_offset: 0, name: "PMMT" },
+        Transition { occurs_at: Some(-2366790512), utc_offset: 36000, dst_offset: 0, name: "PGT" },
     ],
 };
 

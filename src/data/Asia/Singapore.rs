@@ -6,84 +6,18 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Asia/Singapore",
-    timespans: &[
-        Timespan {
-            offset: 24925,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-2177452800),
-        },
-        Timespan {
-            offset: 24925,
-            format: "SMT",
-            saving: Saving::NoSaving,
-            start_time: Some(-2177452800),
-            end_time:   Some(-2038176000),
-        },
-        Timespan {
-            offset: 25200,
-            format: "MALT",
-            saving: Saving::NoSaving,
-            start_time: Some(-2038176000),
-            end_time:   Some(-1167609600),
-        },
-        Timespan {
-            offset: 25200,
-            format: "MALST",
-            saving: Saving::OneOff(1200),
-            start_time: Some(-1167609600),
-            end_time:   Some(-1073001600),
-        },
-        Timespan {
-            offset: 26400,
-            format: "MALT",
-            saving: Saving::NoSaving,
-            start_time: Some(-1073001600),
-            end_time:   Some(-894153600),
-        },
-        Timespan {
-            offset: 27000,
-            format: "MALT",
-            saving: Saving::NoSaving,
-            start_time: Some(-894153600),
-            end_time:   Some(-879638400),
-        },
-        Timespan {
-            offset: 32400,
-            format: "JST",
-            saving: Saving::NoSaving,
-            start_time: Some(-879638400),
-            end_time:   Some(-766972800),
-        },
-        Timespan {
-            offset: 27000,
-            format: "MALT",
-            saving: Saving::NoSaving,
-            start_time: Some(-766972800),
-            end_time:   Some(-138758400),
-        },
-        Timespan {
-            offset: 27000,
-            format: "SGT",
-            saving: Saving::NoSaving,
-            start_time: Some(-138758400),
-            end_time:   Some(378691200),
-        },
-        Timespan {
-            offset: 28800,
-            format: "SGT",
-            saving: Saving::NoSaving,
-            start_time: Some(378691200),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: 24925, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-2038200925), utc_offset: 25200, dst_offset: 0, name: "MALT" },
+        Transition { occurs_at: Some(-1167634800), utc_offset: 25200, dst_offset: 1200, name: "MALST" },
+        Transition { occurs_at: Some(-1073028000), utc_offset: 26400, dst_offset: 0, name: "MALT" },
+        Transition { occurs_at: Some(-894180000), utc_offset: 27000, dst_offset: 0, name: "MALT" },
+        Transition { occurs_at: Some(-879665400), utc_offset: 32400, dst_offset: 0, name: "JST" },
+        Transition { occurs_at: Some(-767005200), utc_offset: 27000, dst_offset: 0, name: "MALT" },
+        Transition { occurs_at: Some(378664200), utc_offset: 28800, dst_offset: 0, name: "SGT" },
     ],
 };
 

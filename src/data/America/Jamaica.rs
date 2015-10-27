@@ -6,49 +6,32 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "America/Jamaica",
-    timespans: &[
-        Timespan {
-            offset: -17569,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-2524521600),
-        },
-        Timespan {
-            offset: -17569,
-            format: "KMT",
-            saving: Saving::NoSaving,
-            start_time: Some(-2524521600),
-            end_time:   Some(-1827705600),
-        },
-        Timespan {
-            offset: -18000,
-            format: "EST",
-            saving: Saving::NoSaving,
-            start_time: Some(-1827705600),
-            end_time:   Some(126230400),
-        },
-        Timespan {
-            offset: -18000,
-            format: "E%sT",
-            saving: Saving::Multiple(&rulesets::US),
-            start_time: Some(126230400),
-            end_time:   Some(441763200),
-        },
-        Timespan {
-            offset: -18000,
-            format: "EST",
-            saving: Saving::NoSaving,
-            start_time: Some(441763200),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: -17569, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-1827688031), utc_offset: -18000, dst_offset: 0, name: "EST" },
+        Transition { occurs_at: Some(126687600), utc_offset: -18000, dst_offset: 3600, name: "EDT" },
+        Transition { occurs_at: Some(152085600), utc_offset: -18000, dst_offset: 0, name: "EST" },
+        Transition { occurs_at: Some(162370800), utc_offset: -18000, dst_offset: 3600, name: "EDT" },
+        Transition { occurs_at: Some(183535200), utc_offset: -18000, dst_offset: 0, name: "EST" },
+        Transition { occurs_at: Some(199263600), utc_offset: -18000, dst_offset: 3600, name: "EDT" },
+        Transition { occurs_at: Some(215589600), utc_offset: -18000, dst_offset: 0, name: "EST" },
+        Transition { occurs_at: Some(230713200), utc_offset: -18000, dst_offset: 3600, name: "EDT" },
+        Transition { occurs_at: Some(247039200), utc_offset: -18000, dst_offset: 0, name: "EST" },
+        Transition { occurs_at: Some(262767600), utc_offset: -18000, dst_offset: 3600, name: "EDT" },
+        Transition { occurs_at: Some(278488800), utc_offset: -18000, dst_offset: 0, name: "EST" },
+        Transition { occurs_at: Some(294217200), utc_offset: -18000, dst_offset: 3600, name: "EDT" },
+        Transition { occurs_at: Some(309938400), utc_offset: -18000, dst_offset: 0, name: "EST" },
+        Transition { occurs_at: Some(325666800), utc_offset: -18000, dst_offset: 3600, name: "EDT" },
+        Transition { occurs_at: Some(341388000), utc_offset: -18000, dst_offset: 0, name: "EST" },
+        Transition { occurs_at: Some(357116400), utc_offset: -18000, dst_offset: 3600, name: "EDT" },
+        Transition { occurs_at: Some(372837600), utc_offset: -18000, dst_offset: 0, name: "EST" },
+        Transition { occurs_at: Some(388566000), utc_offset: -18000, dst_offset: 3600, name: "EDT" },
+        Transition { occurs_at: Some(404892000), utc_offset: -18000, dst_offset: 0, name: "EST" },
+        Transition { occurs_at: Some(420015600), utc_offset: -18000, dst_offset: 3600, name: "EDT" },
+        Transition { occurs_at: Some(436341600), utc_offset: -18000, dst_offset: 0, name: "EST" },
     ],
 };
 

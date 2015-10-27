@@ -6,35 +6,13 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "America/Panama",
-    timespans: &[
-        Timespan {
-            offset: -16912,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-2524521600),
-        },
-        Timespan {
-            offset: -16824,
-            format: "CMT",
-            saving: Saving::NoSaving,
-            start_time: Some(-2524521600),
-            end_time:   Some(-1946937600),
-        },
-        Timespan {
-            offset: -18000,
-            format: "EST",
-            saving: Saving::NoSaving,
-            start_time: Some(-1946937600),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: -16912, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-2524504688), utc_offset: -16824, dst_offset: 0, name: "CMT" },
+        Transition { occurs_at: Some(-1946920776), utc_offset: -18000, dst_offset: 0, name: "EST" },
     ],
 };
 

@@ -6,42 +6,19 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Pacific/Tongatapu",
-    timespans: &[
-        Timespan {
-            offset: 44360,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-2177452800),
-        },
-        Timespan {
-            offset: 44400,
-            format: "TOT",
-            saving: Saving::NoSaving,
-            start_time: Some(-2177452800),
-            end_time:   Some(-915148800),
-        },
-        Timespan {
-            offset: 46800,
-            format: "TOT",
-            saving: Saving::NoSaving,
-            start_time: Some(-915148800),
-            end_time:   Some(915148800),
-        },
-        Timespan {
-            offset: 46800,
-            format: "TO%sT",
-            saving: Saving::Multiple(&rulesets::Tonga),
-            start_time: Some(915148800),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: 44360, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-2177497160), utc_offset: 44400, dst_offset: 0, name: "TOT" },
+        Transition { occurs_at: Some(-915193200), utc_offset: 46800, dst_offset: 0, name: "TOT" },
+        Transition { occurs_at: Some(939214800), utc_offset: 46800, dst_offset: 3600, name: "TOST" },
+        Transition { occurs_at: Some(953384400), utc_offset: 46800, dst_offset: 0, name: "TOT" },
+        Transition { occurs_at: Some(973342800), utc_offset: 46800, dst_offset: 3600, name: "TOST" },
+        Transition { occurs_at: Some(980596800), utc_offset: 46800, dst_offset: 0, name: "TOT" },
+        Transition { occurs_at: Some(1004792400), utc_offset: 46800, dst_offset: 3600, name: "TOST" },
+        Transition { occurs_at: Some(1012046400), utc_offset: 46800, dst_offset: 0, name: "TOT" },
     ],
 };
 

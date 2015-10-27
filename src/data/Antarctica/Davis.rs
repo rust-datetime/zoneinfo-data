@@ -6,70 +6,18 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Antarctica/Davis",
-    timespans: &[
-        Timespan {
-            offset: 0,
-            format: "zzz",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-409190400),
-        },
-        Timespan {
-            offset: 25200,
-            format: "DAVT",
-            saving: Saving::NoSaving,
-            start_time: Some(-409190400),
-            end_time:   Some(-163036800),
-        },
-        Timespan {
-            offset: 0,
-            format: "zzz",
-            saving: Saving::NoSaving,
-            start_time: Some(-163036800),
-            end_time:   Some(-28857600),
-        },
-        Timespan {
-            offset: 25200,
-            format: "DAVT",
-            saving: Saving::NoSaving,
-            start_time: Some(-28857600),
-            end_time:   Some(1255831200),
-        },
-        Timespan {
-            offset: 18000,
-            format: "DAVT",
-            saving: Saving::NoSaving,
-            start_time: Some(1255831200),
-            end_time:   Some(1268251200),
-        },
-        Timespan {
-            offset: 25200,
-            format: "DAVT",
-            saving: Saving::NoSaving,
-            start_time: Some(1268251200),
-            end_time:   Some(1319767200),
-        },
-        Timespan {
-            offset: 18000,
-            format: "DAVT",
-            saving: Saving::NoSaving,
-            start_time: Some(1319767200),
-            end_time:   Some(1329854400),
-        },
-        Timespan {
-            offset: 25200,
-            format: "DAVT",
-            saving: Saving::NoSaving,
-            start_time: Some(1329854400),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: 0, dst_offset: 0, name: "zzz" },
+        Transition { occurs_at: Some(-409190400), utc_offset: 25200, dst_offset: 0, name: "DAVT" },
+        Transition { occurs_at: Some(-163062000), utc_offset: 0, dst_offset: 0, name: "zzz" },
+        Transition { occurs_at: Some(-28857600), utc_offset: 25200, dst_offset: 0, name: "DAVT" },
+        Transition { occurs_at: Some(1255806000), utc_offset: 18000, dst_offset: 0, name: "DAVT" },
+        Transition { occurs_at: Some(1268233200), utc_offset: 25200, dst_offset: 0, name: "DAVT" },
+        Transition { occurs_at: Some(1319742000), utc_offset: 18000, dst_offset: 0, name: "DAVT" },
+        Transition { occurs_at: Some(1329836400), utc_offset: 25200, dst_offset: 0, name: "DAVT" },
     ],
 };
 

@@ -6,49 +6,15 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "America/Caracas",
-    timespans: &[
-        Timespan {
-            offset: -12736,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-2524521600),
-        },
-        Timespan {
-            offset: -12740,
-            format: "CMT",
-            saving: Saving::NoSaving,
-            start_time: Some(-2524521600),
-            end_time:   Some(-1826755200),
-        },
-        Timespan {
-            offset: -12600,
-            format: "VET",
-            saving: Saving::NoSaving,
-            start_time: Some(-1826755200),
-            end_time:   Some(-157766400),
-        },
-        Timespan {
-            offset: -14400,
-            format: "VET",
-            saving: Saving::NoSaving,
-            start_time: Some(-157766400),
-            end_time:   Some(1197169200),
-        },
-        Timespan {
-            offset: -12600,
-            format: "VET",
-            saving: Saving::NoSaving,
-            start_time: Some(1197169200),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: -12736, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-2524508864), utc_offset: -12740, dst_offset: 0, name: "CMT" },
+        Transition { occurs_at: Some(-1826742460), utc_offset: -12600, dst_offset: 0, name: "VET" },
+        Transition { occurs_at: Some(-157753800), utc_offset: -14400, dst_offset: 0, name: "VET" },
+        Transition { occurs_at: Some(1197183600), utc_offset: -12600, dst_offset: 0, name: "VET" },
     ],
 };
 

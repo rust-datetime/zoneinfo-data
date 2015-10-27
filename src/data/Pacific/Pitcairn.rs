@@ -6,35 +6,13 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Pacific/Pitcairn",
-    timespans: &[
-        Timespan {
-            offset: -26380,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-2177452800),
-        },
-        Timespan {
-            offset: -27000,
-            format: "PNT",
-            saving: Saving::NoSaving,
-            start_time: Some(-2177452800),
-            end_time:   Some(893635200),
-        },
-        Timespan {
-            offset: -28800,
-            format: "PST",
-            saving: Saving::NoSaving,
-            start_time: Some(893635200),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: -26380, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-2177426420), utc_offset: -27000, dst_offset: 0, name: "PNT" },
+        Transition { occurs_at: Some(893662200), utc_offset: -28800, dst_offset: 0, name: "PST" },
     ],
 };
 

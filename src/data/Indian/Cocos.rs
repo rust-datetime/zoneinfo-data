@@ -6,28 +6,12 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Indian/Cocos",
-    timespans: &[
-        Timespan {
-            offset: 23260,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-2208988800),
-        },
-        Timespan {
-            offset: 23400,
-            format: "CCT",
-            saving: Saving::NoSaving,
-            start_time: Some(-2208988800),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: 23260, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-2209012060), utc_offset: 23400, dst_offset: 0, name: "CCT" },
     ],
 };
 

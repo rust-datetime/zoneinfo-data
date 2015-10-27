@@ -6,56 +6,16 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Pacific/Bougainville",
-    timespans: &[
-        Timespan {
-            offset: 37336,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-2840140800),
-        },
-        Timespan {
-            offset: 35312,
-            format: "PMMT",
-            saving: Saving::NoSaving,
-            start_time: Some(-2840140800),
-            end_time:   Some(-2366755200),
-        },
-        Timespan {
-            offset: 36000,
-            format: "PGT",
-            saving: Saving::NoSaving,
-            start_time: Some(-2366755200),
-            end_time:   Some(-867974400),
-        },
-        Timespan {
-            offset: 32400,
-            format: "JST",
-            saving: Saving::NoSaving,
-            start_time: Some(-867974400),
-            end_time:   Some(-768873600),
-        },
-        Timespan {
-            offset: 36000,
-            format: "PGT",
-            saving: Saving::NoSaving,
-            start_time: Some(-768873600),
-            end_time:   Some(1419732000),
-        },
-        Timespan {
-            offset: 39600,
-            format: "BST",
-            saving: Saving::NoSaving,
-            start_time: Some(1419732000),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: 37336, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-2840178136), utc_offset: 35312, dst_offset: 0, name: "PMMT" },
+        Transition { occurs_at: Some(-2366790512), utc_offset: 36000, dst_offset: 0, name: "PGT" },
+        Transition { occurs_at: Some(-868010400), utc_offset: 32400, dst_offset: 0, name: "JST" },
+        Transition { occurs_at: Some(-768906000), utc_offset: 36000, dst_offset: 0, name: "PGT" },
+        Transition { occurs_at: Some(1419696000), utc_offset: 39600, dst_offset: 0, name: "BST" },
     ],
 };
 

@@ -6,63 +6,17 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Pacific/Honolulu",
-    timespans: &[
-        Timespan {
-            offset: -34114,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-2334139200),
-        },
-        Timespan {
-            offset: -34200,
-            format: "HST",
-            saving: Saving::NoSaving,
-            start_time: Some(-2334139200),
-            end_time:   Some(-1157320800),
-        },
-        Timespan {
-            offset: -34200,
-            format: "HDT",
-            saving: Saving::OneOff(3600),
-            start_time: Some(-1157320800),
-            end_time:   Some(-1155470400),
-        },
-        Timespan {
-            offset: -34200,
-            format: "HST",
-            saving: Saving::NoSaving,
-            start_time: Some(-1155470400),
-            end_time:   Some(-880236000),
-        },
-        Timespan {
-            offset: -34200,
-            format: "HDT",
-            saving: Saving::OneOff(3600),
-            start_time: Some(-880236000),
-            end_time:   Some(-765410400),
-        },
-        Timespan {
-            offset: -34200,
-            format: "HST",
-            saving: Saving::NoSaving,
-            start_time: Some(-765410400),
-            end_time:   Some(-712188000),
-        },
-        Timespan {
-            offset: -36000,
-            format: "HST",
-            saving: Saving::NoSaving,
-            start_time: Some(-712188000),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: -34114, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-2334105086), utc_offset: -34200, dst_offset: 0, name: "HST" },
+        Transition { occurs_at: Some(-1157286600), utc_offset: -34200, dst_offset: 3600, name: "HDT" },
+        Transition { occurs_at: Some(-1155439800), utc_offset: -34200, dst_offset: 0, name: "HST" },
+        Transition { occurs_at: Some(-880201800), utc_offset: -34200, dst_offset: 3600, name: "HDT" },
+        Transition { occurs_at: Some(-765379800), utc_offset: -34200, dst_offset: 0, name: "HST" },
+        Transition { occurs_at: Some(-712153800), utc_offset: -36000, dst_offset: 0, name: "HST" },
     ],
 };
 

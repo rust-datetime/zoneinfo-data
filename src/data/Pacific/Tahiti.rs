@@ -6,28 +6,12 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Pacific/Tahiti",
-    timespans: &[
-        Timespan {
-            offset: -28904,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-1806710400),
-        },
-        Timespan {
-            offset: -36000,
-            format: "TAHT",
-            saving: Saving::NoSaving,
-            start_time: Some(-1806710400),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: -28904, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-1806681496), utc_offset: -36000, dst_offset: 0, name: "TAHT" },
     ],
 };
 

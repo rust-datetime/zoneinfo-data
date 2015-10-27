@@ -6,35 +6,28 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Asia/Shanghai",
-    timespans: &[
-        Timespan {
-            offset: 29143,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-2177452800),
-        },
-        Timespan {
-            offset: 28800,
-            format: "C%sT",
-            saving: Saving::Multiple(&rulesets::Shang),
-            start_time: Some(-2177452800),
-            end_time:   Some(-662688000),
-        },
-        Timespan {
-            offset: 28800,
-            format: "C%sT",
-            saving: Saving::Multiple(&rulesets::PRC),
-            start_time: Some(-662688000),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: 29143, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-2177481943), utc_offset: 28800, dst_offset: 0, name: "CST" },
+        Transition { occurs_at: Some(-933494400), utc_offset: 28800, dst_offset: 3600, name: "CDT" },
+        Transition { occurs_at: Some(-923130000), utc_offset: 28800, dst_offset: 0, name: "CST" },
+        Transition { occurs_at: Some(-908784000), utc_offset: 28800, dst_offset: 3600, name: "CDT" },
+        Transition { occurs_at: Some(-891594000), utc_offset: 28800, dst_offset: 0, name: "CST" },
+        Transition { occurs_at: Some(515520000), utc_offset: 28800, dst_offset: 3600, name: "CDT" },
+        Transition { occurs_at: Some(527007600), utc_offset: 28800, dst_offset: 0, name: "CST" },
+        Transition { occurs_at: Some(545155200), utc_offset: 28800, dst_offset: 3600, name: "CDT" },
+        Transition { occurs_at: Some(558457200), utc_offset: 28800, dst_offset: 0, name: "CST" },
+        Transition { occurs_at: Some(576604800), utc_offset: 28800, dst_offset: 3600, name: "CDT" },
+        Transition { occurs_at: Some(589906800), utc_offset: 28800, dst_offset: 0, name: "CST" },
+        Transition { occurs_at: Some(608659200), utc_offset: 28800, dst_offset: 3600, name: "CDT" },
+        Transition { occurs_at: Some(621961200), utc_offset: 28800, dst_offset: 0, name: "CST" },
+        Transition { occurs_at: Some(640108800), utc_offset: 28800, dst_offset: 3600, name: "CDT" },
+        Transition { occurs_at: Some(653410800), utc_offset: 28800, dst_offset: 0, name: "CST" },
+        Transition { occurs_at: Some(671558400), utc_offset: 28800, dst_offset: 3600, name: "CDT" },
+        Transition { occurs_at: Some(684860400), utc_offset: 28800, dst_offset: 0, name: "CST" },
     ],
 };
 

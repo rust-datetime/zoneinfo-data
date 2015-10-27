@@ -6,49 +6,42 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "America/Rio_Branco",
-    timespans: &[
-        Timespan {
-            offset: -12528,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-1767225600),
-        },
-        Timespan {
-            offset: -18000,
-            format: "AC%sT",
-            saving: Saving::Multiple(&rulesets::Brazil),
-            start_time: Some(-1767225600),
-            end_time:   Some(590025600),
-        },
-        Timespan {
-            offset: -18000,
-            format: "ACT",
-            saving: Saving::NoSaving,
-            start_time: Some(590025600),
-            end_time:   Some(1214265600),
-        },
-        Timespan {
-            offset: -14400,
-            format: "AMT",
-            saving: Saving::NoSaving,
-            start_time: Some(1214265600),
-            end_time:   Some(1384041600),
-        },
-        Timespan {
-            offset: -18000,
-            format: "ACT",
-            saving: Saving::NoSaving,
-            start_time: Some(1384041600),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: -12528, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-1767213072), utc_offset: -18000, dst_offset: 0, name: "ACT" },
+        Transition { occurs_at: Some(-1206950400), utc_offset: -18000, dst_offset: 3600, name: "ACST" },
+        Transition { occurs_at: Some(-1191355200), utc_offset: -18000, dst_offset: 0, name: "ACT" },
+        Transition { occurs_at: Some(-1175367600), utc_offset: -18000, dst_offset: 3600, name: "ACST" },
+        Transition { occurs_at: Some(-1159819200), utc_offset: -18000, dst_offset: 0, name: "ACT" },
+        Transition { occurs_at: Some(-633812400), utc_offset: -18000, dst_offset: 3600, name: "ACST" },
+        Transition { occurs_at: Some(-622062000), utc_offset: -18000, dst_offset: 0, name: "ACT" },
+        Transition { occurs_at: Some(-602276400), utc_offset: -18000, dst_offset: 3600, name: "ACST" },
+        Transition { occurs_at: Some(-591825600), utc_offset: -18000, dst_offset: 0, name: "ACT" },
+        Transition { occurs_at: Some(-570740400), utc_offset: -18000, dst_offset: 3600, name: "ACST" },
+        Transition { occurs_at: Some(-560203200), utc_offset: -18000, dst_offset: 0, name: "ACT" },
+        Transition { occurs_at: Some(-539118000), utc_offset: -18000, dst_offset: 3600, name: "ACST" },
+        Transition { occurs_at: Some(-531345600), utc_offset: -18000, dst_offset: 0, name: "ACT" },
+        Transition { occurs_at: Some(-191358000), utc_offset: -18000, dst_offset: 3600, name: "ACST" },
+        Transition { occurs_at: Some(-184190400), utc_offset: -18000, dst_offset: 0, name: "ACT" },
+        Transition { occurs_at: Some(-155156400), utc_offset: -18000, dst_offset: 3600, name: "ACST" },
+        Transition { occurs_at: Some(-150062400), utc_offset: -18000, dst_offset: 0, name: "ACT" },
+        Transition { occurs_at: Some(-128890800), utc_offset: -18000, dst_offset: 3600, name: "ACST" },
+        Transition { occurs_at: Some(-121118400), utc_offset: -18000, dst_offset: 0, name: "ACT" },
+        Transition { occurs_at: Some(-99946800), utc_offset: -18000, dst_offset: 3600, name: "ACST" },
+        Transition { occurs_at: Some(-89582400), utc_offset: -18000, dst_offset: 0, name: "ACT" },
+        Transition { occurs_at: Some(-68410800), utc_offset: -18000, dst_offset: 3600, name: "ACST" },
+        Transition { occurs_at: Some(-57960000), utc_offset: -18000, dst_offset: 0, name: "ACT" },
+        Transition { occurs_at: Some(499755600), utc_offset: -18000, dst_offset: 3600, name: "ACST" },
+        Transition { occurs_at: Some(511243200), utc_offset: -18000, dst_offset: 0, name: "ACT" },
+        Transition { occurs_at: Some(530600400), utc_offset: -18000, dst_offset: 3600, name: "ACST" },
+        Transition { occurs_at: Some(540273600), utc_offset: -18000, dst_offset: 0, name: "ACT" },
+        Transition { occurs_at: Some(562136400), utc_offset: -18000, dst_offset: 3600, name: "ACST" },
+        Transition { occurs_at: Some(571204800), utc_offset: -18000, dst_offset: 0, name: "ACT" },
+        Transition { occurs_at: Some(1214283600), utc_offset: -14400, dst_offset: 0, name: "AMT" },
+        Transition { occurs_at: Some(1384056000), utc_offset: -18000, dst_offset: 0, name: "ACT" },
     ],
 };
 

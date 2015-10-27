@@ -6,77 +6,27 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "America/Managua",
-    timespans: &[
-        Timespan {
-            offset: -15292,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-2524521600),
-        },
-        Timespan {
-            offset: -15288,
-            format: "MMT",
-            saving: Saving::NoSaving,
-            start_time: Some(-2524521600),
-            end_time:   Some(-1121126400),
-        },
-        Timespan {
-            offset: -21600,
-            format: "CST",
-            saving: Saving::NoSaving,
-            start_time: Some(-1121126400),
-            end_time:   Some(105062400),
-        },
-        Timespan {
-            offset: -18000,
-            format: "EST",
-            saving: Saving::NoSaving,
-            start_time: Some(105062400),
-            end_time:   Some(161740800),
-        },
-        Timespan {
-            offset: -21600,
-            format: "C%sT",
-            saving: Saving::Multiple(&rulesets::Nic),
-            start_time: Some(161740800),
-            end_time:   Some(694238400),
-        },
-        Timespan {
-            offset: -18000,
-            format: "EST",
-            saving: Saving::NoSaving,
-            start_time: Some(694238400),
-            end_time:   Some(717292800),
-        },
-        Timespan {
-            offset: -21600,
-            format: "CST",
-            saving: Saving::NoSaving,
-            start_time: Some(717292800),
-            end_time:   Some(725846400),
-        },
-        Timespan {
-            offset: -18000,
-            format: "EST",
-            saving: Saving::NoSaving,
-            start_time: Some(725846400),
-            end_time:   Some(852076800),
-        },
-        Timespan {
-            offset: -21600,
-            format: "C%sT",
-            saving: Saving::Multiple(&rulesets::Nic),
-            start_time: Some(852076800),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: -15292, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-2524506308), utc_offset: -15288, dst_offset: 0, name: "MMT" },
+        Transition { occurs_at: Some(-1121111112), utc_offset: -21600, dst_offset: 0, name: "CST" },
+        Transition { occurs_at: Some(105084000), utc_offset: -18000, dst_offset: 0, name: "EST" },
+        Transition { occurs_at: Some(161758800), utc_offset: -21600, dst_offset: 0, name: "CST" },
+        Transition { occurs_at: Some(290584800), utc_offset: -21600, dst_offset: 3600, name: "CDT" },
+        Transition { occurs_at: Some(299134800), utc_offset: -21600, dst_offset: 0, name: "CST" },
+        Transition { occurs_at: Some(322034400), utc_offset: -21600, dst_offset: 3600, name: "CDT" },
+        Transition { occurs_at: Some(330584400), utc_offset: -21600, dst_offset: 0, name: "CST" },
+        Transition { occurs_at: Some(694260000), utc_offset: -18000, dst_offset: 0, name: "EST" },
+        Transition { occurs_at: Some(717310800), utc_offset: -21600, dst_offset: 0, name: "CST" },
+        Transition { occurs_at: Some(725868000), utc_offset: -18000, dst_offset: 0, name: "EST" },
+        Transition { occurs_at: Some(852094800), utc_offset: -21600, dst_offset: 0, name: "CST" },
+        Transition { occurs_at: Some(1113112800), utc_offset: -21600, dst_offset: 3600, name: "CDT" },
+        Transition { occurs_at: Some(1128229200), utc_offset: -21600, dst_offset: 0, name: "CST" },
+        Transition { occurs_at: Some(1146384000), utc_offset: -21600, dst_offset: 3600, name: "CDT" },
+        Transition { occurs_at: Some(1159682400), utc_offset: -21600, dst_offset: 0, name: "CST" },
     ],
 };
 

@@ -6,42 +6,13 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Pacific/Guam",
-    timespans: &[
-        Timespan {
-            offset: -49140,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-3944678400),
-        },
-        Timespan {
-            offset: 34740,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: Some(-3944678400),
-            end_time:   Some(-2177452800),
-        },
-        Timespan {
-            offset: 36000,
-            format: "GST",
-            saving: Saving::NoSaving,
-            start_time: Some(-2177452800),
-            end_time:   Some(977529600),
-        },
-        Timespan {
-            offset: 36000,
-            format: "ChST",
-            saving: Saving::NoSaving,
-            start_time: Some(977529600),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: -49140, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-3944629260), utc_offset: 34740, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-2177487540), utc_offset: 36000, dst_offset: 0, name: "GST" },
     ],
 };
 

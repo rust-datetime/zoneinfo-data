@@ -6,28 +6,16 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Indian/Mauritius",
-    timespans: &[
-        Timespan {
-            offset: 13800,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-1988150400),
-        },
-        Timespan {
-            offset: 14400,
-            format: "MU%sT",
-            saving: Saving::Multiple(&rulesets::Mauritius),
-            start_time: Some(-1988150400),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: 13800, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-1988164200), utc_offset: 14400, dst_offset: 0, name: "MUT" },
+        Transition { occurs_at: Some(403041600), utc_offset: 14400, dst_offset: 3600, name: "MUST" },
+        Transition { occurs_at: Some(417034800), utc_offset: 14400, dst_offset: 0, name: "MUT" },
+        Transition { occurs_at: Some(1224972000), utc_offset: 14400, dst_offset: 3600, name: "MUST" },
+        Transition { occurs_at: Some(1238274000), utc_offset: 14400, dst_offset: 0, name: "MUT" },
     ],
 };
 

@@ -6,56 +6,21 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Asia/Karachi",
-    timespans: &[
-        Timespan {
-            offset: 16092,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-1988150400),
-        },
-        Timespan {
-            offset: 19800,
-            format: "IST",
-            saving: Saving::NoSaving,
-            start_time: Some(-1988150400),
-            end_time:   Some(-862617600),
-        },
-        Timespan {
-            offset: 19800,
-            format: "IST",
-            saving: Saving::OneOff(3600),
-            start_time: Some(-862617600),
-            end_time:   Some(-764121600),
-        },
-        Timespan {
-            offset: 19800,
-            format: "IST",
-            saving: Saving::NoSaving,
-            start_time: Some(-764121600),
-            end_time:   Some(-576115200),
-        },
-        Timespan {
-            offset: 18000,
-            format: "KART",
-            saving: Saving::NoSaving,
-            start_time: Some(-576115200),
-            end_time:   Some(38793600),
-        },
-        Timespan {
-            offset: 18000,
-            format: "PK%sT",
-            saving: Saving::Multiple(&rulesets::Pakistan),
-            start_time: Some(38793600),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: 16092, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-1988166492), utc_offset: 19800, dst_offset: 0, name: "IST" },
+        Transition { occurs_at: Some(-862637400), utc_offset: 19800, dst_offset: 3600, name: "IST" },
+        Transition { occurs_at: Some(-764145000), utc_offset: 19800, dst_offset: 0, name: "IST" },
+        Transition { occurs_at: Some(-576135000), utc_offset: 18000, dst_offset: 0, name: "KART" },
+        Transition { occurs_at: Some(1018119660), utc_offset: 18000, dst_offset: 3600, name: "PKST" },
+        Transition { occurs_at: Some(1033840860), utc_offset: 18000, dst_offset: 0, name: "PKT" },
+        Transition { occurs_at: Some(1212260400), utc_offset: 18000, dst_offset: 3600, name: "PKST" },
+        Transition { occurs_at: Some(1225476000), utc_offset: 18000, dst_offset: 0, name: "PKT" },
+        Transition { occurs_at: Some(1239735600), utc_offset: 18000, dst_offset: 3600, name: "PKST" },
+        Transition { occurs_at: Some(1257012000), utc_offset: 18000, dst_offset: 0, name: "PKT" },
     ],
 };
 

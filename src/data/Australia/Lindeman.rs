@@ -6,42 +6,32 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Australia/Lindeman",
-    timespans: &[
-        Timespan {
-            offset: 35756,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-2366755200),
-        },
-        Timespan {
-            offset: 36000,
-            format: "AE%sT",
-            saving: Saving::Multiple(&rulesets::Aus),
-            start_time: Some(-2366755200),
-            end_time:   Some(31536000),
-        },
-        Timespan {
-            offset: 36000,
-            format: "AE%sT",
-            saving: Saving::Multiple(&rulesets::AQ),
-            start_time: Some(31536000),
-            end_time:   Some(709948800),
-        },
-        Timespan {
-            offset: 36000,
-            format: "AE%sT",
-            saving: Saving::Multiple(&rulesets::Holiday),
-            start_time: Some(709948800),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: 35756, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-2366790956), utc_offset: 36000, dst_offset: 0, name: "AEST" },
+        Transition { occurs_at: Some(-1672567140), utc_offset: 36000, dst_offset: 3600, name: "AEDT" },
+        Transition { occurs_at: Some(-1665392400), utc_offset: 36000, dst_offset: 0, name: "AEST" },
+        Transition { occurs_at: Some(-883641600), utc_offset: 36000, dst_offset: 3600, name: "AEDT" },
+        Transition { occurs_at: Some(-876128400), utc_offset: 36000, dst_offset: 0, name: "AEST" },
+        Transition { occurs_at: Some(-860400000), utc_offset: 36000, dst_offset: 3600, name: "AEDT" },
+        Transition { occurs_at: Some(-844678800), utc_offset: 36000, dst_offset: 0, name: "AEST" },
+        Transition { occurs_at: Some(-828345600), utc_offset: 36000, dst_offset: 3600, name: "AEDT" },
+        Transition { occurs_at: Some(-813229200), utc_offset: 36000, dst_offset: 0, name: "AEST" },
+        Transition { occurs_at: Some(57686400), utc_offset: 36000, dst_offset: 3600, name: "AEDT" },
+        Transition { occurs_at: Some(67968000), utc_offset: 36000, dst_offset: 0, name: "AEST" },
+        Transition { occurs_at: Some(625593600), utc_offset: 36000, dst_offset: 3600, name: "AEDT" },
+        Transition { occurs_at: Some(636480000), utc_offset: 36000, dst_offset: 0, name: "AEST" },
+        Transition { occurs_at: Some(657043200), utc_offset: 36000, dst_offset: 3600, name: "AEDT" },
+        Transition { occurs_at: Some(667929600), utc_offset: 36000, dst_offset: 0, name: "AEST" },
+        Transition { occurs_at: Some(688492800), utc_offset: 36000, dst_offset: 3600, name: "AEDT" },
+        Transition { occurs_at: Some(699465600), utc_offset: 36000, dst_offset: 0, name: "AEST" },
+        Transition { occurs_at: Some(719942400), utc_offset: 36000, dst_offset: 3600, name: "AEDT" },
+        Transition { occurs_at: Some(731433600), utc_offset: 36000, dst_offset: 0, name: "AEST" },
+        Transition { occurs_at: Some(751996800), utc_offset: 36000, dst_offset: 3600, name: "AEDT" },
+        Transition { occurs_at: Some(762883200), utc_offset: 36000, dst_offset: 0, name: "AEST" },
     ],
 };
 

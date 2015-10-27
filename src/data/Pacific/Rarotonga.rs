@@ -6,35 +6,38 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Pacific/Rarotonga",
-    timespans: &[
-        Timespan {
-            offset: -33656,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-2177452800),
-        },
-        Timespan {
-            offset: -34200,
-            format: "CKT",
-            saving: Saving::NoSaving,
-            start_time: Some(-2177452800),
-            end_time:   Some(279676800),
-        },
-        Timespan {
-            offset: -36000,
-            format: "CK%sT",
-            saving: Saving::Multiple(&rulesets::Cook),
-            start_time: Some(279676800),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: -33656, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-2177419144), utc_offset: -34200, dst_offset: 0, name: "CKT" },
+        Transition { occurs_at: Some(279711000), utc_offset: -36000, dst_offset: 1800, name: "CKHST" },
+        Transition { occurs_at: Some(289387800), utc_offset: -36000, dst_offset: 0, name: "CKT" },
+        Transition { occurs_at: Some(309952800), utc_offset: -36000, dst_offset: 1800, name: "CKHST" },
+        Transition { occurs_at: Some(320837400), utc_offset: -36000, dst_offset: 0, name: "CKT" },
+        Transition { occurs_at: Some(341402400), utc_offset: -36000, dst_offset: 1800, name: "CKHST" },
+        Transition { occurs_at: Some(352287000), utc_offset: -36000, dst_offset: 0, name: "CKT" },
+        Transition { occurs_at: Some(372852000), utc_offset: -36000, dst_offset: 1800, name: "CKHST" },
+        Transition { occurs_at: Some(384341400), utc_offset: -36000, dst_offset: 0, name: "CKT" },
+        Transition { occurs_at: Some(404906400), utc_offset: -36000, dst_offset: 1800, name: "CKHST" },
+        Transition { occurs_at: Some(415791000), utc_offset: -36000, dst_offset: 0, name: "CKT" },
+        Transition { occurs_at: Some(436356000), utc_offset: -36000, dst_offset: 1800, name: "CKHST" },
+        Transition { occurs_at: Some(447240600), utc_offset: -36000, dst_offset: 0, name: "CKT" },
+        Transition { occurs_at: Some(467805600), utc_offset: -36000, dst_offset: 1800, name: "CKHST" },
+        Transition { occurs_at: Some(478690200), utc_offset: -36000, dst_offset: 0, name: "CKT" },
+        Transition { occurs_at: Some(499255200), utc_offset: -36000, dst_offset: 1800, name: "CKHST" },
+        Transition { occurs_at: Some(510139800), utc_offset: -36000, dst_offset: 0, name: "CKT" },
+        Transition { occurs_at: Some(530704800), utc_offset: -36000, dst_offset: 1800, name: "CKHST" },
+        Transition { occurs_at: Some(541589400), utc_offset: -36000, dst_offset: 0, name: "CKT" },
+        Transition { occurs_at: Some(562154400), utc_offset: -36000, dst_offset: 1800, name: "CKHST" },
+        Transition { occurs_at: Some(573643800), utc_offset: -36000, dst_offset: 0, name: "CKT" },
+        Transition { occurs_at: Some(594208800), utc_offset: -36000, dst_offset: 1800, name: "CKHST" },
+        Transition { occurs_at: Some(605093400), utc_offset: -36000, dst_offset: 0, name: "CKT" },
+        Transition { occurs_at: Some(625658400), utc_offset: -36000, dst_offset: 1800, name: "CKHST" },
+        Transition { occurs_at: Some(636543000), utc_offset: -36000, dst_offset: 0, name: "CKT" },
+        Transition { occurs_at: Some(657108000), utc_offset: -36000, dst_offset: 1800, name: "CKHST" },
+        Transition { occurs_at: Some(667992600), utc_offset: -36000, dst_offset: 0, name: "CKT" },
     ],
 };
 

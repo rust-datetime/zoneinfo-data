@@ -6,49 +6,15 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Atlantic/Cape_Verde",
-    timespans: &[
-        Timespan {
-            offset: -1556,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-1988150400),
-        },
-        Timespan {
-            offset: -7200,
-            format: "CVT",
-            saving: Saving::NoSaving,
-            start_time: Some(-1988150400),
-            end_time:   Some(-862617600),
-        },
-        Timespan {
-            offset: -7200,
-            format: "CVST",
-            saving: Saving::OneOff(3600),
-            start_time: Some(-862617600),
-            end_time:   Some(-764121600),
-        },
-        Timespan {
-            offset: -7200,
-            format: "CVT",
-            saving: Saving::NoSaving,
-            start_time: Some(-764121600),
-            end_time:   Some(186112800),
-        },
-        Timespan {
-            offset: -3600,
-            format: "CVT",
-            saving: Saving::NoSaving,
-            start_time: Some(186112800),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: -1556, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-1988148844), utc_offset: -7200, dst_offset: 0, name: "CVT" },
+        Transition { occurs_at: Some(-862610400), utc_offset: -7200, dst_offset: 3600, name: "CVST" },
+        Transition { occurs_at: Some(-764118000), utc_offset: -7200, dst_offset: 0, name: "CVT" },
+        Transition { occurs_at: Some(186120000), utc_offset: -3600, dst_offset: 0, name: "CVT" },
     ],
 };
 

@@ -6,42 +6,14 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Pacific/Niue",
-    timespans: &[
-        Timespan {
-            offset: -38420,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-2177452800),
-        },
-        Timespan {
-            offset: -38400,
-            format: "NUT",
-            saving: Saving::NoSaving,
-            start_time: Some(-2177452800),
-            end_time:   Some(-599616000),
-        },
-        Timespan {
-            offset: -37800,
-            format: "NUT",
-            saving: Saving::NoSaving,
-            start_time: Some(-599616000),
-            end_time:   Some(276048000),
-        },
-        Timespan {
-            offset: -39600,
-            format: "NUT",
-            saving: Saving::NoSaving,
-            start_time: Some(276048000),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: -38420, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-2177414380), utc_offset: -38400, dst_offset: 0, name: "NUT" },
+        Transition { occurs_at: Some(-599577600), utc_offset: -37800, dst_offset: 0, name: "NUT" },
+        Transition { occurs_at: Some(276085800), utc_offset: -39600, dst_offset: 0, name: "NUT" },
     ],
 };
 

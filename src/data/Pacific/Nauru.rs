@@ -6,49 +6,15 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Pacific/Nauru",
-    timespans: &[
-        Timespan {
-            offset: 40060,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-1545091200),
-        },
-        Timespan {
-            offset: 41400,
-            format: "NRT",
-            saving: Saving::NoSaving,
-            start_time: Some(-1545091200),
-            end_time:   Some(-877305600),
-        },
-        Timespan {
-            offset: 32400,
-            format: "JST",
-            saving: Saving::NoSaving,
-            start_time: Some(-877305600),
-            end_time:   Some(-800928000),
-        },
-        Timespan {
-            offset: 41400,
-            format: "NRT",
-            saving: Saving::NoSaving,
-            start_time: Some(-800928000),
-            end_time:   Some(294364800),
-        },
-        Timespan {
-            offset: 43200,
-            format: "NRT",
-            saving: Saving::NoSaving,
-            start_time: Some(294364800),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: 40060, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-1545131260), utc_offset: 41400, dst_offset: 0, name: "NRT" },
+        Transition { occurs_at: Some(-877347000), utc_offset: 32400, dst_offset: 0, name: "JST" },
+        Transition { occurs_at: Some(-800960400), utc_offset: 41400, dst_offset: 0, name: "NRT" },
+        Transition { occurs_at: Some(294323400), utc_offset: 43200, dst_offset: 0, name: "NRT" },
     ],
 };
 

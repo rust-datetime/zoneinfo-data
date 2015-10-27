@@ -6,56 +6,15 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Asia/Dili",
-    timespans: &[
-        Timespan {
-            offset: 30140,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-1830384000),
-        },
-        Timespan {
-            offset: 28800,
-            format: "TLT",
-            saving: Saving::NoSaving,
-            start_time: Some(-1830384000),
-            end_time:   Some(-879123600),
-        },
-        Timespan {
-            offset: 32400,
-            format: "JST",
-            saving: Saving::NoSaving,
-            start_time: Some(-879123600),
-            end_time:   Some(-766022400),
-        },
-        Timespan {
-            offset: 32400,
-            format: "TLT",
-            saving: Saving::NoSaving,
-            start_time: Some(-766022400),
-            end_time:   Some(199929600),
-        },
-        Timespan {
-            offset: 28800,
-            format: "WITA",
-            saving: Saving::NoSaving,
-            start_time: Some(199929600),
-            end_time:   Some(969148800),
-        },
-        Timespan {
-            offset: 32400,
-            format: "TLT",
-            saving: Saving::NoSaving,
-            start_time: Some(969148800),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: 30140, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-1830414140), utc_offset: 28800, dst_offset: 0, name: "TLT" },
+        Transition { occurs_at: Some(-879152400), utc_offset: 32400, dst_offset: 0, name: "JST" },
+        Transition { occurs_at: Some(199897200), utc_offset: 28800, dst_offset: 0, name: "WITA" },
+        Transition { occurs_at: Some(969120000), utc_offset: 32400, dst_offset: 0, name: "TLT" },
     ],
 };
 

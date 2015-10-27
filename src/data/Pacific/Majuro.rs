@@ -6,35 +6,13 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Pacific/Majuro",
-    timespans: &[
-        Timespan {
-            offset: 41088,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-2177452800),
-        },
-        Timespan {
-            offset: 39600,
-            format: "MHT",
-            saving: Saving::NoSaving,
-            start_time: Some(-2177452800),
-            end_time:   Some(-7948800),
-        },
-        Timespan {
-            offset: 43200,
-            format: "MHT",
-            saving: Saving::NoSaving,
-            start_time: Some(-7948800),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: 41088, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-2177493888), utc_offset: 39600, dst_offset: 0, name: "MHT" },
+        Transition { occurs_at: Some(-7988400), utc_offset: 43200, dst_offset: 0, name: "MHT" },
     ],
 };
 

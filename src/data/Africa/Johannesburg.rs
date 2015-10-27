@@ -6,35 +6,17 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Africa/Johannesburg",
-    timespans: &[
-        Timespan {
-            offset: 6720,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-2458166400),
-        },
-        Timespan {
-            offset: 5400,
-            format: "SAST",
-            saving: Saving::NoSaving,
-            start_time: Some(-2458166400),
-            end_time:   Some(-2109283200),
-        },
-        Timespan {
-            offset: 7200,
-            format: "SAST",
-            saving: Saving::Multiple(&rulesets::SA),
-            start_time: Some(-2109283200),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: 6720, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-2458173120), utc_offset: 5400, dst_offset: 0, name: "SAST" },
+        Transition { occurs_at: Some(-2109288600), utc_offset: 7200, dst_offset: 0, name: "SAST" },
+        Transition { occurs_at: Some(-860976000), utc_offset: 7200, dst_offset: 3600, name: "SAST" },
+        Transition { occurs_at: Some(-845254800), utc_offset: 7200, dst_offset: 0, name: "SAST" },
+        Transition { occurs_at: Some(-829526400), utc_offset: 7200, dst_offset: 3600, name: "SAST" },
+        Transition { occurs_at: Some(-813805200), utc_offset: 7200, dst_offset: 0, name: "SAST" },
     ],
 };
 

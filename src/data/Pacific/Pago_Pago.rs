@@ -6,49 +6,13 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Pacific/Pago_Pago",
-    timespans: &[
-        Timespan {
-            offset: 45432,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-2855692800),
-        },
-        Timespan {
-            offset: -38232,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: Some(-2855692800),
-            end_time:   Some(-1861920000),
-        },
-        Timespan {
-            offset: -39600,
-            format: "NST",
-            saving: Saving::NoSaving,
-            start_time: Some(-1861920000),
-            end_time:   Some(-86918400),
-        },
-        Timespan {
-            offset: -39600,
-            format: "BST",
-            saving: Saving::NoSaving,
-            start_time: Some(-86918400),
-            end_time:   Some(438998400),
-        },
-        Timespan {
-            offset: -39600,
-            format: "SST",
-            saving: Saving::NoSaving,
-            start_time: Some(438998400),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: 45432, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-2855738232), utc_offset: -38232, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-1861881768), utc_offset: -39600, dst_offset: 0, name: "NST" },
     ],
 };
 

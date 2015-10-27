@@ -6,42 +6,14 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Pacific/Enderbury",
-    timespans: &[
-        Timespan {
-            offset: -38140,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-2177452800),
-        },
-        Timespan {
-            offset: -43200,
-            format: "PHOT",
-            saving: Saving::NoSaving,
-            start_time: Some(-2177452800),
-            end_time:   Some(307584000),
-        },
-        Timespan {
-            offset: -39600,
-            format: "PHOT",
-            saving: Saving::NoSaving,
-            start_time: Some(307584000),
-            end_time:   Some(788918400),
-        },
-        Timespan {
-            offset: 46800,
-            format: "PHOT",
-            saving: Saving::NoSaving,
-            start_time: Some(788918400),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: -38140, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-2177414660), utc_offset: -43200, dst_offset: 0, name: "PHOT" },
+        Transition { occurs_at: Some(307627200), utc_offset: -39600, dst_offset: 0, name: "PHOT" },
+        Transition { occurs_at: Some(788958000), utc_offset: 46800, dst_offset: 0, name: "PHOT" },
     ],
 };
 

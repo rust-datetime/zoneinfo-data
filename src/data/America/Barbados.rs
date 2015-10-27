@@ -6,35 +6,20 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "America/Barbados",
-    timespans: &[
-        Timespan {
-            offset: -7291,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-1451692800),
-        },
-        Timespan {
-            offset: -7291,
-            format: "BMT",
-            saving: Saving::NoSaving,
-            start_time: Some(-1451692800),
-            end_time:   Some(-1199232000),
-        },
-        Timespan {
-            offset: -14400,
-            format: "A%sT",
-            saving: Saving::Multiple(&rulesets::Barb),
-            start_time: Some(-1199232000),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: -7291, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-1199224709), utc_offset: -14400, dst_offset: 0, name: "AST" },
+        Transition { occurs_at: Some(234943200), utc_offset: -14400, dst_offset: 3600, name: "ADT" },
+        Transition { occurs_at: Some(244616400), utc_offset: -14400, dst_offset: 0, name: "AST" },
+        Transition { occurs_at: Some(261554400), utc_offset: -14400, dst_offset: 3600, name: "ADT" },
+        Transition { occurs_at: Some(276066000), utc_offset: -14400, dst_offset: 0, name: "AST" },
+        Transition { occurs_at: Some(293004000), utc_offset: -14400, dst_offset: 3600, name: "ADT" },
+        Transition { occurs_at: Some(307515600), utc_offset: -14400, dst_offset: 0, name: "AST" },
+        Transition { occurs_at: Some(325058400), utc_offset: -14400, dst_offset: 3600, name: "ADT" },
+        Transition { occurs_at: Some(338706000), utc_offset: -14400, dst_offset: 0, name: "AST" },
     ],
 };
 

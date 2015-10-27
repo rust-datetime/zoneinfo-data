@@ -6,91 +6,26 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "America/Hermosillo",
-    timespans: &[
-        Timespan {
-            offset: -23768,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-1514766232),
-        },
-        Timespan {
-            offset: -25200,
-            format: "MST",
-            saving: Saving::NoSaving,
-            start_time: Some(-1514766232),
-            end_time:   Some(-1343091600),
-        },
-        Timespan {
-            offset: -21600,
-            format: "CST",
-            saving: Saving::NoSaving,
-            start_time: Some(-1343091600),
-            end_time:   Some(-1234828800),
-        },
-        Timespan {
-            offset: -25200,
-            format: "MST",
-            saving: Saving::NoSaving,
-            start_time: Some(-1234828800),
-            end_time:   Some(-1220317200),
-        },
-        Timespan {
-            offset: -21600,
-            format: "CST",
-            saving: Saving::NoSaving,
-            start_time: Some(-1220317200),
-            end_time:   Some(-1207180800),
-        },
-        Timespan {
-            offset: -25200,
-            format: "MST",
-            saving: Saving::NoSaving,
-            start_time: Some(-1207180800),
-            end_time:   Some(-1191369600),
-        },
-        Timespan {
-            offset: -21600,
-            format: "CST",
-            saving: Saving::NoSaving,
-            start_time: Some(-1191369600),
-            end_time:   Some(-873849600),
-        },
-        Timespan {
-            offset: -25200,
-            format: "MST",
-            saving: Saving::NoSaving,
-            start_time: Some(-873849600),
-            end_time:   Some(-661564800),
-        },
-        Timespan {
-            offset: -28800,
-            format: "PST",
-            saving: Saving::NoSaving,
-            start_time: Some(-661564800),
-            end_time:   Some(0),
-        },
-        Timespan {
-            offset: -25200,
-            format: "M%sT",
-            saving: Saving::Multiple(&rulesets::Mexico),
-            start_time: Some(0),
-            end_time:   Some(915148800),
-        },
-        Timespan {
-            offset: -25200,
-            format: "MST",
-            saving: Saving::NoSaving,
-            start_time: Some(915148800),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: -23768, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-1514742464), utc_offset: -25200, dst_offset: 0, name: "MST" },
+        Transition { occurs_at: Some(-1343066400), utc_offset: -21600, dst_offset: 0, name: "CST" },
+        Transition { occurs_at: Some(-1234807200), utc_offset: -25200, dst_offset: 0, name: "MST" },
+        Transition { occurs_at: Some(-1220292000), utc_offset: -21600, dst_offset: 0, name: "CST" },
+        Transition { occurs_at: Some(-1207159200), utc_offset: -25200, dst_offset: 0, name: "MST" },
+        Transition { occurs_at: Some(-1191344400), utc_offset: -21600, dst_offset: 0, name: "CST" },
+        Transition { occurs_at: Some(-873828000), utc_offset: -25200, dst_offset: 0, name: "MST" },
+        Transition { occurs_at: Some(-661539600), utc_offset: -28800, dst_offset: 0, name: "PST" },
+        Transition { occurs_at: Some(28800), utc_offset: -25200, dst_offset: 0, name: "MST" },
+        Transition { occurs_at: Some(828867600), utc_offset: -25200, dst_offset: 3600, name: "MDT" },
+        Transition { occurs_at: Some(846403200), utc_offset: -25200, dst_offset: 0, name: "MST" },
+        Transition { occurs_at: Some(860317200), utc_offset: -25200, dst_offset: 3600, name: "MDT" },
+        Transition { occurs_at: Some(877852800), utc_offset: -25200, dst_offset: 0, name: "MST" },
+        Transition { occurs_at: Some(891766800), utc_offset: -25200, dst_offset: 3600, name: "MDT" },
+        Transition { occurs_at: Some(909302400), utc_offset: -25200, dst_offset: 0, name: "MST" },
     ],
 };
 

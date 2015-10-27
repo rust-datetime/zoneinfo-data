@@ -6,84 +6,20 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Asia/Ho_Chi_Minh",
-    timespans: &[
-        Timespan {
-            offset: 25600,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-2004048000),
-        },
-        Timespan {
-            offset: 25590,
-            format: "PLMT",
-            saving: Saving::NoSaving,
-            start_time: Some(-2004048000),
-            end_time:   Some(-1851552000),
-        },
-        Timespan {
-            offset: 25200,
-            format: "ICT",
-            saving: Saving::NoSaving,
-            start_time: Some(-1851552000),
-            end_time:   Some(-852080400),
-        },
-        Timespan {
-            offset: 28800,
-            format: "IDT",
-            saving: Saving::NoSaving,
-            start_time: Some(-852080400),
-            end_time:   Some(-782614800),
-        },
-        Timespan {
-            offset: 32400,
-            format: "JST",
-            saving: Saving::NoSaving,
-            start_time: Some(-782614800),
-            end_time:   Some(-767836800),
-        },
-        Timespan {
-            offset: 25200,
-            format: "ICT",
-            saving: Saving::NoSaving,
-            start_time: Some(-767836800),
-            end_time:   Some(-718070400),
-        },
-        Timespan {
-            offset: 28800,
-            format: "IDT",
-            saving: Saving::NoSaving,
-            start_time: Some(-718070400),
-            end_time:   Some(-457747200),
-        },
-        Timespan {
-            offset: 25200,
-            format: "ICT",
-            saving: Saving::NoSaving,
-            start_time: Some(-457747200),
-            end_time:   Some(-315622800),
-        },
-        Timespan {
-            offset: 28800,
-            format: "IDT",
-            saving: Saving::NoSaving,
-            start_time: Some(-315622800),
-            end_time:   Some(171849600),
-        },
-        Timespan {
-            offset: 25200,
-            format: "ICT",
-            saving: Saving::NoSaving,
-            start_time: Some(171849600),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: 25600, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-2004073600), utc_offset: 25590, dst_offset: 0, name: "PLMT" },
+        Transition { occurs_at: Some(-1851577590), utc_offset: 25200, dst_offset: 0, name: "ICT" },
+        Transition { occurs_at: Some(-852105600), utc_offset: 28800, dst_offset: 0, name: "IDT" },
+        Transition { occurs_at: Some(-782643600), utc_offset: 32400, dst_offset: 0, name: "JST" },
+        Transition { occurs_at: Some(-767869200), utc_offset: 25200, dst_offset: 0, name: "ICT" },
+        Transition { occurs_at: Some(-718095600), utc_offset: 28800, dst_offset: 0, name: "IDT" },
+        Transition { occurs_at: Some(-457776000), utc_offset: 25200, dst_offset: 0, name: "ICT" },
+        Transition { occurs_at: Some(-315648000), utc_offset: 28800, dst_offset: 0, name: "IDT" },
+        Transition { occurs_at: Some(171820800), utc_offset: 25200, dst_offset: 0, name: "ICT" },
     ],
 };
 

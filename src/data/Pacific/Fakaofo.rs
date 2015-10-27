@@ -6,35 +6,13 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Pacific/Fakaofo",
-    timespans: &[
-        Timespan {
-            offset: -38104,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-2177452800),
-        },
-        Timespan {
-            offset: -39600,
-            format: "TKT",
-            saving: Saving::NoSaving,
-            start_time: Some(-2177452800),
-            end_time:   Some(1325203200),
-        },
-        Timespan {
-            offset: 46800,
-            format: "TKT",
-            saving: Saving::NoSaving,
-            start_time: Some(1325203200),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: -38104, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-2177414696), utc_offset: -39600, dst_offset: 0, name: "TKT" },
+        Transition { occurs_at: Some(1325242800), utc_offset: 46800, dst_offset: 0, name: "TKT" },
     ],
 };
 

@@ -6,35 +6,16 @@
 
 
 use datetime::zoned::zoneinfo::*;
-use datetime::zoned::zoneinfo::Saving::*;
-
-#[allow(unused_imports)]
-use data::rulesets;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "America/Blanc-Sablon",
-    timespans: &[
-        Timespan {
-            offset: -7892,
-            format: "LMT",
-            saving: Saving::NoSaving,
-            start_time: None,
-            end_time:   Some(-2713910400),
-        },
-        Timespan {
-            offset: -14400,
-            format: "A%sT",
-            saving: Saving::Multiple(&rulesets::Canada),
-            start_time: Some(-2713910400),
-            end_time:   Some(0),
-        },
-        Timespan {
-            offset: -14400,
-            format: "AST",
-            saving: Saving::NoSaving,
-            start_time: Some(0),
-            end_time:   None,
-        },
+    transitions: &[
+        Transition { occurs_at: None, utc_offset: -7892, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-2713902508), utc_offset: -14400, dst_offset: 0, name: "AST" },
+        Transition { occurs_at: Some(-1632074400), utc_offset: -14400, dst_offset: 3600, name: "ADT" },
+        Transition { occurs_at: Some(-1615143600), utc_offset: -14400, dst_offset: 0, name: "AST" },
+        Transition { occurs_at: Some(-880221600), utc_offset: -14400, dst_offset: 3600, name: "AWT" },
+        Transition { occurs_at: Some(-765399600), utc_offset: -14400, dst_offset: 0, name: "AST" },
     ],
 };
 
