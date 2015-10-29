@@ -7,5 +7,7 @@ authors = ["Ben S <ogham@bsago.me>"]
 name = "zoneinfo_data"
 
 [dependencies]
-datetime = "*"
 locale = "*"
+
+[dependencies.datetime]
+git = "https://github.com/rust-datetime/datetime.git"
