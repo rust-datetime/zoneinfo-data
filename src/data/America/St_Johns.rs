@@ -11,6 +11,7 @@ pub const ZONE: Zone<'static> = Zone {
     name: "America/St_Johns",
     transitions: &[
         Transition { occurs_at: None, utc_offset: -8948, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-2713901452), utc_offset: -8948, dst_offset: 0, name: "NST" },
         Transition { occurs_at: Some(-1664134252), utc_offset: -8948, dst_offset: 3600, name: "NDT" },
         Transition { occurs_at: Some(-1650141052), utc_offset: -8948, dst_offset: 0, name: "NST" },
         Transition { occurs_at: Some(-1632079852), utc_offset: -8948, dst_offset: 3600, name: "NDT" },
@@ -63,6 +64,7 @@ pub const ZONE: Zone<'static> = Zone {
         Transition { occurs_at: Some(-903821400), utc_offset: -9000, dst_offset: 3600, name: "NDT" },
         Transition { occurs_at: Some(-891124200), utc_offset: -9000, dst_offset: 0, name: "NST" },
         Transition { occurs_at: Some(-872371800), utc_offset: -9000, dst_offset: 3600, name: "NWT" },
+        Transition { occurs_at: Some(-769395600), utc_offset: -9000, dst_offset: 3600, name: "NPT" },
         Transition { occurs_at: Some(-765405000), utc_offset: -9000, dst_offset: 0, name: "NST" },
         Transition { occurs_at: Some(-746047800), utc_offset: -9000, dst_offset: 3600, name: "NDT" },
         Transition { occurs_at: Some(-733350600), utc_offset: -9000, dst_offset: 0, name: "NST" },

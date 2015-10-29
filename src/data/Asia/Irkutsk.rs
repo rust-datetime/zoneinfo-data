@@ -11,6 +11,7 @@ pub const ZONE: Zone<'static> = Zone {
     name: "Asia/Irkutsk",
     transitions: &[
         Transition { occurs_at: None, utc_offset: 25025, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-2840165825), utc_offset: 25025, dst_offset: 0, name: "IMT" },
         Transition { occurs_at: Some(-1575874625), utc_offset: 25200, dst_offset: 0, name: "IRKT" },
         Transition { occurs_at: Some(-1247554800), utc_offset: 28800, dst_offset: 0, name: "IRKT" },
         Transition { occurs_at: Some(354902400), utc_offset: 28800, dst_offset: 3600, name: "IRKST" },

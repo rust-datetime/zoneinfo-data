@@ -11,6 +11,7 @@ pub const ZONE: Zone<'static> = Zone {
     name: "Asia/Tbilisi",
     transitions: &[
         Transition { occurs_at: None, utc_offset: 10751, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-2840151551), utc_offset: 10751, dst_offset: 0, name: "TBMT" },
         Transition { occurs_at: Some(-1441162751), utc_offset: 10800, dst_offset: 0, name: "TBIT" },
         Transition { occurs_at: Some(-405140400), utc_offset: 14400, dst_offset: 0, name: "TBIT" },
         Transition { occurs_at: Some(354916800), utc_offset: 14400, dst_offset: 3600, name: "TBIST" },
@@ -34,6 +35,7 @@ pub const ZONE: Zone<'static> = Zone {
         Transition { occurs_at: Some(638316000), utc_offset: 14400, dst_offset: 3600, name: "TBIST" },
         Transition { occurs_at: Some(654645600), utc_offset: 14400, dst_offset: 0, name: "TBIT" },
         Transition { occurs_at: Some(670370400), utc_offset: 10800, dst_offset: 3600, name: "TBIST" },
+        Transition { occurs_at: Some(671140800), utc_offset: 10800, dst_offset: 3600, name: "GEST" },
         Transition { occurs_at: Some(686098800), utc_offset: 10800, dst_offset: 0, name: "GET" },
         Transition { occurs_at: Some(701816400), utc_offset: 10800, dst_offset: 3600, name: "GEST" },
         Transition { occurs_at: Some(717537600), utc_offset: 10800, dst_offset: 0, name: "GET" },

@@ -18,6 +18,7 @@ pub const ZONE: Zone<'static> = Zone {
         Transition { occurs_at: Some(-1222963200), utc_offset: -28800, dst_offset: 3600, name: "PDT" },
         Transition { occurs_at: Some(-1207242000), utc_offset: -28800, dst_offset: 0, name: "PST" },
         Transition { occurs_at: Some(-873820800), utc_offset: -28800, dst_offset: 3600, name: "PWT" },
+        Transition { occurs_at: Some(-769370400), utc_offset: -28800, dst_offset: 3600, name: "PPT" },
         Transition { occurs_at: Some(-761677200), utc_offset: -28800, dst_offset: 0, name: "PST" },
         Transition { occurs_at: Some(-686073600), utc_offset: -28800, dst_offset: 3600, name: "PDT" },
         Transition { occurs_at: Some(-661539600), utc_offset: -28800, dst_offset: 0, name: "PST" },

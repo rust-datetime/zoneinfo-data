@@ -14,6 +14,7 @@ pub const ZONE: Zone<'static> = Zone {
         Transition { occurs_at: Some(-2366740620), utc_offset: -21600, dst_offset: 0, name: "CST" },
         Transition { occurs_at: Some(-1893434400), utc_offset: -18000, dst_offset: 0, name: "EST" },
         Transition { occurs_at: Some(-880218000), utc_offset: -18000, dst_offset: 3600, name: "EWT" },
+        Transition { occurs_at: Some(-769395600), utc_offset: -18000, dst_offset: 3600, name: "EPT" },
         Transition { occurs_at: Some(-765396000), utc_offset: -18000, dst_offset: 0, name: "EST" },
         Transition { occurs_at: Some(9961200), utc_offset: -18000, dst_offset: 3600, name: "EDT" },
         Transition { occurs_at: Some(25682400), utc_offset: -18000, dst_offset: 0, name: "EST" },

@@ -11,6 +11,7 @@ pub const ZONE: Zone<'static> = Zone {
     name: "America/Barbados",
     transitions: &[
         Transition { occurs_at: None, utc_offset: -7291, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-1451685509), utc_offset: -7291, dst_offset: 0, name: "BMT" },
         Transition { occurs_at: Some(-1199224709), utc_offset: -14400, dst_offset: 0, name: "AST" },
         Transition { occurs_at: Some(234943200), utc_offset: -14400, dst_offset: 3600, name: "ADT" },
         Transition { occurs_at: Some(244616400), utc_offset: -14400, dst_offset: 0, name: "AST" },

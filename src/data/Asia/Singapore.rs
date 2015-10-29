@@ -11,12 +11,14 @@ pub const ZONE: Zone<'static> = Zone {
     name: "Asia/Singapore",
     transitions: &[
         Transition { occurs_at: None, utc_offset: 24925, dst_offset: 0, name: "LMT" },
+        Transition { occurs_at: Some(-2177477725), utc_offset: 24925, dst_offset: 0, name: "SMT" },
         Transition { occurs_at: Some(-2038200925), utc_offset: 25200, dst_offset: 0, name: "MALT" },
         Transition { occurs_at: Some(-1167634800), utc_offset: 25200, dst_offset: 1200, name: "MALST" },
         Transition { occurs_at: Some(-1073028000), utc_offset: 26400, dst_offset: 0, name: "MALT" },
         Transition { occurs_at: Some(-894180000), utc_offset: 27000, dst_offset: 0, name: "MALT" },
         Transition { occurs_at: Some(-879665400), utc_offset: 32400, dst_offset: 0, name: "JST" },
         Transition { occurs_at: Some(-767005200), utc_offset: 27000, dst_offset: 0, name: "MALT" },
+        Transition { occurs_at: Some(-138785400), utc_offset: 27000, dst_offset: 0, name: "SGT" },
         Transition { occurs_at: Some(378664200), utc_offset: 28800, dst_offset: 0, name: "SGT" },
     ],
 };
