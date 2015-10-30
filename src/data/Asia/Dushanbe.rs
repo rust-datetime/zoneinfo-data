@@ -10,31 +10,131 @@ use datetime::zoned::zoneinfo::*;
 pub const ZONE: Zone<'static> = Zone {
     name: "Asia/Dushanbe",
     transitions: &[
-        Transition { occurs_at: None, utc_offset: 16512, dst_offset: 0, name: "LMT" },
-        Transition { occurs_at: Some(-1441168512), utc_offset: 18000, dst_offset: 0, name: "DUST" },
-        Transition { occurs_at: Some(-1247547600), utc_offset: 21600, dst_offset: 0, name: "DUST" },
-        Transition { occurs_at: Some(354909600), utc_offset: 21600, dst_offset: 3600, name: "DUSST" },
-        Transition { occurs_at: Some(370717200), utc_offset: 21600, dst_offset: 0, name: "DUST" },
-        Transition { occurs_at: Some(386445600), utc_offset: 21600, dst_offset: 3600, name: "DUSST" },
-        Transition { occurs_at: Some(402253200), utc_offset: 21600, dst_offset: 0, name: "DUST" },
-        Transition { occurs_at: Some(417981600), utc_offset: 21600, dst_offset: 3600, name: "DUSST" },
-        Transition { occurs_at: Some(433789200), utc_offset: 21600, dst_offset: 0, name: "DUST" },
-        Transition { occurs_at: Some(449604000), utc_offset: 21600, dst_offset: 3600, name: "DUSST" },
-        Transition { occurs_at: Some(465336000), utc_offset: 21600, dst_offset: 0, name: "DUST" },
-        Transition { occurs_at: Some(481060800), utc_offset: 21600, dst_offset: 3600, name: "DUSST" },
-        Transition { occurs_at: Some(496785600), utc_offset: 21600, dst_offset: 0, name: "DUST" },
-        Transition { occurs_at: Some(512510400), utc_offset: 21600, dst_offset: 3600, name: "DUSST" },
-        Transition { occurs_at: Some(528235200), utc_offset: 21600, dst_offset: 0, name: "DUST" },
-        Transition { occurs_at: Some(543960000), utc_offset: 21600, dst_offset: 3600, name: "DUSST" },
-        Transition { occurs_at: Some(559684800), utc_offset: 21600, dst_offset: 0, name: "DUST" },
-        Transition { occurs_at: Some(575409600), utc_offset: 21600, dst_offset: 3600, name: "DUSST" },
-        Transition { occurs_at: Some(591134400), utc_offset: 21600, dst_offset: 0, name: "DUST" },
-        Transition { occurs_at: Some(606859200), utc_offset: 21600, dst_offset: 3600, name: "DUSST" },
-        Transition { occurs_at: Some(622584000), utc_offset: 21600, dst_offset: 0, name: "DUST" },
-        Transition { occurs_at: Some(638308800), utc_offset: 21600, dst_offset: 3600, name: "DUSST" },
-        Transition { occurs_at: Some(654638400), utc_offset: 21600, dst_offset: 0, name: "DUST" },
-        Transition { occurs_at: Some(670363200), utc_offset: 18000, dst_offset: 3600, name: "DUSST" },
-        Transition { occurs_at: Some(684360000), utc_offset: 18000, dst_offset: 0, name: "TJT" },
+        Transition {
+            occurs_at: None,
+            offset: 16512,  // UTC offset 16512, DST offset 0
+            name: "LMT",
+        },
+        Transition {
+            occurs_at: Some(-1441168512),
+            offset: 18000,  // UTC offset 18000, DST offset 0
+            name: "DUST",
+        },
+        Transition {
+            occurs_at: Some(-1247547600),
+            offset: 21600,  // UTC offset 21600, DST offset 0
+            name: "DUST",
+        },
+        Transition {
+            occurs_at: Some(354909600),
+            offset: 25200,  // UTC offset 21600, DST offset 3600
+            name: "DUSST",
+        },
+        Transition {
+            occurs_at: Some(370717200),
+            offset: 21600,  // UTC offset 21600, DST offset 0
+            name: "DUST",
+        },
+        Transition {
+            occurs_at: Some(386445600),
+            offset: 25200,  // UTC offset 21600, DST offset 3600
+            name: "DUSST",
+        },
+        Transition {
+            occurs_at: Some(402253200),
+            offset: 21600,  // UTC offset 21600, DST offset 0
+            name: "DUST",
+        },
+        Transition {
+            occurs_at: Some(417981600),
+            offset: 25200,  // UTC offset 21600, DST offset 3600
+            name: "DUSST",
+        },
+        Transition {
+            occurs_at: Some(433789200),
+            offset: 21600,  // UTC offset 21600, DST offset 0
+            name: "DUST",
+        },
+        Transition {
+            occurs_at: Some(449604000),
+            offset: 25200,  // UTC offset 21600, DST offset 3600
+            name: "DUSST",
+        },
+        Transition {
+            occurs_at: Some(465336000),
+            offset: 21600,  // UTC offset 21600, DST offset 0
+            name: "DUST",
+        },
+        Transition {
+            occurs_at: Some(481060800),
+            offset: 25200,  // UTC offset 21600, DST offset 3600
+            name: "DUSST",
+        },
+        Transition {
+            occurs_at: Some(496785600),
+            offset: 21600,  // UTC offset 21600, DST offset 0
+            name: "DUST",
+        },
+        Transition {
+            occurs_at: Some(512510400),
+            offset: 25200,  // UTC offset 21600, DST offset 3600
+            name: "DUSST",
+        },
+        Transition {
+            occurs_at: Some(528235200),
+            offset: 21600,  // UTC offset 21600, DST offset 0
+            name: "DUST",
+        },
+        Transition {
+            occurs_at: Some(543960000),
+            offset: 25200,  // UTC offset 21600, DST offset 3600
+            name: "DUSST",
+        },
+        Transition {
+            occurs_at: Some(559684800),
+            offset: 21600,  // UTC offset 21600, DST offset 0
+            name: "DUST",
+        },
+        Transition {
+            occurs_at: Some(575409600),
+            offset: 25200,  // UTC offset 21600, DST offset 3600
+            name: "DUSST",
+        },
+        Transition {
+            occurs_at: Some(591134400),
+            offset: 21600,  // UTC offset 21600, DST offset 0
+            name: "DUST",
+        },
+        Transition {
+            occurs_at: Some(606859200),
+            offset: 25200,  // UTC offset 21600, DST offset 3600
+            name: "DUSST",
+        },
+        Transition {
+            occurs_at: Some(622584000),
+            offset: 21600,  // UTC offset 21600, DST offset 0
+            name: "DUST",
+        },
+        Transition {
+            occurs_at: Some(638308800),
+            offset: 25200,  // UTC offset 21600, DST offset 3600
+            name: "DUSST",
+        },
+        Transition {
+            occurs_at: Some(654638400),
+            offset: 21600,  // UTC offset 21600, DST offset 0
+            name: "DUST",
+        },
+        Transition {
+            occurs_at: Some(670363200),
+            offset: 21600,  // UTC offset 18000, DST offset 3600
+            name: "DUSST",
+        },
+        Transition {
+            occurs_at: Some(684360000),
+            offset: 18000,  // UTC offset 18000, DST offset 0
+            name: "TJT",
+        },
     ],
 };
 

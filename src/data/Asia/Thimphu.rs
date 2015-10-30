@@ -10,9 +10,21 @@ use datetime::zoned::zoneinfo::*;
 pub const ZONE: Zone<'static> = Zone {
     name: "Asia/Thimphu",
     transitions: &[
-        Transition { occurs_at: None, utc_offset: 21516, dst_offset: 0, name: "LMT" },
-        Transition { occurs_at: Some(-706341516), utc_offset: 19800, dst_offset: 0, name: "IST" },
-        Transition { occurs_at: Some(560025000), utc_offset: 21600, dst_offset: 0, name: "BTT" },
+        Transition {
+            occurs_at: None,
+            offset: 21516,  // UTC offset 21516, DST offset 0
+            name: "LMT",
+        },
+        Transition {
+            occurs_at: Some(-706341516),
+            offset: 19800,  // UTC offset 19800, DST offset 0
+            name: "IST",
+        },
+        Transition {
+            occurs_at: Some(560025000),
+            offset: 21600,  // UTC offset 21600, DST offset 0
+            name: "BTT",
+        },
     ],
 };
 

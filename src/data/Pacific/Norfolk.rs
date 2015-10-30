@@ -10,12 +10,36 @@ use datetime::zoned::zoneinfo::*;
 pub const ZONE: Zone<'static> = Zone {
     name: "Pacific/Norfolk",
     transitions: &[
-        Transition { occurs_at: None, utc_offset: 40312, dst_offset: 0, name: "LMT" },
-        Transition { occurs_at: Some(-2177493112), utc_offset: 40320, dst_offset: 0, name: "NMT" },
-        Transition { occurs_at: Some(-599656320), utc_offset: 41400, dst_offset: 0, name: "NFT" },
-        Transition { occurs_at: Some(152029800), utc_offset: 41400, dst_offset: 3600, name: "NFST" },
-        Transition { occurs_at: Some(162912600), utc_offset: 41400, dst_offset: 0, name: "NFT" },
-        Transition { occurs_at: Some(1443882600), utc_offset: 39600, dst_offset: 0, name: "NFT" },
+        Transition {
+            occurs_at: None,
+            offset: 40312,  // UTC offset 40312, DST offset 0
+            name: "LMT",
+        },
+        Transition {
+            occurs_at: Some(-2177493112),
+            offset: 40320,  // UTC offset 40320, DST offset 0
+            name: "NMT",
+        },
+        Transition {
+            occurs_at: Some(-599656320),
+            offset: 41400,  // UTC offset 41400, DST offset 0
+            name: "NFT",
+        },
+        Transition {
+            occurs_at: Some(152029800),
+            offset: 45000,  // UTC offset 41400, DST offset 3600
+            name: "NFST",
+        },
+        Transition {
+            occurs_at: Some(162912600),
+            offset: 41400,  // UTC offset 41400, DST offset 0
+            name: "NFT",
+        },
+        Transition {
+            occurs_at: Some(1443882600),
+            offset: 39600,  // UTC offset 39600, DST offset 0
+            name: "NFT",
+        },
     ],
 };
 

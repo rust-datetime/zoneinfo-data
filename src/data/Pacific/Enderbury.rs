@@ -10,10 +10,26 @@ use datetime::zoned::zoneinfo::*;
 pub const ZONE: Zone<'static> = Zone {
     name: "Pacific/Enderbury",
     transitions: &[
-        Transition { occurs_at: None, utc_offset: -38140, dst_offset: 0, name: "LMT" },
-        Transition { occurs_at: Some(-2177414660), utc_offset: -43200, dst_offset: 0, name: "PHOT" },
-        Transition { occurs_at: Some(307627200), utc_offset: -39600, dst_offset: 0, name: "PHOT" },
-        Transition { occurs_at: Some(788958000), utc_offset: 46800, dst_offset: 0, name: "PHOT" },
+        Transition {
+            occurs_at: None,
+            offset: -38140,  // UTC offset -38140, DST offset 0
+            name: "LMT",
+        },
+        Transition {
+            occurs_at: Some(-2177414660),
+            offset: -43200,  // UTC offset -43200, DST offset 0
+            name: "PHOT",
+        },
+        Transition {
+            occurs_at: Some(307627200),
+            offset: -39600,  // UTC offset -39600, DST offset 0
+            name: "PHOT",
+        },
+        Transition {
+            occurs_at: Some(788958000),
+            offset: 46800,  // UTC offset 46800, DST offset 0
+            name: "PHOT",
+        },
     ],
 };
 

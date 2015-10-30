@@ -10,7 +10,11 @@ use datetime::zoned::zoneinfo::*;
 pub const ZONE: Zone<'static> = Zone {
     name: "MST",
     transitions: &[
-        Transition { occurs_at: None, utc_offset: -25200, dst_offset: 0, name: "MST" },
+        Transition {
+            occurs_at: None,
+            offset: -25200,  // UTC offset -25200, DST offset 0
+            name: "MST",
+        },
     ],
 };
 

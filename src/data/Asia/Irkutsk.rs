@@ -10,73 +10,341 @@ use datetime::zoned::zoneinfo::*;
 pub const ZONE: Zone<'static> = Zone {
     name: "Asia/Irkutsk",
     transitions: &[
-        Transition { occurs_at: None, utc_offset: 25025, dst_offset: 0, name: "LMT" },
-        Transition { occurs_at: Some(-2840165825), utc_offset: 25025, dst_offset: 0, name: "IMT" },
-        Transition { occurs_at: Some(-1575874625), utc_offset: 25200, dst_offset: 0, name: "IRKT" },
-        Transition { occurs_at: Some(-1247554800), utc_offset: 28800, dst_offset: 0, name: "IRKT" },
-        Transition { occurs_at: Some(354902400), utc_offset: 28800, dst_offset: 3600, name: "IRKST" },
-        Transition { occurs_at: Some(370710000), utc_offset: 28800, dst_offset: 0, name: "IRKT" },
-        Transition { occurs_at: Some(386438400), utc_offset: 28800, dst_offset: 3600, name: "IRKST" },
-        Transition { occurs_at: Some(402246000), utc_offset: 28800, dst_offset: 0, name: "IRKT" },
-        Transition { occurs_at: Some(417974400), utc_offset: 28800, dst_offset: 3600, name: "IRKST" },
-        Transition { occurs_at: Some(433782000), utc_offset: 28800, dst_offset: 0, name: "IRKT" },
-        Transition { occurs_at: Some(449596800), utc_offset: 28800, dst_offset: 3600, name: "IRKST" },
-        Transition { occurs_at: Some(465328800), utc_offset: 28800, dst_offset: 0, name: "IRKT" },
-        Transition { occurs_at: Some(481053600), utc_offset: 28800, dst_offset: 3600, name: "IRKST" },
-        Transition { occurs_at: Some(496778400), utc_offset: 28800, dst_offset: 0, name: "IRKT" },
-        Transition { occurs_at: Some(512503200), utc_offset: 28800, dst_offset: 3600, name: "IRKST" },
-        Transition { occurs_at: Some(528228000), utc_offset: 28800, dst_offset: 0, name: "IRKT" },
-        Transition { occurs_at: Some(543952800), utc_offset: 28800, dst_offset: 3600, name: "IRKST" },
-        Transition { occurs_at: Some(559677600), utc_offset: 28800, dst_offset: 0, name: "IRKT" },
-        Transition { occurs_at: Some(575402400), utc_offset: 28800, dst_offset: 3600, name: "IRKST" },
-        Transition { occurs_at: Some(591127200), utc_offset: 28800, dst_offset: 0, name: "IRKT" },
-        Transition { occurs_at: Some(606852000), utc_offset: 28800, dst_offset: 3600, name: "IRKST" },
-        Transition { occurs_at: Some(622576800), utc_offset: 28800, dst_offset: 0, name: "IRKT" },
-        Transition { occurs_at: Some(638301600), utc_offset: 28800, dst_offset: 3600, name: "IRKST" },
-        Transition { occurs_at: Some(654631200), utc_offset: 28800, dst_offset: 0, name: "IRKT" },
-        Transition { occurs_at: Some(670356000), utc_offset: 25200, dst_offset: 3600, name: "IRKST" },
-        Transition { occurs_at: Some(686084400), utc_offset: 25200, dst_offset: 0, name: "IRKT" },
-        Transition { occurs_at: Some(695761200), utc_offset: 28800, dst_offset: 0, name: "IRKT" },
-        Transition { occurs_at: Some(701794800), utc_offset: 28800, dst_offset: 3600, name: "IRKST" },
-        Transition { occurs_at: Some(717516000), utc_offset: 28800, dst_offset: 0, name: "IRKT" },
-        Transition { occurs_at: Some(733255200), utc_offset: 28800, dst_offset: 3600, name: "IRKST" },
-        Transition { occurs_at: Some(748980000), utc_offset: 28800, dst_offset: 0, name: "IRKT" },
-        Transition { occurs_at: Some(764704800), utc_offset: 28800, dst_offset: 3600, name: "IRKST" },
-        Transition { occurs_at: Some(780429600), utc_offset: 28800, dst_offset: 0, name: "IRKT" },
-        Transition { occurs_at: Some(796154400), utc_offset: 28800, dst_offset: 3600, name: "IRKST" },
-        Transition { occurs_at: Some(811879200), utc_offset: 28800, dst_offset: 0, name: "IRKT" },
-        Transition { occurs_at: Some(828208800), utc_offset: 28800, dst_offset: 3600, name: "IRKST" },
-        Transition { occurs_at: Some(846352800), utc_offset: 28800, dst_offset: 0, name: "IRKT" },
-        Transition { occurs_at: Some(859658400), utc_offset: 28800, dst_offset: 3600, name: "IRKST" },
-        Transition { occurs_at: Some(877802400), utc_offset: 28800, dst_offset: 0, name: "IRKT" },
-        Transition { occurs_at: Some(891108000), utc_offset: 28800, dst_offset: 3600, name: "IRKST" },
-        Transition { occurs_at: Some(909252000), utc_offset: 28800, dst_offset: 0, name: "IRKT" },
-        Transition { occurs_at: Some(922557600), utc_offset: 28800, dst_offset: 3600, name: "IRKST" },
-        Transition { occurs_at: Some(941306400), utc_offset: 28800, dst_offset: 0, name: "IRKT" },
-        Transition { occurs_at: Some(954007200), utc_offset: 28800, dst_offset: 3600, name: "IRKST" },
-        Transition { occurs_at: Some(972756000), utc_offset: 28800, dst_offset: 0, name: "IRKT" },
-        Transition { occurs_at: Some(985456800), utc_offset: 28800, dst_offset: 3600, name: "IRKST" },
-        Transition { occurs_at: Some(1004205600), utc_offset: 28800, dst_offset: 0, name: "IRKT" },
-        Transition { occurs_at: Some(1017511200), utc_offset: 28800, dst_offset: 3600, name: "IRKST" },
-        Transition { occurs_at: Some(1035655200), utc_offset: 28800, dst_offset: 0, name: "IRKT" },
-        Transition { occurs_at: Some(1048960800), utc_offset: 28800, dst_offset: 3600, name: "IRKST" },
-        Transition { occurs_at: Some(1067104800), utc_offset: 28800, dst_offset: 0, name: "IRKT" },
-        Transition { occurs_at: Some(1080410400), utc_offset: 28800, dst_offset: 3600, name: "IRKST" },
-        Transition { occurs_at: Some(1099159200), utc_offset: 28800, dst_offset: 0, name: "IRKT" },
-        Transition { occurs_at: Some(1111860000), utc_offset: 28800, dst_offset: 3600, name: "IRKST" },
-        Transition { occurs_at: Some(1130608800), utc_offset: 28800, dst_offset: 0, name: "IRKT" },
-        Transition { occurs_at: Some(1143309600), utc_offset: 28800, dst_offset: 3600, name: "IRKST" },
-        Transition { occurs_at: Some(1162058400), utc_offset: 28800, dst_offset: 0, name: "IRKT" },
-        Transition { occurs_at: Some(1174759200), utc_offset: 28800, dst_offset: 3600, name: "IRKST" },
-        Transition { occurs_at: Some(1193508000), utc_offset: 28800, dst_offset: 0, name: "IRKT" },
-        Transition { occurs_at: Some(1206813600), utc_offset: 28800, dst_offset: 3600, name: "IRKST" },
-        Transition { occurs_at: Some(1224957600), utc_offset: 28800, dst_offset: 0, name: "IRKT" },
-        Transition { occurs_at: Some(1238263200), utc_offset: 28800, dst_offset: 3600, name: "IRKST" },
-        Transition { occurs_at: Some(1256407200), utc_offset: 28800, dst_offset: 0, name: "IRKT" },
-        Transition { occurs_at: Some(1269712800), utc_offset: 28800, dst_offset: 3600, name: "IRKST" },
-        Transition { occurs_at: Some(1288461600), utc_offset: 28800, dst_offset: 0, name: "IRKT" },
-        Transition { occurs_at: Some(1301162400), utc_offset: 32400, dst_offset: 0, name: "IRKT" },
-        Transition { occurs_at: Some(1414256400), utc_offset: 28800, dst_offset: 0, name: "IRKT" },
+        Transition {
+            occurs_at: None,
+            offset: 25025,  // UTC offset 25025, DST offset 0
+            name: "LMT",
+        },
+        Transition {
+            occurs_at: Some(-2840165825),
+            offset: 25025,  // UTC offset 25025, DST offset 0
+            name: "IMT",
+        },
+        Transition {
+            occurs_at: Some(-1575874625),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "IRKT",
+        },
+        Transition {
+            occurs_at: Some(-1247554800),
+            offset: 28800,  // UTC offset 28800, DST offset 0
+            name: "IRKT",
+        },
+        Transition {
+            occurs_at: Some(354902400),
+            offset: 32400,  // UTC offset 28800, DST offset 3600
+            name: "IRKST",
+        },
+        Transition {
+            occurs_at: Some(370710000),
+            offset: 28800,  // UTC offset 28800, DST offset 0
+            name: "IRKT",
+        },
+        Transition {
+            occurs_at: Some(386438400),
+            offset: 32400,  // UTC offset 28800, DST offset 3600
+            name: "IRKST",
+        },
+        Transition {
+            occurs_at: Some(402246000),
+            offset: 28800,  // UTC offset 28800, DST offset 0
+            name: "IRKT",
+        },
+        Transition {
+            occurs_at: Some(417974400),
+            offset: 32400,  // UTC offset 28800, DST offset 3600
+            name: "IRKST",
+        },
+        Transition {
+            occurs_at: Some(433782000),
+            offset: 28800,  // UTC offset 28800, DST offset 0
+            name: "IRKT",
+        },
+        Transition {
+            occurs_at: Some(449596800),
+            offset: 32400,  // UTC offset 28800, DST offset 3600
+            name: "IRKST",
+        },
+        Transition {
+            occurs_at: Some(465328800),
+            offset: 28800,  // UTC offset 28800, DST offset 0
+            name: "IRKT",
+        },
+        Transition {
+            occurs_at: Some(481053600),
+            offset: 32400,  // UTC offset 28800, DST offset 3600
+            name: "IRKST",
+        },
+        Transition {
+            occurs_at: Some(496778400),
+            offset: 28800,  // UTC offset 28800, DST offset 0
+            name: "IRKT",
+        },
+        Transition {
+            occurs_at: Some(512503200),
+            offset: 32400,  // UTC offset 28800, DST offset 3600
+            name: "IRKST",
+        },
+        Transition {
+            occurs_at: Some(528228000),
+            offset: 28800,  // UTC offset 28800, DST offset 0
+            name: "IRKT",
+        },
+        Transition {
+            occurs_at: Some(543952800),
+            offset: 32400,  // UTC offset 28800, DST offset 3600
+            name: "IRKST",
+        },
+        Transition {
+            occurs_at: Some(559677600),
+            offset: 28800,  // UTC offset 28800, DST offset 0
+            name: "IRKT",
+        },
+        Transition {
+            occurs_at: Some(575402400),
+            offset: 32400,  // UTC offset 28800, DST offset 3600
+            name: "IRKST",
+        },
+        Transition {
+            occurs_at: Some(591127200),
+            offset: 28800,  // UTC offset 28800, DST offset 0
+            name: "IRKT",
+        },
+        Transition {
+            occurs_at: Some(606852000),
+            offset: 32400,  // UTC offset 28800, DST offset 3600
+            name: "IRKST",
+        },
+        Transition {
+            occurs_at: Some(622576800),
+            offset: 28800,  // UTC offset 28800, DST offset 0
+            name: "IRKT",
+        },
+        Transition {
+            occurs_at: Some(638301600),
+            offset: 32400,  // UTC offset 28800, DST offset 3600
+            name: "IRKST",
+        },
+        Transition {
+            occurs_at: Some(654631200),
+            offset: 28800,  // UTC offset 28800, DST offset 0
+            name: "IRKT",
+        },
+        Transition {
+            occurs_at: Some(670356000),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "IRKST",
+        },
+        Transition {
+            occurs_at: Some(686084400),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "IRKT",
+        },
+        Transition {
+            occurs_at: Some(695761200),
+            offset: 28800,  // UTC offset 28800, DST offset 0
+            name: "IRKT",
+        },
+        Transition {
+            occurs_at: Some(701794800),
+            offset: 32400,  // UTC offset 28800, DST offset 3600
+            name: "IRKST",
+        },
+        Transition {
+            occurs_at: Some(717516000),
+            offset: 28800,  // UTC offset 28800, DST offset 0
+            name: "IRKT",
+        },
+        Transition {
+            occurs_at: Some(733255200),
+            offset: 32400,  // UTC offset 28800, DST offset 3600
+            name: "IRKST",
+        },
+        Transition {
+            occurs_at: Some(748980000),
+            offset: 28800,  // UTC offset 28800, DST offset 0
+            name: "IRKT",
+        },
+        Transition {
+            occurs_at: Some(764704800),
+            offset: 32400,  // UTC offset 28800, DST offset 3600
+            name: "IRKST",
+        },
+        Transition {
+            occurs_at: Some(780429600),
+            offset: 28800,  // UTC offset 28800, DST offset 0
+            name: "IRKT",
+        },
+        Transition {
+            occurs_at: Some(796154400),
+            offset: 32400,  // UTC offset 28800, DST offset 3600
+            name: "IRKST",
+        },
+        Transition {
+            occurs_at: Some(811879200),
+            offset: 28800,  // UTC offset 28800, DST offset 0
+            name: "IRKT",
+        },
+        Transition {
+            occurs_at: Some(828208800),
+            offset: 32400,  // UTC offset 28800, DST offset 3600
+            name: "IRKST",
+        },
+        Transition {
+            occurs_at: Some(846352800),
+            offset: 28800,  // UTC offset 28800, DST offset 0
+            name: "IRKT",
+        },
+        Transition {
+            occurs_at: Some(859658400),
+            offset: 32400,  // UTC offset 28800, DST offset 3600
+            name: "IRKST",
+        },
+        Transition {
+            occurs_at: Some(877802400),
+            offset: 28800,  // UTC offset 28800, DST offset 0
+            name: "IRKT",
+        },
+        Transition {
+            occurs_at: Some(891108000),
+            offset: 32400,  // UTC offset 28800, DST offset 3600
+            name: "IRKST",
+        },
+        Transition {
+            occurs_at: Some(909252000),
+            offset: 28800,  // UTC offset 28800, DST offset 0
+            name: "IRKT",
+        },
+        Transition {
+            occurs_at: Some(922557600),
+            offset: 32400,  // UTC offset 28800, DST offset 3600
+            name: "IRKST",
+        },
+        Transition {
+            occurs_at: Some(941306400),
+            offset: 28800,  // UTC offset 28800, DST offset 0
+            name: "IRKT",
+        },
+        Transition {
+            occurs_at: Some(954007200),
+            offset: 32400,  // UTC offset 28800, DST offset 3600
+            name: "IRKST",
+        },
+        Transition {
+            occurs_at: Some(972756000),
+            offset: 28800,  // UTC offset 28800, DST offset 0
+            name: "IRKT",
+        },
+        Transition {
+            occurs_at: Some(985456800),
+            offset: 32400,  // UTC offset 28800, DST offset 3600
+            name: "IRKST",
+        },
+        Transition {
+            occurs_at: Some(1004205600),
+            offset: 28800,  // UTC offset 28800, DST offset 0
+            name: "IRKT",
+        },
+        Transition {
+            occurs_at: Some(1017511200),
+            offset: 32400,  // UTC offset 28800, DST offset 3600
+            name: "IRKST",
+        },
+        Transition {
+            occurs_at: Some(1035655200),
+            offset: 28800,  // UTC offset 28800, DST offset 0
+            name: "IRKT",
+        },
+        Transition {
+            occurs_at: Some(1048960800),
+            offset: 32400,  // UTC offset 28800, DST offset 3600
+            name: "IRKST",
+        },
+        Transition {
+            occurs_at: Some(1067104800),
+            offset: 28800,  // UTC offset 28800, DST offset 0
+            name: "IRKT",
+        },
+        Transition {
+            occurs_at: Some(1080410400),
+            offset: 32400,  // UTC offset 28800, DST offset 3600
+            name: "IRKST",
+        },
+        Transition {
+            occurs_at: Some(1099159200),
+            offset: 28800,  // UTC offset 28800, DST offset 0
+            name: "IRKT",
+        },
+        Transition {
+            occurs_at: Some(1111860000),
+            offset: 32400,  // UTC offset 28800, DST offset 3600
+            name: "IRKST",
+        },
+        Transition {
+            occurs_at: Some(1130608800),
+            offset: 28800,  // UTC offset 28800, DST offset 0
+            name: "IRKT",
+        },
+        Transition {
+            occurs_at: Some(1143309600),
+            offset: 32400,  // UTC offset 28800, DST offset 3600
+            name: "IRKST",
+        },
+        Transition {
+            occurs_at: Some(1162058400),
+            offset: 28800,  // UTC offset 28800, DST offset 0
+            name: "IRKT",
+        },
+        Transition {
+            occurs_at: Some(1174759200),
+            offset: 32400,  // UTC offset 28800, DST offset 3600
+            name: "IRKST",
+        },
+        Transition {
+            occurs_at: Some(1193508000),
+            offset: 28800,  // UTC offset 28800, DST offset 0
+            name: "IRKT",
+        },
+        Transition {
+            occurs_at: Some(1206813600),
+            offset: 32400,  // UTC offset 28800, DST offset 3600
+            name: "IRKST",
+        },
+        Transition {
+            occurs_at: Some(1224957600),
+            offset: 28800,  // UTC offset 28800, DST offset 0
+            name: "IRKT",
+        },
+        Transition {
+            occurs_at: Some(1238263200),
+            offset: 32400,  // UTC offset 28800, DST offset 3600
+            name: "IRKST",
+        },
+        Transition {
+            occurs_at: Some(1256407200),
+            offset: 28800,  // UTC offset 28800, DST offset 0
+            name: "IRKT",
+        },
+        Transition {
+            occurs_at: Some(1269712800),
+            offset: 32400,  // UTC offset 28800, DST offset 3600
+            name: "IRKST",
+        },
+        Transition {
+            occurs_at: Some(1288461600),
+            offset: 28800,  // UTC offset 28800, DST offset 0
+            name: "IRKT",
+        },
+        Transition {
+            occurs_at: Some(1301162400),
+            offset: 32400,  // UTC offset 32400, DST offset 0
+            name: "IRKT",
+        },
+        Transition {
+            occurs_at: Some(1414256400),
+            offset: 28800,  // UTC offset 28800, DST offset 0
+            name: "IRKT",
+        },
     ],
 };
 

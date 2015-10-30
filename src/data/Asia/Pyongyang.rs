@@ -10,12 +10,36 @@ use datetime::zoned::zoneinfo::*;
 pub const ZONE: Zone<'static> = Zone {
     name: "Asia/Pyongyang",
     transitions: &[
-        Transition { occurs_at: None, utc_offset: 30180, dst_offset: 0, name: "LMT" },
-        Transition { occurs_at: Some(-1948782180), utc_offset: 30600, dst_offset: 0, name: "KST" },
-        Transition { occurs_at: Some(-1830414600), utc_offset: 32400, dst_offset: 0, name: "JCST" },
-        Transition { occurs_at: Some(-1017824400), utc_offset: 32400, dst_offset: 0, name: "JST" },
-        Transition { occurs_at: Some(-768646800), utc_offset: 32400, dst_offset: 0, name: "KST" },
-        Transition { occurs_at: Some(1439564400), utc_offset: 30600, dst_offset: 0, name: "KST" },
+        Transition {
+            occurs_at: None,
+            offset: 30180,  // UTC offset 30180, DST offset 0
+            name: "LMT",
+        },
+        Transition {
+            occurs_at: Some(-1948782180),
+            offset: 30600,  // UTC offset 30600, DST offset 0
+            name: "KST",
+        },
+        Transition {
+            occurs_at: Some(-1830414600),
+            offset: 32400,  // UTC offset 32400, DST offset 0
+            name: "JCST",
+        },
+        Transition {
+            occurs_at: Some(-1017824400),
+            offset: 32400,  // UTC offset 32400, DST offset 0
+            name: "JST",
+        },
+        Transition {
+            occurs_at: Some(-768646800),
+            offset: 32400,  // UTC offset 32400, DST offset 0
+            name: "KST",
+        },
+        Transition {
+            occurs_at: Some(1439564400),
+            offset: 30600,  // UTC offset 30600, DST offset 0
+            name: "KST",
+        },
     ],
 };
 

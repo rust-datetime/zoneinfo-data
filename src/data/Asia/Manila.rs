@@ -10,17 +10,61 @@ use datetime::zoned::zoneinfo::*;
 pub const ZONE: Zone<'static> = Zone {
     name: "Asia/Manila",
     transitions: &[
-        Transition { occurs_at: None, utc_offset: -50640, dst_offset: 0, name: "LMT" },
-        Transition { occurs_at: Some(-3944627760), utc_offset: 29040, dst_offset: 0, name: "LMT" },
-        Transition { occurs_at: Some(-2229321840), utc_offset: 28800, dst_offset: 0, name: "PHT" },
-        Transition { occurs_at: Some(-1046678400), utc_offset: 28800, dst_offset: 3600, name: "PHST" },
-        Transition { occurs_at: Some(-1038733200), utc_offset: 28800, dst_offset: 0, name: "PHT" },
-        Transition { occurs_at: Some(-873273600), utc_offset: 32400, dst_offset: 0, name: "JST" },
-        Transition { occurs_at: Some(-794221200), utc_offset: 28800, dst_offset: 0, name: "PHT" },
-        Transition { occurs_at: Some(-496224000), utc_offset: 28800, dst_offset: 3600, name: "PHST" },
-        Transition { occurs_at: Some(-489315600), utc_offset: 28800, dst_offset: 0, name: "PHT" },
-        Transition { occurs_at: Some(259344000), utc_offset: 28800, dst_offset: 3600, name: "PHST" },
-        Transition { occurs_at: Some(275151600), utc_offset: 28800, dst_offset: 0, name: "PHT" },
+        Transition {
+            occurs_at: None,
+            offset: -50640,  // UTC offset -50640, DST offset 0
+            name: "LMT",
+        },
+        Transition {
+            occurs_at: Some(-3944627760),
+            offset: 29040,  // UTC offset 29040, DST offset 0
+            name: "LMT",
+        },
+        Transition {
+            occurs_at: Some(-2229321840),
+            offset: 28800,  // UTC offset 28800, DST offset 0
+            name: "PHT",
+        },
+        Transition {
+            occurs_at: Some(-1046678400),
+            offset: 32400,  // UTC offset 28800, DST offset 3600
+            name: "PHST",
+        },
+        Transition {
+            occurs_at: Some(-1038733200),
+            offset: 28800,  // UTC offset 28800, DST offset 0
+            name: "PHT",
+        },
+        Transition {
+            occurs_at: Some(-873273600),
+            offset: 32400,  // UTC offset 32400, DST offset 0
+            name: "JST",
+        },
+        Transition {
+            occurs_at: Some(-794221200),
+            offset: 28800,  // UTC offset 28800, DST offset 0
+            name: "PHT",
+        },
+        Transition {
+            occurs_at: Some(-496224000),
+            offset: 32400,  // UTC offset 28800, DST offset 3600
+            name: "PHST",
+        },
+        Transition {
+            occurs_at: Some(-489315600),
+            offset: 28800,  // UTC offset 28800, DST offset 0
+            name: "PHT",
+        },
+        Transition {
+            occurs_at: Some(259344000),
+            offset: 32400,  // UTC offset 28800, DST offset 3600
+            name: "PHST",
+        },
+        Transition {
+            occurs_at: Some(275151600),
+            offset: 28800,  // UTC offset 28800, DST offset 0
+            name: "PHT",
+        },
     ],
 };
 

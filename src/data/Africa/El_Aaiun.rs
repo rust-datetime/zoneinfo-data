@@ -10,219 +10,1071 @@ use datetime::zoned::zoneinfo::*;
 pub const ZONE: Zone<'static> = Zone {
     name: "Africa/El_Aaiun",
     transitions: &[
-        Transition { occurs_at: None, utc_offset: 3168, dst_offset: 0, name: "LMT" },
-        Transition { occurs_at: Some(-1136076768), utc_offset: -3600, dst_offset: 0, name: "WAT" },
-        Transition { occurs_at: Some(198291600), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(199756800), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(207702000), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(231292800), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(244249200), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(265507200), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(271033200), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(1212278400), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(1220223600), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(1243814400), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(1250809200), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(1272758400), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(1281222000), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(1301788800), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(1312066800), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(1335664800), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(1342749600), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(1345428000), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(1348970400), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(1367114400), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(1373162400), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(1376100000), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(1382839200), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(1396144800), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(1403920800), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(1406944800), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(1414288800), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(1427594400), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(1434247200), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(1437271200), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(1445738400), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(1459044000), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(1465092000), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(1468116000), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(1477792800), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(1490493600), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(1495332000), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(1498960800), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(1509242400), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(1521943200), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(1526176800), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(1529200800), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(1540692000), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(1553997600), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(1557021600), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(1560045600), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(1572141600), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(1585447200), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(1587261600), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(1590285600), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(1603591200), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(1616896800), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(1618106400), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(1621130400), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(1635645600), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(1651975200), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(1667095200), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(1682215200), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(1698544800), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(1713060000), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(1729994400), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(1743904800), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(1761444000), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(1774749600), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(1792893600), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(1806199200), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(1824948000), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(1837648800), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(1856397600), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(1869098400), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(1887847200), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(1901152800), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(1919296800), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(1932602400), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(1950746400), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(1964052000), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(1982800800), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(1995501600), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(2014250400), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(2026951200), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(2045700000), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(2058400800), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(2077149600), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(2090455200), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(2107994400), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(2121904800), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(2138234400), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(2153354400), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(2172103200), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(2184804000), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(2203552800), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(2216253600), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(2235002400), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(2248308000), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(2266452000), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(2279757600), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(2297901600), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(2311207200), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(2329351200), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(2342656800), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(2361405600), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(2374106400), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(2392855200), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(2405556000), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(2424304800), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(2437610400), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(2455754400), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(2469060000), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(2487204000), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(2500509600), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(2519258400), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(2531959200), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(2550708000), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(2563408800), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(2582157600), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(2595463200), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(2613607200), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(2626912800), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(2645056800), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(2658362400), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(2676506400), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(2689812000), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(2708560800), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(2721261600), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(2740010400), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(2752711200), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(2771460000), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(2784765600), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(2802909600), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(2816215200), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(2834359200), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(2847664800), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(2866413600), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(2879114400), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(2897863200), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(2910564000), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(2929312800), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(2942013600), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(2960762400), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(2974068000), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(2992212000), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(3005517600), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(3023661600), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(3036967200), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(3055716000), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(3068416800), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(3087165600), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(3099866400), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(3118615200), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(3131920800), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(3150064800), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(3163370400), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(3181514400), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(3194820000), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(3212964000), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(3226269600), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(3245018400), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(3257719200), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(3276468000), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(3289168800), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(3307917600), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(3321223200), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(3339367200), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(3352672800), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(3370816800), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(3384122400), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(3402871200), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(3415572000), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(3434320800), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(3447021600), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(3465770400), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(3479076000), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(3497220000), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(3510525600), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(3528669600), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(3541975200), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(3560119200), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(3573424800), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(3592173600), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(3604874400), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(3623623200), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(3636324000), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(3655072800), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(3668378400), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(3686522400), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(3699828000), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(3717972000), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(3731277600), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(3750026400), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(3762727200), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(3781476000), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(3794176800), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(3812925600), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(3825626400), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(3844375200), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(3857680800), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(3875824800), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(3889130400), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(3907274400), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(3920580000), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(3939328800), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(3952029600), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(3970778400), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(3983479200), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(4002228000), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(4015533600), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(4033677600), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(4046983200), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(4065127200), utc_offset: 0, dst_offset: 0, name: "WET" },
-        Transition { occurs_at: Some(4078432800), utc_offset: 0, dst_offset: 3600, name: "WEST" },
-        Transition { occurs_at: Some(4096576800), utc_offset: 0, dst_offset: 0, name: "WET" },
+        Transition {
+            occurs_at: None,
+            offset: 3168,  // UTC offset 3168, DST offset 0
+            name: "LMT",
+        },
+        Transition {
+            occurs_at: Some(-1136076768),
+            offset: -3600,  // UTC offset -3600, DST offset 0
+            name: "WAT",
+        },
+        Transition {
+            occurs_at: Some(198291600),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(199756800),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(207702000),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(231292800),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(244249200),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(265507200),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(271033200),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(1212278400),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(1220223600),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(1243814400),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(1250809200),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(1272758400),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(1281222000),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(1301788800),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(1312066800),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(1335664800),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(1342749600),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(1345428000),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(1348970400),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(1367114400),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(1373162400),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(1376100000),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(1382839200),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(1396144800),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(1403920800),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(1406944800),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(1414288800),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(1427594400),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(1434247200),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(1437271200),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(1445738400),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(1459044000),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(1465092000),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(1468116000),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(1477792800),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(1490493600),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(1495332000),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(1498960800),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(1509242400),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(1521943200),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(1526176800),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(1529200800),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(1540692000),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(1553997600),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(1557021600),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(1560045600),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(1572141600),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(1585447200),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(1587261600),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(1590285600),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(1603591200),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(1616896800),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(1618106400),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(1621130400),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(1635645600),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(1651975200),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(1667095200),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(1682215200),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(1698544800),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(1713060000),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(1729994400),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(1743904800),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(1761444000),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(1774749600),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(1792893600),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(1806199200),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(1824948000),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(1837648800),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(1856397600),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(1869098400),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(1887847200),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(1901152800),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(1919296800),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(1932602400),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(1950746400),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(1964052000),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(1982800800),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(1995501600),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(2014250400),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(2026951200),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(2045700000),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(2058400800),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(2077149600),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(2090455200),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(2107994400),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(2121904800),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(2138234400),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(2153354400),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(2172103200),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(2184804000),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(2203552800),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(2216253600),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(2235002400),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(2248308000),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(2266452000),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(2279757600),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(2297901600),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(2311207200),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(2329351200),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(2342656800),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(2361405600),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(2374106400),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(2392855200),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(2405556000),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(2424304800),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(2437610400),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(2455754400),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(2469060000),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(2487204000),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(2500509600),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(2519258400),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(2531959200),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(2550708000),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(2563408800),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(2582157600),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(2595463200),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(2613607200),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(2626912800),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(2645056800),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(2658362400),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(2676506400),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(2689812000),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(2708560800),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(2721261600),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(2740010400),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(2752711200),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(2771460000),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(2784765600),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(2802909600),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(2816215200),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(2834359200),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(2847664800),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(2866413600),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(2879114400),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(2897863200),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(2910564000),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(2929312800),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(2942013600),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(2960762400),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(2974068000),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(2992212000),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(3005517600),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(3023661600),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(3036967200),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(3055716000),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(3068416800),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(3087165600),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(3099866400),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(3118615200),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(3131920800),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(3150064800),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(3163370400),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(3181514400),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(3194820000),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(3212964000),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(3226269600),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(3245018400),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(3257719200),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(3276468000),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(3289168800),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(3307917600),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(3321223200),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(3339367200),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(3352672800),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(3370816800),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(3384122400),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(3402871200),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(3415572000),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(3434320800),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(3447021600),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(3465770400),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(3479076000),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(3497220000),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(3510525600),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(3528669600),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(3541975200),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(3560119200),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(3573424800),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(3592173600),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(3604874400),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(3623623200),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(3636324000),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(3655072800),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(3668378400),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(3686522400),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(3699828000),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(3717972000),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(3731277600),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(3750026400),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(3762727200),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(3781476000),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(3794176800),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(3812925600),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(3825626400),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(3844375200),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(3857680800),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(3875824800),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(3889130400),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(3907274400),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(3920580000),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(3939328800),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(3952029600),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(3970778400),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(3983479200),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(4002228000),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(4015533600),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(4033677600),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(4046983200),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(4065127200),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
+        Transition {
+            occurs_at: Some(4078432800),
+            offset: 3600,  // UTC offset 0, DST offset 3600
+            name: "WEST",
+        },
+        Transition {
+            occurs_at: Some(4096576800),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "WET",
+        },
     ],
 };
 

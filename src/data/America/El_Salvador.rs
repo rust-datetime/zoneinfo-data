@@ -10,12 +10,36 @@ use datetime::zoned::zoneinfo::*;
 pub const ZONE: Zone<'static> = Zone {
     name: "America/El_Salvador",
     transitions: &[
-        Transition { occurs_at: None, utc_offset: -14592, dst_offset: 0, name: "LMT" },
-        Transition { occurs_at: Some(-1546286208), utc_offset: -21600, dst_offset: 0, name: "CST" },
-        Transition { occurs_at: Some(547020000), utc_offset: -21600, dst_offset: 3600, name: "CDT" },
-        Transition { occurs_at: Some(559717200), utc_offset: -21600, dst_offset: 0, name: "CST" },
-        Transition { occurs_at: Some(578469600), utc_offset: -21600, dst_offset: 3600, name: "CDT" },
-        Transition { occurs_at: Some(591166800), utc_offset: -21600, dst_offset: 0, name: "CST" },
+        Transition {
+            occurs_at: None,
+            offset: -14592,  // UTC offset -14592, DST offset 0
+            name: "LMT",
+        },
+        Transition {
+            occurs_at: Some(-1546286208),
+            offset: -21600,  // UTC offset -21600, DST offset 0
+            name: "CST",
+        },
+        Transition {
+            occurs_at: Some(547020000),
+            offset: -18000,  // UTC offset -21600, DST offset 3600
+            name: "CDT",
+        },
+        Transition {
+            occurs_at: Some(559717200),
+            offset: -21600,  // UTC offset -21600, DST offset 0
+            name: "CST",
+        },
+        Transition {
+            occurs_at: Some(578469600),
+            offset: -18000,  // UTC offset -21600, DST offset 3600
+            name: "CDT",
+        },
+        Transition {
+            occurs_at: Some(591166800),
+            offset: -21600,  // UTC offset -21600, DST offset 0
+            name: "CST",
+        },
     ],
 };
 

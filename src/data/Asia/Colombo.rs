@@ -10,15 +10,51 @@ use datetime::zoned::zoneinfo::*;
 pub const ZONE: Zone<'static> = Zone {
     name: "Asia/Colombo",
     transitions: &[
-        Transition { occurs_at: None, utc_offset: 19164, dst_offset: 0, name: "LMT" },
-        Transition { occurs_at: Some(-2840159964), utc_offset: 19172, dst_offset: 0, name: "MMT" },
-        Transition { occurs_at: Some(-2019705572), utc_offset: 19800, dst_offset: 0, name: "IST" },
-        Transition { occurs_at: Some(-883287000), utc_offset: 19800, dst_offset: 1800, name: "IHST" },
-        Transition { occurs_at: Some(-862639200), utc_offset: 19800, dst_offset: 3600, name: "IST" },
-        Transition { occurs_at: Some(-764051400), utc_offset: 19800, dst_offset: 0, name: "IST" },
-        Transition { occurs_at: Some(832962600), utc_offset: 23400, dst_offset: 0, name: "LKT" },
-        Transition { occurs_at: Some(846266400), utc_offset: 21600, dst_offset: 0, name: "LKT" },
-        Transition { occurs_at: Some(1145039400), utc_offset: 19800, dst_offset: 0, name: "IST" },
+        Transition {
+            occurs_at: None,
+            offset: 19164,  // UTC offset 19164, DST offset 0
+            name: "LMT",
+        },
+        Transition {
+            occurs_at: Some(-2840159964),
+            offset: 19172,  // UTC offset 19172, DST offset 0
+            name: "MMT",
+        },
+        Transition {
+            occurs_at: Some(-2019705572),
+            offset: 19800,  // UTC offset 19800, DST offset 0
+            name: "IST",
+        },
+        Transition {
+            occurs_at: Some(-883287000),
+            offset: 21600,  // UTC offset 19800, DST offset 1800
+            name: "IHST",
+        },
+        Transition {
+            occurs_at: Some(-862639200),
+            offset: 23400,  // UTC offset 19800, DST offset 3600
+            name: "IST",
+        },
+        Transition {
+            occurs_at: Some(-764051400),
+            offset: 19800,  // UTC offset 19800, DST offset 0
+            name: "IST",
+        },
+        Transition {
+            occurs_at: Some(832962600),
+            offset: 23400,  // UTC offset 23400, DST offset 0
+            name: "LKT",
+        },
+        Transition {
+            occurs_at: Some(846266400),
+            offset: 21600,  // UTC offset 21600, DST offset 0
+            name: "LKT",
+        },
+        Transition {
+            occurs_at: Some(1145039400),
+            offset: 19800,  // UTC offset 19800, DST offset 0
+            name: "IST",
+        },
     ],
 };
 

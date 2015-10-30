@@ -10,23 +10,91 @@ use datetime::zoned::zoneinfo::*;
 pub const ZONE: Zone<'static> = Zone {
     name: "America/Lima",
     transitions: &[
-        Transition { occurs_at: None, utc_offset: -17508, dst_offset: 0, name: "LMT" },
-        Transition { occurs_at: Some(-2524504092), utc_offset: -17484, dst_offset: 0, name: "LMT" },
-        Transition { occurs_at: Some(-1938539316), utc_offset: -18000, dst_offset: 0, name: "PET" },
-        Transition { occurs_at: Some(-1009825200), utc_offset: -18000, dst_offset: 3600, name: "PEST" },
-        Transition { occurs_at: Some(-1002052800), utc_offset: -18000, dst_offset: 0, name: "PET" },
-        Transition { occurs_at: Some(-986756400), utc_offset: -18000, dst_offset: 3600, name: "PEST" },
-        Transition { occurs_at: Some(-971035200), utc_offset: -18000, dst_offset: 0, name: "PET" },
-        Transition { occurs_at: Some(-955306800), utc_offset: -18000, dst_offset: 3600, name: "PEST" },
-        Transition { occurs_at: Some(-939585600), utc_offset: -18000, dst_offset: 0, name: "PET" },
-        Transition { occurs_at: Some(504939600), utc_offset: -18000, dst_offset: 3600, name: "PEST" },
-        Transition { occurs_at: Some(512712000), utc_offset: -18000, dst_offset: 0, name: "PET" },
-        Transition { occurs_at: Some(536475600), utc_offset: -18000, dst_offset: 3600, name: "PEST" },
-        Transition { occurs_at: Some(544248000), utc_offset: -18000, dst_offset: 0, name: "PET" },
-        Transition { occurs_at: Some(631170000), utc_offset: -18000, dst_offset: 3600, name: "PEST" },
-        Transition { occurs_at: Some(638942400), utc_offset: -18000, dst_offset: 0, name: "PET" },
-        Transition { occurs_at: Some(757400400), utc_offset: -18000, dst_offset: 3600, name: "PEST" },
-        Transition { occurs_at: Some(765172800), utc_offset: -18000, dst_offset: 0, name: "PET" },
+        Transition {
+            occurs_at: None,
+            offset: -17508,  // UTC offset -17508, DST offset 0
+            name: "LMT",
+        },
+        Transition {
+            occurs_at: Some(-2524504092),
+            offset: -17484,  // UTC offset -17484, DST offset 0
+            name: "LMT",
+        },
+        Transition {
+            occurs_at: Some(-1938539316),
+            offset: -18000,  // UTC offset -18000, DST offset 0
+            name: "PET",
+        },
+        Transition {
+            occurs_at: Some(-1009825200),
+            offset: -14400,  // UTC offset -18000, DST offset 3600
+            name: "PEST",
+        },
+        Transition {
+            occurs_at: Some(-1002052800),
+            offset: -18000,  // UTC offset -18000, DST offset 0
+            name: "PET",
+        },
+        Transition {
+            occurs_at: Some(-986756400),
+            offset: -14400,  // UTC offset -18000, DST offset 3600
+            name: "PEST",
+        },
+        Transition {
+            occurs_at: Some(-971035200),
+            offset: -18000,  // UTC offset -18000, DST offset 0
+            name: "PET",
+        },
+        Transition {
+            occurs_at: Some(-955306800),
+            offset: -14400,  // UTC offset -18000, DST offset 3600
+            name: "PEST",
+        },
+        Transition {
+            occurs_at: Some(-939585600),
+            offset: -18000,  // UTC offset -18000, DST offset 0
+            name: "PET",
+        },
+        Transition {
+            occurs_at: Some(504939600),
+            offset: -14400,  // UTC offset -18000, DST offset 3600
+            name: "PEST",
+        },
+        Transition {
+            occurs_at: Some(512712000),
+            offset: -18000,  // UTC offset -18000, DST offset 0
+            name: "PET",
+        },
+        Transition {
+            occurs_at: Some(536475600),
+            offset: -14400,  // UTC offset -18000, DST offset 3600
+            name: "PEST",
+        },
+        Transition {
+            occurs_at: Some(544248000),
+            offset: -18000,  // UTC offset -18000, DST offset 0
+            name: "PET",
+        },
+        Transition {
+            occurs_at: Some(631170000),
+            offset: -14400,  // UTC offset -18000, DST offset 3600
+            name: "PEST",
+        },
+        Transition {
+            occurs_at: Some(638942400),
+            offset: -18000,  // UTC offset -18000, DST offset 0
+            name: "PET",
+        },
+        Transition {
+            occurs_at: Some(757400400),
+            offset: -14400,  // UTC offset -18000, DST offset 3600
+            name: "PEST",
+        },
+        Transition {
+            occurs_at: Some(765172800),
+            offset: -18000,  // UTC offset -18000, DST offset 0
+            name: "PET",
+        },
     ],
 };
 

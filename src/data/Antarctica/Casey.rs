@@ -10,12 +10,36 @@ use datetime::zoned::zoneinfo::*;
 pub const ZONE: Zone<'static> = Zone {
     name: "Antarctica/Casey",
     transitions: &[
-        Transition { occurs_at: None, utc_offset: 0, dst_offset: 0, name: "zzz" },
-        Transition { occurs_at: Some(-31536000), utc_offset: 28800, dst_offset: 0, name: "AWST" },
-        Transition { occurs_at: Some(1255802400), utc_offset: 39600, dst_offset: 0, name: "CAST" },
-        Transition { occurs_at: Some(1267714800), utc_offset: 28800, dst_offset: 0, name: "AWST" },
-        Transition { occurs_at: Some(1319738400), utc_offset: 39600, dst_offset: 0, name: "CAST" },
-        Transition { occurs_at: Some(1329804000), utc_offset: 28800, dst_offset: 0, name: "AWST" },
+        Transition {
+            occurs_at: None,
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "zzz",
+        },
+        Transition {
+            occurs_at: Some(-31536000),
+            offset: 28800,  // UTC offset 28800, DST offset 0
+            name: "AWST",
+        },
+        Transition {
+            occurs_at: Some(1255802400),
+            offset: 39600,  // UTC offset 39600, DST offset 0
+            name: "CAST",
+        },
+        Transition {
+            occurs_at: Some(1267714800),
+            offset: 28800,  // UTC offset 28800, DST offset 0
+            name: "AWST",
+        },
+        Transition {
+            occurs_at: Some(1319738400),
+            offset: 39600,  // UTC offset 39600, DST offset 0
+            name: "CAST",
+        },
+        Transition {
+            occurs_at: Some(1329804000),
+            offset: 28800,  // UTC offset 28800, DST offset 0
+            name: "AWST",
+        },
     ],
 };
 

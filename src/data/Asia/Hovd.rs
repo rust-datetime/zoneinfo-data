@@ -10,223 +10,1091 @@ use datetime::zoned::zoneinfo::*;
 pub const ZONE: Zone<'static> = Zone {
     name: "Asia/Hovd",
     transitions: &[
-        Transition { occurs_at: None, utc_offset: 21996, dst_offset: 0, name: "LMT" },
-        Transition { occurs_at: Some(-2032927596), utc_offset: 21600, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(252439200), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(417978000), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(433785600), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(449600400), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(465321600), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(481050000), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(496771200), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(512499600), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(528220800), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(543949200), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(559670400), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(575398800), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(591120000), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(606848400), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(622569600), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(638298000), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(654624000), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(670352400), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(686073600), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(701802000), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(717523200), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(733251600), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(748972800), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(764701200), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(780422400), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(796150800), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(811872000), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(828205200), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(843926400), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(859654800), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(875376000), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(891104400), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(906825600), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(988398000), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(1001700000), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(1017428400), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(1033149600), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(1048878000), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(1064599200), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(1080327600), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(1096048800), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(1111777200), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(1127498400), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(1143226800), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(1159552800), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(1427482800), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(1443196800), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(1458932400), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(1474646400), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(1490382000), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(1506700800), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(1522436400), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(1538150400), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(1553886000), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(1569600000), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(1585335600), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(1601049600), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(1616785200), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(1632499200), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(1648234800), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(1663948800), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(1679684400), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(1696003200), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(1711738800), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(1727452800), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(1743188400), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(1758902400), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(1774638000), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(1790352000), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(1806087600), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(1821801600), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(1837537200), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(1853856000), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(1869591600), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(1885305600), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(1901041200), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(1916755200), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(1932490800), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(1948204800), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(1963940400), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(1979654400), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(1995390000), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(2011104000), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(2026839600), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(2043158400), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(2058894000), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(2074608000), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(2090343600), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(2106057600), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(2121793200), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(2137507200), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(2153242800), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(2168956800), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(2184692400), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(2200406400), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(2216746800), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(2232460800), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(2248196400), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(2263910400), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(2279646000), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(2295360000), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(2311095600), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(2326809600), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(2342545200), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(2358259200), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(2373994800), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(2390313600), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(2406049200), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(2421763200), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(2437498800), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(2453212800), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(2468948400), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(2484662400), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(2500398000), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(2516112000), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(2531847600), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(2547561600), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(2563297200), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(2579616000), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(2595351600), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(2611065600), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(2626801200), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(2642515200), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(2658250800), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(2673964800), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(2689700400), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(2705414400), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(2721150000), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(2737468800), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(2753204400), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(2768918400), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(2784654000), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(2800368000), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(2816103600), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(2831817600), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(2847553200), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(2863267200), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(2879002800), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(2894716800), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(2910452400), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(2926771200), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(2942506800), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(2958220800), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(2973956400), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(2989670400), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(3005406000), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(3021120000), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(3036855600), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(3052569600), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(3068305200), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(3084019200), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(3100359600), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(3116073600), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(3131809200), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(3147523200), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(3163258800), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(3178972800), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(3194708400), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(3210422400), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(3226158000), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(3241872000), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(3257607600), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(3273926400), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(3289662000), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(3305376000), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(3321111600), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(3336825600), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(3352561200), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(3368275200), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(3384010800), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(3399724800), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(3415460400), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(3431174400), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(3446910000), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(3463228800), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(3478964400), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(3494678400), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(3510414000), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(3526128000), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(3541863600), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(3557577600), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(3573313200), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(3589027200), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(3604762800), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(3621081600), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(3636817200), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(3652531200), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(3668266800), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(3683980800), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(3699716400), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(3715430400), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(3731166000), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(3746880000), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(3762615600), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(3778329600), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(3794065200), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(3810384000), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(3826119600), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(3841833600), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(3857569200), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(3873283200), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(3889018800), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(3904732800), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(3920468400), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(3936182400), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(3951918000), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(3967632000), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(3983972400), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(3999686400), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(4015422000), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(4031136000), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(4046871600), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(4062585600), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
-        Transition { occurs_at: Some(4078321200), utc_offset: 25200, dst_offset: 3600, name: "HOVST" },
-        Transition { occurs_at: Some(4094035200), utc_offset: 25200, dst_offset: 0, name: "HOVT" },
+        Transition {
+            occurs_at: None,
+            offset: 21996,  // UTC offset 21996, DST offset 0
+            name: "LMT",
+        },
+        Transition {
+            occurs_at: Some(-2032927596),
+            offset: 21600,  // UTC offset 21600, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(252439200),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(417978000),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(433785600),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(449600400),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(465321600),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(481050000),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(496771200),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(512499600),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(528220800),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(543949200),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(559670400),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(575398800),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(591120000),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(606848400),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(622569600),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(638298000),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(654624000),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(670352400),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(686073600),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(701802000),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(717523200),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(733251600),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(748972800),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(764701200),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(780422400),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(796150800),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(811872000),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(828205200),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(843926400),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(859654800),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(875376000),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(891104400),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(906825600),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(988398000),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(1001700000),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(1017428400),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(1033149600),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(1048878000),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(1064599200),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(1080327600),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(1096048800),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(1111777200),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(1127498400),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(1143226800),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(1159552800),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(1427482800),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(1443196800),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(1458932400),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(1474646400),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(1490382000),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(1506700800),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(1522436400),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(1538150400),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(1553886000),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(1569600000),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(1585335600),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(1601049600),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(1616785200),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(1632499200),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(1648234800),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(1663948800),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(1679684400),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(1696003200),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(1711738800),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(1727452800),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(1743188400),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(1758902400),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(1774638000),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(1790352000),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(1806087600),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(1821801600),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(1837537200),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(1853856000),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(1869591600),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(1885305600),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(1901041200),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(1916755200),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(1932490800),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(1948204800),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(1963940400),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(1979654400),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(1995390000),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(2011104000),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(2026839600),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(2043158400),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(2058894000),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(2074608000),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(2090343600),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(2106057600),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(2121793200),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(2137507200),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(2153242800),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(2168956800),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(2184692400),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(2200406400),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(2216746800),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(2232460800),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(2248196400),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(2263910400),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(2279646000),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(2295360000),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(2311095600),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(2326809600),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(2342545200),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(2358259200),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(2373994800),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(2390313600),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(2406049200),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(2421763200),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(2437498800),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(2453212800),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(2468948400),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(2484662400),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(2500398000),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(2516112000),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(2531847600),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(2547561600),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(2563297200),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(2579616000),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(2595351600),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(2611065600),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(2626801200),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(2642515200),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(2658250800),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(2673964800),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(2689700400),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(2705414400),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(2721150000),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(2737468800),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(2753204400),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(2768918400),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(2784654000),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(2800368000),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(2816103600),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(2831817600),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(2847553200),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(2863267200),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(2879002800),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(2894716800),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(2910452400),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(2926771200),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(2942506800),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(2958220800),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(2973956400),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(2989670400),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(3005406000),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(3021120000),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(3036855600),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(3052569600),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(3068305200),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(3084019200),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(3100359600),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(3116073600),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(3131809200),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(3147523200),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(3163258800),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(3178972800),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(3194708400),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(3210422400),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(3226158000),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(3241872000),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(3257607600),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(3273926400),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(3289662000),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(3305376000),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(3321111600),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(3336825600),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(3352561200),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(3368275200),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(3384010800),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(3399724800),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(3415460400),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(3431174400),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(3446910000),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(3463228800),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(3478964400),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(3494678400),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(3510414000),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(3526128000),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(3541863600),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(3557577600),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(3573313200),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(3589027200),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(3604762800),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(3621081600),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(3636817200),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(3652531200),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(3668266800),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(3683980800),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(3699716400),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(3715430400),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(3731166000),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(3746880000),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(3762615600),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(3778329600),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(3794065200),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(3810384000),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(3826119600),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(3841833600),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(3857569200),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(3873283200),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(3889018800),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(3904732800),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(3920468400),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(3936182400),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(3951918000),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(3967632000),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(3983972400),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(3999686400),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(4015422000),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(4031136000),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(4046871600),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(4062585600),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
+        Transition {
+            occurs_at: Some(4078321200),
+            offset: 28800,  // UTC offset 25200, DST offset 3600
+            name: "HOVST",
+        },
+        Transition {
+            occurs_at: Some(4094035200),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "HOVT",
+        },
     ],
 };
 

@@ -10,28 +10,116 @@ use datetime::zoned::zoneinfo::*;
 pub const ZONE: Zone<'static> = Zone {
     name: "Pacific/Efate",
     transitions: &[
-        Transition { occurs_at: None, utc_offset: 40396, dst_offset: 0, name: "LMT" },
-        Transition { occurs_at: Some(-1829387596), utc_offset: 39600, dst_offset: 0, name: "VUT" },
-        Transition { occurs_at: Some(433256400), utc_offset: 39600, dst_offset: 3600, name: "VUST" },
-        Transition { occurs_at: Some(448977600), utc_offset: 39600, dst_offset: 0, name: "VUT" },
-        Transition { occurs_at: Some(467298000), utc_offset: 39600, dst_offset: 3600, name: "VUST" },
-        Transition { occurs_at: Some(480427200), utc_offset: 39600, dst_offset: 0, name: "VUT" },
-        Transition { occurs_at: Some(496760400), utc_offset: 39600, dst_offset: 3600, name: "VUST" },
-        Transition { occurs_at: Some(511876800), utc_offset: 39600, dst_offset: 0, name: "VUT" },
-        Transition { occurs_at: Some(528210000), utc_offset: 39600, dst_offset: 3600, name: "VUST" },
-        Transition { occurs_at: Some(543931200), utc_offset: 39600, dst_offset: 0, name: "VUT" },
-        Transition { occurs_at: Some(559659600), utc_offset: 39600, dst_offset: 3600, name: "VUST" },
-        Transition { occurs_at: Some(575380800), utc_offset: 39600, dst_offset: 0, name: "VUT" },
-        Transition { occurs_at: Some(591109200), utc_offset: 39600, dst_offset: 3600, name: "VUST" },
-        Transition { occurs_at: Some(606830400), utc_offset: 39600, dst_offset: 0, name: "VUT" },
-        Transition { occurs_at: Some(622558800), utc_offset: 39600, dst_offset: 3600, name: "VUST" },
-        Transition { occurs_at: Some(638280000), utc_offset: 39600, dst_offset: 0, name: "VUT" },
-        Transition { occurs_at: Some(654008400), utc_offset: 39600, dst_offset: 3600, name: "VUST" },
-        Transition { occurs_at: Some(669729600), utc_offset: 39600, dst_offset: 0, name: "VUT" },
-        Transition { occurs_at: Some(686062800), utc_offset: 39600, dst_offset: 3600, name: "VUST" },
-        Transition { occurs_at: Some(696340800), utc_offset: 39600, dst_offset: 0, name: "VUT" },
-        Transition { occurs_at: Some(719931600), utc_offset: 39600, dst_offset: 3600, name: "VUST" },
-        Transition { occurs_at: Some(727790400), utc_offset: 39600, dst_offset: 0, name: "VUT" },
+        Transition {
+            occurs_at: None,
+            offset: 40396,  // UTC offset 40396, DST offset 0
+            name: "LMT",
+        },
+        Transition {
+            occurs_at: Some(-1829387596),
+            offset: 39600,  // UTC offset 39600, DST offset 0
+            name: "VUT",
+        },
+        Transition {
+            occurs_at: Some(433256400),
+            offset: 43200,  // UTC offset 39600, DST offset 3600
+            name: "VUST",
+        },
+        Transition {
+            occurs_at: Some(448977600),
+            offset: 39600,  // UTC offset 39600, DST offset 0
+            name: "VUT",
+        },
+        Transition {
+            occurs_at: Some(467298000),
+            offset: 43200,  // UTC offset 39600, DST offset 3600
+            name: "VUST",
+        },
+        Transition {
+            occurs_at: Some(480427200),
+            offset: 39600,  // UTC offset 39600, DST offset 0
+            name: "VUT",
+        },
+        Transition {
+            occurs_at: Some(496760400),
+            offset: 43200,  // UTC offset 39600, DST offset 3600
+            name: "VUST",
+        },
+        Transition {
+            occurs_at: Some(511876800),
+            offset: 39600,  // UTC offset 39600, DST offset 0
+            name: "VUT",
+        },
+        Transition {
+            occurs_at: Some(528210000),
+            offset: 43200,  // UTC offset 39600, DST offset 3600
+            name: "VUST",
+        },
+        Transition {
+            occurs_at: Some(543931200),
+            offset: 39600,  // UTC offset 39600, DST offset 0
+            name: "VUT",
+        },
+        Transition {
+            occurs_at: Some(559659600),
+            offset: 43200,  // UTC offset 39600, DST offset 3600
+            name: "VUST",
+        },
+        Transition {
+            occurs_at: Some(575380800),
+            offset: 39600,  // UTC offset 39600, DST offset 0
+            name: "VUT",
+        },
+        Transition {
+            occurs_at: Some(591109200),
+            offset: 43200,  // UTC offset 39600, DST offset 3600
+            name: "VUST",
+        },
+        Transition {
+            occurs_at: Some(606830400),
+            offset: 39600,  // UTC offset 39600, DST offset 0
+            name: "VUT",
+        },
+        Transition {
+            occurs_at: Some(622558800),
+            offset: 43200,  // UTC offset 39600, DST offset 3600
+            name: "VUST",
+        },
+        Transition {
+            occurs_at: Some(638280000),
+            offset: 39600,  // UTC offset 39600, DST offset 0
+            name: "VUT",
+        },
+        Transition {
+            occurs_at: Some(654008400),
+            offset: 43200,  // UTC offset 39600, DST offset 3600
+            name: "VUST",
+        },
+        Transition {
+            occurs_at: Some(669729600),
+            offset: 39600,  // UTC offset 39600, DST offset 0
+            name: "VUT",
+        },
+        Transition {
+            occurs_at: Some(686062800),
+            offset: 43200,  // UTC offset 39600, DST offset 3600
+            name: "VUST",
+        },
+        Transition {
+            occurs_at: Some(696340800),
+            offset: 39600,  // UTC offset 39600, DST offset 0
+            name: "VUT",
+        },
+        Transition {
+            occurs_at: Some(719931600),
+            offset: 43200,  // UTC offset 39600, DST offset 3600
+            name: "VUST",
+        },
+        Transition {
+            occurs_at: Some(727790400),
+            offset: 39600,  // UTC offset 39600, DST offset 0
+            name: "VUT",
+        },
     ],
 };
 

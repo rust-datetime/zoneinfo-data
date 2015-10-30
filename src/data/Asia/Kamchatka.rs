@@ -10,71 +10,331 @@ use datetime::zoned::zoneinfo::*;
 pub const ZONE: Zone<'static> = Zone {
     name: "Asia/Kamchatka",
     transitions: &[
-        Transition { occurs_at: None, utc_offset: 38076, dst_offset: 0, name: "LMT" },
-        Transition { occurs_at: Some(-1487759676), utc_offset: 39600, dst_offset: 0, name: "PETT" },
-        Transition { occurs_at: Some(-1247569200), utc_offset: 43200, dst_offset: 0, name: "PETT" },
-        Transition { occurs_at: Some(354888000), utc_offset: 43200, dst_offset: 3600, name: "PETST" },
-        Transition { occurs_at: Some(370695600), utc_offset: 43200, dst_offset: 0, name: "PETT" },
-        Transition { occurs_at: Some(386424000), utc_offset: 43200, dst_offset: 3600, name: "PETST" },
-        Transition { occurs_at: Some(402231600), utc_offset: 43200, dst_offset: 0, name: "PETT" },
-        Transition { occurs_at: Some(417960000), utc_offset: 43200, dst_offset: 3600, name: "PETST" },
-        Transition { occurs_at: Some(433767600), utc_offset: 43200, dst_offset: 0, name: "PETT" },
-        Transition { occurs_at: Some(449582400), utc_offset: 43200, dst_offset: 3600, name: "PETST" },
-        Transition { occurs_at: Some(465314400), utc_offset: 43200, dst_offset: 0, name: "PETT" },
-        Transition { occurs_at: Some(481039200), utc_offset: 43200, dst_offset: 3600, name: "PETST" },
-        Transition { occurs_at: Some(496764000), utc_offset: 43200, dst_offset: 0, name: "PETT" },
-        Transition { occurs_at: Some(512488800), utc_offset: 43200, dst_offset: 3600, name: "PETST" },
-        Transition { occurs_at: Some(528213600), utc_offset: 43200, dst_offset: 0, name: "PETT" },
-        Transition { occurs_at: Some(543938400), utc_offset: 43200, dst_offset: 3600, name: "PETST" },
-        Transition { occurs_at: Some(559663200), utc_offset: 43200, dst_offset: 0, name: "PETT" },
-        Transition { occurs_at: Some(575388000), utc_offset: 43200, dst_offset: 3600, name: "PETST" },
-        Transition { occurs_at: Some(591112800), utc_offset: 43200, dst_offset: 0, name: "PETT" },
-        Transition { occurs_at: Some(606837600), utc_offset: 43200, dst_offset: 3600, name: "PETST" },
-        Transition { occurs_at: Some(622562400), utc_offset: 43200, dst_offset: 0, name: "PETT" },
-        Transition { occurs_at: Some(638287200), utc_offset: 43200, dst_offset: 3600, name: "PETST" },
-        Transition { occurs_at: Some(654616800), utc_offset: 43200, dst_offset: 0, name: "PETT" },
-        Transition { occurs_at: Some(670341600), utc_offset: 39600, dst_offset: 3600, name: "PETST" },
-        Transition { occurs_at: Some(686070000), utc_offset: 39600, dst_offset: 0, name: "PETT" },
-        Transition { occurs_at: Some(695746800), utc_offset: 43200, dst_offset: 0, name: "PETT" },
-        Transition { occurs_at: Some(701780400), utc_offset: 43200, dst_offset: 3600, name: "PETST" },
-        Transition { occurs_at: Some(717501600), utc_offset: 43200, dst_offset: 0, name: "PETT" },
-        Transition { occurs_at: Some(733240800), utc_offset: 43200, dst_offset: 3600, name: "PETST" },
-        Transition { occurs_at: Some(748965600), utc_offset: 43200, dst_offset: 0, name: "PETT" },
-        Transition { occurs_at: Some(764690400), utc_offset: 43200, dst_offset: 3600, name: "PETST" },
-        Transition { occurs_at: Some(780415200), utc_offset: 43200, dst_offset: 0, name: "PETT" },
-        Transition { occurs_at: Some(796140000), utc_offset: 43200, dst_offset: 3600, name: "PETST" },
-        Transition { occurs_at: Some(811864800), utc_offset: 43200, dst_offset: 0, name: "PETT" },
-        Transition { occurs_at: Some(828194400), utc_offset: 43200, dst_offset: 3600, name: "PETST" },
-        Transition { occurs_at: Some(846338400), utc_offset: 43200, dst_offset: 0, name: "PETT" },
-        Transition { occurs_at: Some(859644000), utc_offset: 43200, dst_offset: 3600, name: "PETST" },
-        Transition { occurs_at: Some(877788000), utc_offset: 43200, dst_offset: 0, name: "PETT" },
-        Transition { occurs_at: Some(891093600), utc_offset: 43200, dst_offset: 3600, name: "PETST" },
-        Transition { occurs_at: Some(909237600), utc_offset: 43200, dst_offset: 0, name: "PETT" },
-        Transition { occurs_at: Some(922543200), utc_offset: 43200, dst_offset: 3600, name: "PETST" },
-        Transition { occurs_at: Some(941292000), utc_offset: 43200, dst_offset: 0, name: "PETT" },
-        Transition { occurs_at: Some(953992800), utc_offset: 43200, dst_offset: 3600, name: "PETST" },
-        Transition { occurs_at: Some(972741600), utc_offset: 43200, dst_offset: 0, name: "PETT" },
-        Transition { occurs_at: Some(985442400), utc_offset: 43200, dst_offset: 3600, name: "PETST" },
-        Transition { occurs_at: Some(1004191200), utc_offset: 43200, dst_offset: 0, name: "PETT" },
-        Transition { occurs_at: Some(1017496800), utc_offset: 43200, dst_offset: 3600, name: "PETST" },
-        Transition { occurs_at: Some(1035640800), utc_offset: 43200, dst_offset: 0, name: "PETT" },
-        Transition { occurs_at: Some(1048946400), utc_offset: 43200, dst_offset: 3600, name: "PETST" },
-        Transition { occurs_at: Some(1067090400), utc_offset: 43200, dst_offset: 0, name: "PETT" },
-        Transition { occurs_at: Some(1080396000), utc_offset: 43200, dst_offset: 3600, name: "PETST" },
-        Transition { occurs_at: Some(1099144800), utc_offset: 43200, dst_offset: 0, name: "PETT" },
-        Transition { occurs_at: Some(1111845600), utc_offset: 43200, dst_offset: 3600, name: "PETST" },
-        Transition { occurs_at: Some(1130594400), utc_offset: 43200, dst_offset: 0, name: "PETT" },
-        Transition { occurs_at: Some(1143295200), utc_offset: 43200, dst_offset: 3600, name: "PETST" },
-        Transition { occurs_at: Some(1162044000), utc_offset: 43200, dst_offset: 0, name: "PETT" },
-        Transition { occurs_at: Some(1174744800), utc_offset: 43200, dst_offset: 3600, name: "PETST" },
-        Transition { occurs_at: Some(1193493600), utc_offset: 43200, dst_offset: 0, name: "PETT" },
-        Transition { occurs_at: Some(1206799200), utc_offset: 43200, dst_offset: 3600, name: "PETST" },
-        Transition { occurs_at: Some(1224943200), utc_offset: 43200, dst_offset: 0, name: "PETT" },
-        Transition { occurs_at: Some(1238248800), utc_offset: 43200, dst_offset: 3600, name: "PETST" },
-        Transition { occurs_at: Some(1256392800), utc_offset: 43200, dst_offset: 0, name: "PETT" },
-        Transition { occurs_at: Some(1269698400), utc_offset: 39600, dst_offset: 3600, name: "PETST" },
-        Transition { occurs_at: Some(1288450800), utc_offset: 39600, dst_offset: 0, name: "PETT" },
-        Transition { occurs_at: Some(1301151600), utc_offset: 43200, dst_offset: 0, name: "PETT" },
+        Transition {
+            occurs_at: None,
+            offset: 38076,  // UTC offset 38076, DST offset 0
+            name: "LMT",
+        },
+        Transition {
+            occurs_at: Some(-1487759676),
+            offset: 39600,  // UTC offset 39600, DST offset 0
+            name: "PETT",
+        },
+        Transition {
+            occurs_at: Some(-1247569200),
+            offset: 43200,  // UTC offset 43200, DST offset 0
+            name: "PETT",
+        },
+        Transition {
+            occurs_at: Some(354888000),
+            offset: 46800,  // UTC offset 43200, DST offset 3600
+            name: "PETST",
+        },
+        Transition {
+            occurs_at: Some(370695600),
+            offset: 43200,  // UTC offset 43200, DST offset 0
+            name: "PETT",
+        },
+        Transition {
+            occurs_at: Some(386424000),
+            offset: 46800,  // UTC offset 43200, DST offset 3600
+            name: "PETST",
+        },
+        Transition {
+            occurs_at: Some(402231600),
+            offset: 43200,  // UTC offset 43200, DST offset 0
+            name: "PETT",
+        },
+        Transition {
+            occurs_at: Some(417960000),
+            offset: 46800,  // UTC offset 43200, DST offset 3600
+            name: "PETST",
+        },
+        Transition {
+            occurs_at: Some(433767600),
+            offset: 43200,  // UTC offset 43200, DST offset 0
+            name: "PETT",
+        },
+        Transition {
+            occurs_at: Some(449582400),
+            offset: 46800,  // UTC offset 43200, DST offset 3600
+            name: "PETST",
+        },
+        Transition {
+            occurs_at: Some(465314400),
+            offset: 43200,  // UTC offset 43200, DST offset 0
+            name: "PETT",
+        },
+        Transition {
+            occurs_at: Some(481039200),
+            offset: 46800,  // UTC offset 43200, DST offset 3600
+            name: "PETST",
+        },
+        Transition {
+            occurs_at: Some(496764000),
+            offset: 43200,  // UTC offset 43200, DST offset 0
+            name: "PETT",
+        },
+        Transition {
+            occurs_at: Some(512488800),
+            offset: 46800,  // UTC offset 43200, DST offset 3600
+            name: "PETST",
+        },
+        Transition {
+            occurs_at: Some(528213600),
+            offset: 43200,  // UTC offset 43200, DST offset 0
+            name: "PETT",
+        },
+        Transition {
+            occurs_at: Some(543938400),
+            offset: 46800,  // UTC offset 43200, DST offset 3600
+            name: "PETST",
+        },
+        Transition {
+            occurs_at: Some(559663200),
+            offset: 43200,  // UTC offset 43200, DST offset 0
+            name: "PETT",
+        },
+        Transition {
+            occurs_at: Some(575388000),
+            offset: 46800,  // UTC offset 43200, DST offset 3600
+            name: "PETST",
+        },
+        Transition {
+            occurs_at: Some(591112800),
+            offset: 43200,  // UTC offset 43200, DST offset 0
+            name: "PETT",
+        },
+        Transition {
+            occurs_at: Some(606837600),
+            offset: 46800,  // UTC offset 43200, DST offset 3600
+            name: "PETST",
+        },
+        Transition {
+            occurs_at: Some(622562400),
+            offset: 43200,  // UTC offset 43200, DST offset 0
+            name: "PETT",
+        },
+        Transition {
+            occurs_at: Some(638287200),
+            offset: 46800,  // UTC offset 43200, DST offset 3600
+            name: "PETST",
+        },
+        Transition {
+            occurs_at: Some(654616800),
+            offset: 43200,  // UTC offset 43200, DST offset 0
+            name: "PETT",
+        },
+        Transition {
+            occurs_at: Some(670341600),
+            offset: 43200,  // UTC offset 39600, DST offset 3600
+            name: "PETST",
+        },
+        Transition {
+            occurs_at: Some(686070000),
+            offset: 39600,  // UTC offset 39600, DST offset 0
+            name: "PETT",
+        },
+        Transition {
+            occurs_at: Some(695746800),
+            offset: 43200,  // UTC offset 43200, DST offset 0
+            name: "PETT",
+        },
+        Transition {
+            occurs_at: Some(701780400),
+            offset: 46800,  // UTC offset 43200, DST offset 3600
+            name: "PETST",
+        },
+        Transition {
+            occurs_at: Some(717501600),
+            offset: 43200,  // UTC offset 43200, DST offset 0
+            name: "PETT",
+        },
+        Transition {
+            occurs_at: Some(733240800),
+            offset: 46800,  // UTC offset 43200, DST offset 3600
+            name: "PETST",
+        },
+        Transition {
+            occurs_at: Some(748965600),
+            offset: 43200,  // UTC offset 43200, DST offset 0
+            name: "PETT",
+        },
+        Transition {
+            occurs_at: Some(764690400),
+            offset: 46800,  // UTC offset 43200, DST offset 3600
+            name: "PETST",
+        },
+        Transition {
+            occurs_at: Some(780415200),
+            offset: 43200,  // UTC offset 43200, DST offset 0
+            name: "PETT",
+        },
+        Transition {
+            occurs_at: Some(796140000),
+            offset: 46800,  // UTC offset 43200, DST offset 3600
+            name: "PETST",
+        },
+        Transition {
+            occurs_at: Some(811864800),
+            offset: 43200,  // UTC offset 43200, DST offset 0
+            name: "PETT",
+        },
+        Transition {
+            occurs_at: Some(828194400),
+            offset: 46800,  // UTC offset 43200, DST offset 3600
+            name: "PETST",
+        },
+        Transition {
+            occurs_at: Some(846338400),
+            offset: 43200,  // UTC offset 43200, DST offset 0
+            name: "PETT",
+        },
+        Transition {
+            occurs_at: Some(859644000),
+            offset: 46800,  // UTC offset 43200, DST offset 3600
+            name: "PETST",
+        },
+        Transition {
+            occurs_at: Some(877788000),
+            offset: 43200,  // UTC offset 43200, DST offset 0
+            name: "PETT",
+        },
+        Transition {
+            occurs_at: Some(891093600),
+            offset: 46800,  // UTC offset 43200, DST offset 3600
+            name: "PETST",
+        },
+        Transition {
+            occurs_at: Some(909237600),
+            offset: 43200,  // UTC offset 43200, DST offset 0
+            name: "PETT",
+        },
+        Transition {
+            occurs_at: Some(922543200),
+            offset: 46800,  // UTC offset 43200, DST offset 3600
+            name: "PETST",
+        },
+        Transition {
+            occurs_at: Some(941292000),
+            offset: 43200,  // UTC offset 43200, DST offset 0
+            name: "PETT",
+        },
+        Transition {
+            occurs_at: Some(953992800),
+            offset: 46800,  // UTC offset 43200, DST offset 3600
+            name: "PETST",
+        },
+        Transition {
+            occurs_at: Some(972741600),
+            offset: 43200,  // UTC offset 43200, DST offset 0
+            name: "PETT",
+        },
+        Transition {
+            occurs_at: Some(985442400),
+            offset: 46800,  // UTC offset 43200, DST offset 3600
+            name: "PETST",
+        },
+        Transition {
+            occurs_at: Some(1004191200),
+            offset: 43200,  // UTC offset 43200, DST offset 0
+            name: "PETT",
+        },
+        Transition {
+            occurs_at: Some(1017496800),
+            offset: 46800,  // UTC offset 43200, DST offset 3600
+            name: "PETST",
+        },
+        Transition {
+            occurs_at: Some(1035640800),
+            offset: 43200,  // UTC offset 43200, DST offset 0
+            name: "PETT",
+        },
+        Transition {
+            occurs_at: Some(1048946400),
+            offset: 46800,  // UTC offset 43200, DST offset 3600
+            name: "PETST",
+        },
+        Transition {
+            occurs_at: Some(1067090400),
+            offset: 43200,  // UTC offset 43200, DST offset 0
+            name: "PETT",
+        },
+        Transition {
+            occurs_at: Some(1080396000),
+            offset: 46800,  // UTC offset 43200, DST offset 3600
+            name: "PETST",
+        },
+        Transition {
+            occurs_at: Some(1099144800),
+            offset: 43200,  // UTC offset 43200, DST offset 0
+            name: "PETT",
+        },
+        Transition {
+            occurs_at: Some(1111845600),
+            offset: 46800,  // UTC offset 43200, DST offset 3600
+            name: "PETST",
+        },
+        Transition {
+            occurs_at: Some(1130594400),
+            offset: 43200,  // UTC offset 43200, DST offset 0
+            name: "PETT",
+        },
+        Transition {
+            occurs_at: Some(1143295200),
+            offset: 46800,  // UTC offset 43200, DST offset 3600
+            name: "PETST",
+        },
+        Transition {
+            occurs_at: Some(1162044000),
+            offset: 43200,  // UTC offset 43200, DST offset 0
+            name: "PETT",
+        },
+        Transition {
+            occurs_at: Some(1174744800),
+            offset: 46800,  // UTC offset 43200, DST offset 3600
+            name: "PETST",
+        },
+        Transition {
+            occurs_at: Some(1193493600),
+            offset: 43200,  // UTC offset 43200, DST offset 0
+            name: "PETT",
+        },
+        Transition {
+            occurs_at: Some(1206799200),
+            offset: 46800,  // UTC offset 43200, DST offset 3600
+            name: "PETST",
+        },
+        Transition {
+            occurs_at: Some(1224943200),
+            offset: 43200,  // UTC offset 43200, DST offset 0
+            name: "PETT",
+        },
+        Transition {
+            occurs_at: Some(1238248800),
+            offset: 46800,  // UTC offset 43200, DST offset 3600
+            name: "PETST",
+        },
+        Transition {
+            occurs_at: Some(1256392800),
+            offset: 43200,  // UTC offset 43200, DST offset 0
+            name: "PETT",
+        },
+        Transition {
+            occurs_at: Some(1269698400),
+            offset: 43200,  // UTC offset 39600, DST offset 3600
+            name: "PETST",
+        },
+        Transition {
+            occurs_at: Some(1288450800),
+            offset: 39600,  // UTC offset 39600, DST offset 0
+            name: "PETT",
+        },
+        Transition {
+            occurs_at: Some(1301151600),
+            offset: 43200,  // UTC offset 43200, DST offset 0
+            name: "PETT",
+        },
     ],
 };
 

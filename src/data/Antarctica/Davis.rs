@@ -10,14 +10,46 @@ use datetime::zoned::zoneinfo::*;
 pub const ZONE: Zone<'static> = Zone {
     name: "Antarctica/Davis",
     transitions: &[
-        Transition { occurs_at: None, utc_offset: 0, dst_offset: 0, name: "zzz" },
-        Transition { occurs_at: Some(-409190400), utc_offset: 25200, dst_offset: 0, name: "DAVT" },
-        Transition { occurs_at: Some(-163062000), utc_offset: 0, dst_offset: 0, name: "zzz" },
-        Transition { occurs_at: Some(-28857600), utc_offset: 25200, dst_offset: 0, name: "DAVT" },
-        Transition { occurs_at: Some(1255806000), utc_offset: 18000, dst_offset: 0, name: "DAVT" },
-        Transition { occurs_at: Some(1268233200), utc_offset: 25200, dst_offset: 0, name: "DAVT" },
-        Transition { occurs_at: Some(1319742000), utc_offset: 18000, dst_offset: 0, name: "DAVT" },
-        Transition { occurs_at: Some(1329836400), utc_offset: 25200, dst_offset: 0, name: "DAVT" },
+        Transition {
+            occurs_at: None,
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "zzz",
+        },
+        Transition {
+            occurs_at: Some(-409190400),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "DAVT",
+        },
+        Transition {
+            occurs_at: Some(-163062000),
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "zzz",
+        },
+        Transition {
+            occurs_at: Some(-28857600),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "DAVT",
+        },
+        Transition {
+            occurs_at: Some(1255806000),
+            offset: 18000,  // UTC offset 18000, DST offset 0
+            name: "DAVT",
+        },
+        Transition {
+            occurs_at: Some(1268233200),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "DAVT",
+        },
+        Transition {
+            occurs_at: Some(1319742000),
+            offset: 18000,  // UTC offset 18000, DST offset 0
+            name: "DAVT",
+        },
+        Transition {
+            occurs_at: Some(1329836400),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "DAVT",
+        },
     ],
 };
 

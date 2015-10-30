@@ -10,8 +10,16 @@ use datetime::zoned::zoneinfo::*;
 pub const ZONE: Zone<'static> = Zone {
     name: "Indian/Kerguelen",
     transitions: &[
-        Transition { occurs_at: None, utc_offset: 0, dst_offset: 0, name: "zzz" },
-        Transition { occurs_at: Some(-631152000), utc_offset: 18000, dst_offset: 0, name: "TFT" },
+        Transition {
+            occurs_at: None,
+            offset: 0,  // UTC offset 0, DST offset 0
+            name: "zzz",
+        },
+        Transition {
+            occurs_at: Some(-631152000),
+            offset: 18000,  // UTC offset 18000, DST offset 0
+            name: "TFT",
+        },
     ],
 };
 

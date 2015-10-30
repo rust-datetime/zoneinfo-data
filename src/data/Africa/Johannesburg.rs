@@ -10,13 +10,41 @@ use datetime::zoned::zoneinfo::*;
 pub const ZONE: Zone<'static> = Zone {
     name: "Africa/Johannesburg",
     transitions: &[
-        Transition { occurs_at: None, utc_offset: 6720, dst_offset: 0, name: "LMT" },
-        Transition { occurs_at: Some(-2458173120), utc_offset: 5400, dst_offset: 0, name: "SAST" },
-        Transition { occurs_at: Some(-2109288600), utc_offset: 7200, dst_offset: 0, name: "SAST" },
-        Transition { occurs_at: Some(-860976000), utc_offset: 7200, dst_offset: 3600, name: "SAST" },
-        Transition { occurs_at: Some(-845254800), utc_offset: 7200, dst_offset: 0, name: "SAST" },
-        Transition { occurs_at: Some(-829526400), utc_offset: 7200, dst_offset: 3600, name: "SAST" },
-        Transition { occurs_at: Some(-813805200), utc_offset: 7200, dst_offset: 0, name: "SAST" },
+        Transition {
+            occurs_at: None,
+            offset: 6720,  // UTC offset 6720, DST offset 0
+            name: "LMT",
+        },
+        Transition {
+            occurs_at: Some(-2458173120),
+            offset: 5400,  // UTC offset 5400, DST offset 0
+            name: "SAST",
+        },
+        Transition {
+            occurs_at: Some(-2109288600),
+            offset: 7200,  // UTC offset 7200, DST offset 0
+            name: "SAST",
+        },
+        Transition {
+            occurs_at: Some(-860976000),
+            offset: 10800,  // UTC offset 7200, DST offset 3600
+            name: "SAST",
+        },
+        Transition {
+            occurs_at: Some(-845254800),
+            offset: 7200,  // UTC offset 7200, DST offset 0
+            name: "SAST",
+        },
+        Transition {
+            occurs_at: Some(-829526400),
+            offset: 10800,  // UTC offset 7200, DST offset 3600
+            name: "SAST",
+        },
+        Transition {
+            occurs_at: Some(-813805200),
+            offset: 7200,  // UTC offset 7200, DST offset 0
+            name: "SAST",
+        },
     ],
 };
 

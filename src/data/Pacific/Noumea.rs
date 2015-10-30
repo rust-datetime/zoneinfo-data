@@ -10,14 +10,46 @@ use datetime::zoned::zoneinfo::*;
 pub const ZONE: Zone<'static> = Zone {
     name: "Pacific/Noumea",
     transitions: &[
-        Transition { occurs_at: None, utc_offset: 39948, dst_offset: 0, name: "LMT" },
-        Transition { occurs_at: Some(-1829387148), utc_offset: 39600, dst_offset: 0, name: "NCT" },
-        Transition { occurs_at: Some(250002000), utc_offset: 39600, dst_offset: 3600, name: "NCST" },
-        Transition { occurs_at: Some(257342400), utc_offset: 39600, dst_offset: 0, name: "NCT" },
-        Transition { occurs_at: Some(281451600), utc_offset: 39600, dst_offset: 3600, name: "NCST" },
-        Transition { occurs_at: Some(288878400), utc_offset: 39600, dst_offset: 0, name: "NCT" },
-        Transition { occurs_at: Some(849366000), utc_offset: 39600, dst_offset: 3600, name: "NCST" },
-        Transition { occurs_at: Some(857228400), utc_offset: 39600, dst_offset: 0, name: "NCT" },
+        Transition {
+            occurs_at: None,
+            offset: 39948,  // UTC offset 39948, DST offset 0
+            name: "LMT",
+        },
+        Transition {
+            occurs_at: Some(-1829387148),
+            offset: 39600,  // UTC offset 39600, DST offset 0
+            name: "NCT",
+        },
+        Transition {
+            occurs_at: Some(250002000),
+            offset: 43200,  // UTC offset 39600, DST offset 3600
+            name: "NCST",
+        },
+        Transition {
+            occurs_at: Some(257342400),
+            offset: 39600,  // UTC offset 39600, DST offset 0
+            name: "NCT",
+        },
+        Transition {
+            occurs_at: Some(281451600),
+            offset: 43200,  // UTC offset 39600, DST offset 3600
+            name: "NCST",
+        },
+        Transition {
+            occurs_at: Some(288878400),
+            offset: 39600,  // UTC offset 39600, DST offset 0
+            name: "NCT",
+        },
+        Transition {
+            occurs_at: Some(849366000),
+            offset: 43200,  // UTC offset 39600, DST offset 3600
+            name: "NCST",
+        },
+        Transition {
+            occurs_at: Some(857228400),
+            offset: 39600,  // UTC offset 39600, DST offset 0
+            name: "NCT",
+        },
     ],
 };
 

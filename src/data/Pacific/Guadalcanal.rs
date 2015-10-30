@@ -10,8 +10,16 @@ use datetime::zoned::zoneinfo::*;
 pub const ZONE: Zone<'static> = Zone {
     name: "Pacific/Guadalcanal",
     transitions: &[
-        Transition { occurs_at: None, utc_offset: 38388, dst_offset: 0, name: "LMT" },
-        Transition { occurs_at: Some(-1806748788), utc_offset: 39600, dst_offset: 0, name: "SBT" },
+        Transition {
+            occurs_at: None,
+            offset: 38388,  // UTC offset 38388, DST offset 0
+            name: "LMT",
+        },
+        Transition {
+            occurs_at: Some(-1806748788),
+            offset: 39600,  // UTC offset 39600, DST offset 0
+            name: "SBT",
+        },
     ],
 };
 

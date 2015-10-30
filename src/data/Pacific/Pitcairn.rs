@@ -10,9 +10,21 @@ use datetime::zoned::zoneinfo::*;
 pub const ZONE: Zone<'static> = Zone {
     name: "Pacific/Pitcairn",
     transitions: &[
-        Transition { occurs_at: None, utc_offset: -26380, dst_offset: 0, name: "LMT" },
-        Transition { occurs_at: Some(-2177426420), utc_offset: -27000, dst_offset: 0, name: "PNT" },
-        Transition { occurs_at: Some(893662200), utc_offset: -28800, dst_offset: 0, name: "PST" },
+        Transition {
+            occurs_at: None,
+            offset: -26380,  // UTC offset -26380, DST offset 0
+            name: "LMT",
+        },
+        Transition {
+            occurs_at: Some(-2177426420),
+            offset: -27000,  // UTC offset -27000, DST offset 0
+            name: "PNT",
+        },
+        Transition {
+            occurs_at: Some(893662200),
+            offset: -28800,  // UTC offset -28800, DST offset 0
+            name: "PST",
+        },
     ],
 };
 

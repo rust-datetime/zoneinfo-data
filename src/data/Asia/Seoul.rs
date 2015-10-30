@@ -10,29 +10,121 @@ use datetime::zoned::zoneinfo::*;
 pub const ZONE: Zone<'static> = Zone {
     name: "Asia/Seoul",
     transitions: &[
-        Transition { occurs_at: None, utc_offset: 30472, dst_offset: 0, name: "LMT" },
-        Transition { occurs_at: Some(-1948782472), utc_offset: 30600, dst_offset: 0, name: "KST" },
-        Transition { occurs_at: Some(-1830414600), utc_offset: 32400, dst_offset: 0, name: "JCST" },
-        Transition { occurs_at: Some(-1017824400), utc_offset: 32400, dst_offset: 0, name: "JST" },
-        Transition { occurs_at: Some(-767350800), utc_offset: 32400, dst_offset: 0, name: "KST" },
-        Transition { occurs_at: Some(-498128400), utc_offset: 30600, dst_offset: 0, name: "KST" },
-        Transition { occurs_at: Some(-462702600), utc_offset: 30600, dst_offset: 3600, name: "KDT" },
-        Transition { occurs_at: Some(-451733400), utc_offset: 30600, dst_offset: 0, name: "KST" },
-        Transition { occurs_at: Some(-429784200), utc_offset: 30600, dst_offset: 3600, name: "KDT" },
-        Transition { occurs_at: Some(-418296600), utc_offset: 30600, dst_offset: 0, name: "KST" },
-        Transition { occurs_at: Some(-399544200), utc_offset: 30600, dst_offset: 3600, name: "KDT" },
-        Transition { occurs_at: Some(-387451800), utc_offset: 30600, dst_offset: 0, name: "KST" },
-        Transition { occurs_at: Some(-368094600), utc_offset: 30600, dst_offset: 3600, name: "KDT" },
-        Transition { occurs_at: Some(-356002200), utc_offset: 30600, dst_offset: 0, name: "KST" },
-        Transition { occurs_at: Some(-336645000), utc_offset: 30600, dst_offset: 3600, name: "KDT" },
-        Transition { occurs_at: Some(-324552600), utc_offset: 30600, dst_offset: 0, name: "KST" },
-        Transition { occurs_at: Some(-305195400), utc_offset: 30600, dst_offset: 3600, name: "KDT" },
-        Transition { occurs_at: Some(-293103000), utc_offset: 30600, dst_offset: 0, name: "KST" },
-        Transition { occurs_at: Some(-264933000), utc_offset: 32400, dst_offset: 0, name: "KST" },
-        Transition { occurs_at: Some(547578000), utc_offset: 32400, dst_offset: 3600, name: "KDT" },
-        Transition { occurs_at: Some(560883600), utc_offset: 32400, dst_offset: 0, name: "KST" },
-        Transition { occurs_at: Some(579027600), utc_offset: 32400, dst_offset: 3600, name: "KDT" },
-        Transition { occurs_at: Some(592333200), utc_offset: 32400, dst_offset: 0, name: "KST" },
+        Transition {
+            occurs_at: None,
+            offset: 30472,  // UTC offset 30472, DST offset 0
+            name: "LMT",
+        },
+        Transition {
+            occurs_at: Some(-1948782472),
+            offset: 30600,  // UTC offset 30600, DST offset 0
+            name: "KST",
+        },
+        Transition {
+            occurs_at: Some(-1830414600),
+            offset: 32400,  // UTC offset 32400, DST offset 0
+            name: "JCST",
+        },
+        Transition {
+            occurs_at: Some(-1017824400),
+            offset: 32400,  // UTC offset 32400, DST offset 0
+            name: "JST",
+        },
+        Transition {
+            occurs_at: Some(-767350800),
+            offset: 32400,  // UTC offset 32400, DST offset 0
+            name: "KST",
+        },
+        Transition {
+            occurs_at: Some(-498128400),
+            offset: 30600,  // UTC offset 30600, DST offset 0
+            name: "KST",
+        },
+        Transition {
+            occurs_at: Some(-462702600),
+            offset: 34200,  // UTC offset 30600, DST offset 3600
+            name: "KDT",
+        },
+        Transition {
+            occurs_at: Some(-451733400),
+            offset: 30600,  // UTC offset 30600, DST offset 0
+            name: "KST",
+        },
+        Transition {
+            occurs_at: Some(-429784200),
+            offset: 34200,  // UTC offset 30600, DST offset 3600
+            name: "KDT",
+        },
+        Transition {
+            occurs_at: Some(-418296600),
+            offset: 30600,  // UTC offset 30600, DST offset 0
+            name: "KST",
+        },
+        Transition {
+            occurs_at: Some(-399544200),
+            offset: 34200,  // UTC offset 30600, DST offset 3600
+            name: "KDT",
+        },
+        Transition {
+            occurs_at: Some(-387451800),
+            offset: 30600,  // UTC offset 30600, DST offset 0
+            name: "KST",
+        },
+        Transition {
+            occurs_at: Some(-368094600),
+            offset: 34200,  // UTC offset 30600, DST offset 3600
+            name: "KDT",
+        },
+        Transition {
+            occurs_at: Some(-356002200),
+            offset: 30600,  // UTC offset 30600, DST offset 0
+            name: "KST",
+        },
+        Transition {
+            occurs_at: Some(-336645000),
+            offset: 34200,  // UTC offset 30600, DST offset 3600
+            name: "KDT",
+        },
+        Transition {
+            occurs_at: Some(-324552600),
+            offset: 30600,  // UTC offset 30600, DST offset 0
+            name: "KST",
+        },
+        Transition {
+            occurs_at: Some(-305195400),
+            offset: 34200,  // UTC offset 30600, DST offset 3600
+            name: "KDT",
+        },
+        Transition {
+            occurs_at: Some(-293103000),
+            offset: 30600,  // UTC offset 30600, DST offset 0
+            name: "KST",
+        },
+        Transition {
+            occurs_at: Some(-264933000),
+            offset: 32400,  // UTC offset 32400, DST offset 0
+            name: "KST",
+        },
+        Transition {
+            occurs_at: Some(547578000),
+            offset: 36000,  // UTC offset 32400, DST offset 3600
+            name: "KDT",
+        },
+        Transition {
+            occurs_at: Some(560883600),
+            offset: 32400,  // UTC offset 32400, DST offset 0
+            name: "KST",
+        },
+        Transition {
+            occurs_at: Some(579027600),
+            offset: 36000,  // UTC offset 32400, DST offset 3600
+            name: "KDT",
+        },
+        Transition {
+            occurs_at: Some(592333200),
+            offset: 32400,  // UTC offset 32400, DST offset 0
+            name: "KST",
+        },
     ],
 };
 

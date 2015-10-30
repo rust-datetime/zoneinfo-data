@@ -10,46 +10,206 @@ use datetime::zoned::zoneinfo::*;
 pub const ZONE: Zone<'static> = Zone {
     name: "America/Noronha",
     transitions: &[
-        Transition { occurs_at: None, utc_offset: -6620, dst_offset: 0, name: "LMT" },
-        Transition { occurs_at: Some(-1767218980), utc_offset: -7200, dst_offset: 0, name: "FNT" },
-        Transition { occurs_at: Some(-1206961200), utc_offset: -7200, dst_offset: 3600, name: "FNST" },
-        Transition { occurs_at: Some(-1191366000), utc_offset: -7200, dst_offset: 0, name: "FNT" },
-        Transition { occurs_at: Some(-1175378400), utc_offset: -7200, dst_offset: 3600, name: "FNST" },
-        Transition { occurs_at: Some(-1159830000), utc_offset: -7200, dst_offset: 0, name: "FNT" },
-        Transition { occurs_at: Some(-633823200), utc_offset: -7200, dst_offset: 3600, name: "FNST" },
-        Transition { occurs_at: Some(-622072800), utc_offset: -7200, dst_offset: 0, name: "FNT" },
-        Transition { occurs_at: Some(-602287200), utc_offset: -7200, dst_offset: 3600, name: "FNST" },
-        Transition { occurs_at: Some(-591836400), utc_offset: -7200, dst_offset: 0, name: "FNT" },
-        Transition { occurs_at: Some(-570751200), utc_offset: -7200, dst_offset: 3600, name: "FNST" },
-        Transition { occurs_at: Some(-560214000), utc_offset: -7200, dst_offset: 0, name: "FNT" },
-        Transition { occurs_at: Some(-539128800), utc_offset: -7200, dst_offset: 3600, name: "FNST" },
-        Transition { occurs_at: Some(-531356400), utc_offset: -7200, dst_offset: 0, name: "FNT" },
-        Transition { occurs_at: Some(-191368800), utc_offset: -7200, dst_offset: 3600, name: "FNST" },
-        Transition { occurs_at: Some(-184201200), utc_offset: -7200, dst_offset: 0, name: "FNT" },
-        Transition { occurs_at: Some(-155167200), utc_offset: -7200, dst_offset: 3600, name: "FNST" },
-        Transition { occurs_at: Some(-150073200), utc_offset: -7200, dst_offset: 0, name: "FNT" },
-        Transition { occurs_at: Some(-128901600), utc_offset: -7200, dst_offset: 3600, name: "FNST" },
-        Transition { occurs_at: Some(-121129200), utc_offset: -7200, dst_offset: 0, name: "FNT" },
-        Transition { occurs_at: Some(-99957600), utc_offset: -7200, dst_offset: 3600, name: "FNST" },
-        Transition { occurs_at: Some(-89593200), utc_offset: -7200, dst_offset: 0, name: "FNT" },
-        Transition { occurs_at: Some(-68421600), utc_offset: -7200, dst_offset: 3600, name: "FNST" },
-        Transition { occurs_at: Some(-57970800), utc_offset: -7200, dst_offset: 0, name: "FNT" },
-        Transition { occurs_at: Some(499744800), utc_offset: -7200, dst_offset: 3600, name: "FNST" },
-        Transition { occurs_at: Some(511232400), utc_offset: -7200, dst_offset: 0, name: "FNT" },
-        Transition { occurs_at: Some(530589600), utc_offset: -7200, dst_offset: 3600, name: "FNST" },
-        Transition { occurs_at: Some(540262800), utc_offset: -7200, dst_offset: 0, name: "FNT" },
-        Transition { occurs_at: Some(562125600), utc_offset: -7200, dst_offset: 3600, name: "FNST" },
-        Transition { occurs_at: Some(571194000), utc_offset: -7200, dst_offset: 0, name: "FNT" },
-        Transition { occurs_at: Some(592970400), utc_offset: -7200, dst_offset: 3600, name: "FNST" },
-        Transition { occurs_at: Some(602038800), utc_offset: -7200, dst_offset: 0, name: "FNT" },
-        Transition { occurs_at: Some(624420000), utc_offset: -7200, dst_offset: 3600, name: "FNST" },
-        Transition { occurs_at: Some(634698000), utc_offset: -7200, dst_offset: 0, name: "FNT" },
-        Transition { occurs_at: Some(938916000), utc_offset: -7200, dst_offset: 3600, name: "FNST" },
-        Transition { occurs_at: Some(951613200), utc_offset: -7200, dst_offset: 0, name: "FNT" },
-        Transition { occurs_at: Some(970970400), utc_offset: -7200, dst_offset: 3600, name: "FNST" },
-        Transition { occurs_at: Some(971571600), utc_offset: -7200, dst_offset: 0, name: "FNT" },
-        Transition { occurs_at: Some(1003024800), utc_offset: -7200, dst_offset: 3600, name: "FNST" },
-        Transition { occurs_at: Some(1013907600), utc_offset: -7200, dst_offset: 0, name: "FNT" },
+        Transition {
+            occurs_at: None,
+            offset: -6620,  // UTC offset -6620, DST offset 0
+            name: "LMT",
+        },
+        Transition {
+            occurs_at: Some(-1767218980),
+            offset: -7200,  // UTC offset -7200, DST offset 0
+            name: "FNT",
+        },
+        Transition {
+            occurs_at: Some(-1206961200),
+            offset: -3600,  // UTC offset -7200, DST offset 3600
+            name: "FNST",
+        },
+        Transition {
+            occurs_at: Some(-1191366000),
+            offset: -7200,  // UTC offset -7200, DST offset 0
+            name: "FNT",
+        },
+        Transition {
+            occurs_at: Some(-1175378400),
+            offset: -3600,  // UTC offset -7200, DST offset 3600
+            name: "FNST",
+        },
+        Transition {
+            occurs_at: Some(-1159830000),
+            offset: -7200,  // UTC offset -7200, DST offset 0
+            name: "FNT",
+        },
+        Transition {
+            occurs_at: Some(-633823200),
+            offset: -3600,  // UTC offset -7200, DST offset 3600
+            name: "FNST",
+        },
+        Transition {
+            occurs_at: Some(-622072800),
+            offset: -7200,  // UTC offset -7200, DST offset 0
+            name: "FNT",
+        },
+        Transition {
+            occurs_at: Some(-602287200),
+            offset: -3600,  // UTC offset -7200, DST offset 3600
+            name: "FNST",
+        },
+        Transition {
+            occurs_at: Some(-591836400),
+            offset: -7200,  // UTC offset -7200, DST offset 0
+            name: "FNT",
+        },
+        Transition {
+            occurs_at: Some(-570751200),
+            offset: -3600,  // UTC offset -7200, DST offset 3600
+            name: "FNST",
+        },
+        Transition {
+            occurs_at: Some(-560214000),
+            offset: -7200,  // UTC offset -7200, DST offset 0
+            name: "FNT",
+        },
+        Transition {
+            occurs_at: Some(-539128800),
+            offset: -3600,  // UTC offset -7200, DST offset 3600
+            name: "FNST",
+        },
+        Transition {
+            occurs_at: Some(-531356400),
+            offset: -7200,  // UTC offset -7200, DST offset 0
+            name: "FNT",
+        },
+        Transition {
+            occurs_at: Some(-191368800),
+            offset: -3600,  // UTC offset -7200, DST offset 3600
+            name: "FNST",
+        },
+        Transition {
+            occurs_at: Some(-184201200),
+            offset: -7200,  // UTC offset -7200, DST offset 0
+            name: "FNT",
+        },
+        Transition {
+            occurs_at: Some(-155167200),
+            offset: -3600,  // UTC offset -7200, DST offset 3600
+            name: "FNST",
+        },
+        Transition {
+            occurs_at: Some(-150073200),
+            offset: -7200,  // UTC offset -7200, DST offset 0
+            name: "FNT",
+        },
+        Transition {
+            occurs_at: Some(-128901600),
+            offset: -3600,  // UTC offset -7200, DST offset 3600
+            name: "FNST",
+        },
+        Transition {
+            occurs_at: Some(-121129200),
+            offset: -7200,  // UTC offset -7200, DST offset 0
+            name: "FNT",
+        },
+        Transition {
+            occurs_at: Some(-99957600),
+            offset: -3600,  // UTC offset -7200, DST offset 3600
+            name: "FNST",
+        },
+        Transition {
+            occurs_at: Some(-89593200),
+            offset: -7200,  // UTC offset -7200, DST offset 0
+            name: "FNT",
+        },
+        Transition {
+            occurs_at: Some(-68421600),
+            offset: -3600,  // UTC offset -7200, DST offset 3600
+            name: "FNST",
+        },
+        Transition {
+            occurs_at: Some(-57970800),
+            offset: -7200,  // UTC offset -7200, DST offset 0
+            name: "FNT",
+        },
+        Transition {
+            occurs_at: Some(499744800),
+            offset: -3600,  // UTC offset -7200, DST offset 3600
+            name: "FNST",
+        },
+        Transition {
+            occurs_at: Some(511232400),
+            offset: -7200,  // UTC offset -7200, DST offset 0
+            name: "FNT",
+        },
+        Transition {
+            occurs_at: Some(530589600),
+            offset: -3600,  // UTC offset -7200, DST offset 3600
+            name: "FNST",
+        },
+        Transition {
+            occurs_at: Some(540262800),
+            offset: -7200,  // UTC offset -7200, DST offset 0
+            name: "FNT",
+        },
+        Transition {
+            occurs_at: Some(562125600),
+            offset: -3600,  // UTC offset -7200, DST offset 3600
+            name: "FNST",
+        },
+        Transition {
+            occurs_at: Some(571194000),
+            offset: -7200,  // UTC offset -7200, DST offset 0
+            name: "FNT",
+        },
+        Transition {
+            occurs_at: Some(592970400),
+            offset: -3600,  // UTC offset -7200, DST offset 3600
+            name: "FNST",
+        },
+        Transition {
+            occurs_at: Some(602038800),
+            offset: -7200,  // UTC offset -7200, DST offset 0
+            name: "FNT",
+        },
+        Transition {
+            occurs_at: Some(624420000),
+            offset: -3600,  // UTC offset -7200, DST offset 3600
+            name: "FNST",
+        },
+        Transition {
+            occurs_at: Some(634698000),
+            offset: -7200,  // UTC offset -7200, DST offset 0
+            name: "FNT",
+        },
+        Transition {
+            occurs_at: Some(938916000),
+            offset: -3600,  // UTC offset -7200, DST offset 3600
+            name: "FNST",
+        },
+        Transition {
+            occurs_at: Some(951613200),
+            offset: -7200,  // UTC offset -7200, DST offset 0
+            name: "FNT",
+        },
+        Transition {
+            occurs_at: Some(970970400),
+            offset: -3600,  // UTC offset -7200, DST offset 3600
+            name: "FNST",
+        },
+        Transition {
+            occurs_at: Some(971571600),
+            offset: -7200,  // UTC offset -7200, DST offset 0
+            name: "FNT",
+        },
+        Transition {
+            occurs_at: Some(1003024800),
+            offset: -3600,  // UTC offset -7200, DST offset 3600
+            name: "FNST",
+        },
+        Transition {
+            occurs_at: Some(1013907600),
+            offset: -7200,  // UTC offset -7200, DST offset 0
+            name: "FNT",
+        },
     ],
 };
 

@@ -10,18 +10,66 @@ use datetime::zoned::zoneinfo::*;
 pub const ZONE: Zone<'static> = Zone {
     name: "Asia/Karachi",
     transitions: &[
-        Transition { occurs_at: None, utc_offset: 16092, dst_offset: 0, name: "LMT" },
-        Transition { occurs_at: Some(-1988166492), utc_offset: 19800, dst_offset: 0, name: "IST" },
-        Transition { occurs_at: Some(-862637400), utc_offset: 19800, dst_offset: 3600, name: "IST" },
-        Transition { occurs_at: Some(-764145000), utc_offset: 19800, dst_offset: 0, name: "IST" },
-        Transition { occurs_at: Some(-576135000), utc_offset: 18000, dst_offset: 0, name: "KART" },
-        Transition { occurs_at: Some(38775600), utc_offset: 18000, dst_offset: 0, name: "PKT" },
-        Transition { occurs_at: Some(1018119660), utc_offset: 18000, dst_offset: 3600, name: "PKST" },
-        Transition { occurs_at: Some(1033840860), utc_offset: 18000, dst_offset: 0, name: "PKT" },
-        Transition { occurs_at: Some(1212260400), utc_offset: 18000, dst_offset: 3600, name: "PKST" },
-        Transition { occurs_at: Some(1225476000), utc_offset: 18000, dst_offset: 0, name: "PKT" },
-        Transition { occurs_at: Some(1239735600), utc_offset: 18000, dst_offset: 3600, name: "PKST" },
-        Transition { occurs_at: Some(1257012000), utc_offset: 18000, dst_offset: 0, name: "PKT" },
+        Transition {
+            occurs_at: None,
+            offset: 16092,  // UTC offset 16092, DST offset 0
+            name: "LMT",
+        },
+        Transition {
+            occurs_at: Some(-1988166492),
+            offset: 19800,  // UTC offset 19800, DST offset 0
+            name: "IST",
+        },
+        Transition {
+            occurs_at: Some(-862637400),
+            offset: 23400,  // UTC offset 19800, DST offset 3600
+            name: "IST",
+        },
+        Transition {
+            occurs_at: Some(-764145000),
+            offset: 19800,  // UTC offset 19800, DST offset 0
+            name: "IST",
+        },
+        Transition {
+            occurs_at: Some(-576135000),
+            offset: 18000,  // UTC offset 18000, DST offset 0
+            name: "KART",
+        },
+        Transition {
+            occurs_at: Some(38775600),
+            offset: 18000,  // UTC offset 18000, DST offset 0
+            name: "PKT",
+        },
+        Transition {
+            occurs_at: Some(1018119660),
+            offset: 21600,  // UTC offset 18000, DST offset 3600
+            name: "PKST",
+        },
+        Transition {
+            occurs_at: Some(1033840860),
+            offset: 18000,  // UTC offset 18000, DST offset 0
+            name: "PKT",
+        },
+        Transition {
+            occurs_at: Some(1212260400),
+            offset: 21600,  // UTC offset 18000, DST offset 3600
+            name: "PKST",
+        },
+        Transition {
+            occurs_at: Some(1225476000),
+            offset: 18000,  // UTC offset 18000, DST offset 0
+            name: "PKT",
+        },
+        Transition {
+            occurs_at: Some(1239735600),
+            offset: 21600,  // UTC offset 18000, DST offset 3600
+            name: "PKST",
+        },
+        Transition {
+            occurs_at: Some(1257012000),
+            offset: 18000,  // UTC offset 18000, DST offset 0
+            name: "PKT",
+        },
     ],
 };
 

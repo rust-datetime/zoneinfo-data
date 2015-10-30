@@ -10,16 +10,56 @@ use datetime::zoned::zoneinfo::*;
 pub const ZONE: Zone<'static> = Zone {
     name: "America/Guatemala",
     transitions: &[
-        Transition { occurs_at: None, utc_offset: -21476, dst_offset: 0, name: "LMT" },
-        Transition { occurs_at: Some(-1617040924), utc_offset: -21600, dst_offset: 0, name: "CST" },
-        Transition { occurs_at: Some(123055200), utc_offset: -21600, dst_offset: 3600, name: "CDT" },
-        Transition { occurs_at: Some(130914000), utc_offset: -21600, dst_offset: 0, name: "CST" },
-        Transition { occurs_at: Some(422344800), utc_offset: -21600, dst_offset: 3600, name: "CDT" },
-        Transition { occurs_at: Some(433054800), utc_offset: -21600, dst_offset: 0, name: "CST" },
-        Transition { occurs_at: Some(669708000), utc_offset: -21600, dst_offset: 3600, name: "CDT" },
-        Transition { occurs_at: Some(684219600), utc_offset: -21600, dst_offset: 0, name: "CST" },
-        Transition { occurs_at: Some(1146376800), utc_offset: -21600, dst_offset: 3600, name: "CDT" },
-        Transition { occurs_at: Some(1159678800), utc_offset: -21600, dst_offset: 0, name: "CST" },
+        Transition {
+            occurs_at: None,
+            offset: -21476,  // UTC offset -21476, DST offset 0
+            name: "LMT",
+        },
+        Transition {
+            occurs_at: Some(-1617040924),
+            offset: -21600,  // UTC offset -21600, DST offset 0
+            name: "CST",
+        },
+        Transition {
+            occurs_at: Some(123055200),
+            offset: -18000,  // UTC offset -21600, DST offset 3600
+            name: "CDT",
+        },
+        Transition {
+            occurs_at: Some(130914000),
+            offset: -21600,  // UTC offset -21600, DST offset 0
+            name: "CST",
+        },
+        Transition {
+            occurs_at: Some(422344800),
+            offset: -18000,  // UTC offset -21600, DST offset 3600
+            name: "CDT",
+        },
+        Transition {
+            occurs_at: Some(433054800),
+            offset: -21600,  // UTC offset -21600, DST offset 0
+            name: "CST",
+        },
+        Transition {
+            occurs_at: Some(669708000),
+            offset: -18000,  // UTC offset -21600, DST offset 3600
+            name: "CDT",
+        },
+        Transition {
+            occurs_at: Some(684219600),
+            offset: -21600,  // UTC offset -21600, DST offset 0
+            name: "CST",
+        },
+        Transition {
+            occurs_at: Some(1146376800),
+            offset: -18000,  // UTC offset -21600, DST offset 3600
+            name: "CDT",
+        },
+        Transition {
+            occurs_at: Some(1159678800),
+            offset: -21600,  // UTC offset -21600, DST offset 0
+            name: "CST",
+        },
     ],
 };
 

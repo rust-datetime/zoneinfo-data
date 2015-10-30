@@ -10,15 +10,51 @@ use datetime::zoned::zoneinfo::*;
 pub const ZONE: Zone<'static> = Zone {
     name: "Asia/Jakarta",
     transitions: &[
-        Transition { occurs_at: None, utc_offset: 25632, dst_offset: 0, name: "LMT" },
-        Transition { occurs_at: Some(-3231299232), utc_offset: 25632, dst_offset: 0, name: "BMT" },
-        Transition { occurs_at: Some(-1451719200), utc_offset: 26400, dst_offset: 0, name: "JAVT" },
-        Transition { occurs_at: Some(-1172906400), utc_offset: 27000, dst_offset: 0, name: "WIB" },
-        Transition { occurs_at: Some(-876641400), utc_offset: 32400, dst_offset: 0, name: "JST" },
-        Transition { occurs_at: Some(-766054800), utc_offset: 27000, dst_offset: 0, name: "WIB" },
-        Transition { occurs_at: Some(-683883000), utc_offset: 28800, dst_offset: 0, name: "WIB" },
-        Transition { occurs_at: Some(-620812800), utc_offset: 27000, dst_offset: 0, name: "WIB" },
-        Transition { occurs_at: Some(-189415800), utc_offset: 25200, dst_offset: 0, name: "WIB" },
+        Transition {
+            occurs_at: None,
+            offset: 25632,  // UTC offset 25632, DST offset 0
+            name: "LMT",
+        },
+        Transition {
+            occurs_at: Some(-3231299232),
+            offset: 25632,  // UTC offset 25632, DST offset 0
+            name: "BMT",
+        },
+        Transition {
+            occurs_at: Some(-1451719200),
+            offset: 26400,  // UTC offset 26400, DST offset 0
+            name: "JAVT",
+        },
+        Transition {
+            occurs_at: Some(-1172906400),
+            offset: 27000,  // UTC offset 27000, DST offset 0
+            name: "WIB",
+        },
+        Transition {
+            occurs_at: Some(-876641400),
+            offset: 32400,  // UTC offset 32400, DST offset 0
+            name: "JST",
+        },
+        Transition {
+            occurs_at: Some(-766054800),
+            offset: 27000,  // UTC offset 27000, DST offset 0
+            name: "WIB",
+        },
+        Transition {
+            occurs_at: Some(-683883000),
+            offset: 28800,  // UTC offset 28800, DST offset 0
+            name: "WIB",
+        },
+        Transition {
+            occurs_at: Some(-620812800),
+            offset: 27000,  // UTC offset 27000, DST offset 0
+            name: "WIB",
+        },
+        Transition {
+            occurs_at: Some(-189415800),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "WIB",
+        },
     ],
 };
 

@@ -10,22 +10,86 @@ use datetime::zoned::zoneinfo::*;
 pub const ZONE: Zone<'static> = Zone {
     name: "America/Hermosillo",
     transitions: &[
-        Transition { occurs_at: None, utc_offset: -23768, dst_offset: 0, name: "LMT" },
-        Transition { occurs_at: Some(-1514742464), utc_offset: -25200, dst_offset: 0, name: "MST" },
-        Transition { occurs_at: Some(-1343066400), utc_offset: -21600, dst_offset: 0, name: "CST" },
-        Transition { occurs_at: Some(-1234807200), utc_offset: -25200, dst_offset: 0, name: "MST" },
-        Transition { occurs_at: Some(-1220292000), utc_offset: -21600, dst_offset: 0, name: "CST" },
-        Transition { occurs_at: Some(-1207159200), utc_offset: -25200, dst_offset: 0, name: "MST" },
-        Transition { occurs_at: Some(-1191344400), utc_offset: -21600, dst_offset: 0, name: "CST" },
-        Transition { occurs_at: Some(-873828000), utc_offset: -25200, dst_offset: 0, name: "MST" },
-        Transition { occurs_at: Some(-661539600), utc_offset: -28800, dst_offset: 0, name: "PST" },
-        Transition { occurs_at: Some(28800), utc_offset: -25200, dst_offset: 0, name: "MST" },
-        Transition { occurs_at: Some(828867600), utc_offset: -25200, dst_offset: 3600, name: "MDT" },
-        Transition { occurs_at: Some(846403200), utc_offset: -25200, dst_offset: 0, name: "MST" },
-        Transition { occurs_at: Some(860317200), utc_offset: -25200, dst_offset: 3600, name: "MDT" },
-        Transition { occurs_at: Some(877852800), utc_offset: -25200, dst_offset: 0, name: "MST" },
-        Transition { occurs_at: Some(891766800), utc_offset: -25200, dst_offset: 3600, name: "MDT" },
-        Transition { occurs_at: Some(909302400), utc_offset: -25200, dst_offset: 0, name: "MST" },
+        Transition {
+            occurs_at: None,
+            offset: -23768,  // UTC offset -23768, DST offset 0
+            name: "LMT",
+        },
+        Transition {
+            occurs_at: Some(-1514742464),
+            offset: -25200,  // UTC offset -25200, DST offset 0
+            name: "MST",
+        },
+        Transition {
+            occurs_at: Some(-1343066400),
+            offset: -21600,  // UTC offset -21600, DST offset 0
+            name: "CST",
+        },
+        Transition {
+            occurs_at: Some(-1234807200),
+            offset: -25200,  // UTC offset -25200, DST offset 0
+            name: "MST",
+        },
+        Transition {
+            occurs_at: Some(-1220292000),
+            offset: -21600,  // UTC offset -21600, DST offset 0
+            name: "CST",
+        },
+        Transition {
+            occurs_at: Some(-1207159200),
+            offset: -25200,  // UTC offset -25200, DST offset 0
+            name: "MST",
+        },
+        Transition {
+            occurs_at: Some(-1191344400),
+            offset: -21600,  // UTC offset -21600, DST offset 0
+            name: "CST",
+        },
+        Transition {
+            occurs_at: Some(-873828000),
+            offset: -25200,  // UTC offset -25200, DST offset 0
+            name: "MST",
+        },
+        Transition {
+            occurs_at: Some(-661539600),
+            offset: -28800,  // UTC offset -28800, DST offset 0
+            name: "PST",
+        },
+        Transition {
+            occurs_at: Some(28800),
+            offset: -25200,  // UTC offset -25200, DST offset 0
+            name: "MST",
+        },
+        Transition {
+            occurs_at: Some(828867600),
+            offset: -21600,  // UTC offset -25200, DST offset 3600
+            name: "MDT",
+        },
+        Transition {
+            occurs_at: Some(846403200),
+            offset: -25200,  // UTC offset -25200, DST offset 0
+            name: "MST",
+        },
+        Transition {
+            occurs_at: Some(860317200),
+            offset: -21600,  // UTC offset -25200, DST offset 3600
+            name: "MDT",
+        },
+        Transition {
+            occurs_at: Some(877852800),
+            offset: -25200,  // UTC offset -25200, DST offset 0
+            name: "MST",
+        },
+        Transition {
+            occurs_at: Some(891766800),
+            offset: -21600,  // UTC offset -25200, DST offset 3600
+            name: "MDT",
+        },
+        Transition {
+            occurs_at: Some(909302400),
+            offset: -25200,  // UTC offset -25200, DST offset 0
+            name: "MST",
+        },
     ],
 };
 

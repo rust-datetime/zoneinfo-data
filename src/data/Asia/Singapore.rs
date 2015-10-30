@@ -10,16 +10,56 @@ use datetime::zoned::zoneinfo::*;
 pub const ZONE: Zone<'static> = Zone {
     name: "Asia/Singapore",
     transitions: &[
-        Transition { occurs_at: None, utc_offset: 24925, dst_offset: 0, name: "LMT" },
-        Transition { occurs_at: Some(-2177477725), utc_offset: 24925, dst_offset: 0, name: "SMT" },
-        Transition { occurs_at: Some(-2038200925), utc_offset: 25200, dst_offset: 0, name: "MALT" },
-        Transition { occurs_at: Some(-1167634800), utc_offset: 25200, dst_offset: 1200, name: "MALST" },
-        Transition { occurs_at: Some(-1073028000), utc_offset: 26400, dst_offset: 0, name: "MALT" },
-        Transition { occurs_at: Some(-894180000), utc_offset: 27000, dst_offset: 0, name: "MALT" },
-        Transition { occurs_at: Some(-879665400), utc_offset: 32400, dst_offset: 0, name: "JST" },
-        Transition { occurs_at: Some(-767005200), utc_offset: 27000, dst_offset: 0, name: "MALT" },
-        Transition { occurs_at: Some(-138785400), utc_offset: 27000, dst_offset: 0, name: "SGT" },
-        Transition { occurs_at: Some(378664200), utc_offset: 28800, dst_offset: 0, name: "SGT" },
+        Transition {
+            occurs_at: None,
+            offset: 24925,  // UTC offset 24925, DST offset 0
+            name: "LMT",
+        },
+        Transition {
+            occurs_at: Some(-2177477725),
+            offset: 24925,  // UTC offset 24925, DST offset 0
+            name: "SMT",
+        },
+        Transition {
+            occurs_at: Some(-2038200925),
+            offset: 25200,  // UTC offset 25200, DST offset 0
+            name: "MALT",
+        },
+        Transition {
+            occurs_at: Some(-1167634800),
+            offset: 26400,  // UTC offset 25200, DST offset 1200
+            name: "MALST",
+        },
+        Transition {
+            occurs_at: Some(-1073028000),
+            offset: 26400,  // UTC offset 26400, DST offset 0
+            name: "MALT",
+        },
+        Transition {
+            occurs_at: Some(-894180000),
+            offset: 27000,  // UTC offset 27000, DST offset 0
+            name: "MALT",
+        },
+        Transition {
+            occurs_at: Some(-879665400),
+            offset: 32400,  // UTC offset 32400, DST offset 0
+            name: "JST",
+        },
+        Transition {
+            occurs_at: Some(-767005200),
+            offset: 27000,  // UTC offset 27000, DST offset 0
+            name: "MALT",
+        },
+        Transition {
+            occurs_at: Some(-138785400),
+            offset: 27000,  // UTC offset 27000, DST offset 0
+            name: "SGT",
+        },
+        Transition {
+            occurs_at: Some(378664200),
+            offset: 28800,  // UTC offset 28800, DST offset 0
+            name: "SGT",
+        },
     ],
 };
 

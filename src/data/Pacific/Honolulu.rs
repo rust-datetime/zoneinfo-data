@@ -10,13 +10,41 @@ use datetime::zoned::zoneinfo::*;
 pub const ZONE: Zone<'static> = Zone {
     name: "Pacific/Honolulu",
     transitions: &[
-        Transition { occurs_at: None, utc_offset: -34114, dst_offset: 0, name: "LMT" },
-        Transition { occurs_at: Some(-2334105086), utc_offset: -34200, dst_offset: 0, name: "HST" },
-        Transition { occurs_at: Some(-1157286600), utc_offset: -34200, dst_offset: 3600, name: "HDT" },
-        Transition { occurs_at: Some(-1155439800), utc_offset: -34200, dst_offset: 0, name: "HST" },
-        Transition { occurs_at: Some(-880201800), utc_offset: -34200, dst_offset: 3600, name: "HDT" },
-        Transition { occurs_at: Some(-765379800), utc_offset: -34200, dst_offset: 0, name: "HST" },
-        Transition { occurs_at: Some(-712153800), utc_offset: -36000, dst_offset: 0, name: "HST" },
+        Transition {
+            occurs_at: None,
+            offset: -34114,  // UTC offset -34114, DST offset 0
+            name: "LMT",
+        },
+        Transition {
+            occurs_at: Some(-2334105086),
+            offset: -34200,  // UTC offset -34200, DST offset 0
+            name: "HST",
+        },
+        Transition {
+            occurs_at: Some(-1157286600),
+            offset: -30600,  // UTC offset -34200, DST offset 3600
+            name: "HDT",
+        },
+        Transition {
+            occurs_at: Some(-1155439800),
+            offset: -34200,  // UTC offset -34200, DST offset 0
+            name: "HST",
+        },
+        Transition {
+            occurs_at: Some(-880201800),
+            offset: -30600,  // UTC offset -34200, DST offset 3600
+            name: "HDT",
+        },
+        Transition {
+            occurs_at: Some(-765379800),
+            offset: -34200,  // UTC offset -34200, DST offset 0
+            name: "HST",
+        },
+        Transition {
+            occurs_at: Some(-712153800),
+            offset: -36000,  // UTC offset -36000, DST offset 0
+            name: "HST",
+        },
     ],
 };
 
