@@ -11,6 +11,11 @@ pub const ZONE: Zone<'static> = Zone {
     name: "EET",
     transitions: &[
         Transition {
+            occurs_at: None,
+            offset: 7200,  // UTC offset 7200, DST offset 0
+            name: "EET",
+        },
+        Transition {
             occurs_at: Some(228877200),
             offset: 10800,  // UTC offset 7200, DST offset 3600
             name: "EEST",
