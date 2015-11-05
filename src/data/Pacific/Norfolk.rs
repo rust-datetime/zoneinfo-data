@@ -9,38 +9,33 @@ use datetime::zoned::zoneinfo::*;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Pacific/Norfolk",
-    transitions: &[
-        Transition {
-            occurs_at: None,
+    transitions: ZoneSet {
+        first: ZoneDetails {
             offset: 40312,  // UTC offset 40312, DST offset 0
             name: "LMT",
         },
-        Transition {
-            occurs_at: Some(-2177493112),
+        rest: &[
+        (-2177493112, ZoneDetails {
             offset: 40320,  // UTC offset 40320, DST offset 0
             name: "NMT",
-        },
-        Transition {
-            occurs_at: Some(-599656320),
+        }),
+        (-599656320, ZoneDetails {
             offset: 41400,  // UTC offset 41400, DST offset 0
             name: "NFT",
-        },
-        Transition {
-            occurs_at: Some(152029800),
+        }),
+        (152029800, ZoneDetails {
             offset: 45000,  // UTC offset 41400, DST offset 3600
             name: "NFST",
-        },
-        Transition {
-            occurs_at: Some(162912600),
+        }),
+        (162912600, ZoneDetails {
             offset: 41400,  // UTC offset 41400, DST offset 0
             name: "NFT",
-        },
-        Transition {
-            occurs_at: Some(1443882600),
+        }),
+        (1443882600, ZoneDetails {
             offset: 39600,  // UTC offset 39600, DST offset 0
             name: "NFT",
-        },
-    ],
+        }),
+    ]},
 };
 
 

@@ -9,63 +9,53 @@ use datetime::zoned::zoneinfo::*;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "America/Barbados",
-    transitions: &[
-        Transition {
-            occurs_at: None,
+    transitions: ZoneSet {
+        first: ZoneDetails {
             offset: -7291,  // UTC offset -7291, DST offset 0
             name: "LMT",
         },
-        Transition {
-            occurs_at: Some(-1451685509),
+        rest: &[
+        (-1451685509, ZoneDetails {
             offset: -7291,  // UTC offset -7291, DST offset 0
             name: "BMT",
-        },
-        Transition {
-            occurs_at: Some(-1199224709),
+        }),
+        (-1199224709, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "AST",
-        },
-        Transition {
-            occurs_at: Some(234943200),
+        }),
+        (234943200, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "ADT",
-        },
-        Transition {
-            occurs_at: Some(244616400),
+        }),
+        (244616400, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "AST",
-        },
-        Transition {
-            occurs_at: Some(261554400),
+        }),
+        (261554400, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "ADT",
-        },
-        Transition {
-            occurs_at: Some(276066000),
+        }),
+        (276066000, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "AST",
-        },
-        Transition {
-            occurs_at: Some(293004000),
+        }),
+        (293004000, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "ADT",
-        },
-        Transition {
-            occurs_at: Some(307515600),
+        }),
+        (307515600, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "AST",
-        },
-        Transition {
-            occurs_at: Some(325058400),
+        }),
+        (325058400, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "ADT",
-        },
-        Transition {
-            occurs_at: Some(338706000),
+        }),
+        (338706000, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "AST",
-        },
-    ],
+        }),
+    ]},
 };
 
 

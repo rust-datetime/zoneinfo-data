@@ -9,53 +9,45 @@ use datetime::zoned::zoneinfo::*;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Asia/Colombo",
-    transitions: &[
-        Transition {
-            occurs_at: None,
+    transitions: ZoneSet {
+        first: ZoneDetails {
             offset: 19164,  // UTC offset 19164, DST offset 0
             name: "LMT",
         },
-        Transition {
-            occurs_at: Some(-2840159964),
+        rest: &[
+        (-2840159964, ZoneDetails {
             offset: 19172,  // UTC offset 19172, DST offset 0
             name: "MMT",
-        },
-        Transition {
-            occurs_at: Some(-2019705572),
+        }),
+        (-2019705572, ZoneDetails {
             offset: 19800,  // UTC offset 19800, DST offset 0
             name: "IST",
-        },
-        Transition {
-            occurs_at: Some(-883287000),
+        }),
+        (-883287000, ZoneDetails {
             offset: 21600,  // UTC offset 19800, DST offset 1800
             name: "IHST",
-        },
-        Transition {
-            occurs_at: Some(-862639200),
+        }),
+        (-862639200, ZoneDetails {
             offset: 23400,  // UTC offset 19800, DST offset 3600
             name: "IST",
-        },
-        Transition {
-            occurs_at: Some(-764051400),
+        }),
+        (-764051400, ZoneDetails {
             offset: 19800,  // UTC offset 19800, DST offset 0
             name: "IST",
-        },
-        Transition {
-            occurs_at: Some(832962600),
+        }),
+        (832962600, ZoneDetails {
             offset: 23400,  // UTC offset 23400, DST offset 0
             name: "LKT",
-        },
-        Transition {
-            occurs_at: Some(846266400),
+        }),
+        (846266400, ZoneDetails {
             offset: 21600,  // UTC offset 21600, DST offset 0
             name: "LKT",
-        },
-        Transition {
-            occurs_at: Some(1145039400),
+        }),
+        (1145039400, ZoneDetails {
             offset: 19800,  // UTC offset 19800, DST offset 0
             name: "IST",
-        },
-    ],
+        }),
+    ]},
 };
 
 

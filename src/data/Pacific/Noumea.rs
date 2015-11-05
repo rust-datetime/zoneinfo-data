@@ -9,48 +9,41 @@ use datetime::zoned::zoneinfo::*;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Pacific/Noumea",
-    transitions: &[
-        Transition {
-            occurs_at: None,
+    transitions: ZoneSet {
+        first: ZoneDetails {
             offset: 39948,  // UTC offset 39948, DST offset 0
             name: "LMT",
         },
-        Transition {
-            occurs_at: Some(-1829387148),
+        rest: &[
+        (-1829387148, ZoneDetails {
             offset: 39600,  // UTC offset 39600, DST offset 0
             name: "NCT",
-        },
-        Transition {
-            occurs_at: Some(250002000),
+        }),
+        (250002000, ZoneDetails {
             offset: 43200,  // UTC offset 39600, DST offset 3600
             name: "NCST",
-        },
-        Transition {
-            occurs_at: Some(257342400),
+        }),
+        (257342400, ZoneDetails {
             offset: 39600,  // UTC offset 39600, DST offset 0
             name: "NCT",
-        },
-        Transition {
-            occurs_at: Some(281451600),
+        }),
+        (281451600, ZoneDetails {
             offset: 43200,  // UTC offset 39600, DST offset 3600
             name: "NCST",
-        },
-        Transition {
-            occurs_at: Some(288878400),
+        }),
+        (288878400, ZoneDetails {
             offset: 39600,  // UTC offset 39600, DST offset 0
             name: "NCT",
-        },
-        Transition {
-            occurs_at: Some(849366000),
+        }),
+        (849366000, ZoneDetails {
             offset: 43200,  // UTC offset 39600, DST offset 3600
             name: "NCST",
-        },
-        Transition {
-            occurs_at: Some(857228400),
+        }),
+        (857228400, ZoneDetails {
             offset: 39600,  // UTC offset 39600, DST offset 0
             name: "NCT",
-        },
-    ],
+        }),
+    ]},
 };
 
 

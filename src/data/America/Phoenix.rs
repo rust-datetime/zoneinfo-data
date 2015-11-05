@@ -9,68 +9,57 @@ use datetime::zoned::zoneinfo::*;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "America/Phoenix",
-    transitions: &[
-        Transition {
-            occurs_at: None,
+    transitions: ZoneSet {
+        first: ZoneDetails {
             offset: -23502,  // UTC offset -23502, DST offset 0
             name: "LMT",
         },
-        Transition {
-            occurs_at: Some(-2717646996),
+        rest: &[
+        (-2717646996, ZoneDetails {
             offset: -25200,  // UTC offset -25200, DST offset 0
             name: "MST",
-        },
-        Transition {
-            occurs_at: Some(-1633273200),
+        }),
+        (-1633273200, ZoneDetails {
             offset: -21600,  // UTC offset -25200, DST offset 3600
             name: "MDT",
-        },
-        Transition {
-            occurs_at: Some(-1615132800),
+        }),
+        (-1615132800, ZoneDetails {
             offset: -25200,  // UTC offset -25200, DST offset 0
             name: "MST",
-        },
-        Transition {
-            occurs_at: Some(-1601823600),
+        }),
+        (-1601823600, ZoneDetails {
             offset: -21600,  // UTC offset -25200, DST offset 3600
             name: "MDT",
-        },
-        Transition {
-            occurs_at: Some(-1583683200),
+        }),
+        (-1583683200, ZoneDetails {
             offset: -25200,  // UTC offset -25200, DST offset 0
             name: "MST",
-        },
-        Transition {
-            occurs_at: Some(-880210800),
+        }),
+        (-880210800, ZoneDetails {
             offset: -21600,  // UTC offset -25200, DST offset 3600
             name: "MWT",
-        },
-        Transition {
-            occurs_at: Some(-820519140),
+        }),
+        (-820519140, ZoneDetails {
             offset: -25200,  // UTC offset -25200, DST offset 0
             name: "MST",
-        },
-        Transition {
-            occurs_at: Some(-812653140),
+        }),
+        (-812653140, ZoneDetails {
             offset: -21600,  // UTC offset -25200, DST offset 3600
             name: "MWT",
-        },
-        Transition {
-            occurs_at: Some(-796845540),
+        }),
+        (-796845540, ZoneDetails {
             offset: -25200,  // UTC offset -25200, DST offset 0
             name: "MST",
-        },
-        Transition {
-            occurs_at: Some(-84380400),
+        }),
+        (-84380400, ZoneDetails {
             offset: -21600,  // UTC offset -25200, DST offset 3600
             name: "MDT",
-        },
-        Transition {
-            occurs_at: Some(-68659200),
+        }),
+        (-68659200, ZoneDetails {
             offset: -25200,  // UTC offset -25200, DST offset 0
             name: "MST",
-        },
-    ],
+        }),
+    ]},
 };
 
 

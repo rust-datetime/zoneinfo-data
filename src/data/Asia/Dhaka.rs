@@ -9,53 +9,45 @@ use datetime::zoned::zoneinfo::*;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Asia/Dhaka",
-    transitions: &[
-        Transition {
-            occurs_at: None,
+    transitions: ZoneSet {
+        first: ZoneDetails {
             offset: 21700,  // UTC offset 21700, DST offset 0
             name: "LMT",
         },
-        Transition {
-            occurs_at: Some(-2524543300),
+        rest: &[
+        (-2524543300, ZoneDetails {
             offset: 21200,  // UTC offset 21200, DST offset 0
             name: "HMT",
-        },
-        Transition {
-            occurs_at: Some(-891582800),
+        }),
+        (-891582800, ZoneDetails {
             offset: 23400,  // UTC offset 23400, DST offset 0
             name: "BURT",
-        },
-        Transition {
-            occurs_at: Some(-872058600),
+        }),
+        (-872058600, ZoneDetails {
             offset: 19800,  // UTC offset 19800, DST offset 0
             name: "IST",
-        },
-        Transition {
-            occurs_at: Some(-862637400),
+        }),
+        (-862637400, ZoneDetails {
             offset: 23400,  // UTC offset 23400, DST offset 0
             name: "BURT",
-        },
-        Transition {
-            occurs_at: Some(-576138600),
+        }),
+        (-576138600, ZoneDetails {
             offset: 21600,  // UTC offset 21600, DST offset 0
             name: "DACT",
-        },
-        Transition {
-            occurs_at: Some(38772000),
+        }),
+        (38772000, ZoneDetails {
             offset: 21600,  // UTC offset 21600, DST offset 0
             name: "BDT",
-        },
-        Transition {
-            occurs_at: Some(1245430800),
+        }),
+        (1245430800, ZoneDetails {
             offset: 25200,  // UTC offset 21600, DST offset 3600
             name: "BDST",
-        },
-        Transition {
-            occurs_at: Some(1262278800),
+        }),
+        (1262278800, ZoneDetails {
             offset: 21600,  // UTC offset 21600, DST offset 0
             name: "BDT",
-        },
-    ],
+        }),
+    ]},
 };
 
 

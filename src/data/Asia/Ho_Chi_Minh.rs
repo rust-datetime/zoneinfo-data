@@ -9,58 +9,49 @@ use datetime::zoned::zoneinfo::*;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Asia/Ho_Chi_Minh",
-    transitions: &[
-        Transition {
-            occurs_at: None,
+    transitions: ZoneSet {
+        first: ZoneDetails {
             offset: 25600,  // UTC offset 25600, DST offset 0
             name: "LMT",
         },
-        Transition {
-            occurs_at: Some(-2004073600),
+        rest: &[
+        (-2004073600, ZoneDetails {
             offset: 25590,  // UTC offset 25590, DST offset 0
             name: "PLMT",
-        },
-        Transition {
-            occurs_at: Some(-1851577590),
+        }),
+        (-1851577590, ZoneDetails {
             offset: 25200,  // UTC offset 25200, DST offset 0
             name: "ICT",
-        },
-        Transition {
-            occurs_at: Some(-852105600),
+        }),
+        (-852105600, ZoneDetails {
             offset: 28800,  // UTC offset 28800, DST offset 0
             name: "IDT",
-        },
-        Transition {
-            occurs_at: Some(-782643600),
+        }),
+        (-782643600, ZoneDetails {
             offset: 32400,  // UTC offset 32400, DST offset 0
             name: "JST",
-        },
-        Transition {
-            occurs_at: Some(-767869200),
+        }),
+        (-767869200, ZoneDetails {
             offset: 25200,  // UTC offset 25200, DST offset 0
             name: "ICT",
-        },
-        Transition {
-            occurs_at: Some(-718095600),
+        }),
+        (-718095600, ZoneDetails {
             offset: 28800,  // UTC offset 28800, DST offset 0
             name: "IDT",
-        },
-        Transition {
-            occurs_at: Some(-457776000),
+        }),
+        (-457776000, ZoneDetails {
             offset: 25200,  // UTC offset 25200, DST offset 0
             name: "ICT",
-        },
-        Transition {
-            occurs_at: Some(-315648000),
+        }),
+        (-315648000, ZoneDetails {
             offset: 28800,  // UTC offset 28800, DST offset 0
             name: "IDT",
-        },
-        Transition {
-            occurs_at: Some(171820800),
+        }),
+        (171820800, ZoneDetails {
             offset: 25200,  // UTC offset 25200, DST offset 0
             name: "ICT",
-        },
-    ],
+        }),
+    ]},
 };
 
 

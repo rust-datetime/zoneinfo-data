@@ -9,118 +9,97 @@ use datetime::zoned::zoneinfo::*;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Australia/Lindeman",
-    transitions: &[
-        Transition {
-            occurs_at: None,
+    transitions: ZoneSet {
+        first: ZoneDetails {
             offset: 35756,  // UTC offset 35756, DST offset 0
             name: "LMT",
         },
-        Transition {
-            occurs_at: Some(-2366790956),
+        rest: &[
+        (-2366790956, ZoneDetails {
             offset: 36000,  // UTC offset 36000, DST offset 0
             name: "AEST",
-        },
-        Transition {
-            occurs_at: Some(-1672567140),
+        }),
+        (-1672567140, ZoneDetails {
             offset: 39600,  // UTC offset 36000, DST offset 3600
             name: "AEDT",
-        },
-        Transition {
-            occurs_at: Some(-1665392400),
+        }),
+        (-1665392400, ZoneDetails {
             offset: 36000,  // UTC offset 36000, DST offset 0
             name: "AEST",
-        },
-        Transition {
-            occurs_at: Some(-883641600),
+        }),
+        (-883641600, ZoneDetails {
             offset: 39600,  // UTC offset 36000, DST offset 3600
             name: "AEDT",
-        },
-        Transition {
-            occurs_at: Some(-876128400),
+        }),
+        (-876128400, ZoneDetails {
             offset: 36000,  // UTC offset 36000, DST offset 0
             name: "AEST",
-        },
-        Transition {
-            occurs_at: Some(-860400000),
+        }),
+        (-860400000, ZoneDetails {
             offset: 39600,  // UTC offset 36000, DST offset 3600
             name: "AEDT",
-        },
-        Transition {
-            occurs_at: Some(-844678800),
+        }),
+        (-844678800, ZoneDetails {
             offset: 36000,  // UTC offset 36000, DST offset 0
             name: "AEST",
-        },
-        Transition {
-            occurs_at: Some(-828345600),
+        }),
+        (-828345600, ZoneDetails {
             offset: 39600,  // UTC offset 36000, DST offset 3600
             name: "AEDT",
-        },
-        Transition {
-            occurs_at: Some(-813229200),
+        }),
+        (-813229200, ZoneDetails {
             offset: 36000,  // UTC offset 36000, DST offset 0
             name: "AEST",
-        },
-        Transition {
-            occurs_at: Some(57686400),
+        }),
+        (57686400, ZoneDetails {
             offset: 39600,  // UTC offset 36000, DST offset 3600
             name: "AEDT",
-        },
-        Transition {
-            occurs_at: Some(67968000),
+        }),
+        (67968000, ZoneDetails {
             offset: 36000,  // UTC offset 36000, DST offset 0
             name: "AEST",
-        },
-        Transition {
-            occurs_at: Some(625593600),
+        }),
+        (625593600, ZoneDetails {
             offset: 39600,  // UTC offset 36000, DST offset 3600
             name: "AEDT",
-        },
-        Transition {
-            occurs_at: Some(636480000),
+        }),
+        (636480000, ZoneDetails {
             offset: 36000,  // UTC offset 36000, DST offset 0
             name: "AEST",
-        },
-        Transition {
-            occurs_at: Some(657043200),
+        }),
+        (657043200, ZoneDetails {
             offset: 39600,  // UTC offset 36000, DST offset 3600
             name: "AEDT",
-        },
-        Transition {
-            occurs_at: Some(667929600),
+        }),
+        (667929600, ZoneDetails {
             offset: 36000,  // UTC offset 36000, DST offset 0
             name: "AEST",
-        },
-        Transition {
-            occurs_at: Some(688492800),
+        }),
+        (688492800, ZoneDetails {
             offset: 39600,  // UTC offset 36000, DST offset 3600
             name: "AEDT",
-        },
-        Transition {
-            occurs_at: Some(699465600),
+        }),
+        (699465600, ZoneDetails {
             offset: 36000,  // UTC offset 36000, DST offset 0
             name: "AEST",
-        },
-        Transition {
-            occurs_at: Some(719942400),
+        }),
+        (719942400, ZoneDetails {
             offset: 39600,  // UTC offset 36000, DST offset 3600
             name: "AEDT",
-        },
-        Transition {
-            occurs_at: Some(731433600),
+        }),
+        (731433600, ZoneDetails {
             offset: 36000,  // UTC offset 36000, DST offset 0
             name: "AEST",
-        },
-        Transition {
-            occurs_at: Some(751996800),
+        }),
+        (751996800, ZoneDetails {
             offset: 39600,  // UTC offset 36000, DST offset 3600
             name: "AEDT",
-        },
-        Transition {
-            occurs_at: Some(762883200),
+        }),
+        (762883200, ZoneDetails {
             offset: 36000,  // UTC offset 36000, DST offset 0
             name: "AEST",
-        },
-    ],
+        }),
+    ]},
 };
 
 

@@ -9,48 +9,41 @@ use datetime::zoned::zoneinfo::*;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "America/Atikokan",
-    transitions: &[
-        Transition {
-            occurs_at: None,
+    transitions: ZoneSet {
+        first: ZoneDetails {
             offset: -21212,  // UTC offset -21212, DST offset 0
             name: "LMT",
         },
-        Transition {
-            occurs_at: Some(-2366733988),
+        rest: &[
+        (-2366733988, ZoneDetails {
             offset: -21600,  // UTC offset -21600, DST offset 0
             name: "CST",
-        },
-        Transition {
-            occurs_at: Some(-1632067200),
+        }),
+        (-1632067200, ZoneDetails {
             offset: -18000,  // UTC offset -21600, DST offset 3600
             name: "CDT",
-        },
-        Transition {
-            occurs_at: Some(-1615136400),
+        }),
+        (-1615136400, ZoneDetails {
             offset: -21600,  // UTC offset -21600, DST offset 0
             name: "CST",
-        },
-        Transition {
-            occurs_at: Some(-923248800),
+        }),
+        (-923248800, ZoneDetails {
             offset: -18000,  // UTC offset -21600, DST offset 3600
             name: "CDT",
-        },
-        Transition {
-            occurs_at: Some(-880218000),
+        }),
+        (-880218000, ZoneDetails {
             offset: -18000,  // UTC offset -21600, DST offset 3600
             name: "CWT",
-        },
-        Transition {
-            occurs_at: Some(-769395600),
+        }),
+        (-769395600, ZoneDetails {
             offset: -18000,  // UTC offset -21600, DST offset 3600
             name: "CPT",
-        },
-        Transition {
-            occurs_at: Some(-765392400),
+        }),
+        (-765392400, ZoneDetails {
             offset: -18000,  // UTC offset -18000, DST offset 0
             name: "EST",
-        },
-    ],
+        }),
+    ]},
 };
 
 

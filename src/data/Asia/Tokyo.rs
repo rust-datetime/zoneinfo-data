@@ -9,68 +9,57 @@ use datetime::zoned::zoneinfo::*;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Asia/Tokyo",
-    transitions: &[
-        Transition {
-            occurs_at: None,
+    transitions: ZoneSet {
+        first: ZoneDetails {
             offset: 33539,  // UTC offset 33539, DST offset 0
             name: "LMT",
         },
-        Transition {
-            occurs_at: Some(-2587745939),
+        rest: &[
+        (-2587745939, ZoneDetails {
             offset: 32400,  // UTC offset 32400, DST offset 0
             name: "JST",
-        },
-        Transition {
-            occurs_at: Some(-2335251600),
+        }),
+        (-2335251600, ZoneDetails {
             offset: 32400,  // UTC offset 32400, DST offset 0
             name: "JCST",
-        },
-        Transition {
-            occurs_at: Some(-1017824400),
+        }),
+        (-1017824400, ZoneDetails {
             offset: 32400,  // UTC offset 32400, DST offset 0
             name: "JST",
-        },
-        Transition {
-            occurs_at: Some(-683794800),
+        }),
+        (-683794800, ZoneDetails {
             offset: 36000,  // UTC offset 32400, DST offset 3600
             name: "JDT",
-        },
-        Transition {
-            occurs_at: Some(-672393600),
+        }),
+        (-672393600, ZoneDetails {
             offset: 32400,  // UTC offset 32400, DST offset 0
             name: "JST",
-        },
-        Transition {
-            occurs_at: Some(-654764400),
+        }),
+        (-654764400, ZoneDetails {
             offset: 36000,  // UTC offset 32400, DST offset 3600
             name: "JDT",
-        },
-        Transition {
-            occurs_at: Some(-640944000),
+        }),
+        (-640944000, ZoneDetails {
             offset: 32400,  // UTC offset 32400, DST offset 0
             name: "JST",
-        },
-        Transition {
-            occurs_at: Some(-620290800),
+        }),
+        (-620290800, ZoneDetails {
             offset: 36000,  // UTC offset 32400, DST offset 3600
             name: "JDT",
-        },
-        Transition {
-            occurs_at: Some(-609494400),
+        }),
+        (-609494400, ZoneDetails {
             offset: 32400,  // UTC offset 32400, DST offset 0
             name: "JST",
-        },
-        Transition {
-            occurs_at: Some(-588841200),
+        }),
+        (-588841200, ZoneDetails {
             offset: 36000,  // UTC offset 32400, DST offset 3600
             name: "JDT",
-        },
-        Transition {
-            occurs_at: Some(-578044800),
+        }),
+        (-578044800, ZoneDetails {
             offset: 32400,  // UTC offset 32400, DST offset 0
             name: "JST",
-        },
-    ],
+        }),
+    ]},
 };
 
 

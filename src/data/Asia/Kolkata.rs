@@ -9,38 +9,33 @@ use datetime::zoned::zoneinfo::*;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Asia/Kolkata",
-    transitions: &[
-        Transition {
-            occurs_at: None,
+    transitions: ZoneSet {
+        first: ZoneDetails {
             offset: 21208,  // UTC offset 21208, DST offset 0
             name: "LMT",
         },
-        Transition {
-            occurs_at: Some(-2840162008),
+        rest: &[
+        (-2840162008, ZoneDetails {
             offset: 21200,  // UTC offset 21200, DST offset 0
             name: "HMT",
-        },
-        Transition {
-            occurs_at: Some(-891582800),
+        }),
+        (-891582800, ZoneDetails {
             offset: 23400,  // UTC offset 23400, DST offset 0
             name: "BURT",
-        },
-        Transition {
-            occurs_at: Some(-872058600),
+        }),
+        (-872058600, ZoneDetails {
             offset: 19800,  // UTC offset 19800, DST offset 0
             name: "IST",
-        },
-        Transition {
-            occurs_at: Some(-862637400),
+        }),
+        (-862637400, ZoneDetails {
             offset: 23400,  // UTC offset 19800, DST offset 3600
             name: "IST",
-        },
-        Transition {
-            occurs_at: Some(-764145000),
+        }),
+        (-764145000, ZoneDetails {
             offset: 19800,  // UTC offset 19800, DST offset 0
             name: "IST",
-        },
-    ],
+        }),
+    ]},
 };
 
 

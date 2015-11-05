@@ -9,333 +9,269 @@ use datetime::zoned::zoneinfo::*;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Asia/Anadyr",
-    transitions: &[
-        Transition {
-            occurs_at: None,
+    transitions: ZoneSet {
+        first: ZoneDetails {
             offset: 42596,  // UTC offset 42596, DST offset 0
             name: "LMT",
         },
-        Transition {
-            occurs_at: Some(-1441194596),
+        rest: &[
+        (-1441194596, ZoneDetails {
             offset: 43200,  // UTC offset 43200, DST offset 0
             name: "ANAT",
-        },
-        Transition {
-            occurs_at: Some(-1247572800),
+        }),
+        (-1247572800, ZoneDetails {
             offset: 46800,  // UTC offset 46800, DST offset 0
             name: "ANAT",
-        },
-        Transition {
-            occurs_at: Some(354884400),
+        }),
+        (354884400, ZoneDetails {
             offset: 50400,  // UTC offset 46800, DST offset 3600
             name: "ANAST",
-        },
-        Transition {
-            occurs_at: Some(370692000),
+        }),
+        (370692000, ZoneDetails {
             offset: 46800,  // UTC offset 46800, DST offset 0
             name: "ANAT",
-        },
-        Transition {
-            occurs_at: Some(386420400),
+        }),
+        (386420400, ZoneDetails {
             offset: 46800,  // UTC offset 43200, DST offset 3600
             name: "ANAST",
-        },
-        Transition {
-            occurs_at: Some(402231600),
+        }),
+        (402231600, ZoneDetails {
             offset: 43200,  // UTC offset 43200, DST offset 0
             name: "ANAT",
-        },
-        Transition {
-            occurs_at: Some(417960000),
+        }),
+        (417960000, ZoneDetails {
             offset: 46800,  // UTC offset 43200, DST offset 3600
             name: "ANAST",
-        },
-        Transition {
-            occurs_at: Some(433767600),
+        }),
+        (433767600, ZoneDetails {
             offset: 43200,  // UTC offset 43200, DST offset 0
             name: "ANAT",
-        },
-        Transition {
-            occurs_at: Some(449582400),
+        }),
+        (449582400, ZoneDetails {
             offset: 46800,  // UTC offset 43200, DST offset 3600
             name: "ANAST",
-        },
-        Transition {
-            occurs_at: Some(465314400),
+        }),
+        (465314400, ZoneDetails {
             offset: 43200,  // UTC offset 43200, DST offset 0
             name: "ANAT",
-        },
-        Transition {
-            occurs_at: Some(481039200),
+        }),
+        (481039200, ZoneDetails {
             offset: 46800,  // UTC offset 43200, DST offset 3600
             name: "ANAST",
-        },
-        Transition {
-            occurs_at: Some(496764000),
+        }),
+        (496764000, ZoneDetails {
             offset: 43200,  // UTC offset 43200, DST offset 0
             name: "ANAT",
-        },
-        Transition {
-            occurs_at: Some(512488800),
+        }),
+        (512488800, ZoneDetails {
             offset: 46800,  // UTC offset 43200, DST offset 3600
             name: "ANAST",
-        },
-        Transition {
-            occurs_at: Some(528213600),
+        }),
+        (528213600, ZoneDetails {
             offset: 43200,  // UTC offset 43200, DST offset 0
             name: "ANAT",
-        },
-        Transition {
-            occurs_at: Some(543938400),
+        }),
+        (543938400, ZoneDetails {
             offset: 46800,  // UTC offset 43200, DST offset 3600
             name: "ANAST",
-        },
-        Transition {
-            occurs_at: Some(559663200),
+        }),
+        (559663200, ZoneDetails {
             offset: 43200,  // UTC offset 43200, DST offset 0
             name: "ANAT",
-        },
-        Transition {
-            occurs_at: Some(575388000),
+        }),
+        (575388000, ZoneDetails {
             offset: 46800,  // UTC offset 43200, DST offset 3600
             name: "ANAST",
-        },
-        Transition {
-            occurs_at: Some(591112800),
+        }),
+        (591112800, ZoneDetails {
             offset: 43200,  // UTC offset 43200, DST offset 0
             name: "ANAT",
-        },
-        Transition {
-            occurs_at: Some(606837600),
+        }),
+        (606837600, ZoneDetails {
             offset: 46800,  // UTC offset 43200, DST offset 3600
             name: "ANAST",
-        },
-        Transition {
-            occurs_at: Some(622562400),
+        }),
+        (622562400, ZoneDetails {
             offset: 43200,  // UTC offset 43200, DST offset 0
             name: "ANAT",
-        },
-        Transition {
-            occurs_at: Some(638287200),
+        }),
+        (638287200, ZoneDetails {
             offset: 46800,  // UTC offset 43200, DST offset 3600
             name: "ANAST",
-        },
-        Transition {
-            occurs_at: Some(654616800),
+        }),
+        (654616800, ZoneDetails {
             offset: 43200,  // UTC offset 43200, DST offset 0
             name: "ANAT",
-        },
-        Transition {
-            occurs_at: Some(670341600),
+        }),
+        (670341600, ZoneDetails {
             offset: 43200,  // UTC offset 39600, DST offset 3600
             name: "ANAST",
-        },
-        Transition {
-            occurs_at: Some(686070000),
+        }),
+        (686070000, ZoneDetails {
             offset: 39600,  // UTC offset 39600, DST offset 0
             name: "ANAT",
-        },
-        Transition {
-            occurs_at: Some(695746800),
+        }),
+        (695746800, ZoneDetails {
             offset: 43200,  // UTC offset 43200, DST offset 0
             name: "ANAT",
-        },
-        Transition {
-            occurs_at: Some(701780400),
+        }),
+        (701780400, ZoneDetails {
             offset: 46800,  // UTC offset 43200, DST offset 3600
             name: "ANAST",
-        },
-        Transition {
-            occurs_at: Some(717501600),
+        }),
+        (717501600, ZoneDetails {
             offset: 43200,  // UTC offset 43200, DST offset 0
             name: "ANAT",
-        },
-        Transition {
-            occurs_at: Some(733240800),
+        }),
+        (733240800, ZoneDetails {
             offset: 46800,  // UTC offset 43200, DST offset 3600
             name: "ANAST",
-        },
-        Transition {
-            occurs_at: Some(748965600),
+        }),
+        (748965600, ZoneDetails {
             offset: 43200,  // UTC offset 43200, DST offset 0
             name: "ANAT",
-        },
-        Transition {
-            occurs_at: Some(764690400),
+        }),
+        (764690400, ZoneDetails {
             offset: 46800,  // UTC offset 43200, DST offset 3600
             name: "ANAST",
-        },
-        Transition {
-            occurs_at: Some(780415200),
+        }),
+        (780415200, ZoneDetails {
             offset: 43200,  // UTC offset 43200, DST offset 0
             name: "ANAT",
-        },
-        Transition {
-            occurs_at: Some(796140000),
+        }),
+        (796140000, ZoneDetails {
             offset: 46800,  // UTC offset 43200, DST offset 3600
             name: "ANAST",
-        },
-        Transition {
-            occurs_at: Some(811864800),
+        }),
+        (811864800, ZoneDetails {
             offset: 43200,  // UTC offset 43200, DST offset 0
             name: "ANAT",
-        },
-        Transition {
-            occurs_at: Some(828194400),
+        }),
+        (828194400, ZoneDetails {
             offset: 46800,  // UTC offset 43200, DST offset 3600
             name: "ANAST",
-        },
-        Transition {
-            occurs_at: Some(846338400),
+        }),
+        (846338400, ZoneDetails {
             offset: 43200,  // UTC offset 43200, DST offset 0
             name: "ANAT",
-        },
-        Transition {
-            occurs_at: Some(859644000),
+        }),
+        (859644000, ZoneDetails {
             offset: 46800,  // UTC offset 43200, DST offset 3600
             name: "ANAST",
-        },
-        Transition {
-            occurs_at: Some(877788000),
+        }),
+        (877788000, ZoneDetails {
             offset: 43200,  // UTC offset 43200, DST offset 0
             name: "ANAT",
-        },
-        Transition {
-            occurs_at: Some(891093600),
+        }),
+        (891093600, ZoneDetails {
             offset: 46800,  // UTC offset 43200, DST offset 3600
             name: "ANAST",
-        },
-        Transition {
-            occurs_at: Some(909237600),
+        }),
+        (909237600, ZoneDetails {
             offset: 43200,  // UTC offset 43200, DST offset 0
             name: "ANAT",
-        },
-        Transition {
-            occurs_at: Some(922543200),
+        }),
+        (922543200, ZoneDetails {
             offset: 46800,  // UTC offset 43200, DST offset 3600
             name: "ANAST",
-        },
-        Transition {
-            occurs_at: Some(941292000),
+        }),
+        (941292000, ZoneDetails {
             offset: 43200,  // UTC offset 43200, DST offset 0
             name: "ANAT",
-        },
-        Transition {
-            occurs_at: Some(953992800),
+        }),
+        (953992800, ZoneDetails {
             offset: 46800,  // UTC offset 43200, DST offset 3600
             name: "ANAST",
-        },
-        Transition {
-            occurs_at: Some(972741600),
+        }),
+        (972741600, ZoneDetails {
             offset: 43200,  // UTC offset 43200, DST offset 0
             name: "ANAT",
-        },
-        Transition {
-            occurs_at: Some(985442400),
+        }),
+        (985442400, ZoneDetails {
             offset: 46800,  // UTC offset 43200, DST offset 3600
             name: "ANAST",
-        },
-        Transition {
-            occurs_at: Some(1004191200),
+        }),
+        (1004191200, ZoneDetails {
             offset: 43200,  // UTC offset 43200, DST offset 0
             name: "ANAT",
-        },
-        Transition {
-            occurs_at: Some(1017496800),
+        }),
+        (1017496800, ZoneDetails {
             offset: 46800,  // UTC offset 43200, DST offset 3600
             name: "ANAST",
-        },
-        Transition {
-            occurs_at: Some(1035640800),
+        }),
+        (1035640800, ZoneDetails {
             offset: 43200,  // UTC offset 43200, DST offset 0
             name: "ANAT",
-        },
-        Transition {
-            occurs_at: Some(1048946400),
+        }),
+        (1048946400, ZoneDetails {
             offset: 46800,  // UTC offset 43200, DST offset 3600
             name: "ANAST",
-        },
-        Transition {
-            occurs_at: Some(1067090400),
+        }),
+        (1067090400, ZoneDetails {
             offset: 43200,  // UTC offset 43200, DST offset 0
             name: "ANAT",
-        },
-        Transition {
-            occurs_at: Some(1080396000),
+        }),
+        (1080396000, ZoneDetails {
             offset: 46800,  // UTC offset 43200, DST offset 3600
             name: "ANAST",
-        },
-        Transition {
-            occurs_at: Some(1099144800),
+        }),
+        (1099144800, ZoneDetails {
             offset: 43200,  // UTC offset 43200, DST offset 0
             name: "ANAT",
-        },
-        Transition {
-            occurs_at: Some(1111845600),
+        }),
+        (1111845600, ZoneDetails {
             offset: 46800,  // UTC offset 43200, DST offset 3600
             name: "ANAST",
-        },
-        Transition {
-            occurs_at: Some(1130594400),
+        }),
+        (1130594400, ZoneDetails {
             offset: 43200,  // UTC offset 43200, DST offset 0
             name: "ANAT",
-        },
-        Transition {
-            occurs_at: Some(1143295200),
+        }),
+        (1143295200, ZoneDetails {
             offset: 46800,  // UTC offset 43200, DST offset 3600
             name: "ANAST",
-        },
-        Transition {
-            occurs_at: Some(1162044000),
+        }),
+        (1162044000, ZoneDetails {
             offset: 43200,  // UTC offset 43200, DST offset 0
             name: "ANAT",
-        },
-        Transition {
-            occurs_at: Some(1174744800),
+        }),
+        (1174744800, ZoneDetails {
             offset: 46800,  // UTC offset 43200, DST offset 3600
             name: "ANAST",
-        },
-        Transition {
-            occurs_at: Some(1193493600),
+        }),
+        (1193493600, ZoneDetails {
             offset: 43200,  // UTC offset 43200, DST offset 0
             name: "ANAT",
-        },
-        Transition {
-            occurs_at: Some(1206799200),
+        }),
+        (1206799200, ZoneDetails {
             offset: 46800,  // UTC offset 43200, DST offset 3600
             name: "ANAST",
-        },
-        Transition {
-            occurs_at: Some(1224943200),
+        }),
+        (1224943200, ZoneDetails {
             offset: 43200,  // UTC offset 43200, DST offset 0
             name: "ANAT",
-        },
-        Transition {
-            occurs_at: Some(1238248800),
+        }),
+        (1238248800, ZoneDetails {
             offset: 46800,  // UTC offset 43200, DST offset 3600
             name: "ANAST",
-        },
-        Transition {
-            occurs_at: Some(1256392800),
+        }),
+        (1256392800, ZoneDetails {
             offset: 43200,  // UTC offset 43200, DST offset 0
             name: "ANAT",
-        },
-        Transition {
-            occurs_at: Some(1269698400),
+        }),
+        (1269698400, ZoneDetails {
             offset: 43200,  // UTC offset 39600, DST offset 3600
             name: "ANAST",
-        },
-        Transition {
-            occurs_at: Some(1288450800),
+        }),
+        (1288450800, ZoneDetails {
             offset: 39600,  // UTC offset 39600, DST offset 0
             name: "ANAT",
-        },
-        Transition {
-            occurs_at: Some(1301151600),
+        }),
+        (1301151600, ZoneDetails {
             offset: 43200,  // UTC offset 43200, DST offset 0
             name: "ANAT",
-        },
-    ],
+        }),
+    ]},
 };
 
 

@@ -9,598 +9,481 @@ use datetime::zoned::zoneinfo::*;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "America/Santiago",
-    transitions: &[
-        Transition {
-            occurs_at: None,
+    transitions: ZoneSet {
+        first: ZoneDetails {
             offset: -11834,  // UTC offset -11834, DST offset 0
             name: "LMT",
         },
-        Transition {
-            occurs_at: Some(-2524509766),
+        rest: &[
+        (-2524509766, ZoneDetails {
             offset: -11834,  // UTC offset -11834, DST offset 0
             name: "SMT",
-        },
-        Transition {
-            occurs_at: Some(-1892666566),
+        }),
+        (-1892666566, ZoneDetails {
             offset: -18000,  // UTC offset -18000, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(-1688410800),
+        }),
+        (-1688410800, ZoneDetails {
             offset: -11834,  // UTC offset -11834, DST offset 0
             name: "SMT",
-        },
-        Transition {
-            occurs_at: Some(-1619210566),
+        }),
+        (-1619210566, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(-1593806400),
+        }),
+        (-1593806400, ZoneDetails {
             offset: -11834,  // UTC offset -11834, DST offset 0
             name: "SMT",
-        },
-        Transition {
-            occurs_at: Some(-1335991366),
+        }),
+        (-1335991366, ZoneDetails {
             offset: -14400,  // UTC offset -18000, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(-1317585600),
+        }),
+        (-1317585600, ZoneDetails {
             offset: -18000,  // UTC offset -18000, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(-1304362800),
+        }),
+        (-1304362800, ZoneDetails {
             offset: -14400,  // UTC offset -18000, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(-1286049600),
+        }),
+        (-1286049600, ZoneDetails {
             offset: -18000,  // UTC offset -18000, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(-1272826800),
+        }),
+        (-1272826800, ZoneDetails {
             offset: -14400,  // UTC offset -18000, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(-1254513600),
+        }),
+        (-1254513600, ZoneDetails {
             offset: -18000,  // UTC offset -18000, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(-1241290800),
+        }),
+        (-1241290800, ZoneDetails {
             offset: -14400,  // UTC offset -18000, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(-1222977600),
+        }),
+        (-1222977600, ZoneDetails {
             offset: -18000,  // UTC offset -18000, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(-1209754800),
+        }),
+        (-1209754800, ZoneDetails {
             offset: -14400,  // UTC offset -18000, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(-1191355200),
+        }),
+        (-1191355200, ZoneDetails {
             offset: -18000,  // UTC offset -18000, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(-1178132400),
+        }),
+        (-1178132400, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(-870552000),
+        }),
+        (-870552000, ZoneDetails {
             offset: -18000,  // UTC offset -18000, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(-865278000),
+        }),
+        (-865278000, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(-740520000),
+        }),
+        (-740520000, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(-736376400),
+        }),
+        (-736376400, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(-718056000),
+        }),
+        (-718056000, ZoneDetails {
             offset: -18000,  // UTC offset -18000, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(-713649600),
+        }),
+        (-713649600, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(-36619200),
+        }),
+        (-36619200, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(-23922000),
+        }),
+        (-23922000, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(-3355200),
+        }),
+        (-3355200, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(7527600),
+        }),
+        (7527600, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(24465600),
+        }),
+        (24465600, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(37767600),
+        }),
+        (37767600, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(55915200),
+        }),
+        (55915200, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(69217200),
+        }),
+        (69217200, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(87969600),
+        }),
+        (87969600, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(100666800),
+        }),
+        (100666800, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(118209600),
+        }),
+        (118209600, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(132116400),
+        }),
+        (132116400, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(150868800),
+        }),
+        (150868800, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(163566000),
+        }),
+        (163566000, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(182318400),
+        }),
+        (182318400, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(195620400),
+        }),
+        (195620400, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(213768000),
+        }),
+        (213768000, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(227070000),
+        }),
+        (227070000, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(245217600),
+        }),
+        (245217600, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(258519600),
+        }),
+        (258519600, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(277272000),
+        }),
+        (277272000, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(289969200),
+        }),
+        (289969200, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(308721600),
+        }),
+        (308721600, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(321418800),
+        }),
+        (321418800, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(340171200),
+        }),
+        (340171200, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(353473200),
+        }),
+        (353473200, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(371620800),
+        }),
+        (371620800, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(384922800),
+        }),
+        (384922800, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(403070400),
+        }),
+        (403070400, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(416372400),
+        }),
+        (416372400, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(434520000),
+        }),
+        (434520000, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(447822000),
+        }),
+        (447822000, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(466574400),
+        }),
+        (466574400, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(479271600),
+        }),
+        (479271600, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(498024000),
+        }),
+        (498024000, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(510721200),
+        }),
+        (510721200, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(529473600),
+        }),
+        (529473600, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(545194800),
+        }),
+        (545194800, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(560923200),
+        }),
+        (560923200, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(574225200),
+        }),
+        (574225200, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(592372800),
+        }),
+        (592372800, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(605674800),
+        }),
+        (605674800, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(624427200),
+        }),
+        (624427200, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(637124400),
+        }),
+        (637124400, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(653457600),
+        }),
+        (653457600, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(668574000),
+        }),
+        (668574000, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(687326400),
+        }),
+        (687326400, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(700628400),
+        }),
+        (700628400, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(718776000),
+        }),
+        (718776000, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(732078000),
+        }),
+        (732078000, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(750225600),
+        }),
+        (750225600, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(763527600),
+        }),
+        (763527600, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(781675200),
+        }),
+        (781675200, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(794977200),
+        }),
+        (794977200, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(813729600),
+        }),
+        (813729600, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(826426800),
+        }),
+        (826426800, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(845179200),
+        }),
+        (845179200, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(859690800),
+        }),
+        (859690800, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(876628800),
+        }),
+        (876628800, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(889930800),
+        }),
+        (889930800, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(906868800),
+        }),
+        (906868800, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(923194800),
+        }),
+        (923194800, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(939528000),
+        }),
+        (939528000, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(952830000),
+        }),
+        (952830000, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(971582400),
+        }),
+        (971582400, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(984279600),
+        }),
+        (984279600, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(1003032000),
+        }),
+        (1003032000, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(1015729200),
+        }),
+        (1015729200, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(1034481600),
+        }),
+        (1034481600, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(1047178800),
+        }),
+        (1047178800, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(1065931200),
+        }),
+        (1065931200, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(1079233200),
+        }),
+        (1079233200, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(1097380800),
+        }),
+        (1097380800, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(1110682800),
+        }),
+        (1110682800, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(1128830400),
+        }),
+        (1128830400, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(1142132400),
+        }),
+        (1142132400, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(1160884800),
+        }),
+        (1160884800, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(1173582000),
+        }),
+        (1173582000, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(1192334400),
+        }),
+        (1192334400, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(1206846000),
+        }),
+        (1206846000, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(1223784000),
+        }),
+        (1223784000, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(1237086000),
+        }),
+        (1237086000, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(1255233600),
+        }),
+        (1255233600, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(1270350000),
+        }),
+        (1270350000, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(1286683200),
+        }),
+        (1286683200, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(1304823600),
+        }),
+        (1304823600, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(1313899200),
+        }),
+        (1313899200, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(1335668400),
+        }),
+        (1335668400, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(1346558400),
+        }),
+        (1346558400, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(1367118000),
+        }),
+        (1367118000, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(1378612800),
+        }),
+        (1378612800, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(1398567600),
+        }),
+        (1398567600, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(1410062400),
+        }),
+        (1410062400, ZoneDetails {
             offset: -10800,  // UTC offset -14400, DST offset 3600
             name: "CLST",
-        },
-        Transition {
-            occurs_at: Some(1430017200),
+        }),
+        (1430017200, ZoneDetails {
             offset: -14400,  // UTC offset -14400, DST offset 0
             name: "CLT",
-        },
-        Transition {
-            occurs_at: Some(1430031600),
+        }),
+        (1430031600, ZoneDetails {
             offset: -10800,  // UTC offset -10800, DST offset 0
             name: "CLT",
-        },
-    ],
+        }),
+    ]},
 };
 
 

@@ -9,33 +9,29 @@ use datetime::zoned::zoneinfo::*;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Pacific/Pago_Pago",
-    transitions: &[
-        Transition {
-            occurs_at: None,
+    transitions: ZoneSet {
+        first: ZoneDetails {
             offset: 45432,  // UTC offset 45432, DST offset 0
             name: "LMT",
         },
-        Transition {
-            occurs_at: Some(-2855738232),
+        rest: &[
+        (-2855738232, ZoneDetails {
             offset: -38232,  // UTC offset -38232, DST offset 0
             name: "LMT",
-        },
-        Transition {
-            occurs_at: Some(-1861881768),
+        }),
+        (-1861881768, ZoneDetails {
             offset: -39600,  // UTC offset -39600, DST offset 0
             name: "NST",
-        },
-        Transition {
-            occurs_at: Some(-86878800),
+        }),
+        (-86878800, ZoneDetails {
             offset: -39600,  // UTC offset -39600, DST offset 0
             name: "BST",
-        },
-        Transition {
-            occurs_at: Some(439038000),
+        }),
+        (439038000, ZoneDetails {
             offset: -39600,  // UTC offset -39600, DST offset 0
             name: "SST",
-        },
-    ],
+        }),
+    ]},
 };
 
 

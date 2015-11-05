@@ -9,13 +9,13 @@ use datetime::zoned::zoneinfo::*;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "HST",
-    transitions: &[
-        Transition {
-            occurs_at: None,
+    transitions: ZoneSet {
+        first: ZoneDetails {
             offset: -36000,  // UTC offset -36000, DST offset 0
             name: "HST",
         },
-    ],
+        rest: &[
+    ]},
 };
 
 

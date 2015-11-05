@@ -9,48 +9,41 @@ use datetime::zoned::zoneinfo::*;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Antarctica/Davis",
-    transitions: &[
-        Transition {
-            occurs_at: None,
+    transitions: ZoneSet {
+        first: ZoneDetails {
             offset: 0,  // UTC offset 0, DST offset 0
             name: "zzz",
         },
-        Transition {
-            occurs_at: Some(-409190400),
+        rest: &[
+        (-409190400, ZoneDetails {
             offset: 25200,  // UTC offset 25200, DST offset 0
             name: "DAVT",
-        },
-        Transition {
-            occurs_at: Some(-163062000),
+        }),
+        (-163062000, ZoneDetails {
             offset: 0,  // UTC offset 0, DST offset 0
             name: "zzz",
-        },
-        Transition {
-            occurs_at: Some(-28857600),
+        }),
+        (-28857600, ZoneDetails {
             offset: 25200,  // UTC offset 25200, DST offset 0
             name: "DAVT",
-        },
-        Transition {
-            occurs_at: Some(1255806000),
+        }),
+        (1255806000, ZoneDetails {
             offset: 18000,  // UTC offset 18000, DST offset 0
             name: "DAVT",
-        },
-        Transition {
-            occurs_at: Some(1268233200),
+        }),
+        (1268233200, ZoneDetails {
             offset: 25200,  // UTC offset 25200, DST offset 0
             name: "DAVT",
-        },
-        Transition {
-            occurs_at: Some(1319742000),
+        }),
+        (1319742000, ZoneDetails {
             offset: 18000,  // UTC offset 18000, DST offset 0
             name: "DAVT",
-        },
-        Transition {
-            occurs_at: Some(1329836400),
+        }),
+        (1329836400, ZoneDetails {
             offset: 25200,  // UTC offset 25200, DST offset 0
             name: "DAVT",
-        },
-    ],
+        }),
+    ]},
 };
 
 

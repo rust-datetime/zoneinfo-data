@@ -9,53 +9,45 @@ use datetime::zoned::zoneinfo::*;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Asia/Pontianak",
-    transitions: &[
-        Transition {
-            occurs_at: None,
+    transitions: ZoneSet {
+        first: ZoneDetails {
             offset: 26240,  // UTC offset 26240, DST offset 0
             name: "LMT",
         },
-        Transition {
-            occurs_at: Some(-1946186240),
+        rest: &[
+        (-1946186240, ZoneDetails {
             offset: 26240,  // UTC offset 26240, DST offset 0
             name: "PMT",
-        },
-        Transition {
-            occurs_at: Some(-1172906240),
+        }),
+        (-1172906240, ZoneDetails {
             offset: 27000,  // UTC offset 27000, DST offset 0
             name: "WIB",
-        },
-        Transition {
-            occurs_at: Some(-881220600),
+        }),
+        (-881220600, ZoneDetails {
             offset: 32400,  // UTC offset 32400, DST offset 0
             name: "JST",
-        },
-        Transition {
-            occurs_at: Some(-766054800),
+        }),
+        (-766054800, ZoneDetails {
             offset: 27000,  // UTC offset 27000, DST offset 0
             name: "WIB",
-        },
-        Transition {
-            occurs_at: Some(-683883000),
+        }),
+        (-683883000, ZoneDetails {
             offset: 28800,  // UTC offset 28800, DST offset 0
             name: "WIB",
-        },
-        Transition {
-            occurs_at: Some(-620812800),
+        }),
+        (-620812800, ZoneDetails {
             offset: 27000,  // UTC offset 27000, DST offset 0
             name: "WIB",
-        },
-        Transition {
-            occurs_at: Some(-189415800),
+        }),
+        (-189415800, ZoneDetails {
             offset: 28800,  // UTC offset 28800, DST offset 0
             name: "WITA",
-        },
-        Transition {
-            occurs_at: Some(567964800),
+        }),
+        (567964800, ZoneDetails {
             offset: 25200,  // UTC offset 25200, DST offset 0
             name: "WIB",
-        },
-    ],
+        }),
+    ]},
 };
 
 

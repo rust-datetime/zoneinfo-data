@@ -9,93 +9,77 @@ use datetime::zoned::zoneinfo::*;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "America/Lima",
-    transitions: &[
-        Transition {
-            occurs_at: None,
+    transitions: ZoneSet {
+        first: ZoneDetails {
             offset: -17508,  // UTC offset -17508, DST offset 0
             name: "LMT",
         },
-        Transition {
-            occurs_at: Some(-2524504092),
+        rest: &[
+        (-2524504092, ZoneDetails {
             offset: -17484,  // UTC offset -17484, DST offset 0
             name: "LMT",
-        },
-        Transition {
-            occurs_at: Some(-1938539316),
+        }),
+        (-1938539316, ZoneDetails {
             offset: -18000,  // UTC offset -18000, DST offset 0
             name: "PET",
-        },
-        Transition {
-            occurs_at: Some(-1009825200),
+        }),
+        (-1009825200, ZoneDetails {
             offset: -14400,  // UTC offset -18000, DST offset 3600
             name: "PEST",
-        },
-        Transition {
-            occurs_at: Some(-1002052800),
+        }),
+        (-1002052800, ZoneDetails {
             offset: -18000,  // UTC offset -18000, DST offset 0
             name: "PET",
-        },
-        Transition {
-            occurs_at: Some(-986756400),
+        }),
+        (-986756400, ZoneDetails {
             offset: -14400,  // UTC offset -18000, DST offset 3600
             name: "PEST",
-        },
-        Transition {
-            occurs_at: Some(-971035200),
+        }),
+        (-971035200, ZoneDetails {
             offset: -18000,  // UTC offset -18000, DST offset 0
             name: "PET",
-        },
-        Transition {
-            occurs_at: Some(-955306800),
+        }),
+        (-955306800, ZoneDetails {
             offset: -14400,  // UTC offset -18000, DST offset 3600
             name: "PEST",
-        },
-        Transition {
-            occurs_at: Some(-939585600),
+        }),
+        (-939585600, ZoneDetails {
             offset: -18000,  // UTC offset -18000, DST offset 0
             name: "PET",
-        },
-        Transition {
-            occurs_at: Some(504939600),
+        }),
+        (504939600, ZoneDetails {
             offset: -14400,  // UTC offset -18000, DST offset 3600
             name: "PEST",
-        },
-        Transition {
-            occurs_at: Some(512712000),
+        }),
+        (512712000, ZoneDetails {
             offset: -18000,  // UTC offset -18000, DST offset 0
             name: "PET",
-        },
-        Transition {
-            occurs_at: Some(536475600),
+        }),
+        (536475600, ZoneDetails {
             offset: -14400,  // UTC offset -18000, DST offset 3600
             name: "PEST",
-        },
-        Transition {
-            occurs_at: Some(544248000),
+        }),
+        (544248000, ZoneDetails {
             offset: -18000,  // UTC offset -18000, DST offset 0
             name: "PET",
-        },
-        Transition {
-            occurs_at: Some(631170000),
+        }),
+        (631170000, ZoneDetails {
             offset: -14400,  // UTC offset -18000, DST offset 3600
             name: "PEST",
-        },
-        Transition {
-            occurs_at: Some(638942400),
+        }),
+        (638942400, ZoneDetails {
             offset: -18000,  // UTC offset -18000, DST offset 0
             name: "PET",
-        },
-        Transition {
-            occurs_at: Some(757400400),
+        }),
+        (757400400, ZoneDetails {
             offset: -14400,  // UTC offset -18000, DST offset 3600
             name: "PEST",
-        },
-        Transition {
-            occurs_at: Some(765172800),
+        }),
+        (765172800, ZoneDetails {
             offset: -18000,  // UTC offset -18000, DST offset 0
             name: "PET",
-        },
-    ],
+        }),
+    ]},
 };
 
 

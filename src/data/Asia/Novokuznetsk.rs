@@ -9,338 +9,273 @@ use datetime::zoned::zoneinfo::*;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Asia/Novokuznetsk",
-    transitions: &[
-        Transition {
-            occurs_at: None,
+    transitions: ZoneSet {
+        first: ZoneDetails {
             offset: 20928,  // UTC offset 20928, DST offset 0
             name: "LMT",
         },
-        Transition {
-            occurs_at: Some(-1441259328),
+        rest: &[
+        (-1441259328, ZoneDetails {
             offset: 21600,  // UTC offset 21600, DST offset 0
             name: "KRAT",
-        },
-        Transition {
-            occurs_at: Some(-1247551200),
+        }),
+        (-1247551200, ZoneDetails {
             offset: 25200,  // UTC offset 25200, DST offset 0
             name: "KRAT",
-        },
-        Transition {
-            occurs_at: Some(354906000),
+        }),
+        (354906000, ZoneDetails {
             offset: 28800,  // UTC offset 25200, DST offset 3600
             name: "KRAST",
-        },
-        Transition {
-            occurs_at: Some(370713600),
+        }),
+        (370713600, ZoneDetails {
             offset: 25200,  // UTC offset 25200, DST offset 0
             name: "KRAT",
-        },
-        Transition {
-            occurs_at: Some(386442000),
+        }),
+        (386442000, ZoneDetails {
             offset: 28800,  // UTC offset 25200, DST offset 3600
             name: "KRAST",
-        },
-        Transition {
-            occurs_at: Some(402249600),
+        }),
+        (402249600, ZoneDetails {
             offset: 25200,  // UTC offset 25200, DST offset 0
             name: "KRAT",
-        },
-        Transition {
-            occurs_at: Some(417978000),
+        }),
+        (417978000, ZoneDetails {
             offset: 28800,  // UTC offset 25200, DST offset 3600
             name: "KRAST",
-        },
-        Transition {
-            occurs_at: Some(433785600),
+        }),
+        (433785600, ZoneDetails {
             offset: 25200,  // UTC offset 25200, DST offset 0
             name: "KRAT",
-        },
-        Transition {
-            occurs_at: Some(449600400),
+        }),
+        (449600400, ZoneDetails {
             offset: 28800,  // UTC offset 25200, DST offset 3600
             name: "KRAST",
-        },
-        Transition {
-            occurs_at: Some(465332400),
+        }),
+        (465332400, ZoneDetails {
             offset: 25200,  // UTC offset 25200, DST offset 0
             name: "KRAT",
-        },
-        Transition {
-            occurs_at: Some(481057200),
+        }),
+        (481057200, ZoneDetails {
             offset: 28800,  // UTC offset 25200, DST offset 3600
             name: "KRAST",
-        },
-        Transition {
-            occurs_at: Some(496782000),
+        }),
+        (496782000, ZoneDetails {
             offset: 25200,  // UTC offset 25200, DST offset 0
             name: "KRAT",
-        },
-        Transition {
-            occurs_at: Some(512506800),
+        }),
+        (512506800, ZoneDetails {
             offset: 28800,  // UTC offset 25200, DST offset 3600
             name: "KRAST",
-        },
-        Transition {
-            occurs_at: Some(528231600),
+        }),
+        (528231600, ZoneDetails {
             offset: 25200,  // UTC offset 25200, DST offset 0
             name: "KRAT",
-        },
-        Transition {
-            occurs_at: Some(543956400),
+        }),
+        (543956400, ZoneDetails {
             offset: 28800,  // UTC offset 25200, DST offset 3600
             name: "KRAST",
-        },
-        Transition {
-            occurs_at: Some(559681200),
+        }),
+        (559681200, ZoneDetails {
             offset: 25200,  // UTC offset 25200, DST offset 0
             name: "KRAT",
-        },
-        Transition {
-            occurs_at: Some(575406000),
+        }),
+        (575406000, ZoneDetails {
             offset: 28800,  // UTC offset 25200, DST offset 3600
             name: "KRAST",
-        },
-        Transition {
-            occurs_at: Some(591130800),
+        }),
+        (591130800, ZoneDetails {
             offset: 25200,  // UTC offset 25200, DST offset 0
             name: "KRAT",
-        },
-        Transition {
-            occurs_at: Some(606855600),
+        }),
+        (606855600, ZoneDetails {
             offset: 28800,  // UTC offset 25200, DST offset 3600
             name: "KRAST",
-        },
-        Transition {
-            occurs_at: Some(622580400),
+        }),
+        (622580400, ZoneDetails {
             offset: 25200,  // UTC offset 25200, DST offset 0
             name: "KRAT",
-        },
-        Transition {
-            occurs_at: Some(638305200),
+        }),
+        (638305200, ZoneDetails {
             offset: 28800,  // UTC offset 25200, DST offset 3600
             name: "KRAST",
-        },
-        Transition {
-            occurs_at: Some(654634800),
+        }),
+        (654634800, ZoneDetails {
             offset: 25200,  // UTC offset 25200, DST offset 0
             name: "KRAT",
-        },
-        Transition {
-            occurs_at: Some(670359600),
+        }),
+        (670359600, ZoneDetails {
             offset: 25200,  // UTC offset 21600, DST offset 3600
             name: "KRAST",
-        },
-        Transition {
-            occurs_at: Some(686088000),
+        }),
+        (686088000, ZoneDetails {
             offset: 21600,  // UTC offset 21600, DST offset 0
             name: "KRAT",
-        },
-        Transition {
-            occurs_at: Some(695764800),
+        }),
+        (695764800, ZoneDetails {
             offset: 25200,  // UTC offset 25200, DST offset 0
             name: "KRAT",
-        },
-        Transition {
-            occurs_at: Some(701798400),
+        }),
+        (701798400, ZoneDetails {
             offset: 28800,  // UTC offset 25200, DST offset 3600
             name: "KRAST",
-        },
-        Transition {
-            occurs_at: Some(717519600),
+        }),
+        (717519600, ZoneDetails {
             offset: 25200,  // UTC offset 25200, DST offset 0
             name: "KRAT",
-        },
-        Transition {
-            occurs_at: Some(733258800),
+        }),
+        (733258800, ZoneDetails {
             offset: 28800,  // UTC offset 25200, DST offset 3600
             name: "KRAST",
-        },
-        Transition {
-            occurs_at: Some(748983600),
+        }),
+        (748983600, ZoneDetails {
             offset: 25200,  // UTC offset 25200, DST offset 0
             name: "KRAT",
-        },
-        Transition {
-            occurs_at: Some(764708400),
+        }),
+        (764708400, ZoneDetails {
             offset: 28800,  // UTC offset 25200, DST offset 3600
             name: "KRAST",
-        },
-        Transition {
-            occurs_at: Some(780433200),
+        }),
+        (780433200, ZoneDetails {
             offset: 25200,  // UTC offset 25200, DST offset 0
             name: "KRAT",
-        },
-        Transition {
-            occurs_at: Some(796158000),
+        }),
+        (796158000, ZoneDetails {
             offset: 28800,  // UTC offset 25200, DST offset 3600
             name: "KRAST",
-        },
-        Transition {
-            occurs_at: Some(811882800),
+        }),
+        (811882800, ZoneDetails {
             offset: 25200,  // UTC offset 25200, DST offset 0
             name: "KRAT",
-        },
-        Transition {
-            occurs_at: Some(828212400),
+        }),
+        (828212400, ZoneDetails {
             offset: 28800,  // UTC offset 25200, DST offset 3600
             name: "KRAST",
-        },
-        Transition {
-            occurs_at: Some(846356400),
+        }),
+        (846356400, ZoneDetails {
             offset: 25200,  // UTC offset 25200, DST offset 0
             name: "KRAT",
-        },
-        Transition {
-            occurs_at: Some(859662000),
+        }),
+        (859662000, ZoneDetails {
             offset: 28800,  // UTC offset 25200, DST offset 3600
             name: "KRAST",
-        },
-        Transition {
-            occurs_at: Some(877806000),
+        }),
+        (877806000, ZoneDetails {
             offset: 25200,  // UTC offset 25200, DST offset 0
             name: "KRAT",
-        },
-        Transition {
-            occurs_at: Some(891111600),
+        }),
+        (891111600, ZoneDetails {
             offset: 28800,  // UTC offset 25200, DST offset 3600
             name: "KRAST",
-        },
-        Transition {
-            occurs_at: Some(909255600),
+        }),
+        (909255600, ZoneDetails {
             offset: 25200,  // UTC offset 25200, DST offset 0
             name: "KRAT",
-        },
-        Transition {
-            occurs_at: Some(922561200),
+        }),
+        (922561200, ZoneDetails {
             offset: 28800,  // UTC offset 25200, DST offset 3600
             name: "KRAST",
-        },
-        Transition {
-            occurs_at: Some(941310000),
+        }),
+        (941310000, ZoneDetails {
             offset: 25200,  // UTC offset 25200, DST offset 0
             name: "KRAT",
-        },
-        Transition {
-            occurs_at: Some(954010800),
+        }),
+        (954010800, ZoneDetails {
             offset: 28800,  // UTC offset 25200, DST offset 3600
             name: "KRAST",
-        },
-        Transition {
-            occurs_at: Some(972759600),
+        }),
+        (972759600, ZoneDetails {
             offset: 25200,  // UTC offset 25200, DST offset 0
             name: "KRAT",
-        },
-        Transition {
-            occurs_at: Some(985460400),
+        }),
+        (985460400, ZoneDetails {
             offset: 28800,  // UTC offset 25200, DST offset 3600
             name: "KRAST",
-        },
-        Transition {
-            occurs_at: Some(1004209200),
+        }),
+        (1004209200, ZoneDetails {
             offset: 25200,  // UTC offset 25200, DST offset 0
             name: "KRAT",
-        },
-        Transition {
-            occurs_at: Some(1017514800),
+        }),
+        (1017514800, ZoneDetails {
             offset: 28800,  // UTC offset 25200, DST offset 3600
             name: "KRAST",
-        },
-        Transition {
-            occurs_at: Some(1035658800),
+        }),
+        (1035658800, ZoneDetails {
             offset: 25200,  // UTC offset 25200, DST offset 0
             name: "KRAT",
-        },
-        Transition {
-            occurs_at: Some(1048964400),
+        }),
+        (1048964400, ZoneDetails {
             offset: 28800,  // UTC offset 25200, DST offset 3600
             name: "KRAST",
-        },
-        Transition {
-            occurs_at: Some(1067108400),
+        }),
+        (1067108400, ZoneDetails {
             offset: 25200,  // UTC offset 25200, DST offset 0
             name: "KRAT",
-        },
-        Transition {
-            occurs_at: Some(1080414000),
+        }),
+        (1080414000, ZoneDetails {
             offset: 28800,  // UTC offset 25200, DST offset 3600
             name: "KRAST",
-        },
-        Transition {
-            occurs_at: Some(1099162800),
+        }),
+        (1099162800, ZoneDetails {
             offset: 25200,  // UTC offset 25200, DST offset 0
             name: "KRAT",
-        },
-        Transition {
-            occurs_at: Some(1111863600),
+        }),
+        (1111863600, ZoneDetails {
             offset: 28800,  // UTC offset 25200, DST offset 3600
             name: "KRAST",
-        },
-        Transition {
-            occurs_at: Some(1130612400),
+        }),
+        (1130612400, ZoneDetails {
             offset: 25200,  // UTC offset 25200, DST offset 0
             name: "KRAT",
-        },
-        Transition {
-            occurs_at: Some(1143313200),
+        }),
+        (1143313200, ZoneDetails {
             offset: 28800,  // UTC offset 25200, DST offset 3600
             name: "KRAST",
-        },
-        Transition {
-            occurs_at: Some(1162062000),
+        }),
+        (1162062000, ZoneDetails {
             offset: 25200,  // UTC offset 25200, DST offset 0
             name: "KRAT",
-        },
-        Transition {
-            occurs_at: Some(1174762800),
+        }),
+        (1174762800, ZoneDetails {
             offset: 28800,  // UTC offset 25200, DST offset 3600
             name: "KRAST",
-        },
-        Transition {
-            occurs_at: Some(1193511600),
+        }),
+        (1193511600, ZoneDetails {
             offset: 25200,  // UTC offset 25200, DST offset 0
             name: "KRAT",
-        },
-        Transition {
-            occurs_at: Some(1206817200),
+        }),
+        (1206817200, ZoneDetails {
             offset: 28800,  // UTC offset 25200, DST offset 3600
             name: "KRAST",
-        },
-        Transition {
-            occurs_at: Some(1224961200),
+        }),
+        (1224961200, ZoneDetails {
             offset: 25200,  // UTC offset 25200, DST offset 0
             name: "KRAT",
-        },
-        Transition {
-            occurs_at: Some(1238266800),
+        }),
+        (1238266800, ZoneDetails {
             offset: 28800,  // UTC offset 25200, DST offset 3600
             name: "KRAST",
-        },
-        Transition {
-            occurs_at: Some(1256410800),
+        }),
+        (1256410800, ZoneDetails {
             offset: 25200,  // UTC offset 25200, DST offset 0
             name: "KRAT",
-        },
-        Transition {
-            occurs_at: Some(1269716400),
+        }),
+        (1269716400, ZoneDetails {
             offset: 25200,  // UTC offset 21600, DST offset 3600
             name: "NOVST",
-        },
-        Transition {
-            occurs_at: Some(1288468800),
+        }),
+        (1288468800, ZoneDetails {
             offset: 21600,  // UTC offset 21600, DST offset 0
             name: "NOVT",
-        },
-        Transition {
-            occurs_at: Some(1301169600),
+        }),
+        (1301169600, ZoneDetails {
             offset: 25200,  // UTC offset 25200, DST offset 0
             name: "NOVT",
-        },
-        Transition {
-            occurs_at: Some(1414263600),
+        }),
+        (1414263600, ZoneDetails {
             offset: 25200,  // UTC offset 25200, DST offset 0
             name: "KRAT",
-        },
-    ],
+        }),
+    ]},
 };
 
 

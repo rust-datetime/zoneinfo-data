@@ -9,23 +9,21 @@ use datetime::zoned::zoneinfo::*;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Indian/Chagos",
-    transitions: &[
-        Transition {
-            occurs_at: None,
+    transitions: ZoneSet {
+        first: ZoneDetails {
             offset: 17380,  // UTC offset 17380, DST offset 0
             name: "LMT",
         },
-        Transition {
-            occurs_at: Some(-1988167780),
+        rest: &[
+        (-1988167780, ZoneDetails {
             offset: 18000,  // UTC offset 18000, DST offset 0
             name: "IOT",
-        },
-        Transition {
-            occurs_at: Some(820436400),
+        }),
+        (820436400, ZoneDetails {
             offset: 21600,  // UTC offset 21600, DST offset 0
             name: "IOT",
-        },
-    ],
+        }),
+    ]},
 };
 
 

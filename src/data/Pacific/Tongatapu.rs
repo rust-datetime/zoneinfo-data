@@ -9,53 +9,45 @@ use datetime::zoned::zoneinfo::*;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Pacific/Tongatapu",
-    transitions: &[
-        Transition {
-            occurs_at: None,
+    transitions: ZoneSet {
+        first: ZoneDetails {
             offset: 44360,  // UTC offset 44360, DST offset 0
             name: "LMT",
         },
-        Transition {
-            occurs_at: Some(-2177497160),
+        rest: &[
+        (-2177497160, ZoneDetails {
             offset: 44400,  // UTC offset 44400, DST offset 0
             name: "TOT",
-        },
-        Transition {
-            occurs_at: Some(-915193200),
+        }),
+        (-915193200, ZoneDetails {
             offset: 46800,  // UTC offset 46800, DST offset 0
             name: "TOT",
-        },
-        Transition {
-            occurs_at: Some(939214800),
+        }),
+        (939214800, ZoneDetails {
             offset: 50400,  // UTC offset 46800, DST offset 3600
             name: "TOST",
-        },
-        Transition {
-            occurs_at: Some(953384400),
+        }),
+        (953384400, ZoneDetails {
             offset: 46800,  // UTC offset 46800, DST offset 0
             name: "TOT",
-        },
-        Transition {
-            occurs_at: Some(973342800),
+        }),
+        (973342800, ZoneDetails {
             offset: 50400,  // UTC offset 46800, DST offset 3600
             name: "TOST",
-        },
-        Transition {
-            occurs_at: Some(980596800),
+        }),
+        (980596800, ZoneDetails {
             offset: 46800,  // UTC offset 46800, DST offset 0
             name: "TOT",
-        },
-        Transition {
-            occurs_at: Some(1004792400),
+        }),
+        (1004792400, ZoneDetails {
             offset: 50400,  // UTC offset 46800, DST offset 3600
             name: "TOST",
-        },
-        Transition {
-            occurs_at: Some(1012046400),
+        }),
+        (1012046400, ZoneDetails {
             offset: 46800,  // UTC offset 46800, DST offset 0
             name: "TOT",
-        },
-    ],
+        }),
+    ]},
 };
 
 

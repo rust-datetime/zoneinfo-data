@@ -9,68 +9,57 @@ use datetime::zoned::zoneinfo::*;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Asia/Karachi",
-    transitions: &[
-        Transition {
-            occurs_at: None,
+    transitions: ZoneSet {
+        first: ZoneDetails {
             offset: 16092,  // UTC offset 16092, DST offset 0
             name: "LMT",
         },
-        Transition {
-            occurs_at: Some(-1988166492),
+        rest: &[
+        (-1988166492, ZoneDetails {
             offset: 19800,  // UTC offset 19800, DST offset 0
             name: "IST",
-        },
-        Transition {
-            occurs_at: Some(-862637400),
+        }),
+        (-862637400, ZoneDetails {
             offset: 23400,  // UTC offset 19800, DST offset 3600
             name: "IST",
-        },
-        Transition {
-            occurs_at: Some(-764145000),
+        }),
+        (-764145000, ZoneDetails {
             offset: 19800,  // UTC offset 19800, DST offset 0
             name: "IST",
-        },
-        Transition {
-            occurs_at: Some(-576135000),
+        }),
+        (-576135000, ZoneDetails {
             offset: 18000,  // UTC offset 18000, DST offset 0
             name: "KART",
-        },
-        Transition {
-            occurs_at: Some(38775600),
+        }),
+        (38775600, ZoneDetails {
             offset: 18000,  // UTC offset 18000, DST offset 0
             name: "PKT",
-        },
-        Transition {
-            occurs_at: Some(1018119660),
+        }),
+        (1018119660, ZoneDetails {
             offset: 21600,  // UTC offset 18000, DST offset 3600
             name: "PKST",
-        },
-        Transition {
-            occurs_at: Some(1033840860),
+        }),
+        (1033840860, ZoneDetails {
             offset: 18000,  // UTC offset 18000, DST offset 0
             name: "PKT",
-        },
-        Transition {
-            occurs_at: Some(1212260400),
+        }),
+        (1212260400, ZoneDetails {
             offset: 21600,  // UTC offset 18000, DST offset 3600
             name: "PKST",
-        },
-        Transition {
-            occurs_at: Some(1225476000),
+        }),
+        (1225476000, ZoneDetails {
             offset: 18000,  // UTC offset 18000, DST offset 0
             name: "PKT",
-        },
-        Transition {
-            occurs_at: Some(1239735600),
+        }),
+        (1239735600, ZoneDetails {
             offset: 21600,  // UTC offset 18000, DST offset 3600
             name: "PKST",
-        },
-        Transition {
-            occurs_at: Some(1257012000),
+        }),
+        (1257012000, ZoneDetails {
             offset: 18000,  // UTC offset 18000, DST offset 0
             name: "PKT",
-        },
-    ],
+        }),
+    ]},
 };
 
 

@@ -9,63 +9,53 @@ use datetime::zoned::zoneinfo::*;
 
 pub const ZONE: Zone<'static> = Zone {
     name: "Australia/Darwin",
-    transitions: &[
-        Transition {
-            occurs_at: None,
+    transitions: ZoneSet {
+        first: ZoneDetails {
             offset: 31400,  // UTC offset 31400, DST offset 0
             name: "LMT",
         },
-        Transition {
-            occurs_at: Some(-2364108200),
+        rest: &[
+        (-2364108200, ZoneDetails {
             offset: 32400,  // UTC offset 32400, DST offset 0
             name: "ACST",
-        },
-        Transition {
-            occurs_at: Some(-2230189200),
+        }),
+        (-2230189200, ZoneDetails {
             offset: 34200,  // UTC offset 34200, DST offset 0
             name: "ACST",
-        },
-        Transition {
-            occurs_at: Some(-1672565340),
+        }),
+        (-1672565340, ZoneDetails {
             offset: 37800,  // UTC offset 34200, DST offset 3600
             name: "ACDT",
-        },
-        Transition {
-            occurs_at: Some(-1665390600),
+        }),
+        (-1665390600, ZoneDetails {
             offset: 34200,  // UTC offset 34200, DST offset 0
             name: "ACST",
-        },
-        Transition {
-            occurs_at: Some(-883639800),
+        }),
+        (-883639800, ZoneDetails {
             offset: 37800,  // UTC offset 34200, DST offset 3600
             name: "ACDT",
-        },
-        Transition {
-            occurs_at: Some(-876126600),
+        }),
+        (-876126600, ZoneDetails {
             offset: 34200,  // UTC offset 34200, DST offset 0
             name: "ACST",
-        },
-        Transition {
-            occurs_at: Some(-860398200),
+        }),
+        (-860398200, ZoneDetails {
             offset: 37800,  // UTC offset 34200, DST offset 3600
             name: "ACDT",
-        },
-        Transition {
-            occurs_at: Some(-844677000),
+        }),
+        (-844677000, ZoneDetails {
             offset: 34200,  // UTC offset 34200, DST offset 0
             name: "ACST",
-        },
-        Transition {
-            occurs_at: Some(-828343800),
+        }),
+        (-828343800, ZoneDetails {
             offset: 37800,  // UTC offset 34200, DST offset 3600
             name: "ACDT",
-        },
-        Transition {
-            occurs_at: Some(-813227400),
+        }),
+        (-813227400, ZoneDetails {
             offset: 34200,  // UTC offset 34200, DST offset 0
             name: "ACST",
-        },
-    ],
+        }),
+    ]},
 };
 
 
