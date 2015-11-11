@@ -55,7 +55,7 @@ pub use self::WET::ZONE as WET;
 
 
 
-pub fn lookup(input: &str) -> Option<TimeZone> {
+pub fn lookup(input: &str) -> Option<TimeZone<'static>> {
     if input == "Africa/Abidjan" {
         return Some(Africa::Abidjan);
     }

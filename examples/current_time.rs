@@ -1,9 +1,9 @@
 extern crate datetime;
-use datetime::{Instant, LocalDateTime, current_timezone};
+use datetime::{Instant, LocalDateTime, TimeZone};
 use datetime::format::DateFormat;
 
 extern crate zoneinfo_data;
-use zoneinfo_data::lookup;
+use zoneinfo_data::ZoneinfoData;
 
 extern crate locale;
 
@@ -16,19 +16,14 @@ fn main() {
     let datetime = LocalDateTime::from_instant(now);
     println!("This corresponds to {} in UTC.", format.format(&datetime, &locale::Time::english()));
 
-    if let Some(timezone) = current_timezone() {
-        println!("\nHowever, your current timezone is {}.", timezone);
+    if let Some(timezone) = TimeZone::system() {
+        println!("\nHowever, your current timezone is {}.", timezone.name);
 
-        if let Some(zone) = lookup(&*timezone) {
-            let offset = zone.offset(datetime);
-            println!("This currently has an offset of {} (called {}).", offset, zone.name(datetime));
+        let offset = timezone.offset(datetime);
+        println!("This currently has an offset of {} (called {}).", offset, timezone.name(datetime));
 
-            let new_datetime = zone.to_zoned(datetime);
-            println!("So the actual time is {}.", format.format(&new_datetime, &locale::Time::english()));
-        }
-        else {
-            println!("Which isn't a known timezone! Weird.");
-        }
+        let new_datetime = timezone.to_zoned(datetime);
+        println!("So the actual time is {}.", format.format(&new_datetime, &locale::Time::english()));
     }
     else {
         println!("And your current timezone couldn't be found!");
