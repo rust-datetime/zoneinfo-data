@@ -5,35 +5,41 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Antarctica/Casey",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 0,  // UTC offset 0, DST offset 0
-            name: "zzz",
+            is_dst: false,
+            name:   "zzz",
         },
         rest: &[
-        (-31536000, ZoneDetails {
+        (-31536000, FixedTimespan {  // 1969-00-01T0-00-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "AWST",
+            is_dst: false,
+            name:   "AWST",
         }),
-        (1255802400, ZoneDetails {
+        (1255802400, FixedTimespan {  // 2009-09-17T18-00-00 UTC
             offset: 39600,  // UTC offset 39600, DST offset 0
-            name: "CAST",
+            is_dst: false,
+            name:   "CAST",
         }),
-        (1267714800, ZoneDetails {
+        (1267714800, FixedTimespan {  // 2010-02-04T15-00-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "AWST",
+            is_dst: false,
+            name:   "AWST",
         }),
-        (1319738400, ZoneDetails {
+        (1319738400, FixedTimespan {  // 2011-09-27T18-00-00 UTC
             offset: 39600,  // UTC offset 39600, DST offset 0
-            name: "CAST",
+            is_dst: false,
+            name:   "CAST",
         }),
-        (1329804000, ZoneDetails {
+        (1329804000, FixedTimespan {  // 2012-01-21T6-00-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "AWST",
+            is_dst: false,
+            name:   "AWST",
         }),
     ]},
 };

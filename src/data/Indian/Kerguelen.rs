@@ -5,19 +5,21 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Indian/Kerguelen",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 0,  // UTC offset 0, DST offset 0
-            name: "zzz",
+            is_dst: false,
+            name:   "zzz",
         },
         rest: &[
-        (-631152000, ZoneDetails {
+        (-631152000, FixedTimespan {  // 1950-00-01T0-00-00 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
-            name: "TFT",
+            is_dst: false,
+            name:   "TFT",
         }),
     ]},
 };

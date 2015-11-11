@@ -5,23 +5,26 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "America/Panama",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: -16912,  // UTC offset -16912, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-2524504688, ZoneDetails {
+        (-2524504688, FixedTimespan {  // 1890-00-01T4-41-52 UTC
             offset: -16824,  // UTC offset -16824, DST offset 0
-            name: "CMT",
+            is_dst: false,
+            name:   "CMT",
         }),
-        (-1946920776, ZoneDetails {
+        (-1946920776, FixedTimespan {  // 1908-03-22T4-40-24 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "EST",
+            is_dst: false,
+            name:   "EST",
         }),
     ]},
 };

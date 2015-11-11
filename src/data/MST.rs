@@ -5,14 +5,15 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "MST",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: -25200,  // UTC offset -25200, DST offset 0
-            name: "MST",
+            is_dst: false,
+            name:   "MST",
         },
         rest: &[
     ]},

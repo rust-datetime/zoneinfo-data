@@ -5,171 +5,211 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "America/Noronha",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: -6620,  // UTC offset -6620, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-1767218980, ZoneDetails {
+        (-1767218980, FixedTimespan {  // 1914-00-01T1-50-20 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "FNT",
+            is_dst: false,
+            name:   "FNT",
         }),
-        (-1206961200, ZoneDetails {
+        (-1206961200, FixedTimespan {  // 1931-09-03T13-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "FNST",
+            is_dst: true,
+            name:   "FNST",
         }),
-        (-1191366000, ZoneDetails {
+        (-1191366000, FixedTimespan {  // 1932-03-01T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "FNT",
+            is_dst: false,
+            name:   "FNT",
         }),
-        (-1175378400, ZoneDetails {
+        (-1175378400, FixedTimespan {  // 1932-09-03T2-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "FNST",
+            is_dst: true,
+            name:   "FNST",
         }),
-        (-1159830000, ZoneDetails {
+        (-1159830000, FixedTimespan {  // 1933-03-01T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "FNT",
+            is_dst: false,
+            name:   "FNT",
         }),
-        (-633823200, ZoneDetails {
+        (-633823200, FixedTimespan {  // 1949-11-01T2-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "FNST",
+            is_dst: true,
+            name:   "FNST",
         }),
-        (-622072800, ZoneDetails {
+        (-622072800, FixedTimespan {  // 1950-03-16T2-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "FNT",
+            is_dst: false,
+            name:   "FNT",
         }),
-        (-602287200, ZoneDetails {
+        (-602287200, FixedTimespan {  // 1950-11-01T2-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "FNST",
+            is_dst: true,
+            name:   "FNST",
         }),
-        (-591836400, ZoneDetails {
+        (-591836400, FixedTimespan {  // 1951-03-01T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "FNT",
+            is_dst: false,
+            name:   "FNT",
         }),
-        (-570751200, ZoneDetails {
+        (-570751200, FixedTimespan {  // 1951-11-01T2-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "FNST",
+            is_dst: true,
+            name:   "FNST",
         }),
-        (-560214000, ZoneDetails {
+        (-560214000, FixedTimespan {  // 1952-03-01T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "FNT",
+            is_dst: false,
+            name:   "FNT",
         }),
-        (-539128800, ZoneDetails {
+        (-539128800, FixedTimespan {  // 1952-11-01T2-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "FNST",
+            is_dst: true,
+            name:   "FNST",
         }),
-        (-531356400, ZoneDetails {
+        (-531356400, FixedTimespan {  // 1953-02-01T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "FNT",
+            is_dst: false,
+            name:   "FNT",
         }),
-        (-191368800, ZoneDetails {
+        (-191368800, FixedTimespan {  // 1963-11-09T2-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "FNST",
+            is_dst: true,
+            name:   "FNST",
         }),
-        (-184201200, ZoneDetails {
+        (-184201200, FixedTimespan {  // 1964-02-01T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "FNT",
+            is_dst: false,
+            name:   "FNT",
         }),
-        (-155167200, ZoneDetails {
+        (-155167200, FixedTimespan {  // 1965-00-31T2-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "FNST",
+            is_dst: true,
+            name:   "FNST",
         }),
-        (-150073200, ZoneDetails {
+        (-150073200, FixedTimespan {  // 1965-02-31T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "FNT",
+            is_dst: false,
+            name:   "FNT",
         }),
-        (-128901600, ZoneDetails {
+        (-128901600, FixedTimespan {  // 1965-11-01T2-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "FNST",
+            is_dst: true,
+            name:   "FNST",
         }),
-        (-121129200, ZoneDetails {
+        (-121129200, FixedTimespan {  // 1966-02-01T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "FNT",
+            is_dst: false,
+            name:   "FNT",
         }),
-        (-99957600, ZoneDetails {
+        (-99957600, FixedTimespan {  // 1966-10-01T2-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "FNST",
+            is_dst: true,
+            name:   "FNST",
         }),
-        (-89593200, ZoneDetails {
+        (-89593200, FixedTimespan {  // 1967-02-01T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "FNT",
+            is_dst: false,
+            name:   "FNT",
         }),
-        (-68421600, ZoneDetails {
+        (-68421600, FixedTimespan {  // 1967-10-01T2-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "FNST",
+            is_dst: true,
+            name:   "FNST",
         }),
-        (-57970800, ZoneDetails {
+        (-57970800, FixedTimespan {  // 1968-02-01T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "FNT",
+            is_dst: false,
+            name:   "FNT",
         }),
-        (499744800, ZoneDetails {
+        (499744800, FixedTimespan {  // 1985-10-02T2-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "FNST",
+            is_dst: true,
+            name:   "FNST",
         }),
-        (511232400, ZoneDetails {
+        (511232400, FixedTimespan {  // 1986-02-15T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "FNT",
+            is_dst: false,
+            name:   "FNT",
         }),
-        (530589600, ZoneDetails {
+        (530589600, FixedTimespan {  // 1986-09-25T2-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "FNST",
+            is_dst: true,
+            name:   "FNST",
         }),
-        (540262800, ZoneDetails {
+        (540262800, FixedTimespan {  // 1987-01-14T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "FNT",
+            is_dst: false,
+            name:   "FNT",
         }),
-        (562125600, ZoneDetails {
+        (562125600, FixedTimespan {  // 1987-09-25T2-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "FNST",
+            is_dst: true,
+            name:   "FNST",
         }),
-        (571194000, ZoneDetails {
+        (571194000, FixedTimespan {  // 1988-01-07T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "FNT",
+            is_dst: false,
+            name:   "FNT",
         }),
-        (592970400, ZoneDetails {
+        (592970400, FixedTimespan {  // 1988-09-16T2-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "FNST",
+            is_dst: true,
+            name:   "FNST",
         }),
-        (602038800, ZoneDetails {
+        (602038800, FixedTimespan {  // 1989-00-29T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "FNT",
+            is_dst: false,
+            name:   "FNT",
         }),
-        (624420000, ZoneDetails {
+        (624420000, FixedTimespan {  // 1989-09-15T2-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "FNST",
+            is_dst: true,
+            name:   "FNST",
         }),
-        (634698000, ZoneDetails {
+        (634698000, FixedTimespan {  // 1990-01-11T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "FNT",
+            is_dst: false,
+            name:   "FNT",
         }),
-        (938916000, ZoneDetails {
+        (938916000, FixedTimespan {  // 1999-09-03T2-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "FNST",
+            is_dst: true,
+            name:   "FNST",
         }),
-        (951613200, ZoneDetails {
+        (951613200, FixedTimespan {  // 2000-01-27T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "FNT",
+            is_dst: false,
+            name:   "FNT",
         }),
-        (970970400, ZoneDetails {
+        (970970400, FixedTimespan {  // 2000-09-08T2-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "FNST",
+            is_dst: true,
+            name:   "FNST",
         }),
-        (971571600, ZoneDetails {
+        (971571600, FixedTimespan {  // 2000-09-15T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "FNT",
+            is_dst: false,
+            name:   "FNT",
         }),
-        (1003024800, ZoneDetails {
+        (1003024800, FixedTimespan {  // 2001-09-14T2-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "FNST",
+            is_dst: true,
+            name:   "FNST",
         }),
-        (1013907600, ZoneDetails {
+        (1013907600, FixedTimespan {  // 2002-01-17T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "FNT",
+            is_dst: false,
+            name:   "FNT",
         }),
     ]},
 };

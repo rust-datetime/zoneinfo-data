@@ -5,291 +5,361 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Asia/Hong_Kong",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 27402,  // UTC offset 27402, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-2056693002, ZoneDetails {
+        (-2056693002, FixedTimespan {  // 1904-09-29T16-23-18 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "HKT",
+            is_dst: false,
+            name:   "HKT",
         }),
-        (-907389000, ZoneDetails {
+        (-907389000, FixedTimespan {  // 1941-02-31T19-30-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "HKST",
+            is_dst: true,
+            name:   "HKST",
         }),
-        (-891667800, ZoneDetails {
+        (-891667800, FixedTimespan {  // 1941-08-29T18-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "HKT",
+            is_dst: false,
+            name:   "HKT",
         }),
-        (-884246400, ZoneDetails {
+        (-884246400, FixedTimespan {  // 1941-11-24T16-00-00 UTC
             offset: 32400,  // UTC offset 32400, DST offset 0
-            name: "JST",
+            is_dst: false,
+            name:   "JST",
         }),
-        (-766746000, ZoneDetails {
+        (-766746000, FixedTimespan {  // 1945-08-14T15-00-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "HKT",
+            is_dst: false,
+            name:   "HKT",
         }),
-        (-747981000, ZoneDetails {
+        (-747981000, FixedTimespan {  // 1946-03-19T19-30-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "HKST",
+            is_dst: true,
+            name:   "HKST",
         }),
-        (-728544600, ZoneDetails {
+        (-728544600, FixedTimespan {  // 1946-10-30T18-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "HKT",
+            is_dst: false,
+            name:   "HKT",
         }),
-        (-717049800, ZoneDetails {
+        (-717049800, FixedTimespan {  // 1947-03-12T19-30-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "HKST",
+            is_dst: true,
+            name:   "HKST",
         }),
-        (-694503000, ZoneDetails {
+        (-694503000, FixedTimespan {  // 1947-11-29T18-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "HKT",
+            is_dst: false,
+            name:   "HKT",
         }),
-        (-683785800, ZoneDetails {
+        (-683785800, FixedTimespan {  // 1948-04-01T19-30-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "HKST",
+            is_dst: true,
+            name:   "HKST",
         }),
-        (-668064600, ZoneDetails {
+        (-668064600, FixedTimespan {  // 1948-09-30T18-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "HKT",
+            is_dst: false,
+            name:   "HKT",
         }),
-        (-654755400, ZoneDetails {
+        (-654755400, FixedTimespan {  // 1949-03-02T19-30-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "HKST",
+            is_dst: true,
+            name:   "HKST",
         }),
-        (-636615000, ZoneDetails {
+        (-636615000, FixedTimespan {  // 1949-09-29T18-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "HKT",
+            is_dst: false,
+            name:   "HKT",
         }),
-        (-623305800, ZoneDetails {
+        (-623305800, FixedTimespan {  // 1950-03-01T19-30-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "HKST",
+            is_dst: true,
+            name:   "HKST",
         }),
-        (-605165400, ZoneDetails {
+        (-605165400, FixedTimespan {  // 1950-09-28T18-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "HKT",
+            is_dst: false,
+            name:   "HKT",
         }),
-        (-591856200, ZoneDetails {
+        (-591856200, FixedTimespan {  // 1951-02-31T19-30-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "HKST",
+            is_dst: true,
+            name:   "HKST",
         }),
-        (-573715800, ZoneDetails {
+        (-573715800, FixedTimespan {  // 1951-09-27T18-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "HKT",
+            is_dst: false,
+            name:   "HKT",
         }),
-        (-559801800, ZoneDetails {
+        (-559801800, FixedTimespan {  // 1952-03-05T19-30-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "HKST",
+            is_dst: true,
+            name:   "HKST",
         }),
-        (-542352600, ZoneDetails {
+        (-542352600, FixedTimespan {  // 1952-09-24T18-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "HKT",
+            is_dst: false,
+            name:   "HKT",
         }),
-        (-528352200, ZoneDetails {
+        (-528352200, FixedTimespan {  // 1953-03-04T19-30-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "HKST",
+            is_dst: true,
+            name:   "HKST",
         }),
-        (-510211800, ZoneDetails {
+        (-510211800, FixedTimespan {  // 1953-09-31T18-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "HKT",
+            is_dst: false,
+            name:   "HKT",
         }),
-        (-498112200, ZoneDetails {
+        (-498112200, FixedTimespan {  // 1954-02-20T19-30-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "HKST",
+            is_dst: true,
+            name:   "HKST",
         }),
-        (-478762200, ZoneDetails {
+        (-478762200, FixedTimespan {  // 1954-09-30T18-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "HKT",
+            is_dst: false,
+            name:   "HKT",
         }),
-        (-466662600, ZoneDetails {
+        (-466662600, FixedTimespan {  // 1955-02-19T19-30-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "HKST",
+            is_dst: true,
+            name:   "HKST",
         }),
-        (-446707800, ZoneDetails {
+        (-446707800, FixedTimespan {  // 1955-10-05T18-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "HKT",
+            is_dst: false,
+            name:   "HKT",
         }),
-        (-435213000, ZoneDetails {
+        (-435213000, FixedTimespan {  // 1956-02-17T19-30-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "HKST",
+            is_dst: true,
+            name:   "HKST",
         }),
-        (-415258200, ZoneDetails {
+        (-415258200, FixedTimespan {  // 1956-10-03T18-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "HKT",
+            is_dst: false,
+            name:   "HKT",
         }),
-        (-403158600, ZoneDetails {
+        (-403158600, FixedTimespan {  // 1957-02-23T19-30-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "HKST",
+            is_dst: true,
+            name:   "HKST",
         }),
-        (-383808600, ZoneDetails {
+        (-383808600, FixedTimespan {  // 1957-10-02T18-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "HKT",
+            is_dst: false,
+            name:   "HKT",
         }),
-        (-371709000, ZoneDetails {
+        (-371709000, FixedTimespan {  // 1958-02-22T19-30-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "HKST",
+            is_dst: true,
+            name:   "HKST",
         }),
-        (-352359000, ZoneDetails {
+        (-352359000, FixedTimespan {  // 1958-10-01T18-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "HKT",
+            is_dst: false,
+            name:   "HKT",
         }),
-        (-340259400, ZoneDetails {
+        (-340259400, FixedTimespan {  // 1959-02-21T19-30-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "HKST",
+            is_dst: true,
+            name:   "HKST",
         }),
-        (-320909400, ZoneDetails {
+        (-320909400, FixedTimespan {  // 1959-09-31T18-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "HKT",
+            is_dst: false,
+            name:   "HKT",
         }),
-        (-308809800, ZoneDetails {
+        (-308809800, FixedTimespan {  // 1960-02-19T19-30-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "HKST",
+            is_dst: true,
+            name:   "HKST",
         }),
-        (-288855000, ZoneDetails {
+        (-288855000, FixedTimespan {  // 1960-10-05T18-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "HKT",
+            is_dst: false,
+            name:   "HKT",
         }),
-        (-277360200, ZoneDetails {
+        (-277360200, FixedTimespan {  // 1961-02-18T19-30-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "HKST",
+            is_dst: true,
+            name:   "HKST",
         }),
-        (-257405400, ZoneDetails {
+        (-257405400, FixedTimespan {  // 1961-10-04T18-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "HKT",
+            is_dst: false,
+            name:   "HKT",
         }),
-        (-245910600, ZoneDetails {
+        (-245910600, FixedTimespan {  // 1962-02-17T19-30-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "HKST",
+            is_dst: true,
+            name:   "HKST",
         }),
-        (-225955800, ZoneDetails {
+        (-225955800, FixedTimespan {  // 1962-10-03T18-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "HKT",
+            is_dst: false,
+            name:   "HKT",
         }),
-        (-213856200, ZoneDetails {
+        (-213856200, FixedTimespan {  // 1963-02-23T19-30-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "HKST",
+            is_dst: true,
+            name:   "HKST",
         }),
-        (-194506200, ZoneDetails {
+        (-194506200, FixedTimespan {  // 1963-10-02T18-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "HKT",
+            is_dst: false,
+            name:   "HKT",
         }),
-        (-182406600, ZoneDetails {
+        (-182406600, FixedTimespan {  // 1964-02-21T19-30-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "HKST",
+            is_dst: true,
+            name:   "HKST",
         }),
-        (-163056600, ZoneDetails {
+        (-163056600, FixedTimespan {  // 1964-09-31T18-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "HKT",
+            is_dst: false,
+            name:   "HKT",
         }),
-        (-148537800, ZoneDetails {
+        (-148537800, FixedTimespan {  // 1965-03-17T19-30-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "HKST",
+            is_dst: true,
+            name:   "HKST",
         }),
-        (-132816600, ZoneDetails {
+        (-132816600, FixedTimespan {  // 1965-09-16T18-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "HKT",
+            is_dst: false,
+            name:   "HKT",
         }),
-        (-117088200, ZoneDetails {
+        (-117088200, FixedTimespan {  // 1966-03-16T19-30-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "HKST",
+            is_dst: true,
+            name:   "HKST",
         }),
-        (-101367000, ZoneDetails {
+        (-101367000, FixedTimespan {  // 1966-09-15T18-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "HKT",
+            is_dst: false,
+            name:   "HKT",
         }),
-        (-85638600, ZoneDetails {
+        (-85638600, FixedTimespan {  // 1967-03-15T19-30-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "HKST",
+            is_dst: true,
+            name:   "HKST",
         }),
-        (-69312600, ZoneDetails {
+        (-69312600, FixedTimespan {  // 1967-09-21T18-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "HKT",
+            is_dst: false,
+            name:   "HKT",
         }),
-        (-53584200, ZoneDetails {
+        (-53584200, FixedTimespan {  // 1968-03-20T19-30-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "HKST",
+            is_dst: true,
+            name:   "HKST",
         }),
-        (-37863000, ZoneDetails {
+        (-37863000, FixedTimespan {  // 1968-09-19T18-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "HKT",
+            is_dst: false,
+            name:   "HKT",
         }),
-        (-22134600, ZoneDetails {
+        (-22134600, FixedTimespan {  // 1969-03-19T19-30-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "HKST",
+            is_dst: true,
+            name:   "HKST",
         }),
-        (-6413400, ZoneDetails {
+        (-6413400, FixedTimespan {  // 1969-09-18T18-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "HKT",
+            is_dst: false,
+            name:   "HKT",
         }),
-        (9315000, ZoneDetails {
+        (9315000, FixedTimespan {  // 1970-03-18T19-30-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "HKST",
+            is_dst: true,
+            name:   "HKST",
         }),
-        (25036200, ZoneDetails {
+        (25036200, FixedTimespan {  // 1970-09-17T18-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "HKT",
+            is_dst: false,
+            name:   "HKT",
         }),
-        (40764600, ZoneDetails {
+        (40764600, FixedTimespan {  // 1971-03-17T19-30-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "HKST",
+            is_dst: true,
+            name:   "HKST",
         }),
-        (56485800, ZoneDetails {
+        (56485800, FixedTimespan {  // 1971-09-16T18-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "HKT",
+            is_dst: false,
+            name:   "HKT",
         }),
-        (72214200, ZoneDetails {
+        (72214200, FixedTimespan {  // 1972-03-15T19-30-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "HKST",
+            is_dst: true,
+            name:   "HKST",
         }),
-        (88540200, ZoneDetails {
+        (88540200, FixedTimespan {  // 1972-09-21T18-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "HKT",
+            is_dst: false,
+            name:   "HKT",
         }),
-        (104268600, ZoneDetails {
+        (104268600, FixedTimespan {  // 1973-03-21T19-30-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "HKST",
+            is_dst: true,
+            name:   "HKST",
         }),
-        (119989800, ZoneDetails {
+        (119989800, FixedTimespan {  // 1973-09-20T18-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "HKT",
+            is_dst: false,
+            name:   "HKT",
         }),
-        (126041400, ZoneDetails {
+        (126041400, FixedTimespan {  // 1973-11-29T19-30-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "HKST",
+            is_dst: true,
+            name:   "HKST",
         }),
-        (151439400, ZoneDetails {
+        (151439400, FixedTimespan {  // 1974-09-19T18-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "HKT",
+            is_dst: false,
+            name:   "HKT",
         }),
-        (167167800, ZoneDetails {
+        (167167800, FixedTimespan {  // 1975-03-19T19-30-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "HKST",
+            is_dst: true,
+            name:   "HKST",
         }),
-        (182889000, ZoneDetails {
+        (182889000, FixedTimespan {  // 1975-09-18T18-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "HKT",
+            is_dst: false,
+            name:   "HKT",
         }),
-        (198617400, ZoneDetails {
+        (198617400, FixedTimespan {  // 1976-03-17T19-30-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "HKST",
+            is_dst: true,
+            name:   "HKST",
         }),
-        (214338600, ZoneDetails {
+        (214338600, FixedTimespan {  // 1976-09-16T18-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "HKT",
+            is_dst: false,
+            name:   "HKT",
         }),
-        (295385400, ZoneDetails {
+        (295385400, FixedTimespan {  // 1979-04-12T19-30-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "HKST",
+            is_dst: true,
+            name:   "HKST",
         }),
-        (309292200, ZoneDetails {
+        (309292200, FixedTimespan {  // 1979-09-20T18-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "HKT",
+            is_dst: false,
+            name:   "HKT",
         }),
     ]},
 };

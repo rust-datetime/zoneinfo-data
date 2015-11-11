@@ -5,115 +5,141 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Asia/Tashkent",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 16631,  // UTC offset 16631, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-1441168631, ZoneDetails {
+        (-1441168631, FixedTimespan {  // 1924-04-01T19-22-49 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
-            name: "TAST",
+            is_dst: false,
+            name:   "TAST",
         }),
-        (-1247547600, ZoneDetails {
+        (-1247547600, FixedTimespan {  // 1930-05-20T19-00-00 UTC
             offset: 21600,  // UTC offset 21600, DST offset 0
-            name: "TAST",
+            is_dst: false,
+            name:   "TAST",
         }),
-        (354909600, ZoneDetails {
+        (354909600, FixedTimespan {  // 1981-02-31T18-00-00 UTC
             offset: 25200,  // UTC offset 21600, DST offset 3600
-            name: "TASST",
+            is_dst: true,
+            name:   "TASST",
         }),
-        (370717200, ZoneDetails {
+        (370717200, FixedTimespan {  // 1981-08-30T17-00-00 UTC
             offset: 21600,  // UTC offset 21600, DST offset 0
-            name: "TAST",
+            is_dst: false,
+            name:   "TAST",
         }),
-        (386445600, ZoneDetails {
+        (386445600, FixedTimespan {  // 1982-02-31T18-00-00 UTC
             offset: 25200,  // UTC offset 21600, DST offset 3600
-            name: "TASST",
+            is_dst: true,
+            name:   "TASST",
         }),
-        (402253200, ZoneDetails {
+        (402253200, FixedTimespan {  // 1982-08-30T17-00-00 UTC
             offset: 21600,  // UTC offset 21600, DST offset 0
-            name: "TAST",
+            is_dst: false,
+            name:   "TAST",
         }),
-        (417981600, ZoneDetails {
+        (417981600, FixedTimespan {  // 1983-02-31T18-00-00 UTC
             offset: 25200,  // UTC offset 21600, DST offset 3600
-            name: "TASST",
+            is_dst: true,
+            name:   "TASST",
         }),
-        (433789200, ZoneDetails {
+        (433789200, FixedTimespan {  // 1983-08-30T17-00-00 UTC
             offset: 21600,  // UTC offset 21600, DST offset 0
-            name: "TAST",
+            is_dst: false,
+            name:   "TAST",
         }),
-        (449604000, ZoneDetails {
+        (449604000, FixedTimespan {  // 1984-02-31T18-00-00 UTC
             offset: 25200,  // UTC offset 21600, DST offset 3600
-            name: "TASST",
+            is_dst: true,
+            name:   "TASST",
         }),
-        (465336000, ZoneDetails {
+        (465336000, FixedTimespan {  // 1984-08-29T20-00-00 UTC
             offset: 21600,  // UTC offset 21600, DST offset 0
-            name: "TAST",
+            is_dst: false,
+            name:   "TAST",
         }),
-        (481060800, ZoneDetails {
+        (481060800, FixedTimespan {  // 1985-02-30T20-00-00 UTC
             offset: 25200,  // UTC offset 21600, DST offset 3600
-            name: "TASST",
+            is_dst: true,
+            name:   "TASST",
         }),
-        (496785600, ZoneDetails {
+        (496785600, FixedTimespan {  // 1985-08-28T20-00-00 UTC
             offset: 21600,  // UTC offset 21600, DST offset 0
-            name: "TAST",
+            is_dst: false,
+            name:   "TAST",
         }),
-        (512510400, ZoneDetails {
+        (512510400, FixedTimespan {  // 1986-02-29T20-00-00 UTC
             offset: 25200,  // UTC offset 21600, DST offset 3600
-            name: "TASST",
+            is_dst: true,
+            name:   "TASST",
         }),
-        (528235200, ZoneDetails {
+        (528235200, FixedTimespan {  // 1986-08-27T20-00-00 UTC
             offset: 21600,  // UTC offset 21600, DST offset 0
-            name: "TAST",
+            is_dst: false,
+            name:   "TAST",
         }),
-        (543960000, ZoneDetails {
+        (543960000, FixedTimespan {  // 1987-02-28T20-00-00 UTC
             offset: 25200,  // UTC offset 21600, DST offset 3600
-            name: "TASST",
+            is_dst: true,
+            name:   "TASST",
         }),
-        (559684800, ZoneDetails {
+        (559684800, FixedTimespan {  // 1987-08-26T20-00-00 UTC
             offset: 21600,  // UTC offset 21600, DST offset 0
-            name: "TAST",
+            is_dst: false,
+            name:   "TAST",
         }),
-        (575409600, ZoneDetails {
+        (575409600, FixedTimespan {  // 1988-02-26T20-00-00 UTC
             offset: 25200,  // UTC offset 21600, DST offset 3600
-            name: "TASST",
+            is_dst: true,
+            name:   "TASST",
         }),
-        (591134400, ZoneDetails {
+        (591134400, FixedTimespan {  // 1988-08-24T20-00-00 UTC
             offset: 21600,  // UTC offset 21600, DST offset 0
-            name: "TAST",
+            is_dst: false,
+            name:   "TAST",
         }),
-        (606859200, ZoneDetails {
+        (606859200, FixedTimespan {  // 1989-02-25T20-00-00 UTC
             offset: 25200,  // UTC offset 21600, DST offset 3600
-            name: "TASST",
+            is_dst: true,
+            name:   "TASST",
         }),
-        (622584000, ZoneDetails {
+        (622584000, FixedTimespan {  // 1989-08-23T20-00-00 UTC
             offset: 21600,  // UTC offset 21600, DST offset 0
-            name: "TAST",
+            is_dst: false,
+            name:   "TAST",
         }),
-        (638308800, ZoneDetails {
+        (638308800, FixedTimespan {  // 1990-02-24T20-00-00 UTC
             offset: 25200,  // UTC offset 21600, DST offset 3600
-            name: "TASST",
+            is_dst: true,
+            name:   "TASST",
         }),
-        (654638400, ZoneDetails {
+        (654638400, FixedTimespan {  // 1990-08-29T20-00-00 UTC
             offset: 21600,  // UTC offset 21600, DST offset 0
-            name: "TAST",
+            is_dst: false,
+            name:   "TAST",
         }),
-        (670363200, ZoneDetails {
+        (670363200, FixedTimespan {  // 1991-02-30T20-00-00 UTC
             offset: 21600,  // UTC offset 18000, DST offset 3600
-            name: "TASST",
+            is_dst: true,
+            name:   "TASST",
         }),
-        (683661600, ZoneDetails {
+        (683661600, FixedTimespan {  // 1991-07-31T18-00-00 UTC
             offset: 21600,  // UTC offset 18000, DST offset 3600
-            name: "UZST",
+            is_dst: true,
+            name:   "UZST",
         }),
-        (686091600, ZoneDetails {
+        (686091600, FixedTimespan {  // 1991-08-28T21-00-00 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
-            name: "UZT",
+            is_dst: false,
+            name:   "UZT",
         }),
     ]},
 };

@@ -5,47 +5,56 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Pacific/Tongatapu",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 44360,  // UTC offset 44360, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-2177497160, ZoneDetails {
+        (-2177497160, FixedTimespan {  // 1900-11-31T11-40-40 UTC
             offset: 44400,  // UTC offset 44400, DST offset 0
-            name: "TOT",
+            is_dst: false,
+            name:   "TOT",
         }),
-        (-915193200, ZoneDetails {
+        (-915193200, FixedTimespan {  // 1940-11-31T11-40-00 UTC
             offset: 46800,  // UTC offset 46800, DST offset 0
-            name: "TOT",
+            is_dst: false,
+            name:   "TOT",
         }),
-        (939214800, ZoneDetails {
+        (939214800, FixedTimespan {  // 1999-09-06T13-00-00 UTC
             offset: 50400,  // UTC offset 46800, DST offset 3600
-            name: "TOST",
+            is_dst: true,
+            name:   "TOST",
         }),
-        (953384400, ZoneDetails {
+        (953384400, FixedTimespan {  // 2000-02-18T13-00-00 UTC
             offset: 46800,  // UTC offset 46800, DST offset 0
-            name: "TOT",
+            is_dst: false,
+            name:   "TOT",
         }),
-        (973342800, ZoneDetails {
+        (973342800, FixedTimespan {  // 2000-10-04T13-00-00 UTC
             offset: 50400,  // UTC offset 46800, DST offset 3600
-            name: "TOST",
+            is_dst: true,
+            name:   "TOST",
         }),
-        (980596800, ZoneDetails {
+        (980596800, FixedTimespan {  // 2001-00-27T12-00-00 UTC
             offset: 46800,  // UTC offset 46800, DST offset 0
-            name: "TOT",
+            is_dst: false,
+            name:   "TOT",
         }),
-        (1004792400, ZoneDetails {
+        (1004792400, FixedTimespan {  // 2001-10-03T13-00-00 UTC
             offset: 50400,  // UTC offset 46800, DST offset 3600
-            name: "TOST",
+            is_dst: true,
+            name:   "TOST",
         }),
-        (1012046400, ZoneDetails {
+        (1012046400, FixedTimespan {  // 2002-00-26T12-00-00 UTC
             offset: 46800,  // UTC offset 46800, DST offset 0
-            name: "TOT",
+            is_dst: false,
+            name:   "TOT",
         }),
     ]},
 };

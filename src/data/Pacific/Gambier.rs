@@ -5,19 +5,21 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Pacific/Gambier",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: -25212,  // UTC offset -25212, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-1806685188, ZoneDetails {
+        (-1806685188, FixedTimespan {  // 1912-09-01T7-00-12 UTC
             offset: -32400,  // UTC offset -32400, DST offset 0
-            name: "GAMT",
+            is_dst: false,
+            name:   "GAMT",
         }),
     ]},
 };

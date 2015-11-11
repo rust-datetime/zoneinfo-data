@@ -5,31 +5,36 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "America/Martinique",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: -14140,  // UTC offset -14140, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-2524507460, ZoneDetails {
+        (-2524507460, FixedTimespan {  // 1890-00-01T3-55-40 UTC
             offset: -14140,  // UTC offset -14140, DST offset 0
-            name: "FFMT",
+            is_dst: false,
+            name:   "FFMT",
         }),
-        (-1851537860, ZoneDetails {
+        (-1851537860, FixedTimespan {  // 1911-04-01T3-55-40 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "AST",
+            is_dst: false,
+            name:   "AST",
         }),
-        (323841600, ZoneDetails {
+        (323841600, FixedTimespan {  // 1980-03-06T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "ADT",
+            is_dst: true,
+            name:   "ADT",
         }),
-        (338958000, ZoneDetails {
+        (338958000, FixedTimespan {  // 1980-08-28T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "AST",
+            is_dst: false,
+            name:   "AST",
         }),
     ]},
 };

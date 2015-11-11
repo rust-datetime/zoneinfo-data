@@ -5,79 +5,96 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "America/Lima",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: -17508,  // UTC offset -17508, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-2524504092, ZoneDetails {
+        (-2524504092, FixedTimespan {  // 1890-00-01T4-51-48 UTC
             offset: -17484,  // UTC offset -17484, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         }),
-        (-1938539316, ZoneDetails {
+        (-1938539316, FixedTimespan {  // 1908-06-28T4-51-24 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "PET",
+            is_dst: false,
+            name:   "PET",
         }),
-        (-1009825200, ZoneDetails {
+        (-1009825200, FixedTimespan {  // 1938-00-01T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "PEST",
+            is_dst: true,
+            name:   "PEST",
         }),
-        (-1002052800, ZoneDetails {
+        (-1002052800, FixedTimespan {  // 1938-03-01T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "PET",
+            is_dst: false,
+            name:   "PET",
         }),
-        (-986756400, ZoneDetails {
+        (-986756400, FixedTimespan {  // 1938-08-25T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "PEST",
+            is_dst: true,
+            name:   "PEST",
         }),
-        (-971035200, ZoneDetails {
+        (-971035200, FixedTimespan {  // 1939-02-26T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "PET",
+            is_dst: false,
+            name:   "PET",
         }),
-        (-955306800, ZoneDetails {
+        (-955306800, FixedTimespan {  // 1939-08-24T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "PEST",
+            is_dst: true,
+            name:   "PEST",
         }),
-        (-939585600, ZoneDetails {
+        (-939585600, FixedTimespan {  // 1940-02-24T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "PET",
+            is_dst: false,
+            name:   "PET",
         }),
-        (504939600, ZoneDetails {
+        (504939600, FixedTimespan {  // 1986-00-01T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "PEST",
+            is_dst: true,
+            name:   "PEST",
         }),
-        (512712000, ZoneDetails {
+        (512712000, FixedTimespan {  // 1986-03-01T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "PET",
+            is_dst: false,
+            name:   "PET",
         }),
-        (536475600, ZoneDetails {
+        (536475600, FixedTimespan {  // 1987-00-01T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "PEST",
+            is_dst: true,
+            name:   "PEST",
         }),
-        (544248000, ZoneDetails {
+        (544248000, FixedTimespan {  // 1987-03-01T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "PET",
+            is_dst: false,
+            name:   "PET",
         }),
-        (631170000, ZoneDetails {
+        (631170000, FixedTimespan {  // 1990-00-01T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "PEST",
+            is_dst: true,
+            name:   "PEST",
         }),
-        (638942400, ZoneDetails {
+        (638942400, FixedTimespan {  // 1990-03-01T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "PET",
+            is_dst: false,
+            name:   "PET",
         }),
-        (757400400, ZoneDetails {
+        (757400400, FixedTimespan {  // 1994-00-01T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "PEST",
+            is_dst: true,
+            name:   "PEST",
         }),
-        (765172800, ZoneDetails {
+        (765172800, FixedTimespan {  // 1994-03-01T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "PET",
+            is_dst: false,
+            name:   "PET",
         }),
     ]},
 };

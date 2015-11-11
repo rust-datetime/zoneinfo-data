@@ -5,19 +5,21 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Asia/Dubai",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 13272,  // UTC offset 13272, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-1577936472, ZoneDetails {
+        (-1577936472, FixedTimespan {  // 1919-11-31T20-18-48 UTC
             offset: 14400,  // UTC offset 14400, DST offset 0
-            name: "GST",
+            is_dst: false,
+            name:   "GST",
         }),
     ]},
 };

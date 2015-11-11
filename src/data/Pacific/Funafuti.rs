@@ -5,19 +5,21 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Pacific/Funafuti",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 43012,  // UTC offset 43012, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-2177495812, ZoneDetails {
+        (-2177495812, FixedTimespan {  // 1900-11-31T12-03-08 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "TVT",
+            is_dst: false,
+            name:   "TVT",
         }),
     ]},
 };

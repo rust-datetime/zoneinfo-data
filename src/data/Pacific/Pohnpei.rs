@@ -5,19 +5,21 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Pacific/Pohnpei",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 37972,  // UTC offset 37972, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-2177490772, ZoneDetails {
+        (-2177490772, FixedTimespan {  // 1900-11-31T13-27-08 UTC
             offset: 39600,  // UTC offset 39600, DST offset 0
-            name: "PONT",
+            is_dst: false,
+            name:   "PONT",
         }),
     ]},
 };

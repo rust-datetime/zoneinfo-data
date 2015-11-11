@@ -5,43 +5,51 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Pacific/Noumea",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 39948,  // UTC offset 39948, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-1829387148, ZoneDetails {
+        (-1829387148, FixedTimespan {  // 1912-00-12T12-54-12 UTC
             offset: 39600,  // UTC offset 39600, DST offset 0
-            name: "NCT",
+            is_dst: false,
+            name:   "NCT",
         }),
-        (250002000, ZoneDetails {
+        (250002000, FixedTimespan {  // 1977-11-03T13-00-00 UTC
             offset: 43200,  // UTC offset 39600, DST offset 3600
-            name: "NCST",
+            is_dst: true,
+            name:   "NCST",
         }),
-        (257342400, ZoneDetails {
+        (257342400, FixedTimespan {  // 1978-01-26T12-00-00 UTC
             offset: 39600,  // UTC offset 39600, DST offset 0
-            name: "NCT",
+            is_dst: false,
+            name:   "NCT",
         }),
-        (281451600, ZoneDetails {
+        (281451600, FixedTimespan {  // 1978-11-02T13-00-00 UTC
             offset: 43200,  // UTC offset 39600, DST offset 3600
-            name: "NCST",
+            is_dst: true,
+            name:   "NCST",
         }),
-        (288878400, ZoneDetails {
+        (288878400, FixedTimespan {  // 1979-01-26T12-00-00 UTC
             offset: 39600,  // UTC offset 39600, DST offset 0
-            name: "NCT",
+            is_dst: false,
+            name:   "NCT",
         }),
-        (849366000, ZoneDetails {
+        (849366000, FixedTimespan {  // 1996-10-30T15-00-00 UTC
             offset: 43200,  // UTC offset 39600, DST offset 3600
-            name: "NCST",
+            is_dst: true,
+            name:   "NCST",
         }),
-        (857228400, ZoneDetails {
+        (857228400, FixedTimespan {  // 1997-02-01T15-00-00 UTC
             offset: 39600,  // UTC offset 39600, DST offset 0
-            name: "NCT",
+            is_dst: false,
+            name:   "NCT",
         }),
     ]},
 };

@@ -5,27 +5,31 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Pacific/Guam",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: -49140,  // UTC offset -49140, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-3944629260, ZoneDetails {
+        (-3944629260, FixedTimespan {  // 1844-11-31T13-39-00 UTC
             offset: 34740,  // UTC offset 34740, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         }),
-        (-2177487540, ZoneDetails {
+        (-2177487540, FixedTimespan {  // 1900-11-31T14-21-00 UTC
             offset: 36000,  // UTC offset 36000, DST offset 0
-            name: "GST",
+            is_dst: false,
+            name:   "GST",
         }),
-        (977493600, ZoneDetails {
+        (977493600, FixedTimespan {  // 2000-11-22T14-00-00 UTC
             offset: 36000,  // UTC offset 36000, DST offset 0
-            name: "ChST",
+            is_dst: false,
+            name:   "ChST",
         }),
     ]},
 };

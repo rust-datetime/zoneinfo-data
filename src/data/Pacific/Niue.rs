@@ -5,27 +5,31 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Pacific/Niue",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: -38420,  // UTC offset -38420, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-2177414380, ZoneDetails {
+        (-2177414380, FixedTimespan {  // 1901-00-01T10-40-20 UTC
             offset: -38400,  // UTC offset -38400, DST offset 0
-            name: "NUT",
+            is_dst: false,
+            name:   "NUT",
         }),
-        (-599577600, ZoneDetails {
+        (-599577600, FixedTimespan {  // 1951-00-01T10-40-00 UTC
             offset: -37800,  // UTC offset -37800, DST offset 0
-            name: "NUT",
+            is_dst: false,
+            name:   "NUT",
         }),
-        (276085800, ZoneDetails {
+        (276085800, FixedTimespan {  // 1978-09-01T10-30-00 UTC
             offset: -39600,  // UTC offset -39600, DST offset 0
-            name: "NUT",
+            is_dst: false,
+            name:   "NUT",
         }),
     ]},
 };

@@ -5,23 +5,26 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Pacific/Port_Moresby",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 35320,  // UTC offset 35320, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-2840176120, ZoneDetails {
+        (-2840176120, FixedTimespan {  // 1879-11-31T14-11-20 UTC
             offset: 35312,  // UTC offset 35312, DST offset 0
-            name: "PMMT",
+            is_dst: false,
+            name:   "PMMT",
         }),
-        (-2366790512, ZoneDetails {
+        (-2366790512, FixedTimespan {  // 1894-11-31T14-11-28 UTC
             offset: 36000,  // UTC offset 36000, DST offset 0
-            name: "PGT",
+            is_dst: false,
+            name:   "PGT",
         }),
     ]},
 };

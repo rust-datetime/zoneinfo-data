@@ -5,31 +5,36 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Africa/Nairobi",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 8836,  // UTC offset 8836, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-1309746436, ZoneDetails {
+        (-1309746436, FixedTimespan {  // 1928-05-30T21-32-44 UTC
             offset: 10800,  // UTC offset 10800, DST offset 0
-            name: "EAT",
+            is_dst: false,
+            name:   "EAT",
         }),
-        (-1262314800, ZoneDetails {
+        (-1262314800, FixedTimespan {  // 1929-11-31T21-00-00 UTC
             offset: 9000,  // UTC offset 9000, DST offset 0
-            name: "BEAT",
+            is_dst: false,
+            name:   "BEAT",
         }),
-        (-946780200, ZoneDetails {
+        (-946780200, FixedTimespan {  // 1939-11-31T21-30-00 UTC
             offset: 9900,  // UTC offset 9900, DST offset 0
-            name: "BEAUT",
+            is_dst: false,
+            name:   "BEAUT",
         }),
-        (-315629100, ZoneDetails {
+        (-315629100, FixedTimespan {  // 1959-11-31T21-15-00 UTC
             offset: 10800,  // UTC offset 10800, DST offset 0
-            name: "EAT",
+            is_dst: false,
+            name:   "EAT",
         }),
     ]},
 };

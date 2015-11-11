@@ -5,7 +5,7 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::TimeZone;
 
 pub mod Africa;
 pub mod America;
@@ -55,7 +55,7 @@ pub use self::WET::ZONE as WET;
 
 
 
-pub fn lookup(input: &str) -> Option<Zone> {
+pub fn lookup(input: &str) -> Option<TimeZone> {
     if input == "Africa/Abidjan" {
         return Some(Africa::Abidjan);
     }

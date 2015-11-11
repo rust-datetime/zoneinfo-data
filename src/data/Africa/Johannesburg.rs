@@ -5,39 +5,46 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Africa/Johannesburg",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 6720,  // UTC offset 6720, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-2458173120, ZoneDetails {
+        (-2458173120, FixedTimespan {  // 1892-01-07T22-08-00 UTC
             offset: 5400,  // UTC offset 5400, DST offset 0
-            name: "SAST",
+            is_dst: false,
+            name:   "SAST",
         }),
-        (-2109288600, ZoneDetails {
+        (-2109288600, FixedTimespan {  // 1903-01-28T22-30-00 UTC
             offset: 7200,  // UTC offset 7200, DST offset 0
-            name: "SAST",
+            is_dst: false,
+            name:   "SAST",
         }),
-        (-860976000, ZoneDetails {
+        (-860976000, FixedTimespan {  // 1942-08-20T0-00-00 UTC
             offset: 10800,  // UTC offset 7200, DST offset 3600
-            name: "SAST",
+            is_dst: true,
+            name:   "SAST",
         }),
-        (-845254800, ZoneDetails {
+        (-845254800, FixedTimespan {  // 1943-02-20T23-00-00 UTC
             offset: 7200,  // UTC offset 7200, DST offset 0
-            name: "SAST",
+            is_dst: false,
+            name:   "SAST",
         }),
-        (-829526400, ZoneDetails {
+        (-829526400, FixedTimespan {  // 1943-08-19T0-00-00 UTC
             offset: 10800,  // UTC offset 7200, DST offset 3600
-            name: "SAST",
+            is_dst: true,
+            name:   "SAST",
         }),
-        (-813805200, ZoneDetails {
+        (-813805200, FixedTimespan {  // 1944-02-18T23-00-00 UTC
             offset: 7200,  // UTC offset 7200, DST offset 0
-            name: "SAST",
+            is_dst: false,
+            name:   "SAST",
         }),
     ]},
 };

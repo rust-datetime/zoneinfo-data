@@ -5,83 +5,101 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "America/Santo_Domingo",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: -12024,  // UTC offset -12024, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-2524509576, ZoneDetails {
+        (-2524509576, FixedTimespan {  // 1890-00-01T3-20-24 UTC
             offset: -12000,  // UTC offset -12000, DST offset 0
-            name: "SDMT",
+            is_dst: false,
+            name:   "SDMT",
         }),
-        (-1159778400, ZoneDetails {
+        (-1159778400, FixedTimespan {  // 1933-03-01T15-20-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "EST",
+            is_dst: false,
+            name:   "EST",
         }),
-        (-100119600, ZoneDetails {
+        (-100119600, FixedTimespan {  // 1966-09-30T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "EDT",
+            is_dst: true,
+            name:   "EDT",
         }),
-        (-89668800, ZoneDetails {
+        (-89668800, FixedTimespan {  // 1967-01-28T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "EST",
+            is_dst: false,
+            name:   "EST",
         }),
-        (-5770800, ZoneDetails {
+        (-5770800, FixedTimespan {  // 1969-09-26T5-00-00 UTC
             offset: -16200,  // UTC offset -18000, DST offset 1800
-            name: "EHDT",
+            is_dst: true,
+            name:   "EHDT",
         }),
-        (4422600, ZoneDetails {
+        (4422600, FixedTimespan {  // 1970-01-21T4-30-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "EST",
+            is_dst: false,
+            name:   "EST",
         }),
-        (25678800, ZoneDetails {
+        (25678800, FixedTimespan {  // 1970-09-25T5-00-00 UTC
             offset: -16200,  // UTC offset -18000, DST offset 1800
-            name: "EHDT",
+            is_dst: true,
+            name:   "EHDT",
         }),
-        (33193800, ZoneDetails {
+        (33193800, FixedTimespan {  // 1971-00-20T4-30-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "EST",
+            is_dst: false,
+            name:   "EST",
         }),
-        (57733200, ZoneDetails {
+        (57733200, FixedTimespan {  // 1971-09-31T5-00-00 UTC
             offset: -16200,  // UTC offset -18000, DST offset 1800
-            name: "EHDT",
+            is_dst: true,
+            name:   "EHDT",
         }),
-        (64816200, ZoneDetails {
+        (64816200, FixedTimespan {  // 1972-00-21T4-30-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "EST",
+            is_dst: false,
+            name:   "EST",
         }),
-        (89182800, ZoneDetails {
+        (89182800, FixedTimespan {  // 1972-09-29T5-00-00 UTC
             offset: -16200,  // UTC offset -18000, DST offset 1800
-            name: "EHDT",
+            is_dst: true,
+            name:   "EHDT",
         }),
-        (96438600, ZoneDetails {
+        (96438600, FixedTimespan {  // 1973-00-21T4-30-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "EST",
+            is_dst: false,
+            name:   "EST",
         }),
-        (120632400, ZoneDetails {
+        (120632400, FixedTimespan {  // 1973-09-28T5-00-00 UTC
             offset: -16200,  // UTC offset -18000, DST offset 1800
-            name: "EHDT",
+            is_dst: true,
+            name:   "EHDT",
         }),
-        (127974600, ZoneDetails {
+        (127974600, FixedTimespan {  // 1974-00-21T4-30-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "EST",
+            is_dst: false,
+            name:   "EST",
         }),
-        (152082000, ZoneDetails {
+        (152082000, FixedTimespan {  // 1974-09-27T5-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "AST",
+            is_dst: false,
+            name:   "AST",
         }),
-        (972799200, ZoneDetails {
+        (972799200, FixedTimespan {  // 2000-09-29T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "EST",
+            is_dst: false,
+            name:   "EST",
         }),
-        (975823200, ZoneDetails {
+        (975823200, FixedTimespan {  // 2000-11-03T6-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "AST",
+            is_dst: false,
+            name:   "AST",
         }),
     ]},
 };

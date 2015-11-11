@@ -5,31 +5,36 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "America/Puerto_Rico",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: -12935,  // UTC offset -12935, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-2233038265, ZoneDetails {
+        (-2233038265, FixedTimespan {  // 1899-02-28T15-35-35 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "AST",
+            is_dst: false,
+            name:   "AST",
         }),
-        (-873057600, ZoneDetails {
+        (-873057600, FixedTimespan {  // 1942-04-03T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "AWT",
+            is_dst: true,
+            name:   "AWT",
         }),
-        (-769395600, ZoneDetails {
+        (-769395600, FixedTimespan {  // 1945-07-14T23-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "APT",
+            is_dst: true,
+            name:   "APT",
         }),
-        (-765399600, ZoneDetails {
+        (-765399600, FixedTimespan {  // 1945-08-30T5-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "AST",
+            is_dst: false,
+            name:   "AST",
         }),
     ]},
 };

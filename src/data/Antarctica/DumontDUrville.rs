@@ -5,27 +5,31 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Antarctica/DumontDUrville",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 0,  // UTC offset 0, DST offset 0
-            name: "zzz",
+            is_dst: false,
+            name:   "zzz",
         },
         rest: &[
-        (-725846400, ZoneDetails {
+        (-725846400, FixedTimespan {  // 1947-00-01T0-00-00 UTC
             offset: 36000,  // UTC offset 36000, DST offset 0
-            name: "PMT",
+            is_dst: false,
+            name:   "PMT",
         }),
-        (-566992800, ZoneDetails {
+        (-566992800, FixedTimespan {  // 1952-00-13T14-00-00 UTC
             offset: 0,  // UTC offset 0, DST offset 0
-            name: "zzz",
+            is_dst: false,
+            name:   "zzz",
         }),
-        (-415497600, ZoneDetails {
+        (-415497600, FixedTimespan {  // 1956-10-01T0-00-00 UTC
             offset: 36000,  // UTC offset 36000, DST offset 0
-            name: "DDUT",
+            is_dst: false,
+            name:   "DDUT",
         }),
     ]},
 };

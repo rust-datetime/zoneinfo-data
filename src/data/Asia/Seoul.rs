@@ -5,103 +5,126 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Asia/Seoul",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 30472,  // UTC offset 30472, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-1948782472, ZoneDetails {
+        (-1948782472, FixedTimespan {  // 1908-02-31T15-32-08 UTC
             offset: 30600,  // UTC offset 30600, DST offset 0
-            name: "KST",
+            is_dst: false,
+            name:   "KST",
         }),
-        (-1830414600, ZoneDetails {
+        (-1830414600, FixedTimespan {  // 1911-11-31T15-30-00 UTC
             offset: 32400,  // UTC offset 32400, DST offset 0
-            name: "JCST",
+            is_dst: false,
+            name:   "JCST",
         }),
-        (-1017824400, ZoneDetails {
+        (-1017824400, FixedTimespan {  // 1937-08-30T15-00-00 UTC
             offset: 32400,  // UTC offset 32400, DST offset 0
-            name: "JST",
+            is_dst: false,
+            name:   "JST",
         }),
-        (-767350800, ZoneDetails {
+        (-767350800, FixedTimespan {  // 1945-08-07T15-00-00 UTC
             offset: 32400,  // UTC offset 32400, DST offset 0
-            name: "KST",
+            is_dst: false,
+            name:   "KST",
         }),
-        (-498128400, ZoneDetails {
+        (-498128400, FixedTimespan {  // 1954-02-20T15-00-00 UTC
             offset: 30600,  // UTC offset 30600, DST offset 0
-            name: "KST",
+            is_dst: false,
+            name:   "KST",
         }),
-        (-462702600, ZoneDetails {
+        (-462702600, FixedTimespan {  // 1955-04-04T15-30-00 UTC
             offset: 34200,  // UTC offset 30600, DST offset 3600
-            name: "KDT",
+            is_dst: true,
+            name:   "KDT",
         }),
-        (-451733400, ZoneDetails {
+        (-451733400, FixedTimespan {  // 1955-08-08T14-30-00 UTC
             offset: 30600,  // UTC offset 30600, DST offset 0
-            name: "KST",
+            is_dst: false,
+            name:   "KST",
         }),
-        (-429784200, ZoneDetails {
+        (-429784200, FixedTimespan {  // 1956-04-19T15-30-00 UTC
             offset: 34200,  // UTC offset 30600, DST offset 3600
-            name: "KDT",
+            is_dst: true,
+            name:   "KDT",
         }),
-        (-418296600, ZoneDetails {
+        (-418296600, FixedTimespan {  // 1956-08-29T14-30-00 UTC
             offset: 30600,  // UTC offset 30600, DST offset 0
-            name: "KST",
+            is_dst: false,
+            name:   "KST",
         }),
-        (-399544200, ZoneDetails {
+        (-399544200, FixedTimespan {  // 1957-04-04T15-30-00 UTC
             offset: 34200,  // UTC offset 30600, DST offset 3600
-            name: "KDT",
+            is_dst: true,
+            name:   "KDT",
         }),
-        (-387451800, ZoneDetails {
+        (-387451800, FixedTimespan {  // 1957-08-21T14-30-00 UTC
             offset: 30600,  // UTC offset 30600, DST offset 0
-            name: "KST",
+            is_dst: false,
+            name:   "KST",
         }),
-        (-368094600, ZoneDetails {
+        (-368094600, FixedTimespan {  // 1958-04-03T15-30-00 UTC
             offset: 34200,  // UTC offset 30600, DST offset 3600
-            name: "KDT",
+            is_dst: true,
+            name:   "KDT",
         }),
-        (-356002200, ZoneDetails {
+        (-356002200, FixedTimespan {  // 1958-08-20T14-30-00 UTC
             offset: 30600,  // UTC offset 30600, DST offset 0
-            name: "KST",
+            is_dst: false,
+            name:   "KST",
         }),
-        (-336645000, ZoneDetails {
+        (-336645000, FixedTimespan {  // 1959-04-02T15-30-00 UTC
             offset: 34200,  // UTC offset 30600, DST offset 3600
-            name: "KDT",
+            is_dst: true,
+            name:   "KDT",
         }),
-        (-324552600, ZoneDetails {
+        (-324552600, FixedTimespan {  // 1959-08-19T14-30-00 UTC
             offset: 30600,  // UTC offset 30600, DST offset 0
-            name: "KST",
+            is_dst: false,
+            name:   "KST",
         }),
-        (-305195400, ZoneDetails {
+        (-305195400, FixedTimespan {  // 1960-03-30T15-30-00 UTC
             offset: 34200,  // UTC offset 30600, DST offset 3600
-            name: "KDT",
+            is_dst: true,
+            name:   "KDT",
         }),
-        (-293103000, ZoneDetails {
+        (-293103000, FixedTimespan {  // 1960-08-17T14-30-00 UTC
             offset: 30600,  // UTC offset 30600, DST offset 0
-            name: "KST",
+            is_dst: false,
+            name:   "KST",
         }),
-        (-264933000, ZoneDetails {
+        (-264933000, FixedTimespan {  // 1961-07-09T15-30-00 UTC
             offset: 32400,  // UTC offset 32400, DST offset 0
-            name: "KST",
+            is_dst: false,
+            name:   "KST",
         }),
-        (547578000, ZoneDetails {
+        (547578000, FixedTimespan {  // 1987-04-09T17-00-00 UTC
             offset: 36000,  // UTC offset 32400, DST offset 3600
-            name: "KDT",
+            is_dst: true,
+            name:   "KDT",
         }),
-        (560883600, ZoneDetails {
+        (560883600, FixedTimespan {  // 1987-09-10T17-00-00 UTC
             offset: 32400,  // UTC offset 32400, DST offset 0
-            name: "KST",
+            is_dst: false,
+            name:   "KST",
         }),
-        (579027600, ZoneDetails {
+        (579027600, FixedTimespan {  // 1988-04-07T17-00-00 UTC
             offset: 36000,  // UTC offset 32400, DST offset 3600
-            name: "KDT",
+            is_dst: true,
+            name:   "KDT",
         }),
-        (592333200, ZoneDetails {
+        (592333200, FixedTimespan {  // 1988-09-08T17-00-00 UTC
             offset: 32400,  // UTC offset 32400, DST offset 0
-            name: "KST",
+            is_dst: false,
+            name:   "KST",
         }),
     ]},
 };

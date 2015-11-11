@@ -5,27 +5,31 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Pacific/Kosrae",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 39116,  // UTC offset 39116, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-2177491916, ZoneDetails {
+        (-2177491916, FixedTimespan {  // 1900-11-31T13-08-04 UTC
             offset: 39600,  // UTC offset 39600, DST offset 0
-            name: "KOST",
+            is_dst: false,
+            name:   "KOST",
         }),
-        (-7988400, ZoneDetails {
+        (-7988400, FixedTimespan {  // 1969-08-30T13-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "KOST",
+            is_dst: false,
+            name:   "KOST",
         }),
-        (915105600, ZoneDetails {
+        (915105600, FixedTimespan {  // 1998-11-31T12-00-00 UTC
             offset: 39600,  // UTC offset 39600, DST offset 0
-            name: "KOST",
+            is_dst: false,
+            name:   "KOST",
         }),
     ]},
 };

@@ -5,23 +5,26 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Asia/Brunei",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 27580,  // UTC offset 27580, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-1383464380, ZoneDetails {
+        (-1383464380, FixedTimespan {  // 1926-01-28T16-20-20 UTC
             offset: 27000,  // UTC offset 27000, DST offset 0
-            name: "BNT",
+            is_dst: false,
+            name:   "BNT",
         }),
-        (-1167636600, ZoneDetails {
+        (-1167636600, FixedTimespan {  // 1932-11-31T16-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "BNT",
+            is_dst: false,
+            name:   "BNT",
         }),
     ]},
 };

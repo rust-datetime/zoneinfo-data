@@ -5,27 +5,31 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Asia/Jayapura",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 33768,  // UTC offset 33768, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-1172913768, ZoneDetails {
+        (-1172913768, FixedTimespan {  // 1932-09-31T14-37-12 UTC
             offset: 32400,  // UTC offset 32400, DST offset 0
-            name: "WIT",
+            is_dst: false,
+            name:   "WIT",
         }),
-        (-799491600, ZoneDetails {
+        (-799491600, FixedTimespan {  // 1944-07-31T15-00-00 UTC
             offset: 34200,  // UTC offset 34200, DST offset 0
-            name: "ACST",
+            is_dst: false,
+            name:   "ACST",
         }),
-        (-189423000, ZoneDetails {
+        (-189423000, FixedTimespan {  // 1963-11-31T14-30-00 UTC
             offset: 32400,  // UTC offset 32400, DST offset 0
-            name: "WIT",
+            is_dst: false,
+            name:   "WIT",
         }),
     ]},
 };

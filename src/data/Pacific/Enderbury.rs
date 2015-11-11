@@ -5,27 +5,31 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Pacific/Enderbury",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: -38140,  // UTC offset -38140, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-2177414660, ZoneDetails {
+        (-2177414660, FixedTimespan {  // 1901-00-01T10-35-40 UTC
             offset: -43200,  // UTC offset -43200, DST offset 0
-            name: "PHOT",
+            is_dst: false,
+            name:   "PHOT",
         }),
-        (307627200, ZoneDetails {
+        (307627200, FixedTimespan {  // 1979-09-01T12-00-00 UTC
             offset: -39600,  // UTC offset -39600, DST offset 0
-            name: "PHOT",
+            is_dst: false,
+            name:   "PHOT",
         }),
-        (788958000, ZoneDetails {
+        (788958000, FixedTimespan {  // 1995-00-01T11-00-00 UTC
             offset: 46800,  // UTC offset 46800, DST offset 0
-            name: "PHOT",
+            is_dst: false,
+            name:   "PHOT",
         }),
     ]},
 };

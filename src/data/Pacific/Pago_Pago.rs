@@ -5,31 +5,36 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Pacific/Pago_Pago",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 45432,  // UTC offset 45432, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-2855738232, ZoneDetails {
+        (-2855738232, FixedTimespan {  // 1879-06-04T11-22-48 UTC
             offset: -38232,  // UTC offset -38232, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         }),
-        (-1861881768, ZoneDetails {
+        (-1861881768, FixedTimespan {  // 1911-00-01T10-37-12 UTC
             offset: -39600,  // UTC offset -39600, DST offset 0
-            name: "NST",
+            is_dst: false,
+            name:   "NST",
         }),
-        (-86878800, ZoneDetails {
+        (-86878800, FixedTimespan {  // 1967-03-01T11-00-00 UTC
             offset: -39600,  // UTC offset -39600, DST offset 0
-            name: "BST",
+            is_dst: false,
+            name:   "BST",
         }),
-        (439038000, ZoneDetails {
+        (439038000, FixedTimespan {  // 1983-10-30T11-00-00 UTC
             offset: -39600,  // UTC offset -39600, DST offset 0
-            name: "SST",
+            is_dst: false,
+            name:   "SST",
         }),
     ]},
 };

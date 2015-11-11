@@ -5,27 +5,31 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Africa/Monrovia",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 2588,  // UTC offset 2588, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-2776984988, ZoneDetails {
+        (-2776984988, FixedTimespan {  // 1881-11-31T23-16-52 UTC
             offset: 2588,  // UTC offset 2588, DST offset 0
-            name: "MMT",
+            is_dst: false,
+            name:   "MMT",
         }),
-        (-1604364188, ZoneDetails {
+        (-1604364188, FixedTimespan {  // 1919-01-28T23-16-52 UTC
             offset: 2670,  // UTC offset 2670, DST offset 0
-            name: "LRT",
+            is_dst: false,
+            name:   "LRT",
         }),
-        (73523730, ZoneDetails {
+        (73523730, FixedTimespan {  // 1972-03-30T23-15-30 UTC
             offset: 0,  // UTC offset 0, DST offset 0
-            name: "GMT",
+            is_dst: false,
+            name:   "GMT",
         }),
     ]},
 };

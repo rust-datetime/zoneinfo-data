@@ -5,19 +5,21 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Antarctica/Vostok",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 0,  // UTC offset 0, DST offset 0
-            name: "zzz",
+            is_dst: false,
+            name:   "zzz",
         },
         rest: &[
-        (-380073600, ZoneDetails {
+        (-380073600, FixedTimespan {  // 1957-11-16T0-00-00 UTC
             offset: 21600,  // UTC offset 21600, DST offset 0
-            name: "VOST",
+            is_dst: false,
+            name:   "VOST",
         }),
     ]},
 };

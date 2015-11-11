@@ -5,27 +5,31 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "America/Creston",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: -22436,  // UTC offset -22436, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-2713887964, ZoneDetails {
+        (-2713887964, FixedTimespan {  // 1884-00-01T6-13-56 UTC
             offset: -25200,  // UTC offset -25200, DST offset 0
-            name: "MST",
+            is_dst: false,
+            name:   "MST",
         }),
-        (-1680454800, ZoneDetails {
+        (-1680454800, FixedTimespan {  // 1916-09-01T7-00-00 UTC
             offset: -28800,  // UTC offset -28800, DST offset 0
-            name: "PST",
+            is_dst: false,
+            name:   "PST",
         }),
-        (-1627833600, ZoneDetails {
+        (-1627833600, FixedTimespan {  // 1918-05-02T8-00-00 UTC
             offset: -25200,  // UTC offset -25200, DST offset 0
-            name: "MST",
+            is_dst: false,
+            name:   "MST",
         }),
     ]},
 };

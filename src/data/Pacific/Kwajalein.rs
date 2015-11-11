@@ -5,27 +5,31 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Pacific/Kwajalein",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 40160,  // UTC offset 40160, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-2177492960, ZoneDetails {
+        (-2177492960, FixedTimespan {  // 1900-11-31T12-50-40 UTC
             offset: 39600,  // UTC offset 39600, DST offset 0
-            name: "MHT",
+            is_dst: false,
+            name:   "MHT",
         }),
-        (-7988400, ZoneDetails {
+        (-7988400, FixedTimespan {  // 1969-08-30T13-00-00 UTC
             offset: -43200,  // UTC offset -43200, DST offset 0
-            name: "KWAT",
+            is_dst: false,
+            name:   "KWAT",
         }),
-        (745848000, ZoneDetails {
+        (745848000, FixedTimespan {  // 1993-07-20T12-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "MHT",
+            is_dst: false,
+            name:   "MHT",
         }),
     ]},
 };

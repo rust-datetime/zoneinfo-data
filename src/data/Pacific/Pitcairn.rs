@@ -5,23 +5,26 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Pacific/Pitcairn",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: -26380,  // UTC offset -26380, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-2177426420, ZoneDetails {
+        (-2177426420, FixedTimespan {  // 1901-00-01T7-19-40 UTC
             offset: -27000,  // UTC offset -27000, DST offset 0
-            name: "PNT",
+            is_dst: false,
+            name:   "PNT",
         }),
-        (893662200, ZoneDetails {
+        (893662200, FixedTimespan {  // 1998-03-27T7-30-00 UTC
             offset: -28800,  // UTC offset -28800, DST offset 0
-            name: "PST",
+            is_dst: false,
+            name:   "PST",
         }),
     ]},
 };

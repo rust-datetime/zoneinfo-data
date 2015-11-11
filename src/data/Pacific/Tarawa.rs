@@ -5,19 +5,21 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Pacific/Tarawa",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 41524,  // UTC offset 41524, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-2177494324, ZoneDetails {
+        (-2177494324, FixedTimespan {  // 1900-11-31T12-27-56 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "GILT",
+            is_dst: false,
+            name:   "GILT",
         }),
     ]},
 };

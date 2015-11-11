@@ -5,47 +5,56 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Asia/Colombo",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 19164,  // UTC offset 19164, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-2840159964, ZoneDetails {
+        (-2840159964, FixedTimespan {  // 1879-11-31T18-40-36 UTC
             offset: 19172,  // UTC offset 19172, DST offset 0
-            name: "MMT",
+            is_dst: false,
+            name:   "MMT",
         }),
-        (-2019705572, ZoneDetails {
+        (-2019705572, FixedTimespan {  // 1905-11-31T18-40-28 UTC
             offset: 19800,  // UTC offset 19800, DST offset 0
-            name: "IST",
+            is_dst: false,
+            name:   "IST",
         }),
-        (-883287000, ZoneDetails {
+        (-883287000, FixedTimespan {  // 1942-00-04T18-30-00 UTC
             offset: 21600,  // UTC offset 19800, DST offset 1800
-            name: "IHST",
+            is_dst: true,
+            name:   "IHST",
         }),
-        (-862639200, ZoneDetails {
+        (-862639200, FixedTimespan {  // 1942-07-31T18-00-00 UTC
             offset: 23400,  // UTC offset 19800, DST offset 3600
-            name: "IST",
+            is_dst: true,
+            name:   "IST",
         }),
-        (-764051400, ZoneDetails {
+        (-764051400, FixedTimespan {  // 1945-09-15T19-30-00 UTC
             offset: 19800,  // UTC offset 19800, DST offset 0
-            name: "IST",
+            is_dst: false,
+            name:   "IST",
         }),
-        (832962600, ZoneDetails {
+        (832962600, FixedTimespan {  // 1996-04-24T18-30-00 UTC
             offset: 23400,  // UTC offset 23400, DST offset 0
-            name: "LKT",
+            is_dst: false,
+            name:   "LKT",
         }),
-        (846266400, ZoneDetails {
+        (846266400, FixedTimespan {  // 1996-09-25T18-00-00 UTC
             offset: 21600,  // UTC offset 21600, DST offset 0
-            name: "LKT",
+            is_dst: false,
+            name:   "LKT",
         }),
-        (1145039400, ZoneDetails {
+        (1145039400, FixedTimespan {  // 2006-03-14T18-30-00 UTC
             offset: 19800,  // UTC offset 19800, DST offset 0
-            name: "IST",
+            is_dst: false,
+            name:   "IST",
         }),
     ]},
 };

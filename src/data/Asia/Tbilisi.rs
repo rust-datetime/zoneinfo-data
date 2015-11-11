@@ -5,227 +5,281 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Asia/Tbilisi",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 10751,  // UTC offset 10751, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-2840151551, ZoneDetails {
+        (-2840151551, FixedTimespan {  // 1879-11-31T21-00-49 UTC
             offset: 10751,  // UTC offset 10751, DST offset 0
-            name: "TBMT",
+            is_dst: false,
+            name:   "TBMT",
         }),
-        (-1441162751, ZoneDetails {
+        (-1441162751, FixedTimespan {  // 1924-04-01T21-00-49 UTC
             offset: 10800,  // UTC offset 10800, DST offset 0
-            name: "TBIT",
+            is_dst: false,
+            name:   "TBIT",
         }),
-        (-405140400, ZoneDetails {
+        (-405140400, FixedTimespan {  // 1957-01-28T21-00-00 UTC
             offset: 14400,  // UTC offset 14400, DST offset 0
-            name: "TBIT",
+            is_dst: false,
+            name:   "TBIT",
         }),
-        (354916800, ZoneDetails {
+        (354916800, FixedTimespan {  // 1981-02-31T20-00-00 UTC
             offset: 18000,  // UTC offset 14400, DST offset 3600
-            name: "TBIST",
+            is_dst: true,
+            name:   "TBIST",
         }),
-        (370724400, ZoneDetails {
+        (370724400, FixedTimespan {  // 1981-08-30T19-00-00 UTC
             offset: 14400,  // UTC offset 14400, DST offset 0
-            name: "TBIT",
+            is_dst: false,
+            name:   "TBIT",
         }),
-        (386452800, ZoneDetails {
+        (386452800, FixedTimespan {  // 1982-02-31T20-00-00 UTC
             offset: 18000,  // UTC offset 14400, DST offset 3600
-            name: "TBIST",
+            is_dst: true,
+            name:   "TBIST",
         }),
-        (402260400, ZoneDetails {
+        (402260400, FixedTimespan {  // 1982-08-30T19-00-00 UTC
             offset: 14400,  // UTC offset 14400, DST offset 0
-            name: "TBIT",
+            is_dst: false,
+            name:   "TBIT",
         }),
-        (417988800, ZoneDetails {
+        (417988800, FixedTimespan {  // 1983-02-31T20-00-00 UTC
             offset: 18000,  // UTC offset 14400, DST offset 3600
-            name: "TBIST",
+            is_dst: true,
+            name:   "TBIST",
         }),
-        (433796400, ZoneDetails {
+        (433796400, FixedTimespan {  // 1983-08-30T19-00-00 UTC
             offset: 14400,  // UTC offset 14400, DST offset 0
-            name: "TBIT",
+            is_dst: false,
+            name:   "TBIT",
         }),
-        (449611200, ZoneDetails {
+        (449611200, FixedTimespan {  // 1984-02-31T20-00-00 UTC
             offset: 18000,  // UTC offset 14400, DST offset 3600
-            name: "TBIST",
+            is_dst: true,
+            name:   "TBIST",
         }),
-        (465343200, ZoneDetails {
+        (465343200, FixedTimespan {  // 1984-08-29T22-00-00 UTC
             offset: 14400,  // UTC offset 14400, DST offset 0
-            name: "TBIT",
+            is_dst: false,
+            name:   "TBIT",
         }),
-        (481068000, ZoneDetails {
+        (481068000, FixedTimespan {  // 1985-02-30T22-00-00 UTC
             offset: 18000,  // UTC offset 14400, DST offset 3600
-            name: "TBIST",
+            is_dst: true,
+            name:   "TBIST",
         }),
-        (496792800, ZoneDetails {
+        (496792800, FixedTimespan {  // 1985-08-28T22-00-00 UTC
             offset: 14400,  // UTC offset 14400, DST offset 0
-            name: "TBIT",
+            is_dst: false,
+            name:   "TBIT",
         }),
-        (512517600, ZoneDetails {
+        (512517600, FixedTimespan {  // 1986-02-29T22-00-00 UTC
             offset: 18000,  // UTC offset 14400, DST offset 3600
-            name: "TBIST",
+            is_dst: true,
+            name:   "TBIST",
         }),
-        (528242400, ZoneDetails {
+        (528242400, FixedTimespan {  // 1986-08-27T22-00-00 UTC
             offset: 14400,  // UTC offset 14400, DST offset 0
-            name: "TBIT",
+            is_dst: false,
+            name:   "TBIT",
         }),
-        (543967200, ZoneDetails {
+        (543967200, FixedTimespan {  // 1987-02-28T22-00-00 UTC
             offset: 18000,  // UTC offset 14400, DST offset 3600
-            name: "TBIST",
+            is_dst: true,
+            name:   "TBIST",
         }),
-        (559692000, ZoneDetails {
+        (559692000, FixedTimespan {  // 1987-08-26T22-00-00 UTC
             offset: 14400,  // UTC offset 14400, DST offset 0
-            name: "TBIT",
+            is_dst: false,
+            name:   "TBIT",
         }),
-        (575416800, ZoneDetails {
+        (575416800, FixedTimespan {  // 1988-02-26T22-00-00 UTC
             offset: 18000,  // UTC offset 14400, DST offset 3600
-            name: "TBIST",
+            is_dst: true,
+            name:   "TBIST",
         }),
-        (591141600, ZoneDetails {
+        (591141600, FixedTimespan {  // 1988-08-24T22-00-00 UTC
             offset: 14400,  // UTC offset 14400, DST offset 0
-            name: "TBIT",
+            is_dst: false,
+            name:   "TBIT",
         }),
-        (606866400, ZoneDetails {
+        (606866400, FixedTimespan {  // 1989-02-25T22-00-00 UTC
             offset: 18000,  // UTC offset 14400, DST offset 3600
-            name: "TBIST",
+            is_dst: true,
+            name:   "TBIST",
         }),
-        (622591200, ZoneDetails {
+        (622591200, FixedTimespan {  // 1989-08-23T22-00-00 UTC
             offset: 14400,  // UTC offset 14400, DST offset 0
-            name: "TBIT",
+            is_dst: false,
+            name:   "TBIT",
         }),
-        (638316000, ZoneDetails {
+        (638316000, FixedTimespan {  // 1990-02-24T22-00-00 UTC
             offset: 18000,  // UTC offset 14400, DST offset 3600
-            name: "TBIST",
+            is_dst: true,
+            name:   "TBIST",
         }),
-        (654645600, ZoneDetails {
+        (654645600, FixedTimespan {  // 1990-08-29T22-00-00 UTC
             offset: 14400,  // UTC offset 14400, DST offset 0
-            name: "TBIT",
+            is_dst: false,
+            name:   "TBIT",
         }),
-        (670370400, ZoneDetails {
+        (670370400, FixedTimespan {  // 1991-02-30T22-00-00 UTC
             offset: 14400,  // UTC offset 10800, DST offset 3600
-            name: "TBIST",
+            is_dst: true,
+            name:   "TBIST",
         }),
-        (671140800, ZoneDetails {
+        (671140800, FixedTimespan {  // 1991-03-08T20-00-00 UTC
             offset: 14400,  // UTC offset 10800, DST offset 3600
-            name: "GEST",
+            is_dst: true,
+            name:   "GEST",
         }),
-        (686098800, ZoneDetails {
+        (686098800, FixedTimespan {  // 1991-08-28T23-00-00 UTC
             offset: 10800,  // UTC offset 10800, DST offset 0
-            name: "GET",
+            is_dst: false,
+            name:   "GET",
         }),
-        (701816400, ZoneDetails {
+        (701816400, FixedTimespan {  // 1992-02-28T21-00-00 UTC
             offset: 14400,  // UTC offset 10800, DST offset 3600
-            name: "GEST",
+            is_dst: true,
+            name:   "GEST",
         }),
-        (717537600, ZoneDetails {
+        (717537600, FixedTimespan {  // 1992-08-26T20-00-00 UTC
             offset: 10800,  // UTC offset 10800, DST offset 0
-            name: "GET",
+            is_dst: false,
+            name:   "GET",
         }),
-        (733266000, ZoneDetails {
+        (733266000, FixedTimespan {  // 1993-02-27T21-00-00 UTC
             offset: 14400,  // UTC offset 10800, DST offset 3600
-            name: "GEST",
+            is_dst: true,
+            name:   "GEST",
         }),
-        (748987200, ZoneDetails {
+        (748987200, FixedTimespan {  // 1993-08-25T20-00-00 UTC
             offset: 10800,  // UTC offset 10800, DST offset 0
-            name: "GET",
+            is_dst: false,
+            name:   "GET",
         }),
-        (764715600, ZoneDetails {
+        (764715600, FixedTimespan {  // 1994-02-26T21-00-00 UTC
             offset: 14400,  // UTC offset 10800, DST offset 3600
-            name: "GEST",
+            is_dst: true,
+            name:   "GEST",
         }),
-        (780436800, ZoneDetails {
+        (780436800, FixedTimespan {  // 1994-08-24T20-00-00 UTC
             offset: 14400,  // UTC offset 14400, DST offset 0
-            name: "GET",
+            is_dst: false,
+            name:   "GET",
         }),
-        (796161600, ZoneDetails {
+        (796161600, FixedTimespan {  // 1995-02-25T20-00-00 UTC
             offset: 18000,  // UTC offset 14400, DST offset 3600
-            name: "GEST",
+            is_dst: true,
+            name:   "GEST",
         }),
-        (811882800, ZoneDetails {
+        (811882800, FixedTimespan {  // 1995-08-23T19-00-00 UTC
             offset: 14400,  // UTC offset 14400, DST offset 0
-            name: "GET",
+            is_dst: false,
+            name:   "GET",
         }),
-        (828216000, ZoneDetails {
+        (828216000, FixedTimespan {  // 1996-02-30T20-00-00 UTC
             offset: 18000,  // UTC offset 14400, DST offset 3600
-            name: "GEST",
+            is_dst: true,
+            name:   "GEST",
         }),
-        (859662000, ZoneDetails {
+        (859662000, FixedTimespan {  // 1997-02-29T19-00-00 UTC
             offset: 18000,  // UTC offset 14400, DST offset 3600
-            name: "GEST",
+            is_dst: true,
+            name:   "GEST",
         }),
-        (877806000, ZoneDetails {
+        (877806000, FixedTimespan {  // 1997-09-25T19-00-00 UTC
             offset: 14400,  // UTC offset 14400, DST offset 0
-            name: "GET",
+            is_dst: false,
+            name:   "GET",
         }),
-        (891115200, ZoneDetails {
+        (891115200, FixedTimespan {  // 1998-02-28T20-00-00 UTC
             offset: 18000,  // UTC offset 14400, DST offset 3600
-            name: "GEST",
+            is_dst: true,
+            name:   "GEST",
         }),
-        (909255600, ZoneDetails {
+        (909255600, FixedTimespan {  // 1998-09-24T19-00-00 UTC
             offset: 14400,  // UTC offset 14400, DST offset 0
-            name: "GET",
+            is_dst: false,
+            name:   "GET",
         }),
-        (922564800, ZoneDetails {
+        (922564800, FixedTimespan {  // 1999-02-27T20-00-00 UTC
             offset: 18000,  // UTC offset 14400, DST offset 3600
-            name: "GEST",
+            is_dst: true,
+            name:   "GEST",
         }),
-        (941310000, ZoneDetails {
+        (941310000, FixedTimespan {  // 1999-09-30T19-00-00 UTC
             offset: 14400,  // UTC offset 14400, DST offset 0
-            name: "GET",
+            is_dst: false,
+            name:   "GET",
         }),
-        (954014400, ZoneDetails {
+        (954014400, FixedTimespan {  // 2000-02-25T20-00-00 UTC
             offset: 18000,  // UTC offset 14400, DST offset 3600
-            name: "GEST",
+            is_dst: true,
+            name:   "GEST",
         }),
-        (972759600, ZoneDetails {
+        (972759600, FixedTimespan {  // 2000-09-28T19-00-00 UTC
             offset: 14400,  // UTC offset 14400, DST offset 0
-            name: "GET",
+            is_dst: false,
+            name:   "GET",
         }),
-        (985464000, ZoneDetails {
+        (985464000, FixedTimespan {  // 2001-02-24T20-00-00 UTC
             offset: 18000,  // UTC offset 14400, DST offset 3600
-            name: "GEST",
+            is_dst: true,
+            name:   "GEST",
         }),
-        (1004209200, ZoneDetails {
+        (1004209200, FixedTimespan {  // 2001-09-27T19-00-00 UTC
             offset: 14400,  // UTC offset 14400, DST offset 0
-            name: "GET",
+            is_dst: false,
+            name:   "GET",
         }),
-        (1017518400, ZoneDetails {
+        (1017518400, FixedTimespan {  // 2002-02-30T20-00-00 UTC
             offset: 18000,  // UTC offset 14400, DST offset 3600
-            name: "GEST",
+            is_dst: true,
+            name:   "GEST",
         }),
-        (1035658800, ZoneDetails {
+        (1035658800, FixedTimespan {  // 2002-09-26T19-00-00 UTC
             offset: 14400,  // UTC offset 14400, DST offset 0
-            name: "GET",
+            is_dst: false,
+            name:   "GET",
         }),
-        (1048968000, ZoneDetails {
+        (1048968000, FixedTimespan {  // 2003-02-29T20-00-00 UTC
             offset: 18000,  // UTC offset 14400, DST offset 3600
-            name: "GEST",
+            is_dst: true,
+            name:   "GEST",
         }),
-        (1067108400, ZoneDetails {
+        (1067108400, FixedTimespan {  // 2003-09-25T19-00-00 UTC
             offset: 14400,  // UTC offset 14400, DST offset 0
-            name: "GET",
+            is_dst: false,
+            name:   "GET",
         }),
-        (1080417600, ZoneDetails {
+        (1080417600, FixedTimespan {  // 2004-02-27T20-00-00 UTC
             offset: 18000,  // UTC offset 14400, DST offset 3600
-            name: "GEST",
+            is_dst: true,
+            name:   "GEST",
         }),
-        (1088276400, ZoneDetails {
+        (1088276400, FixedTimespan {  // 2004-05-26T19-00-00 UTC
             offset: 14400,  // UTC offset 10800, DST offset 3600
-            name: "GEST",
+            is_dst: true,
+            name:   "GEST",
         }),
-        (1099177200, ZoneDetails {
+        (1099177200, FixedTimespan {  // 2004-09-30T23-00-00 UTC
             offset: 10800,  // UTC offset 10800, DST offset 0
-            name: "GET",
+            is_dst: false,
+            name:   "GET",
         }),
-        (1111878000, ZoneDetails {
+        (1111878000, FixedTimespan {  // 2005-02-26T23-00-00 UTC
             offset: 14400,  // UTC offset 14400, DST offset 0
-            name: "GET",
+            is_dst: false,
+            name:   "GET",
         }),
     ]},
 };

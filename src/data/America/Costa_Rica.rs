@@ -5,55 +5,66 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "America/Costa_Rica",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: -15827,  // UTC offset -15827, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-2524505773, ZoneDetails {
+        (-2524505773, FixedTimespan {  // 1890-00-01T4-23-47 UTC
             offset: -15827,  // UTC offset -15827, DST offset 0
-            name: "SJMT",
+            is_dst: false,
+            name:   "SJMT",
         }),
-        (-1545075373, ZoneDetails {
+        (-1545075373, FixedTimespan {  // 1921-00-15T4-23-47 UTC
             offset: -21600,  // UTC offset -21600, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (288770400, ZoneDetails {
+        (288770400, FixedTimespan {  // 1979-01-25T6-00-00 UTC
             offset: -18000,  // UTC offset -21600, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (297234000, ZoneDetails {
+        (297234000, FixedTimespan {  // 1979-05-03T5-00-00 UTC
             offset: -21600,  // UTC offset -21600, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (320220000, ZoneDetails {
+        (320220000, FixedTimespan {  // 1980-01-24T6-00-00 UTC
             offset: -18000,  // UTC offset -21600, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (328683600, ZoneDetails {
+        (328683600, FixedTimespan {  // 1980-05-01T5-00-00 UTC
             offset: -21600,  // UTC offset -21600, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (664264800, ZoneDetails {
+        (664264800, FixedTimespan {  // 1991-00-19T6-00-00 UTC
             offset: -18000,  // UTC offset -21600, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (678344400, ZoneDetails {
+        (678344400, FixedTimespan {  // 1991-06-01T5-00-00 UTC
             offset: -21600,  // UTC offset -21600, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (695714400, ZoneDetails {
+        (695714400, FixedTimespan {  // 1992-00-18T6-00-00 UTC
             offset: -18000,  // UTC offset -21600, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (700635600, ZoneDetails {
+        (700635600, FixedTimespan {  // 1992-02-15T5-00-00 UTC
             offset: -21600,  // UTC offset -21600, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
     ]},
 };

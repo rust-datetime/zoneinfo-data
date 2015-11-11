@@ -5,19 +5,21 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Pacific/Chuuk",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 36428,  // UTC offset 36428, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-2177489228, ZoneDetails {
+        (-2177489228, FixedTimespan {  // 1900-11-31T13-52-52 UTC
             offset: 36000,  // UTC offset 36000, DST offset 0
-            name: "CHUT",
+            is_dst: false,
+            name:   "CHUT",
         }),
     ]},
 };

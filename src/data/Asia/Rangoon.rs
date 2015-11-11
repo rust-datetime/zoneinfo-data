@@ -5,31 +5,36 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Asia/Rangoon",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 23080,  // UTC offset 23080, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-2840163880, ZoneDetails {
+        (-2840163880, FixedTimespan {  // 1879-11-31T17-35-20 UTC
             offset: 23080,  // UTC offset 23080, DST offset 0
-            name: "RMT",
+            is_dst: false,
+            name:   "RMT",
         }),
-        (-1577946280, ZoneDetails {
+        (-1577946280, FixedTimespan {  // 1919-11-31T17-35-20 UTC
             offset: 23400,  // UTC offset 23400, DST offset 0
-            name: "BURT",
+            is_dst: false,
+            name:   "BURT",
         }),
-        (-873268200, ZoneDetails {
+        (-873268200, FixedTimespan {  // 1942-03-30T17-30-00 UTC
             offset: 32400,  // UTC offset 32400, DST offset 0
-            name: "JST",
+            is_dst: false,
+            name:   "JST",
         }),
-        (-778410000, ZoneDetails {
+        (-778410000, FixedTimespan {  // 1945-04-02T15-00-00 UTC
             offset: 23400,  // UTC offset 23400, DST offset 0
-            name: "MMT",
+            is_dst: false,
+            name:   "MMT",
         }),
     ]},
 };

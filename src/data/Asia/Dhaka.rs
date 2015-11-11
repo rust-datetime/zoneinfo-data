@@ -5,47 +5,56 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Asia/Dhaka",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 21700,  // UTC offset 21700, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-2524543300, ZoneDetails {
+        (-2524543300, FixedTimespan {  // 1889-11-31T17-58-20 UTC
             offset: 21200,  // UTC offset 21200, DST offset 0
-            name: "HMT",
+            is_dst: false,
+            name:   "HMT",
         }),
-        (-891582800, ZoneDetails {
+        (-891582800, FixedTimespan {  // 1941-08-30T18-06-40 UTC
             offset: 23400,  // UTC offset 23400, DST offset 0
-            name: "BURT",
+            is_dst: false,
+            name:   "BURT",
         }),
-        (-872058600, ZoneDetails {
+        (-872058600, FixedTimespan {  // 1942-04-14T17-30-00 UTC
             offset: 19800,  // UTC offset 19800, DST offset 0
-            name: "IST",
+            is_dst: false,
+            name:   "IST",
         }),
-        (-862637400, ZoneDetails {
+        (-862637400, FixedTimespan {  // 1942-07-31T18-30-00 UTC
             offset: 23400,  // UTC offset 23400, DST offset 0
-            name: "BURT",
+            is_dst: false,
+            name:   "BURT",
         }),
-        (-576138600, ZoneDetails {
+        (-576138600, FixedTimespan {  // 1951-08-29T17-30-00 UTC
             offset: 21600,  // UTC offset 21600, DST offset 0
-            name: "DACT",
+            is_dst: false,
+            name:   "DACT",
         }),
-        (38772000, ZoneDetails {
+        (38772000, FixedTimespan {  // 1971-02-25T18-00-00 UTC
             offset: 21600,  // UTC offset 21600, DST offset 0
-            name: "BDT",
+            is_dst: false,
+            name:   "BDT",
         }),
-        (1245430800, ZoneDetails {
+        (1245430800, FixedTimespan {  // 2009-05-19T17-00-00 UTC
             offset: 25200,  // UTC offset 21600, DST offset 3600
-            name: "BDST",
+            is_dst: true,
+            name:   "BDST",
         }),
-        (1262278800, ZoneDetails {
+        (1262278800, FixedTimespan {  // 2009-11-31T17-00-00 UTC
             offset: 21600,  // UTC offset 21600, DST offset 0
-            name: "BDT",
+            is_dst: false,
+            name:   "BDT",
         }),
     ]},
 };

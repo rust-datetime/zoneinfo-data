@@ -5,1395 +5,1741 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Atlantic/Azores",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: -1040,  // UTC offset -1040, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-2713909360, ZoneDetails {
+        (-2713909360, FixedTimespan {  // 1884-00-01T0-17-20 UTC
             offset: -328,  // UTC offset -328, DST offset 0
-            name: "HMT",
+            is_dst: false,
+            name:   "HMT",
         }),
-        (-1830383672, ZoneDetails {
+        (-1830383672, FixedTimespan {  // 1912-00-01T0-05-28 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (-1689548400, ZoneDetails {
+        (-1689548400, FixedTimespan {  // 1916-05-18T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (-1677794400, ZoneDetails {
+        (-1677794400, FixedTimespan {  // 1916-10-01T2-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (-1667430000, ZoneDetails {
+        (-1667430000, FixedTimespan {  // 1917-02-01T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (-1647730800, ZoneDetails {
+        (-1647730800, FixedTimespan {  // 1917-09-15T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (-1635807600, ZoneDetails {
+        (-1635807600, FixedTimespan {  // 1918-02-02T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (-1616194800, ZoneDetails {
+        (-1616194800, FixedTimespan {  // 1918-09-15T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (-1604358000, ZoneDetails {
+        (-1604358000, FixedTimespan {  // 1919-02-01T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (-1584658800, ZoneDetails {
+        (-1584658800, FixedTimespan {  // 1919-09-15T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (-1572649200, ZoneDetails {
+        (-1572649200, FixedTimespan {  // 1920-02-02T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (-1553036400, ZoneDetails {
+        (-1553036400, FixedTimespan {  // 1920-09-15T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (-1541199600, ZoneDetails {
+        (-1541199600, FixedTimespan {  // 1921-02-01T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (-1521500400, ZoneDetails {
+        (-1521500400, FixedTimespan {  // 1921-09-15T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (-1442444400, ZoneDetails {
+        (-1442444400, FixedTimespan {  // 1924-03-17T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (-1426806000, ZoneDetails {
+        (-1426806000, FixedTimespan {  // 1924-09-15T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (-1379286000, ZoneDetails {
+        (-1379286000, FixedTimespan {  // 1926-03-18T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (-1364770800, ZoneDetails {
+        (-1364770800, FixedTimespan {  // 1926-09-03T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (-1348441200, ZoneDetails {
+        (-1348441200, FixedTimespan {  // 1927-03-10T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (-1333321200, ZoneDetails {
+        (-1333321200, FixedTimespan {  // 1927-09-02T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (-1316386800, ZoneDetails {
+        (-1316386800, FixedTimespan {  // 1928-03-15T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (-1301266800, ZoneDetails {
+        (-1301266800, FixedTimespan {  // 1928-09-07T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (-1284332400, ZoneDetails {
+        (-1284332400, FixedTimespan {  // 1929-03-21T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (-1269817200, ZoneDetails {
+        (-1269817200, FixedTimespan {  // 1929-09-06T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (-1221433200, ZoneDetails {
+        (-1221433200, FixedTimespan {  // 1931-03-19T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (-1206918000, ZoneDetails {
+        (-1206918000, FixedTimespan {  // 1931-09-04T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (-1191193200, ZoneDetails {
+        (-1191193200, FixedTimespan {  // 1932-03-03T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (-1175468400, ZoneDetails {
+        (-1175468400, FixedTimespan {  // 1932-09-02T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (-1127689200, ZoneDetails {
+        (-1127689200, FixedTimespan {  // 1934-03-08T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (-1111964400, ZoneDetails {
+        (-1111964400, FixedTimespan {  // 1934-09-07T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (-1096844400, ZoneDetails {
+        (-1096844400, FixedTimespan {  // 1935-02-31T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (-1080514800, ZoneDetails {
+        (-1080514800, FixedTimespan {  // 1935-09-06T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (-1063580400, ZoneDetails {
+        (-1063580400, FixedTimespan {  // 1936-03-19T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (-1049065200, ZoneDetails {
+        (-1049065200, FixedTimespan {  // 1936-09-04T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (-1033340400, ZoneDetails {
+        (-1033340400, FixedTimespan {  // 1937-03-04T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (-1017615600, ZoneDetails {
+        (-1017615600, FixedTimespan {  // 1937-09-03T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (-1002495600, ZoneDetails {
+        (-1002495600, FixedTimespan {  // 1938-02-27T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (-986166000, ZoneDetails {
+        (-986166000, FixedTimespan {  // 1938-09-02T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (-969231600, ZoneDetails {
+        (-969231600, FixedTimespan {  // 1939-03-16T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (-950482800, ZoneDetails {
+        (-950482800, FixedTimespan {  // 1939-10-19T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (-942015600, ZoneDetails {
+        (-942015600, FixedTimespan {  // 1940-01-25T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (-922662000, ZoneDetails {
+        (-922662000, FixedTimespan {  // 1940-09-06T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (-906937200, ZoneDetails {
+        (-906937200, FixedTimespan {  // 1941-03-06T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (-891126000, ZoneDetails {
+        (-891126000, FixedTimespan {  // 1941-09-06T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (-877302000, ZoneDetails {
+        (-877302000, FixedTimespan {  // 1942-02-15T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (-873676800, ZoneDetails {
+        (-873676800, FixedTimespan {  // 1942-03-26T0-00-00 UTC
             offset: 0,  // UTC offset -7200, DST offset 7200
-            name: "AZOMT",
+            is_dst: true,
+            name:   "AZOMT",
         }),
-        (-864000000, ZoneDetails {
+        (-864000000, FixedTimespan {  // 1942-07-16T0-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (-857948400, ZoneDetails {
+        (-857948400, FixedTimespan {  // 1942-09-25T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (-845852400, ZoneDetails {
+        (-845852400, FixedTimespan {  // 1943-02-14T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (-842832000, ZoneDetails {
+        (-842832000, FixedTimespan {  // 1943-03-18T0-00-00 UTC
             offset: 0,  // UTC offset -7200, DST offset 7200
-            name: "AZOMT",
+            is_dst: true,
+            name:   "AZOMT",
         }),
-        (-831340800, ZoneDetails {
+        (-831340800, FixedTimespan {  // 1943-07-29T0-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (-825894000, ZoneDetails {
+        (-825894000, FixedTimespan {  // 1943-09-31T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (-814402800, ZoneDetails {
+        (-814402800, FixedTimespan {  // 1944-02-12T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (-810777600, ZoneDetails {
+        (-810777600, FixedTimespan {  // 1944-03-23T0-00-00 UTC
             offset: 0,  // UTC offset -7200, DST offset 7200
-            name: "AZOMT",
+            is_dst: true,
+            name:   "AZOMT",
         }),
-        (-799891200, ZoneDetails {
+        (-799891200, FixedTimespan {  // 1944-07-27T0-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (-794444400, ZoneDetails {
+        (-794444400, FixedTimespan {  // 1944-09-29T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (-782953200, ZoneDetails {
+        (-782953200, FixedTimespan {  // 1945-02-11T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (-779328000, ZoneDetails {
+        (-779328000, FixedTimespan {  // 1945-03-22T0-00-00 UTC
             offset: 0,  // UTC offset -7200, DST offset 7200
-            name: "AZOMT",
+            is_dst: true,
+            name:   "AZOMT",
         }),
-        (-768441600, ZoneDetails {
+        (-768441600, FixedTimespan {  // 1945-07-26T0-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (-762994800, ZoneDetails {
+        (-762994800, FixedTimespan {  // 1945-09-28T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (-749084400, ZoneDetails {
+        (-749084400, FixedTimespan {  // 1946-03-07T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (-733359600, ZoneDetails {
+        (-733359600, FixedTimespan {  // 1946-09-06T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (-717624000, ZoneDetails {
+        (-717624000, FixedTimespan {  // 1947-03-06T4-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (-701899200, ZoneDetails {
+        (-701899200, FixedTimespan {  // 1947-09-05T4-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (-686174400, ZoneDetails {
+        (-686174400, FixedTimespan {  // 1948-03-04T4-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (-670449600, ZoneDetails {
+        (-670449600, FixedTimespan {  // 1948-09-03T4-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (-654724800, ZoneDetails {
+        (-654724800, FixedTimespan {  // 1949-03-03T4-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (-639000000, ZoneDetails {
+        (-639000000, FixedTimespan {  // 1949-09-02T4-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (-591825600, ZoneDetails {
+        (-591825600, FixedTimespan {  // 1951-03-01T4-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (-575496000, ZoneDetails {
+        (-575496000, FixedTimespan {  // 1951-09-07T4-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (-559771200, ZoneDetails {
+        (-559771200, FixedTimespan {  // 1952-03-06T4-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (-544046400, ZoneDetails {
+        (-544046400, FixedTimespan {  // 1952-09-05T4-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (-528321600, ZoneDetails {
+        (-528321600, FixedTimespan {  // 1953-03-05T4-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (-512596800, ZoneDetails {
+        (-512596800, FixedTimespan {  // 1953-09-04T4-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (-496872000, ZoneDetails {
+        (-496872000, FixedTimespan {  // 1954-03-04T4-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (-481147200, ZoneDetails {
+        (-481147200, FixedTimespan {  // 1954-09-03T4-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (-465422400, ZoneDetails {
+        (-465422400, FixedTimespan {  // 1955-03-03T4-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (-449697600, ZoneDetails {
+        (-449697600, FixedTimespan {  // 1955-09-02T4-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (-433972800, ZoneDetails {
+        (-433972800, FixedTimespan {  // 1956-03-01T4-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (-417643200, ZoneDetails {
+        (-417643200, FixedTimespan {  // 1956-09-07T4-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (-401918400, ZoneDetails {
+        (-401918400, FixedTimespan {  // 1957-03-07T4-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (-386193600, ZoneDetails {
+        (-386193600, FixedTimespan {  // 1957-09-06T4-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (-370468800, ZoneDetails {
+        (-370468800, FixedTimespan {  // 1958-03-06T4-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (-354744000, ZoneDetails {
+        (-354744000, FixedTimespan {  // 1958-09-05T4-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (-339019200, ZoneDetails {
+        (-339019200, FixedTimespan {  // 1959-03-05T4-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (-323294400, ZoneDetails {
+        (-323294400, FixedTimespan {  // 1959-09-04T4-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (-307569600, ZoneDetails {
+        (-307569600, FixedTimespan {  // 1960-03-03T4-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (-291844800, ZoneDetails {
+        (-291844800, FixedTimespan {  // 1960-09-02T4-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (-276120000, ZoneDetails {
+        (-276120000, FixedTimespan {  // 1961-03-02T4-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (-260395200, ZoneDetails {
+        (-260395200, FixedTimespan {  // 1961-09-01T4-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (-244670400, ZoneDetails {
+        (-244670400, FixedTimespan {  // 1962-03-01T4-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (-228340800, ZoneDetails {
+        (-228340800, FixedTimespan {  // 1962-09-07T4-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (-212616000, ZoneDetails {
+        (-212616000, FixedTimespan {  // 1963-03-07T4-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (-196891200, ZoneDetails {
+        (-196891200, FixedTimespan {  // 1963-09-06T4-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (-181166400, ZoneDetails {
+        (-181166400, FixedTimespan {  // 1964-03-05T4-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (-165441600, ZoneDetails {
+        (-165441600, FixedTimespan {  // 1964-09-04T4-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (-149716800, ZoneDetails {
+        (-149716800, FixedTimespan {  // 1965-03-04T4-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (-133992000, ZoneDetails {
+        (-133992000, FixedTimespan {  // 1965-09-03T4-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (-118267200, ZoneDetails {
+        (-118267200, FixedTimespan {  // 1966-03-03T4-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (228272400, ZoneDetails {
+        (228272400, FixedTimespan {  // 1977-02-27T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (243997200, ZoneDetails {
+        (243997200, FixedTimespan {  // 1977-08-25T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (260326800, ZoneDetails {
+        (260326800, FixedTimespan {  // 1978-03-02T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (276051600, ZoneDetails {
+        (276051600, FixedTimespan {  // 1978-09-01T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (291776400, ZoneDetails {
+        (291776400, FixedTimespan {  // 1979-03-01T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (307504800, ZoneDetails {
+        (307504800, FixedTimespan {  // 1979-08-30T2-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (323226000, ZoneDetails {
+        (323226000, FixedTimespan {  // 1980-02-30T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (338954400, ZoneDetails {
+        (338954400, FixedTimespan {  // 1980-08-28T2-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (354679200, ZoneDetails {
+        (354679200, FixedTimespan {  // 1981-02-29T2-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (370404000, ZoneDetails {
+        (370404000, FixedTimespan {  // 1981-08-27T2-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (386128800, ZoneDetails {
+        (386128800, FixedTimespan {  // 1982-02-28T2-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (401853600, ZoneDetails {
+        (401853600, FixedTimespan {  // 1982-08-26T2-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (417582000, ZoneDetails {
+        (417582000, FixedTimespan {  // 1983-02-27T3-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (433303200, ZoneDetails {
+        (433303200, FixedTimespan {  // 1983-08-25T2-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (449028000, ZoneDetails {
+        (449028000, FixedTimespan {  // 1984-02-25T2-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (465357600, ZoneDetails {
+        (465357600, FixedTimespan {  // 1984-08-30T2-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (481082400, ZoneDetails {
+        (481082400, FixedTimespan {  // 1985-02-31T2-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (496807200, ZoneDetails {
+        (496807200, FixedTimespan {  // 1985-08-29T2-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (512532000, ZoneDetails {
+        (512532000, FixedTimespan {  // 1986-02-30T2-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (528256800, ZoneDetails {
+        (528256800, FixedTimespan {  // 1986-08-28T2-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (543981600, ZoneDetails {
+        (543981600, FixedTimespan {  // 1987-02-29T2-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (559706400, ZoneDetails {
+        (559706400, FixedTimespan {  // 1987-08-27T2-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (575431200, ZoneDetails {
+        (575431200, FixedTimespan {  // 1988-02-27T2-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (591156000, ZoneDetails {
+        (591156000, FixedTimespan {  // 1988-08-25T2-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (606880800, ZoneDetails {
+        (606880800, FixedTimespan {  // 1989-02-26T2-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (622605600, ZoneDetails {
+        (622605600, FixedTimespan {  // 1989-08-24T2-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (638330400, ZoneDetails {
+        (638330400, FixedTimespan {  // 1990-02-25T2-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (654660000, ZoneDetails {
+        (654660000, FixedTimespan {  // 1990-08-30T2-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (670384800, ZoneDetails {
+        (670384800, FixedTimespan {  // 1991-02-31T2-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (686109600, ZoneDetails {
+        (686109600, FixedTimespan {  // 1991-08-29T2-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (701834400, ZoneDetails {
+        (701834400, FixedTimespan {  // 1992-02-29T2-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (717555600, ZoneDetails {
+        (717555600, FixedTimespan {  // 1992-08-27T1-00-00 UTC
             offset: 0,  // UTC offset 0, DST offset 0
-            name: "WET",
+            is_dst: false,
+            name:   "WET",
         }),
-        (733280400, ZoneDetails {
+        (733280400, FixedTimespan {  // 1993-02-28T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (749005200, ZoneDetails {
+        (749005200, FixedTimespan {  // 1993-08-26T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (764730000, ZoneDetails {
+        (764730000, FixedTimespan {  // 1994-02-27T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (780454800, ZoneDetails {
+        (780454800, FixedTimespan {  // 1994-08-25T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (796179600, ZoneDetails {
+        (796179600, FixedTimespan {  // 1995-02-26T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (811904400, ZoneDetails {
+        (811904400, FixedTimespan {  // 1995-08-24T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (828234000, ZoneDetails {
+        (828234000, FixedTimespan {  // 1996-02-31T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (846378000, ZoneDetails {
+        (846378000, FixedTimespan {  // 1996-09-27T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (859683600, ZoneDetails {
+        (859683600, FixedTimespan {  // 1997-02-30T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (877827600, ZoneDetails {
+        (877827600, FixedTimespan {  // 1997-09-26T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (891133200, ZoneDetails {
+        (891133200, FixedTimespan {  // 1998-02-29T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (909277200, ZoneDetails {
+        (909277200, FixedTimespan {  // 1998-09-25T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (922582800, ZoneDetails {
+        (922582800, FixedTimespan {  // 1999-02-28T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (941331600, ZoneDetails {
+        (941331600, FixedTimespan {  // 1999-09-31T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (954032400, ZoneDetails {
+        (954032400, FixedTimespan {  // 2000-02-26T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (972781200, ZoneDetails {
+        (972781200, FixedTimespan {  // 2000-09-29T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (985482000, ZoneDetails {
+        (985482000, FixedTimespan {  // 2001-02-25T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (1004230800, ZoneDetails {
+        (1004230800, FixedTimespan {  // 2001-09-28T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (1017536400, ZoneDetails {
+        (1017536400, FixedTimespan {  // 2002-02-31T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (1035680400, ZoneDetails {
+        (1035680400, FixedTimespan {  // 2002-09-27T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (1048986000, ZoneDetails {
+        (1048986000, FixedTimespan {  // 2003-02-30T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (1067130000, ZoneDetails {
+        (1067130000, FixedTimespan {  // 2003-09-26T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (1080435600, ZoneDetails {
+        (1080435600, FixedTimespan {  // 2004-02-28T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (1099184400, ZoneDetails {
+        (1099184400, FixedTimespan {  // 2004-09-31T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (1111885200, ZoneDetails {
+        (1111885200, FixedTimespan {  // 2005-02-27T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (1130634000, ZoneDetails {
+        (1130634000, FixedTimespan {  // 2005-09-30T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (1143334800, ZoneDetails {
+        (1143334800, FixedTimespan {  // 2006-02-26T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (1162083600, ZoneDetails {
+        (1162083600, FixedTimespan {  // 2006-09-29T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (1174784400, ZoneDetails {
+        (1174784400, FixedTimespan {  // 2007-02-25T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (1193533200, ZoneDetails {
+        (1193533200, FixedTimespan {  // 2007-09-28T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (1206838800, ZoneDetails {
+        (1206838800, FixedTimespan {  // 2008-02-30T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (1224982800, ZoneDetails {
+        (1224982800, FixedTimespan {  // 2008-09-26T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (1238288400, ZoneDetails {
+        (1238288400, FixedTimespan {  // 2009-02-29T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (1256432400, ZoneDetails {
+        (1256432400, FixedTimespan {  // 2009-09-25T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (1269738000, ZoneDetails {
+        (1269738000, FixedTimespan {  // 2010-02-28T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (1288486800, ZoneDetails {
+        (1288486800, FixedTimespan {  // 2010-09-31T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (1301187600, ZoneDetails {
+        (1301187600, FixedTimespan {  // 2011-02-27T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (1319936400, ZoneDetails {
+        (1319936400, FixedTimespan {  // 2011-09-30T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (1332637200, ZoneDetails {
+        (1332637200, FixedTimespan {  // 2012-02-25T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (1351386000, ZoneDetails {
+        (1351386000, FixedTimespan {  // 2012-09-28T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (1364691600, ZoneDetails {
+        (1364691600, FixedTimespan {  // 2013-02-31T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (1382835600, ZoneDetails {
+        (1382835600, FixedTimespan {  // 2013-09-27T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (1396141200, ZoneDetails {
+        (1396141200, FixedTimespan {  // 2014-02-30T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (1414285200, ZoneDetails {
+        (1414285200, FixedTimespan {  // 2014-09-26T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (1427590800, ZoneDetails {
+        (1427590800, FixedTimespan {  // 2015-02-29T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (1445734800, ZoneDetails {
+        (1445734800, FixedTimespan {  // 2015-09-25T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (1459040400, ZoneDetails {
+        (1459040400, FixedTimespan {  // 2016-02-27T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (1477789200, ZoneDetails {
+        (1477789200, FixedTimespan {  // 2016-09-30T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (1490490000, ZoneDetails {
+        (1490490000, FixedTimespan {  // 2017-02-26T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (1509238800, ZoneDetails {
+        (1509238800, FixedTimespan {  // 2017-09-29T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (1521939600, ZoneDetails {
+        (1521939600, FixedTimespan {  // 2018-02-25T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (1540688400, ZoneDetails {
+        (1540688400, FixedTimespan {  // 2018-09-28T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (1553994000, ZoneDetails {
+        (1553994000, FixedTimespan {  // 2019-02-31T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (1572138000, ZoneDetails {
+        (1572138000, FixedTimespan {  // 2019-09-27T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (1585443600, ZoneDetails {
+        (1585443600, FixedTimespan {  // 2020-02-29T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (1603587600, ZoneDetails {
+        (1603587600, FixedTimespan {  // 2020-09-25T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (1616893200, ZoneDetails {
+        (1616893200, FixedTimespan {  // 2021-02-28T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (1635642000, ZoneDetails {
+        (1635642000, FixedTimespan {  // 2021-09-31T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (1648342800, ZoneDetails {
+        (1648342800, FixedTimespan {  // 2022-02-27T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (1667091600, ZoneDetails {
+        (1667091600, FixedTimespan {  // 2022-09-30T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (1679792400, ZoneDetails {
+        (1679792400, FixedTimespan {  // 2023-02-26T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (1698541200, ZoneDetails {
+        (1698541200, FixedTimespan {  // 2023-09-29T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (1711846800, ZoneDetails {
+        (1711846800, FixedTimespan {  // 2024-02-31T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (1729990800, ZoneDetails {
+        (1729990800, FixedTimespan {  // 2024-09-27T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (1743296400, ZoneDetails {
+        (1743296400, FixedTimespan {  // 2025-02-30T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (1761440400, ZoneDetails {
+        (1761440400, FixedTimespan {  // 2025-09-26T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (1774746000, ZoneDetails {
+        (1774746000, FixedTimespan {  // 2026-02-29T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (1792890000, ZoneDetails {
+        (1792890000, FixedTimespan {  // 2026-09-25T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (1806195600, ZoneDetails {
+        (1806195600, FixedTimespan {  // 2027-02-28T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (1824944400, ZoneDetails {
+        (1824944400, FixedTimespan {  // 2027-09-31T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (1837645200, ZoneDetails {
+        (1837645200, FixedTimespan {  // 2028-02-26T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (1856394000, ZoneDetails {
+        (1856394000, FixedTimespan {  // 2028-09-29T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (1869094800, ZoneDetails {
+        (1869094800, FixedTimespan {  // 2029-02-25T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (1887843600, ZoneDetails {
+        (1887843600, FixedTimespan {  // 2029-09-28T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (1901149200, ZoneDetails {
+        (1901149200, FixedTimespan {  // 2030-02-31T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (1919293200, ZoneDetails {
+        (1919293200, FixedTimespan {  // 2030-09-27T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (1932598800, ZoneDetails {
+        (1932598800, FixedTimespan {  // 2031-02-30T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (1950742800, ZoneDetails {
+        (1950742800, FixedTimespan {  // 2031-09-26T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (1964048400, ZoneDetails {
+        (1964048400, FixedTimespan {  // 2032-02-28T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (1982797200, ZoneDetails {
+        (1982797200, FixedTimespan {  // 2032-09-31T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (1995498000, ZoneDetails {
+        (1995498000, FixedTimespan {  // 2033-02-27T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (2014246800, ZoneDetails {
+        (2014246800, FixedTimespan {  // 2033-09-30T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (2026947600, ZoneDetails {
+        (2026947600, FixedTimespan {  // 2034-02-26T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (2045696400, ZoneDetails {
+        (2045696400, FixedTimespan {  // 2034-09-29T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (2058397200, ZoneDetails {
+        (2058397200, FixedTimespan {  // 2035-02-25T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (2077146000, ZoneDetails {
+        (2077146000, FixedTimespan {  // 2035-09-28T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (2090451600, ZoneDetails {
+        (2090451600, FixedTimespan {  // 2036-02-30T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (2108595600, ZoneDetails {
+        (2108595600, FixedTimespan {  // 2036-09-26T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (2121901200, ZoneDetails {
+        (2121901200, FixedTimespan {  // 2037-02-29T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (2140045200, ZoneDetails {
+        (2140045200, FixedTimespan {  // 2037-09-25T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (2153350800, ZoneDetails {
+        (2153350800, FixedTimespan {  // 2038-02-28T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (2172099600, ZoneDetails {
+        (2172099600, FixedTimespan {  // 2038-09-31T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (2184800400, ZoneDetails {
+        (2184800400, FixedTimespan {  // 2039-02-27T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (2203549200, ZoneDetails {
+        (2203549200, FixedTimespan {  // 2039-09-30T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (2216250000, ZoneDetails {
+        (2216250000, FixedTimespan {  // 2040-02-25T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (2234998800, ZoneDetails {
+        (2234998800, FixedTimespan {  // 2040-09-28T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (2248304400, ZoneDetails {
+        (2248304400, FixedTimespan {  // 2041-02-31T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (2266448400, ZoneDetails {
+        (2266448400, FixedTimespan {  // 2041-09-27T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (2279754000, ZoneDetails {
+        (2279754000, FixedTimespan {  // 2042-02-30T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (2297898000, ZoneDetails {
+        (2297898000, FixedTimespan {  // 2042-09-26T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (2311203600, ZoneDetails {
+        (2311203600, FixedTimespan {  // 2043-02-29T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (2329347600, ZoneDetails {
+        (2329347600, FixedTimespan {  // 2043-09-25T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (2342653200, ZoneDetails {
+        (2342653200, FixedTimespan {  // 2044-02-27T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (2361402000, ZoneDetails {
+        (2361402000, FixedTimespan {  // 2044-09-30T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (2374102800, ZoneDetails {
+        (2374102800, FixedTimespan {  // 2045-02-26T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (2392851600, ZoneDetails {
+        (2392851600, FixedTimespan {  // 2045-09-29T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (2405552400, ZoneDetails {
+        (2405552400, FixedTimespan {  // 2046-02-25T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (2424301200, ZoneDetails {
+        (2424301200, FixedTimespan {  // 2046-09-28T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (2437606800, ZoneDetails {
+        (2437606800, FixedTimespan {  // 2047-02-31T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (2455750800, ZoneDetails {
+        (2455750800, FixedTimespan {  // 2047-09-27T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (2469056400, ZoneDetails {
+        (2469056400, FixedTimespan {  // 2048-02-29T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (2487200400, ZoneDetails {
+        (2487200400, FixedTimespan {  // 2048-09-25T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (2500506000, ZoneDetails {
+        (2500506000, FixedTimespan {  // 2049-02-28T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (2519254800, ZoneDetails {
+        (2519254800, FixedTimespan {  // 2049-09-31T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (2531955600, ZoneDetails {
+        (2531955600, FixedTimespan {  // 2050-02-27T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (2550704400, ZoneDetails {
+        (2550704400, FixedTimespan {  // 2050-09-30T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (2563405200, ZoneDetails {
+        (2563405200, FixedTimespan {  // 2051-02-26T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (2582154000, ZoneDetails {
+        (2582154000, FixedTimespan {  // 2051-09-29T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (2595459600, ZoneDetails {
+        (2595459600, FixedTimespan {  // 2052-02-31T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (2613603600, ZoneDetails {
+        (2613603600, FixedTimespan {  // 2052-09-27T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (2626909200, ZoneDetails {
+        (2626909200, FixedTimespan {  // 2053-02-30T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (2645053200, ZoneDetails {
+        (2645053200, FixedTimespan {  // 2053-09-26T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (2658358800, ZoneDetails {
+        (2658358800, FixedTimespan {  // 2054-02-29T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (2676502800, ZoneDetails {
+        (2676502800, FixedTimespan {  // 2054-09-25T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (2689808400, ZoneDetails {
+        (2689808400, FixedTimespan {  // 2055-02-28T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (2708557200, ZoneDetails {
+        (2708557200, FixedTimespan {  // 2055-09-31T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (2721258000, ZoneDetails {
+        (2721258000, FixedTimespan {  // 2056-02-26T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (2740006800, ZoneDetails {
+        (2740006800, FixedTimespan {  // 2056-09-29T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (2752707600, ZoneDetails {
+        (2752707600, FixedTimespan {  // 2057-02-25T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (2771456400, ZoneDetails {
+        (2771456400, FixedTimespan {  // 2057-09-28T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (2784762000, ZoneDetails {
+        (2784762000, FixedTimespan {  // 2058-02-31T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (2802906000, ZoneDetails {
+        (2802906000, FixedTimespan {  // 2058-09-27T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (2816211600, ZoneDetails {
+        (2816211600, FixedTimespan {  // 2059-02-30T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (2834355600, ZoneDetails {
+        (2834355600, FixedTimespan {  // 2059-09-26T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (2847661200, ZoneDetails {
+        (2847661200, FixedTimespan {  // 2060-02-28T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (2866410000, ZoneDetails {
+        (2866410000, FixedTimespan {  // 2060-09-31T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (2879110800, ZoneDetails {
+        (2879110800, FixedTimespan {  // 2061-02-27T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (2897859600, ZoneDetails {
+        (2897859600, FixedTimespan {  // 2061-09-30T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (2910560400, ZoneDetails {
+        (2910560400, FixedTimespan {  // 2062-02-26T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (2929309200, ZoneDetails {
+        (2929309200, FixedTimespan {  // 2062-09-29T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (2942010000, ZoneDetails {
+        (2942010000, FixedTimespan {  // 2063-02-25T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (2960758800, ZoneDetails {
+        (2960758800, FixedTimespan {  // 2063-09-28T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (2974064400, ZoneDetails {
+        (2974064400, FixedTimespan {  // 2064-02-30T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (2992208400, ZoneDetails {
+        (2992208400, FixedTimespan {  // 2064-09-26T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (3005514000, ZoneDetails {
+        (3005514000, FixedTimespan {  // 2065-02-29T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (3023658000, ZoneDetails {
+        (3023658000, FixedTimespan {  // 2065-09-25T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (3036963600, ZoneDetails {
+        (3036963600, FixedTimespan {  // 2066-02-28T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (3055712400, ZoneDetails {
+        (3055712400, FixedTimespan {  // 2066-09-31T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (3068413200, ZoneDetails {
+        (3068413200, FixedTimespan {  // 2067-02-27T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (3087162000, ZoneDetails {
+        (3087162000, FixedTimespan {  // 2067-09-30T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (3099862800, ZoneDetails {
+        (3099862800, FixedTimespan {  // 2068-02-25T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (3118611600, ZoneDetails {
+        (3118611600, FixedTimespan {  // 2068-09-28T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (3131917200, ZoneDetails {
+        (3131917200, FixedTimespan {  // 2069-02-31T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (3150061200, ZoneDetails {
+        (3150061200, FixedTimespan {  // 2069-09-27T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (3163366800, ZoneDetails {
+        (3163366800, FixedTimespan {  // 2070-02-30T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (3181510800, ZoneDetails {
+        (3181510800, FixedTimespan {  // 2070-09-26T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (3194816400, ZoneDetails {
+        (3194816400, FixedTimespan {  // 2071-02-29T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (3212960400, ZoneDetails {
+        (3212960400, FixedTimespan {  // 2071-09-25T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (3226266000, ZoneDetails {
+        (3226266000, FixedTimespan {  // 2072-02-27T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (3245014800, ZoneDetails {
+        (3245014800, FixedTimespan {  // 2072-09-30T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (3257715600, ZoneDetails {
+        (3257715600, FixedTimespan {  // 2073-02-26T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (3276464400, ZoneDetails {
+        (3276464400, FixedTimespan {  // 2073-09-29T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (3289165200, ZoneDetails {
+        (3289165200, FixedTimespan {  // 2074-02-25T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (3307914000, ZoneDetails {
+        (3307914000, FixedTimespan {  // 2074-09-28T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (3321219600, ZoneDetails {
+        (3321219600, FixedTimespan {  // 2075-02-31T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (3339363600, ZoneDetails {
+        (3339363600, FixedTimespan {  // 2075-09-27T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (3352669200, ZoneDetails {
+        (3352669200, FixedTimespan {  // 2076-02-29T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (3370813200, ZoneDetails {
+        (3370813200, FixedTimespan {  // 2076-09-25T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (3384118800, ZoneDetails {
+        (3384118800, FixedTimespan {  // 2077-02-28T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (3402867600, ZoneDetails {
+        (3402867600, FixedTimespan {  // 2077-09-31T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (3415568400, ZoneDetails {
+        (3415568400, FixedTimespan {  // 2078-02-27T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (3434317200, ZoneDetails {
+        (3434317200, FixedTimespan {  // 2078-09-30T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (3447018000, ZoneDetails {
+        (3447018000, FixedTimespan {  // 2079-02-26T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (3465766800, ZoneDetails {
+        (3465766800, FixedTimespan {  // 2079-09-29T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (3479072400, ZoneDetails {
+        (3479072400, FixedTimespan {  // 2080-02-31T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (3497216400, ZoneDetails {
+        (3497216400, FixedTimespan {  // 2080-09-27T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (3510522000, ZoneDetails {
+        (3510522000, FixedTimespan {  // 2081-02-30T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (3528666000, ZoneDetails {
+        (3528666000, FixedTimespan {  // 2081-09-26T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (3541971600, ZoneDetails {
+        (3541971600, FixedTimespan {  // 2082-02-29T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (3560115600, ZoneDetails {
+        (3560115600, FixedTimespan {  // 2082-09-25T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (3573421200, ZoneDetails {
+        (3573421200, FixedTimespan {  // 2083-02-28T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (3592170000, ZoneDetails {
+        (3592170000, FixedTimespan {  // 2083-09-31T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (3604870800, ZoneDetails {
+        (3604870800, FixedTimespan {  // 2084-02-26T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (3623619600, ZoneDetails {
+        (3623619600, FixedTimespan {  // 2084-09-29T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (3636320400, ZoneDetails {
+        (3636320400, FixedTimespan {  // 2085-02-25T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (3655069200, ZoneDetails {
+        (3655069200, FixedTimespan {  // 2085-09-28T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (3668374800, ZoneDetails {
+        (3668374800, FixedTimespan {  // 2086-02-31T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (3686518800, ZoneDetails {
+        (3686518800, FixedTimespan {  // 2086-09-27T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (3699824400, ZoneDetails {
+        (3699824400, FixedTimespan {  // 2087-02-30T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (3717968400, ZoneDetails {
+        (3717968400, FixedTimespan {  // 2087-09-26T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (3731274000, ZoneDetails {
+        (3731274000, FixedTimespan {  // 2088-02-28T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (3750022800, ZoneDetails {
+        (3750022800, FixedTimespan {  // 2088-09-31T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (3762723600, ZoneDetails {
+        (3762723600, FixedTimespan {  // 2089-02-27T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (3781472400, ZoneDetails {
+        (3781472400, FixedTimespan {  // 2089-09-30T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (3794173200, ZoneDetails {
+        (3794173200, FixedTimespan {  // 2090-02-26T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (3812922000, ZoneDetails {
+        (3812922000, FixedTimespan {  // 2090-09-29T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (3825622800, ZoneDetails {
+        (3825622800, FixedTimespan {  // 2091-02-25T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (3844371600, ZoneDetails {
+        (3844371600, FixedTimespan {  // 2091-09-28T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (3857677200, ZoneDetails {
+        (3857677200, FixedTimespan {  // 2092-02-30T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (3875821200, ZoneDetails {
+        (3875821200, FixedTimespan {  // 2092-09-26T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (3889126800, ZoneDetails {
+        (3889126800, FixedTimespan {  // 2093-02-29T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (3907270800, ZoneDetails {
+        (3907270800, FixedTimespan {  // 2093-09-25T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (3920576400, ZoneDetails {
+        (3920576400, FixedTimespan {  // 2094-02-28T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (3939325200, ZoneDetails {
+        (3939325200, FixedTimespan {  // 2094-09-31T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (3952026000, ZoneDetails {
+        (3952026000, FixedTimespan {  // 2095-02-27T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (3970774800, ZoneDetails {
+        (3970774800, FixedTimespan {  // 2095-09-30T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (3983475600, ZoneDetails {
+        (3983475600, FixedTimespan {  // 2096-02-25T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (4002224400, ZoneDetails {
+        (4002224400, FixedTimespan {  // 2096-09-28T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (4015530000, ZoneDetails {
+        (4015530000, FixedTimespan {  // 2097-02-31T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (4033674000, ZoneDetails {
+        (4033674000, FixedTimespan {  // 2097-09-27T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (4046979600, ZoneDetails {
+        (4046979600, FixedTimespan {  // 2098-02-30T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (4065123600, ZoneDetails {
+        (4065123600, FixedTimespan {  // 2098-09-26T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
-        (4078429200, ZoneDetails {
+        (4078429200, FixedTimespan {  // 2099-02-29T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
-            name: "AZOST",
+            is_dst: true,
+            name:   "AZOST",
         }),
-        (4096573200, ZoneDetails {
+        (4096573200, FixedTimespan {  // 2099-09-25T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "AZOT",
+            is_dst: false,
+            name:   "AZOT",
         }),
     ]},
 };

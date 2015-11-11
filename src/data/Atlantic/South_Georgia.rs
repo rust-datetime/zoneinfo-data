@@ -5,19 +5,21 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Atlantic/South_Georgia",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: -5632,  // UTC offset -5632, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-2524515968, ZoneDetails {
+        (-2524515968, FixedTimespan {  // 1890-00-01T1-33-52 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "GST",
+            is_dst: false,
+            name:   "GST",
         }),
     ]},
 };

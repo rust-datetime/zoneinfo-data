@@ -5,35 +5,41 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Pacific/Norfolk",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 40312,  // UTC offset 40312, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-2177493112, ZoneDetails {
+        (-2177493112, FixedTimespan {  // 1900-11-31T12-48-08 UTC
             offset: 40320,  // UTC offset 40320, DST offset 0
-            name: "NMT",
+            is_dst: false,
+            name:   "NMT",
         }),
-        (-599656320, ZoneDetails {
+        (-599656320, FixedTimespan {  // 1950-11-31T12-48-00 UTC
             offset: 41400,  // UTC offset 41400, DST offset 0
-            name: "NFT",
+            is_dst: false,
+            name:   "NFT",
         }),
-        (152029800, ZoneDetails {
+        (152029800, FixedTimespan {  // 1974-09-26T14-30-00 UTC
             offset: 45000,  // UTC offset 41400, DST offset 3600
-            name: "NFST",
+            is_dst: true,
+            name:   "NFST",
         }),
-        (162912600, ZoneDetails {
+        (162912600, FixedTimespan {  // 1975-02-01T13-30-00 UTC
             offset: 41400,  // UTC offset 41400, DST offset 0
-            name: "NFT",
+            is_dst: false,
+            name:   "NFT",
         }),
-        (1443882600, ZoneDetails {
+        (1443882600, FixedTimespan {  // 2015-09-03T14-30-00 UTC
             offset: 39600,  // UTC offset 39600, DST offset 0
-            name: "NFT",
+            is_dst: false,
+            name:   "NFT",
         }),
     ]},
 };

@@ -5,19 +5,21 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Pacific/Guadalcanal",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 38388,  // UTC offset 38388, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-1806748788, ZoneDetails {
+        (-1806748788, FixedTimespan {  // 1912-08-30T13-20-12 UTC
             offset: 39600,  // UTC offset 39600, DST offset 0
-            name: "SBT",
+            is_dst: false,
+            name:   "SBT",
         }),
     ]},
 };

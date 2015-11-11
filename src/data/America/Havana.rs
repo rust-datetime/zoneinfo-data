@@ -5,1135 +5,1416 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "America/Havana",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: -16232,  // UTC offset -16232, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-2524505368, ZoneDetails {
+        (-2524505368, FixedTimespan {  // 1890-00-01T4-30-32 UTC
             offset: -16224,  // UTC offset -16224, DST offset 0
-            name: "HMT",
+            is_dst: false,
+            name:   "HMT",
         }),
-        (-1402817376, ZoneDetails {
+        (-1402817376, FixedTimespan {  // 1925-06-19T16-30-24 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (-1311534000, ZoneDetails {
+        (-1311534000, FixedTimespan {  // 1928-05-10T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (-1300996800, ZoneDetails {
+        (-1300996800, FixedTimespan {  // 1928-09-10T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (-933534000, ZoneDetails {
+        (-933534000, FixedTimespan {  // 1940-05-02T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (-925675200, ZoneDetails {
+        (-925675200, FixedTimespan {  // 1940-08-01T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (-902084400, ZoneDetails {
+        (-902084400, FixedTimespan {  // 1941-05-01T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (-893620800, ZoneDetails {
+        (-893620800, FixedTimespan {  // 1941-08-07T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (-870030000, ZoneDetails {
+        (-870030000, FixedTimespan {  // 1942-05-07T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (-862171200, ZoneDetails {
+        (-862171200, FixedTimespan {  // 1942-08-06T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (-775681200, ZoneDetails {
+        (-775681200, FixedTimespan {  // 1945-05-03T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (-767822400, ZoneDetails {
+        (-767822400, FixedTimespan {  // 1945-08-02T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (-744231600, ZoneDetails {
+        (-744231600, FixedTimespan {  // 1946-05-02T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (-736372800, ZoneDetails {
+        (-736372800, FixedTimespan {  // 1946-08-01T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (-144702000, ZoneDetails {
+        (-144702000, FixedTimespan {  // 1965-05-01T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (-134251200, ZoneDetails {
+        (-134251200, FixedTimespan {  // 1965-08-30T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (-113425200, ZoneDetails {
+        (-113425200, FixedTimespan {  // 1966-04-29T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (-102542400, ZoneDetails {
+        (-102542400, FixedTimespan {  // 1966-09-02T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (-86295600, ZoneDetails {
+        (-86295600, FixedTimespan {  // 1967-03-08T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (-72907200, ZoneDetails {
+        (-72907200, FixedTimespan {  // 1967-08-10T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (-54154800, ZoneDetails {
+        (-54154800, FixedTimespan {  // 1968-03-14T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (-41457600, ZoneDetails {
+        (-41457600, FixedTimespan {  // 1968-08-08T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (-21495600, ZoneDetails {
+        (-21495600, FixedTimespan {  // 1969-03-27T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (-5774400, ZoneDetails {
+        (-5774400, FixedTimespan {  // 1969-09-26T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (9954000, ZoneDetails {
+        (9954000, FixedTimespan {  // 1970-03-26T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (25675200, ZoneDetails {
+        (25675200, FixedTimespan {  // 1970-09-25T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (41403600, ZoneDetails {
+        (41403600, FixedTimespan {  // 1971-03-25T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (57729600, ZoneDetails {
+        (57729600, FixedTimespan {  // 1971-09-31T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (73458000, ZoneDetails {
+        (73458000, FixedTimespan {  // 1972-03-30T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (87364800, ZoneDetails {
+        (87364800, FixedTimespan {  // 1972-09-08T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (104907600, ZoneDetails {
+        (104907600, FixedTimespan {  // 1973-03-29T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (118900800, ZoneDetails {
+        (118900800, FixedTimespan {  // 1973-09-08T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (136357200, ZoneDetails {
+        (136357200, FixedTimespan {  // 1974-03-28T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (150436800, ZoneDetails {
+        (150436800, FixedTimespan {  // 1974-09-08T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (167806800, ZoneDetails {
+        (167806800, FixedTimespan {  // 1975-03-27T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (183528000, ZoneDetails {
+        (183528000, FixedTimespan {  // 1975-09-26T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (199256400, ZoneDetails {
+        (199256400, FixedTimespan {  // 1976-03-25T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (215582400, ZoneDetails {
+        (215582400, FixedTimespan {  // 1976-09-31T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (230706000, ZoneDetails {
+        (230706000, FixedTimespan {  // 1977-03-24T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (247032000, ZoneDetails {
+        (247032000, FixedTimespan {  // 1977-09-30T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (263365200, ZoneDetails {
+        (263365200, FixedTimespan {  // 1978-04-07T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (276667200, ZoneDetails {
+        (276667200, FixedTimespan {  // 1978-09-08T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (290581200, ZoneDetails {
+        (290581200, FixedTimespan {  // 1979-02-18T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (308721600, ZoneDetails {
+        (308721600, FixedTimespan {  // 1979-09-14T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (322030800, ZoneDetails {
+        (322030800, FixedTimespan {  // 1980-02-16T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (340171200, ZoneDetails {
+        (340171200, FixedTimespan {  // 1980-09-12T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (358318800, ZoneDetails {
+        (358318800, FixedTimespan {  // 1981-04-10T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (371620800, ZoneDetails {
+        (371620800, FixedTimespan {  // 1981-09-11T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (389768400, ZoneDetails {
+        (389768400, FixedTimespan {  // 1982-04-09T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (403070400, ZoneDetails {
+        (403070400, FixedTimespan {  // 1982-09-10T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (421218000, ZoneDetails {
+        (421218000, FixedTimespan {  // 1983-04-08T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (434520000, ZoneDetails {
+        (434520000, FixedTimespan {  // 1983-09-09T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (452667600, ZoneDetails {
+        (452667600, FixedTimespan {  // 1984-04-06T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (466574400, ZoneDetails {
+        (466574400, FixedTimespan {  // 1984-09-14T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (484117200, ZoneDetails {
+        (484117200, FixedTimespan {  // 1985-04-05T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (498024000, ZoneDetails {
+        (498024000, FixedTimespan {  // 1985-09-13T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (511333200, ZoneDetails {
+        (511333200, FixedTimespan {  // 1986-02-16T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (529473600, ZoneDetails {
+        (529473600, FixedTimespan {  // 1986-09-12T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (542782800, ZoneDetails {
+        (542782800, FixedTimespan {  // 1987-02-15T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (560923200, ZoneDetails {
+        (560923200, FixedTimespan {  // 1987-09-11T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (574837200, ZoneDetails {
+        (574837200, FixedTimespan {  // 1988-02-20T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (592372800, ZoneDetails {
+        (592372800, FixedTimespan {  // 1988-09-09T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (606286800, ZoneDetails {
+        (606286800, FixedTimespan {  // 1989-02-19T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (623822400, ZoneDetails {
+        (623822400, FixedTimespan {  // 1989-09-08T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (638946000, ZoneDetails {
+        (638946000, FixedTimespan {  // 1990-03-01T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (655876800, ZoneDetails {
+        (655876800, FixedTimespan {  // 1990-09-14T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (671000400, ZoneDetails {
+        (671000400, FixedTimespan {  // 1991-03-07T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (687330000, ZoneDetails {
+        (687330000, FixedTimespan {  // 1991-09-13T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (702450000, ZoneDetails {
+        (702450000, FixedTimespan {  // 1992-03-05T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (718779600, ZoneDetails {
+        (718779600, FixedTimespan {  // 1992-09-11T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (733899600, ZoneDetails {
+        (733899600, FixedTimespan {  // 1993-03-04T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (750229200, ZoneDetails {
+        (750229200, FixedTimespan {  // 1993-09-10T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (765349200, ZoneDetails {
+        (765349200, FixedTimespan {  // 1994-03-03T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (781678800, ZoneDetails {
+        (781678800, FixedTimespan {  // 1994-09-09T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (796798800, ZoneDetails {
+        (796798800, FixedTimespan {  // 1995-03-02T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (813128400, ZoneDetails {
+        (813128400, FixedTimespan {  // 1995-09-08T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (828853200, ZoneDetails {
+        (828853200, FixedTimespan {  // 1996-03-07T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (844578000, ZoneDetails {
+        (844578000, FixedTimespan {  // 1996-09-06T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (860302800, ZoneDetails {
+        (860302800, FixedTimespan {  // 1997-03-06T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (876632400, ZoneDetails {
+        (876632400, FixedTimespan {  // 1997-09-12T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (891147600, ZoneDetails {
+        (891147600, FixedTimespan {  // 1998-02-29T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (909291600, ZoneDetails {
+        (909291600, FixedTimespan {  // 1998-09-25T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (922597200, ZoneDetails {
+        (922597200, FixedTimespan {  // 1999-02-28T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (941346000, ZoneDetails {
+        (941346000, FixedTimespan {  // 1999-09-31T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (954651600, ZoneDetails {
+        (954651600, FixedTimespan {  // 2000-03-02T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (972795600, ZoneDetails {
+        (972795600, FixedTimespan {  // 2000-09-29T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (986101200, ZoneDetails {
+        (986101200, FixedTimespan {  // 2001-03-01T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (1004245200, ZoneDetails {
+        (1004245200, FixedTimespan {  // 2001-09-28T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (1018155600, ZoneDetails {
+        (1018155600, FixedTimespan {  // 2002-03-07T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (1035694800, ZoneDetails {
+        (1035694800, FixedTimespan {  // 2002-09-27T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (1049605200, ZoneDetails {
+        (1049605200, FixedTimespan {  // 2003-03-06T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (1067144400, ZoneDetails {
+        (1067144400, FixedTimespan {  // 2003-09-26T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (1080450000, ZoneDetails {
+        (1080450000, FixedTimespan {  // 2004-02-28T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (1162098000, ZoneDetails {
+        (1162098000, FixedTimespan {  // 2006-09-29T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (1173589200, ZoneDetails {
+        (1173589200, FixedTimespan {  // 2007-02-11T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (1193547600, ZoneDetails {
+        (1193547600, FixedTimespan {  // 2007-09-28T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (1205643600, ZoneDetails {
+        (1205643600, FixedTimespan {  // 2008-02-16T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (1224997200, ZoneDetails {
+        (1224997200, FixedTimespan {  // 2008-09-26T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (1236488400, ZoneDetails {
+        (1236488400, FixedTimespan {  // 2009-02-08T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (1256446800, ZoneDetails {
+        (1256446800, FixedTimespan {  // 2009-09-25T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (1268542800, ZoneDetails {
+        (1268542800, FixedTimespan {  // 2010-02-14T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (1288501200, ZoneDetails {
+        (1288501200, FixedTimespan {  // 2010-09-31T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (1300597200, ZoneDetails {
+        (1300597200, FixedTimespan {  // 2011-02-20T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (1321160400, ZoneDetails {
+        (1321160400, FixedTimespan {  // 2011-10-13T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (1333256400, ZoneDetails {
+        (1333256400, FixedTimespan {  // 2012-03-01T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (1352005200, ZoneDetails {
+        (1352005200, FixedTimespan {  // 2012-10-04T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (1362891600, ZoneDetails {
+        (1362891600, FixedTimespan {  // 2013-02-10T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (1383454800, ZoneDetails {
+        (1383454800, FixedTimespan {  // 2013-10-03T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (1394341200, ZoneDetails {
+        (1394341200, FixedTimespan {  // 2014-02-09T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (1414904400, ZoneDetails {
+        (1414904400, FixedTimespan {  // 2014-10-02T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (1425790800, ZoneDetails {
+        (1425790800, FixedTimespan {  // 2015-02-08T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (1446354000, ZoneDetails {
+        (1446354000, FixedTimespan {  // 2015-10-01T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (1457845200, ZoneDetails {
+        (1457845200, FixedTimespan {  // 2016-02-13T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (1478408400, ZoneDetails {
+        (1478408400, FixedTimespan {  // 2016-10-06T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (1489294800, ZoneDetails {
+        (1489294800, FixedTimespan {  // 2017-02-12T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (1509858000, ZoneDetails {
+        (1509858000, FixedTimespan {  // 2017-10-05T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (1520744400, ZoneDetails {
+        (1520744400, FixedTimespan {  // 2018-02-11T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (1541307600, ZoneDetails {
+        (1541307600, FixedTimespan {  // 2018-10-04T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (1552194000, ZoneDetails {
+        (1552194000, FixedTimespan {  // 2019-02-10T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (1572757200, ZoneDetails {
+        (1572757200, FixedTimespan {  // 2019-10-03T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (1583643600, ZoneDetails {
+        (1583643600, FixedTimespan {  // 2020-02-08T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (1604206800, ZoneDetails {
+        (1604206800, FixedTimespan {  // 2020-10-01T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (1615698000, ZoneDetails {
+        (1615698000, FixedTimespan {  // 2021-02-14T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (1636261200, ZoneDetails {
+        (1636261200, FixedTimespan {  // 2021-10-07T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (1647147600, ZoneDetails {
+        (1647147600, FixedTimespan {  // 2022-02-13T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (1667710800, ZoneDetails {
+        (1667710800, FixedTimespan {  // 2022-10-06T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (1678597200, ZoneDetails {
+        (1678597200, FixedTimespan {  // 2023-02-12T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (1699160400, ZoneDetails {
+        (1699160400, FixedTimespan {  // 2023-10-05T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (1710046800, ZoneDetails {
+        (1710046800, FixedTimespan {  // 2024-02-10T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (1730610000, ZoneDetails {
+        (1730610000, FixedTimespan {  // 2024-10-03T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (1741496400, ZoneDetails {
+        (1741496400, FixedTimespan {  // 2025-02-09T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (1762059600, ZoneDetails {
+        (1762059600, FixedTimespan {  // 2025-10-02T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (1772946000, ZoneDetails {
+        (1772946000, FixedTimespan {  // 2026-02-08T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (1793509200, ZoneDetails {
+        (1793509200, FixedTimespan {  // 2026-10-01T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (1805000400, ZoneDetails {
+        (1805000400, FixedTimespan {  // 2027-02-14T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (1825563600, ZoneDetails {
+        (1825563600, FixedTimespan {  // 2027-10-07T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (1836450000, ZoneDetails {
+        (1836450000, FixedTimespan {  // 2028-02-12T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (1857013200, ZoneDetails {
+        (1857013200, FixedTimespan {  // 2028-10-05T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (1867899600, ZoneDetails {
+        (1867899600, FixedTimespan {  // 2029-02-11T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (1888462800, ZoneDetails {
+        (1888462800, FixedTimespan {  // 2029-10-04T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (1899349200, ZoneDetails {
+        (1899349200, FixedTimespan {  // 2030-02-10T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (1919912400, ZoneDetails {
+        (1919912400, FixedTimespan {  // 2030-10-03T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (1930798800, ZoneDetails {
+        (1930798800, FixedTimespan {  // 2031-02-09T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (1951362000, ZoneDetails {
+        (1951362000, FixedTimespan {  // 2031-10-02T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (1962853200, ZoneDetails {
+        (1962853200, FixedTimespan {  // 2032-02-14T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (1983416400, ZoneDetails {
+        (1983416400, FixedTimespan {  // 2032-10-07T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (1994302800, ZoneDetails {
+        (1994302800, FixedTimespan {  // 2033-02-13T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (2014866000, ZoneDetails {
+        (2014866000, FixedTimespan {  // 2033-10-06T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (2025752400, ZoneDetails {
+        (2025752400, FixedTimespan {  // 2034-02-12T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (2046315600, ZoneDetails {
+        (2046315600, FixedTimespan {  // 2034-10-05T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (2057202000, ZoneDetails {
+        (2057202000, FixedTimespan {  // 2035-02-11T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (2077765200, ZoneDetails {
+        (2077765200, FixedTimespan {  // 2035-10-04T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (2088651600, ZoneDetails {
+        (2088651600, FixedTimespan {  // 2036-02-09T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (2109214800, ZoneDetails {
+        (2109214800, FixedTimespan {  // 2036-10-02T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (2120101200, ZoneDetails {
+        (2120101200, FixedTimespan {  // 2037-02-08T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (2140664400, ZoneDetails {
+        (2140664400, FixedTimespan {  // 2037-10-01T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (2152155600, ZoneDetails {
+        (2152155600, FixedTimespan {  // 2038-02-14T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (2172718800, ZoneDetails {
+        (2172718800, FixedTimespan {  // 2038-10-07T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (2183605200, ZoneDetails {
+        (2183605200, FixedTimespan {  // 2039-02-13T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (2204168400, ZoneDetails {
+        (2204168400, FixedTimespan {  // 2039-10-06T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (2215054800, ZoneDetails {
+        (2215054800, FixedTimespan {  // 2040-02-11T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (2235618000, ZoneDetails {
+        (2235618000, FixedTimespan {  // 2040-10-04T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (2246504400, ZoneDetails {
+        (2246504400, FixedTimespan {  // 2041-02-10T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (2267067600, ZoneDetails {
+        (2267067600, FixedTimespan {  // 2041-10-03T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (2277954000, ZoneDetails {
+        (2277954000, FixedTimespan {  // 2042-02-09T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (2298517200, ZoneDetails {
+        (2298517200, FixedTimespan {  // 2042-10-02T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (2309403600, ZoneDetails {
+        (2309403600, FixedTimespan {  // 2043-02-08T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (2329966800, ZoneDetails {
+        (2329966800, FixedTimespan {  // 2043-10-01T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (2341458000, ZoneDetails {
+        (2341458000, FixedTimespan {  // 2044-02-13T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (2362021200, ZoneDetails {
+        (2362021200, FixedTimespan {  // 2044-10-06T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (2372907600, ZoneDetails {
+        (2372907600, FixedTimespan {  // 2045-02-12T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (2393470800, ZoneDetails {
+        (2393470800, FixedTimespan {  // 2045-10-05T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (2404357200, ZoneDetails {
+        (2404357200, FixedTimespan {  // 2046-02-11T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (2424920400, ZoneDetails {
+        (2424920400, FixedTimespan {  // 2046-10-04T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (2435806800, ZoneDetails {
+        (2435806800, FixedTimespan {  // 2047-02-10T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (2456370000, ZoneDetails {
+        (2456370000, FixedTimespan {  // 2047-10-03T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (2467256400, ZoneDetails {
+        (2467256400, FixedTimespan {  // 2048-02-08T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (2487819600, ZoneDetails {
+        (2487819600, FixedTimespan {  // 2048-10-01T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (2499310800, ZoneDetails {
+        (2499310800, FixedTimespan {  // 2049-02-14T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (2519874000, ZoneDetails {
+        (2519874000, FixedTimespan {  // 2049-10-07T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (2530760400, ZoneDetails {
+        (2530760400, FixedTimespan {  // 2050-02-13T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (2551323600, ZoneDetails {
+        (2551323600, FixedTimespan {  // 2050-10-06T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (2562210000, ZoneDetails {
+        (2562210000, FixedTimespan {  // 2051-02-12T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (2582773200, ZoneDetails {
+        (2582773200, FixedTimespan {  // 2051-10-05T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (2593659600, ZoneDetails {
+        (2593659600, FixedTimespan {  // 2052-02-10T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (2614222800, ZoneDetails {
+        (2614222800, FixedTimespan {  // 2052-10-03T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (2625109200, ZoneDetails {
+        (2625109200, FixedTimespan {  // 2053-02-09T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (2645672400, ZoneDetails {
+        (2645672400, FixedTimespan {  // 2053-10-02T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (2656558800, ZoneDetails {
+        (2656558800, FixedTimespan {  // 2054-02-08T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (2677122000, ZoneDetails {
+        (2677122000, FixedTimespan {  // 2054-10-01T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (2688613200, ZoneDetails {
+        (2688613200, FixedTimespan {  // 2055-02-14T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (2709176400, ZoneDetails {
+        (2709176400, FixedTimespan {  // 2055-10-07T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (2720062800, ZoneDetails {
+        (2720062800, FixedTimespan {  // 2056-02-12T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (2740626000, ZoneDetails {
+        (2740626000, FixedTimespan {  // 2056-10-05T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (2751512400, ZoneDetails {
+        (2751512400, FixedTimespan {  // 2057-02-11T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (2772075600, ZoneDetails {
+        (2772075600, FixedTimespan {  // 2057-10-04T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (2782962000, ZoneDetails {
+        (2782962000, FixedTimespan {  // 2058-02-10T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (2803525200, ZoneDetails {
+        (2803525200, FixedTimespan {  // 2058-10-03T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (2814411600, ZoneDetails {
+        (2814411600, FixedTimespan {  // 2059-02-09T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (2834974800, ZoneDetails {
+        (2834974800, FixedTimespan {  // 2059-10-02T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (2846466000, ZoneDetails {
+        (2846466000, FixedTimespan {  // 2060-02-14T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (2867029200, ZoneDetails {
+        (2867029200, FixedTimespan {  // 2060-10-07T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (2877915600, ZoneDetails {
+        (2877915600, FixedTimespan {  // 2061-02-13T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (2898478800, ZoneDetails {
+        (2898478800, FixedTimespan {  // 2061-10-06T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (2909365200, ZoneDetails {
+        (2909365200, FixedTimespan {  // 2062-02-12T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (2929928400, ZoneDetails {
+        (2929928400, FixedTimespan {  // 2062-10-05T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (2940814800, ZoneDetails {
+        (2940814800, FixedTimespan {  // 2063-02-11T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (2961378000, ZoneDetails {
+        (2961378000, FixedTimespan {  // 2063-10-04T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (2972264400, ZoneDetails {
+        (2972264400, FixedTimespan {  // 2064-02-09T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (2992827600, ZoneDetails {
+        (2992827600, FixedTimespan {  // 2064-10-02T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (3003714000, ZoneDetails {
+        (3003714000, FixedTimespan {  // 2065-02-08T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (3024277200, ZoneDetails {
+        (3024277200, FixedTimespan {  // 2065-10-01T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (3035768400, ZoneDetails {
+        (3035768400, FixedTimespan {  // 2066-02-14T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (3056331600, ZoneDetails {
+        (3056331600, FixedTimespan {  // 2066-10-07T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (3067218000, ZoneDetails {
+        (3067218000, FixedTimespan {  // 2067-02-13T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (3087781200, ZoneDetails {
+        (3087781200, FixedTimespan {  // 2067-10-06T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (3098667600, ZoneDetails {
+        (3098667600, FixedTimespan {  // 2068-02-11T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (3119230800, ZoneDetails {
+        (3119230800, FixedTimespan {  // 2068-10-04T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (3130117200, ZoneDetails {
+        (3130117200, FixedTimespan {  // 2069-02-10T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (3150680400, ZoneDetails {
+        (3150680400, FixedTimespan {  // 2069-10-03T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (3161566800, ZoneDetails {
+        (3161566800, FixedTimespan {  // 2070-02-09T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (3182130000, ZoneDetails {
+        (3182130000, FixedTimespan {  // 2070-10-02T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (3193016400, ZoneDetails {
+        (3193016400, FixedTimespan {  // 2071-02-08T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (3213579600, ZoneDetails {
+        (3213579600, FixedTimespan {  // 2071-10-01T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (3225070800, ZoneDetails {
+        (3225070800, FixedTimespan {  // 2072-02-13T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (3245634000, ZoneDetails {
+        (3245634000, FixedTimespan {  // 2072-10-06T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (3256520400, ZoneDetails {
+        (3256520400, FixedTimespan {  // 2073-02-12T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (3277083600, ZoneDetails {
+        (3277083600, FixedTimespan {  // 2073-10-05T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (3287970000, ZoneDetails {
+        (3287970000, FixedTimespan {  // 2074-02-11T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (3308533200, ZoneDetails {
+        (3308533200, FixedTimespan {  // 2074-10-04T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (3319419600, ZoneDetails {
+        (3319419600, FixedTimespan {  // 2075-02-10T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (3339982800, ZoneDetails {
+        (3339982800, FixedTimespan {  // 2075-10-03T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (3350869200, ZoneDetails {
+        (3350869200, FixedTimespan {  // 2076-02-08T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (3371432400, ZoneDetails {
+        (3371432400, FixedTimespan {  // 2076-10-01T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (3382923600, ZoneDetails {
+        (3382923600, FixedTimespan {  // 2077-02-14T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (3403486800, ZoneDetails {
+        (3403486800, FixedTimespan {  // 2077-10-07T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (3414373200, ZoneDetails {
+        (3414373200, FixedTimespan {  // 2078-02-13T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (3434936400, ZoneDetails {
+        (3434936400, FixedTimespan {  // 2078-10-06T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (3445822800, ZoneDetails {
+        (3445822800, FixedTimespan {  // 2079-02-12T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (3466386000, ZoneDetails {
+        (3466386000, FixedTimespan {  // 2079-10-05T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (3477272400, ZoneDetails {
+        (3477272400, FixedTimespan {  // 2080-02-10T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (3497835600, ZoneDetails {
+        (3497835600, FixedTimespan {  // 2080-10-03T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (3508722000, ZoneDetails {
+        (3508722000, FixedTimespan {  // 2081-02-09T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (3529285200, ZoneDetails {
+        (3529285200, FixedTimespan {  // 2081-10-02T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (3540171600, ZoneDetails {
+        (3540171600, FixedTimespan {  // 2082-02-08T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (3560734800, ZoneDetails {
+        (3560734800, FixedTimespan {  // 2082-10-01T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (3572226000, ZoneDetails {
+        (3572226000, FixedTimespan {  // 2083-02-14T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (3592789200, ZoneDetails {
+        (3592789200, FixedTimespan {  // 2083-10-07T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (3603675600, ZoneDetails {
+        (3603675600, FixedTimespan {  // 2084-02-12T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (3624238800, ZoneDetails {
+        (3624238800, FixedTimespan {  // 2084-10-05T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (3635125200, ZoneDetails {
+        (3635125200, FixedTimespan {  // 2085-02-11T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (3655688400, ZoneDetails {
+        (3655688400, FixedTimespan {  // 2085-10-04T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (3666574800, ZoneDetails {
+        (3666574800, FixedTimespan {  // 2086-02-10T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (3687138000, ZoneDetails {
+        (3687138000, FixedTimespan {  // 2086-10-03T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (3698024400, ZoneDetails {
+        (3698024400, FixedTimespan {  // 2087-02-09T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (3718587600, ZoneDetails {
+        (3718587600, FixedTimespan {  // 2087-10-02T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (3730078800, ZoneDetails {
+        (3730078800, FixedTimespan {  // 2088-02-14T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (3750642000, ZoneDetails {
+        (3750642000, FixedTimespan {  // 2088-10-07T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (3761528400, ZoneDetails {
+        (3761528400, FixedTimespan {  // 2089-02-13T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (3782091600, ZoneDetails {
+        (3782091600, FixedTimespan {  // 2089-10-06T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (3792978000, ZoneDetails {
+        (3792978000, FixedTimespan {  // 2090-02-12T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (3813541200, ZoneDetails {
+        (3813541200, FixedTimespan {  // 2090-10-05T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (3824427600, ZoneDetails {
+        (3824427600, FixedTimespan {  // 2091-02-11T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (3844990800, ZoneDetails {
+        (3844990800, FixedTimespan {  // 2091-10-04T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (3855877200, ZoneDetails {
+        (3855877200, FixedTimespan {  // 2092-02-09T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (3876440400, ZoneDetails {
+        (3876440400, FixedTimespan {  // 2092-10-02T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (3887326800, ZoneDetails {
+        (3887326800, FixedTimespan {  // 2093-02-08T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (3907890000, ZoneDetails {
+        (3907890000, FixedTimespan {  // 2093-10-01T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (3919381200, ZoneDetails {
+        (3919381200, FixedTimespan {  // 2094-02-14T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (3939944400, ZoneDetails {
+        (3939944400, FixedTimespan {  // 2094-10-07T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (3950830800, ZoneDetails {
+        (3950830800, FixedTimespan {  // 2095-02-13T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (3971394000, ZoneDetails {
+        (3971394000, FixedTimespan {  // 2095-10-06T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (3982280400, ZoneDetails {
+        (3982280400, FixedTimespan {  // 2096-02-11T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (4002843600, ZoneDetails {
+        (4002843600, FixedTimespan {  // 2096-10-04T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (4013730000, ZoneDetails {
+        (4013730000, FixedTimespan {  // 2097-02-10T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (4034293200, ZoneDetails {
+        (4034293200, FixedTimespan {  // 2097-10-03T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (4045179600, ZoneDetails {
+        (4045179600, FixedTimespan {  // 2098-02-09T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (4065742800, ZoneDetails {
+        (4065742800, FixedTimespan {  // 2098-10-02T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
-        (4076629200, ZoneDetails {
+        (4076629200, FixedTimespan {  // 2099-02-08T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "CDT",
+            is_dst: true,
+            name:   "CDT",
         }),
-        (4097192400, ZoneDetails {
+        (4097192400, FixedTimespan {  // 2099-10-01T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
     ]},
 };

@@ -5,55 +5,66 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Australia/Darwin",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 31400,  // UTC offset 31400, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-2364108200, ZoneDetails {
+        (-2364108200, FixedTimespan {  // 1895-00-31T15-16-40 UTC
             offset: 32400,  // UTC offset 32400, DST offset 0
-            name: "ACST",
+            is_dst: false,
+            name:   "ACST",
         }),
-        (-2230189200, ZoneDetails {
+        (-2230189200, FixedTimespan {  // 1899-03-30T15-00-00 UTC
             offset: 34200,  // UTC offset 34200, DST offset 0
-            name: "ACST",
+            is_dst: false,
+            name:   "ACST",
         }),
-        (-1672565340, ZoneDetails {
+        (-1672565340, FixedTimespan {  // 1916-11-31T14-31-00 UTC
             offset: 37800,  // UTC offset 34200, DST offset 3600
-            name: "ACDT",
+            is_dst: true,
+            name:   "ACDT",
         }),
-        (-1665390600, ZoneDetails {
+        (-1665390600, FixedTimespan {  // 1917-02-24T15-30-00 UTC
             offset: 34200,  // UTC offset 34200, DST offset 0
-            name: "ACST",
+            is_dst: false,
+            name:   "ACST",
         }),
-        (-883639800, ZoneDetails {
+        (-883639800, FixedTimespan {  // 1941-11-31T16-30-00 UTC
             offset: 37800,  // UTC offset 34200, DST offset 3600
-            name: "ACDT",
+            is_dst: true,
+            name:   "ACDT",
         }),
-        (-876126600, ZoneDetails {
+        (-876126600, FixedTimespan {  // 1942-02-28T15-30-00 UTC
             offset: 34200,  // UTC offset 34200, DST offset 0
-            name: "ACST",
+            is_dst: false,
+            name:   "ACST",
         }),
-        (-860398200, ZoneDetails {
+        (-860398200, FixedTimespan {  // 1942-08-26T16-30-00 UTC
             offset: 37800,  // UTC offset 34200, DST offset 3600
-            name: "ACDT",
+            is_dst: true,
+            name:   "ACDT",
         }),
-        (-844677000, ZoneDetails {
+        (-844677000, FixedTimespan {  // 1943-02-27T15-30-00 UTC
             offset: 34200,  // UTC offset 34200, DST offset 0
-            name: "ACST",
+            is_dst: false,
+            name:   "ACST",
         }),
-        (-828343800, ZoneDetails {
+        (-828343800, FixedTimespan {  // 1943-09-02T16-30-00 UTC
             offset: 37800,  // UTC offset 34200, DST offset 3600
-            name: "ACDT",
+            is_dst: true,
+            name:   "ACDT",
         }),
-        (-813227400, ZoneDetails {
+        (-813227400, FixedTimespan {  // 1944-02-25T15-30-00 UTC
             offset: 34200,  // UTC offset 34200, DST offset 0
-            name: "ACST",
+            is_dst: false,
+            name:   "ACST",
         }),
     ]},
 };

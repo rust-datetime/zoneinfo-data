@@ -5,19 +5,21 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Indian/Christmas",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 25372,  // UTC offset 25372, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-2364102172, ZoneDetails {
+        (-2364102172, FixedTimespan {  // 1895-00-31T16-57-08 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "CXT",
+            is_dst: false,
+            name:   "CXT",
         }),
     ]},
 };

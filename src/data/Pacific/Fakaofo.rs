@@ -5,23 +5,26 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Pacific/Fakaofo",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: -38104,  // UTC offset -38104, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-2177414696, ZoneDetails {
+        (-2177414696, FixedTimespan {  // 1901-00-01T10-35-04 UTC
             offset: -39600,  // UTC offset -39600, DST offset 0
-            name: "TKT",
+            is_dst: false,
+            name:   "TKT",
         }),
-        (1325242800, ZoneDetails {
+        (1325242800, FixedTimespan {  // 2011-11-30T11-00-00 UTC
             offset: 46800,  // UTC offset 46800, DST offset 0
-            name: "TKT",
+            is_dst: false,
+            name:   "TKT",
         }),
     ]},
 };

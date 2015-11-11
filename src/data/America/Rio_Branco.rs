@@ -5,139 +5,171 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "America/Rio_Branco",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: -12528,  // UTC offset -12528, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-1767213072, ZoneDetails {
+        (-1767213072, FixedTimespan {  // 1914-00-01T3-28-48 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "ACT",
+            is_dst: false,
+            name:   "ACT",
         }),
-        (-1206950400, ZoneDetails {
+        (-1206950400, FixedTimespan {  // 1931-09-03T16-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "ACST",
+            is_dst: true,
+            name:   "ACST",
         }),
-        (-1191355200, ZoneDetails {
+        (-1191355200, FixedTimespan {  // 1932-03-01T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "ACT",
+            is_dst: false,
+            name:   "ACT",
         }),
-        (-1175367600, ZoneDetails {
+        (-1175367600, FixedTimespan {  // 1932-09-03T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "ACST",
+            is_dst: true,
+            name:   "ACST",
         }),
-        (-1159819200, ZoneDetails {
+        (-1159819200, FixedTimespan {  // 1933-03-01T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "ACT",
+            is_dst: false,
+            name:   "ACT",
         }),
-        (-633812400, ZoneDetails {
+        (-633812400, FixedTimespan {  // 1949-11-01T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "ACST",
+            is_dst: true,
+            name:   "ACST",
         }),
-        (-622062000, ZoneDetails {
+        (-622062000, FixedTimespan {  // 1950-03-16T5-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "ACT",
+            is_dst: false,
+            name:   "ACT",
         }),
-        (-602276400, ZoneDetails {
+        (-602276400, FixedTimespan {  // 1950-11-01T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "ACST",
+            is_dst: true,
+            name:   "ACST",
         }),
-        (-591825600, ZoneDetails {
+        (-591825600, FixedTimespan {  // 1951-03-01T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "ACT",
+            is_dst: false,
+            name:   "ACT",
         }),
-        (-570740400, ZoneDetails {
+        (-570740400, FixedTimespan {  // 1951-11-01T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "ACST",
+            is_dst: true,
+            name:   "ACST",
         }),
-        (-560203200, ZoneDetails {
+        (-560203200, FixedTimespan {  // 1952-03-01T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "ACT",
+            is_dst: false,
+            name:   "ACT",
         }),
-        (-539118000, ZoneDetails {
+        (-539118000, FixedTimespan {  // 1952-11-01T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "ACST",
+            is_dst: true,
+            name:   "ACST",
         }),
-        (-531345600, ZoneDetails {
+        (-531345600, FixedTimespan {  // 1953-02-01T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "ACT",
+            is_dst: false,
+            name:   "ACT",
         }),
-        (-191358000, ZoneDetails {
+        (-191358000, FixedTimespan {  // 1963-11-09T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "ACST",
+            is_dst: true,
+            name:   "ACST",
         }),
-        (-184190400, ZoneDetails {
+        (-184190400, FixedTimespan {  // 1964-02-01T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "ACT",
+            is_dst: false,
+            name:   "ACT",
         }),
-        (-155156400, ZoneDetails {
+        (-155156400, FixedTimespan {  // 1965-00-31T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "ACST",
+            is_dst: true,
+            name:   "ACST",
         }),
-        (-150062400, ZoneDetails {
+        (-150062400, FixedTimespan {  // 1965-02-31T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "ACT",
+            is_dst: false,
+            name:   "ACT",
         }),
-        (-128890800, ZoneDetails {
+        (-128890800, FixedTimespan {  // 1965-11-01T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "ACST",
+            is_dst: true,
+            name:   "ACST",
         }),
-        (-121118400, ZoneDetails {
+        (-121118400, FixedTimespan {  // 1966-02-01T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "ACT",
+            is_dst: false,
+            name:   "ACT",
         }),
-        (-99946800, ZoneDetails {
+        (-99946800, FixedTimespan {  // 1966-10-01T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "ACST",
+            is_dst: true,
+            name:   "ACST",
         }),
-        (-89582400, ZoneDetails {
+        (-89582400, FixedTimespan {  // 1967-02-01T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "ACT",
+            is_dst: false,
+            name:   "ACT",
         }),
-        (-68410800, ZoneDetails {
+        (-68410800, FixedTimespan {  // 1967-10-01T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "ACST",
+            is_dst: true,
+            name:   "ACST",
         }),
-        (-57960000, ZoneDetails {
+        (-57960000, FixedTimespan {  // 1968-02-01T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "ACT",
+            is_dst: false,
+            name:   "ACT",
         }),
-        (499755600, ZoneDetails {
+        (499755600, FixedTimespan {  // 1985-10-02T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "ACST",
+            is_dst: true,
+            name:   "ACST",
         }),
-        (511243200, ZoneDetails {
+        (511243200, FixedTimespan {  // 1986-02-15T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "ACT",
+            is_dst: false,
+            name:   "ACT",
         }),
-        (530600400, ZoneDetails {
+        (530600400, FixedTimespan {  // 1986-09-25T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "ACST",
+            is_dst: true,
+            name:   "ACST",
         }),
-        (540273600, ZoneDetails {
+        (540273600, FixedTimespan {  // 1987-01-14T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "ACT",
+            is_dst: false,
+            name:   "ACT",
         }),
-        (562136400, ZoneDetails {
+        (562136400, FixedTimespan {  // 1987-09-25T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
-            name: "ACST",
+            is_dst: true,
+            name:   "ACST",
         }),
-        (571204800, ZoneDetails {
+        (571204800, FixedTimespan {  // 1988-01-07T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "ACT",
+            is_dst: false,
+            name:   "ACT",
         }),
-        (1214283600, ZoneDetails {
+        (1214283600, FixedTimespan {  // 2008-05-24T5-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "AMT",
+            is_dst: false,
+            name:   "AMT",
         }),
-        (1384056000, ZoneDetails {
+        (1384056000, FixedTimespan {  // 2013-10-10T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "ACT",
+            is_dst: false,
+            name:   "ACT",
         }),
     ]},
 };

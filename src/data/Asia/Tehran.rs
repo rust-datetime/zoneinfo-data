@@ -5,415 +5,516 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Asia/Tehran",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 12344,  // UTC offset 12344, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-1704165944, ZoneDetails {
+        (-1704165944, FixedTimespan {  // 1915-11-31T20-34-16 UTC
             offset: 12344,  // UTC offset 12344, DST offset 0
-            name: "TMT",
+            is_dst: false,
+            name:   "TMT",
         }),
-        (-757394744, ZoneDetails {
+        (-757394744, FixedTimespan {  // 1945-11-31T20-34-16 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (247177800, ZoneDetails {
+        (247177800, FixedTimespan {  // 1977-09-31T20-30-00 UTC
             offset: 14400,  // UTC offset 14400, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (259272000, ZoneDetails {
+        (259272000, FixedTimespan {  // 1978-02-20T20-00-00 UTC
             offset: 18000,  // UTC offset 14400, DST offset 3600
-            name: "IRDT",
+            is_dst: true,
+            name:   "IRDT",
         }),
-        (277758000, ZoneDetails {
+        (277758000, FixedTimespan {  // 1978-09-20T19-00-00 UTC
             offset: 14400,  // UTC offset 14400, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (283982400, ZoneDetails {
+        (283982400, FixedTimespan {  // 1978-11-31T20-00-00 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (290809800, ZoneDetails {
+        (290809800, FixedTimespan {  // 1979-02-20T20-30-00 UTC
             offset: 16200,  // UTC offset 12600, DST offset 3600
-            name: "IRDT",
+            is_dst: true,
+            name:   "IRDT",
         }),
-        (306531000, ZoneDetails {
+        (306531000, FixedTimespan {  // 1979-08-18T19-30-00 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (322432200, ZoneDetails {
+        (322432200, FixedTimespan {  // 1980-02-20T20-30-00 UTC
             offset: 16200,  // UTC offset 12600, DST offset 3600
-            name: "IRDT",
+            is_dst: true,
+            name:   "IRDT",
         }),
-        (338499000, ZoneDetails {
+        (338499000, FixedTimespan {  // 1980-08-22T19-30-00 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (673216200, ZoneDetails {
+        (673216200, FixedTimespan {  // 1991-04-02T20-30-00 UTC
             offset: 16200,  // UTC offset 12600, DST offset 3600
-            name: "IRDT",
+            is_dst: true,
+            name:   "IRDT",
         }),
-        (685481400, ZoneDetails {
+        (685481400, FixedTimespan {  // 1991-08-21T19-30-00 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (701209800, ZoneDetails {
+        (701209800, FixedTimespan {  // 1992-02-21T20-30-00 UTC
             offset: 16200,  // UTC offset 12600, DST offset 3600
-            name: "IRDT",
+            is_dst: true,
+            name:   "IRDT",
         }),
-        (717103800, ZoneDetails {
+        (717103800, FixedTimespan {  // 1992-08-21T19-30-00 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (732745800, ZoneDetails {
+        (732745800, FixedTimespan {  // 1993-02-21T20-30-00 UTC
             offset: 16200,  // UTC offset 12600, DST offset 3600
-            name: "IRDT",
+            is_dst: true,
+            name:   "IRDT",
         }),
-        (748639800, ZoneDetails {
+        (748639800, FixedTimespan {  // 1993-08-21T19-30-00 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (764281800, ZoneDetails {
+        (764281800, FixedTimespan {  // 1994-02-21T20-30-00 UTC
             offset: 16200,  // UTC offset 12600, DST offset 3600
-            name: "IRDT",
+            is_dst: true,
+            name:   "IRDT",
         }),
-        (780175800, ZoneDetails {
+        (780175800, FixedTimespan {  // 1994-08-21T19-30-00 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (795817800, ZoneDetails {
+        (795817800, FixedTimespan {  // 1995-02-21T20-30-00 UTC
             offset: 16200,  // UTC offset 12600, DST offset 3600
-            name: "IRDT",
+            is_dst: true,
+            name:   "IRDT",
         }),
-        (811711800, ZoneDetails {
+        (811711800, FixedTimespan {  // 1995-08-21T19-30-00 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (827353800, ZoneDetails {
+        (827353800, FixedTimespan {  // 1996-02-20T20-30-00 UTC
             offset: 16200,  // UTC offset 12600, DST offset 3600
-            name: "IRDT",
+            is_dst: true,
+            name:   "IRDT",
         }),
-        (843247800, ZoneDetails {
+        (843247800, FixedTimespan {  // 1996-08-20T19-30-00 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (858976200, ZoneDetails {
+        (858976200, FixedTimespan {  // 1997-02-21T20-30-00 UTC
             offset: 16200,  // UTC offset 12600, DST offset 3600
-            name: "IRDT",
+            is_dst: true,
+            name:   "IRDT",
         }),
-        (874870200, ZoneDetails {
+        (874870200, FixedTimespan {  // 1997-08-21T19-30-00 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (890512200, ZoneDetails {
+        (890512200, FixedTimespan {  // 1998-02-21T20-30-00 UTC
             offset: 16200,  // UTC offset 12600, DST offset 3600
-            name: "IRDT",
+            is_dst: true,
+            name:   "IRDT",
         }),
-        (906406200, ZoneDetails {
+        (906406200, FixedTimespan {  // 1998-08-21T19-30-00 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (922048200, ZoneDetails {
+        (922048200, FixedTimespan {  // 1999-02-21T20-30-00 UTC
             offset: 16200,  // UTC offset 12600, DST offset 3600
-            name: "IRDT",
+            is_dst: true,
+            name:   "IRDT",
         }),
-        (937942200, ZoneDetails {
+        (937942200, FixedTimespan {  // 1999-08-21T19-30-00 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (953584200, ZoneDetails {
+        (953584200, FixedTimespan {  // 2000-02-20T20-30-00 UTC
             offset: 16200,  // UTC offset 12600, DST offset 3600
-            name: "IRDT",
+            is_dst: true,
+            name:   "IRDT",
         }),
-        (969478200, ZoneDetails {
+        (969478200, FixedTimespan {  // 2000-08-20T19-30-00 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (985206600, ZoneDetails {
+        (985206600, FixedTimespan {  // 2001-02-21T20-30-00 UTC
             offset: 16200,  // UTC offset 12600, DST offset 3600
-            name: "IRDT",
+            is_dst: true,
+            name:   "IRDT",
         }),
-        (1001100600, ZoneDetails {
+        (1001100600, FixedTimespan {  // 2001-08-21T19-30-00 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (1016742600, ZoneDetails {
+        (1016742600, FixedTimespan {  // 2002-02-21T20-30-00 UTC
             offset: 16200,  // UTC offset 12600, DST offset 3600
-            name: "IRDT",
+            is_dst: true,
+            name:   "IRDT",
         }),
-        (1032636600, ZoneDetails {
+        (1032636600, FixedTimespan {  // 2002-08-21T19-30-00 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (1048278600, ZoneDetails {
+        (1048278600, FixedTimespan {  // 2003-02-21T20-30-00 UTC
             offset: 16200,  // UTC offset 12600, DST offset 3600
-            name: "IRDT",
+            is_dst: true,
+            name:   "IRDT",
         }),
-        (1064172600, ZoneDetails {
+        (1064172600, FixedTimespan {  // 2003-08-21T19-30-00 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (1079814600, ZoneDetails {
+        (1079814600, FixedTimespan {  // 2004-02-20T20-30-00 UTC
             offset: 16200,  // UTC offset 12600, DST offset 3600
-            name: "IRDT",
+            is_dst: true,
+            name:   "IRDT",
         }),
-        (1095708600, ZoneDetails {
+        (1095708600, FixedTimespan {  // 2004-08-20T19-30-00 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (1111437000, ZoneDetails {
+        (1111437000, FixedTimespan {  // 2005-02-21T20-30-00 UTC
             offset: 16200,  // UTC offset 12600, DST offset 3600
-            name: "IRDT",
+            is_dst: true,
+            name:   "IRDT",
         }),
-        (1127331000, ZoneDetails {
+        (1127331000, FixedTimespan {  // 2005-08-21T19-30-00 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (1206045000, ZoneDetails {
+        (1206045000, FixedTimespan {  // 2008-02-20T20-30-00 UTC
             offset: 16200,  // UTC offset 12600, DST offset 3600
-            name: "IRDT",
+            is_dst: true,
+            name:   "IRDT",
         }),
-        (1221939000, ZoneDetails {
+        (1221939000, FixedTimespan {  // 2008-08-20T19-30-00 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (1237667400, ZoneDetails {
+        (1237667400, FixedTimespan {  // 2009-02-21T20-30-00 UTC
             offset: 16200,  // UTC offset 12600, DST offset 3600
-            name: "IRDT",
+            is_dst: true,
+            name:   "IRDT",
         }),
-        (1253561400, ZoneDetails {
+        (1253561400, FixedTimespan {  // 2009-08-21T19-30-00 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (1269203400, ZoneDetails {
+        (1269203400, FixedTimespan {  // 2010-02-21T20-30-00 UTC
             offset: 16200,  // UTC offset 12600, DST offset 3600
-            name: "IRDT",
+            is_dst: true,
+            name:   "IRDT",
         }),
-        (1285097400, ZoneDetails {
+        (1285097400, FixedTimespan {  // 2010-08-21T19-30-00 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (1300739400, ZoneDetails {
+        (1300739400, FixedTimespan {  // 2011-02-21T20-30-00 UTC
             offset: 16200,  // UTC offset 12600, DST offset 3600
-            name: "IRDT",
+            is_dst: true,
+            name:   "IRDT",
         }),
-        (1316633400, ZoneDetails {
+        (1316633400, FixedTimespan {  // 2011-08-21T19-30-00 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (1332275400, ZoneDetails {
+        (1332275400, FixedTimespan {  // 2012-02-20T20-30-00 UTC
             offset: 16200,  // UTC offset 12600, DST offset 3600
-            name: "IRDT",
+            is_dst: true,
+            name:   "IRDT",
         }),
-        (1348169400, ZoneDetails {
+        (1348169400, FixedTimespan {  // 2012-08-20T19-30-00 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (1363897800, ZoneDetails {
+        (1363897800, FixedTimespan {  // 2013-02-21T20-30-00 UTC
             offset: 16200,  // UTC offset 12600, DST offset 3600
-            name: "IRDT",
+            is_dst: true,
+            name:   "IRDT",
         }),
-        (1379791800, ZoneDetails {
+        (1379791800, FixedTimespan {  // 2013-08-21T19-30-00 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (1395433800, ZoneDetails {
+        (1395433800, FixedTimespan {  // 2014-02-21T20-30-00 UTC
             offset: 16200,  // UTC offset 12600, DST offset 3600
-            name: "IRDT",
+            is_dst: true,
+            name:   "IRDT",
         }),
-        (1411327800, ZoneDetails {
+        (1411327800, FixedTimespan {  // 2014-08-21T19-30-00 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (1426969800, ZoneDetails {
+        (1426969800, FixedTimespan {  // 2015-02-21T20-30-00 UTC
             offset: 16200,  // UTC offset 12600, DST offset 3600
-            name: "IRDT",
+            is_dst: true,
+            name:   "IRDT",
         }),
-        (1442863800, ZoneDetails {
+        (1442863800, FixedTimespan {  // 2015-08-21T19-30-00 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (1458505800, ZoneDetails {
+        (1458505800, FixedTimespan {  // 2016-02-20T20-30-00 UTC
             offset: 16200,  // UTC offset 12600, DST offset 3600
-            name: "IRDT",
+            is_dst: true,
+            name:   "IRDT",
         }),
-        (1474399800, ZoneDetails {
+        (1474399800, FixedTimespan {  // 2016-08-20T19-30-00 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (1490128200, ZoneDetails {
+        (1490128200, FixedTimespan {  // 2017-02-21T20-30-00 UTC
             offset: 16200,  // UTC offset 12600, DST offset 3600
-            name: "IRDT",
+            is_dst: true,
+            name:   "IRDT",
         }),
-        (1506022200, ZoneDetails {
+        (1506022200, FixedTimespan {  // 2017-08-21T19-30-00 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (1521664200, ZoneDetails {
+        (1521664200, FixedTimespan {  // 2018-02-21T20-30-00 UTC
             offset: 16200,  // UTC offset 12600, DST offset 3600
-            name: "IRDT",
+            is_dst: true,
+            name:   "IRDT",
         }),
-        (1537558200, ZoneDetails {
+        (1537558200, FixedTimespan {  // 2018-08-21T19-30-00 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (1553200200, ZoneDetails {
+        (1553200200, FixedTimespan {  // 2019-02-21T20-30-00 UTC
             offset: 16200,  // UTC offset 12600, DST offset 3600
-            name: "IRDT",
+            is_dst: true,
+            name:   "IRDT",
         }),
-        (1569094200, ZoneDetails {
+        (1569094200, FixedTimespan {  // 2019-08-21T19-30-00 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (1584736200, ZoneDetails {
+        (1584736200, FixedTimespan {  // 2020-02-20T20-30-00 UTC
             offset: 16200,  // UTC offset 12600, DST offset 3600
-            name: "IRDT",
+            is_dst: true,
+            name:   "IRDT",
         }),
-        (1600630200, ZoneDetails {
+        (1600630200, FixedTimespan {  // 2020-08-20T19-30-00 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (1616358600, ZoneDetails {
+        (1616358600, FixedTimespan {  // 2021-02-21T20-30-00 UTC
             offset: 16200,  // UTC offset 12600, DST offset 3600
-            name: "IRDT",
+            is_dst: true,
+            name:   "IRDT",
         }),
-        (1632252600, ZoneDetails {
+        (1632252600, FixedTimespan {  // 2021-08-21T19-30-00 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (1647894600, ZoneDetails {
+        (1647894600, FixedTimespan {  // 2022-02-21T20-30-00 UTC
             offset: 16200,  // UTC offset 12600, DST offset 3600
-            name: "IRDT",
+            is_dst: true,
+            name:   "IRDT",
         }),
-        (1663788600, ZoneDetails {
+        (1663788600, FixedTimespan {  // 2022-08-21T19-30-00 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (1679430600, ZoneDetails {
+        (1679430600, FixedTimespan {  // 2023-02-21T20-30-00 UTC
             offset: 16200,  // UTC offset 12600, DST offset 3600
-            name: "IRDT",
+            is_dst: true,
+            name:   "IRDT",
         }),
-        (1695324600, ZoneDetails {
+        (1695324600, FixedTimespan {  // 2023-08-21T19-30-00 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (1710966600, ZoneDetails {
+        (1710966600, FixedTimespan {  // 2024-02-20T20-30-00 UTC
             offset: 16200,  // UTC offset 12600, DST offset 3600
-            name: "IRDT",
+            is_dst: true,
+            name:   "IRDT",
         }),
-        (1726860600, ZoneDetails {
+        (1726860600, FixedTimespan {  // 2024-08-20T19-30-00 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (1742589000, ZoneDetails {
+        (1742589000, FixedTimespan {  // 2025-02-21T20-30-00 UTC
             offset: 16200,  // UTC offset 12600, DST offset 3600
-            name: "IRDT",
+            is_dst: true,
+            name:   "IRDT",
         }),
-        (1758483000, ZoneDetails {
+        (1758483000, FixedTimespan {  // 2025-08-21T19-30-00 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (1774125000, ZoneDetails {
+        (1774125000, FixedTimespan {  // 2026-02-21T20-30-00 UTC
             offset: 16200,  // UTC offset 12600, DST offset 3600
-            name: "IRDT",
+            is_dst: true,
+            name:   "IRDT",
         }),
-        (1790019000, ZoneDetails {
+        (1790019000, FixedTimespan {  // 2026-08-21T19-30-00 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (1805661000, ZoneDetails {
+        (1805661000, FixedTimespan {  // 2027-02-21T20-30-00 UTC
             offset: 16200,  // UTC offset 12600, DST offset 3600
-            name: "IRDT",
+            is_dst: true,
+            name:   "IRDT",
         }),
-        (1821555000, ZoneDetails {
+        (1821555000, FixedTimespan {  // 2027-08-21T19-30-00 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (1837197000, ZoneDetails {
+        (1837197000, FixedTimespan {  // 2028-02-20T20-30-00 UTC
             offset: 16200,  // UTC offset 12600, DST offset 3600
-            name: "IRDT",
+            is_dst: true,
+            name:   "IRDT",
         }),
-        (1853091000, ZoneDetails {
+        (1853091000, FixedTimespan {  // 2028-08-20T19-30-00 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (1868733000, ZoneDetails {
+        (1868733000, FixedTimespan {  // 2029-02-20T20-30-00 UTC
             offset: 16200,  // UTC offset 12600, DST offset 3600
-            name: "IRDT",
+            is_dst: true,
+            name:   "IRDT",
         }),
-        (1884627000, ZoneDetails {
+        (1884627000, FixedTimespan {  // 2029-08-20T19-30-00 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (1900355400, ZoneDetails {
+        (1900355400, FixedTimespan {  // 2030-02-21T20-30-00 UTC
             offset: 16200,  // UTC offset 12600, DST offset 3600
-            name: "IRDT",
+            is_dst: true,
+            name:   "IRDT",
         }),
-        (1916249400, ZoneDetails {
+        (1916249400, FixedTimespan {  // 2030-08-21T19-30-00 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (1931891400, ZoneDetails {
+        (1931891400, FixedTimespan {  // 2031-02-21T20-30-00 UTC
             offset: 16200,  // UTC offset 12600, DST offset 3600
-            name: "IRDT",
+            is_dst: true,
+            name:   "IRDT",
         }),
-        (1947785400, ZoneDetails {
+        (1947785400, FixedTimespan {  // 2031-08-21T19-30-00 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (1963427400, ZoneDetails {
+        (1963427400, FixedTimespan {  // 2032-02-20T20-30-00 UTC
             offset: 16200,  // UTC offset 12600, DST offset 3600
-            name: "IRDT",
+            is_dst: true,
+            name:   "IRDT",
         }),
-        (1979321400, ZoneDetails {
+        (1979321400, FixedTimespan {  // 2032-08-20T19-30-00 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (1994963400, ZoneDetails {
+        (1994963400, FixedTimespan {  // 2033-02-20T20-30-00 UTC
             offset: 16200,  // UTC offset 12600, DST offset 3600
-            name: "IRDT",
+            is_dst: true,
+            name:   "IRDT",
         }),
-        (2010857400, ZoneDetails {
+        (2010857400, FixedTimespan {  // 2033-08-20T19-30-00 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (2026585800, ZoneDetails {
+        (2026585800, FixedTimespan {  // 2034-02-21T20-30-00 UTC
             offset: 16200,  // UTC offset 12600, DST offset 3600
-            name: "IRDT",
+            is_dst: true,
+            name:   "IRDT",
         }),
-        (2042479800, ZoneDetails {
+        (2042479800, FixedTimespan {  // 2034-08-21T19-30-00 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (2058121800, ZoneDetails {
+        (2058121800, FixedTimespan {  // 2035-02-21T20-30-00 UTC
             offset: 16200,  // UTC offset 12600, DST offset 3600
-            name: "IRDT",
+            is_dst: true,
+            name:   "IRDT",
         }),
-        (2074015800, ZoneDetails {
+        (2074015800, FixedTimespan {  // 2035-08-21T19-30-00 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (2089657800, ZoneDetails {
+        (2089657800, FixedTimespan {  // 2036-02-20T20-30-00 UTC
             offset: 16200,  // UTC offset 12600, DST offset 3600
-            name: "IRDT",
+            is_dst: true,
+            name:   "IRDT",
         }),
-        (2105551800, ZoneDetails {
+        (2105551800, FixedTimespan {  // 2036-08-20T19-30-00 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
-        (2121193800, ZoneDetails {
+        (2121193800, FixedTimespan {  // 2037-02-20T20-30-00 UTC
             offset: 16200,  // UTC offset 12600, DST offset 3600
-            name: "IRDT",
+            is_dst: true,
+            name:   "IRDT",
         }),
-        (2137087800, ZoneDetails {
+        (2137087800, FixedTimespan {  // 2037-08-20T19-30-00 UTC
             offset: 12600,  // UTC offset 12600, DST offset 0
-            name: "IRST",
+            is_dst: false,
+            name:   "IRST",
         }),
     ]},
 };

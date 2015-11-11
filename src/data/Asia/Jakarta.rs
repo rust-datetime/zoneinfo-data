@@ -5,47 +5,56 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Asia/Jakarta",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 25632,  // UTC offset 25632, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-3231299232, ZoneDetails {
+        (-3231299232, FixedTimespan {  // 1867-07-09T16-52-48 UTC
             offset: 25632,  // UTC offset 25632, DST offset 0
-            name: "BMT",
+            is_dst: false,
+            name:   "BMT",
         }),
-        (-1451719200, ZoneDetails {
+        (-1451719200, FixedTimespan {  // 1923-11-31T16-40-00 UTC
             offset: 26400,  // UTC offset 26400, DST offset 0
-            name: "JAVT",
+            is_dst: false,
+            name:   "JAVT",
         }),
-        (-1172906400, ZoneDetails {
+        (-1172906400, FixedTimespan {  // 1932-09-31T16-40-00 UTC
             offset: 27000,  // UTC offset 27000, DST offset 0
-            name: "WIB",
+            is_dst: false,
+            name:   "WIB",
         }),
-        (-876641400, ZoneDetails {
+        (-876641400, FixedTimespan {  // 1942-02-22T16-30-00 UTC
             offset: 32400,  // UTC offset 32400, DST offset 0
-            name: "JST",
+            is_dst: false,
+            name:   "JST",
         }),
-        (-766054800, ZoneDetails {
+        (-766054800, FixedTimespan {  // 1945-08-22T15-00-00 UTC
             offset: 27000,  // UTC offset 27000, DST offset 0
-            name: "WIB",
+            is_dst: false,
+            name:   "WIB",
         }),
-        (-683883000, ZoneDetails {
+        (-683883000, FixedTimespan {  // 1948-03-30T16-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "WIB",
+            is_dst: false,
+            name:   "WIB",
         }),
-        (-620812800, ZoneDetails {
+        (-620812800, FixedTimespan {  // 1950-03-30T16-00-00 UTC
             offset: 27000,  // UTC offset 27000, DST offset 0
-            name: "WIB",
+            is_dst: false,
+            name:   "WIB",
         }),
-        (-189415800, ZoneDetails {
+        (-189415800, FixedTimespan {  // 1963-11-31T16-30-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "WIB",
+            is_dst: false,
+            name:   "WIB",
         }),
     ]},
 };

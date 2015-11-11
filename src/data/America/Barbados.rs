@@ -5,55 +5,66 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "America/Barbados",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: -7291,  // UTC offset -7291, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-1451685509, ZoneDetails {
+        (-1451685509, FixedTimespan {  // 1924-00-01T2-01-31 UTC
             offset: -7291,  // UTC offset -7291, DST offset 0
-            name: "BMT",
+            is_dst: false,
+            name:   "BMT",
         }),
-        (-1199224709, ZoneDetails {
+        (-1199224709, FixedTimespan {  // 1932-00-01T2-01-31 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "AST",
+            is_dst: false,
+            name:   "AST",
         }),
-        (234943200, ZoneDetails {
+        (234943200, FixedTimespan {  // 1977-05-12T6-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "ADT",
+            is_dst: true,
+            name:   "ADT",
         }),
-        (244616400, ZoneDetails {
+        (244616400, FixedTimespan {  // 1977-09-02T5-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "AST",
+            is_dst: false,
+            name:   "AST",
         }),
-        (261554400, ZoneDetails {
+        (261554400, FixedTimespan {  // 1978-03-16T6-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "ADT",
+            is_dst: true,
+            name:   "ADT",
         }),
-        (276066000, ZoneDetails {
+        (276066000, FixedTimespan {  // 1978-09-01T5-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "AST",
+            is_dst: false,
+            name:   "AST",
         }),
-        (293004000, ZoneDetails {
+        (293004000, FixedTimespan {  // 1979-03-15T6-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "ADT",
+            is_dst: true,
+            name:   "ADT",
         }),
-        (307515600, ZoneDetails {
+        (307515600, FixedTimespan {  // 1979-08-30T5-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "AST",
+            is_dst: false,
+            name:   "AST",
         }),
-        (325058400, ZoneDetails {
+        (325058400, FixedTimespan {  // 1980-03-20T6-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "ADT",
+            is_dst: true,
+            name:   "ADT",
         }),
-        (338706000, ZoneDetails {
+        (338706000, FixedTimespan {  // 1980-08-25T5-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "AST",
+            is_dst: false,
+            name:   "AST",
         }),
     ]},
 };

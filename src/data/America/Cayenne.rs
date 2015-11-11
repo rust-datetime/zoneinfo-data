@@ -5,23 +5,26 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "America/Cayenne",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: -9040,  // UTC offset -9040, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-1846272560, ZoneDetails {
+        (-1846272560, FixedTimespan {  // 1911-06-01T2-30-40 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "GFT",
+            is_dst: false,
+            name:   "GFT",
         }),
-        (-71092800, ZoneDetails {
+        (-71092800, FixedTimespan {  // 1967-09-01T4-00-00 UTC
             offset: -10800,  // UTC offset -10800, DST offset 0
-            name: "GFT",
+            is_dst: false,
+            name:   "GFT",
         }),
     ]},
 };

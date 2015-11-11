@@ -5,23 +5,26 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Indian/Chagos",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 17380,  // UTC offset 17380, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-1988167780, ZoneDetails {
+        (-1988167780, FixedTimespan {  // 1906-11-31T19-10-20 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
-            name: "IOT",
+            is_dst: false,
+            name:   "IOT",
         }),
-        (820436400, ZoneDetails {
+        (820436400, FixedTimespan {  // 1995-11-31T19-00-00 UTC
             offset: 21600,  // UTC offset 21600, DST offset 0
-            name: "IOT",
+            is_dst: false,
+            name:   "IOT",
         }),
     ]},
 };

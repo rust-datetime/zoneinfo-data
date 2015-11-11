@@ -5,99 +5,121 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Pacific/Efate",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 40396,  // UTC offset 40396, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-1829387596, ZoneDetails {
+        (-1829387596, FixedTimespan {  // 1912-00-12T12-46-44 UTC
             offset: 39600,  // UTC offset 39600, DST offset 0
-            name: "VUT",
+            is_dst: false,
+            name:   "VUT",
         }),
-        (433256400, ZoneDetails {
+        (433256400, FixedTimespan {  // 1983-08-24T13-00-00 UTC
             offset: 43200,  // UTC offset 39600, DST offset 3600
-            name: "VUST",
+            is_dst: true,
+            name:   "VUST",
         }),
-        (448977600, ZoneDetails {
+        (448977600, FixedTimespan {  // 1984-02-24T12-00-00 UTC
             offset: 39600,  // UTC offset 39600, DST offset 0
-            name: "VUT",
+            is_dst: false,
+            name:   "VUT",
         }),
-        (467298000, ZoneDetails {
+        (467298000, FixedTimespan {  // 1984-09-22T13-00-00 UTC
             offset: 43200,  // UTC offset 39600, DST offset 3600
-            name: "VUST",
+            is_dst: true,
+            name:   "VUST",
         }),
-        (480427200, ZoneDetails {
+        (480427200, FixedTimespan {  // 1985-02-23T12-00-00 UTC
             offset: 39600,  // UTC offset 39600, DST offset 0
-            name: "VUT",
+            is_dst: false,
+            name:   "VUT",
         }),
-        (496760400, ZoneDetails {
+        (496760400, FixedTimespan {  // 1985-08-28T13-00-00 UTC
             offset: 43200,  // UTC offset 39600, DST offset 3600
-            name: "VUST",
+            is_dst: true,
+            name:   "VUST",
         }),
-        (511876800, ZoneDetails {
+        (511876800, FixedTimespan {  // 1986-02-22T12-00-00 UTC
             offset: 39600,  // UTC offset 39600, DST offset 0
-            name: "VUT",
+            is_dst: false,
+            name:   "VUT",
         }),
-        (528210000, ZoneDetails {
+        (528210000, FixedTimespan {  // 1986-08-27T13-00-00 UTC
             offset: 43200,  // UTC offset 39600, DST offset 3600
-            name: "VUST",
+            is_dst: true,
+            name:   "VUST",
         }),
-        (543931200, ZoneDetails {
+        (543931200, FixedTimespan {  // 1987-02-28T12-00-00 UTC
             offset: 39600,  // UTC offset 39600, DST offset 0
-            name: "VUT",
+            is_dst: false,
+            name:   "VUT",
         }),
-        (559659600, ZoneDetails {
+        (559659600, FixedTimespan {  // 1987-08-26T13-00-00 UTC
             offset: 43200,  // UTC offset 39600, DST offset 3600
-            name: "VUST",
+            is_dst: true,
+            name:   "VUST",
         }),
-        (575380800, ZoneDetails {
+        (575380800, FixedTimespan {  // 1988-02-26T12-00-00 UTC
             offset: 39600,  // UTC offset 39600, DST offset 0
-            name: "VUT",
+            is_dst: false,
+            name:   "VUT",
         }),
-        (591109200, ZoneDetails {
+        (591109200, FixedTimespan {  // 1988-08-24T13-00-00 UTC
             offset: 43200,  // UTC offset 39600, DST offset 3600
-            name: "VUST",
+            is_dst: true,
+            name:   "VUST",
         }),
-        (606830400, ZoneDetails {
+        (606830400, FixedTimespan {  // 1989-02-25T12-00-00 UTC
             offset: 39600,  // UTC offset 39600, DST offset 0
-            name: "VUT",
+            is_dst: false,
+            name:   "VUT",
         }),
-        (622558800, ZoneDetails {
+        (622558800, FixedTimespan {  // 1989-08-23T13-00-00 UTC
             offset: 43200,  // UTC offset 39600, DST offset 3600
-            name: "VUST",
+            is_dst: true,
+            name:   "VUST",
         }),
-        (638280000, ZoneDetails {
+        (638280000, FixedTimespan {  // 1990-02-24T12-00-00 UTC
             offset: 39600,  // UTC offset 39600, DST offset 0
-            name: "VUT",
+            is_dst: false,
+            name:   "VUT",
         }),
-        (654008400, ZoneDetails {
+        (654008400, FixedTimespan {  // 1990-08-22T13-00-00 UTC
             offset: 43200,  // UTC offset 39600, DST offset 3600
-            name: "VUST",
+            is_dst: true,
+            name:   "VUST",
         }),
-        (669729600, ZoneDetails {
+        (669729600, FixedTimespan {  // 1991-02-23T12-00-00 UTC
             offset: 39600,  // UTC offset 39600, DST offset 0
-            name: "VUT",
+            is_dst: false,
+            name:   "VUT",
         }),
-        (686062800, ZoneDetails {
+        (686062800, FixedTimespan {  // 1991-08-28T13-00-00 UTC
             offset: 43200,  // UTC offset 39600, DST offset 3600
-            name: "VUST",
+            is_dst: true,
+            name:   "VUST",
         }),
-        (696340800, ZoneDetails {
+        (696340800, FixedTimespan {  // 1992-00-25T12-00-00 UTC
             offset: 39600,  // UTC offset 39600, DST offset 0
-            name: "VUT",
+            is_dst: false,
+            name:   "VUT",
         }),
-        (719931600, ZoneDetails {
+        (719931600, FixedTimespan {  // 1992-09-24T13-00-00 UTC
             offset: 43200,  // UTC offset 39600, DST offset 3600
-            name: "VUST",
+            is_dst: true,
+            name:   "VUST",
         }),
-        (727790400, ZoneDetails {
+        (727790400, FixedTimespan {  // 1993-00-23T12-00-00 UTC
             offset: 39600,  // UTC offset 39600, DST offset 0
-            name: "VUT",
+            is_dst: false,
+            name:   "VUT",
         }),
     ]},
 };

@@ -5,19 +5,21 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Pacific/Tahiti",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: -28904,  // UTC offset -28904, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-1806681496, ZoneDetails {
+        (-1806681496, FixedTimespan {  // 1912-09-01T8-01-44 UTC
             offset: -36000,  // UTC offset -36000, DST offset 0
-            name: "TAHT",
+            is_dst: false,
+            name:   "TAHT",
         }),
     ]},
 };

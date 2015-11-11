@@ -5,143 +5,176 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Africa/Tripoli",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 3164,  // UTC offset 3164, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-1577926364, ZoneDetails {
+        (-1577926364, FixedTimespan {  // 1919-11-31T23-07-16 UTC
             offset: 3600,  // UTC offset 3600, DST offset 0
-            name: "CET",
+            is_dst: false,
+            name:   "CET",
         }),
-        (-574902000, ZoneDetails {
+        (-574902000, FixedTimespan {  // 1951-09-14T1-00-00 UTC
             offset: 7200,  // UTC offset 3600, DST offset 3600
-            name: "CEST",
+            is_dst: true,
+            name:   "CEST",
         }),
-        (-568087200, ZoneDetails {
+        (-568087200, FixedTimespan {  // 1951-11-31T22-00-00 UTC
             offset: 3600,  // UTC offset 3600, DST offset 0
-            name: "CET",
+            is_dst: false,
+            name:   "CET",
         }),
-        (-512175600, ZoneDetails {
+        (-512175600, FixedTimespan {  // 1953-09-09T1-00-00 UTC
             offset: 7200,  // UTC offset 3600, DST offset 3600
-            name: "CEST",
+            is_dst: true,
+            name:   "CEST",
         }),
-        (-504928800, ZoneDetails {
+        (-504928800, FixedTimespan {  // 1953-11-31T22-00-00 UTC
             offset: 3600,  // UTC offset 3600, DST offset 0
-            name: "CET",
+            is_dst: false,
+            name:   "CET",
         }),
-        (-449888400, ZoneDetails {
+        (-449888400, FixedTimespan {  // 1955-08-29T23-00-00 UTC
             offset: 7200,  // UTC offset 3600, DST offset 3600
-            name: "CEST",
+            is_dst: true,
+            name:   "CEST",
         }),
-        (-441856800, ZoneDetails {
+        (-441856800, FixedTimespan {  // 1955-11-31T22-00-00 UTC
             offset: 3600,  // UTC offset 3600, DST offset 0
-            name: "CET",
+            is_dst: false,
+            name:   "CET",
         }),
-        (-347158800, ZoneDetails {
+        (-347158800, FixedTimespan {  // 1958-11-31T23-00-00 UTC
             offset: 7200,  // UTC offset 7200, DST offset 0
-            name: "EET",
+            is_dst: false,
+            name:   "EET",
         }),
-        (378684000, ZoneDetails {
+        (378684000, FixedTimespan {  // 1981-11-31T22-00-00 UTC
             offset: 3600,  // UTC offset 3600, DST offset 0
-            name: "CET",
+            is_dst: false,
+            name:   "CET",
         }),
-        (386463600, ZoneDetails {
+        (386463600, FixedTimespan {  // 1982-02-31T23-00-00 UTC
             offset: 7200,  // UTC offset 3600, DST offset 3600
-            name: "CEST",
+            is_dst: true,
+            name:   "CEST",
         }),
-        (402271200, ZoneDetails {
+        (402271200, FixedTimespan {  // 1982-08-30T22-00-00 UTC
             offset: 3600,  // UTC offset 3600, DST offset 0
-            name: "CET",
+            is_dst: false,
+            name:   "CET",
         }),
-        (417999600, ZoneDetails {
+        (417999600, FixedTimespan {  // 1983-02-31T23-00-00 UTC
             offset: 7200,  // UTC offset 3600, DST offset 3600
-            name: "CEST",
+            is_dst: true,
+            name:   "CEST",
         }),
-        (433807200, ZoneDetails {
+        (433807200, FixedTimespan {  // 1983-08-30T22-00-00 UTC
             offset: 3600,  // UTC offset 3600, DST offset 0
-            name: "CET",
+            is_dst: false,
+            name:   "CET",
         }),
-        (449622000, ZoneDetails {
+        (449622000, FixedTimespan {  // 1984-02-31T23-00-00 UTC
             offset: 7200,  // UTC offset 3600, DST offset 3600
-            name: "CEST",
+            is_dst: true,
+            name:   "CEST",
         }),
-        (465429600, ZoneDetails {
+        (465429600, FixedTimespan {  // 1984-08-30T22-00-00 UTC
             offset: 3600,  // UTC offset 3600, DST offset 0
-            name: "CET",
+            is_dst: false,
+            name:   "CET",
         }),
-        (481590000, ZoneDetails {
+        (481590000, FixedTimespan {  // 1985-03-05T23-00-00 UTC
             offset: 7200,  // UTC offset 3600, DST offset 3600
-            name: "CEST",
+            is_dst: true,
+            name:   "CEST",
         }),
-        (496965600, ZoneDetails {
+        (496965600, FixedTimespan {  // 1985-08-30T22-00-00 UTC
             offset: 3600,  // UTC offset 3600, DST offset 0
-            name: "CET",
+            is_dst: false,
+            name:   "CET",
         }),
-        (512953200, ZoneDetails {
+        (512953200, FixedTimespan {  // 1986-03-03T23-00-00 UTC
             offset: 7200,  // UTC offset 3600, DST offset 3600
-            name: "CEST",
+            is_dst: true,
+            name:   "CEST",
         }),
-        (528674400, ZoneDetails {
+        (528674400, FixedTimespan {  // 1986-09-02T22-00-00 UTC
             offset: 3600,  // UTC offset 3600, DST offset 0
-            name: "CET",
+            is_dst: false,
+            name:   "CET",
         }),
-        (544230000, ZoneDetails {
+        (544230000, FixedTimespan {  // 1987-02-31T23-00-00 UTC
             offset: 7200,  // UTC offset 3600, DST offset 3600
-            name: "CEST",
+            is_dst: true,
+            name:   "CEST",
         }),
-        (560037600, ZoneDetails {
+        (560037600, FixedTimespan {  // 1987-08-30T22-00-00 UTC
             offset: 3600,  // UTC offset 3600, DST offset 0
-            name: "CET",
+            is_dst: false,
+            name:   "CET",
         }),
-        (575852400, ZoneDetails {
+        (575852400, FixedTimespan {  // 1988-02-31T23-00-00 UTC
             offset: 7200,  // UTC offset 3600, DST offset 3600
-            name: "CEST",
+            is_dst: true,
+            name:   "CEST",
         }),
-        (591660000, ZoneDetails {
+        (591660000, FixedTimespan {  // 1988-08-30T22-00-00 UTC
             offset: 3600,  // UTC offset 3600, DST offset 0
-            name: "CET",
+            is_dst: false,
+            name:   "CET",
         }),
-        (607388400, ZoneDetails {
+        (607388400, FixedTimespan {  // 1989-02-31T23-00-00 UTC
             offset: 7200,  // UTC offset 3600, DST offset 3600
-            name: "CEST",
+            is_dst: true,
+            name:   "CEST",
         }),
-        (623196000, ZoneDetails {
+        (623196000, FixedTimespan {  // 1989-08-30T22-00-00 UTC
             offset: 3600,  // UTC offset 3600, DST offset 0
-            name: "CET",
+            is_dst: false,
+            name:   "CET",
         }),
-        (641775600, ZoneDetails {
+        (641775600, FixedTimespan {  // 1990-04-03T23-00-00 UTC
             offset: 7200,  // UTC offset 7200, DST offset 0
-            name: "EET",
+            is_dst: false,
+            name:   "EET",
         }),
-        (844034400, ZoneDetails {
+        (844034400, FixedTimespan {  // 1996-08-29T22-00-00 UTC
             offset: 3600,  // UTC offset 3600, DST offset 0
-            name: "CET",
+            is_dst: false,
+            name:   "CET",
         }),
-        (860108400, ZoneDetails {
+        (860108400, FixedTimespan {  // 1997-03-03T23-00-00 UTC
             offset: 7200,  // UTC offset 3600, DST offset 3600
-            name: "CEST",
+            is_dst: true,
+            name:   "CEST",
         }),
-        (875916000, ZoneDetails {
+        (875916000, FixedTimespan {  // 1997-09-03T22-00-00 UTC
             offset: 7200,  // UTC offset 7200, DST offset 0
-            name: "EET",
+            is_dst: false,
+            name:   "EET",
         }),
-        (1352505600, ZoneDetails {
+        (1352505600, FixedTimespan {  // 2012-10-10T0-00-00 UTC
             offset: 3600,  // UTC offset 3600, DST offset 0
-            name: "CET",
+            is_dst: false,
+            name:   "CET",
         }),
-        (1364515200, ZoneDetails {
+        (1364515200, FixedTimespan {  // 2013-02-29T0-00-00 UTC
             offset: 7200,  // UTC offset 3600, DST offset 3600
-            name: "CEST",
+            is_dst: true,
+            name:   "CEST",
         }),
-        (1382659200, ZoneDetails {
+        (1382659200, FixedTimespan {  // 2013-09-25T0-00-00 UTC
             offset: 7200,  // UTC offset 7200, DST offset 0
-            name: "EET",
+            is_dst: false,
+            name:   "EET",
         }),
     ]},
 };

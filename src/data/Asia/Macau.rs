@@ -5,183 +5,226 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Asia/Macau",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 27260,  // UTC offset 27260, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-1830411260, ZoneDetails {
+        (-1830411260, FixedTimespan {  // 1911-11-31T16-25-40 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "MOT",
+            is_dst: false,
+            name:   "MOT",
         }),
-        (-277360200, ZoneDetails {
+        (-277360200, FixedTimespan {  // 1961-02-18T19-30-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "MOST",
+            is_dst: true,
+            name:   "MOST",
         }),
-        (-257405400, ZoneDetails {
+        (-257405400, FixedTimespan {  // 1961-10-04T18-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "MOT",
+            is_dst: false,
+            name:   "MOT",
         }),
-        (-245910600, ZoneDetails {
+        (-245910600, FixedTimespan {  // 1962-02-17T19-30-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "MOST",
+            is_dst: true,
+            name:   "MOST",
         }),
-        (-225955800, ZoneDetails {
+        (-225955800, FixedTimespan {  // 1962-10-03T18-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "MOT",
+            is_dst: false,
+            name:   "MOT",
         }),
-        (-214473600, ZoneDetails {
+        (-214473600, FixedTimespan {  // 1963-02-16T16-00-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "MOST",
+            is_dst: true,
+            name:   "MOST",
         }),
-        (-194506200, ZoneDetails {
+        (-194506200, FixedTimespan {  // 1963-10-02T18-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "MOT",
+            is_dst: false,
+            name:   "MOT",
         }),
-        (-182406600, ZoneDetails {
+        (-182406600, FixedTimespan {  // 1964-02-21T19-30-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "MOST",
+            is_dst: true,
+            name:   "MOST",
         }),
-        (-163056600, ZoneDetails {
+        (-163056600, FixedTimespan {  // 1964-09-31T18-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "MOT",
+            is_dst: false,
+            name:   "MOT",
         }),
-        (-150969600, ZoneDetails {
+        (-150969600, FixedTimespan {  // 1965-02-20T16-00-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "MOST",
+            is_dst: true,
+            name:   "MOST",
         }),
-        (-131619600, ZoneDetails {
+        (-131619600, FixedTimespan {  // 1965-09-30T15-00-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "MOT",
+            is_dst: false,
+            name:   "MOT",
         }),
-        (-117088200, ZoneDetails {
+        (-117088200, FixedTimespan {  // 1966-03-16T19-30-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "MOST",
+            is_dst: true,
+            name:   "MOST",
         }),
-        (-101367000, ZoneDetails {
+        (-101367000, FixedTimespan {  // 1966-09-15T18-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "MOT",
+            is_dst: false,
+            name:   "MOT",
         }),
-        (-85638600, ZoneDetails {
+        (-85638600, FixedTimespan {  // 1967-03-15T19-30-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "MOST",
+            is_dst: true,
+            name:   "MOST",
         }),
-        (-69312600, ZoneDetails {
+        (-69312600, FixedTimespan {  // 1967-09-21T18-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "MOT",
+            is_dst: false,
+            name:   "MOT",
         }),
-        (-53584200, ZoneDetails {
+        (-53584200, FixedTimespan {  // 1968-03-20T19-30-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "MOST",
+            is_dst: true,
+            name:   "MOST",
         }),
-        (-37863000, ZoneDetails {
+        (-37863000, FixedTimespan {  // 1968-09-19T18-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "MOT",
+            is_dst: false,
+            name:   "MOT",
         }),
-        (-22134600, ZoneDetails {
+        (-22134600, FixedTimespan {  // 1969-03-19T19-30-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "MOST",
+            is_dst: true,
+            name:   "MOST",
         }),
-        (-6413400, ZoneDetails {
+        (-6413400, FixedTimespan {  // 1969-09-18T18-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "MOT",
+            is_dst: false,
+            name:   "MOT",
         }),
-        (9315000, ZoneDetails {
+        (9315000, FixedTimespan {  // 1970-03-18T19-30-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "MOST",
+            is_dst: true,
+            name:   "MOST",
         }),
-        (25036200, ZoneDetails {
+        (25036200, FixedTimespan {  // 1970-09-17T18-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "MOT",
+            is_dst: false,
+            name:   "MOT",
         }),
-        (40764600, ZoneDetails {
+        (40764600, FixedTimespan {  // 1971-03-17T19-30-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "MOST",
+            is_dst: true,
+            name:   "MOST",
         }),
-        (56485800, ZoneDetails {
+        (56485800, FixedTimespan {  // 1971-09-16T18-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "MOT",
+            is_dst: false,
+            name:   "MOT",
         }),
-        (72201600, ZoneDetails {
+        (72201600, FixedTimespan {  // 1972-03-15T16-00-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "MOST",
+            is_dst: true,
+            name:   "MOST",
         }),
-        (87922800, ZoneDetails {
+        (87922800, FixedTimespan {  // 1972-09-14T15-00-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "MOT",
+            is_dst: false,
+            name:   "MOT",
         }),
-        (103651200, ZoneDetails {
+        (103651200, FixedTimespan {  // 1973-03-14T16-00-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "MOST",
+            is_dst: true,
+            name:   "MOST",
         }),
-        (119977200, ZoneDetails {
+        (119977200, FixedTimespan {  // 1973-09-20T15-00-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "MOT",
+            is_dst: false,
+            name:   "MOT",
         }),
-        (135705600, ZoneDetails {
+        (135705600, FixedTimespan {  // 1974-03-20T16-00-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "MOST",
+            is_dst: true,
+            name:   "MOST",
         }),
-        (151439400, ZoneDetails {
+        (151439400, FixedTimespan {  // 1974-09-19T18-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "MOT",
+            is_dst: false,
+            name:   "MOT",
         }),
-        (167167800, ZoneDetails {
+        (167167800, FixedTimespan {  // 1975-03-19T19-30-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "MOST",
+            is_dst: true,
+            name:   "MOST",
         }),
-        (182889000, ZoneDetails {
+        (182889000, FixedTimespan {  // 1975-09-18T18-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "MOT",
+            is_dst: false,
+            name:   "MOT",
         }),
-        (198617400, ZoneDetails {
+        (198617400, FixedTimespan {  // 1976-03-17T19-30-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "MOST",
+            is_dst: true,
+            name:   "MOST",
         }),
-        (214338600, ZoneDetails {
+        (214338600, FixedTimespan {  // 1976-09-16T18-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "MOT",
+            is_dst: false,
+            name:   "MOT",
         }),
-        (230067000, ZoneDetails {
+        (230067000, FixedTimespan {  // 1977-03-16T19-30-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "MOST",
+            is_dst: true,
+            name:   "MOST",
         }),
-        (245788200, ZoneDetails {
+        (245788200, FixedTimespan {  // 1977-09-15T18-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "MOT",
+            is_dst: false,
+            name:   "MOT",
         }),
-        (261504000, ZoneDetails {
+        (261504000, FixedTimespan {  // 1978-03-15T16-00-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "MOST",
+            is_dst: true,
+            name:   "MOST",
         }),
-        (277225200, ZoneDetails {
+        (277225200, FixedTimespan {  // 1978-09-14T15-00-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "MOT",
+            is_dst: false,
+            name:   "MOT",
         }),
-        (292953600, ZoneDetails {
+        (292953600, FixedTimespan {  // 1979-03-14T16-00-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "MOST",
+            is_dst: true,
+            name:   "MOST",
         }),
-        (309279600, ZoneDetails {
+        (309279600, FixedTimespan {  // 1979-09-20T15-00-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "MOT",
+            is_dst: false,
+            name:   "MOT",
         }),
-        (325008000, ZoneDetails {
+        (325008000, FixedTimespan {  // 1980-03-19T16-00-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "MOST",
+            is_dst: true,
+            name:   "MOST",
         }),
-        (340729200, ZoneDetails {
+        (340729200, FixedTimespan {  // 1980-09-18T15-00-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "MOT",
+            is_dst: false,
+            name:   "MOT",
         }),
-        (945619200, ZoneDetails {
+        (945619200, FixedTimespan {  // 1999-11-19T16-00-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "CST",
+            is_dst: false,
+            name:   "CST",
         }),
     ]},
 };

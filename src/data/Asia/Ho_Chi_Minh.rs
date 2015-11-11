@@ -5,51 +5,61 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Asia/Ho_Chi_Minh",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 25600,  // UTC offset 25600, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-2004073600, ZoneDetails {
+        (-2004073600, FixedTimespan {  // 1906-05-30T16-53-20 UTC
             offset: 25590,  // UTC offset 25590, DST offset 0
-            name: "PLMT",
+            is_dst: false,
+            name:   "PLMT",
         }),
-        (-1851577590, ZoneDetails {
+        (-1851577590, FixedTimespan {  // 1911-03-30T16-53-30 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "ICT",
+            is_dst: false,
+            name:   "ICT",
         }),
-        (-852105600, ZoneDetails {
+        (-852105600, FixedTimespan {  // 1942-11-31T16-00-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "IDT",
+            is_dst: false,
+            name:   "IDT",
         }),
-        (-782643600, ZoneDetails {
+        (-782643600, FixedTimespan {  // 1945-02-14T15-00-00 UTC
             offset: 32400,  // UTC offset 32400, DST offset 0
-            name: "JST",
+            is_dst: false,
+            name:   "JST",
         }),
-        (-767869200, ZoneDetails {
+        (-767869200, FixedTimespan {  // 1945-08-01T15-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "ICT",
+            is_dst: false,
+            name:   "ICT",
         }),
-        (-718095600, ZoneDetails {
+        (-718095600, FixedTimespan {  // 1947-02-31T17-00-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "IDT",
+            is_dst: false,
+            name:   "IDT",
         }),
-        (-457776000, ZoneDetails {
+        (-457776000, FixedTimespan {  // 1955-05-30T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "ICT",
+            is_dst: false,
+            name:   "ICT",
         }),
-        (-315648000, ZoneDetails {
+        (-315648000, FixedTimespan {  // 1959-11-31T16-00-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "IDT",
+            is_dst: false,
+            name:   "IDT",
         }),
-        (171820800, ZoneDetails {
+        (171820800, FixedTimespan {  // 1975-05-12T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "ICT",
+            is_dst: false,
+            name:   "ICT",
         }),
     ]},
 };

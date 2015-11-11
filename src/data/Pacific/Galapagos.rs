@@ -5,23 +5,26 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Pacific/Galapagos",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: -14496,  // UTC offset -14496, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-1230753504, ZoneDetails {
+        (-1230753504, FixedTimespan {  // 1931-00-01T4-01-36 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
-            name: "ECT",
+            is_dst: false,
+            name:   "ECT",
         }),
-        (504939600, ZoneDetails {
+        (504939600, FixedTimespan {  // 1986-00-01T5-00-00 UTC
             offset: -21600,  // UTC offset -21600, DST offset 0
-            name: "GALT",
+            is_dst: false,
+            name:   "GALT",
         }),
     ]},
 };

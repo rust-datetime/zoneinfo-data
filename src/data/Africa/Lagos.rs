@@ -5,19 +5,21 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Africa/Lagos",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 816,  // UTC offset 816, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-1588464816, ZoneDetails {
+        (-1588464816, FixedTimespan {  // 1919-07-31T23-46-24 UTC
             offset: 3600,  // UTC offset 3600, DST offset 0
-            name: "WAT",
+            is_dst: false,
+            name:   "WAT",
         }),
     ]},
 };

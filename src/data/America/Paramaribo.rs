@@ -5,35 +5,41 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "America/Paramaribo",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: -8360,  // UTC offset -8360, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-1861911640, ZoneDetails {
+        (-1861911640, FixedTimespan {  // 1911-00-01T2-19-20 UTC
             offset: -8348,  // UTC offset -8348, DST offset 0
-            name: "PMT",
+            is_dst: false,
+            name:   "PMT",
         }),
-        (-1104529252, ZoneDetails {
+        (-1104529252, FixedTimespan {  // 1935-00-01T2-19-08 UTC
             offset: -8364,  // UTC offset -8364, DST offset 0
-            name: "PMT",
+            is_dst: false,
+            name:   "PMT",
         }),
-        (-765322836, ZoneDetails {
+        (-765322836, FixedTimespan {  // 1945-09-01T2-19-24 UTC
             offset: -9000,  // UTC offset -9000, DST offset 0
-            name: "NEGT",
+            is_dst: false,
+            name:   "NEGT",
         }),
-        (185682600, ZoneDetails {
+        (185682600, FixedTimespan {  // 1975-10-20T2-30-00 UTC
             offset: -9000,  // UTC offset -9000, DST offset 0
-            name: "SRT",
+            is_dst: false,
+            name:   "SRT",
         }),
-        (465445800, ZoneDetails {
+        (465445800, FixedTimespan {  // 1984-09-01T2-30-00 UTC
             offset: -10800,  // UTC offset -10800, DST offset 0
-            name: "SRT",
+            is_dst: false,
+            name:   "SRT",
         }),
     ]},
 };

@@ -5,27 +5,31 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Africa/Ndjamena",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 3612,  // UTC offset 3612, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-1830387612, ZoneDetails {
+        (-1830387612, FixedTimespan {  // 1911-11-31T22-59-48 UTC
             offset: 3600,  // UTC offset 3600, DST offset 0
-            name: "WAT",
+            is_dst: false,
+            name:   "WAT",
         }),
-        (308703600, ZoneDetails {
+        (308703600, FixedTimespan {  // 1979-09-13T23-00-00 UTC
             offset: 7200,  // UTC offset 3600, DST offset 3600
-            name: "WAST",
+            is_dst: true,
+            name:   "WAST",
         }),
-        (321314400, ZoneDetails {
+        (321314400, FixedTimespan {  // 1980-02-07T22-00-00 UTC
             offset: 3600,  // UTC offset 3600, DST offset 0
-            name: "WAT",
+            is_dst: false,
+            name:   "WAT",
         }),
     ]},
 };

@@ -5,19 +5,21 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Antarctica/Syowa",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 0,  // UTC offset 0, DST offset 0
-            name: "zzz",
+            is_dst: false,
+            name:   "zzz",
         },
         rest: &[
-        (-407808000, ZoneDetails {
+        (-407808000, FixedTimespan {  // 1957-00-29T0-00-00 UTC
             offset: 10800,  // UTC offset 10800, DST offset 0
-            name: "SYOT",
+            is_dst: false,
+            name:   "SYOT",
         }),
     ]},
 };

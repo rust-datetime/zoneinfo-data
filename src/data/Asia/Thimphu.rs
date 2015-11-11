@@ -5,23 +5,26 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Asia/Thimphu",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 21516,  // UTC offset 21516, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-706341516, ZoneDetails {
+        (-706341516, FixedTimespan {  // 1947-07-14T18-01-24 UTC
             offset: 19800,  // UTC offset 19800, DST offset 0
-            name: "IST",
+            is_dst: false,
+            name:   "IST",
         }),
-        (560025000, ZoneDetails {
+        (560025000, FixedTimespan {  // 1987-08-30T18-30-00 UTC
             offset: 21600,  // UTC offset 21600, DST offset 0
-            name: "BTT",
+            is_dst: false,
+            name:   "BTT",
         }),
     ]},
 };

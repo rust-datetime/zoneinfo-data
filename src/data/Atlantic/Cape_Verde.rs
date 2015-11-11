@@ -5,31 +5,36 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Atlantic/Cape_Verde",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: -1556,  // UTC offset -1556, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-1988148844, ZoneDetails {
+        (-1988148844, FixedTimespan {  // 1907-00-01T0-25-56 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "CVT",
+            is_dst: false,
+            name:   "CVT",
         }),
-        (-862610400, ZoneDetails {
+        (-862610400, FixedTimespan {  // 1942-08-01T2-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
-            name: "CVST",
+            is_dst: true,
+            name:   "CVST",
         }),
-        (-764118000, ZoneDetails {
+        (-764118000, FixedTimespan {  // 1945-09-15T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
-            name: "CVT",
+            is_dst: false,
+            name:   "CVT",
         }),
-        (186120000, ZoneDetails {
+        (186120000, FixedTimespan {  // 1975-10-25T4-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
-            name: "CVT",
+            is_dst: false,
+            name:   "CVT",
         }),
     ]},
 };

@@ -5,39 +5,46 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "America/Blanc-Sablon",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: -7892,  // UTC offset -7892, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-2713902508, ZoneDetails {
+        (-2713902508, FixedTimespan {  // 1884-00-01T2-11-32 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "AST",
+            is_dst: false,
+            name:   "AST",
         }),
-        (-1632074400, ZoneDetails {
+        (-1632074400, FixedTimespan {  // 1918-03-14T6-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "ADT",
+            is_dst: true,
+            name:   "ADT",
         }),
-        (-1615143600, ZoneDetails {
+        (-1615143600, FixedTimespan {  // 1918-09-27T5-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "AST",
+            is_dst: false,
+            name:   "AST",
         }),
-        (-880221600, ZoneDetails {
+        (-880221600, FixedTimespan {  // 1942-01-09T6-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "AWT",
+            is_dst: true,
+            name:   "AWT",
         }),
-        (-769395600, ZoneDetails {
+        (-769395600, FixedTimespan {  // 1945-07-14T23-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "APT",
+            is_dst: true,
+            name:   "APT",
         }),
-        (-765399600, ZoneDetails {
+        (-765399600, FixedTimespan {  // 1945-08-30T5-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "AST",
+            is_dst: false,
+            name:   "AST",
         }),
     ]},
 };

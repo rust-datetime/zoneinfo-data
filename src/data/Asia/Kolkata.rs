@@ -5,35 +5,41 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Asia/Kolkata",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 21208,  // UTC offset 21208, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-2840162008, ZoneDetails {
+        (-2840162008, FixedTimespan {  // 1879-11-31T18-06-32 UTC
             offset: 21200,  // UTC offset 21200, DST offset 0
-            name: "HMT",
+            is_dst: false,
+            name:   "HMT",
         }),
-        (-891582800, ZoneDetails {
+        (-891582800, FixedTimespan {  // 1941-08-30T18-06-40 UTC
             offset: 23400,  // UTC offset 23400, DST offset 0
-            name: "BURT",
+            is_dst: false,
+            name:   "BURT",
         }),
-        (-872058600, ZoneDetails {
+        (-872058600, FixedTimespan {  // 1942-04-14T17-30-00 UTC
             offset: 19800,  // UTC offset 19800, DST offset 0
-            name: "IST",
+            is_dst: false,
+            name:   "IST",
         }),
-        (-862637400, ZoneDetails {
+        (-862637400, FixedTimespan {  // 1942-07-31T18-30-00 UTC
             offset: 23400,  // UTC offset 19800, DST offset 3600
-            name: "IST",
+            is_dst: true,
+            name:   "IST",
         }),
-        (-764145000, ZoneDetails {
+        (-764145000, FixedTimespan {  // 1945-09-14T17-30-00 UTC
             offset: 19800,  // UTC offset 19800, DST offset 0
-            name: "IST",
+            is_dst: false,
+            name:   "IST",
         }),
     ]},
 };

@@ -5,23 +5,26 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Antarctica/Mawson",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 0,  // UTC offset 0, DST offset 0
-            name: "zzz",
+            is_dst: false,
+            name:   "zzz",
         },
         rest: &[
-        (-501206400, ZoneDetails {
+        (-501206400, FixedTimespan {  // 1954-01-13T0-00-00 UTC
             offset: 21600,  // UTC offset 21600, DST offset 0
-            name: "MAWT",
+            is_dst: false,
+            name:   "MAWT",
         }),
-        (1255809600, ZoneDetails {
+        (1255809600, FixedTimespan {  // 2009-09-17T20-00-00 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
-            name: "MAWT",
+            is_dst: false,
+            name:   "MAWT",
         }),
     ]},
 };

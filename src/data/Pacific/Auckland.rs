@@ -5,1135 +5,1416 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Pacific/Auckland",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 41944,  // UTC offset 41944, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-3192435544, ZoneDetails {
+        (-3192435544, FixedTimespan {  // 1868-10-01T12-20-56 UTC
             offset: 41400,  // UTC offset 41400, DST offset 0
-            name: "NZMT",
+            is_dst: false,
+            name:   "NZMT",
         }),
-        (-1330335000, ZoneDetails {
+        (-1330335000, FixedTimespan {  // 1927-10-05T14-30-00 UTC
             offset: 45000,  // UTC offset 41400, DST offset 3600
-            name: "NZST",
+            is_dst: true,
+            name:   "NZST",
         }),
-        (-1320057000, ZoneDetails {
+        (-1320057000, FixedTimespan {  // 1928-02-03T13-30-00 UTC
             offset: 41400,  // UTC offset 41400, DST offset 0
-            name: "NZMT",
+            is_dst: false,
+            name:   "NZMT",
         }),
-        (-1300699800, ZoneDetails {
+        (-1300699800, FixedTimespan {  // 1928-09-13T14-30-00 UTC
             offset: 43200,  // UTC offset 41400, DST offset 1800
-            name: "NZST",
+            is_dst: true,
+            name:   "NZST",
         }),
-        (-1287396000, ZoneDetails {
+        (-1287396000, FixedTimespan {  // 1929-02-16T14-00-00 UTC
             offset: 41400,  // UTC offset 41400, DST offset 0
-            name: "NZMT",
+            is_dst: false,
+            name:   "NZMT",
         }),
-        (-1269250200, ZoneDetails {
+        (-1269250200, FixedTimespan {  // 1929-09-12T14-30-00 UTC
             offset: 43200,  // UTC offset 41400, DST offset 1800
-            name: "NZST",
+            is_dst: true,
+            name:   "NZST",
         }),
-        (-1255946400, ZoneDetails {
+        (-1255946400, FixedTimespan {  // 1930-02-15T14-00-00 UTC
             offset: 41400,  // UTC offset 41400, DST offset 0
-            name: "NZMT",
+            is_dst: false,
+            name:   "NZMT",
         }),
-        (-1237800600, ZoneDetails {
+        (-1237800600, FixedTimespan {  // 1930-09-11T14-30-00 UTC
             offset: 43200,  // UTC offset 41400, DST offset 1800
-            name: "NZST",
+            is_dst: true,
+            name:   "NZST",
         }),
-        (-1224496800, ZoneDetails {
+        (-1224496800, FixedTimespan {  // 1931-02-14T14-00-00 UTC
             offset: 41400,  // UTC offset 41400, DST offset 0
-            name: "NZMT",
+            is_dst: false,
+            name:   "NZMT",
         }),
-        (-1206351000, ZoneDetails {
+        (-1206351000, FixedTimespan {  // 1931-09-10T14-30-00 UTC
             offset: 43200,  // UTC offset 41400, DST offset 1800
-            name: "NZST",
+            is_dst: true,
+            name:   "NZST",
         }),
-        (-1192442400, ZoneDetails {
+        (-1192442400, FixedTimespan {  // 1932-02-19T14-00-00 UTC
             offset: 41400,  // UTC offset 41400, DST offset 0
-            name: "NZMT",
+            is_dst: false,
+            name:   "NZMT",
         }),
-        (-1174901400, ZoneDetails {
+        (-1174901400, FixedTimespan {  // 1932-09-08T14-30-00 UTC
             offset: 43200,  // UTC offset 41400, DST offset 1800
-            name: "NZST",
+            is_dst: true,
+            name:   "NZST",
         }),
-        (-1160992800, ZoneDetails {
+        (-1160992800, FixedTimespan {  // 1933-02-18T14-00-00 UTC
             offset: 41400,  // UTC offset 41400, DST offset 0
-            name: "NZMT",
+            is_dst: false,
+            name:   "NZMT",
         }),
-        (-1143451800, ZoneDetails {
+        (-1143451800, FixedTimespan {  // 1933-09-07T14-30-00 UTC
             offset: 43200,  // UTC offset 41400, DST offset 1800
-            name: "NZST",
+            is_dst: true,
+            name:   "NZST",
         }),
-        (-1125914400, ZoneDetails {
+        (-1125914400, FixedTimespan {  // 1934-03-28T14-00-00 UTC
             offset: 41400,  // UTC offset 41400, DST offset 0
-            name: "NZMT",
+            is_dst: false,
+            name:   "NZMT",
         }),
-        (-1112607000, ZoneDetails {
+        (-1112607000, FixedTimespan {  // 1934-08-29T14-30-00 UTC
             offset: 43200,  // UTC offset 41400, DST offset 1800
-            name: "NZST",
+            is_dst: true,
+            name:   "NZST",
         }),
-        (-1094464800, ZoneDetails {
+        (-1094464800, FixedTimespan {  // 1935-03-27T14-00-00 UTC
             offset: 41400,  // UTC offset 41400, DST offset 0
-            name: "NZMT",
+            is_dst: false,
+            name:   "NZMT",
         }),
-        (-1081157400, ZoneDetails {
+        (-1081157400, FixedTimespan {  // 1935-08-28T14-30-00 UTC
             offset: 43200,  // UTC offset 41400, DST offset 1800
-            name: "NZST",
+            is_dst: true,
+            name:   "NZST",
         }),
-        (-1063015200, ZoneDetails {
+        (-1063015200, FixedTimespan {  // 1936-03-25T14-00-00 UTC
             offset: 41400,  // UTC offset 41400, DST offset 0
-            name: "NZMT",
+            is_dst: false,
+            name:   "NZMT",
         }),
-        (-1049707800, ZoneDetails {
+        (-1049707800, FixedTimespan {  // 1936-08-26T14-30-00 UTC
             offset: 43200,  // UTC offset 41400, DST offset 1800
-            name: "NZST",
+            is_dst: true,
+            name:   "NZST",
         }),
-        (-1031565600, ZoneDetails {
+        (-1031565600, FixedTimespan {  // 1937-03-24T14-00-00 UTC
             offset: 41400,  // UTC offset 41400, DST offset 0
-            name: "NZMT",
+            is_dst: false,
+            name:   "NZMT",
         }),
-        (-1018258200, ZoneDetails {
+        (-1018258200, FixedTimespan {  // 1937-08-25T14-30-00 UTC
             offset: 43200,  // UTC offset 41400, DST offset 1800
-            name: "NZST",
+            is_dst: true,
+            name:   "NZST",
         }),
-        (-1000116000, ZoneDetails {
+        (-1000116000, FixedTimespan {  // 1938-03-23T14-00-00 UTC
             offset: 41400,  // UTC offset 41400, DST offset 0
-            name: "NZMT",
+            is_dst: false,
+            name:   "NZMT",
         }),
-        (-986808600, ZoneDetails {
+        (-986808600, FixedTimespan {  // 1938-08-24T14-30-00 UTC
             offset: 43200,  // UTC offset 41400, DST offset 1800
-            name: "NZST",
+            is_dst: true,
+            name:   "NZST",
         }),
-        (-968061600, ZoneDetails {
+        (-968061600, FixedTimespan {  // 1939-03-29T14-00-00 UTC
             offset: 41400,  // UTC offset 41400, DST offset 0
-            name: "NZMT",
+            is_dst: false,
+            name:   "NZMT",
         }),
-        (-955359000, ZoneDetails {
+        (-955359000, FixedTimespan {  // 1939-08-23T14-30-00 UTC
             offset: 43200,  // UTC offset 41400, DST offset 1800
-            name: "NZST",
+            is_dst: true,
+            name:   "NZST",
         }),
-        (-936612000, ZoneDetails {
+        (-936612000, FixedTimespan {  // 1940-03-27T14-00-00 UTC
             offset: 41400,  // UTC offset 41400, DST offset 0
-            name: "NZMT",
+            is_dst: false,
+            name:   "NZMT",
         }),
-        (-923304600, ZoneDetails {
+        (-923304600, FixedTimespan {  // 1940-08-28T14-30-00 UTC
             offset: 43200,  // UTC offset 41400, DST offset 1800
-            name: "NZST",
+            is_dst: true,
+            name:   "NZST",
         }),
-        (-757425600, ZoneDetails {
+        (-757425600, FixedTimespan {  // 1945-11-31T12-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (152632800, ZoneDetails {
+        (152632800, FixedTimespan {  // 1974-10-02T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (162309600, ZoneDetails {
+        (162309600, FixedTimespan {  // 1975-01-22T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (183477600, ZoneDetails {
+        (183477600, FixedTimespan {  // 1975-09-25T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (194968800, ZoneDetails {
+        (194968800, FixedTimespan {  // 1976-02-06T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (215532000, ZoneDetails {
+        (215532000, FixedTimespan {  // 1976-09-30T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (226418400, ZoneDetails {
+        (226418400, FixedTimespan {  // 1977-02-05T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (246981600, ZoneDetails {
+        (246981600, FixedTimespan {  // 1977-09-29T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (257868000, ZoneDetails {
+        (257868000, FixedTimespan {  // 1978-02-04T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (278431200, ZoneDetails {
+        (278431200, FixedTimespan {  // 1978-09-28T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (289317600, ZoneDetails {
+        (289317600, FixedTimespan {  // 1979-02-03T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (309880800, ZoneDetails {
+        (309880800, FixedTimespan {  // 1979-09-27T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (320767200, ZoneDetails {
+        (320767200, FixedTimespan {  // 1980-02-01T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (341330400, ZoneDetails {
+        (341330400, FixedTimespan {  // 1980-09-25T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (352216800, ZoneDetails {
+        (352216800, FixedTimespan {  // 1981-01-28T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (372780000, ZoneDetails {
+        (372780000, FixedTimespan {  // 1981-09-24T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (384271200, ZoneDetails {
+        (384271200, FixedTimespan {  // 1982-02-06T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (404834400, ZoneDetails {
+        (404834400, FixedTimespan {  // 1982-09-30T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (415720800, ZoneDetails {
+        (415720800, FixedTimespan {  // 1983-02-05T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (436284000, ZoneDetails {
+        (436284000, FixedTimespan {  // 1983-09-29T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (447170400, ZoneDetails {
+        (447170400, FixedTimespan {  // 1984-02-03T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (467733600, ZoneDetails {
+        (467733600, FixedTimespan {  // 1984-09-27T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (478620000, ZoneDetails {
+        (478620000, FixedTimespan {  // 1985-02-02T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (499183200, ZoneDetails {
+        (499183200, FixedTimespan {  // 1985-09-26T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (510069600, ZoneDetails {
+        (510069600, FixedTimespan {  // 1986-02-01T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (530632800, ZoneDetails {
+        (530632800, FixedTimespan {  // 1986-09-25T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (541519200, ZoneDetails {
+        (541519200, FixedTimespan {  // 1987-01-28T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (562082400, ZoneDetails {
+        (562082400, FixedTimespan {  // 1987-09-24T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (573573600, ZoneDetails {
+        (573573600, FixedTimespan {  // 1988-02-05T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (594136800, ZoneDetails {
+        (594136800, FixedTimespan {  // 1988-09-29T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (605023200, ZoneDetails {
+        (605023200, FixedTimespan {  // 1989-02-04T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (623772000, ZoneDetails {
+        (623772000, FixedTimespan {  // 1989-09-07T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (637682400, ZoneDetails {
+        (637682400, FixedTimespan {  // 1990-02-17T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (655221600, ZoneDetails {
+        (655221600, FixedTimespan {  // 1990-09-06T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (669132000, ZoneDetails {
+        (669132000, FixedTimespan {  // 1991-02-16T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (686671200, ZoneDetails {
+        (686671200, FixedTimespan {  // 1991-09-05T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (700581600, ZoneDetails {
+        (700581600, FixedTimespan {  // 1992-02-14T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (718120800, ZoneDetails {
+        (718120800, FixedTimespan {  // 1992-09-03T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (732636000, ZoneDetails {
+        (732636000, FixedTimespan {  // 1993-02-20T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (749570400, ZoneDetails {
+        (749570400, FixedTimespan {  // 1993-09-02T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (764085600, ZoneDetails {
+        (764085600, FixedTimespan {  // 1994-02-19T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (781020000, ZoneDetails {
+        (781020000, FixedTimespan {  // 1994-09-01T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (795535200, ZoneDetails {
+        (795535200, FixedTimespan {  // 1995-02-18T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (812469600, ZoneDetails {
+        (812469600, FixedTimespan {  // 1995-08-30T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (826984800, ZoneDetails {
+        (826984800, FixedTimespan {  // 1996-02-16T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (844524000, ZoneDetails {
+        (844524000, FixedTimespan {  // 1996-09-05T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (858434400, ZoneDetails {
+        (858434400, FixedTimespan {  // 1997-02-15T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (875973600, ZoneDetails {
+        (875973600, FixedTimespan {  // 1997-09-04T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (889884000, ZoneDetails {
+        (889884000, FixedTimespan {  // 1998-02-14T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (907423200, ZoneDetails {
+        (907423200, FixedTimespan {  // 1998-09-03T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (921938400, ZoneDetails {
+        (921938400, FixedTimespan {  // 1999-02-20T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (938872800, ZoneDetails {
+        (938872800, FixedTimespan {  // 1999-09-02T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (953388000, ZoneDetails {
+        (953388000, FixedTimespan {  // 2000-02-18T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (970322400, ZoneDetails {
+        (970322400, FixedTimespan {  // 2000-08-30T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (984837600, ZoneDetails {
+        (984837600, FixedTimespan {  // 2001-02-17T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (1002376800, ZoneDetails {
+        (1002376800, FixedTimespan {  // 2001-09-06T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (1016287200, ZoneDetails {
+        (1016287200, FixedTimespan {  // 2002-02-16T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (1033826400, ZoneDetails {
+        (1033826400, FixedTimespan {  // 2002-09-05T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (1047736800, ZoneDetails {
+        (1047736800, FixedTimespan {  // 2003-02-15T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (1065276000, ZoneDetails {
+        (1065276000, FixedTimespan {  // 2003-09-04T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (1079791200, ZoneDetails {
+        (1079791200, FixedTimespan {  // 2004-02-20T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (1096725600, ZoneDetails {
+        (1096725600, FixedTimespan {  // 2004-09-02T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (1111240800, ZoneDetails {
+        (1111240800, FixedTimespan {  // 2005-02-19T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (1128175200, ZoneDetails {
+        (1128175200, FixedTimespan {  // 2005-09-01T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (1142690400, ZoneDetails {
+        (1142690400, FixedTimespan {  // 2006-02-18T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (1159624800, ZoneDetails {
+        (1159624800, FixedTimespan {  // 2006-08-30T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (1174140000, ZoneDetails {
+        (1174140000, FixedTimespan {  // 2007-02-17T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (1191074400, ZoneDetails {
+        (1191074400, FixedTimespan {  // 2007-08-29T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (1207404000, ZoneDetails {
+        (1207404000, FixedTimespan {  // 2008-03-05T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (1222524000, ZoneDetails {
+        (1222524000, FixedTimespan {  // 2008-08-27T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (1238853600, ZoneDetails {
+        (1238853600, FixedTimespan {  // 2009-03-04T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (1253973600, ZoneDetails {
+        (1253973600, FixedTimespan {  // 2009-08-26T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (1270303200, ZoneDetails {
+        (1270303200, FixedTimespan {  // 2010-03-03T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (1285423200, ZoneDetails {
+        (1285423200, FixedTimespan {  // 2010-08-25T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (1301752800, ZoneDetails {
+        (1301752800, FixedTimespan {  // 2011-03-02T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (1316872800, ZoneDetails {
+        (1316872800, FixedTimespan {  // 2011-08-24T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (1333202400, ZoneDetails {
+        (1333202400, FixedTimespan {  // 2012-02-31T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (1348927200, ZoneDetails {
+        (1348927200, FixedTimespan {  // 2012-08-29T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (1365256800, ZoneDetails {
+        (1365256800, FixedTimespan {  // 2013-03-06T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (1380376800, ZoneDetails {
+        (1380376800, FixedTimespan {  // 2013-08-28T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (1396706400, ZoneDetails {
+        (1396706400, FixedTimespan {  // 2014-03-05T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (1411826400, ZoneDetails {
+        (1411826400, FixedTimespan {  // 2014-08-27T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (1428156000, ZoneDetails {
+        (1428156000, FixedTimespan {  // 2015-03-04T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (1443276000, ZoneDetails {
+        (1443276000, FixedTimespan {  // 2015-08-26T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (1459605600, ZoneDetails {
+        (1459605600, FixedTimespan {  // 2016-03-02T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (1474725600, ZoneDetails {
+        (1474725600, FixedTimespan {  // 2016-08-24T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (1491055200, ZoneDetails {
+        (1491055200, FixedTimespan {  // 2017-03-01T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (1506175200, ZoneDetails {
+        (1506175200, FixedTimespan {  // 2017-08-23T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (1522504800, ZoneDetails {
+        (1522504800, FixedTimespan {  // 2018-02-31T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (1538229600, ZoneDetails {
+        (1538229600, FixedTimespan {  // 2018-08-29T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (1554559200, ZoneDetails {
+        (1554559200, FixedTimespan {  // 2019-03-06T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (1569679200, ZoneDetails {
+        (1569679200, FixedTimespan {  // 2019-08-28T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (1586008800, ZoneDetails {
+        (1586008800, FixedTimespan {  // 2020-03-04T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (1601128800, ZoneDetails {
+        (1601128800, FixedTimespan {  // 2020-08-26T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (1617458400, ZoneDetails {
+        (1617458400, FixedTimespan {  // 2021-03-03T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (1632578400, ZoneDetails {
+        (1632578400, FixedTimespan {  // 2021-08-25T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (1648908000, ZoneDetails {
+        (1648908000, FixedTimespan {  // 2022-03-02T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (1664028000, ZoneDetails {
+        (1664028000, FixedTimespan {  // 2022-08-24T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (1680357600, ZoneDetails {
+        (1680357600, FixedTimespan {  // 2023-03-01T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (1695477600, ZoneDetails {
+        (1695477600, FixedTimespan {  // 2023-08-23T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (1712412000, ZoneDetails {
+        (1712412000, FixedTimespan {  // 2024-03-06T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (1727532000, ZoneDetails {
+        (1727532000, FixedTimespan {  // 2024-08-28T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (1743861600, ZoneDetails {
+        (1743861600, FixedTimespan {  // 2025-03-05T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (1758981600, ZoneDetails {
+        (1758981600, FixedTimespan {  // 2025-08-27T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (1775311200, ZoneDetails {
+        (1775311200, FixedTimespan {  // 2026-03-04T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (1790431200, ZoneDetails {
+        (1790431200, FixedTimespan {  // 2026-08-26T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (1806760800, ZoneDetails {
+        (1806760800, FixedTimespan {  // 2027-03-03T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (1821880800, ZoneDetails {
+        (1821880800, FixedTimespan {  // 2027-08-25T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (1838210400, ZoneDetails {
+        (1838210400, FixedTimespan {  // 2028-03-01T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (1853330400, ZoneDetails {
+        (1853330400, FixedTimespan {  // 2028-08-23T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (1869660000, ZoneDetails {
+        (1869660000, FixedTimespan {  // 2029-02-31T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (1885384800, ZoneDetails {
+        (1885384800, FixedTimespan {  // 2029-08-29T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (1901714400, ZoneDetails {
+        (1901714400, FixedTimespan {  // 2030-03-06T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (1916834400, ZoneDetails {
+        (1916834400, FixedTimespan {  // 2030-08-28T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (1933164000, ZoneDetails {
+        (1933164000, FixedTimespan {  // 2031-03-05T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (1948284000, ZoneDetails {
+        (1948284000, FixedTimespan {  // 2031-08-27T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (1964613600, ZoneDetails {
+        (1964613600, FixedTimespan {  // 2032-03-03T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (1979733600, ZoneDetails {
+        (1979733600, FixedTimespan {  // 2032-08-25T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (1996063200, ZoneDetails {
+        (1996063200, FixedTimespan {  // 2033-03-02T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (2011183200, ZoneDetails {
+        (2011183200, FixedTimespan {  // 2033-08-24T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (2027512800, ZoneDetails {
+        (2027512800, FixedTimespan {  // 2034-03-01T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (2042632800, ZoneDetails {
+        (2042632800, FixedTimespan {  // 2034-08-23T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (2058962400, ZoneDetails {
+        (2058962400, FixedTimespan {  // 2035-02-31T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (2074687200, ZoneDetails {
+        (2074687200, FixedTimespan {  // 2035-08-29T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (2091016800, ZoneDetails {
+        (2091016800, FixedTimespan {  // 2036-03-05T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (2106136800, ZoneDetails {
+        (2106136800, FixedTimespan {  // 2036-08-27T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (2122466400, ZoneDetails {
+        (2122466400, FixedTimespan {  // 2037-03-04T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (2137586400, ZoneDetails {
+        (2137586400, FixedTimespan {  // 2037-08-26T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (2153916000, ZoneDetails {
+        (2153916000, FixedTimespan {  // 2038-03-03T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (2169036000, ZoneDetails {
+        (2169036000, FixedTimespan {  // 2038-08-25T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (2185365600, ZoneDetails {
+        (2185365600, FixedTimespan {  // 2039-03-02T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (2200485600, ZoneDetails {
+        (2200485600, FixedTimespan {  // 2039-08-24T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (2216815200, ZoneDetails {
+        (2216815200, FixedTimespan {  // 2040-02-31T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (2232540000, ZoneDetails {
+        (2232540000, FixedTimespan {  // 2040-08-29T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (2248869600, ZoneDetails {
+        (2248869600, FixedTimespan {  // 2041-03-06T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (2263989600, ZoneDetails {
+        (2263989600, FixedTimespan {  // 2041-08-28T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (2280319200, ZoneDetails {
+        (2280319200, FixedTimespan {  // 2042-03-05T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (2295439200, ZoneDetails {
+        (2295439200, FixedTimespan {  // 2042-08-27T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (2311768800, ZoneDetails {
+        (2311768800, FixedTimespan {  // 2043-03-04T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (2326888800, ZoneDetails {
+        (2326888800, FixedTimespan {  // 2043-08-26T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (2343218400, ZoneDetails {
+        (2343218400, FixedTimespan {  // 2044-03-02T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (2358338400, ZoneDetails {
+        (2358338400, FixedTimespan {  // 2044-08-24T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (2374668000, ZoneDetails {
+        (2374668000, FixedTimespan {  // 2045-03-01T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (2389788000, ZoneDetails {
+        (2389788000, FixedTimespan {  // 2045-08-23T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (2406117600, ZoneDetails {
+        (2406117600, FixedTimespan {  // 2046-02-31T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (2421842400, ZoneDetails {
+        (2421842400, FixedTimespan {  // 2046-08-29T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (2438172000, ZoneDetails {
+        (2438172000, FixedTimespan {  // 2047-03-06T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (2453292000, ZoneDetails {
+        (2453292000, FixedTimespan {  // 2047-08-28T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (2469621600, ZoneDetails {
+        (2469621600, FixedTimespan {  // 2048-03-04T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (2484741600, ZoneDetails {
+        (2484741600, FixedTimespan {  // 2048-08-26T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (2501071200, ZoneDetails {
+        (2501071200, FixedTimespan {  // 2049-03-03T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (2516191200, ZoneDetails {
+        (2516191200, FixedTimespan {  // 2049-08-25T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (2532520800, ZoneDetails {
+        (2532520800, FixedTimespan {  // 2050-03-02T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (2547640800, ZoneDetails {
+        (2547640800, FixedTimespan {  // 2050-08-24T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (2563970400, ZoneDetails {
+        (2563970400, FixedTimespan {  // 2051-03-01T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (2579090400, ZoneDetails {
+        (2579090400, FixedTimespan {  // 2051-08-23T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (2596024800, ZoneDetails {
+        (2596024800, FixedTimespan {  // 2052-03-06T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (2611144800, ZoneDetails {
+        (2611144800, FixedTimespan {  // 2052-08-28T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (2627474400, ZoneDetails {
+        (2627474400, FixedTimespan {  // 2053-03-05T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (2642594400, ZoneDetails {
+        (2642594400, FixedTimespan {  // 2053-08-27T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (2658924000, ZoneDetails {
+        (2658924000, FixedTimespan {  // 2054-03-04T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (2674044000, ZoneDetails {
+        (2674044000, FixedTimespan {  // 2054-08-26T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (2690373600, ZoneDetails {
+        (2690373600, FixedTimespan {  // 2055-03-03T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (2705493600, ZoneDetails {
+        (2705493600, FixedTimespan {  // 2055-08-25T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (2721823200, ZoneDetails {
+        (2721823200, FixedTimespan {  // 2056-03-01T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (2736943200, ZoneDetails {
+        (2736943200, FixedTimespan {  // 2056-08-23T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (2753272800, ZoneDetails {
+        (2753272800, FixedTimespan {  // 2057-02-31T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (2768997600, ZoneDetails {
+        (2768997600, FixedTimespan {  // 2057-08-29T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (2785327200, ZoneDetails {
+        (2785327200, FixedTimespan {  // 2058-03-06T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (2800447200, ZoneDetails {
+        (2800447200, FixedTimespan {  // 2058-08-28T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (2816776800, ZoneDetails {
+        (2816776800, FixedTimespan {  // 2059-03-05T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (2831896800, ZoneDetails {
+        (2831896800, FixedTimespan {  // 2059-08-27T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (2848226400, ZoneDetails {
+        (2848226400, FixedTimespan {  // 2060-03-03T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (2863346400, ZoneDetails {
+        (2863346400, FixedTimespan {  // 2060-08-25T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (2879676000, ZoneDetails {
+        (2879676000, FixedTimespan {  // 2061-03-02T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (2894796000, ZoneDetails {
+        (2894796000, FixedTimespan {  // 2061-08-24T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (2911125600, ZoneDetails {
+        (2911125600, FixedTimespan {  // 2062-03-01T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (2926245600, ZoneDetails {
+        (2926245600, FixedTimespan {  // 2062-08-23T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (2942575200, ZoneDetails {
+        (2942575200, FixedTimespan {  // 2063-02-31T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (2958300000, ZoneDetails {
+        (2958300000, FixedTimespan {  // 2063-08-29T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (2974629600, ZoneDetails {
+        (2974629600, FixedTimespan {  // 2064-03-05T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (2989749600, ZoneDetails {
+        (2989749600, FixedTimespan {  // 2064-08-27T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (3006079200, ZoneDetails {
+        (3006079200, FixedTimespan {  // 2065-03-04T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (3021199200, ZoneDetails {
+        (3021199200, FixedTimespan {  // 2065-08-26T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (3037528800, ZoneDetails {
+        (3037528800, FixedTimespan {  // 2066-03-03T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (3052648800, ZoneDetails {
+        (3052648800, FixedTimespan {  // 2066-08-25T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (3068978400, ZoneDetails {
+        (3068978400, FixedTimespan {  // 2067-03-02T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (3084098400, ZoneDetails {
+        (3084098400, FixedTimespan {  // 2067-08-24T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (3100428000, ZoneDetails {
+        (3100428000, FixedTimespan {  // 2068-02-31T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (3116152800, ZoneDetails {
+        (3116152800, FixedTimespan {  // 2068-08-29T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (3132482400, ZoneDetails {
+        (3132482400, FixedTimespan {  // 2069-03-06T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (3147602400, ZoneDetails {
+        (3147602400, FixedTimespan {  // 2069-08-28T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (3163932000, ZoneDetails {
+        (3163932000, FixedTimespan {  // 2070-03-05T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (3179052000, ZoneDetails {
+        (3179052000, FixedTimespan {  // 2070-08-27T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (3195381600, ZoneDetails {
+        (3195381600, FixedTimespan {  // 2071-03-04T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (3210501600, ZoneDetails {
+        (3210501600, FixedTimespan {  // 2071-08-26T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (3226831200, ZoneDetails {
+        (3226831200, FixedTimespan {  // 2072-03-02T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (3241951200, ZoneDetails {
+        (3241951200, FixedTimespan {  // 2072-08-24T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (3258280800, ZoneDetails {
+        (3258280800, FixedTimespan {  // 2073-03-01T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (3273400800, ZoneDetails {
+        (3273400800, FixedTimespan {  // 2073-08-23T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (3289730400, ZoneDetails {
+        (3289730400, FixedTimespan {  // 2074-02-31T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (3305455200, ZoneDetails {
+        (3305455200, FixedTimespan {  // 2074-08-29T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (3321784800, ZoneDetails {
+        (3321784800, FixedTimespan {  // 2075-03-06T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (3336904800, ZoneDetails {
+        (3336904800, FixedTimespan {  // 2075-08-28T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (3353234400, ZoneDetails {
+        (3353234400, FixedTimespan {  // 2076-03-04T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (3368354400, ZoneDetails {
+        (3368354400, FixedTimespan {  // 2076-08-26T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (3384684000, ZoneDetails {
+        (3384684000, FixedTimespan {  // 2077-03-03T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (3399804000, ZoneDetails {
+        (3399804000, FixedTimespan {  // 2077-08-25T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (3416133600, ZoneDetails {
+        (3416133600, FixedTimespan {  // 2078-03-02T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (3431253600, ZoneDetails {
+        (3431253600, FixedTimespan {  // 2078-08-24T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (3447583200, ZoneDetails {
+        (3447583200, FixedTimespan {  // 2079-03-01T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (3462703200, ZoneDetails {
+        (3462703200, FixedTimespan {  // 2079-08-23T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (3479637600, ZoneDetails {
+        (3479637600, FixedTimespan {  // 2080-03-06T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (3494757600, ZoneDetails {
+        (3494757600, FixedTimespan {  // 2080-08-28T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (3511087200, ZoneDetails {
+        (3511087200, FixedTimespan {  // 2081-03-05T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (3526207200, ZoneDetails {
+        (3526207200, FixedTimespan {  // 2081-08-27T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (3542536800, ZoneDetails {
+        (3542536800, FixedTimespan {  // 2082-03-04T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (3557656800, ZoneDetails {
+        (3557656800, FixedTimespan {  // 2082-08-26T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (3573986400, ZoneDetails {
+        (3573986400, FixedTimespan {  // 2083-03-03T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (3589106400, ZoneDetails {
+        (3589106400, FixedTimespan {  // 2083-08-25T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (3605436000, ZoneDetails {
+        (3605436000, FixedTimespan {  // 2084-03-01T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (3620556000, ZoneDetails {
+        (3620556000, FixedTimespan {  // 2084-08-23T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (3636885600, ZoneDetails {
+        (3636885600, FixedTimespan {  // 2085-02-31T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (3652610400, ZoneDetails {
+        (3652610400, FixedTimespan {  // 2085-08-29T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (3668940000, ZoneDetails {
+        (3668940000, FixedTimespan {  // 2086-03-06T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (3684060000, ZoneDetails {
+        (3684060000, FixedTimespan {  // 2086-08-28T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (3700389600, ZoneDetails {
+        (3700389600, FixedTimespan {  // 2087-03-05T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (3715509600, ZoneDetails {
+        (3715509600, FixedTimespan {  // 2087-08-27T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (3731839200, ZoneDetails {
+        (3731839200, FixedTimespan {  // 2088-03-03T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (3746959200, ZoneDetails {
+        (3746959200, FixedTimespan {  // 2088-08-25T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (3763288800, ZoneDetails {
+        (3763288800, FixedTimespan {  // 2089-03-02T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (3778408800, ZoneDetails {
+        (3778408800, FixedTimespan {  // 2089-08-24T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (3794738400, ZoneDetails {
+        (3794738400, FixedTimespan {  // 2090-03-01T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (3809858400, ZoneDetails {
+        (3809858400, FixedTimespan {  // 2090-08-23T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (3826188000, ZoneDetails {
+        (3826188000, FixedTimespan {  // 2091-02-31T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (3841912800, ZoneDetails {
+        (3841912800, FixedTimespan {  // 2091-08-29T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (3858242400, ZoneDetails {
+        (3858242400, FixedTimespan {  // 2092-03-05T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (3873362400, ZoneDetails {
+        (3873362400, FixedTimespan {  // 2092-08-27T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (3889692000, ZoneDetails {
+        (3889692000, FixedTimespan {  // 2093-03-04T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (3904812000, ZoneDetails {
+        (3904812000, FixedTimespan {  // 2093-08-26T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (3921141600, ZoneDetails {
+        (3921141600, FixedTimespan {  // 2094-03-03T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (3936261600, ZoneDetails {
+        (3936261600, FixedTimespan {  // 2094-08-25T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (3952591200, ZoneDetails {
+        (3952591200, FixedTimespan {  // 2095-03-02T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (3967711200, ZoneDetails {
+        (3967711200, FixedTimespan {  // 2095-08-24T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (3984040800, ZoneDetails {
+        (3984040800, FixedTimespan {  // 2096-02-31T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (3999765600, ZoneDetails {
+        (3999765600, FixedTimespan {  // 2096-08-29T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (4016095200, ZoneDetails {
+        (4016095200, FixedTimespan {  // 2097-03-06T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (4031215200, ZoneDetails {
+        (4031215200, FixedTimespan {  // 2097-08-28T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (4047544800, ZoneDetails {
+        (4047544800, FixedTimespan {  // 2098-03-05T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (4062664800, ZoneDetails {
+        (4062664800, FixedTimespan {  // 2098-08-27T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
-        (4078994400, ZoneDetails {
+        (4078994400, FixedTimespan {  // 2099-03-04T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NZST",
+            is_dst: false,
+            name:   "NZST",
         }),
-        (4094114400, ZoneDetails {
+        (4094114400, FixedTimespan {  // 2099-08-26T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
-            name: "NZDT",
+            is_dst: true,
+            name:   "NZDT",
         }),
     ]},
 };

@@ -5,879 +5,1096 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Asia/Hovd",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 21996,  // UTC offset 21996, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-2032927596, ZoneDetails {
+        (-2032927596, FixedTimespan {  // 1905-06-31T17-53-24 UTC
             offset: 21600,  // UTC offset 21600, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (252439200, ZoneDetails {
+        (252439200, FixedTimespan {  // 1977-11-31T18-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (417978000, ZoneDetails {
+        (417978000, FixedTimespan {  // 1983-02-31T17-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (433785600, ZoneDetails {
+        (433785600, FixedTimespan {  // 1983-08-30T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (449600400, ZoneDetails {
+        (449600400, FixedTimespan {  // 1984-02-31T17-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (465321600, ZoneDetails {
+        (465321600, FixedTimespan {  // 1984-08-29T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (481050000, ZoneDetails {
+        (481050000, FixedTimespan {  // 1985-02-30T17-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (496771200, ZoneDetails {
+        (496771200, FixedTimespan {  // 1985-08-28T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (512499600, ZoneDetails {
+        (512499600, FixedTimespan {  // 1986-02-29T17-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (528220800, ZoneDetails {
+        (528220800, FixedTimespan {  // 1986-08-27T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (543949200, ZoneDetails {
+        (543949200, FixedTimespan {  // 1987-02-28T17-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (559670400, ZoneDetails {
+        (559670400, FixedTimespan {  // 1987-08-26T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (575398800, ZoneDetails {
+        (575398800, FixedTimespan {  // 1988-02-26T17-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (591120000, ZoneDetails {
+        (591120000, FixedTimespan {  // 1988-08-24T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (606848400, ZoneDetails {
+        (606848400, FixedTimespan {  // 1989-02-25T17-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (622569600, ZoneDetails {
+        (622569600, FixedTimespan {  // 1989-08-23T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (638298000, ZoneDetails {
+        (638298000, FixedTimespan {  // 1990-02-24T17-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (654624000, ZoneDetails {
+        (654624000, FixedTimespan {  // 1990-08-29T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (670352400, ZoneDetails {
+        (670352400, FixedTimespan {  // 1991-02-30T17-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (686073600, ZoneDetails {
+        (686073600, FixedTimespan {  // 1991-08-28T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (701802000, ZoneDetails {
+        (701802000, FixedTimespan {  // 1992-02-28T17-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (717523200, ZoneDetails {
+        (717523200, FixedTimespan {  // 1992-08-26T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (733251600, ZoneDetails {
+        (733251600, FixedTimespan {  // 1993-02-27T17-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (748972800, ZoneDetails {
+        (748972800, FixedTimespan {  // 1993-08-25T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (764701200, ZoneDetails {
+        (764701200, FixedTimespan {  // 1994-02-26T17-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (780422400, ZoneDetails {
+        (780422400, FixedTimespan {  // 1994-08-24T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (796150800, ZoneDetails {
+        (796150800, FixedTimespan {  // 1995-02-25T17-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (811872000, ZoneDetails {
+        (811872000, FixedTimespan {  // 1995-08-23T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (828205200, ZoneDetails {
+        (828205200, FixedTimespan {  // 1996-02-30T17-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (843926400, ZoneDetails {
+        (843926400, FixedTimespan {  // 1996-08-28T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (859654800, ZoneDetails {
+        (859654800, FixedTimespan {  // 1997-02-29T17-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (875376000, ZoneDetails {
+        (875376000, FixedTimespan {  // 1997-08-27T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (891104400, ZoneDetails {
+        (891104400, FixedTimespan {  // 1998-02-28T17-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (906825600, ZoneDetails {
+        (906825600, FixedTimespan {  // 1998-08-26T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (988398000, ZoneDetails {
+        (988398000, FixedTimespan {  // 2001-03-27T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (1001700000, ZoneDetails {
+        (1001700000, FixedTimespan {  // 2001-08-28T18-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (1017428400, ZoneDetails {
+        (1017428400, FixedTimespan {  // 2002-02-29T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (1033149600, ZoneDetails {
+        (1033149600, FixedTimespan {  // 2002-08-27T18-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (1048878000, ZoneDetails {
+        (1048878000, FixedTimespan {  // 2003-02-28T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (1064599200, ZoneDetails {
+        (1064599200, FixedTimespan {  // 2003-08-26T18-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (1080327600, ZoneDetails {
+        (1080327600, FixedTimespan {  // 2004-02-26T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (1096048800, ZoneDetails {
+        (1096048800, FixedTimespan {  // 2004-08-24T18-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (1111777200, ZoneDetails {
+        (1111777200, FixedTimespan {  // 2005-02-25T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (1127498400, ZoneDetails {
+        (1127498400, FixedTimespan {  // 2005-08-23T18-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (1143226800, ZoneDetails {
+        (1143226800, FixedTimespan {  // 2006-02-24T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (1159552800, ZoneDetails {
+        (1159552800, FixedTimespan {  // 2006-08-29T18-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (1427482800, ZoneDetails {
+        (1427482800, FixedTimespan {  // 2015-02-27T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (1443196800, ZoneDetails {
+        (1443196800, FixedTimespan {  // 2015-08-25T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (1458932400, ZoneDetails {
+        (1458932400, FixedTimespan {  // 2016-02-25T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (1474646400, ZoneDetails {
+        (1474646400, FixedTimespan {  // 2016-08-23T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (1490382000, ZoneDetails {
+        (1490382000, FixedTimespan {  // 2017-02-24T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (1506700800, ZoneDetails {
+        (1506700800, FixedTimespan {  // 2017-08-29T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (1522436400, ZoneDetails {
+        (1522436400, FixedTimespan {  // 2018-02-30T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (1538150400, ZoneDetails {
+        (1538150400, FixedTimespan {  // 2018-08-28T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (1553886000, ZoneDetails {
+        (1553886000, FixedTimespan {  // 2019-02-29T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (1569600000, ZoneDetails {
+        (1569600000, FixedTimespan {  // 2019-08-27T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (1585335600, ZoneDetails {
+        (1585335600, FixedTimespan {  // 2020-02-27T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (1601049600, ZoneDetails {
+        (1601049600, FixedTimespan {  // 2020-08-25T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (1616785200, ZoneDetails {
+        (1616785200, FixedTimespan {  // 2021-02-26T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (1632499200, ZoneDetails {
+        (1632499200, FixedTimespan {  // 2021-08-24T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (1648234800, ZoneDetails {
+        (1648234800, FixedTimespan {  // 2022-02-25T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (1663948800, ZoneDetails {
+        (1663948800, FixedTimespan {  // 2022-08-23T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (1679684400, ZoneDetails {
+        (1679684400, FixedTimespan {  // 2023-02-24T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (1696003200, ZoneDetails {
+        (1696003200, FixedTimespan {  // 2023-08-29T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (1711738800, ZoneDetails {
+        (1711738800, FixedTimespan {  // 2024-02-29T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (1727452800, ZoneDetails {
+        (1727452800, FixedTimespan {  // 2024-08-27T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (1743188400, ZoneDetails {
+        (1743188400, FixedTimespan {  // 2025-02-28T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (1758902400, ZoneDetails {
+        (1758902400, FixedTimespan {  // 2025-08-26T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (1774638000, ZoneDetails {
+        (1774638000, FixedTimespan {  // 2026-02-27T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (1790352000, ZoneDetails {
+        (1790352000, FixedTimespan {  // 2026-08-25T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (1806087600, ZoneDetails {
+        (1806087600, FixedTimespan {  // 2027-02-26T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (1821801600, ZoneDetails {
+        (1821801600, FixedTimespan {  // 2027-08-24T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (1837537200, ZoneDetails {
+        (1837537200, FixedTimespan {  // 2028-02-24T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (1853856000, ZoneDetails {
+        (1853856000, FixedTimespan {  // 2028-08-29T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (1869591600, ZoneDetails {
+        (1869591600, FixedTimespan {  // 2029-02-30T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (1885305600, ZoneDetails {
+        (1885305600, FixedTimespan {  // 2029-08-28T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (1901041200, ZoneDetails {
+        (1901041200, FixedTimespan {  // 2030-02-29T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (1916755200, ZoneDetails {
+        (1916755200, FixedTimespan {  // 2030-08-27T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (1932490800, ZoneDetails {
+        (1932490800, FixedTimespan {  // 2031-02-28T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (1948204800, ZoneDetails {
+        (1948204800, FixedTimespan {  // 2031-08-26T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (1963940400, ZoneDetails {
+        (1963940400, FixedTimespan {  // 2032-02-26T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (1979654400, ZoneDetails {
+        (1979654400, FixedTimespan {  // 2032-08-24T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (1995390000, ZoneDetails {
+        (1995390000, FixedTimespan {  // 2033-02-25T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (2011104000, ZoneDetails {
+        (2011104000, FixedTimespan {  // 2033-08-23T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (2026839600, ZoneDetails {
+        (2026839600, FixedTimespan {  // 2034-02-24T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (2043158400, ZoneDetails {
+        (2043158400, FixedTimespan {  // 2034-08-29T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (2058894000, ZoneDetails {
+        (2058894000, FixedTimespan {  // 2035-02-30T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (2074608000, ZoneDetails {
+        (2074608000, FixedTimespan {  // 2035-08-28T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (2090343600, ZoneDetails {
+        (2090343600, FixedTimespan {  // 2036-02-28T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (2106057600, ZoneDetails {
+        (2106057600, FixedTimespan {  // 2036-08-26T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (2121793200, ZoneDetails {
+        (2121793200, FixedTimespan {  // 2037-02-27T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (2137507200, ZoneDetails {
+        (2137507200, FixedTimespan {  // 2037-08-25T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (2153242800, ZoneDetails {
+        (2153242800, FixedTimespan {  // 2038-02-26T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (2168956800, ZoneDetails {
+        (2168956800, FixedTimespan {  // 2038-08-24T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (2184692400, ZoneDetails {
+        (2184692400, FixedTimespan {  // 2039-02-25T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (2200406400, ZoneDetails {
+        (2200406400, FixedTimespan {  // 2039-08-23T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (2216746800, ZoneDetails {
+        (2216746800, FixedTimespan {  // 2040-02-30T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (2232460800, ZoneDetails {
+        (2232460800, FixedTimespan {  // 2040-08-28T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (2248196400, ZoneDetails {
+        (2248196400, FixedTimespan {  // 2041-02-29T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (2263910400, ZoneDetails {
+        (2263910400, FixedTimespan {  // 2041-08-27T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (2279646000, ZoneDetails {
+        (2279646000, FixedTimespan {  // 2042-02-28T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (2295360000, ZoneDetails {
+        (2295360000, FixedTimespan {  // 2042-08-26T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (2311095600, ZoneDetails {
+        (2311095600, FixedTimespan {  // 2043-02-27T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (2326809600, ZoneDetails {
+        (2326809600, FixedTimespan {  // 2043-08-25T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (2342545200, ZoneDetails {
+        (2342545200, FixedTimespan {  // 2044-02-25T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (2358259200, ZoneDetails {
+        (2358259200, FixedTimespan {  // 2044-08-23T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (2373994800, ZoneDetails {
+        (2373994800, FixedTimespan {  // 2045-02-24T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (2390313600, ZoneDetails {
+        (2390313600, FixedTimespan {  // 2045-08-29T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (2406049200, ZoneDetails {
+        (2406049200, FixedTimespan {  // 2046-02-30T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (2421763200, ZoneDetails {
+        (2421763200, FixedTimespan {  // 2046-08-28T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (2437498800, ZoneDetails {
+        (2437498800, FixedTimespan {  // 2047-02-29T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (2453212800, ZoneDetails {
+        (2453212800, FixedTimespan {  // 2047-08-27T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (2468948400, ZoneDetails {
+        (2468948400, FixedTimespan {  // 2048-02-27T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (2484662400, ZoneDetails {
+        (2484662400, FixedTimespan {  // 2048-08-25T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (2500398000, ZoneDetails {
+        (2500398000, FixedTimespan {  // 2049-02-26T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (2516112000, ZoneDetails {
+        (2516112000, FixedTimespan {  // 2049-08-24T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (2531847600, ZoneDetails {
+        (2531847600, FixedTimespan {  // 2050-02-25T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (2547561600, ZoneDetails {
+        (2547561600, FixedTimespan {  // 2050-08-23T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (2563297200, ZoneDetails {
+        (2563297200, FixedTimespan {  // 2051-02-24T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (2579616000, ZoneDetails {
+        (2579616000, FixedTimespan {  // 2051-08-29T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (2595351600, ZoneDetails {
+        (2595351600, FixedTimespan {  // 2052-02-29T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (2611065600, ZoneDetails {
+        (2611065600, FixedTimespan {  // 2052-08-27T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (2626801200, ZoneDetails {
+        (2626801200, FixedTimespan {  // 2053-02-28T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (2642515200, ZoneDetails {
+        (2642515200, FixedTimespan {  // 2053-08-26T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (2658250800, ZoneDetails {
+        (2658250800, FixedTimespan {  // 2054-02-27T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (2673964800, ZoneDetails {
+        (2673964800, FixedTimespan {  // 2054-08-25T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (2689700400, ZoneDetails {
+        (2689700400, FixedTimespan {  // 2055-02-26T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (2705414400, ZoneDetails {
+        (2705414400, FixedTimespan {  // 2055-08-24T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (2721150000, ZoneDetails {
+        (2721150000, FixedTimespan {  // 2056-02-24T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (2737468800, ZoneDetails {
+        (2737468800, FixedTimespan {  // 2056-08-29T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (2753204400, ZoneDetails {
+        (2753204400, FixedTimespan {  // 2057-02-30T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (2768918400, ZoneDetails {
+        (2768918400, FixedTimespan {  // 2057-08-28T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (2784654000, ZoneDetails {
+        (2784654000, FixedTimespan {  // 2058-02-29T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (2800368000, ZoneDetails {
+        (2800368000, FixedTimespan {  // 2058-08-27T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (2816103600, ZoneDetails {
+        (2816103600, FixedTimespan {  // 2059-02-28T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (2831817600, ZoneDetails {
+        (2831817600, FixedTimespan {  // 2059-08-26T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (2847553200, ZoneDetails {
+        (2847553200, FixedTimespan {  // 2060-02-26T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (2863267200, ZoneDetails {
+        (2863267200, FixedTimespan {  // 2060-08-24T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (2879002800, ZoneDetails {
+        (2879002800, FixedTimespan {  // 2061-02-25T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (2894716800, ZoneDetails {
+        (2894716800, FixedTimespan {  // 2061-08-23T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (2910452400, ZoneDetails {
+        (2910452400, FixedTimespan {  // 2062-02-24T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (2926771200, ZoneDetails {
+        (2926771200, FixedTimespan {  // 2062-08-29T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (2942506800, ZoneDetails {
+        (2942506800, FixedTimespan {  // 2063-02-30T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (2958220800, ZoneDetails {
+        (2958220800, FixedTimespan {  // 2063-08-28T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (2973956400, ZoneDetails {
+        (2973956400, FixedTimespan {  // 2064-02-28T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (2989670400, ZoneDetails {
+        (2989670400, FixedTimespan {  // 2064-08-26T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (3005406000, ZoneDetails {
+        (3005406000, FixedTimespan {  // 2065-02-27T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (3021120000, ZoneDetails {
+        (3021120000, FixedTimespan {  // 2065-08-25T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (3036855600, ZoneDetails {
+        (3036855600, FixedTimespan {  // 2066-02-26T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (3052569600, ZoneDetails {
+        (3052569600, FixedTimespan {  // 2066-08-24T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (3068305200, ZoneDetails {
+        (3068305200, FixedTimespan {  // 2067-02-25T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (3084019200, ZoneDetails {
+        (3084019200, FixedTimespan {  // 2067-08-23T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (3100359600, ZoneDetails {
+        (3100359600, FixedTimespan {  // 2068-02-30T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (3116073600, ZoneDetails {
+        (3116073600, FixedTimespan {  // 2068-08-28T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (3131809200, ZoneDetails {
+        (3131809200, FixedTimespan {  // 2069-02-29T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (3147523200, ZoneDetails {
+        (3147523200, FixedTimespan {  // 2069-08-27T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (3163258800, ZoneDetails {
+        (3163258800, FixedTimespan {  // 2070-02-28T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (3178972800, ZoneDetails {
+        (3178972800, FixedTimespan {  // 2070-08-26T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (3194708400, ZoneDetails {
+        (3194708400, FixedTimespan {  // 2071-02-27T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (3210422400, ZoneDetails {
+        (3210422400, FixedTimespan {  // 2071-08-25T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (3226158000, ZoneDetails {
+        (3226158000, FixedTimespan {  // 2072-02-25T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (3241872000, ZoneDetails {
+        (3241872000, FixedTimespan {  // 2072-08-23T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (3257607600, ZoneDetails {
+        (3257607600, FixedTimespan {  // 2073-02-24T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (3273926400, ZoneDetails {
+        (3273926400, FixedTimespan {  // 2073-08-29T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (3289662000, ZoneDetails {
+        (3289662000, FixedTimespan {  // 2074-02-30T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (3305376000, ZoneDetails {
+        (3305376000, FixedTimespan {  // 2074-08-28T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (3321111600, ZoneDetails {
+        (3321111600, FixedTimespan {  // 2075-02-29T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (3336825600, ZoneDetails {
+        (3336825600, FixedTimespan {  // 2075-08-27T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (3352561200, ZoneDetails {
+        (3352561200, FixedTimespan {  // 2076-02-27T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (3368275200, ZoneDetails {
+        (3368275200, FixedTimespan {  // 2076-08-25T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (3384010800, ZoneDetails {
+        (3384010800, FixedTimespan {  // 2077-02-26T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (3399724800, ZoneDetails {
+        (3399724800, FixedTimespan {  // 2077-08-24T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (3415460400, ZoneDetails {
+        (3415460400, FixedTimespan {  // 2078-02-25T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (3431174400, ZoneDetails {
+        (3431174400, FixedTimespan {  // 2078-08-23T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (3446910000, ZoneDetails {
+        (3446910000, FixedTimespan {  // 2079-02-24T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (3463228800, ZoneDetails {
+        (3463228800, FixedTimespan {  // 2079-08-29T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (3478964400, ZoneDetails {
+        (3478964400, FixedTimespan {  // 2080-02-29T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (3494678400, ZoneDetails {
+        (3494678400, FixedTimespan {  // 2080-08-27T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (3510414000, ZoneDetails {
+        (3510414000, FixedTimespan {  // 2081-02-28T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (3526128000, ZoneDetails {
+        (3526128000, FixedTimespan {  // 2081-08-26T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (3541863600, ZoneDetails {
+        (3541863600, FixedTimespan {  // 2082-02-27T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (3557577600, ZoneDetails {
+        (3557577600, FixedTimespan {  // 2082-08-25T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (3573313200, ZoneDetails {
+        (3573313200, FixedTimespan {  // 2083-02-26T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (3589027200, ZoneDetails {
+        (3589027200, FixedTimespan {  // 2083-08-24T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (3604762800, ZoneDetails {
+        (3604762800, FixedTimespan {  // 2084-02-24T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (3621081600, ZoneDetails {
+        (3621081600, FixedTimespan {  // 2084-08-29T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (3636817200, ZoneDetails {
+        (3636817200, FixedTimespan {  // 2085-02-30T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (3652531200, ZoneDetails {
+        (3652531200, FixedTimespan {  // 2085-08-28T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (3668266800, ZoneDetails {
+        (3668266800, FixedTimespan {  // 2086-02-29T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (3683980800, ZoneDetails {
+        (3683980800, FixedTimespan {  // 2086-08-27T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (3699716400, ZoneDetails {
+        (3699716400, FixedTimespan {  // 2087-02-28T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (3715430400, ZoneDetails {
+        (3715430400, FixedTimespan {  // 2087-08-26T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (3731166000, ZoneDetails {
+        (3731166000, FixedTimespan {  // 2088-02-26T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (3746880000, ZoneDetails {
+        (3746880000, FixedTimespan {  // 2088-08-24T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (3762615600, ZoneDetails {
+        (3762615600, FixedTimespan {  // 2089-02-25T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (3778329600, ZoneDetails {
+        (3778329600, FixedTimespan {  // 2089-08-23T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (3794065200, ZoneDetails {
+        (3794065200, FixedTimespan {  // 2090-02-24T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (3810384000, ZoneDetails {
+        (3810384000, FixedTimespan {  // 2090-08-29T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (3826119600, ZoneDetails {
+        (3826119600, FixedTimespan {  // 2091-02-30T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (3841833600, ZoneDetails {
+        (3841833600, FixedTimespan {  // 2091-08-28T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (3857569200, ZoneDetails {
+        (3857569200, FixedTimespan {  // 2092-02-28T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (3873283200, ZoneDetails {
+        (3873283200, FixedTimespan {  // 2092-08-26T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (3889018800, ZoneDetails {
+        (3889018800, FixedTimespan {  // 2093-02-27T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (3904732800, ZoneDetails {
+        (3904732800, FixedTimespan {  // 2093-08-25T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (3920468400, ZoneDetails {
+        (3920468400, FixedTimespan {  // 2094-02-26T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (3936182400, ZoneDetails {
+        (3936182400, FixedTimespan {  // 2094-08-24T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (3951918000, ZoneDetails {
+        (3951918000, FixedTimespan {  // 2095-02-25T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (3967632000, ZoneDetails {
+        (3967632000, FixedTimespan {  // 2095-08-23T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (3983972400, ZoneDetails {
+        (3983972400, FixedTimespan {  // 2096-02-30T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (3999686400, ZoneDetails {
+        (3999686400, FixedTimespan {  // 2096-08-28T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (4015422000, ZoneDetails {
+        (4015422000, FixedTimespan {  // 2097-02-29T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (4031136000, ZoneDetails {
+        (4031136000, FixedTimespan {  // 2097-08-27T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (4046871600, ZoneDetails {
+        (4046871600, FixedTimespan {  // 2098-02-28T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (4062585600, ZoneDetails {
+        (4062585600, FixedTimespan {  // 2098-08-26T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
-        (4078321200, ZoneDetails {
+        (4078321200, FixedTimespan {  // 2099-02-27T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "HOVST",
+            is_dst: true,
+            name:   "HOVST",
         }),
-        (4094035200, ZoneDetails {
+        (4094035200, FixedTimespan {  // 2099-08-25T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "HOVT",
+            is_dst: false,
+            name:   "HOVT",
         }),
     ]},
 };

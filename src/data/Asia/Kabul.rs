@@ -5,23 +5,26 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Asia/Kabul",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 16608,  // UTC offset 16608, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-2524538208, ZoneDetails {
+        (-2524538208, FixedTimespan {  // 1889-11-31T19-23-12 UTC
             offset: 14400,  // UTC offset 14400, DST offset 0
-            name: "AFT",
+            is_dst: false,
+            name:   "AFT",
         }),
-        (-788932800, ZoneDetails {
+        (-788932800, FixedTimespan {  // 1944-11-31T20-00-00 UTC
             offset: 16200,  // UTC offset 16200, DST offset 0
-            name: "AFT",
+            is_dst: false,
+            name:   "AFT",
         }),
     ]},
 };

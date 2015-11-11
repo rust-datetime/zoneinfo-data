@@ -5,35 +5,41 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Asia/Dili",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 30140,  // UTC offset 30140, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-1830414140, ZoneDetails {
+        (-1830414140, FixedTimespan {  // 1911-11-31T15-37-40 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "TLT",
+            is_dst: false,
+            name:   "TLT",
         }),
-        (-879152400, ZoneDetails {
+        (-879152400, FixedTimespan {  // 1942-01-21T15-00-00 UTC
             offset: 32400,  // UTC offset 32400, DST offset 0
-            name: "JST",
+            is_dst: false,
+            name:   "JST",
         }),
-        (-766054800, ZoneDetails {
+        (-766054800, FixedTimespan {  // 1945-08-22T15-00-00 UTC
             offset: 32400,  // UTC offset 32400, DST offset 0
-            name: "TLT",
+            is_dst: false,
+            name:   "TLT",
         }),
-        (199897200, ZoneDetails {
+        (199897200, FixedTimespan {  // 1976-04-02T15-00-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "WITA",
+            is_dst: false,
+            name:   "WITA",
         }),
-        (969120000, ZoneDetails {
+        (969120000, FixedTimespan {  // 2000-08-16T16-00-00 UTC
             offset: 32400,  // UTC offset 32400, DST offset 0
-            name: "TLT",
+            is_dst: false,
+            name:   "TLT",
         }),
     ]},
 };

@@ -5,31 +5,36 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Pacific/Nauru",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 40060,  // UTC offset 40060, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-1545131260, ZoneDetails {
+        (-1545131260, FixedTimespan {  // 1921-00-14T12-52-20 UTC
             offset: 41400,  // UTC offset 41400, DST offset 0
-            name: "NRT",
+            is_dst: false,
+            name:   "NRT",
         }),
-        (-877347000, ZoneDetails {
+        (-877347000, FixedTimespan {  // 1942-02-14T12-30-00 UTC
             offset: 32400,  // UTC offset 32400, DST offset 0
-            name: "JST",
+            is_dst: false,
+            name:   "JST",
         }),
-        (-800960400, ZoneDetails {
+        (-800960400, FixedTimespan {  // 1944-07-14T15-00-00 UTC
             offset: 41400,  // UTC offset 41400, DST offset 0
-            name: "NRT",
+            is_dst: false,
+            name:   "NRT",
         }),
-        (294323400, ZoneDetails {
+        (294323400, FixedTimespan {  // 1979-03-30T12-30-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
-            name: "NRT",
+            is_dst: false,
+            name:   "NRT",
         }),
     ]},
 };

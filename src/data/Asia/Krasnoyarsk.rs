@@ -5,275 +5,341 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Asia/Krasnoyarsk",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 22286,  // UTC offset 22286, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-1577513486, ZoneDetails {
+        (-1577513486, FixedTimespan {  // 1920-00-05T17-48-34 UTC
             offset: 21600,  // UTC offset 21600, DST offset 0
-            name: "KRAT",
+            is_dst: false,
+            name:   "KRAT",
         }),
-        (-1247551200, ZoneDetails {
+        (-1247551200, FixedTimespan {  // 1930-05-20T18-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "KRAT",
+            is_dst: false,
+            name:   "KRAT",
         }),
-        (354906000, ZoneDetails {
+        (354906000, FixedTimespan {  // 1981-02-31T17-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "KRAST",
+            is_dst: true,
+            name:   "KRAST",
         }),
-        (370713600, ZoneDetails {
+        (370713600, FixedTimespan {  // 1981-08-30T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "KRAT",
+            is_dst: false,
+            name:   "KRAT",
         }),
-        (386442000, ZoneDetails {
+        (386442000, FixedTimespan {  // 1982-02-31T17-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "KRAST",
+            is_dst: true,
+            name:   "KRAST",
         }),
-        (402249600, ZoneDetails {
+        (402249600, FixedTimespan {  // 1982-08-30T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "KRAT",
+            is_dst: false,
+            name:   "KRAT",
         }),
-        (417978000, ZoneDetails {
+        (417978000, FixedTimespan {  // 1983-02-31T17-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "KRAST",
+            is_dst: true,
+            name:   "KRAST",
         }),
-        (433785600, ZoneDetails {
+        (433785600, FixedTimespan {  // 1983-08-30T16-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "KRAT",
+            is_dst: false,
+            name:   "KRAT",
         }),
-        (449600400, ZoneDetails {
+        (449600400, FixedTimespan {  // 1984-02-31T17-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "KRAST",
+            is_dst: true,
+            name:   "KRAST",
         }),
-        (465332400, ZoneDetails {
+        (465332400, FixedTimespan {  // 1984-08-29T19-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "KRAT",
+            is_dst: false,
+            name:   "KRAT",
         }),
-        (481057200, ZoneDetails {
+        (481057200, FixedTimespan {  // 1985-02-30T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "KRAST",
+            is_dst: true,
+            name:   "KRAST",
         }),
-        (496782000, ZoneDetails {
+        (496782000, FixedTimespan {  // 1985-08-28T19-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "KRAT",
+            is_dst: false,
+            name:   "KRAT",
         }),
-        (512506800, ZoneDetails {
+        (512506800, FixedTimespan {  // 1986-02-29T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "KRAST",
+            is_dst: true,
+            name:   "KRAST",
         }),
-        (528231600, ZoneDetails {
+        (528231600, FixedTimespan {  // 1986-08-27T19-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "KRAT",
+            is_dst: false,
+            name:   "KRAT",
         }),
-        (543956400, ZoneDetails {
+        (543956400, FixedTimespan {  // 1987-02-28T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "KRAST",
+            is_dst: true,
+            name:   "KRAST",
         }),
-        (559681200, ZoneDetails {
+        (559681200, FixedTimespan {  // 1987-08-26T19-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "KRAT",
+            is_dst: false,
+            name:   "KRAT",
         }),
-        (575406000, ZoneDetails {
+        (575406000, FixedTimespan {  // 1988-02-26T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "KRAST",
+            is_dst: true,
+            name:   "KRAST",
         }),
-        (591130800, ZoneDetails {
+        (591130800, FixedTimespan {  // 1988-08-24T19-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "KRAT",
+            is_dst: false,
+            name:   "KRAT",
         }),
-        (606855600, ZoneDetails {
+        (606855600, FixedTimespan {  // 1989-02-25T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "KRAST",
+            is_dst: true,
+            name:   "KRAST",
         }),
-        (622580400, ZoneDetails {
+        (622580400, FixedTimespan {  // 1989-08-23T19-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "KRAT",
+            is_dst: false,
+            name:   "KRAT",
         }),
-        (638305200, ZoneDetails {
+        (638305200, FixedTimespan {  // 1990-02-24T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "KRAST",
+            is_dst: true,
+            name:   "KRAST",
         }),
-        (654634800, ZoneDetails {
+        (654634800, FixedTimespan {  // 1990-08-29T19-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "KRAT",
+            is_dst: false,
+            name:   "KRAT",
         }),
-        (670359600, ZoneDetails {
+        (670359600, FixedTimespan {  // 1991-02-30T19-00-00 UTC
             offset: 25200,  // UTC offset 21600, DST offset 3600
-            name: "KRAST",
+            is_dst: true,
+            name:   "KRAST",
         }),
-        (686088000, ZoneDetails {
+        (686088000, FixedTimespan {  // 1991-08-28T20-00-00 UTC
             offset: 21600,  // UTC offset 21600, DST offset 0
-            name: "KRAT",
+            is_dst: false,
+            name:   "KRAT",
         }),
-        (695764800, ZoneDetails {
+        (695764800, FixedTimespan {  // 1992-00-18T20-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "KRAT",
+            is_dst: false,
+            name:   "KRAT",
         }),
-        (701798400, ZoneDetails {
+        (701798400, FixedTimespan {  // 1992-02-28T16-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "KRAST",
+            is_dst: true,
+            name:   "KRAST",
         }),
-        (717519600, ZoneDetails {
+        (717519600, FixedTimespan {  // 1992-08-26T15-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "KRAT",
+            is_dst: false,
+            name:   "KRAT",
         }),
-        (733258800, ZoneDetails {
+        (733258800, FixedTimespan {  // 1993-02-27T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "KRAST",
+            is_dst: true,
+            name:   "KRAST",
         }),
-        (748983600, ZoneDetails {
+        (748983600, FixedTimespan {  // 1993-08-25T19-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "KRAT",
+            is_dst: false,
+            name:   "KRAT",
         }),
-        (764708400, ZoneDetails {
+        (764708400, FixedTimespan {  // 1994-02-26T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "KRAST",
+            is_dst: true,
+            name:   "KRAST",
         }),
-        (780433200, ZoneDetails {
+        (780433200, FixedTimespan {  // 1994-08-24T19-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "KRAT",
+            is_dst: false,
+            name:   "KRAT",
         }),
-        (796158000, ZoneDetails {
+        (796158000, FixedTimespan {  // 1995-02-25T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "KRAST",
+            is_dst: true,
+            name:   "KRAST",
         }),
-        (811882800, ZoneDetails {
+        (811882800, FixedTimespan {  // 1995-08-23T19-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "KRAT",
+            is_dst: false,
+            name:   "KRAT",
         }),
-        (828212400, ZoneDetails {
+        (828212400, FixedTimespan {  // 1996-02-30T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "KRAST",
+            is_dst: true,
+            name:   "KRAST",
         }),
-        (846356400, ZoneDetails {
+        (846356400, FixedTimespan {  // 1996-09-26T19-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "KRAT",
+            is_dst: false,
+            name:   "KRAT",
         }),
-        (859662000, ZoneDetails {
+        (859662000, FixedTimespan {  // 1997-02-29T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "KRAST",
+            is_dst: true,
+            name:   "KRAST",
         }),
-        (877806000, ZoneDetails {
+        (877806000, FixedTimespan {  // 1997-09-25T19-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "KRAT",
+            is_dst: false,
+            name:   "KRAT",
         }),
-        (891111600, ZoneDetails {
+        (891111600, FixedTimespan {  // 1998-02-28T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "KRAST",
+            is_dst: true,
+            name:   "KRAST",
         }),
-        (909255600, ZoneDetails {
+        (909255600, FixedTimespan {  // 1998-09-24T19-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "KRAT",
+            is_dst: false,
+            name:   "KRAT",
         }),
-        (922561200, ZoneDetails {
+        (922561200, FixedTimespan {  // 1999-02-27T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "KRAST",
+            is_dst: true,
+            name:   "KRAST",
         }),
-        (941310000, ZoneDetails {
+        (941310000, FixedTimespan {  // 1999-09-30T19-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "KRAT",
+            is_dst: false,
+            name:   "KRAT",
         }),
-        (954010800, ZoneDetails {
+        (954010800, FixedTimespan {  // 2000-02-25T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "KRAST",
+            is_dst: true,
+            name:   "KRAST",
         }),
-        (972759600, ZoneDetails {
+        (972759600, FixedTimespan {  // 2000-09-28T19-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "KRAT",
+            is_dst: false,
+            name:   "KRAT",
         }),
-        (985460400, ZoneDetails {
+        (985460400, FixedTimespan {  // 2001-02-24T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "KRAST",
+            is_dst: true,
+            name:   "KRAST",
         }),
-        (1004209200, ZoneDetails {
+        (1004209200, FixedTimespan {  // 2001-09-27T19-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "KRAT",
+            is_dst: false,
+            name:   "KRAT",
         }),
-        (1017514800, ZoneDetails {
+        (1017514800, FixedTimespan {  // 2002-02-30T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "KRAST",
+            is_dst: true,
+            name:   "KRAST",
         }),
-        (1035658800, ZoneDetails {
+        (1035658800, FixedTimespan {  // 2002-09-26T19-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "KRAT",
+            is_dst: false,
+            name:   "KRAT",
         }),
-        (1048964400, ZoneDetails {
+        (1048964400, FixedTimespan {  // 2003-02-29T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "KRAST",
+            is_dst: true,
+            name:   "KRAST",
         }),
-        (1067108400, ZoneDetails {
+        (1067108400, FixedTimespan {  // 2003-09-25T19-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "KRAT",
+            is_dst: false,
+            name:   "KRAT",
         }),
-        (1080414000, ZoneDetails {
+        (1080414000, FixedTimespan {  // 2004-02-27T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "KRAST",
+            is_dst: true,
+            name:   "KRAST",
         }),
-        (1099162800, ZoneDetails {
+        (1099162800, FixedTimespan {  // 2004-09-30T19-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "KRAT",
+            is_dst: false,
+            name:   "KRAT",
         }),
-        (1111863600, ZoneDetails {
+        (1111863600, FixedTimespan {  // 2005-02-26T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "KRAST",
+            is_dst: true,
+            name:   "KRAST",
         }),
-        (1130612400, ZoneDetails {
+        (1130612400, FixedTimespan {  // 2005-09-29T19-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "KRAT",
+            is_dst: false,
+            name:   "KRAT",
         }),
-        (1143313200, ZoneDetails {
+        (1143313200, FixedTimespan {  // 2006-02-25T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "KRAST",
+            is_dst: true,
+            name:   "KRAST",
         }),
-        (1162062000, ZoneDetails {
+        (1162062000, FixedTimespan {  // 2006-09-28T19-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "KRAT",
+            is_dst: false,
+            name:   "KRAT",
         }),
-        (1174762800, ZoneDetails {
+        (1174762800, FixedTimespan {  // 2007-02-24T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "KRAST",
+            is_dst: true,
+            name:   "KRAST",
         }),
-        (1193511600, ZoneDetails {
+        (1193511600, FixedTimespan {  // 2007-09-27T19-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "KRAT",
+            is_dst: false,
+            name:   "KRAT",
         }),
-        (1206817200, ZoneDetails {
+        (1206817200, FixedTimespan {  // 2008-02-29T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "KRAST",
+            is_dst: true,
+            name:   "KRAST",
         }),
-        (1224961200, ZoneDetails {
+        (1224961200, FixedTimespan {  // 2008-09-25T19-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "KRAT",
+            is_dst: false,
+            name:   "KRAT",
         }),
-        (1238266800, ZoneDetails {
+        (1238266800, FixedTimespan {  // 2009-02-28T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "KRAST",
+            is_dst: true,
+            name:   "KRAST",
         }),
-        (1256410800, ZoneDetails {
+        (1256410800, FixedTimespan {  // 2009-09-24T19-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "KRAT",
+            is_dst: false,
+            name:   "KRAT",
         }),
-        (1269716400, ZoneDetails {
+        (1269716400, FixedTimespan {  // 2010-02-27T19-00-00 UTC
             offset: 28800,  // UTC offset 25200, DST offset 3600
-            name: "KRAST",
+            is_dst: true,
+            name:   "KRAST",
         }),
-        (1288465200, ZoneDetails {
+        (1288465200, FixedTimespan {  // 2010-09-30T19-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "KRAT",
+            is_dst: false,
+            name:   "KRAT",
         }),
-        (1301166000, ZoneDetails {
+        (1301166000, FixedTimespan {  // 2011-02-26T19-00-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "KRAT",
+            is_dst: false,
+            name:   "KRAT",
         }),
-        (1414260000, ZoneDetails {
+        (1414260000, FixedTimespan {  // 2014-09-25T18-00-00 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "KRAT",
+            is_dst: false,
+            name:   "KRAT",
         }),
     ]},
 };

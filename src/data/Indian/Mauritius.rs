@@ -5,35 +5,41 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Indian/Mauritius",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 13800,  // UTC offset 13800, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-1988164200, ZoneDetails {
+        (-1988164200, FixedTimespan {  // 1906-11-31T20-10-00 UTC
             offset: 14400,  // UTC offset 14400, DST offset 0
-            name: "MUT",
+            is_dst: false,
+            name:   "MUT",
         }),
-        (403041600, ZoneDetails {
+        (403041600, FixedTimespan {  // 1982-09-09T20-00-00 UTC
             offset: 18000,  // UTC offset 14400, DST offset 3600
-            name: "MUST",
+            is_dst: true,
+            name:   "MUST",
         }),
-        (417034800, ZoneDetails {
+        (417034800, FixedTimespan {  // 1983-02-20T19-00-00 UTC
             offset: 14400,  // UTC offset 14400, DST offset 0
-            name: "MUT",
+            is_dst: false,
+            name:   "MUT",
         }),
-        (1224972000, ZoneDetails {
+        (1224972000, FixedTimespan {  // 2008-09-25T22-00-00 UTC
             offset: 18000,  // UTC offset 14400, DST offset 3600
-            name: "MUST",
+            is_dst: true,
+            name:   "MUST",
         }),
-        (1238274000, ZoneDetails {
+        (1238274000, FixedTimespan {  // 2009-02-28T21-00-00 UTC
             offset: 14400,  // UTC offset 14400, DST offset 0
-            name: "MUT",
+            is_dst: false,
+            name:   "MUT",
         }),
     ]},
 };

@@ -1,12 +1,11 @@
 extern crate datetime;
-extern crate locale;
-extern crate zoneinfo_data;
-use datetime::instant::Instant;
+use datetime::{Instant, LocalDateTime, current_timezone};
 use datetime::format::DateFormat;
-use datetime::local::LocalDateTime;
-use datetime::zoned::TimeZone;
-use datetime::zoned::factory::current_timezone;
+
+extern crate zoneinfo_data;
 use zoneinfo_data::lookup;
+
+extern crate locale;
 
 
 fn main() {

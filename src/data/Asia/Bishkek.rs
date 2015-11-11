@@ -5,223 +5,276 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Asia/Bishkek",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 17904,  // UTC offset 17904, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-1441169904, ZoneDetails {
+        (-1441169904, FixedTimespan {  // 1924-04-01T19-01-36 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
-            name: "FRUT",
+            is_dst: false,
+            name:   "FRUT",
         }),
-        (-1247547600, ZoneDetails {
+        (-1247547600, FixedTimespan {  // 1930-05-20T19-00-00 UTC
             offset: 21600,  // UTC offset 21600, DST offset 0
-            name: "FRUT",
+            is_dst: false,
+            name:   "FRUT",
         }),
-        (354909600, ZoneDetails {
+        (354909600, FixedTimespan {  // 1981-02-31T18-00-00 UTC
             offset: 25200,  // UTC offset 21600, DST offset 3600
-            name: "FRUST",
+            is_dst: true,
+            name:   "FRUST",
         }),
-        (370717200, ZoneDetails {
+        (370717200, FixedTimespan {  // 1981-08-30T17-00-00 UTC
             offset: 21600,  // UTC offset 21600, DST offset 0
-            name: "FRUT",
+            is_dst: false,
+            name:   "FRUT",
         }),
-        (386445600, ZoneDetails {
+        (386445600, FixedTimespan {  // 1982-02-31T18-00-00 UTC
             offset: 25200,  // UTC offset 21600, DST offset 3600
-            name: "FRUST",
+            is_dst: true,
+            name:   "FRUST",
         }),
-        (402253200, ZoneDetails {
+        (402253200, FixedTimespan {  // 1982-08-30T17-00-00 UTC
             offset: 21600,  // UTC offset 21600, DST offset 0
-            name: "FRUT",
+            is_dst: false,
+            name:   "FRUT",
         }),
-        (417981600, ZoneDetails {
+        (417981600, FixedTimespan {  // 1983-02-31T18-00-00 UTC
             offset: 25200,  // UTC offset 21600, DST offset 3600
-            name: "FRUST",
+            is_dst: true,
+            name:   "FRUST",
         }),
-        (433789200, ZoneDetails {
+        (433789200, FixedTimespan {  // 1983-08-30T17-00-00 UTC
             offset: 21600,  // UTC offset 21600, DST offset 0
-            name: "FRUT",
+            is_dst: false,
+            name:   "FRUT",
         }),
-        (449604000, ZoneDetails {
+        (449604000, FixedTimespan {  // 1984-02-31T18-00-00 UTC
             offset: 25200,  // UTC offset 21600, DST offset 3600
-            name: "FRUST",
+            is_dst: true,
+            name:   "FRUST",
         }),
-        (465336000, ZoneDetails {
+        (465336000, FixedTimespan {  // 1984-08-29T20-00-00 UTC
             offset: 21600,  // UTC offset 21600, DST offset 0
-            name: "FRUT",
+            is_dst: false,
+            name:   "FRUT",
         }),
-        (481060800, ZoneDetails {
+        (481060800, FixedTimespan {  // 1985-02-30T20-00-00 UTC
             offset: 25200,  // UTC offset 21600, DST offset 3600
-            name: "FRUST",
+            is_dst: true,
+            name:   "FRUST",
         }),
-        (496785600, ZoneDetails {
+        (496785600, FixedTimespan {  // 1985-08-28T20-00-00 UTC
             offset: 21600,  // UTC offset 21600, DST offset 0
-            name: "FRUT",
+            is_dst: false,
+            name:   "FRUT",
         }),
-        (512510400, ZoneDetails {
+        (512510400, FixedTimespan {  // 1986-02-29T20-00-00 UTC
             offset: 25200,  // UTC offset 21600, DST offset 3600
-            name: "FRUST",
+            is_dst: true,
+            name:   "FRUST",
         }),
-        (528235200, ZoneDetails {
+        (528235200, FixedTimespan {  // 1986-08-27T20-00-00 UTC
             offset: 21600,  // UTC offset 21600, DST offset 0
-            name: "FRUT",
+            is_dst: false,
+            name:   "FRUT",
         }),
-        (543960000, ZoneDetails {
+        (543960000, FixedTimespan {  // 1987-02-28T20-00-00 UTC
             offset: 25200,  // UTC offset 21600, DST offset 3600
-            name: "FRUST",
+            is_dst: true,
+            name:   "FRUST",
         }),
-        (559684800, ZoneDetails {
+        (559684800, FixedTimespan {  // 1987-08-26T20-00-00 UTC
             offset: 21600,  // UTC offset 21600, DST offset 0
-            name: "FRUT",
+            is_dst: false,
+            name:   "FRUT",
         }),
-        (575409600, ZoneDetails {
+        (575409600, FixedTimespan {  // 1988-02-26T20-00-00 UTC
             offset: 25200,  // UTC offset 21600, DST offset 3600
-            name: "FRUST",
+            is_dst: true,
+            name:   "FRUST",
         }),
-        (591134400, ZoneDetails {
+        (591134400, FixedTimespan {  // 1988-08-24T20-00-00 UTC
             offset: 21600,  // UTC offset 21600, DST offset 0
-            name: "FRUT",
+            is_dst: false,
+            name:   "FRUT",
         }),
-        (606859200, ZoneDetails {
+        (606859200, FixedTimespan {  // 1989-02-25T20-00-00 UTC
             offset: 25200,  // UTC offset 21600, DST offset 3600
-            name: "FRUST",
+            is_dst: true,
+            name:   "FRUST",
         }),
-        (622584000, ZoneDetails {
+        (622584000, FixedTimespan {  // 1989-08-23T20-00-00 UTC
             offset: 21600,  // UTC offset 21600, DST offset 0
-            name: "FRUT",
+            is_dst: false,
+            name:   "FRUT",
         }),
-        (638308800, ZoneDetails {
+        (638308800, FixedTimespan {  // 1990-02-24T20-00-00 UTC
             offset: 25200,  // UTC offset 21600, DST offset 3600
-            name: "FRUST",
+            is_dst: true,
+            name:   "FRUST",
         }),
-        (654638400, ZoneDetails {
+        (654638400, FixedTimespan {  // 1990-08-29T20-00-00 UTC
             offset: 21600,  // UTC offset 21600, DST offset 0
-            name: "FRUT",
+            is_dst: false,
+            name:   "FRUT",
         }),
-        (670363200, ZoneDetails {
+        (670363200, FixedTimespan {  // 1991-02-30T20-00-00 UTC
             offset: 21600,  // UTC offset 18000, DST offset 3600
-            name: "FRUST",
+            is_dst: true,
+            name:   "FRUST",
         }),
-        (683582400, ZoneDetails {
+        (683582400, FixedTimespan {  // 1991-07-30T20-00-00 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
-            name: "KGT",
+            is_dst: false,
+            name:   "KGT",
         }),
-        (703018800, ZoneDetails {
+        (703018800, FixedTimespan {  // 1992-03-11T19-00-00 UTC
             offset: 21600,  // UTC offset 18000, DST offset 3600
-            name: "KGST",
+            is_dst: true,
+            name:   "KGST",
         }),
-        (717530400, ZoneDetails {
+        (717530400, FixedTimespan {  // 1992-08-26T18-00-00 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
-            name: "KGT",
+            is_dst: false,
+            name:   "KGT",
         }),
-        (734468400, ZoneDetails {
+        (734468400, FixedTimespan {  // 1993-03-10T19-00-00 UTC
             offset: 21600,  // UTC offset 18000, DST offset 3600
-            name: "KGST",
+            is_dst: true,
+            name:   "KGST",
         }),
-        (748980000, ZoneDetails {
+        (748980000, FixedTimespan {  // 1993-08-25T18-00-00 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
-            name: "KGT",
+            is_dst: false,
+            name:   "KGT",
         }),
-        (765918000, ZoneDetails {
+        (765918000, FixedTimespan {  // 1994-03-09T19-00-00 UTC
             offset: 21600,  // UTC offset 18000, DST offset 3600
-            name: "KGST",
+            is_dst: true,
+            name:   "KGST",
         }),
-        (780429600, ZoneDetails {
+        (780429600, FixedTimespan {  // 1994-08-24T18-00-00 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
-            name: "KGT",
+            is_dst: false,
+            name:   "KGT",
         }),
-        (797367600, ZoneDetails {
+        (797367600, FixedTimespan {  // 1995-03-08T19-00-00 UTC
             offset: 21600,  // UTC offset 18000, DST offset 3600
-            name: "KGST",
+            is_dst: true,
+            name:   "KGST",
         }),
-        (811879200, ZoneDetails {
+        (811879200, FixedTimespan {  // 1995-08-23T18-00-00 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
-            name: "KGT",
+            is_dst: false,
+            name:   "KGT",
         }),
-        (828817200, ZoneDetails {
+        (828817200, FixedTimespan {  // 1996-03-06T19-00-00 UTC
             offset: 21600,  // UTC offset 18000, DST offset 3600
-            name: "KGST",
+            is_dst: true,
+            name:   "KGST",
         }),
-        (843933600, ZoneDetails {
+        (843933600, FixedTimespan {  // 1996-08-28T18-00-00 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
-            name: "KGT",
+            is_dst: false,
+            name:   "KGT",
         }),
-        (859671000, ZoneDetails {
+        (859671000, FixedTimespan {  // 1997-02-29T21-30-00 UTC
             offset: 21600,  // UTC offset 18000, DST offset 3600
-            name: "KGST",
+            is_dst: true,
+            name:   "KGST",
         }),
-        (877811400, ZoneDetails {
+        (877811400, FixedTimespan {  // 1997-09-25T20-30-00 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
-            name: "KGT",
+            is_dst: false,
+            name:   "KGT",
         }),
-        (891120600, ZoneDetails {
+        (891120600, FixedTimespan {  // 1998-02-28T21-30-00 UTC
             offset: 21600,  // UTC offset 18000, DST offset 3600
-            name: "KGST",
+            is_dst: true,
+            name:   "KGST",
         }),
-        (909261000, ZoneDetails {
+        (909261000, FixedTimespan {  // 1998-09-24T20-30-00 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
-            name: "KGT",
+            is_dst: false,
+            name:   "KGT",
         }),
-        (922570200, ZoneDetails {
+        (922570200, FixedTimespan {  // 1999-02-27T21-30-00 UTC
             offset: 21600,  // UTC offset 18000, DST offset 3600
-            name: "KGST",
+            is_dst: true,
+            name:   "KGST",
         }),
-        (941315400, ZoneDetails {
+        (941315400, FixedTimespan {  // 1999-09-30T20-30-00 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
-            name: "KGT",
+            is_dst: false,
+            name:   "KGT",
         }),
-        (954019800, ZoneDetails {
+        (954019800, FixedTimespan {  // 2000-02-25T21-30-00 UTC
             offset: 21600,  // UTC offset 18000, DST offset 3600
-            name: "KGST",
+            is_dst: true,
+            name:   "KGST",
         }),
-        (972765000, ZoneDetails {
+        (972765000, FixedTimespan {  // 2000-09-28T20-30-00 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
-            name: "KGT",
+            is_dst: false,
+            name:   "KGT",
         }),
-        (985469400, ZoneDetails {
+        (985469400, FixedTimespan {  // 2001-02-24T21-30-00 UTC
             offset: 21600,  // UTC offset 18000, DST offset 3600
-            name: "KGST",
+            is_dst: true,
+            name:   "KGST",
         }),
-        (1004214600, ZoneDetails {
+        (1004214600, FixedTimespan {  // 2001-09-27T20-30-00 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
-            name: "KGT",
+            is_dst: false,
+            name:   "KGT",
         }),
-        (1017523800, ZoneDetails {
+        (1017523800, FixedTimespan {  // 2002-02-30T21-30-00 UTC
             offset: 21600,  // UTC offset 18000, DST offset 3600
-            name: "KGST",
+            is_dst: true,
+            name:   "KGST",
         }),
-        (1035664200, ZoneDetails {
+        (1035664200, FixedTimespan {  // 2002-09-26T20-30-00 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
-            name: "KGT",
+            is_dst: false,
+            name:   "KGT",
         }),
-        (1048973400, ZoneDetails {
+        (1048973400, FixedTimespan {  // 2003-02-29T21-30-00 UTC
             offset: 21600,  // UTC offset 18000, DST offset 3600
-            name: "KGST",
+            is_dst: true,
+            name:   "KGST",
         }),
-        (1067113800, ZoneDetails {
+        (1067113800, FixedTimespan {  // 2003-09-25T20-30-00 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
-            name: "KGT",
+            is_dst: false,
+            name:   "KGT",
         }),
-        (1080423000, ZoneDetails {
+        (1080423000, FixedTimespan {  // 2004-02-27T21-30-00 UTC
             offset: 21600,  // UTC offset 18000, DST offset 3600
-            name: "KGST",
+            is_dst: true,
+            name:   "KGST",
         }),
-        (1099168200, ZoneDetails {
+        (1099168200, FixedTimespan {  // 2004-09-30T20-30-00 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
-            name: "KGT",
+            is_dst: false,
+            name:   "KGT",
         }),
-        (1111872600, ZoneDetails {
+        (1111872600, FixedTimespan {  // 2005-02-26T21-30-00 UTC
             offset: 21600,  // UTC offset 18000, DST offset 3600
-            name: "KGST",
+            is_dst: true,
+            name:   "KGST",
         }),
-        (1123783200, ZoneDetails {
+        (1123783200, FixedTimespan {  // 2005-07-11T18-00-00 UTC
             offset: 21600,  // UTC offset 21600, DST offset 0
-            name: "KGT",
+            is_dst: false,
+            name:   "KGT",
         }),
     ]},
 };

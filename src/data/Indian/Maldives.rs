@@ -5,23 +5,26 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Indian/Maldives",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 17640,  // UTC offset 17640, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-2840158440, ZoneDetails {
+        (-2840158440, FixedTimespan {  // 1879-11-31T19-06-00 UTC
             offset: 17640,  // UTC offset 17640, DST offset 0
-            name: "MMT",
+            is_dst: false,
+            name:   "MMT",
         }),
-        (-315636840, ZoneDetails {
+        (-315636840, FixedTimespan {  // 1959-11-31T19-06-00 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
-            name: "MVT",
+            is_dst: false,
+            name:   "MVT",
         }),
     ]},
 };

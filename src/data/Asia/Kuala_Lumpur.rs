@@ -5,47 +5,56 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Asia/Kuala_Lumpur",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 24406,  // UTC offset 24406, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-2177477206, ZoneDetails {
+        (-2177477206, FixedTimespan {  // 1900-11-31T17-13-14 UTC
             offset: 24925,  // UTC offset 24925, DST offset 0
-            name: "SMT",
+            is_dst: false,
+            name:   "SMT",
         }),
-        (-2038200925, ZoneDetails {
+        (-2038200925, FixedTimespan {  // 1905-04-31T17-04-35 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
-            name: "MALT",
+            is_dst: false,
+            name:   "MALT",
         }),
-        (-1167634800, ZoneDetails {
+        (-1167634800, FixedTimespan {  // 1932-11-31T17-00-00 UTC
             offset: 26400,  // UTC offset 25200, DST offset 1200
-            name: "MALST",
+            is_dst: true,
+            name:   "MALST",
         }),
-        (-1073028000, ZoneDetails {
+        (-1073028000, FixedTimespan {  // 1935-11-31T16-40-00 UTC
             offset: 26400,  // UTC offset 26400, DST offset 0
-            name: "MALT",
+            is_dst: false,
+            name:   "MALT",
         }),
-        (-894180000, ZoneDetails {
+        (-894180000, FixedTimespan {  // 1941-07-31T16-40-00 UTC
             offset: 27000,  // UTC offset 27000, DST offset 0
-            name: "MALT",
+            is_dst: false,
+            name:   "MALT",
         }),
-        (-879665400, ZoneDetails {
+        (-879665400, FixedTimespan {  // 1942-01-15T16-30-00 UTC
             offset: 32400,  // UTC offset 32400, DST offset 0
-            name: "JST",
+            is_dst: false,
+            name:   "JST",
         }),
-        (-767005200, ZoneDetails {
+        (-767005200, FixedTimespan {  // 1945-08-11T15-00-00 UTC
             offset: 27000,  // UTC offset 27000, DST offset 0
-            name: "MALT",
+            is_dst: false,
+            name:   "MALT",
         }),
-        (378664200, ZoneDetails {
+        (378664200, FixedTimespan {  // 1981-11-31T16-30-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "MYT",
+            is_dst: false,
+            name:   "MYT",
         }),
     ]},
 };

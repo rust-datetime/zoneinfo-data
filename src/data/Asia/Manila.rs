@@ -5,55 +5,66 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Asia/Manila",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: -50640,  // UTC offset -50640, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-3944627760, ZoneDetails {
+        (-3944627760, FixedTimespan {  // 1844-11-31T14-04-00 UTC
             offset: 29040,  // UTC offset 29040, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         }),
-        (-2229321840, ZoneDetails {
+        (-2229321840, FixedTimespan {  // 1899-04-10T15-56-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "PHT",
+            is_dst: false,
+            name:   "PHT",
         }),
-        (-1046678400, ZoneDetails {
+        (-1046678400, FixedTimespan {  // 1936-09-31T16-00-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "PHST",
+            is_dst: true,
+            name:   "PHST",
         }),
-        (-1038733200, ZoneDetails {
+        (-1038733200, FixedTimespan {  // 1937-00-31T15-00-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "PHT",
+            is_dst: false,
+            name:   "PHT",
         }),
-        (-873273600, ZoneDetails {
+        (-873273600, FixedTimespan {  // 1942-03-30T16-00-00 UTC
             offset: 32400,  // UTC offset 32400, DST offset 0
-            name: "JST",
+            is_dst: false,
+            name:   "JST",
         }),
-        (-794221200, ZoneDetails {
+        (-794221200, FixedTimespan {  // 1944-09-31T15-00-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "PHT",
+            is_dst: false,
+            name:   "PHT",
         }),
-        (-496224000, ZoneDetails {
+        (-496224000, FixedTimespan {  // 1954-03-11T16-00-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "PHST",
+            is_dst: true,
+            name:   "PHST",
         }),
-        (-489315600, ZoneDetails {
+        (-489315600, FixedTimespan {  // 1954-05-30T15-00-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "PHT",
+            is_dst: false,
+            name:   "PHT",
         }),
-        (259344000, ZoneDetails {
+        (259344000, FixedTimespan {  // 1978-02-21T16-00-00 UTC
             offset: 32400,  // UTC offset 28800, DST offset 3600
-            name: "PHST",
+            is_dst: true,
+            name:   "PHST",
         }),
-        (275151600, ZoneDetails {
+        (275151600, FixedTimespan {  // 1978-08-20T15-00-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
-            name: "PHT",
+            is_dst: false,
+            name:   "PHT",
         }),
     ]},
 };

@@ -5,215 +5,266 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Asia/Oral",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 12324,  // UTC offset 12324, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-1441164324, ZoneDetails {
+        (-1441164324, FixedTimespan {  // 1924-04-01T20-34-36 UTC
             offset: 14400,  // UTC offset 14400, DST offset 0
-            name: "URAT",
+            is_dst: false,
+            name:   "URAT",
         }),
-        (-1247544000, ZoneDetails {
+        (-1247544000, FixedTimespan {  // 1930-05-20T20-00-00 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
-            name: "URAT",
+            is_dst: false,
+            name:   "URAT",
         }),
-        (354913200, ZoneDetails {
+        (354913200, FixedTimespan {  // 1981-02-31T19-00-00 UTC
             offset: 21600,  // UTC offset 18000, DST offset 3600
-            name: "URAST",
+            is_dst: true,
+            name:   "URAST",
         }),
-        (370720800, ZoneDetails {
+        (370720800, FixedTimespan {  // 1981-08-30T18-00-00 UTC
             offset: 21600,  // UTC offset 21600, DST offset 0
-            name: "URAT",
+            is_dst: false,
+            name:   "URAT",
         }),
-        (386445600, ZoneDetails {
+        (386445600, FixedTimespan {  // 1982-02-31T18-00-00 UTC
             offset: 21600,  // UTC offset 18000, DST offset 3600
-            name: "URAST",
+            is_dst: true,
+            name:   "URAST",
         }),
-        (402256800, ZoneDetails {
+        (402256800, FixedTimespan {  // 1982-08-30T18-00-00 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
-            name: "URAT",
+            is_dst: false,
+            name:   "URAT",
         }),
-        (417985200, ZoneDetails {
+        (417985200, FixedTimespan {  // 1983-02-31T19-00-00 UTC
             offset: 21600,  // UTC offset 18000, DST offset 3600
-            name: "URAST",
+            is_dst: true,
+            name:   "URAST",
         }),
-        (433792800, ZoneDetails {
+        (433792800, FixedTimespan {  // 1983-08-30T18-00-00 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
-            name: "URAT",
+            is_dst: false,
+            name:   "URAT",
         }),
-        (449607600, ZoneDetails {
+        (449607600, FixedTimespan {  // 1984-02-31T19-00-00 UTC
             offset: 21600,  // UTC offset 18000, DST offset 3600
-            name: "URAST",
+            is_dst: true,
+            name:   "URAST",
         }),
-        (465339600, ZoneDetails {
+        (465339600, FixedTimespan {  // 1984-08-29T21-00-00 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
-            name: "URAT",
+            is_dst: false,
+            name:   "URAT",
         }),
-        (481064400, ZoneDetails {
+        (481064400, FixedTimespan {  // 1985-02-30T21-00-00 UTC
             offset: 21600,  // UTC offset 18000, DST offset 3600
-            name: "URAST",
+            is_dst: true,
+            name:   "URAST",
         }),
-        (496789200, ZoneDetails {
+        (496789200, FixedTimespan {  // 1985-08-28T21-00-00 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
-            name: "URAT",
+            is_dst: false,
+            name:   "URAT",
         }),
-        (512514000, ZoneDetails {
+        (512514000, FixedTimespan {  // 1986-02-29T21-00-00 UTC
             offset: 21600,  // UTC offset 18000, DST offset 3600
-            name: "URAST",
+            is_dst: true,
+            name:   "URAST",
         }),
-        (528238800, ZoneDetails {
+        (528238800, FixedTimespan {  // 1986-08-27T21-00-00 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
-            name: "URAT",
+            is_dst: false,
+            name:   "URAT",
         }),
-        (543963600, ZoneDetails {
+        (543963600, FixedTimespan {  // 1987-02-28T21-00-00 UTC
             offset: 21600,  // UTC offset 18000, DST offset 3600
-            name: "URAST",
+            is_dst: true,
+            name:   "URAST",
         }),
-        (559688400, ZoneDetails {
+        (559688400, FixedTimespan {  // 1987-08-26T21-00-00 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
-            name: "URAT",
+            is_dst: false,
+            name:   "URAT",
         }),
-        (575413200, ZoneDetails {
+        (575413200, FixedTimespan {  // 1988-02-26T21-00-00 UTC
             offset: 21600,  // UTC offset 18000, DST offset 3600
-            name: "URAST",
+            is_dst: true,
+            name:   "URAST",
         }),
-        (591138000, ZoneDetails {
+        (591138000, FixedTimespan {  // 1988-08-24T21-00-00 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
-            name: "URAT",
+            is_dst: false,
+            name:   "URAT",
         }),
-        (606862800, ZoneDetails {
+        (606862800, FixedTimespan {  // 1989-02-25T21-00-00 UTC
             offset: 18000,  // UTC offset 14400, DST offset 3600
-            name: "URAST",
+            is_dst: true,
+            name:   "URAST",
         }),
-        (622591200, ZoneDetails {
+        (622591200, FixedTimespan {  // 1989-08-23T22-00-00 UTC
             offset: 14400,  // UTC offset 14400, DST offset 0
-            name: "URAT",
+            is_dst: false,
+            name:   "URAT",
         }),
-        (638316000, ZoneDetails {
+        (638316000, FixedTimespan {  // 1990-02-24T22-00-00 UTC
             offset: 18000,  // UTC offset 14400, DST offset 3600
-            name: "URAST",
+            is_dst: true,
+            name:   "URAST",
         }),
-        (654645600, ZoneDetails {
+        (654645600, FixedTimespan {  // 1990-08-29T22-00-00 UTC
             offset: 14400,  // UTC offset 14400, DST offset 0
-            name: "URAT",
+            is_dst: false,
+            name:   "URAT",
         }),
-        (692827200, ZoneDetails {
+        (692827200, FixedTimespan {  // 1991-11-15T20-00-00 UTC
             offset: 14400,  // UTC offset 14400, DST offset 0
-            name: "ORAT",
+            is_dst: false,
+            name:   "ORAT",
         }),
-        (701809200, ZoneDetails {
+        (701809200, FixedTimespan {  // 1992-02-28T19-00-00 UTC
             offset: 18000,  // UTC offset 14400, DST offset 3600
-            name: "ORAST",
+            is_dst: true,
+            name:   "ORAST",
         }),
-        (717530400, ZoneDetails {
+        (717530400, FixedTimespan {  // 1992-08-26T18-00-00 UTC
             offset: 14400,  // UTC offset 14400, DST offset 0
-            name: "ORAT",
+            is_dst: false,
+            name:   "ORAT",
         }),
-        (733269600, ZoneDetails {
+        (733269600, FixedTimespan {  // 1993-02-27T22-00-00 UTC
             offset: 18000,  // UTC offset 14400, DST offset 3600
-            name: "ORAST",
+            is_dst: true,
+            name:   "ORAST",
         }),
-        (748994400, ZoneDetails {
+        (748994400, FixedTimespan {  // 1993-08-25T22-00-00 UTC
             offset: 14400,  // UTC offset 14400, DST offset 0
-            name: "ORAT",
+            is_dst: false,
+            name:   "ORAT",
         }),
-        (764719200, ZoneDetails {
+        (764719200, FixedTimespan {  // 1994-02-26T22-00-00 UTC
             offset: 18000,  // UTC offset 14400, DST offset 3600
-            name: "ORAST",
+            is_dst: true,
+            name:   "ORAST",
         }),
-        (780444000, ZoneDetails {
+        (780444000, FixedTimespan {  // 1994-08-24T22-00-00 UTC
             offset: 14400,  // UTC offset 14400, DST offset 0
-            name: "ORAT",
+            is_dst: false,
+            name:   "ORAT",
         }),
-        (796168800, ZoneDetails {
+        (796168800, FixedTimespan {  // 1995-02-25T22-00-00 UTC
             offset: 18000,  // UTC offset 14400, DST offset 3600
-            name: "ORAST",
+            is_dst: true,
+            name:   "ORAST",
         }),
-        (811893600, ZoneDetails {
+        (811893600, FixedTimespan {  // 1995-08-23T22-00-00 UTC
             offset: 14400,  // UTC offset 14400, DST offset 0
-            name: "ORAT",
+            is_dst: false,
+            name:   "ORAT",
         }),
-        (828223200, ZoneDetails {
+        (828223200, FixedTimespan {  // 1996-02-30T22-00-00 UTC
             offset: 18000,  // UTC offset 14400, DST offset 3600
-            name: "ORAST",
+            is_dst: true,
+            name:   "ORAST",
         }),
-        (846367200, ZoneDetails {
+        (846367200, FixedTimespan {  // 1996-09-26T22-00-00 UTC
             offset: 14400,  // UTC offset 14400, DST offset 0
-            name: "ORAT",
+            is_dst: false,
+            name:   "ORAT",
         }),
-        (859672800, ZoneDetails {
+        (859672800, FixedTimespan {  // 1997-02-29T22-00-00 UTC
             offset: 18000,  // UTC offset 14400, DST offset 3600
-            name: "ORAST",
+            is_dst: true,
+            name:   "ORAST",
         }),
-        (877816800, ZoneDetails {
+        (877816800, FixedTimespan {  // 1997-09-25T22-00-00 UTC
             offset: 14400,  // UTC offset 14400, DST offset 0
-            name: "ORAT",
+            is_dst: false,
+            name:   "ORAT",
         }),
-        (891122400, ZoneDetails {
+        (891122400, FixedTimespan {  // 1998-02-28T22-00-00 UTC
             offset: 18000,  // UTC offset 14400, DST offset 3600
-            name: "ORAST",
+            is_dst: true,
+            name:   "ORAST",
         }),
-        (909266400, ZoneDetails {
+        (909266400, FixedTimespan {  // 1998-09-24T22-00-00 UTC
             offset: 14400,  // UTC offset 14400, DST offset 0
-            name: "ORAT",
+            is_dst: false,
+            name:   "ORAT",
         }),
-        (922572000, ZoneDetails {
+        (922572000, FixedTimespan {  // 1999-02-27T22-00-00 UTC
             offset: 18000,  // UTC offset 14400, DST offset 3600
-            name: "ORAST",
+            is_dst: true,
+            name:   "ORAST",
         }),
-        (941320800, ZoneDetails {
+        (941320800, FixedTimespan {  // 1999-09-30T22-00-00 UTC
             offset: 14400,  // UTC offset 14400, DST offset 0
-            name: "ORAT",
+            is_dst: false,
+            name:   "ORAT",
         }),
-        (954021600, ZoneDetails {
+        (954021600, FixedTimespan {  // 2000-02-25T22-00-00 UTC
             offset: 18000,  // UTC offset 14400, DST offset 3600
-            name: "ORAST",
+            is_dst: true,
+            name:   "ORAST",
         }),
-        (972770400, ZoneDetails {
+        (972770400, FixedTimespan {  // 2000-09-28T22-00-00 UTC
             offset: 14400,  // UTC offset 14400, DST offset 0
-            name: "ORAT",
+            is_dst: false,
+            name:   "ORAT",
         }),
-        (985471200, ZoneDetails {
+        (985471200, FixedTimespan {  // 2001-02-24T22-00-00 UTC
             offset: 18000,  // UTC offset 14400, DST offset 3600
-            name: "ORAST",
+            is_dst: true,
+            name:   "ORAST",
         }),
-        (1004220000, ZoneDetails {
+        (1004220000, FixedTimespan {  // 2001-09-27T22-00-00 UTC
             offset: 14400,  // UTC offset 14400, DST offset 0
-            name: "ORAT",
+            is_dst: false,
+            name:   "ORAT",
         }),
-        (1017525600, ZoneDetails {
+        (1017525600, FixedTimespan {  // 2002-02-30T22-00-00 UTC
             offset: 18000,  // UTC offset 14400, DST offset 3600
-            name: "ORAST",
+            is_dst: true,
+            name:   "ORAST",
         }),
-        (1035669600, ZoneDetails {
+        (1035669600, FixedTimespan {  // 2002-09-26T22-00-00 UTC
             offset: 14400,  // UTC offset 14400, DST offset 0
-            name: "ORAT",
+            is_dst: false,
+            name:   "ORAT",
         }),
-        (1048975200, ZoneDetails {
+        (1048975200, FixedTimespan {  // 2003-02-29T22-00-00 UTC
             offset: 18000,  // UTC offset 14400, DST offset 3600
-            name: "ORAST",
+            is_dst: true,
+            name:   "ORAST",
         }),
-        (1067119200, ZoneDetails {
+        (1067119200, FixedTimespan {  // 2003-09-25T22-00-00 UTC
             offset: 14400,  // UTC offset 14400, DST offset 0
-            name: "ORAT",
+            is_dst: false,
+            name:   "ORAT",
         }),
-        (1080424800, ZoneDetails {
+        (1080424800, FixedTimespan {  // 2004-02-27T22-00-00 UTC
             offset: 18000,  // UTC offset 14400, DST offset 3600
-            name: "ORAST",
+            is_dst: true,
+            name:   "ORAST",
         }),
-        (1099173600, ZoneDetails {
+        (1099173600, FixedTimespan {  // 2004-09-30T22-00-00 UTC
             offset: 14400,  // UTC offset 14400, DST offset 0
-            name: "ORAT",
+            is_dst: false,
+            name:   "ORAT",
         }),
-        (1110830400, ZoneDetails {
+        (1110830400, FixedTimespan {  // 2005-02-14T20-00-00 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
-            name: "ORAT",
+            is_dst: false,
+            name:   "ORAT",
         }),
     ]},
 };

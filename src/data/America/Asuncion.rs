@@ -5,1027 +5,1281 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "America/Asuncion",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: -7760,  // UTC offset -7760, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-2524513840, ZoneDetails {
+        (-2524513840, FixedTimespan {  // 1890-00-01T2-09-20 UTC
             offset: -7760,  // UTC offset -7760, DST offset 0
-            name: "AMT",
+            is_dst: false,
+            name:   "AMT",
         }),
-        (-1206395440, ZoneDetails {
+        (-1206395440, FixedTimespan {  // 1931-09-10T2-09-20 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (86760000, ZoneDetails {
+        (86760000, FixedTimespan {  // 1972-09-01T4-00-00 UTC
             offset: -10800,  // UTC offset -10800, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (134017200, ZoneDetails {
+        (134017200, FixedTimespan {  // 1974-03-01T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (181368000, ZoneDetails {
+        (181368000, FixedTimespan {  // 1975-09-01T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (194497200, ZoneDetails {
+        (194497200, FixedTimespan {  // 1976-02-01T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (212990400, ZoneDetails {
+        (212990400, FixedTimespan {  // 1976-09-01T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (226033200, ZoneDetails {
+        (226033200, FixedTimespan {  // 1977-02-01T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (244526400, ZoneDetails {
+        (244526400, FixedTimespan {  // 1977-09-01T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (257569200, ZoneDetails {
+        (257569200, FixedTimespan {  // 1978-02-01T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (276062400, ZoneDetails {
+        (276062400, FixedTimespan {  // 1978-09-01T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (291783600, ZoneDetails {
+        (291783600, FixedTimespan {  // 1979-03-01T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (307598400, ZoneDetails {
+        (307598400, FixedTimespan {  // 1979-09-01T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (323406000, ZoneDetails {
+        (323406000, FixedTimespan {  // 1980-03-01T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (339220800, ZoneDetails {
+        (339220800, FixedTimespan {  // 1980-09-01T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (354942000, ZoneDetails {
+        (354942000, FixedTimespan {  // 1981-03-01T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (370756800, ZoneDetails {
+        (370756800, FixedTimespan {  // 1981-09-01T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (386478000, ZoneDetails {
+        (386478000, FixedTimespan {  // 1982-03-01T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (402292800, ZoneDetails {
+        (402292800, FixedTimespan {  // 1982-09-01T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (418014000, ZoneDetails {
+        (418014000, FixedTimespan {  // 1983-03-01T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (433828800, ZoneDetails {
+        (433828800, FixedTimespan {  // 1983-09-01T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (449636400, ZoneDetails {
+        (449636400, FixedTimespan {  // 1984-03-01T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (465451200, ZoneDetails {
+        (465451200, FixedTimespan {  // 1984-09-01T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (481172400, ZoneDetails {
+        (481172400, FixedTimespan {  // 1985-03-01T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (496987200, ZoneDetails {
+        (496987200, FixedTimespan {  // 1985-09-01T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (512708400, ZoneDetails {
+        (512708400, FixedTimespan {  // 1986-03-01T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (528523200, ZoneDetails {
+        (528523200, FixedTimespan {  // 1986-09-01T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (544244400, ZoneDetails {
+        (544244400, FixedTimespan {  // 1987-03-01T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (560059200, ZoneDetails {
+        (560059200, FixedTimespan {  // 1987-09-01T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (575866800, ZoneDetails {
+        (575866800, FixedTimespan {  // 1988-03-01T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (591681600, ZoneDetails {
+        (591681600, FixedTimespan {  // 1988-09-01T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (607402800, ZoneDetails {
+        (607402800, FixedTimespan {  // 1989-03-01T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (625032000, ZoneDetails {
+        (625032000, FixedTimespan {  // 1989-09-22T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (638938800, ZoneDetails {
+        (638938800, FixedTimespan {  // 1990-03-01T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (654753600, ZoneDetails {
+        (654753600, FixedTimespan {  // 1990-09-01T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (670474800, ZoneDetails {
+        (670474800, FixedTimespan {  // 1991-03-01T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (686721600, ZoneDetails {
+        (686721600, FixedTimespan {  // 1991-09-06T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (699418800, ZoneDetails {
+        (699418800, FixedTimespan {  // 1992-02-01T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (718257600, ZoneDetails {
+        (718257600, FixedTimespan {  // 1992-09-05T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (733546800, ZoneDetails {
+        (733546800, FixedTimespan {  // 1993-02-31T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (749448000, ZoneDetails {
+        (749448000, FixedTimespan {  // 1993-09-01T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (762318000, ZoneDetails {
+        (762318000, FixedTimespan {  // 1994-01-27T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (780984000, ZoneDetails {
+        (780984000, FixedTimespan {  // 1994-09-01T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (793767600, ZoneDetails {
+        (793767600, FixedTimespan {  // 1995-01-26T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (812520000, ZoneDetails {
+        (812520000, FixedTimespan {  // 1995-09-01T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (825649200, ZoneDetails {
+        (825649200, FixedTimespan {  // 1996-02-01T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (844574400, ZoneDetails {
+        (844574400, FixedTimespan {  // 1996-09-06T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (856666800, ZoneDetails {
+        (856666800, FixedTimespan {  // 1997-01-23T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (876024000, ZoneDetails {
+        (876024000, FixedTimespan {  // 1997-09-05T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (888721200, ZoneDetails {
+        (888721200, FixedTimespan {  // 1998-02-01T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (907473600, ZoneDetails {
+        (907473600, FixedTimespan {  // 1998-09-04T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (920775600, ZoneDetails {
+        (920775600, FixedTimespan {  // 1999-02-07T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (938923200, ZoneDetails {
+        (938923200, FixedTimespan {  // 1999-09-03T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (952225200, ZoneDetails {
+        (952225200, FixedTimespan {  // 2000-02-05T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (970372800, ZoneDetails {
+        (970372800, FixedTimespan {  // 2000-09-01T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (983674800, ZoneDetails {
+        (983674800, FixedTimespan {  // 2001-02-04T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (1002427200, ZoneDetails {
+        (1002427200, FixedTimespan {  // 2001-09-07T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (1018148400, ZoneDetails {
+        (1018148400, FixedTimespan {  // 2002-03-07T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (1030852800, ZoneDetails {
+        (1030852800, FixedTimespan {  // 2002-08-01T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (1049598000, ZoneDetails {
+        (1049598000, FixedTimespan {  // 2003-03-06T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (1062907200, ZoneDetails {
+        (1062907200, FixedTimespan {  // 2003-08-07T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (1081047600, ZoneDetails {
+        (1081047600, FixedTimespan {  // 2004-03-04T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (1097985600, ZoneDetails {
+        (1097985600, FixedTimespan {  // 2004-09-17T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (1110682800, ZoneDetails {
+        (1110682800, FixedTimespan {  // 2005-02-13T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (1129435200, ZoneDetails {
+        (1129435200, FixedTimespan {  // 2005-09-16T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (1142132400, ZoneDetails {
+        (1142132400, FixedTimespan {  // 2006-02-12T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (1160884800, ZoneDetails {
+        (1160884800, FixedTimespan {  // 2006-09-15T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (1173582000, ZoneDetails {
+        (1173582000, FixedTimespan {  // 2007-02-11T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (1192939200, ZoneDetails {
+        (1192939200, FixedTimespan {  // 2007-09-21T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (1205031600, ZoneDetails {
+        (1205031600, FixedTimespan {  // 2008-02-09T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (1224388800, ZoneDetails {
+        (1224388800, FixedTimespan {  // 2008-09-19T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (1236481200, ZoneDetails {
+        (1236481200, FixedTimespan {  // 2009-02-08T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (1255838400, ZoneDetails {
+        (1255838400, FixedTimespan {  // 2009-09-18T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (1270954800, ZoneDetails {
+        (1270954800, FixedTimespan {  // 2010-03-11T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (1286078400, ZoneDetails {
+        (1286078400, FixedTimespan {  // 2010-09-03T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (1302404400, ZoneDetails {
+        (1302404400, FixedTimespan {  // 2011-03-10T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (1317528000, ZoneDetails {
+        (1317528000, FixedTimespan {  // 2011-09-02T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (1333854000, ZoneDetails {
+        (1333854000, FixedTimespan {  // 2012-03-08T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (1349582400, ZoneDetails {
+        (1349582400, FixedTimespan {  // 2012-09-07T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (1364094000, ZoneDetails {
+        (1364094000, FixedTimespan {  // 2013-02-24T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (1381032000, ZoneDetails {
+        (1381032000, FixedTimespan {  // 2013-09-06T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (1395543600, ZoneDetails {
+        (1395543600, FixedTimespan {  // 2014-02-23T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (1412481600, ZoneDetails {
+        (1412481600, FixedTimespan {  // 2014-09-05T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (1426993200, ZoneDetails {
+        (1426993200, FixedTimespan {  // 2015-02-22T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (1443931200, ZoneDetails {
+        (1443931200, FixedTimespan {  // 2015-09-04T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (1459047600, ZoneDetails {
+        (1459047600, FixedTimespan {  // 2016-02-27T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (1475380800, ZoneDetails {
+        (1475380800, FixedTimespan {  // 2016-09-02T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (1490497200, ZoneDetails {
+        (1490497200, FixedTimespan {  // 2017-02-26T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (1506830400, ZoneDetails {
+        (1506830400, FixedTimespan {  // 2017-09-01T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (1521946800, ZoneDetails {
+        (1521946800, FixedTimespan {  // 2018-02-25T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (1538884800, ZoneDetails {
+        (1538884800, FixedTimespan {  // 2018-09-07T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (1553396400, ZoneDetails {
+        (1553396400, FixedTimespan {  // 2019-02-24T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (1570334400, ZoneDetails {
+        (1570334400, FixedTimespan {  // 2019-09-06T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (1584846000, ZoneDetails {
+        (1584846000, FixedTimespan {  // 2020-02-22T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (1601784000, ZoneDetails {
+        (1601784000, FixedTimespan {  // 2020-09-04T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (1616900400, ZoneDetails {
+        (1616900400, FixedTimespan {  // 2021-02-28T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (1633233600, ZoneDetails {
+        (1633233600, FixedTimespan {  // 2021-09-03T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (1648350000, ZoneDetails {
+        (1648350000, FixedTimespan {  // 2022-02-27T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (1664683200, ZoneDetails {
+        (1664683200, FixedTimespan {  // 2022-09-02T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (1679799600, ZoneDetails {
+        (1679799600, FixedTimespan {  // 2023-02-26T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (1696132800, ZoneDetails {
+        (1696132800, FixedTimespan {  // 2023-09-01T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (1711249200, ZoneDetails {
+        (1711249200, FixedTimespan {  // 2024-02-24T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (1728187200, ZoneDetails {
+        (1728187200, FixedTimespan {  // 2024-09-06T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (1742698800, ZoneDetails {
+        (1742698800, FixedTimespan {  // 2025-02-23T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (1759636800, ZoneDetails {
+        (1759636800, FixedTimespan {  // 2025-09-05T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (1774148400, ZoneDetails {
+        (1774148400, FixedTimespan {  // 2026-02-22T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (1791086400, ZoneDetails {
+        (1791086400, FixedTimespan {  // 2026-09-04T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (1806202800, ZoneDetails {
+        (1806202800, FixedTimespan {  // 2027-02-28T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (1822536000, ZoneDetails {
+        (1822536000, FixedTimespan {  // 2027-09-03T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (1837652400, ZoneDetails {
+        (1837652400, FixedTimespan {  // 2028-02-26T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (1853985600, ZoneDetails {
+        (1853985600, FixedTimespan {  // 2028-09-01T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (1869102000, ZoneDetails {
+        (1869102000, FixedTimespan {  // 2029-02-25T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (1886040000, ZoneDetails {
+        (1886040000, FixedTimespan {  // 2029-09-07T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (1900551600, ZoneDetails {
+        (1900551600, FixedTimespan {  // 2030-02-24T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (1917489600, ZoneDetails {
+        (1917489600, FixedTimespan {  // 2030-09-06T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (1932001200, ZoneDetails {
+        (1932001200, FixedTimespan {  // 2031-02-23T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (1948939200, ZoneDetails {
+        (1948939200, FixedTimespan {  // 2031-09-05T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (1964055600, ZoneDetails {
+        (1964055600, FixedTimespan {  // 2032-02-28T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (1980388800, ZoneDetails {
+        (1980388800, FixedTimespan {  // 2032-09-03T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (1995505200, ZoneDetails {
+        (1995505200, FixedTimespan {  // 2033-02-27T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (2011838400, ZoneDetails {
+        (2011838400, FixedTimespan {  // 2033-09-02T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (2026954800, ZoneDetails {
+        (2026954800, FixedTimespan {  // 2034-02-26T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (2043288000, ZoneDetails {
+        (2043288000, FixedTimespan {  // 2034-09-01T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (2058404400, ZoneDetails {
+        (2058404400, FixedTimespan {  // 2035-02-25T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (2075342400, ZoneDetails {
+        (2075342400, FixedTimespan {  // 2035-09-07T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (2089854000, ZoneDetails {
+        (2089854000, FixedTimespan {  // 2036-02-23T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (2106792000, ZoneDetails {
+        (2106792000, FixedTimespan {  // 2036-09-05T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (2121303600, ZoneDetails {
+        (2121303600, FixedTimespan {  // 2037-02-22T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (2138241600, ZoneDetails {
+        (2138241600, FixedTimespan {  // 2037-09-04T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (2153358000, ZoneDetails {
+        (2153358000, FixedTimespan {  // 2038-02-28T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (2169691200, ZoneDetails {
+        (2169691200, FixedTimespan {  // 2038-09-03T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (2184807600, ZoneDetails {
+        (2184807600, FixedTimespan {  // 2039-02-27T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (2201140800, ZoneDetails {
+        (2201140800, FixedTimespan {  // 2039-09-02T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (2216257200, ZoneDetails {
+        (2216257200, FixedTimespan {  // 2040-02-25T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (2233195200, ZoneDetails {
+        (2233195200, FixedTimespan {  // 2040-09-07T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (2247706800, ZoneDetails {
+        (2247706800, FixedTimespan {  // 2041-02-24T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (2264644800, ZoneDetails {
+        (2264644800, FixedTimespan {  // 2041-09-06T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (2279156400, ZoneDetails {
+        (2279156400, FixedTimespan {  // 2042-02-23T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (2296094400, ZoneDetails {
+        (2296094400, FixedTimespan {  // 2042-09-05T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (2310606000, ZoneDetails {
+        (2310606000, FixedTimespan {  // 2043-02-22T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (2327544000, ZoneDetails {
+        (2327544000, FixedTimespan {  // 2043-09-04T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (2342660400, ZoneDetails {
+        (2342660400, FixedTimespan {  // 2044-02-27T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (2358993600, ZoneDetails {
+        (2358993600, FixedTimespan {  // 2044-09-02T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (2374110000, ZoneDetails {
+        (2374110000, FixedTimespan {  // 2045-02-26T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (2390443200, ZoneDetails {
+        (2390443200, FixedTimespan {  // 2045-09-01T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (2405559600, ZoneDetails {
+        (2405559600, FixedTimespan {  // 2046-02-25T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (2422497600, ZoneDetails {
+        (2422497600, FixedTimespan {  // 2046-09-07T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (2437009200, ZoneDetails {
+        (2437009200, FixedTimespan {  // 2047-02-24T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (2453947200, ZoneDetails {
+        (2453947200, FixedTimespan {  // 2047-09-06T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (2468458800, ZoneDetails {
+        (2468458800, FixedTimespan {  // 2048-02-22T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (2485396800, ZoneDetails {
+        (2485396800, FixedTimespan {  // 2048-09-04T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (2500513200, ZoneDetails {
+        (2500513200, FixedTimespan {  // 2049-02-28T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (2516846400, ZoneDetails {
+        (2516846400, FixedTimespan {  // 2049-09-03T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (2531962800, ZoneDetails {
+        (2531962800, FixedTimespan {  // 2050-02-27T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (2548296000, ZoneDetails {
+        (2548296000, FixedTimespan {  // 2050-09-02T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (2563412400, ZoneDetails {
+        (2563412400, FixedTimespan {  // 2051-02-26T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (2579745600, ZoneDetails {
+        (2579745600, FixedTimespan {  // 2051-09-01T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (2594862000, ZoneDetails {
+        (2594862000, FixedTimespan {  // 2052-02-24T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (2611800000, ZoneDetails {
+        (2611800000, FixedTimespan {  // 2052-09-06T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (2626311600, ZoneDetails {
+        (2626311600, FixedTimespan {  // 2053-02-23T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (2643249600, ZoneDetails {
+        (2643249600, FixedTimespan {  // 2053-09-05T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (2657761200, ZoneDetails {
+        (2657761200, FixedTimespan {  // 2054-02-22T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (2674699200, ZoneDetails {
+        (2674699200, FixedTimespan {  // 2054-09-04T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (2689815600, ZoneDetails {
+        (2689815600, FixedTimespan {  // 2055-02-28T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (2706148800, ZoneDetails {
+        (2706148800, FixedTimespan {  // 2055-09-03T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (2721265200, ZoneDetails {
+        (2721265200, FixedTimespan {  // 2056-02-26T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (2737598400, ZoneDetails {
+        (2737598400, FixedTimespan {  // 2056-09-01T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (2752714800, ZoneDetails {
+        (2752714800, FixedTimespan {  // 2057-02-25T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (2769652800, ZoneDetails {
+        (2769652800, FixedTimespan {  // 2057-09-07T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (2784164400, ZoneDetails {
+        (2784164400, FixedTimespan {  // 2058-02-24T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (2801102400, ZoneDetails {
+        (2801102400, FixedTimespan {  // 2058-09-06T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (2815614000, ZoneDetails {
+        (2815614000, FixedTimespan {  // 2059-02-23T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (2832552000, ZoneDetails {
+        (2832552000, FixedTimespan {  // 2059-09-05T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (2847668400, ZoneDetails {
+        (2847668400, FixedTimespan {  // 2060-02-28T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (2864001600, ZoneDetails {
+        (2864001600, FixedTimespan {  // 2060-09-03T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (2879118000, ZoneDetails {
+        (2879118000, FixedTimespan {  // 2061-02-27T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (2895451200, ZoneDetails {
+        (2895451200, FixedTimespan {  // 2061-09-02T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (2910567600, ZoneDetails {
+        (2910567600, FixedTimespan {  // 2062-02-26T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (2926900800, ZoneDetails {
+        (2926900800, FixedTimespan {  // 2062-09-01T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (2942017200, ZoneDetails {
+        (2942017200, FixedTimespan {  // 2063-02-25T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (2958955200, ZoneDetails {
+        (2958955200, FixedTimespan {  // 2063-09-07T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (2973466800, ZoneDetails {
+        (2973466800, FixedTimespan {  // 2064-02-23T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (2990404800, ZoneDetails {
+        (2990404800, FixedTimespan {  // 2064-09-05T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (3004916400, ZoneDetails {
+        (3004916400, FixedTimespan {  // 2065-02-22T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (3021854400, ZoneDetails {
+        (3021854400, FixedTimespan {  // 2065-09-04T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (3036970800, ZoneDetails {
+        (3036970800, FixedTimespan {  // 2066-02-28T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (3053304000, ZoneDetails {
+        (3053304000, FixedTimespan {  // 2066-09-03T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (3068420400, ZoneDetails {
+        (3068420400, FixedTimespan {  // 2067-02-27T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (3084753600, ZoneDetails {
+        (3084753600, FixedTimespan {  // 2067-09-02T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (3099870000, ZoneDetails {
+        (3099870000, FixedTimespan {  // 2068-02-25T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (3116808000, ZoneDetails {
+        (3116808000, FixedTimespan {  // 2068-09-07T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (3131319600, ZoneDetails {
+        (3131319600, FixedTimespan {  // 2069-02-24T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (3148257600, ZoneDetails {
+        (3148257600, FixedTimespan {  // 2069-09-06T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (3162769200, ZoneDetails {
+        (3162769200, FixedTimespan {  // 2070-02-23T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (3179707200, ZoneDetails {
+        (3179707200, FixedTimespan {  // 2070-09-05T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (3194218800, ZoneDetails {
+        (3194218800, FixedTimespan {  // 2071-02-22T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (3211156800, ZoneDetails {
+        (3211156800, FixedTimespan {  // 2071-09-04T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (3226273200, ZoneDetails {
+        (3226273200, FixedTimespan {  // 2072-02-27T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (3242606400, ZoneDetails {
+        (3242606400, FixedTimespan {  // 2072-09-02T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (3257722800, ZoneDetails {
+        (3257722800, FixedTimespan {  // 2073-02-26T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (3274056000, ZoneDetails {
+        (3274056000, FixedTimespan {  // 2073-09-01T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (3289172400, ZoneDetails {
+        (3289172400, FixedTimespan {  // 2074-02-25T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (3306110400, ZoneDetails {
+        (3306110400, FixedTimespan {  // 2074-09-07T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (3320622000, ZoneDetails {
+        (3320622000, FixedTimespan {  // 2075-02-24T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (3337560000, ZoneDetails {
+        (3337560000, FixedTimespan {  // 2075-09-06T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (3352071600, ZoneDetails {
+        (3352071600, FixedTimespan {  // 2076-02-22T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (3369009600, ZoneDetails {
+        (3369009600, FixedTimespan {  // 2076-09-04T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (3384126000, ZoneDetails {
+        (3384126000, FixedTimespan {  // 2077-02-28T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (3400459200, ZoneDetails {
+        (3400459200, FixedTimespan {  // 2077-09-03T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (3415575600, ZoneDetails {
+        (3415575600, FixedTimespan {  // 2078-02-27T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (3431908800, ZoneDetails {
+        (3431908800, FixedTimespan {  // 2078-09-02T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (3447025200, ZoneDetails {
+        (3447025200, FixedTimespan {  // 2079-02-26T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (3463358400, ZoneDetails {
+        (3463358400, FixedTimespan {  // 2079-09-01T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (3478474800, ZoneDetails {
+        (3478474800, FixedTimespan {  // 2080-02-24T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (3495412800, ZoneDetails {
+        (3495412800, FixedTimespan {  // 2080-09-06T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (3509924400, ZoneDetails {
+        (3509924400, FixedTimespan {  // 2081-02-23T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (3526862400, ZoneDetails {
+        (3526862400, FixedTimespan {  // 2081-09-05T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (3541374000, ZoneDetails {
+        (3541374000, FixedTimespan {  // 2082-02-22T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (3558312000, ZoneDetails {
+        (3558312000, FixedTimespan {  // 2082-09-04T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (3573428400, ZoneDetails {
+        (3573428400, FixedTimespan {  // 2083-02-28T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (3589761600, ZoneDetails {
+        (3589761600, FixedTimespan {  // 2083-09-03T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (3604878000, ZoneDetails {
+        (3604878000, FixedTimespan {  // 2084-02-26T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (3621211200, ZoneDetails {
+        (3621211200, FixedTimespan {  // 2084-09-01T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (3636327600, ZoneDetails {
+        (3636327600, FixedTimespan {  // 2085-02-25T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (3653265600, ZoneDetails {
+        (3653265600, FixedTimespan {  // 2085-09-07T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (3667777200, ZoneDetails {
+        (3667777200, FixedTimespan {  // 2086-02-24T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (3684715200, ZoneDetails {
+        (3684715200, FixedTimespan {  // 2086-09-06T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (3699226800, ZoneDetails {
+        (3699226800, FixedTimespan {  // 2087-02-23T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (3716164800, ZoneDetails {
+        (3716164800, FixedTimespan {  // 2087-09-05T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (3731281200, ZoneDetails {
+        (3731281200, FixedTimespan {  // 2088-02-28T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (3747614400, ZoneDetails {
+        (3747614400, FixedTimespan {  // 2088-09-03T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (3762730800, ZoneDetails {
+        (3762730800, FixedTimespan {  // 2089-02-27T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (3779064000, ZoneDetails {
+        (3779064000, FixedTimespan {  // 2089-09-02T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (3794180400, ZoneDetails {
+        (3794180400, FixedTimespan {  // 2090-02-26T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (3810513600, ZoneDetails {
+        (3810513600, FixedTimespan {  // 2090-09-01T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (3825630000, ZoneDetails {
+        (3825630000, FixedTimespan {  // 2091-02-25T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (3842568000, ZoneDetails {
+        (3842568000, FixedTimespan {  // 2091-09-07T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (3857079600, ZoneDetails {
+        (3857079600, FixedTimespan {  // 2092-02-23T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (3874017600, ZoneDetails {
+        (3874017600, FixedTimespan {  // 2092-09-05T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (3888529200, ZoneDetails {
+        (3888529200, FixedTimespan {  // 2093-02-22T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (3905467200, ZoneDetails {
+        (3905467200, FixedTimespan {  // 2093-09-04T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (3920583600, ZoneDetails {
+        (3920583600, FixedTimespan {  // 2094-02-28T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (3936916800, ZoneDetails {
+        (3936916800, FixedTimespan {  // 2094-09-03T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (3952033200, ZoneDetails {
+        (3952033200, FixedTimespan {  // 2095-02-27T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (3968366400, ZoneDetails {
+        (3968366400, FixedTimespan {  // 2095-09-02T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (3983482800, ZoneDetails {
+        (3983482800, FixedTimespan {  // 2096-02-25T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (4000420800, ZoneDetails {
+        (4000420800, FixedTimespan {  // 2096-09-07T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (4014932400, ZoneDetails {
+        (4014932400, FixedTimespan {  // 2097-02-24T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (4031870400, ZoneDetails {
+        (4031870400, FixedTimespan {  // 2097-09-06T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (4046382000, ZoneDetails {
+        (4046382000, FixedTimespan {  // 2098-02-23T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (4063320000, ZoneDetails {
+        (4063320000, FixedTimespan {  // 2098-09-05T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
-        (4077831600, ZoneDetails {
+        (4077831600, FixedTimespan {  // 2099-02-22T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
-            name: "PYT",
+            is_dst: false,
+            name:   "PYT",
         }),
-        (4094769600, ZoneDetails {
+        (4094769600, FixedTimespan {  // 2099-09-04T4-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
-            name: "PYST",
+            is_dst: true,
+            name:   "PYST",
         }),
     ]},
 };

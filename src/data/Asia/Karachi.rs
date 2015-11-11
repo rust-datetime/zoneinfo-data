@@ -5,59 +5,71 @@
 // ------
 
 
-use datetime::zoned::zoneinfo::*;
+use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: Zone<'static> = Zone {
+pub const ZONE: TimeZone<'static> = TimeZone {
     name: "Asia/Karachi",
-    transitions: ZoneSet {
-        first: ZoneDetails {
+    fixed_timespans: FixedTimespanSet {
+        first: FixedTimespan {
             offset: 16092,  // UTC offset 16092, DST offset 0
-            name: "LMT",
+            is_dst: false,
+            name:   "LMT",
         },
         rest: &[
-        (-1988166492, ZoneDetails {
+        (-1988166492, FixedTimespan {  // 1906-11-31T19-31-48 UTC
             offset: 19800,  // UTC offset 19800, DST offset 0
-            name: "IST",
+            is_dst: false,
+            name:   "IST",
         }),
-        (-862637400, ZoneDetails {
+        (-862637400, FixedTimespan {  // 1942-07-31T18-30-00 UTC
             offset: 23400,  // UTC offset 19800, DST offset 3600
-            name: "IST",
+            is_dst: true,
+            name:   "IST",
         }),
-        (-764145000, ZoneDetails {
+        (-764145000, FixedTimespan {  // 1945-09-14T17-30-00 UTC
             offset: 19800,  // UTC offset 19800, DST offset 0
-            name: "IST",
+            is_dst: false,
+            name:   "IST",
         }),
-        (-576135000, ZoneDetails {
+        (-576135000, FixedTimespan {  // 1951-08-29T18-30-00 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
-            name: "KART",
+            is_dst: false,
+            name:   "KART",
         }),
-        (38775600, ZoneDetails {
+        (38775600, FixedTimespan {  // 1971-02-25T19-00-00 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
-            name: "PKT",
+            is_dst: false,
+            name:   "PKT",
         }),
-        (1018119660, ZoneDetails {
+        (1018119660, FixedTimespan {  // 2002-03-06T19-01-00 UTC
             offset: 21600,  // UTC offset 18000, DST offset 3600
-            name: "PKST",
+            is_dst: true,
+            name:   "PKST",
         }),
-        (1033840860, ZoneDetails {
+        (1033840860, FixedTimespan {  // 2002-09-05T18-01-00 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
-            name: "PKT",
+            is_dst: false,
+            name:   "PKT",
         }),
-        (1212260400, ZoneDetails {
+        (1212260400, FixedTimespan {  // 2008-04-31T19-00-00 UTC
             offset: 21600,  // UTC offset 18000, DST offset 3600
-            name: "PKST",
+            is_dst: true,
+            name:   "PKST",
         }),
-        (1225476000, ZoneDetails {
+        (1225476000, FixedTimespan {  // 2008-09-31T18-00-00 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
-            name: "PKT",
+            is_dst: false,
+            name:   "PKT",
         }),
-        (1239735600, ZoneDetails {
+        (1239735600, FixedTimespan {  // 2009-03-14T19-00-00 UTC
             offset: 21600,  // UTC offset 18000, DST offset 3600
-            name: "PKST",
+            is_dst: true,
+            name:   "PKST",
         }),
-        (1257012000, ZoneDetails {
+        (1257012000, FixedTimespan {  // 2009-09-31T18-00-00 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
-            name: "PKT",
+            is_dst: false,
+            name:   "PKT",
         }),
     ]},
 };
