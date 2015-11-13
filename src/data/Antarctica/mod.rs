@@ -13,6 +13,9 @@ pub use self::Macquarie::ZONE as Macquarie;
 mod Mawson;
 pub use self::Mawson::ZONE as Mawson;
 
+mod McMurdo;
+pub use self::McMurdo::ZONE as McMurdo;
+
 mod Palmer;
 pub use self::Palmer::ZONE as Palmer;
 

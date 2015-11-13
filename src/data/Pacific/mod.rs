@@ -46,6 +46,9 @@ pub use self::Guam::ZONE as Guam;
 mod Honolulu;
 pub use self::Honolulu::ZONE as Honolulu;
 
+mod Johnston;
+pub use self::Johnston::ZONE as Johnston;
+
 mod Kiritimati;
 pub use self::Kiritimati::ZONE as Kiritimati;
 
@@ -60,6 +63,9 @@ pub use self::Majuro::ZONE as Majuro;
 
 mod Marquesas;
 pub use self::Marquesas::ZONE as Marquesas;
+
+mod Midway;
+pub use self::Midway::ZONE as Midway;
 
 mod Nauru;
 pub use self::Nauru::ZONE as Nauru;
@@ -90,6 +96,9 @@ pub use self::Port_Moresby::ZONE as Port_Moresby;
 
 mod Rarotonga;
 pub use self::Rarotonga::ZONE as Rarotonga;
+
+mod Saipan;
+pub use self::Saipan::ZONE as Saipan;
 
 mod Tahiti;
 pub use self::Tahiti::ZONE as Tahiti;

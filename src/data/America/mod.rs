@@ -12,8 +12,17 @@ pub use self::Adak::ZONE as Adak;
 mod Anchorage;
 pub use self::Anchorage::ZONE as Anchorage;
 
+mod Anguilla;
+pub use self::Anguilla::ZONE as Anguilla;
+
+mod Antigua;
+pub use self::Antigua::ZONE as Antigua;
+
 mod Araguaina;
 pub use self::Araguaina::ZONE as Araguaina;
+
+mod Aruba;
+pub use self::Aruba::ZONE as Aruba;
 
 mod Asuncion;
 pub use self::Asuncion::ZONE as Asuncion;
@@ -99,6 +108,9 @@ pub use self::Denver::ZONE as Denver;
 mod Detroit;
 pub use self::Detroit::ZONE as Detroit;
 
+mod Dominica;
+pub use self::Dominica::ZONE as Dominica;
+
 mod Edmonton;
 pub use self::Edmonton::ZONE as Edmonton;
 
@@ -125,6 +137,12 @@ pub use self::Goose_Bay::ZONE as Goose_Bay;
 
 mod Grand_Turk;
 pub use self::Grand_Turk::ZONE as Grand_Turk;
+
+mod Grenada;
+pub use self::Grenada::ZONE as Grenada;
+
+mod Guadeloupe;
+pub use self::Guadeloupe::ZONE as Guadeloupe;
 
 mod Guatemala;
 pub use self::Guatemala::ZONE as Guatemala;
@@ -156,6 +174,9 @@ pub use self::Jamaica::ZONE as Jamaica;
 mod Juneau;
 pub use self::Juneau::ZONE as Juneau;
 
+mod Kralendijk;
+pub use self::Kralendijk::ZONE as Kralendijk;
+
 mod La_Paz;
 pub use self::La_Paz::ZONE as La_Paz;
 
@@ -165,6 +186,9 @@ pub use self::Lima::ZONE as Lima;
 mod Los_Angeles;
 pub use self::Los_Angeles::ZONE as Los_Angeles;
 
+mod Lower_Princes;
+pub use self::Lower_Princes::ZONE as Lower_Princes;
+
 mod Maceio;
 pub use self::Maceio::ZONE as Maceio;
 
@@ -173,6 +197,9 @@ pub use self::Managua::ZONE as Managua;
 
 mod Manaus;
 pub use self::Manaus::ZONE as Manaus;
+
+mod Marigot;
+pub use self::Marigot::ZONE as Marigot;
 
 mod Martinique;
 pub use self::Martinique::ZONE as Martinique;
@@ -206,6 +233,9 @@ pub use self::Monterrey::ZONE as Monterrey;
 
 mod Montevideo;
 pub use self::Montevideo::ZONE as Montevideo;
+
+mod Montserrat;
+pub use self::Montserrat::ZONE as Montserrat;
 
 mod Nassau;
 pub use self::Nassau::ZONE as Nassau;
@@ -288,8 +318,23 @@ pub use self::Scoresbysund::ZONE as Scoresbysund;
 mod Sitka;
 pub use self::Sitka::ZONE as Sitka;
 
+mod St_Barthelemy;
+pub use self::St_Barthelemy::ZONE as St_Barthelemy;
+
 mod St_Johns;
 pub use self::St_Johns::ZONE as St_Johns;
+
+mod St_Kitts;
+pub use self::St_Kitts::ZONE as St_Kitts;
+
+mod St_Lucia;
+pub use self::St_Lucia::ZONE as St_Lucia;
+
+mod St_Thomas;
+pub use self::St_Thomas::ZONE as St_Thomas;
+
+mod St_Vincent;
+pub use self::St_Vincent::ZONE as St_Vincent;
 
 mod Swift_Current;
 pub use self::Swift_Current::ZONE as Swift_Current;
@@ -308,6 +353,9 @@ pub use self::Tijuana::ZONE as Tijuana;
 
 mod Toronto;
 pub use self::Toronto::ZONE as Toronto;
+
+mod Tortola;
+pub use self::Tortola::ZONE as Tortola;
 
 mod Vancouver;
 pub use self::Vancouver::ZONE as Vancouver;

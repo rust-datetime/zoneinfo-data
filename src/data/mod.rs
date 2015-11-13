@@ -10,12 +10,14 @@ use datetime::zone::TimeZone;
 pub mod Africa;
 pub mod America;
 pub mod Antarctica;
+pub mod Arctic;
 pub mod Asia;
 pub mod Atlantic;
 pub mod Australia;
 pub mod Europe;
 pub mod Indian;
 pub mod Pacific;
+pub mod US;
 
 
 
@@ -62,11 +64,35 @@ pub fn lookup(input: &str) -> Option<TimeZone<'static>> {
     if input == "Africa/Accra" {
         return Some(Africa::Accra);
     }
+    if input == "Africa/Addis_Ababa" {
+        return Some(Africa::Addis_Ababa);
+    }
     if input == "Africa/Algiers" {
         return Some(Africa::Algiers);
     }
+    if input == "Africa/Asmara" {
+        return Some(Africa::Asmara);
+    }
+    if input == "Africa/Bamako" {
+        return Some(Africa::Bamako);
+    }
+    if input == "Africa/Bangui" {
+        return Some(Africa::Bangui);
+    }
+    if input == "Africa/Banjul" {
+        return Some(Africa::Banjul);
+    }
     if input == "Africa/Bissau" {
         return Some(Africa::Bissau);
+    }
+    if input == "Africa/Blantyre" {
+        return Some(Africa::Blantyre);
+    }
+    if input == "Africa/Brazzaville" {
+        return Some(Africa::Brazzaville);
+    }
+    if input == "Africa/Bujumbura" {
+        return Some(Africa::Bujumbura);
     }
     if input == "Africa/Cairo" {
         return Some(Africa::Cairo);
@@ -77,20 +103,83 @@ pub fn lookup(input: &str) -> Option<TimeZone<'static>> {
     if input == "Africa/Ceuta" {
         return Some(Africa::Ceuta);
     }
+    if input == "Africa/Conakry" {
+        return Some(Africa::Conakry);
+    }
+    if input == "Africa/Dakar" {
+        return Some(Africa::Dakar);
+    }
+    if input == "Africa/Dar_es_Salaam" {
+        return Some(Africa::Dar_es_Salaam);
+    }
+    if input == "Africa/Djibouti" {
+        return Some(Africa::Djibouti);
+    }
+    if input == "Africa/Douala" {
+        return Some(Africa::Douala);
+    }
     if input == "Africa/El_Aaiun" {
         return Some(Africa::El_Aaiun);
+    }
+    if input == "Africa/Freetown" {
+        return Some(Africa::Freetown);
+    }
+    if input == "Africa/Gaborone" {
+        return Some(Africa::Gaborone);
+    }
+    if input == "Africa/Harare" {
+        return Some(Africa::Harare);
     }
     if input == "Africa/Johannesburg" {
         return Some(Africa::Johannesburg);
     }
+    if input == "Africa/Juba" {
+        return Some(Africa::Juba);
+    }
+    if input == "Africa/Kampala" {
+        return Some(Africa::Kampala);
+    }
     if input == "Africa/Khartoum" {
         return Some(Africa::Khartoum);
+    }
+    if input == "Africa/Kigali" {
+        return Some(Africa::Kigali);
+    }
+    if input == "Africa/Kinshasa" {
+        return Some(Africa::Kinshasa);
     }
     if input == "Africa/Lagos" {
         return Some(Africa::Lagos);
     }
+    if input == "Africa/Libreville" {
+        return Some(Africa::Libreville);
+    }
+    if input == "Africa/Lome" {
+        return Some(Africa::Lome);
+    }
+    if input == "Africa/Luanda" {
+        return Some(Africa::Luanda);
+    }
+    if input == "Africa/Lubumbashi" {
+        return Some(Africa::Lubumbashi);
+    }
+    if input == "Africa/Lusaka" {
+        return Some(Africa::Lusaka);
+    }
+    if input == "Africa/Malabo" {
+        return Some(Africa::Malabo);
+    }
     if input == "Africa/Maputo" {
         return Some(Africa::Maputo);
+    }
+    if input == "Africa/Maseru" {
+        return Some(Africa::Maseru);
+    }
+    if input == "Africa/Mbabane" {
+        return Some(Africa::Mbabane);
+    }
+    if input == "Africa/Mogadishu" {
+        return Some(Africa::Mogadishu);
     }
     if input == "Africa/Monrovia" {
         return Some(Africa::Monrovia);
@@ -100,6 +189,21 @@ pub fn lookup(input: &str) -> Option<TimeZone<'static>> {
     }
     if input == "Africa/Ndjamena" {
         return Some(Africa::Ndjamena);
+    }
+    if input == "Africa/Niamey" {
+        return Some(Africa::Niamey);
+    }
+    if input == "Africa/Nouakchott" {
+        return Some(Africa::Nouakchott);
+    }
+    if input == "Africa/Ouagadougou" {
+        return Some(Africa::Ouagadougou);
+    }
+    if input == "Africa/Porto-Novo" {
+        return Some(Africa::Porto_Novo);
+    }
+    if input == "Africa/Sao_Tome" {
+        return Some(Africa::Sao_Tome);
     }
     if input == "Africa/Tripoli" {
         return Some(Africa::Tripoli);
@@ -115,6 +219,12 @@ pub fn lookup(input: &str) -> Option<TimeZone<'static>> {
     }
     if input == "America/Anchorage" {
         return Some(America::Anchorage);
+    }
+    if input == "America/Anguilla" {
+        return Some(America::Anguilla);
+    }
+    if input == "America/Antigua" {
+        return Some(America::Antigua);
     }
     if input == "America/Araguaina" {
         return Some(America::Araguaina);
@@ -154,6 +264,9 @@ pub fn lookup(input: &str) -> Option<TimeZone<'static>> {
     }
     if input == "America/Argentina/Ushuaia" {
         return Some(America::Argentina::Ushuaia);
+    }
+    if input == "America/Aruba" {
+        return Some(America::Aruba);
     }
     if input == "America/Asuncion" {
         return Some(America::Asuncion);
@@ -239,6 +352,9 @@ pub fn lookup(input: &str) -> Option<TimeZone<'static>> {
     if input == "America/Detroit" {
         return Some(America::Detroit);
     }
+    if input == "America/Dominica" {
+        return Some(America::Dominica);
+    }
     if input == "America/Edmonton" {
         return Some(America::Edmonton);
     }
@@ -265,6 +381,12 @@ pub fn lookup(input: &str) -> Option<TimeZone<'static>> {
     }
     if input == "America/Grand_Turk" {
         return Some(America::Grand_Turk);
+    }
+    if input == "America/Grenada" {
+        return Some(America::Grenada);
+    }
+    if input == "America/Guadeloupe" {
+        return Some(America::Guadeloupe);
     }
     if input == "America/Guatemala" {
         return Some(America::Guatemala);
@@ -326,6 +448,9 @@ pub fn lookup(input: &str) -> Option<TimeZone<'static>> {
     if input == "America/Kentucky/Monticello" {
         return Some(America::Kentucky::Monticello);
     }
+    if input == "America/Kralendijk" {
+        return Some(America::Kralendijk);
+    }
     if input == "America/La_Paz" {
         return Some(America::La_Paz);
     }
@@ -335,6 +460,9 @@ pub fn lookup(input: &str) -> Option<TimeZone<'static>> {
     if input == "America/Los_Angeles" {
         return Some(America::Los_Angeles);
     }
+    if input == "America/Lower_Princes" {
+        return Some(America::Lower_Princes);
+    }
     if input == "America/Maceio" {
         return Some(America::Maceio);
     }
@@ -343,6 +471,9 @@ pub fn lookup(input: &str) -> Option<TimeZone<'static>> {
     }
     if input == "America/Manaus" {
         return Some(America::Manaus);
+    }
+    if input == "America/Marigot" {
+        return Some(America::Marigot);
     }
     if input == "America/Martinique" {
         return Some(America::Martinique);
@@ -376,6 +507,9 @@ pub fn lookup(input: &str) -> Option<TimeZone<'static>> {
     }
     if input == "America/Montevideo" {
         return Some(America::Montevideo);
+    }
+    if input == "America/Montserrat" {
+        return Some(America::Montserrat);
     }
     if input == "America/Nassau" {
         return Some(America::Nassau);
@@ -467,8 +601,23 @@ pub fn lookup(input: &str) -> Option<TimeZone<'static>> {
     if input == "America/Sitka" {
         return Some(America::Sitka);
     }
+    if input == "America/St_Barthelemy" {
+        return Some(America::St_Barthelemy);
+    }
     if input == "America/St_Johns" {
         return Some(America::St_Johns);
+    }
+    if input == "America/St_Kitts" {
+        return Some(America::St_Kitts);
+    }
+    if input == "America/St_Lucia" {
+        return Some(America::St_Lucia);
+    }
+    if input == "America/St_Thomas" {
+        return Some(America::St_Thomas);
+    }
+    if input == "America/St_Vincent" {
+        return Some(America::St_Vincent);
     }
     if input == "America/Swift_Current" {
         return Some(America::Swift_Current);
@@ -487,6 +636,9 @@ pub fn lookup(input: &str) -> Option<TimeZone<'static>> {
     }
     if input == "America/Toronto" {
         return Some(America::Toronto);
+    }
+    if input == "America/Tortola" {
+        return Some(America::Tortola);
     }
     if input == "America/Vancouver" {
         return Some(America::Vancouver);
@@ -518,6 +670,9 @@ pub fn lookup(input: &str) -> Option<TimeZone<'static>> {
     if input == "Antarctica/Mawson" {
         return Some(Antarctica::Mawson);
     }
+    if input == "Antarctica/McMurdo" {
+        return Some(Antarctica::McMurdo);
+    }
     if input == "Antarctica/Palmer" {
         return Some(Antarctica::Palmer);
     }
@@ -532,6 +687,12 @@ pub fn lookup(input: &str) -> Option<TimeZone<'static>> {
     }
     if input == "Antarctica/Vostok" {
         return Some(Antarctica::Vostok);
+    }
+    if input == "Arctic/Longyearbyen" {
+        return Some(Arctic::Longyearbyen);
+    }
+    if input == "Asia/Aden" {
+        return Some(Asia::Aden);
     }
     if input == "Asia/Almaty" {
         return Some(Asia::Almaty);
@@ -553,6 +714,9 @@ pub fn lookup(input: &str) -> Option<TimeZone<'static>> {
     }
     if input == "Asia/Baghdad" {
         return Some(Asia::Baghdad);
+    }
+    if input == "Asia/Bahrain" {
+        return Some(Asia::Bahrain);
     }
     if input == "Asia/Baku" {
         return Some(Asia::Baku);
@@ -611,6 +775,9 @@ pub fn lookup(input: &str) -> Option<TimeZone<'static>> {
     if input == "Asia/Irkutsk" {
         return Some(Asia::Irkutsk);
     }
+    if input == "Asia/Istanbul" {
+        return Some(Asia::Istanbul);
+    }
     if input == "Asia/Jakarta" {
         return Some(Asia::Jakarta);
     }
@@ -647,6 +814,9 @@ pub fn lookup(input: &str) -> Option<TimeZone<'static>> {
     if input == "Asia/Kuching" {
         return Some(Asia::Kuching);
     }
+    if input == "Asia/Kuwait" {
+        return Some(Asia::Kuwait);
+    }
     if input == "Asia/Macau" {
         return Some(Asia::Macau);
     }
@@ -658,6 +828,9 @@ pub fn lookup(input: &str) -> Option<TimeZone<'static>> {
     }
     if input == "Asia/Manila" {
         return Some(Asia::Manila);
+    }
+    if input == "Asia/Muscat" {
+        return Some(Asia::Muscat);
     }
     if input == "Asia/Nicosia" {
         return Some(Asia::Nicosia);
@@ -673,6 +846,9 @@ pub fn lookup(input: &str) -> Option<TimeZone<'static>> {
     }
     if input == "Asia/Oral" {
         return Some(Asia::Oral);
+    }
+    if input == "Asia/Phnom_Penh" {
+        return Some(Asia::Phnom_Penh);
     }
     if input == "Asia/Pontianak" {
         return Some(Asia::Pontianak);
@@ -737,6 +913,9 @@ pub fn lookup(input: &str) -> Option<TimeZone<'static>> {
     if input == "Asia/Ust-Nera" {
         return Some(Asia::Ust_Nera);
     }
+    if input == "Asia/Vientiane" {
+        return Some(Asia::Vientiane);
+    }
     if input == "Asia/Vladivostok" {
         return Some(Asia::Vladivostok);
     }
@@ -772,6 +951,9 @@ pub fn lookup(input: &str) -> Option<TimeZone<'static>> {
     }
     if input == "Atlantic/South_Georgia" {
         return Some(Atlantic::South_Georgia);
+    }
+    if input == "Atlantic/St_Helena" {
+        return Some(Atlantic::St_Helena);
     }
     if input == "Atlantic/Stanley" {
         return Some(Atlantic::Stanley);
@@ -842,6 +1024,9 @@ pub fn lookup(input: &str) -> Option<TimeZone<'static>> {
     if input == "Europe/Berlin" {
         return Some(Europe::Berlin);
     }
+    if input == "Europe/Bratislava" {
+        return Some(Europe::Bratislava);
+    }
     if input == "Europe/Brussels" {
         return Some(Europe::Brussels);
     }
@@ -850,6 +1035,9 @@ pub fn lookup(input: &str) -> Option<TimeZone<'static>> {
     }
     if input == "Europe/Budapest" {
         return Some(Europe::Budapest);
+    }
+    if input == "Europe/Busingen" {
+        return Some(Europe::Busingen);
     }
     if input == "Europe/Chisinau" {
         return Some(Europe::Chisinau);
@@ -863,11 +1051,20 @@ pub fn lookup(input: &str) -> Option<TimeZone<'static>> {
     if input == "Europe/Gibraltar" {
         return Some(Europe::Gibraltar);
     }
+    if input == "Europe/Guernsey" {
+        return Some(Europe::Guernsey);
+    }
     if input == "Europe/Helsinki" {
         return Some(Europe::Helsinki);
     }
+    if input == "Europe/Isle_of_Man" {
+        return Some(Europe::Isle_of_Man);
+    }
     if input == "Europe/Istanbul" {
         return Some(Europe::Istanbul);
+    }
+    if input == "Europe/Jersey" {
+        return Some(Europe::Jersey);
     }
     if input == "Europe/Kaliningrad" {
         return Some(Europe::Kaliningrad);
@@ -877,6 +1074,9 @@ pub fn lookup(input: &str) -> Option<TimeZone<'static>> {
     }
     if input == "Europe/Lisbon" {
         return Some(Europe::Lisbon);
+    }
+    if input == "Europe/Ljubljana" {
+        return Some(Europe::Ljubljana);
     }
     if input == "Europe/London" {
         return Some(Europe::London);
@@ -890,6 +1090,9 @@ pub fn lookup(input: &str) -> Option<TimeZone<'static>> {
     if input == "Europe/Malta" {
         return Some(Europe::Malta);
     }
+    if input == "Europe/Mariehamn" {
+        return Some(Europe::Mariehamn);
+    }
     if input == "Europe/Minsk" {
         return Some(Europe::Minsk);
     }
@@ -899,11 +1102,17 @@ pub fn lookup(input: &str) -> Option<TimeZone<'static>> {
     if input == "Europe/Moscow" {
         return Some(Europe::Moscow);
     }
+    if input == "Europe/Nicosia" {
+        return Some(Europe::Nicosia);
+    }
     if input == "Europe/Oslo" {
         return Some(Europe::Oslo);
     }
     if input == "Europe/Paris" {
         return Some(Europe::Paris);
+    }
+    if input == "Europe/Podgorica" {
+        return Some(Europe::Podgorica);
     }
     if input == "Europe/Prague" {
         return Some(Europe::Prague);
@@ -917,8 +1126,17 @@ pub fn lookup(input: &str) -> Option<TimeZone<'static>> {
     if input == "Europe/Samara" {
         return Some(Europe::Samara);
     }
+    if input == "Europe/San_Marino" {
+        return Some(Europe::San_Marino);
+    }
+    if input == "Europe/Sarajevo" {
+        return Some(Europe::Sarajevo);
+    }
     if input == "Europe/Simferopol" {
         return Some(Europe::Simferopol);
+    }
+    if input == "Europe/Skopje" {
+        return Some(Europe::Skopje);
     }
     if input == "Europe/Sofia" {
         return Some(Europe::Sofia);
@@ -935,6 +1153,12 @@ pub fn lookup(input: &str) -> Option<TimeZone<'static>> {
     if input == "Europe/Uzhgorod" {
         return Some(Europe::Uzhgorod);
     }
+    if input == "Europe/Vaduz" {
+        return Some(Europe::Vaduz);
+    }
+    if input == "Europe/Vatican" {
+        return Some(Europe::Vatican);
+    }
     if input == "Europe/Vienna" {
         return Some(Europe::Vienna);
     }
@@ -947,6 +1171,9 @@ pub fn lookup(input: &str) -> Option<TimeZone<'static>> {
     if input == "Europe/Warsaw" {
         return Some(Europe::Warsaw);
     }
+    if input == "Europe/Zagreb" {
+        return Some(Europe::Zagreb);
+    }
     if input == "Europe/Zaporozhye" {
         return Some(Europe::Zaporozhye);
     }
@@ -956,6 +1183,9 @@ pub fn lookup(input: &str) -> Option<TimeZone<'static>> {
     if input == "HST" {
         return Some(HST);
     }
+    if input == "Indian/Antananarivo" {
+        return Some(Indian::Antananarivo);
+    }
     if input == "Indian/Chagos" {
         return Some(Indian::Chagos);
     }
@@ -964,6 +1194,9 @@ pub fn lookup(input: &str) -> Option<TimeZone<'static>> {
     }
     if input == "Indian/Cocos" {
         return Some(Indian::Cocos);
+    }
+    if input == "Indian/Comoro" {
+        return Some(Indian::Comoro);
     }
     if input == "Indian/Kerguelen" {
         return Some(Indian::Kerguelen);
@@ -976,6 +1209,9 @@ pub fn lookup(input: &str) -> Option<TimeZone<'static>> {
     }
     if input == "Indian/Mauritius" {
         return Some(Indian::Mauritius);
+    }
+    if input == "Indian/Mayotte" {
+        return Some(Indian::Mayotte);
     }
     if input == "Indian/Reunion" {
         return Some(Indian::Reunion);
@@ -1040,6 +1276,9 @@ pub fn lookup(input: &str) -> Option<TimeZone<'static>> {
     if input == "Pacific/Honolulu" {
         return Some(Pacific::Honolulu);
     }
+    if input == "Pacific/Johnston" {
+        return Some(Pacific::Johnston);
+    }
     if input == "Pacific/Kiritimati" {
         return Some(Pacific::Kiritimati);
     }
@@ -1054,6 +1293,9 @@ pub fn lookup(input: &str) -> Option<TimeZone<'static>> {
     }
     if input == "Pacific/Marquesas" {
         return Some(Pacific::Marquesas);
+    }
+    if input == "Pacific/Midway" {
+        return Some(Pacific::Midway);
     }
     if input == "Pacific/Nauru" {
         return Some(Pacific::Nauru);
@@ -1085,6 +1327,9 @@ pub fn lookup(input: &str) -> Option<TimeZone<'static>> {
     if input == "Pacific/Rarotonga" {
         return Some(Pacific::Rarotonga);
     }
+    if input == "Pacific/Saipan" {
+        return Some(Pacific::Saipan);
+    }
     if input == "Pacific/Tahiti" {
         return Some(Pacific::Tahiti);
     }
@@ -1099,6 +1344,9 @@ pub fn lookup(input: &str) -> Option<TimeZone<'static>> {
     }
     if input == "Pacific/Wallis" {
         return Some(Pacific::Wallis);
+    }
+    if input == "US/Pacific-New" {
+        return Some(US::Pacific_New);
     }
     if input == "WET" {
         return Some(WET);

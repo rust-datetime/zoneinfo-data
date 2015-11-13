@@ -22,6 +22,9 @@ pub use self::Reykjavik::ZONE as Reykjavik;
 mod South_Georgia;
 pub use self::South_Georgia::ZONE as South_Georgia;
 
+mod St_Helena;
+pub use self::St_Helena::ZONE as St_Helena;
+
 mod Stanley;
 pub use self::Stanley::ZONE as Stanley;
 
