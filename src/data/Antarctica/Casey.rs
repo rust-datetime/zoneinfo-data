@@ -5,41 +5,42 @@
 // ------
 
 
-use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
+use std::borrow::Cow;
+use datetime::zone::{StaticTimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: TimeZone<'static> = TimeZone {
+pub static ZONE: StaticTimeZone<'static> = StaticTimeZone {
     name: "Antarctica/Casey",
     fixed_timespans: FixedTimespanSet {
         first: FixedTimespan {
             offset: 0,  // UTC offset 0, DST offset 0
             is_dst: false,
-            name:   "zzz",
+            name:   Cow::Borrowed("zzz"),
         },
         rest: &[
         (-31536000, FixedTimespan {  // 1969-00-01T0-00-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
             is_dst: false,
-            name:   "AWST",
+            name:   Cow::Borrowed("AWST"),
         }),
         (1255802400, FixedTimespan {  // 2009-09-17T18-00-00 UTC
             offset: 39600,  // UTC offset 39600, DST offset 0
             is_dst: false,
-            name:   "CAST",
+            name:   Cow::Borrowed("CAST"),
         }),
         (1267714800, FixedTimespan {  // 2010-02-04T15-00-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
             is_dst: false,
-            name:   "AWST",
+            name:   Cow::Borrowed("AWST"),
         }),
         (1319738400, FixedTimespan {  // 2011-09-27T18-00-00 UTC
             offset: 39600,  // UTC offset 39600, DST offset 0
             is_dst: false,
-            name:   "CAST",
+            name:   Cow::Borrowed("CAST"),
         }),
         (1329804000, FixedTimespan {  // 2012-01-21T6-00-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
             is_dst: false,
-            name:   "AWST",
+            name:   Cow::Borrowed("AWST"),
         }),
     ]},
 };

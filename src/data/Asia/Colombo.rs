@@ -5,56 +5,57 @@
 // ------
 
 
-use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
+use std::borrow::Cow;
+use datetime::zone::{StaticTimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: TimeZone<'static> = TimeZone {
+pub static ZONE: StaticTimeZone<'static> = StaticTimeZone {
     name: "Asia/Colombo",
     fixed_timespans: FixedTimespanSet {
         first: FixedTimespan {
             offset: 19164,  // UTC offset 19164, DST offset 0
             is_dst: false,
-            name:   "LMT",
+            name:   Cow::Borrowed("LMT"),
         },
         rest: &[
         (-2840159964, FixedTimespan {  // 1879-11-31T18-40-36 UTC
             offset: 19172,  // UTC offset 19172, DST offset 0
             is_dst: false,
-            name:   "MMT",
+            name:   Cow::Borrowed("MMT"),
         }),
         (-2019705572, FixedTimespan {  // 1905-11-31T18-40-28 UTC
             offset: 19800,  // UTC offset 19800, DST offset 0
             is_dst: false,
-            name:   "IST",
+            name:   Cow::Borrowed("IST"),
         }),
         (-883287000, FixedTimespan {  // 1942-00-04T18-30-00 UTC
             offset: 21600,  // UTC offset 19800, DST offset 1800
             is_dst: true,
-            name:   "IHST",
+            name:   Cow::Borrowed("IHST"),
         }),
         (-862639200, FixedTimespan {  // 1942-07-31T18-00-00 UTC
             offset: 23400,  // UTC offset 19800, DST offset 3600
             is_dst: true,
-            name:   "IST",
+            name:   Cow::Borrowed("IST"),
         }),
         (-764051400, FixedTimespan {  // 1945-09-15T19-30-00 UTC
             offset: 19800,  // UTC offset 19800, DST offset 0
             is_dst: false,
-            name:   "IST",
+            name:   Cow::Borrowed("IST"),
         }),
         (832962600, FixedTimespan {  // 1996-04-24T18-30-00 UTC
             offset: 23400,  // UTC offset 23400, DST offset 0
             is_dst: false,
-            name:   "LKT",
+            name:   Cow::Borrowed("LKT"),
         }),
         (846266400, FixedTimespan {  // 1996-09-25T18-00-00 UTC
             offset: 21600,  // UTC offset 21600, DST offset 0
             is_dst: false,
-            name:   "LKT",
+            name:   Cow::Borrowed("LKT"),
         }),
         (1145039400, FixedTimespan {  // 2006-03-14T18-30-00 UTC
             offset: 19800,  // UTC offset 19800, DST offset 0
             is_dst: false,
-            name:   "IST",
+            name:   Cow::Borrowed("IST"),
         }),
     ]},
 };

@@ -5,21 +5,22 @@
 // ------
 
 
-use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
+use std::borrow::Cow;
+use datetime::zone::{StaticTimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: TimeZone<'static> = TimeZone {
+pub static ZONE: StaticTimeZone<'static> = StaticTimeZone {
     name: "Pacific/Marquesas",
     fixed_timespans: FixedTimespanSet {
         first: FixedTimespan {
             offset: -31320,  // UTC offset -31320, DST offset 0
             is_dst: false,
-            name:   "LMT",
+            name:   Cow::Borrowed("LMT"),
         },
         rest: &[
         (-1806679080, FixedTimespan {  // 1912-09-01T8-42-00 UTC
             offset: -30600,  // UTC offset -30600, DST offset 0
             is_dst: false,
-            name:   "MART",
+            name:   Cow::Borrowed("MART"),
         }),
     ]},
 };

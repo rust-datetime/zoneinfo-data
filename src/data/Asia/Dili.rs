@@ -5,41 +5,42 @@
 // ------
 
 
-use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
+use std::borrow::Cow;
+use datetime::zone::{StaticTimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: TimeZone<'static> = TimeZone {
+pub static ZONE: StaticTimeZone<'static> = StaticTimeZone {
     name: "Asia/Dili",
     fixed_timespans: FixedTimespanSet {
         first: FixedTimespan {
             offset: 30140,  // UTC offset 30140, DST offset 0
             is_dst: false,
-            name:   "LMT",
+            name:   Cow::Borrowed("LMT"),
         },
         rest: &[
         (-1830414140, FixedTimespan {  // 1911-11-31T15-37-40 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
             is_dst: false,
-            name:   "TLT",
+            name:   Cow::Borrowed("TLT"),
         }),
         (-879152400, FixedTimespan {  // 1942-01-21T15-00-00 UTC
             offset: 32400,  // UTC offset 32400, DST offset 0
             is_dst: false,
-            name:   "JST",
+            name:   Cow::Borrowed("JST"),
         }),
         (-766054800, FixedTimespan {  // 1945-08-22T15-00-00 UTC
             offset: 32400,  // UTC offset 32400, DST offset 0
             is_dst: false,
-            name:   "TLT",
+            name:   Cow::Borrowed("TLT"),
         }),
         (199897200, FixedTimespan {  // 1976-04-02T15-00-00 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
             is_dst: false,
-            name:   "WITA",
+            name:   Cow::Borrowed("WITA"),
         }),
         (969120000, FixedTimespan {  // 2000-08-16T16-00-00 UTC
             offset: 32400,  // UTC offset 32400, DST offset 0
             is_dst: false,
-            name:   "TLT",
+            name:   Cow::Borrowed("TLT"),
         }),
     ]},
 };

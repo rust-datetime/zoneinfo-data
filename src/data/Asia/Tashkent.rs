@@ -5,141 +5,142 @@
 // ------
 
 
-use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
+use std::borrow::Cow;
+use datetime::zone::{StaticTimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: TimeZone<'static> = TimeZone {
+pub static ZONE: StaticTimeZone<'static> = StaticTimeZone {
     name: "Asia/Tashkent",
     fixed_timespans: FixedTimespanSet {
         first: FixedTimespan {
             offset: 16631,  // UTC offset 16631, DST offset 0
             is_dst: false,
-            name:   "LMT",
+            name:   Cow::Borrowed("LMT"),
         },
         rest: &[
         (-1441168631, FixedTimespan {  // 1924-04-01T19-22-49 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
             is_dst: false,
-            name:   "TAST",
+            name:   Cow::Borrowed("TAST"),
         }),
         (-1247547600, FixedTimespan {  // 1930-05-20T19-00-00 UTC
             offset: 21600,  // UTC offset 21600, DST offset 0
             is_dst: false,
-            name:   "TAST",
+            name:   Cow::Borrowed("TAST"),
         }),
         (354909600, FixedTimespan {  // 1981-02-31T18-00-00 UTC
             offset: 25200,  // UTC offset 21600, DST offset 3600
             is_dst: true,
-            name:   "TASST",
+            name:   Cow::Borrowed("TASST"),
         }),
         (370717200, FixedTimespan {  // 1981-08-30T17-00-00 UTC
             offset: 21600,  // UTC offset 21600, DST offset 0
             is_dst: false,
-            name:   "TAST",
+            name:   Cow::Borrowed("TAST"),
         }),
         (386445600, FixedTimespan {  // 1982-02-31T18-00-00 UTC
             offset: 25200,  // UTC offset 21600, DST offset 3600
             is_dst: true,
-            name:   "TASST",
+            name:   Cow::Borrowed("TASST"),
         }),
         (402253200, FixedTimespan {  // 1982-08-30T17-00-00 UTC
             offset: 21600,  // UTC offset 21600, DST offset 0
             is_dst: false,
-            name:   "TAST",
+            name:   Cow::Borrowed("TAST"),
         }),
         (417981600, FixedTimespan {  // 1983-02-31T18-00-00 UTC
             offset: 25200,  // UTC offset 21600, DST offset 3600
             is_dst: true,
-            name:   "TASST",
+            name:   Cow::Borrowed("TASST"),
         }),
         (433789200, FixedTimespan {  // 1983-08-30T17-00-00 UTC
             offset: 21600,  // UTC offset 21600, DST offset 0
             is_dst: false,
-            name:   "TAST",
+            name:   Cow::Borrowed("TAST"),
         }),
         (449604000, FixedTimespan {  // 1984-02-31T18-00-00 UTC
             offset: 25200,  // UTC offset 21600, DST offset 3600
             is_dst: true,
-            name:   "TASST",
+            name:   Cow::Borrowed("TASST"),
         }),
         (465336000, FixedTimespan {  // 1984-08-29T20-00-00 UTC
             offset: 21600,  // UTC offset 21600, DST offset 0
             is_dst: false,
-            name:   "TAST",
+            name:   Cow::Borrowed("TAST"),
         }),
         (481060800, FixedTimespan {  // 1985-02-30T20-00-00 UTC
             offset: 25200,  // UTC offset 21600, DST offset 3600
             is_dst: true,
-            name:   "TASST",
+            name:   Cow::Borrowed("TASST"),
         }),
         (496785600, FixedTimespan {  // 1985-08-28T20-00-00 UTC
             offset: 21600,  // UTC offset 21600, DST offset 0
             is_dst: false,
-            name:   "TAST",
+            name:   Cow::Borrowed("TAST"),
         }),
         (512510400, FixedTimespan {  // 1986-02-29T20-00-00 UTC
             offset: 25200,  // UTC offset 21600, DST offset 3600
             is_dst: true,
-            name:   "TASST",
+            name:   Cow::Borrowed("TASST"),
         }),
         (528235200, FixedTimespan {  // 1986-08-27T20-00-00 UTC
             offset: 21600,  // UTC offset 21600, DST offset 0
             is_dst: false,
-            name:   "TAST",
+            name:   Cow::Borrowed("TAST"),
         }),
         (543960000, FixedTimespan {  // 1987-02-28T20-00-00 UTC
             offset: 25200,  // UTC offset 21600, DST offset 3600
             is_dst: true,
-            name:   "TASST",
+            name:   Cow::Borrowed("TASST"),
         }),
         (559684800, FixedTimespan {  // 1987-08-26T20-00-00 UTC
             offset: 21600,  // UTC offset 21600, DST offset 0
             is_dst: false,
-            name:   "TAST",
+            name:   Cow::Borrowed("TAST"),
         }),
         (575409600, FixedTimespan {  // 1988-02-26T20-00-00 UTC
             offset: 25200,  // UTC offset 21600, DST offset 3600
             is_dst: true,
-            name:   "TASST",
+            name:   Cow::Borrowed("TASST"),
         }),
         (591134400, FixedTimespan {  // 1988-08-24T20-00-00 UTC
             offset: 21600,  // UTC offset 21600, DST offset 0
             is_dst: false,
-            name:   "TAST",
+            name:   Cow::Borrowed("TAST"),
         }),
         (606859200, FixedTimespan {  // 1989-02-25T20-00-00 UTC
             offset: 25200,  // UTC offset 21600, DST offset 3600
             is_dst: true,
-            name:   "TASST",
+            name:   Cow::Borrowed("TASST"),
         }),
         (622584000, FixedTimespan {  // 1989-08-23T20-00-00 UTC
             offset: 21600,  // UTC offset 21600, DST offset 0
             is_dst: false,
-            name:   "TAST",
+            name:   Cow::Borrowed("TAST"),
         }),
         (638308800, FixedTimespan {  // 1990-02-24T20-00-00 UTC
             offset: 25200,  // UTC offset 21600, DST offset 3600
             is_dst: true,
-            name:   "TASST",
+            name:   Cow::Borrowed("TASST"),
         }),
         (654638400, FixedTimespan {  // 1990-08-29T20-00-00 UTC
             offset: 21600,  // UTC offset 21600, DST offset 0
             is_dst: false,
-            name:   "TAST",
+            name:   Cow::Borrowed("TAST"),
         }),
         (670363200, FixedTimespan {  // 1991-02-30T20-00-00 UTC
             offset: 21600,  // UTC offset 18000, DST offset 3600
             is_dst: true,
-            name:   "TASST",
+            name:   Cow::Borrowed("TASST"),
         }),
         (683661600, FixedTimespan {  // 1991-07-31T18-00-00 UTC
             offset: 21600,  // UTC offset 18000, DST offset 3600
             is_dst: true,
-            name:   "UZST",
+            name:   Cow::Borrowed("UZST"),
         }),
         (686091600, FixedTimespan {  // 1991-08-28T21-00-00 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
             is_dst: false,
-            name:   "UZT",
+            name:   Cow::Borrowed("UZT"),
         }),
     ]},
 };

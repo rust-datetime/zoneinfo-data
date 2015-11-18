@@ -5,46 +5,47 @@
 // ------
 
 
-use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
+use std::borrow::Cow;
+use datetime::zone::{StaticTimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: TimeZone<'static> = TimeZone {
+pub static ZONE: StaticTimeZone<'static> = StaticTimeZone {
     name: "Pacific/Johnston",
     fixed_timespans: FixedTimespanSet {
         first: FixedTimespan {
             offset: -34114,  // UTC offset -34114, DST offset 0
             is_dst: false,
-            name:   "LMT",
+            name:   Cow::Borrowed("LMT"),
         },
         rest: &[
         (-2334105086, FixedTimespan {  // 1896-00-13T21-28-34 UTC
             offset: -34200,  // UTC offset -34200, DST offset 0
             is_dst: false,
-            name:   "HST",
+            name:   Cow::Borrowed("HST"),
         }),
         (-1157286600, FixedTimespan {  // 1933-03-30T11-30-00 UTC
             offset: -30600,  // UTC offset -34200, DST offset 3600
             is_dst: true,
-            name:   "HDT",
+            name:   Cow::Borrowed("HDT"),
         }),
         (-1155439800, FixedTimespan {  // 1933-04-21T20-30-00 UTC
             offset: -34200,  // UTC offset -34200, DST offset 0
             is_dst: false,
-            name:   "HST",
+            name:   Cow::Borrowed("HST"),
         }),
         (-880201800, FixedTimespan {  // 1942-01-09T11-30-00 UTC
             offset: -30600,  // UTC offset -34200, DST offset 3600
             is_dst: true,
-            name:   "HDT",
+            name:   Cow::Borrowed("HDT"),
         }),
         (-765379800, FixedTimespan {  // 1945-08-30T10-30-00 UTC
             offset: -34200,  // UTC offset -34200, DST offset 0
             is_dst: false,
-            name:   "HST",
+            name:   Cow::Borrowed("HST"),
         }),
         (-712153800, FixedTimespan {  // 1947-05-08T11-30-00 UTC
             offset: -36000,  // UTC offset -36000, DST offset 0
             is_dst: false,
-            name:   "HST",
+            name:   Cow::Borrowed("HST"),
         }),
     ]},
 };

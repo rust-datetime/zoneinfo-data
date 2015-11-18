@@ -5,141 +5,142 @@
 // ------
 
 
-use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
+use std::borrow::Cow;
+use datetime::zone::{StaticTimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: TimeZone<'static> = TimeZone {
+pub static ZONE: StaticTimeZone<'static> = StaticTimeZone {
     name: "Asia/Samarkand",
     fixed_timespans: FixedTimespanSet {
         first: FixedTimespan {
             offset: 16073,  // UTC offset 16073, DST offset 0
             is_dst: false,
-            name:   "LMT",
+            name:   Cow::Borrowed("LMT"),
         },
         rest: &[
         (-1441168073, FixedTimespan {  // 1924-04-01T19-32-07 UTC
             offset: 14400,  // UTC offset 14400, DST offset 0
             is_dst: false,
-            name:   "SAMT",
+            name:   Cow::Borrowed("SAMT"),
         }),
         (-1247544000, FixedTimespan {  // 1930-05-20T20-00-00 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
             is_dst: false,
-            name:   "SAMT",
+            name:   Cow::Borrowed("SAMT"),
         }),
         (354913200, FixedTimespan {  // 1981-02-31T19-00-00 UTC
             offset: 21600,  // UTC offset 18000, DST offset 3600
             is_dst: true,
-            name:   "SAMST",
+            name:   Cow::Borrowed("SAMST"),
         }),
         (370720800, FixedTimespan {  // 1981-08-30T18-00-00 UTC
             offset: 21600,  // UTC offset 21600, DST offset 0
             is_dst: false,
-            name:   "TAST",
+            name:   Cow::Borrowed("TAST"),
         }),
         (386445600, FixedTimespan {  // 1982-02-31T18-00-00 UTC
             offset: 21600,  // UTC offset 18000, DST offset 3600
             is_dst: true,
-            name:   "SAMST",
+            name:   Cow::Borrowed("SAMST"),
         }),
         (402256800, FixedTimespan {  // 1982-08-30T18-00-00 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
             is_dst: false,
-            name:   "SAMT",
+            name:   Cow::Borrowed("SAMT"),
         }),
         (417985200, FixedTimespan {  // 1983-02-31T19-00-00 UTC
             offset: 21600,  // UTC offset 18000, DST offset 3600
             is_dst: true,
-            name:   "SAMST",
+            name:   Cow::Borrowed("SAMST"),
         }),
         (433792800, FixedTimespan {  // 1983-08-30T18-00-00 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
             is_dst: false,
-            name:   "SAMT",
+            name:   Cow::Borrowed("SAMT"),
         }),
         (449607600, FixedTimespan {  // 1984-02-31T19-00-00 UTC
             offset: 21600,  // UTC offset 18000, DST offset 3600
             is_dst: true,
-            name:   "SAMST",
+            name:   Cow::Borrowed("SAMST"),
         }),
         (465339600, FixedTimespan {  // 1984-08-29T21-00-00 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
             is_dst: false,
-            name:   "SAMT",
+            name:   Cow::Borrowed("SAMT"),
         }),
         (481064400, FixedTimespan {  // 1985-02-30T21-00-00 UTC
             offset: 21600,  // UTC offset 18000, DST offset 3600
             is_dst: true,
-            name:   "SAMST",
+            name:   Cow::Borrowed("SAMST"),
         }),
         (496789200, FixedTimespan {  // 1985-08-28T21-00-00 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
             is_dst: false,
-            name:   "SAMT",
+            name:   Cow::Borrowed("SAMT"),
         }),
         (512514000, FixedTimespan {  // 1986-02-29T21-00-00 UTC
             offset: 21600,  // UTC offset 18000, DST offset 3600
             is_dst: true,
-            name:   "SAMST",
+            name:   Cow::Borrowed("SAMST"),
         }),
         (528238800, FixedTimespan {  // 1986-08-27T21-00-00 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
             is_dst: false,
-            name:   "SAMT",
+            name:   Cow::Borrowed("SAMT"),
         }),
         (543963600, FixedTimespan {  // 1987-02-28T21-00-00 UTC
             offset: 21600,  // UTC offset 18000, DST offset 3600
             is_dst: true,
-            name:   "SAMST",
+            name:   Cow::Borrowed("SAMST"),
         }),
         (559688400, FixedTimespan {  // 1987-08-26T21-00-00 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
             is_dst: false,
-            name:   "SAMT",
+            name:   Cow::Borrowed("SAMT"),
         }),
         (575413200, FixedTimespan {  // 1988-02-26T21-00-00 UTC
             offset: 21600,  // UTC offset 18000, DST offset 3600
             is_dst: true,
-            name:   "SAMST",
+            name:   Cow::Borrowed("SAMST"),
         }),
         (591138000, FixedTimespan {  // 1988-08-24T21-00-00 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
             is_dst: false,
-            name:   "SAMT",
+            name:   Cow::Borrowed("SAMT"),
         }),
         (606862800, FixedTimespan {  // 1989-02-25T21-00-00 UTC
             offset: 21600,  // UTC offset 18000, DST offset 3600
             is_dst: true,
-            name:   "SAMST",
+            name:   Cow::Borrowed("SAMST"),
         }),
         (622587600, FixedTimespan {  // 1989-08-23T21-00-00 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
             is_dst: false,
-            name:   "SAMT",
+            name:   Cow::Borrowed("SAMT"),
         }),
         (638312400, FixedTimespan {  // 1990-02-24T21-00-00 UTC
             offset: 21600,  // UTC offset 18000, DST offset 3600
             is_dst: true,
-            name:   "SAMST",
+            name:   Cow::Borrowed("SAMST"),
         }),
         (654642000, FixedTimespan {  // 1990-08-29T21-00-00 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
             is_dst: false,
-            name:   "SAMT",
+            name:   Cow::Borrowed("SAMT"),
         }),
         (670366800, FixedTimespan {  // 1991-02-30T21-00-00 UTC
             offset: 21600,  // UTC offset 18000, DST offset 3600
             is_dst: true,
-            name:   "SAMST",
+            name:   Cow::Borrowed("SAMST"),
         }),
         (683661600, FixedTimespan {  // 1991-07-31T18-00-00 UTC
             offset: 21600,  // UTC offset 18000, DST offset 3600
             is_dst: true,
-            name:   "UZST",
+            name:   Cow::Borrowed("UZST"),
         }),
         (686091600, FixedTimespan {  // 1991-08-28T21-00-00 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
             is_dst: false,
-            name:   "UZT",
+            name:   Cow::Borrowed("UZT"),
         }),
     ]},
 };

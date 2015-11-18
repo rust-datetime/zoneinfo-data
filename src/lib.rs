@@ -3,21 +3,22 @@
 
 extern crate datetime;
 use datetime::{sys_timezone, TimeZone};
+use datetime::zone::TimeZoneSource;
 
 mod data;
 pub use data::*;
 
 
 pub trait ZoneinfoData {
-    fn get(timezone_name: &str) -> Option<TimeZone<'static>>;
+    fn get(timezone_name: &str) -> Option<TimeZone>;
 
-    fn system() -> Option<TimeZone<'static>> {
+    fn system() -> Option<TimeZone> {
         sys_timezone().and_then(|tz| Self::get(&tz))
     }
 }
 
-impl<'a> ZoneinfoData for TimeZone<'a> {
-    fn get(timezone_name: &str) -> Option<TimeZone<'static>> {
-        lookup(timezone_name)
+impl ZoneinfoData for TimeZone {
+    fn get(timezone_name: &str) -> Option<TimeZone> {
+        lookup(timezone_name).map(|tz| TimeZone(TimeZoneSource::Static(tz)))
     }
 }

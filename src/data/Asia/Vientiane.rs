@@ -5,26 +5,27 @@
 // ------
 
 
-use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
+use std::borrow::Cow;
+use datetime::zone::{StaticTimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: TimeZone<'static> = TimeZone {
+pub static ZONE: StaticTimeZone<'static> = StaticTimeZone {
     name: "Asia/Vientiane",
     fixed_timespans: FixedTimespanSet {
         first: FixedTimespan {
             offset: 24124,  // UTC offset 24124, DST offset 0
             is_dst: false,
-            name:   "LMT",
+            name:   Cow::Borrowed("LMT"),
         },
         rest: &[
         (-2840164924, FixedTimespan {  // 1879-11-31T17-17-56 UTC
             offset: 24124,  // UTC offset 24124, DST offset 0
             is_dst: false,
-            name:   "BMT",
+            name:   Cow::Borrowed("BMT"),
         }),
         (-1570084924, FixedTimespan {  // 1920-02-31T17-17-56 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
             is_dst: false,
-            name:   "ICT",
+            name:   Cow::Borrowed("ICT"),
         }),
     ]},
 };

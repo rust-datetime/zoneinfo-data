@@ -5,51 +5,52 @@
 // ------
 
 
-use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
+use std::borrow::Cow;
+use datetime::zone::{StaticTimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: TimeZone<'static> = TimeZone {
+pub static ZONE: StaticTimeZone<'static> = StaticTimeZone {
     name: "America/Tegucigalpa",
     fixed_timespans: FixedTimespanSet {
         first: FixedTimespan {
             offset: -15068,  // UTC offset -15068, DST offset 0
             is_dst: false,
-            name:   "LMT",
+            name:   Cow::Borrowed("LMT"),
         },
         rest: &[
         (-1538509732, FixedTimespan {  // 1921-03-01T4-11-08 UTC
             offset: -21600,  // UTC offset -21600, DST offset 0
             is_dst: false,
-            name:   "CST",
+            name:   Cow::Borrowed("CST"),
         }),
         (547020000, FixedTimespan {  // 1987-04-03T6-00-00 UTC
             offset: -18000,  // UTC offset -21600, DST offset 3600
             is_dst: true,
-            name:   "CDT",
+            name:   Cow::Borrowed("CDT"),
         }),
         (559717200, FixedTimespan {  // 1987-08-27T5-00-00 UTC
             offset: -21600,  // UTC offset -21600, DST offset 0
             is_dst: false,
-            name:   "CST",
+            name:   Cow::Borrowed("CST"),
         }),
         (578469600, FixedTimespan {  // 1988-04-01T6-00-00 UTC
             offset: -18000,  // UTC offset -21600, DST offset 3600
             is_dst: true,
-            name:   "CDT",
+            name:   Cow::Borrowed("CDT"),
         }),
         (591166800, FixedTimespan {  // 1988-08-25T5-00-00 UTC
             offset: -21600,  // UTC offset -21600, DST offset 0
             is_dst: false,
-            name:   "CST",
+            name:   Cow::Borrowed("CST"),
         }),
         (1146981600, FixedTimespan {  // 2006-04-07T6-00-00 UTC
             offset: -18000,  // UTC offset -21600, DST offset 3600
             is_dst: true,
-            name:   "CDT",
+            name:   Cow::Borrowed("CDT"),
         }),
         (1154926800, FixedTimespan {  // 2006-07-07T5-00-00 UTC
             offset: -21600,  // UTC offset -21600, DST offset 0
             is_dst: false,
-            name:   "CST",
+            name:   Cow::Borrowed("CST"),
         }),
     ]},
 };

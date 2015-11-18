@@ -5,41 +5,42 @@
 // ------
 
 
-use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
+use std::borrow::Cow;
+use datetime::zone::{StaticTimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: TimeZone<'static> = TimeZone {
+pub static ZONE: StaticTimeZone<'static> = StaticTimeZone {
     name: "America/Paramaribo",
     fixed_timespans: FixedTimespanSet {
         first: FixedTimespan {
             offset: -8360,  // UTC offset -8360, DST offset 0
             is_dst: false,
-            name:   "LMT",
+            name:   Cow::Borrowed("LMT"),
         },
         rest: &[
         (-1861911640, FixedTimespan {  // 1911-00-01T2-19-20 UTC
             offset: -8348,  // UTC offset -8348, DST offset 0
             is_dst: false,
-            name:   "PMT",
+            name:   Cow::Borrowed("PMT"),
         }),
         (-1104529252, FixedTimespan {  // 1935-00-01T2-19-08 UTC
             offset: -8364,  // UTC offset -8364, DST offset 0
             is_dst: false,
-            name:   "PMT",
+            name:   Cow::Borrowed("PMT"),
         }),
         (-765322836, FixedTimespan {  // 1945-09-01T2-19-24 UTC
             offset: -9000,  // UTC offset -9000, DST offset 0
             is_dst: false,
-            name:   "NEGT",
+            name:   Cow::Borrowed("NEGT"),
         }),
         (185682600, FixedTimespan {  // 1975-10-20T2-30-00 UTC
             offset: -9000,  // UTC offset -9000, DST offset 0
             is_dst: false,
-            name:   "SRT",
+            name:   Cow::Borrowed("SRT"),
         }),
         (465445800, FixedTimespan {  // 1984-09-01T2-30-00 UTC
             offset: -10800,  // UTC offset -10800, DST offset 0
             is_dst: false,
-            name:   "SRT",
+            name:   Cow::Borrowed("SRT"),
         }),
     ]},
 };

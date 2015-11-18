@@ -5,1416 +5,1417 @@
 // ------
 
 
-use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
+use std::borrow::Cow;
+use datetime::zone::{StaticTimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: TimeZone<'static> = TimeZone {
+pub static ZONE: StaticTimeZone<'static> = StaticTimeZone {
     name: "Pacific/Auckland",
     fixed_timespans: FixedTimespanSet {
         first: FixedTimespan {
             offset: 41944,  // UTC offset 41944, DST offset 0
             is_dst: false,
-            name:   "LMT",
+            name:   Cow::Borrowed("LMT"),
         },
         rest: &[
         (-3192435544, FixedTimespan {  // 1868-10-01T12-20-56 UTC
             offset: 41400,  // UTC offset 41400, DST offset 0
             is_dst: false,
-            name:   "NZMT",
+            name:   Cow::Borrowed("NZMT"),
         }),
         (-1330335000, FixedTimespan {  // 1927-10-05T14-30-00 UTC
             offset: 45000,  // UTC offset 41400, DST offset 3600
             is_dst: true,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (-1320057000, FixedTimespan {  // 1928-02-03T13-30-00 UTC
             offset: 41400,  // UTC offset 41400, DST offset 0
             is_dst: false,
-            name:   "NZMT",
+            name:   Cow::Borrowed("NZMT"),
         }),
         (-1300699800, FixedTimespan {  // 1928-09-13T14-30-00 UTC
             offset: 43200,  // UTC offset 41400, DST offset 1800
             is_dst: true,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (-1287396000, FixedTimespan {  // 1929-02-16T14-00-00 UTC
             offset: 41400,  // UTC offset 41400, DST offset 0
             is_dst: false,
-            name:   "NZMT",
+            name:   Cow::Borrowed("NZMT"),
         }),
         (-1269250200, FixedTimespan {  // 1929-09-12T14-30-00 UTC
             offset: 43200,  // UTC offset 41400, DST offset 1800
             is_dst: true,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (-1255946400, FixedTimespan {  // 1930-02-15T14-00-00 UTC
             offset: 41400,  // UTC offset 41400, DST offset 0
             is_dst: false,
-            name:   "NZMT",
+            name:   Cow::Borrowed("NZMT"),
         }),
         (-1237800600, FixedTimespan {  // 1930-09-11T14-30-00 UTC
             offset: 43200,  // UTC offset 41400, DST offset 1800
             is_dst: true,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (-1224496800, FixedTimespan {  // 1931-02-14T14-00-00 UTC
             offset: 41400,  // UTC offset 41400, DST offset 0
             is_dst: false,
-            name:   "NZMT",
+            name:   Cow::Borrowed("NZMT"),
         }),
         (-1206351000, FixedTimespan {  // 1931-09-10T14-30-00 UTC
             offset: 43200,  // UTC offset 41400, DST offset 1800
             is_dst: true,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (-1192442400, FixedTimespan {  // 1932-02-19T14-00-00 UTC
             offset: 41400,  // UTC offset 41400, DST offset 0
             is_dst: false,
-            name:   "NZMT",
+            name:   Cow::Borrowed("NZMT"),
         }),
         (-1174901400, FixedTimespan {  // 1932-09-08T14-30-00 UTC
             offset: 43200,  // UTC offset 41400, DST offset 1800
             is_dst: true,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (-1160992800, FixedTimespan {  // 1933-02-18T14-00-00 UTC
             offset: 41400,  // UTC offset 41400, DST offset 0
             is_dst: false,
-            name:   "NZMT",
+            name:   Cow::Borrowed("NZMT"),
         }),
         (-1143451800, FixedTimespan {  // 1933-09-07T14-30-00 UTC
             offset: 43200,  // UTC offset 41400, DST offset 1800
             is_dst: true,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (-1125914400, FixedTimespan {  // 1934-03-28T14-00-00 UTC
             offset: 41400,  // UTC offset 41400, DST offset 0
             is_dst: false,
-            name:   "NZMT",
+            name:   Cow::Borrowed("NZMT"),
         }),
         (-1112607000, FixedTimespan {  // 1934-08-29T14-30-00 UTC
             offset: 43200,  // UTC offset 41400, DST offset 1800
             is_dst: true,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (-1094464800, FixedTimespan {  // 1935-03-27T14-00-00 UTC
             offset: 41400,  // UTC offset 41400, DST offset 0
             is_dst: false,
-            name:   "NZMT",
+            name:   Cow::Borrowed("NZMT"),
         }),
         (-1081157400, FixedTimespan {  // 1935-08-28T14-30-00 UTC
             offset: 43200,  // UTC offset 41400, DST offset 1800
             is_dst: true,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (-1063015200, FixedTimespan {  // 1936-03-25T14-00-00 UTC
             offset: 41400,  // UTC offset 41400, DST offset 0
             is_dst: false,
-            name:   "NZMT",
+            name:   Cow::Borrowed("NZMT"),
         }),
         (-1049707800, FixedTimespan {  // 1936-08-26T14-30-00 UTC
             offset: 43200,  // UTC offset 41400, DST offset 1800
             is_dst: true,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (-1031565600, FixedTimespan {  // 1937-03-24T14-00-00 UTC
             offset: 41400,  // UTC offset 41400, DST offset 0
             is_dst: false,
-            name:   "NZMT",
+            name:   Cow::Borrowed("NZMT"),
         }),
         (-1018258200, FixedTimespan {  // 1937-08-25T14-30-00 UTC
             offset: 43200,  // UTC offset 41400, DST offset 1800
             is_dst: true,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (-1000116000, FixedTimespan {  // 1938-03-23T14-00-00 UTC
             offset: 41400,  // UTC offset 41400, DST offset 0
             is_dst: false,
-            name:   "NZMT",
+            name:   Cow::Borrowed("NZMT"),
         }),
         (-986808600, FixedTimespan {  // 1938-08-24T14-30-00 UTC
             offset: 43200,  // UTC offset 41400, DST offset 1800
             is_dst: true,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (-968061600, FixedTimespan {  // 1939-03-29T14-00-00 UTC
             offset: 41400,  // UTC offset 41400, DST offset 0
             is_dst: false,
-            name:   "NZMT",
+            name:   Cow::Borrowed("NZMT"),
         }),
         (-955359000, FixedTimespan {  // 1939-08-23T14-30-00 UTC
             offset: 43200,  // UTC offset 41400, DST offset 1800
             is_dst: true,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (-936612000, FixedTimespan {  // 1940-03-27T14-00-00 UTC
             offset: 41400,  // UTC offset 41400, DST offset 0
             is_dst: false,
-            name:   "NZMT",
+            name:   Cow::Borrowed("NZMT"),
         }),
         (-923304600, FixedTimespan {  // 1940-08-28T14-30-00 UTC
             offset: 43200,  // UTC offset 41400, DST offset 1800
             is_dst: true,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (-757425600, FixedTimespan {  // 1945-11-31T12-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (152632800, FixedTimespan {  // 1974-10-02T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (162309600, FixedTimespan {  // 1975-01-22T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (183477600, FixedTimespan {  // 1975-09-25T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (194968800, FixedTimespan {  // 1976-02-06T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (215532000, FixedTimespan {  // 1976-09-30T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (226418400, FixedTimespan {  // 1977-02-05T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (246981600, FixedTimespan {  // 1977-09-29T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (257868000, FixedTimespan {  // 1978-02-04T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (278431200, FixedTimespan {  // 1978-09-28T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (289317600, FixedTimespan {  // 1979-02-03T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (309880800, FixedTimespan {  // 1979-09-27T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (320767200, FixedTimespan {  // 1980-02-01T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (341330400, FixedTimespan {  // 1980-09-25T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (352216800, FixedTimespan {  // 1981-01-28T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (372780000, FixedTimespan {  // 1981-09-24T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (384271200, FixedTimespan {  // 1982-02-06T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (404834400, FixedTimespan {  // 1982-09-30T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (415720800, FixedTimespan {  // 1983-02-05T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (436284000, FixedTimespan {  // 1983-09-29T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (447170400, FixedTimespan {  // 1984-02-03T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (467733600, FixedTimespan {  // 1984-09-27T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (478620000, FixedTimespan {  // 1985-02-02T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (499183200, FixedTimespan {  // 1985-09-26T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (510069600, FixedTimespan {  // 1986-02-01T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (530632800, FixedTimespan {  // 1986-09-25T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (541519200, FixedTimespan {  // 1987-01-28T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (562082400, FixedTimespan {  // 1987-09-24T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (573573600, FixedTimespan {  // 1988-02-05T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (594136800, FixedTimespan {  // 1988-09-29T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (605023200, FixedTimespan {  // 1989-02-04T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (623772000, FixedTimespan {  // 1989-09-07T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (637682400, FixedTimespan {  // 1990-02-17T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (655221600, FixedTimespan {  // 1990-09-06T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (669132000, FixedTimespan {  // 1991-02-16T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (686671200, FixedTimespan {  // 1991-09-05T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (700581600, FixedTimespan {  // 1992-02-14T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (718120800, FixedTimespan {  // 1992-09-03T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (732636000, FixedTimespan {  // 1993-02-20T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (749570400, FixedTimespan {  // 1993-09-02T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (764085600, FixedTimespan {  // 1994-02-19T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (781020000, FixedTimespan {  // 1994-09-01T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (795535200, FixedTimespan {  // 1995-02-18T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (812469600, FixedTimespan {  // 1995-08-30T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (826984800, FixedTimespan {  // 1996-02-16T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (844524000, FixedTimespan {  // 1996-09-05T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (858434400, FixedTimespan {  // 1997-02-15T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (875973600, FixedTimespan {  // 1997-09-04T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (889884000, FixedTimespan {  // 1998-02-14T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (907423200, FixedTimespan {  // 1998-09-03T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (921938400, FixedTimespan {  // 1999-02-20T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (938872800, FixedTimespan {  // 1999-09-02T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (953388000, FixedTimespan {  // 2000-02-18T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (970322400, FixedTimespan {  // 2000-08-30T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (984837600, FixedTimespan {  // 2001-02-17T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (1002376800, FixedTimespan {  // 2001-09-06T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (1016287200, FixedTimespan {  // 2002-02-16T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (1033826400, FixedTimespan {  // 2002-09-05T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (1047736800, FixedTimespan {  // 2003-02-15T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (1065276000, FixedTimespan {  // 2003-09-04T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (1079791200, FixedTimespan {  // 2004-02-20T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (1096725600, FixedTimespan {  // 2004-09-02T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (1111240800, FixedTimespan {  // 2005-02-19T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (1128175200, FixedTimespan {  // 2005-09-01T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (1142690400, FixedTimespan {  // 2006-02-18T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (1159624800, FixedTimespan {  // 2006-08-30T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (1174140000, FixedTimespan {  // 2007-02-17T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (1191074400, FixedTimespan {  // 2007-08-29T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (1207404000, FixedTimespan {  // 2008-03-05T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (1222524000, FixedTimespan {  // 2008-08-27T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (1238853600, FixedTimespan {  // 2009-03-04T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (1253973600, FixedTimespan {  // 2009-08-26T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (1270303200, FixedTimespan {  // 2010-03-03T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (1285423200, FixedTimespan {  // 2010-08-25T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (1301752800, FixedTimespan {  // 2011-03-02T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (1316872800, FixedTimespan {  // 2011-08-24T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (1333202400, FixedTimespan {  // 2012-02-31T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (1348927200, FixedTimespan {  // 2012-08-29T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (1365256800, FixedTimespan {  // 2013-03-06T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (1380376800, FixedTimespan {  // 2013-08-28T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (1396706400, FixedTimespan {  // 2014-03-05T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (1411826400, FixedTimespan {  // 2014-08-27T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (1428156000, FixedTimespan {  // 2015-03-04T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (1443276000, FixedTimespan {  // 2015-08-26T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (1459605600, FixedTimespan {  // 2016-03-02T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (1474725600, FixedTimespan {  // 2016-08-24T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (1491055200, FixedTimespan {  // 2017-03-01T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (1506175200, FixedTimespan {  // 2017-08-23T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (1522504800, FixedTimespan {  // 2018-02-31T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (1538229600, FixedTimespan {  // 2018-08-29T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (1554559200, FixedTimespan {  // 2019-03-06T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (1569679200, FixedTimespan {  // 2019-08-28T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (1586008800, FixedTimespan {  // 2020-03-04T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (1601128800, FixedTimespan {  // 2020-08-26T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (1617458400, FixedTimespan {  // 2021-03-03T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (1632578400, FixedTimespan {  // 2021-08-25T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (1648908000, FixedTimespan {  // 2022-03-02T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (1664028000, FixedTimespan {  // 2022-08-24T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (1680357600, FixedTimespan {  // 2023-03-01T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (1695477600, FixedTimespan {  // 2023-08-23T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (1712412000, FixedTimespan {  // 2024-03-06T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (1727532000, FixedTimespan {  // 2024-08-28T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (1743861600, FixedTimespan {  // 2025-03-05T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (1758981600, FixedTimespan {  // 2025-08-27T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (1775311200, FixedTimespan {  // 2026-03-04T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (1790431200, FixedTimespan {  // 2026-08-26T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (1806760800, FixedTimespan {  // 2027-03-03T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (1821880800, FixedTimespan {  // 2027-08-25T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (1838210400, FixedTimespan {  // 2028-03-01T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (1853330400, FixedTimespan {  // 2028-08-23T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (1869660000, FixedTimespan {  // 2029-02-31T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (1885384800, FixedTimespan {  // 2029-08-29T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (1901714400, FixedTimespan {  // 2030-03-06T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (1916834400, FixedTimespan {  // 2030-08-28T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (1933164000, FixedTimespan {  // 2031-03-05T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (1948284000, FixedTimespan {  // 2031-08-27T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (1964613600, FixedTimespan {  // 2032-03-03T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (1979733600, FixedTimespan {  // 2032-08-25T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (1996063200, FixedTimespan {  // 2033-03-02T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (2011183200, FixedTimespan {  // 2033-08-24T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (2027512800, FixedTimespan {  // 2034-03-01T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (2042632800, FixedTimespan {  // 2034-08-23T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (2058962400, FixedTimespan {  // 2035-02-31T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (2074687200, FixedTimespan {  // 2035-08-29T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (2091016800, FixedTimespan {  // 2036-03-05T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (2106136800, FixedTimespan {  // 2036-08-27T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (2122466400, FixedTimespan {  // 2037-03-04T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (2137586400, FixedTimespan {  // 2037-08-26T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (2153916000, FixedTimespan {  // 2038-03-03T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (2169036000, FixedTimespan {  // 2038-08-25T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (2185365600, FixedTimespan {  // 2039-03-02T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (2200485600, FixedTimespan {  // 2039-08-24T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (2216815200, FixedTimespan {  // 2040-02-31T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (2232540000, FixedTimespan {  // 2040-08-29T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (2248869600, FixedTimespan {  // 2041-03-06T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (2263989600, FixedTimespan {  // 2041-08-28T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (2280319200, FixedTimespan {  // 2042-03-05T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (2295439200, FixedTimespan {  // 2042-08-27T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (2311768800, FixedTimespan {  // 2043-03-04T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (2326888800, FixedTimespan {  // 2043-08-26T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (2343218400, FixedTimespan {  // 2044-03-02T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (2358338400, FixedTimespan {  // 2044-08-24T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (2374668000, FixedTimespan {  // 2045-03-01T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (2389788000, FixedTimespan {  // 2045-08-23T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (2406117600, FixedTimespan {  // 2046-02-31T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (2421842400, FixedTimespan {  // 2046-08-29T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (2438172000, FixedTimespan {  // 2047-03-06T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (2453292000, FixedTimespan {  // 2047-08-28T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (2469621600, FixedTimespan {  // 2048-03-04T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (2484741600, FixedTimespan {  // 2048-08-26T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (2501071200, FixedTimespan {  // 2049-03-03T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (2516191200, FixedTimespan {  // 2049-08-25T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (2532520800, FixedTimespan {  // 2050-03-02T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (2547640800, FixedTimespan {  // 2050-08-24T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (2563970400, FixedTimespan {  // 2051-03-01T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (2579090400, FixedTimespan {  // 2051-08-23T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (2596024800, FixedTimespan {  // 2052-03-06T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (2611144800, FixedTimespan {  // 2052-08-28T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (2627474400, FixedTimespan {  // 2053-03-05T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (2642594400, FixedTimespan {  // 2053-08-27T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (2658924000, FixedTimespan {  // 2054-03-04T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (2674044000, FixedTimespan {  // 2054-08-26T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (2690373600, FixedTimespan {  // 2055-03-03T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (2705493600, FixedTimespan {  // 2055-08-25T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (2721823200, FixedTimespan {  // 2056-03-01T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (2736943200, FixedTimespan {  // 2056-08-23T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (2753272800, FixedTimespan {  // 2057-02-31T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (2768997600, FixedTimespan {  // 2057-08-29T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (2785327200, FixedTimespan {  // 2058-03-06T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (2800447200, FixedTimespan {  // 2058-08-28T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (2816776800, FixedTimespan {  // 2059-03-05T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (2831896800, FixedTimespan {  // 2059-08-27T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (2848226400, FixedTimespan {  // 2060-03-03T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (2863346400, FixedTimespan {  // 2060-08-25T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (2879676000, FixedTimespan {  // 2061-03-02T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (2894796000, FixedTimespan {  // 2061-08-24T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (2911125600, FixedTimespan {  // 2062-03-01T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (2926245600, FixedTimespan {  // 2062-08-23T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (2942575200, FixedTimespan {  // 2063-02-31T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (2958300000, FixedTimespan {  // 2063-08-29T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (2974629600, FixedTimespan {  // 2064-03-05T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (2989749600, FixedTimespan {  // 2064-08-27T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (3006079200, FixedTimespan {  // 2065-03-04T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (3021199200, FixedTimespan {  // 2065-08-26T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (3037528800, FixedTimespan {  // 2066-03-03T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (3052648800, FixedTimespan {  // 2066-08-25T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (3068978400, FixedTimespan {  // 2067-03-02T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (3084098400, FixedTimespan {  // 2067-08-24T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (3100428000, FixedTimespan {  // 2068-02-31T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (3116152800, FixedTimespan {  // 2068-08-29T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (3132482400, FixedTimespan {  // 2069-03-06T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (3147602400, FixedTimespan {  // 2069-08-28T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (3163932000, FixedTimespan {  // 2070-03-05T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (3179052000, FixedTimespan {  // 2070-08-27T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (3195381600, FixedTimespan {  // 2071-03-04T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (3210501600, FixedTimespan {  // 2071-08-26T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (3226831200, FixedTimespan {  // 2072-03-02T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (3241951200, FixedTimespan {  // 2072-08-24T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (3258280800, FixedTimespan {  // 2073-03-01T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (3273400800, FixedTimespan {  // 2073-08-23T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (3289730400, FixedTimespan {  // 2074-02-31T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (3305455200, FixedTimespan {  // 2074-08-29T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (3321784800, FixedTimespan {  // 2075-03-06T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (3336904800, FixedTimespan {  // 2075-08-28T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (3353234400, FixedTimespan {  // 2076-03-04T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (3368354400, FixedTimespan {  // 2076-08-26T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (3384684000, FixedTimespan {  // 2077-03-03T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (3399804000, FixedTimespan {  // 2077-08-25T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (3416133600, FixedTimespan {  // 2078-03-02T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (3431253600, FixedTimespan {  // 2078-08-24T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (3447583200, FixedTimespan {  // 2079-03-01T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (3462703200, FixedTimespan {  // 2079-08-23T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (3479637600, FixedTimespan {  // 2080-03-06T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (3494757600, FixedTimespan {  // 2080-08-28T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (3511087200, FixedTimespan {  // 2081-03-05T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (3526207200, FixedTimespan {  // 2081-08-27T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (3542536800, FixedTimespan {  // 2082-03-04T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (3557656800, FixedTimespan {  // 2082-08-26T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (3573986400, FixedTimespan {  // 2083-03-03T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (3589106400, FixedTimespan {  // 2083-08-25T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (3605436000, FixedTimespan {  // 2084-03-01T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (3620556000, FixedTimespan {  // 2084-08-23T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (3636885600, FixedTimespan {  // 2085-02-31T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (3652610400, FixedTimespan {  // 2085-08-29T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (3668940000, FixedTimespan {  // 2086-03-06T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (3684060000, FixedTimespan {  // 2086-08-28T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (3700389600, FixedTimespan {  // 2087-03-05T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (3715509600, FixedTimespan {  // 2087-08-27T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (3731839200, FixedTimespan {  // 2088-03-03T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (3746959200, FixedTimespan {  // 2088-08-25T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (3763288800, FixedTimespan {  // 2089-03-02T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (3778408800, FixedTimespan {  // 2089-08-24T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (3794738400, FixedTimespan {  // 2090-03-01T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (3809858400, FixedTimespan {  // 2090-08-23T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (3826188000, FixedTimespan {  // 2091-02-31T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (3841912800, FixedTimespan {  // 2091-08-29T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (3858242400, FixedTimespan {  // 2092-03-05T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (3873362400, FixedTimespan {  // 2092-08-27T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (3889692000, FixedTimespan {  // 2093-03-04T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (3904812000, FixedTimespan {  // 2093-08-26T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (3921141600, FixedTimespan {  // 2094-03-03T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (3936261600, FixedTimespan {  // 2094-08-25T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (3952591200, FixedTimespan {  // 2095-03-02T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (3967711200, FixedTimespan {  // 2095-08-24T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (3984040800, FixedTimespan {  // 2096-02-31T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (3999765600, FixedTimespan {  // 2096-08-29T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (4016095200, FixedTimespan {  // 2097-03-06T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (4031215200, FixedTimespan {  // 2097-08-28T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (4047544800, FixedTimespan {  // 2098-03-05T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (4062664800, FixedTimespan {  // 2098-08-27T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
         (4078994400, FixedTimespan {  // 2099-03-04T14-00-00 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
-            name:   "NZST",
+            name:   Cow::Borrowed("NZST"),
         }),
         (4094114400, FixedTimespan {  // 2099-08-26T14-00-00 UTC
             offset: 46800,  // UTC offset 43200, DST offset 3600
             is_dst: true,
-            name:   "NZDT",
+            name:   Cow::Borrowed("NZDT"),
         }),
     ]},
 };

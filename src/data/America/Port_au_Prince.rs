@@ -5,1076 +5,1077 @@
 // ------
 
 
-use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
+use std::borrow::Cow;
+use datetime::zone::{StaticTimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: TimeZone<'static> = TimeZone {
+pub static ZONE: StaticTimeZone<'static> = StaticTimeZone {
     name: "America/Port-au-Prince",
     fixed_timespans: FixedTimespanSet {
         first: FixedTimespan {
             offset: -11440,  // UTC offset -11440, DST offset 0
             is_dst: false,
-            name:   "LMT",
+            name:   Cow::Borrowed("LMT"),
         },
         rest: &[
         (-2524510160, FixedTimespan {  // 1890-00-01T3-10-40 UTC
             offset: -11460,  // UTC offset -11460, DST offset 0
             is_dst: false,
-            name:   "PPMT",
+            name:   Cow::Borrowed("PPMT"),
         }),
         (-1670489340, FixedTimespan {  // 1917-00-24T15-11-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (421218000, FixedTimespan {  // 1983-04-08T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (436334400, FixedTimespan {  // 1983-09-30T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (452062800, FixedTimespan {  // 1984-03-29T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (467784000, FixedTimespan {  // 1984-09-28T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (483512400, FixedTimespan {  // 1985-03-28T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (499233600, FixedTimespan {  // 1985-09-27T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (514962000, FixedTimespan {  // 1986-03-27T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (530683200, FixedTimespan {  // 1986-09-26T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (546411600, FixedTimespan {  // 1987-03-26T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (562132800, FixedTimespan {  // 1987-09-25T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (576050400, FixedTimespan {  // 1988-03-03T6-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (594194400, FixedTimespan {  // 1988-09-30T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (607500000, FixedTimespan {  // 1989-03-02T6-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (625644000, FixedTimespan {  // 1989-09-29T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (638949600, FixedTimespan {  // 1990-03-01T6-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (657093600, FixedTimespan {  // 1990-09-28T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (671004000, FixedTimespan {  // 1991-03-07T6-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (688543200, FixedTimespan {  // 1991-09-27T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (702453600, FixedTimespan {  // 1992-03-05T6-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (719992800, FixedTimespan {  // 1992-09-25T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (733903200, FixedTimespan {  // 1993-03-04T6-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (752047200, FixedTimespan {  // 1993-09-31T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (765352800, FixedTimespan {  // 1994-03-03T6-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (783496800, FixedTimespan {  // 1994-09-30T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (796802400, FixedTimespan {  // 1995-03-02T6-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (814946400, FixedTimespan {  // 1995-09-29T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (828856800, FixedTimespan {  // 1996-03-07T6-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (846396000, FixedTimespan {  // 1996-09-27T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (860306400, FixedTimespan {  // 1997-03-06T6-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (877845600, FixedTimespan {  // 1997-09-26T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (1112504400, FixedTimespan {  // 2005-03-03T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (1130644800, FixedTimespan {  // 2005-09-30T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (1143954000, FixedTimespan {  // 2006-03-02T5-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (1162094400, FixedTimespan {  // 2006-09-29T4-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (1331449200, FixedTimespan {  // 2012-02-11T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (1352008800, FixedTimespan {  // 2012-10-04T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (1362898800, FixedTimespan {  // 2013-02-10T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (1383458400, FixedTimespan {  // 2013-10-03T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (1394348400, FixedTimespan {  // 2014-02-09T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (1414908000, FixedTimespan {  // 2014-10-02T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (1425798000, FixedTimespan {  // 2015-02-08T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (1446357600, FixedTimespan {  // 2015-10-01T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (1457852400, FixedTimespan {  // 2016-02-13T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (1478412000, FixedTimespan {  // 2016-10-06T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (1489302000, FixedTimespan {  // 2017-02-12T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (1509861600, FixedTimespan {  // 2017-10-05T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (1520751600, FixedTimespan {  // 2018-02-11T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (1541311200, FixedTimespan {  // 2018-10-04T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (1552201200, FixedTimespan {  // 2019-02-10T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (1572760800, FixedTimespan {  // 2019-10-03T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (1583650800, FixedTimespan {  // 2020-02-08T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (1604210400, FixedTimespan {  // 2020-10-01T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (1615705200, FixedTimespan {  // 2021-02-14T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (1636264800, FixedTimespan {  // 2021-10-07T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (1647154800, FixedTimespan {  // 2022-02-13T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (1667714400, FixedTimespan {  // 2022-10-06T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (1678604400, FixedTimespan {  // 2023-02-12T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (1699164000, FixedTimespan {  // 2023-10-05T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (1710054000, FixedTimespan {  // 2024-02-10T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (1730613600, FixedTimespan {  // 2024-10-03T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (1741503600, FixedTimespan {  // 2025-02-09T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (1762063200, FixedTimespan {  // 2025-10-02T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (1772953200, FixedTimespan {  // 2026-02-08T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (1793512800, FixedTimespan {  // 2026-10-01T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (1805007600, FixedTimespan {  // 2027-02-14T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (1825567200, FixedTimespan {  // 2027-10-07T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (1836457200, FixedTimespan {  // 2028-02-12T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (1857016800, FixedTimespan {  // 2028-10-05T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (1867906800, FixedTimespan {  // 2029-02-11T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (1888466400, FixedTimespan {  // 2029-10-04T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (1899356400, FixedTimespan {  // 2030-02-10T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (1919916000, FixedTimespan {  // 2030-10-03T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (1930806000, FixedTimespan {  // 2031-02-09T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (1951365600, FixedTimespan {  // 2031-10-02T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (1962860400, FixedTimespan {  // 2032-02-14T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (1983420000, FixedTimespan {  // 2032-10-07T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (1994310000, FixedTimespan {  // 2033-02-13T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (2014869600, FixedTimespan {  // 2033-10-06T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (2025759600, FixedTimespan {  // 2034-02-12T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (2046319200, FixedTimespan {  // 2034-10-05T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (2057209200, FixedTimespan {  // 2035-02-11T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (2077768800, FixedTimespan {  // 2035-10-04T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (2088658800, FixedTimespan {  // 2036-02-09T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (2109218400, FixedTimespan {  // 2036-10-02T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (2120108400, FixedTimespan {  // 2037-02-08T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (2140668000, FixedTimespan {  // 2037-10-01T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (2152162800, FixedTimespan {  // 2038-02-14T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (2172722400, FixedTimespan {  // 2038-10-07T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (2183612400, FixedTimespan {  // 2039-02-13T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (2204172000, FixedTimespan {  // 2039-10-06T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (2215062000, FixedTimespan {  // 2040-02-11T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (2235621600, FixedTimespan {  // 2040-10-04T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (2246511600, FixedTimespan {  // 2041-02-10T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (2267071200, FixedTimespan {  // 2041-10-03T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (2277961200, FixedTimespan {  // 2042-02-09T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (2298520800, FixedTimespan {  // 2042-10-02T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (2309410800, FixedTimespan {  // 2043-02-08T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (2329970400, FixedTimespan {  // 2043-10-01T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (2341465200, FixedTimespan {  // 2044-02-13T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (2362024800, FixedTimespan {  // 2044-10-06T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (2372914800, FixedTimespan {  // 2045-02-12T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (2393474400, FixedTimespan {  // 2045-10-05T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (2404364400, FixedTimespan {  // 2046-02-11T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (2424924000, FixedTimespan {  // 2046-10-04T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (2435814000, FixedTimespan {  // 2047-02-10T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (2456373600, FixedTimespan {  // 2047-10-03T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (2467263600, FixedTimespan {  // 2048-02-08T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (2487823200, FixedTimespan {  // 2048-10-01T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (2499318000, FixedTimespan {  // 2049-02-14T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (2519877600, FixedTimespan {  // 2049-10-07T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (2530767600, FixedTimespan {  // 2050-02-13T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (2551327200, FixedTimespan {  // 2050-10-06T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (2562217200, FixedTimespan {  // 2051-02-12T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (2582776800, FixedTimespan {  // 2051-10-05T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (2593666800, FixedTimespan {  // 2052-02-10T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (2614226400, FixedTimespan {  // 2052-10-03T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (2625116400, FixedTimespan {  // 2053-02-09T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (2645676000, FixedTimespan {  // 2053-10-02T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (2656566000, FixedTimespan {  // 2054-02-08T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (2677125600, FixedTimespan {  // 2054-10-01T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (2688620400, FixedTimespan {  // 2055-02-14T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (2709180000, FixedTimespan {  // 2055-10-07T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (2720070000, FixedTimespan {  // 2056-02-12T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (2740629600, FixedTimespan {  // 2056-10-05T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (2751519600, FixedTimespan {  // 2057-02-11T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (2772079200, FixedTimespan {  // 2057-10-04T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (2782969200, FixedTimespan {  // 2058-02-10T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (2803528800, FixedTimespan {  // 2058-10-03T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (2814418800, FixedTimespan {  // 2059-02-09T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (2834978400, FixedTimespan {  // 2059-10-02T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (2846473200, FixedTimespan {  // 2060-02-14T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (2867032800, FixedTimespan {  // 2060-10-07T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (2877922800, FixedTimespan {  // 2061-02-13T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (2898482400, FixedTimespan {  // 2061-10-06T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (2909372400, FixedTimespan {  // 2062-02-12T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (2929932000, FixedTimespan {  // 2062-10-05T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (2940822000, FixedTimespan {  // 2063-02-11T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (2961381600, FixedTimespan {  // 2063-10-04T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (2972271600, FixedTimespan {  // 2064-02-09T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (2992831200, FixedTimespan {  // 2064-10-02T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (3003721200, FixedTimespan {  // 2065-02-08T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (3024280800, FixedTimespan {  // 2065-10-01T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (3035775600, FixedTimespan {  // 2066-02-14T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (3056335200, FixedTimespan {  // 2066-10-07T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (3067225200, FixedTimespan {  // 2067-02-13T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (3087784800, FixedTimespan {  // 2067-10-06T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (3098674800, FixedTimespan {  // 2068-02-11T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (3119234400, FixedTimespan {  // 2068-10-04T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (3130124400, FixedTimespan {  // 2069-02-10T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (3150684000, FixedTimespan {  // 2069-10-03T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (3161574000, FixedTimespan {  // 2070-02-09T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (3182133600, FixedTimespan {  // 2070-10-02T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (3193023600, FixedTimespan {  // 2071-02-08T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (3213583200, FixedTimespan {  // 2071-10-01T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (3225078000, FixedTimespan {  // 2072-02-13T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (3245637600, FixedTimespan {  // 2072-10-06T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (3256527600, FixedTimespan {  // 2073-02-12T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (3277087200, FixedTimespan {  // 2073-10-05T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (3287977200, FixedTimespan {  // 2074-02-11T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (3308536800, FixedTimespan {  // 2074-10-04T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (3319426800, FixedTimespan {  // 2075-02-10T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (3339986400, FixedTimespan {  // 2075-10-03T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (3350876400, FixedTimespan {  // 2076-02-08T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (3371436000, FixedTimespan {  // 2076-10-01T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (3382930800, FixedTimespan {  // 2077-02-14T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (3403490400, FixedTimespan {  // 2077-10-07T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (3414380400, FixedTimespan {  // 2078-02-13T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (3434940000, FixedTimespan {  // 2078-10-06T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (3445830000, FixedTimespan {  // 2079-02-12T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (3466389600, FixedTimespan {  // 2079-10-05T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (3477279600, FixedTimespan {  // 2080-02-10T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (3497839200, FixedTimespan {  // 2080-10-03T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (3508729200, FixedTimespan {  // 2081-02-09T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (3529288800, FixedTimespan {  // 2081-10-02T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (3540178800, FixedTimespan {  // 2082-02-08T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (3560738400, FixedTimespan {  // 2082-10-01T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (3572233200, FixedTimespan {  // 2083-02-14T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (3592792800, FixedTimespan {  // 2083-10-07T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (3603682800, FixedTimespan {  // 2084-02-12T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (3624242400, FixedTimespan {  // 2084-10-05T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (3635132400, FixedTimespan {  // 2085-02-11T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (3655692000, FixedTimespan {  // 2085-10-04T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (3666582000, FixedTimespan {  // 2086-02-10T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (3687141600, FixedTimespan {  // 2086-10-03T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (3698031600, FixedTimespan {  // 2087-02-09T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (3718591200, FixedTimespan {  // 2087-10-02T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (3730086000, FixedTimespan {  // 2088-02-14T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (3750645600, FixedTimespan {  // 2088-10-07T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (3761535600, FixedTimespan {  // 2089-02-13T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (3782095200, FixedTimespan {  // 2089-10-06T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (3792985200, FixedTimespan {  // 2090-02-12T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (3813544800, FixedTimespan {  // 2090-10-05T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (3824434800, FixedTimespan {  // 2091-02-11T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (3844994400, FixedTimespan {  // 2091-10-04T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (3855884400, FixedTimespan {  // 2092-02-09T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (3876444000, FixedTimespan {  // 2092-10-02T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (3887334000, FixedTimespan {  // 2093-02-08T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (3907893600, FixedTimespan {  // 2093-10-01T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (3919388400, FixedTimespan {  // 2094-02-14T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (3939948000, FixedTimespan {  // 2094-10-07T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (3950838000, FixedTimespan {  // 2095-02-13T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (3971397600, FixedTimespan {  // 2095-10-06T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (3982287600, FixedTimespan {  // 2096-02-11T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (4002847200, FixedTimespan {  // 2096-10-04T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (4013737200, FixedTimespan {  // 2097-02-10T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (4034296800, FixedTimespan {  // 2097-10-03T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (4045186800, FixedTimespan {  // 2098-02-09T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (4065746400, FixedTimespan {  // 2098-10-02T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
         (4076636400, FixedTimespan {  // 2099-02-08T7-00-00 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
-            name:   "EDT",
+            name:   Cow::Borrowed("EDT"),
         }),
         (4097196000, FixedTimespan {  // 2099-10-01T6-00-00 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         }),
     ]},
 };

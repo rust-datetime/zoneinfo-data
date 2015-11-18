@@ -17,7 +17,7 @@ fn main() {
     println!("This corresponds to {} in UTC.", format.format(&datetime, &locale::Time::english()));
 
     if let Some(timezone) = TimeZone::system() {
-        println!("\nHowever, your current timezone is {}.", timezone.name);
+        println!("\nHowever, your current timezone is {}.", timezone.zone_name());
 
         let offset = timezone.offset(datetime);
         println!("This currently has an offset of {} (called {}).", offset, timezone.name(datetime));

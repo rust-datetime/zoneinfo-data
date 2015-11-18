@@ -5,15 +5,16 @@
 // ------
 
 
-use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
+use std::borrow::Cow;
+use datetime::zone::{StaticTimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: TimeZone<'static> = TimeZone {
+pub static ZONE: StaticTimeZone<'static> = StaticTimeZone {
     name: "EST",
     fixed_timespans: FixedTimespanSet {
         first: FixedTimespan {
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
-            name:   "EST",
+            name:   Cow::Borrowed("EST"),
         },
         rest: &[
     ]},

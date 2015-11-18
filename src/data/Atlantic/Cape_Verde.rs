@@ -5,36 +5,37 @@
 // ------
 
 
-use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
+use std::borrow::Cow;
+use datetime::zone::{StaticTimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: TimeZone<'static> = TimeZone {
+pub static ZONE: StaticTimeZone<'static> = StaticTimeZone {
     name: "Atlantic/Cape_Verde",
     fixed_timespans: FixedTimespanSet {
         first: FixedTimespan {
             offset: -1556,  // UTC offset -1556, DST offset 0
             is_dst: false,
-            name:   "LMT",
+            name:   Cow::Borrowed("LMT"),
         },
         rest: &[
         (-1988148844, FixedTimespan {  // 1907-00-01T0-25-56 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
             is_dst: false,
-            name:   "CVT",
+            name:   Cow::Borrowed("CVT"),
         }),
         (-862610400, FixedTimespan {  // 1942-08-01T2-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "CVST",
+            name:   Cow::Borrowed("CVST"),
         }),
         (-764118000, FixedTimespan {  // 1945-09-15T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
             is_dst: false,
-            name:   "CVT",
+            name:   Cow::Borrowed("CVT"),
         }),
         (186120000, FixedTimespan {  // 1975-10-25T4-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "CVT",
+            name:   Cow::Borrowed("CVT"),
         }),
     ]},
 };

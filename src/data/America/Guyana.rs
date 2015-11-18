@@ -5,36 +5,37 @@
 // ------
 
 
-use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
+use std::borrow::Cow;
+use datetime::zone::{StaticTimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: TimeZone<'static> = TimeZone {
+pub static ZONE: StaticTimeZone<'static> = StaticTimeZone {
     name: "America/Guyana",
     fixed_timespans: FixedTimespanSet {
         first: FixedTimespan {
             offset: -7640,  // UTC offset -7640, DST offset 0
             is_dst: false,
-            name:   "LMT",
+            name:   Cow::Borrowed("LMT"),
         },
         rest: &[
         (-1730584360, FixedTimespan {  // 1915-02-01T2-07-20 UTC
             offset: -8100,  // UTC offset -8100, DST offset 0
             is_dst: false,
-            name:   "GBGT",
+            name:   Cow::Borrowed("GBGT"),
         }),
         (-113694300, FixedTimespan {  // 1966-04-26T2-15-00 UTC
             offset: -8100,  // UTC offset -8100, DST offset 0
             is_dst: false,
-            name:   "GYT",
+            name:   Cow::Borrowed("GYT"),
         }),
         (176004900, FixedTimespan {  // 1975-06-31T2-15-00 UTC
             offset: -10800,  // UTC offset -10800, DST offset 0
             is_dst: false,
-            name:   "GYT",
+            name:   Cow::Borrowed("GYT"),
         }),
         (662698800, FixedTimespan {  // 1991-00-01T3-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
             is_dst: false,
-            name:   "GYT",
+            name:   Cow::Borrowed("GYT"),
         }),
     ]},
 };

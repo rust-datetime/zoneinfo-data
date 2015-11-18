@@ -5,41 +5,42 @@
 // ------
 
 
-use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
+use std::borrow::Cow;
+use datetime::zone::{StaticTimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: TimeZone<'static> = TimeZone {
+pub static ZONE: StaticTimeZone<'static> = StaticTimeZone {
     name: "Pacific/Norfolk",
     fixed_timespans: FixedTimespanSet {
         first: FixedTimespan {
             offset: 40312,  // UTC offset 40312, DST offset 0
             is_dst: false,
-            name:   "LMT",
+            name:   Cow::Borrowed("LMT"),
         },
         rest: &[
         (-2177493112, FixedTimespan {  // 1900-11-31T12-48-08 UTC
             offset: 40320,  // UTC offset 40320, DST offset 0
             is_dst: false,
-            name:   "NMT",
+            name:   Cow::Borrowed("NMT"),
         }),
         (-599656320, FixedTimespan {  // 1950-11-31T12-48-00 UTC
             offset: 41400,  // UTC offset 41400, DST offset 0
             is_dst: false,
-            name:   "NFT",
+            name:   Cow::Borrowed("NFT"),
         }),
         (152029800, FixedTimespan {  // 1974-09-26T14-30-00 UTC
             offset: 45000,  // UTC offset 41400, DST offset 3600
             is_dst: true,
-            name:   "NFST",
+            name:   Cow::Borrowed("NFST"),
         }),
         (162912600, FixedTimespan {  // 1975-02-01T13-30-00 UTC
             offset: 41400,  // UTC offset 41400, DST offset 0
             is_dst: false,
-            name:   "NFT",
+            name:   Cow::Borrowed("NFT"),
         }),
         (1443882600, FixedTimespan {  // 2015-09-03T14-30-00 UTC
             offset: 39600,  // UTC offset 39600, DST offset 0
             is_dst: false,
-            name:   "NFT",
+            name:   Cow::Borrowed("NFT"),
         }),
     ]},
 };

@@ -5,46 +5,47 @@
 // ------
 
 
-use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
+use std::borrow::Cow;
+use datetime::zone::{StaticTimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: TimeZone<'static> = TimeZone {
+pub static ZONE: StaticTimeZone<'static> = StaticTimeZone {
     name: "America/Blanc-Sablon",
     fixed_timespans: FixedTimespanSet {
         first: FixedTimespan {
             offset: -7892,  // UTC offset -7892, DST offset 0
             is_dst: false,
-            name:   "LMT",
+            name:   Cow::Borrowed("LMT"),
         },
         rest: &[
         (-2713902508, FixedTimespan {  // 1884-00-01T2-11-32 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
             is_dst: false,
-            name:   "AST",
+            name:   Cow::Borrowed("AST"),
         }),
         (-1632074400, FixedTimespan {  // 1918-03-14T6-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
             is_dst: true,
-            name:   "ADT",
+            name:   Cow::Borrowed("ADT"),
         }),
         (-1615143600, FixedTimespan {  // 1918-09-27T5-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
             is_dst: false,
-            name:   "AST",
+            name:   Cow::Borrowed("AST"),
         }),
         (-880221600, FixedTimespan {  // 1942-01-09T6-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
             is_dst: true,
-            name:   "AWT",
+            name:   Cow::Borrowed("AWT"),
         }),
         (-769395600, FixedTimespan {  // 1945-07-14T23-00-00 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
             is_dst: true,
-            name:   "APT",
+            name:   Cow::Borrowed("APT"),
         }),
         (-765399600, FixedTimespan {  // 1945-08-30T5-00-00 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
             is_dst: false,
-            name:   "AST",
+            name:   Cow::Borrowed("AST"),
         }),
     ]},
 };

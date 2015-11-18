@@ -5,1741 +5,1742 @@
 // ------
 
 
-use datetime::zone::{TimeZone, FixedTimespanSet, FixedTimespan};
+use std::borrow::Cow;
+use datetime::zone::{StaticTimeZone, FixedTimespanSet, FixedTimespan};
 
-pub const ZONE: TimeZone<'static> = TimeZone {
+pub static ZONE: StaticTimeZone<'static> = StaticTimeZone {
     name: "Atlantic/Azores",
     fixed_timespans: FixedTimespanSet {
         first: FixedTimespan {
             offset: -1040,  // UTC offset -1040, DST offset 0
             is_dst: false,
-            name:   "LMT",
+            name:   Cow::Borrowed("LMT"),
         },
         rest: &[
         (-2713909360, FixedTimespan {  // 1884-00-01T0-17-20 UTC
             offset: -328,  // UTC offset -328, DST offset 0
             is_dst: false,
-            name:   "HMT",
+            name:   Cow::Borrowed("HMT"),
         }),
         (-1830383672, FixedTimespan {  // 1912-00-01T0-05-28 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (-1689548400, FixedTimespan {  // 1916-05-18T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (-1677794400, FixedTimespan {  // 1916-10-01T2-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (-1667430000, FixedTimespan {  // 1917-02-01T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (-1647730800, FixedTimespan {  // 1917-09-15T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (-1635807600, FixedTimespan {  // 1918-02-02T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (-1616194800, FixedTimespan {  // 1918-09-15T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (-1604358000, FixedTimespan {  // 1919-02-01T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (-1584658800, FixedTimespan {  // 1919-09-15T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (-1572649200, FixedTimespan {  // 1920-02-02T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (-1553036400, FixedTimespan {  // 1920-09-15T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (-1541199600, FixedTimespan {  // 1921-02-01T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (-1521500400, FixedTimespan {  // 1921-09-15T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (-1442444400, FixedTimespan {  // 1924-03-17T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (-1426806000, FixedTimespan {  // 1924-09-15T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (-1379286000, FixedTimespan {  // 1926-03-18T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (-1364770800, FixedTimespan {  // 1926-09-03T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (-1348441200, FixedTimespan {  // 1927-03-10T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (-1333321200, FixedTimespan {  // 1927-09-02T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (-1316386800, FixedTimespan {  // 1928-03-15T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (-1301266800, FixedTimespan {  // 1928-09-07T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (-1284332400, FixedTimespan {  // 1929-03-21T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (-1269817200, FixedTimespan {  // 1929-09-06T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (-1221433200, FixedTimespan {  // 1931-03-19T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (-1206918000, FixedTimespan {  // 1931-09-04T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (-1191193200, FixedTimespan {  // 1932-03-03T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (-1175468400, FixedTimespan {  // 1932-09-02T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (-1127689200, FixedTimespan {  // 1934-03-08T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (-1111964400, FixedTimespan {  // 1934-09-07T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (-1096844400, FixedTimespan {  // 1935-02-31T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (-1080514800, FixedTimespan {  // 1935-09-06T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (-1063580400, FixedTimespan {  // 1936-03-19T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (-1049065200, FixedTimespan {  // 1936-09-04T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (-1033340400, FixedTimespan {  // 1937-03-04T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (-1017615600, FixedTimespan {  // 1937-09-03T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (-1002495600, FixedTimespan {  // 1938-02-27T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (-986166000, FixedTimespan {  // 1938-09-02T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (-969231600, FixedTimespan {  // 1939-03-16T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (-950482800, FixedTimespan {  // 1939-10-19T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (-942015600, FixedTimespan {  // 1940-01-25T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (-922662000, FixedTimespan {  // 1940-09-06T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (-906937200, FixedTimespan {  // 1941-03-06T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (-891126000, FixedTimespan {  // 1941-09-06T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (-877302000, FixedTimespan {  // 1942-02-15T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (-873676800, FixedTimespan {  // 1942-03-26T0-00-00 UTC
             offset: 0,  // UTC offset -7200, DST offset 7200
             is_dst: true,
-            name:   "AZOMT",
+            name:   Cow::Borrowed("AZOMT"),
         }),
         (-864000000, FixedTimespan {  // 1942-07-16T0-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (-857948400, FixedTimespan {  // 1942-09-25T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (-845852400, FixedTimespan {  // 1943-02-14T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (-842832000, FixedTimespan {  // 1943-03-18T0-00-00 UTC
             offset: 0,  // UTC offset -7200, DST offset 7200
             is_dst: true,
-            name:   "AZOMT",
+            name:   Cow::Borrowed("AZOMT"),
         }),
         (-831340800, FixedTimespan {  // 1943-07-29T0-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (-825894000, FixedTimespan {  // 1943-09-31T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (-814402800, FixedTimespan {  // 1944-02-12T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (-810777600, FixedTimespan {  // 1944-03-23T0-00-00 UTC
             offset: 0,  // UTC offset -7200, DST offset 7200
             is_dst: true,
-            name:   "AZOMT",
+            name:   Cow::Borrowed("AZOMT"),
         }),
         (-799891200, FixedTimespan {  // 1944-07-27T0-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (-794444400, FixedTimespan {  // 1944-09-29T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (-782953200, FixedTimespan {  // 1945-02-11T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (-779328000, FixedTimespan {  // 1945-03-22T0-00-00 UTC
             offset: 0,  // UTC offset -7200, DST offset 7200
             is_dst: true,
-            name:   "AZOMT",
+            name:   Cow::Borrowed("AZOMT"),
         }),
         (-768441600, FixedTimespan {  // 1945-07-26T0-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (-762994800, FixedTimespan {  // 1945-09-28T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (-749084400, FixedTimespan {  // 1946-03-07T1-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (-733359600, FixedTimespan {  // 1946-09-06T1-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (-717624000, FixedTimespan {  // 1947-03-06T4-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (-701899200, FixedTimespan {  // 1947-09-05T4-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (-686174400, FixedTimespan {  // 1948-03-04T4-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (-670449600, FixedTimespan {  // 1948-09-03T4-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (-654724800, FixedTimespan {  // 1949-03-03T4-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (-639000000, FixedTimespan {  // 1949-09-02T4-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (-591825600, FixedTimespan {  // 1951-03-01T4-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (-575496000, FixedTimespan {  // 1951-09-07T4-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (-559771200, FixedTimespan {  // 1952-03-06T4-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (-544046400, FixedTimespan {  // 1952-09-05T4-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (-528321600, FixedTimespan {  // 1953-03-05T4-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (-512596800, FixedTimespan {  // 1953-09-04T4-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (-496872000, FixedTimespan {  // 1954-03-04T4-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (-481147200, FixedTimespan {  // 1954-09-03T4-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (-465422400, FixedTimespan {  // 1955-03-03T4-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (-449697600, FixedTimespan {  // 1955-09-02T4-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (-433972800, FixedTimespan {  // 1956-03-01T4-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (-417643200, FixedTimespan {  // 1956-09-07T4-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (-401918400, FixedTimespan {  // 1957-03-07T4-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (-386193600, FixedTimespan {  // 1957-09-06T4-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (-370468800, FixedTimespan {  // 1958-03-06T4-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (-354744000, FixedTimespan {  // 1958-09-05T4-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (-339019200, FixedTimespan {  // 1959-03-05T4-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (-323294400, FixedTimespan {  // 1959-09-04T4-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (-307569600, FixedTimespan {  // 1960-03-03T4-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (-291844800, FixedTimespan {  // 1960-09-02T4-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (-276120000, FixedTimespan {  // 1961-03-02T4-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (-260395200, FixedTimespan {  // 1961-09-01T4-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (-244670400, FixedTimespan {  // 1962-03-01T4-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (-228340800, FixedTimespan {  // 1962-09-07T4-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (-212616000, FixedTimespan {  // 1963-03-07T4-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (-196891200, FixedTimespan {  // 1963-09-06T4-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (-181166400, FixedTimespan {  // 1964-03-05T4-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (-165441600, FixedTimespan {  // 1964-09-04T4-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (-149716800, FixedTimespan {  // 1965-03-04T4-00-00 UTC
             offset: -3600,  // UTC offset -7200, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (-133992000, FixedTimespan {  // 1965-09-03T4-00-00 UTC
             offset: -7200,  // UTC offset -7200, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (-118267200, FixedTimespan {  // 1966-03-03T4-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (228272400, FixedTimespan {  // 1977-02-27T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (243997200, FixedTimespan {  // 1977-08-25T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (260326800, FixedTimespan {  // 1978-03-02T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (276051600, FixedTimespan {  // 1978-09-01T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (291776400, FixedTimespan {  // 1979-03-01T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (307504800, FixedTimespan {  // 1979-08-30T2-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (323226000, FixedTimespan {  // 1980-02-30T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (338954400, FixedTimespan {  // 1980-08-28T2-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (354679200, FixedTimespan {  // 1981-02-29T2-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (370404000, FixedTimespan {  // 1981-08-27T2-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (386128800, FixedTimespan {  // 1982-02-28T2-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (401853600, FixedTimespan {  // 1982-08-26T2-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (417582000, FixedTimespan {  // 1983-02-27T3-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (433303200, FixedTimespan {  // 1983-08-25T2-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (449028000, FixedTimespan {  // 1984-02-25T2-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (465357600, FixedTimespan {  // 1984-08-30T2-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (481082400, FixedTimespan {  // 1985-02-31T2-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (496807200, FixedTimespan {  // 1985-08-29T2-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (512532000, FixedTimespan {  // 1986-02-30T2-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (528256800, FixedTimespan {  // 1986-08-28T2-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (543981600, FixedTimespan {  // 1987-02-29T2-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (559706400, FixedTimespan {  // 1987-08-27T2-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (575431200, FixedTimespan {  // 1988-02-27T2-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (591156000, FixedTimespan {  // 1988-08-25T2-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (606880800, FixedTimespan {  // 1989-02-26T2-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (622605600, FixedTimespan {  // 1989-08-24T2-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (638330400, FixedTimespan {  // 1990-02-25T2-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (654660000, FixedTimespan {  // 1990-08-30T2-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (670384800, FixedTimespan {  // 1991-02-31T2-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (686109600, FixedTimespan {  // 1991-08-29T2-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (701834400, FixedTimespan {  // 1992-02-29T2-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (717555600, FixedTimespan {  // 1992-08-27T1-00-00 UTC
             offset: 0,  // UTC offset 0, DST offset 0
             is_dst: false,
-            name:   "WET",
+            name:   Cow::Borrowed("WET"),
         }),
         (733280400, FixedTimespan {  // 1993-02-28T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (749005200, FixedTimespan {  // 1993-08-26T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (764730000, FixedTimespan {  // 1994-02-27T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (780454800, FixedTimespan {  // 1994-08-25T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (796179600, FixedTimespan {  // 1995-02-26T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (811904400, FixedTimespan {  // 1995-08-24T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (828234000, FixedTimespan {  // 1996-02-31T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (846378000, FixedTimespan {  // 1996-09-27T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (859683600, FixedTimespan {  // 1997-02-30T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (877827600, FixedTimespan {  // 1997-09-26T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (891133200, FixedTimespan {  // 1998-02-29T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (909277200, FixedTimespan {  // 1998-09-25T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (922582800, FixedTimespan {  // 1999-02-28T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (941331600, FixedTimespan {  // 1999-09-31T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (954032400, FixedTimespan {  // 2000-02-26T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (972781200, FixedTimespan {  // 2000-09-29T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (985482000, FixedTimespan {  // 2001-02-25T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (1004230800, FixedTimespan {  // 2001-09-28T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (1017536400, FixedTimespan {  // 2002-02-31T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (1035680400, FixedTimespan {  // 2002-09-27T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (1048986000, FixedTimespan {  // 2003-02-30T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (1067130000, FixedTimespan {  // 2003-09-26T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (1080435600, FixedTimespan {  // 2004-02-28T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (1099184400, FixedTimespan {  // 2004-09-31T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (1111885200, FixedTimespan {  // 2005-02-27T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (1130634000, FixedTimespan {  // 2005-09-30T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (1143334800, FixedTimespan {  // 2006-02-26T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (1162083600, FixedTimespan {  // 2006-09-29T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (1174784400, FixedTimespan {  // 2007-02-25T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (1193533200, FixedTimespan {  // 2007-09-28T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (1206838800, FixedTimespan {  // 2008-02-30T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (1224982800, FixedTimespan {  // 2008-09-26T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (1238288400, FixedTimespan {  // 2009-02-29T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (1256432400, FixedTimespan {  // 2009-09-25T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (1269738000, FixedTimespan {  // 2010-02-28T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (1288486800, FixedTimespan {  // 2010-09-31T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (1301187600, FixedTimespan {  // 2011-02-27T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (1319936400, FixedTimespan {  // 2011-09-30T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (1332637200, FixedTimespan {  // 2012-02-25T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (1351386000, FixedTimespan {  // 2012-09-28T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (1364691600, FixedTimespan {  // 2013-02-31T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (1382835600, FixedTimespan {  // 2013-09-27T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (1396141200, FixedTimespan {  // 2014-02-30T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (1414285200, FixedTimespan {  // 2014-09-26T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (1427590800, FixedTimespan {  // 2015-02-29T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (1445734800, FixedTimespan {  // 2015-09-25T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (1459040400, FixedTimespan {  // 2016-02-27T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (1477789200, FixedTimespan {  // 2016-09-30T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (1490490000, FixedTimespan {  // 2017-02-26T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (1509238800, FixedTimespan {  // 2017-09-29T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (1521939600, FixedTimespan {  // 2018-02-25T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (1540688400, FixedTimespan {  // 2018-09-28T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (1553994000, FixedTimespan {  // 2019-02-31T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (1572138000, FixedTimespan {  // 2019-09-27T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (1585443600, FixedTimespan {  // 2020-02-29T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (1603587600, FixedTimespan {  // 2020-09-25T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (1616893200, FixedTimespan {  // 2021-02-28T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (1635642000, FixedTimespan {  // 2021-09-31T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (1648342800, FixedTimespan {  // 2022-02-27T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (1667091600, FixedTimespan {  // 2022-09-30T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (1679792400, FixedTimespan {  // 2023-02-26T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (1698541200, FixedTimespan {  // 2023-09-29T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (1711846800, FixedTimespan {  // 2024-02-31T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (1729990800, FixedTimespan {  // 2024-09-27T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (1743296400, FixedTimespan {  // 2025-02-30T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (1761440400, FixedTimespan {  // 2025-09-26T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (1774746000, FixedTimespan {  // 2026-02-29T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (1792890000, FixedTimespan {  // 2026-09-25T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (1806195600, FixedTimespan {  // 2027-02-28T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (1824944400, FixedTimespan {  // 2027-09-31T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (1837645200, FixedTimespan {  // 2028-02-26T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (1856394000, FixedTimespan {  // 2028-09-29T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (1869094800, FixedTimespan {  // 2029-02-25T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (1887843600, FixedTimespan {  // 2029-09-28T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (1901149200, FixedTimespan {  // 2030-02-31T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (1919293200, FixedTimespan {  // 2030-09-27T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (1932598800, FixedTimespan {  // 2031-02-30T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (1950742800, FixedTimespan {  // 2031-09-26T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (1964048400, FixedTimespan {  // 2032-02-28T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (1982797200, FixedTimespan {  // 2032-09-31T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (1995498000, FixedTimespan {  // 2033-02-27T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (2014246800, FixedTimespan {  // 2033-09-30T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (2026947600, FixedTimespan {  // 2034-02-26T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (2045696400, FixedTimespan {  // 2034-09-29T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (2058397200, FixedTimespan {  // 2035-02-25T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (2077146000, FixedTimespan {  // 2035-09-28T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (2090451600, FixedTimespan {  // 2036-02-30T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (2108595600, FixedTimespan {  // 2036-09-26T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (2121901200, FixedTimespan {  // 2037-02-29T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (2140045200, FixedTimespan {  // 2037-09-25T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (2153350800, FixedTimespan {  // 2038-02-28T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (2172099600, FixedTimespan {  // 2038-09-31T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (2184800400, FixedTimespan {  // 2039-02-27T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (2203549200, FixedTimespan {  // 2039-09-30T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (2216250000, FixedTimespan {  // 2040-02-25T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (2234998800, FixedTimespan {  // 2040-09-28T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (2248304400, FixedTimespan {  // 2041-02-31T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (2266448400, FixedTimespan {  // 2041-09-27T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (2279754000, FixedTimespan {  // 2042-02-30T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (2297898000, FixedTimespan {  // 2042-09-26T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (2311203600, FixedTimespan {  // 2043-02-29T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (2329347600, FixedTimespan {  // 2043-09-25T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (2342653200, FixedTimespan {  // 2044-02-27T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (2361402000, FixedTimespan {  // 2044-09-30T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (2374102800, FixedTimespan {  // 2045-02-26T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (2392851600, FixedTimespan {  // 2045-09-29T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (2405552400, FixedTimespan {  // 2046-02-25T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (2424301200, FixedTimespan {  // 2046-09-28T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (2437606800, FixedTimespan {  // 2047-02-31T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (2455750800, FixedTimespan {  // 2047-09-27T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (2469056400, FixedTimespan {  // 2048-02-29T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (2487200400, FixedTimespan {  // 2048-09-25T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (2500506000, FixedTimespan {  // 2049-02-28T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (2519254800, FixedTimespan {  // 2049-09-31T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (2531955600, FixedTimespan {  // 2050-02-27T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (2550704400, FixedTimespan {  // 2050-09-30T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (2563405200, FixedTimespan {  // 2051-02-26T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (2582154000, FixedTimespan {  // 2051-09-29T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (2595459600, FixedTimespan {  // 2052-02-31T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (2613603600, FixedTimespan {  // 2052-09-27T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (2626909200, FixedTimespan {  // 2053-02-30T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (2645053200, FixedTimespan {  // 2053-09-26T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (2658358800, FixedTimespan {  // 2054-02-29T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (2676502800, FixedTimespan {  // 2054-09-25T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (2689808400, FixedTimespan {  // 2055-02-28T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (2708557200, FixedTimespan {  // 2055-09-31T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (2721258000, FixedTimespan {  // 2056-02-26T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (2740006800, FixedTimespan {  // 2056-09-29T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (2752707600, FixedTimespan {  // 2057-02-25T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (2771456400, FixedTimespan {  // 2057-09-28T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (2784762000, FixedTimespan {  // 2058-02-31T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (2802906000, FixedTimespan {  // 2058-09-27T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (2816211600, FixedTimespan {  // 2059-02-30T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (2834355600, FixedTimespan {  // 2059-09-26T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (2847661200, FixedTimespan {  // 2060-02-28T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (2866410000, FixedTimespan {  // 2060-09-31T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (2879110800, FixedTimespan {  // 2061-02-27T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (2897859600, FixedTimespan {  // 2061-09-30T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (2910560400, FixedTimespan {  // 2062-02-26T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (2929309200, FixedTimespan {  // 2062-09-29T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (2942010000, FixedTimespan {  // 2063-02-25T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (2960758800, FixedTimespan {  // 2063-09-28T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (2974064400, FixedTimespan {  // 2064-02-30T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (2992208400, FixedTimespan {  // 2064-09-26T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (3005514000, FixedTimespan {  // 2065-02-29T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (3023658000, FixedTimespan {  // 2065-09-25T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (3036963600, FixedTimespan {  // 2066-02-28T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (3055712400, FixedTimespan {  // 2066-09-31T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (3068413200, FixedTimespan {  // 2067-02-27T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (3087162000, FixedTimespan {  // 2067-09-30T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (3099862800, FixedTimespan {  // 2068-02-25T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (3118611600, FixedTimespan {  // 2068-09-28T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (3131917200, FixedTimespan {  // 2069-02-31T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (3150061200, FixedTimespan {  // 2069-09-27T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (3163366800, FixedTimespan {  // 2070-02-30T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (3181510800, FixedTimespan {  // 2070-09-26T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (3194816400, FixedTimespan {  // 2071-02-29T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (3212960400, FixedTimespan {  // 2071-09-25T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (3226266000, FixedTimespan {  // 2072-02-27T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (3245014800, FixedTimespan {  // 2072-09-30T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (3257715600, FixedTimespan {  // 2073-02-26T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (3276464400, FixedTimespan {  // 2073-09-29T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (3289165200, FixedTimespan {  // 2074-02-25T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (3307914000, FixedTimespan {  // 2074-09-28T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (3321219600, FixedTimespan {  // 2075-02-31T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (3339363600, FixedTimespan {  // 2075-09-27T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (3352669200, FixedTimespan {  // 2076-02-29T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (3370813200, FixedTimespan {  // 2076-09-25T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (3384118800, FixedTimespan {  // 2077-02-28T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (3402867600, FixedTimespan {  // 2077-09-31T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (3415568400, FixedTimespan {  // 2078-02-27T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (3434317200, FixedTimespan {  // 2078-09-30T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (3447018000, FixedTimespan {  // 2079-02-26T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (3465766800, FixedTimespan {  // 2079-09-29T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (3479072400, FixedTimespan {  // 2080-02-31T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (3497216400, FixedTimespan {  // 2080-09-27T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (3510522000, FixedTimespan {  // 2081-02-30T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (3528666000, FixedTimespan {  // 2081-09-26T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (3541971600, FixedTimespan {  // 2082-02-29T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (3560115600, FixedTimespan {  // 2082-09-25T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (3573421200, FixedTimespan {  // 2083-02-28T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (3592170000, FixedTimespan {  // 2083-09-31T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (3604870800, FixedTimespan {  // 2084-02-26T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (3623619600, FixedTimespan {  // 2084-09-29T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (3636320400, FixedTimespan {  // 2085-02-25T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (3655069200, FixedTimespan {  // 2085-09-28T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (3668374800, FixedTimespan {  // 2086-02-31T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (3686518800, FixedTimespan {  // 2086-09-27T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (3699824400, FixedTimespan {  // 2087-02-30T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (3717968400, FixedTimespan {  // 2087-09-26T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (3731274000, FixedTimespan {  // 2088-02-28T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (3750022800, FixedTimespan {  // 2088-09-31T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (3762723600, FixedTimespan {  // 2089-02-27T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (3781472400, FixedTimespan {  // 2089-09-30T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (3794173200, FixedTimespan {  // 2090-02-26T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (3812922000, FixedTimespan {  // 2090-09-29T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (3825622800, FixedTimespan {  // 2091-02-25T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (3844371600, FixedTimespan {  // 2091-09-28T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (3857677200, FixedTimespan {  // 2092-02-30T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (3875821200, FixedTimespan {  // 2092-09-26T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (3889126800, FixedTimespan {  // 2093-02-29T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (3907270800, FixedTimespan {  // 2093-09-25T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (3920576400, FixedTimespan {  // 2094-02-28T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (3939325200, FixedTimespan {  // 2094-09-31T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (3952026000, FixedTimespan {  // 2095-02-27T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (3970774800, FixedTimespan {  // 2095-09-30T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (3983475600, FixedTimespan {  // 2096-02-25T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (4002224400, FixedTimespan {  // 2096-09-28T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (4015530000, FixedTimespan {  // 2097-02-31T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (4033674000, FixedTimespan {  // 2097-09-27T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (4046979600, FixedTimespan {  // 2098-02-30T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (4065123600, FixedTimespan {  // 2098-09-26T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
         (4078429200, FixedTimespan {  // 2099-02-29T1-00-00 UTC
             offset: 0,  // UTC offset -3600, DST offset 3600
             is_dst: true,
-            name:   "AZOST",
+            name:   Cow::Borrowed("AZOST"),
         }),
         (4096573200, FixedTimespan {  // 2099-09-25T1-00-00 UTC
             offset: -3600,  // UTC offset -3600, DST offset 0
             is_dst: false,
-            name:   "AZOT",
+            name:   Cow::Borrowed("AZOT"),
         }),
     ]},
 };
