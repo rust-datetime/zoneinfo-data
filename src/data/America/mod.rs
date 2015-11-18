@@ -297,9 +297,6 @@ pub use self::Resolute::ZONE as Resolute;
 mod Rio_Branco;
 pub use self::Rio_Branco::ZONE as Rio_Branco;
 
-mod Santa_Isabel;
-pub use self::Santa_Isabel::ZONE as Santa_Isabel;
-
 mod Santarem;
 pub use self::Santarem::ZONE as Santarem;
 

@@ -580,9 +580,6 @@ pub fn lookup(input: &str) -> Option<&'static StaticTimeZone<'static>> {
     if input == "America/Rio_Branco" {
         return Some(&America::Rio_Branco);
     }
-    if input == "America/Santa_Isabel" {
-        return Some(&America::Santa_Isabel);
-    }
     if input == "America/Santarem" {
         return Some(&America::Santarem);
     }
