@@ -1,6 +1,6 @@
 extern crate datetime;
 use datetime::{Instant, LocalDateTime, TimeZone};
-use datetime::format::DateFormat;
+use datetime::fmt::DateFormat;
 
 extern crate zoneinfo_data;
 use zoneinfo_data::ZoneinfoData;
@@ -17,7 +17,7 @@ fn main() {
     println!("This corresponds to {} in UTC.", format.format(&datetime, &locale::Time::english()));
 
     if let Some(timezone) = TimeZone::system() {
-        println!("\nHowever, your current timezone is {}.", timezone.zone_name());
+        println!("\nHowever, your current timezone is {}.", timezone.zone_name().unwrap());
 
         let offset = timezone.offset(datetime);
         println!("This currently has an offset of {} (called {}).", offset, timezone.name(datetime));
