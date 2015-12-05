@@ -17,42 +17,42 @@ pub static ZONE: StaticTimeZone<'static> = StaticTimeZone {
             name:   Cow::Borrowed("LMT"),
         },
         rest: &[
-        (-2177477206, FixedTimespan {  // 1900-11-31T17-13-14 UTC
+        (-2177477206, FixedTimespan {  // 1900-12-31T17:13:14.000 UTC
             offset: 24925,  // UTC offset 24925, DST offset 0
             is_dst: false,
             name:   Cow::Borrowed("SMT"),
         }),
-        (-2038200925, FixedTimespan {  // 1905-04-31T17-04-35 UTC
+        (-2038200925, FixedTimespan {  // 1905-05-31T17:04:35.000 UTC
             offset: 25200,  // UTC offset 25200, DST offset 0
             is_dst: false,
             name:   Cow::Borrowed("MALT"),
         }),
-        (-1167634800, FixedTimespan {  // 1932-11-31T17-00-00 UTC
+        (-1167634800, FixedTimespan {  // 1932-12-31T17:00:00.000 UTC
             offset: 26400,  // UTC offset 25200, DST offset 1200
             is_dst: true,
             name:   Cow::Borrowed("MALST"),
         }),
-        (-1073028000, FixedTimespan {  // 1935-11-31T16-40-00 UTC
+        (-1073028000, FixedTimespan {  // 1935-12-31T16:40:00.000 UTC
             offset: 26400,  // UTC offset 26400, DST offset 0
             is_dst: false,
             name:   Cow::Borrowed("MALT"),
         }),
-        (-894180000, FixedTimespan {  // 1941-07-31T16-40-00 UTC
+        (-894180000, FixedTimespan {  // 1941-08-31T16:40:00.000 UTC
             offset: 27000,  // UTC offset 27000, DST offset 0
             is_dst: false,
             name:   Cow::Borrowed("MALT"),
         }),
-        (-879665400, FixedTimespan {  // 1942-01-15T16-30-00 UTC
+        (-879665400, FixedTimespan {  // 1942-02-15T16:30:00.000 UTC
             offset: 32400,  // UTC offset 32400, DST offset 0
             is_dst: false,
             name:   Cow::Borrowed("JST"),
         }),
-        (-767005200, FixedTimespan {  // 1945-08-11T15-00-00 UTC
+        (-767005200, FixedTimespan {  // 1945-09-11T15:00:00.000 UTC
             offset: 27000,  // UTC offset 27000, DST offset 0
             is_dst: false,
             name:   Cow::Borrowed("MALT"),
         }),
-        (378664200, FixedTimespan {  // 1981-11-31T16-30-00 UTC
+        (378664200, FixedTimespan {  // 1981-12-31T16:30:00.000 UTC
             offset: 28800,  // UTC offset 28800, DST offset 0
             is_dst: false,
             name:   Cow::Borrowed("MYT"),

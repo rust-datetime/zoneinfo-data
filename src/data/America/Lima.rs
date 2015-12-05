@@ -17,82 +17,82 @@ pub static ZONE: StaticTimeZone<'static> = StaticTimeZone {
             name:   Cow::Borrowed("LMT"),
         },
         rest: &[
-        (-2524504092, FixedTimespan {  // 1890-00-01T4-51-48 UTC
+        (-2524504092, FixedTimespan {  // 1890-01-01T04:51:48.000 UTC
             offset: -17484,  // UTC offset -17484, DST offset 0
             is_dst: false,
             name:   Cow::Borrowed("LMT"),
         }),
-        (-1938539316, FixedTimespan {  // 1908-06-28T4-51-24 UTC
+        (-1938539316, FixedTimespan {  // 1908-07-28T04:51:24.000 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
             name:   Cow::Borrowed("PET"),
         }),
-        (-1009825200, FixedTimespan {  // 1938-00-01T5-00-00 UTC
+        (-1009825200, FixedTimespan {  // 1938-01-01T05:00:00.000 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
             name:   Cow::Borrowed("PEST"),
         }),
-        (-1002052800, FixedTimespan {  // 1938-03-01T4-00-00 UTC
+        (-1002052800, FixedTimespan {  // 1938-04-01T04:00:00.000 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
             name:   Cow::Borrowed("PET"),
         }),
-        (-986756400, FixedTimespan {  // 1938-08-25T5-00-00 UTC
+        (-986756400, FixedTimespan {  // 1938-09-25T05:00:00.000 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
             name:   Cow::Borrowed("PEST"),
         }),
-        (-971035200, FixedTimespan {  // 1939-02-26T4-00-00 UTC
+        (-971035200, FixedTimespan {  // 1939-03-26T04:00:00.000 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
             name:   Cow::Borrowed("PET"),
         }),
-        (-955306800, FixedTimespan {  // 1939-08-24T5-00-00 UTC
+        (-955306800, FixedTimespan {  // 1939-09-24T05:00:00.000 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
             name:   Cow::Borrowed("PEST"),
         }),
-        (-939585600, FixedTimespan {  // 1940-02-24T4-00-00 UTC
+        (-939585600, FixedTimespan {  // 1940-03-24T04:00:00.000 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
             name:   Cow::Borrowed("PET"),
         }),
-        (504939600, FixedTimespan {  // 1986-00-01T5-00-00 UTC
+        (504939600, FixedTimespan {  // 1986-01-01T05:00:00.000 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
             name:   Cow::Borrowed("PEST"),
         }),
-        (512712000, FixedTimespan {  // 1986-03-01T4-00-00 UTC
+        (512712000, FixedTimespan {  // 1986-04-01T04:00:00.000 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
             name:   Cow::Borrowed("PET"),
         }),
-        (536475600, FixedTimespan {  // 1987-00-01T5-00-00 UTC
+        (536475600, FixedTimespan {  // 1987-01-01T05:00:00.000 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
             name:   Cow::Borrowed("PEST"),
         }),
-        (544248000, FixedTimespan {  // 1987-03-01T4-00-00 UTC
+        (544248000, FixedTimespan {  // 1987-04-01T04:00:00.000 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
             name:   Cow::Borrowed("PET"),
         }),
-        (631170000, FixedTimespan {  // 1990-00-01T5-00-00 UTC
+        (631170000, FixedTimespan {  // 1990-01-01T05:00:00.000 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
             name:   Cow::Borrowed("PEST"),
         }),
-        (638942400, FixedTimespan {  // 1990-03-01T4-00-00 UTC
+        (638942400, FixedTimespan {  // 1990-04-01T04:00:00.000 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
             name:   Cow::Borrowed("PET"),
         }),
-        (757400400, FixedTimespan {  // 1994-00-01T5-00-00 UTC
+        (757400400, FixedTimespan {  // 1994-01-01T05:00:00.000 UTC
             offset: -14400,  // UTC offset -18000, DST offset 3600
             is_dst: true,
             name:   Cow::Borrowed("PEST"),
         }),
-        (765172800, FixedTimespan {  // 1994-03-01T4-00-00 UTC
+        (765172800, FixedTimespan {  // 1994-04-01T04:00:00.000 UTC
             offset: -18000,  // UTC offset -18000, DST offset 0
             is_dst: false,
             name:   Cow::Borrowed("PET"),

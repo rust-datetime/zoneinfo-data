@@ -17,32 +17,32 @@ pub static ZONE: StaticTimeZone<'static> = StaticTimeZone {
             name:   Cow::Borrowed("LMT"),
         },
         rest: &[
-        (-2713902508, FixedTimespan {  // 1884-00-01T2-11-32 UTC
+        (-2713902508, FixedTimespan {  // 1884-01-01T02:11:32.000 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
             is_dst: false,
             name:   Cow::Borrowed("AST"),
         }),
-        (-1632074400, FixedTimespan {  // 1918-03-14T6-00-00 UTC
+        (-1632074400, FixedTimespan {  // 1918-04-14T06:00:00.000 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
             is_dst: true,
             name:   Cow::Borrowed("ADT"),
         }),
-        (-1615143600, FixedTimespan {  // 1918-09-27T5-00-00 UTC
+        (-1615143600, FixedTimespan {  // 1918-10-27T05:00:00.000 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
             is_dst: false,
             name:   Cow::Borrowed("AST"),
         }),
-        (-880221600, FixedTimespan {  // 1942-01-09T6-00-00 UTC
+        (-880221600, FixedTimespan {  // 1942-02-09T06:00:00.000 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
             is_dst: true,
             name:   Cow::Borrowed("AWT"),
         }),
-        (-769395600, FixedTimespan {  // 1945-07-14T23-00-00 UTC
+        (-769395600, FixedTimespan {  // 1945-08-14T23:00:00.000 UTC
             offset: -10800,  // UTC offset -14400, DST offset 3600
             is_dst: true,
             name:   Cow::Borrowed("APT"),
         }),
-        (-765399600, FixedTimespan {  // 1945-08-30T5-00-00 UTC
+        (-765399600, FixedTimespan {  // 1945-09-30T05:00:00.000 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
             is_dst: false,
             name:   Cow::Borrowed("AST"),

@@ -17,12 +17,12 @@ pub static ZONE: StaticTimeZone<'static> = StaticTimeZone {
             name:   Cow::Borrowed("LMT"),
         },
         rest: &[
-        (-1846272560, FixedTimespan {  // 1911-06-01T2-30-40 UTC
+        (-1846272560, FixedTimespan {  // 1911-07-01T02:30:40.000 UTC
             offset: -14400,  // UTC offset -14400, DST offset 0
             is_dst: false,
             name:   Cow::Borrowed("GFT"),
         }),
-        (-71092800, FixedTimespan {  // 1967-09-01T4-00-00 UTC
+        (-71092800, FixedTimespan {  // 1967-10-01T04:00:00.000 UTC
             offset: -10800,  // UTC offset -10800, DST offset 0
             is_dst: false,
             name:   Cow::Borrowed("GFT"),

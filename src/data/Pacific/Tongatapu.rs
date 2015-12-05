@@ -17,42 +17,42 @@ pub static ZONE: StaticTimeZone<'static> = StaticTimeZone {
             name:   Cow::Borrowed("LMT"),
         },
         rest: &[
-        (-2177497160, FixedTimespan {  // 1900-11-31T11-40-40 UTC
+        (-2177497160, FixedTimespan {  // 1900-12-31T11:40:40.000 UTC
             offset: 44400,  // UTC offset 44400, DST offset 0
             is_dst: false,
             name:   Cow::Borrowed("TOT"),
         }),
-        (-915193200, FixedTimespan {  // 1940-11-31T11-40-00 UTC
+        (-915193200, FixedTimespan {  // 1940-12-31T11:40:00.000 UTC
             offset: 46800,  // UTC offset 46800, DST offset 0
             is_dst: false,
             name:   Cow::Borrowed("TOT"),
         }),
-        (939214800, FixedTimespan {  // 1999-09-06T13-00-00 UTC
+        (939214800, FixedTimespan {  // 1999-10-06T13:00:00.000 UTC
             offset: 50400,  // UTC offset 46800, DST offset 3600
             is_dst: true,
             name:   Cow::Borrowed("TOST"),
         }),
-        (953384400, FixedTimespan {  // 2000-02-18T13-00-00 UTC
+        (953384400, FixedTimespan {  // 2000-03-18T13:00:00.000 UTC
             offset: 46800,  // UTC offset 46800, DST offset 0
             is_dst: false,
             name:   Cow::Borrowed("TOT"),
         }),
-        (973342800, FixedTimespan {  // 2000-10-04T13-00-00 UTC
+        (973342800, FixedTimespan {  // 2000-11-04T13:00:00.000 UTC
             offset: 50400,  // UTC offset 46800, DST offset 3600
             is_dst: true,
             name:   Cow::Borrowed("TOST"),
         }),
-        (980596800, FixedTimespan {  // 2001-00-27T12-00-00 UTC
+        (980596800, FixedTimespan {  // 2001-01-27T12:00:00.000 UTC
             offset: 46800,  // UTC offset 46800, DST offset 0
             is_dst: false,
             name:   Cow::Borrowed("TOT"),
         }),
-        (1004792400, FixedTimespan {  // 2001-10-03T13-00-00 UTC
+        (1004792400, FixedTimespan {  // 2001-11-03T13:00:00.000 UTC
             offset: 50400,  // UTC offset 46800, DST offset 3600
             is_dst: true,
             name:   Cow::Borrowed("TOST"),
         }),
-        (1012046400, FixedTimespan {  // 2002-00-26T12-00-00 UTC
+        (1012046400, FixedTimespan {  // 2002-01-26T12:00:00.000 UTC
             offset: 46800,  // UTC offset 46800, DST offset 0
             is_dst: false,
             name:   Cow::Borrowed("TOT"),

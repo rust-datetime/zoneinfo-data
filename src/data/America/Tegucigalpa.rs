@@ -17,37 +17,37 @@ pub static ZONE: StaticTimeZone<'static> = StaticTimeZone {
             name:   Cow::Borrowed("LMT"),
         },
         rest: &[
-        (-1538509732, FixedTimespan {  // 1921-03-01T4-11-08 UTC
+        (-1538509732, FixedTimespan {  // 1921-04-01T04:11:08.000 UTC
             offset: -21600,  // UTC offset -21600, DST offset 0
             is_dst: false,
             name:   Cow::Borrowed("CST"),
         }),
-        (547020000, FixedTimespan {  // 1987-04-03T6-00-00 UTC
+        (547020000, FixedTimespan {  // 1987-05-03T06:00:00.000 UTC
             offset: -18000,  // UTC offset -21600, DST offset 3600
             is_dst: true,
             name:   Cow::Borrowed("CDT"),
         }),
-        (559717200, FixedTimespan {  // 1987-08-27T5-00-00 UTC
+        (559717200, FixedTimespan {  // 1987-09-27T05:00:00.000 UTC
             offset: -21600,  // UTC offset -21600, DST offset 0
             is_dst: false,
             name:   Cow::Borrowed("CST"),
         }),
-        (578469600, FixedTimespan {  // 1988-04-01T6-00-00 UTC
+        (578469600, FixedTimespan {  // 1988-05-01T06:00:00.000 UTC
             offset: -18000,  // UTC offset -21600, DST offset 3600
             is_dst: true,
             name:   Cow::Borrowed("CDT"),
         }),
-        (591166800, FixedTimespan {  // 1988-08-25T5-00-00 UTC
+        (591166800, FixedTimespan {  // 1988-09-25T05:00:00.000 UTC
             offset: -21600,  // UTC offset -21600, DST offset 0
             is_dst: false,
             name:   Cow::Borrowed("CST"),
         }),
-        (1146981600, FixedTimespan {  // 2006-04-07T6-00-00 UTC
+        (1146981600, FixedTimespan {  // 2006-05-07T06:00:00.000 UTC
             offset: -18000,  // UTC offset -21600, DST offset 3600
             is_dst: true,
             name:   Cow::Borrowed("CDT"),
         }),
-        (1154926800, FixedTimespan {  // 2006-07-07T5-00-00 UTC
+        (1154926800, FixedTimespan {  // 2006-08-07T05:00:00.000 UTC
             offset: -21600,  // UTC offset -21600, DST offset 0
             is_dst: false,
             name:   Cow::Borrowed("CST"),

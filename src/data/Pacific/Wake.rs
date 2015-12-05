@@ -17,7 +17,7 @@ pub static ZONE: StaticTimeZone<'static> = StaticTimeZone {
             name:   Cow::Borrowed("LMT"),
         },
         rest: &[
-        (-2177492788, FixedTimespan {  // 1900-11-31T12-53-32 UTC
+        (-2177492788, FixedTimespan {  // 1900-12-31T12:53:32.000 UTC
             offset: 43200,  // UTC offset 43200, DST offset 0
             is_dst: false,
             name:   Cow::Borrowed("WAKT"),
