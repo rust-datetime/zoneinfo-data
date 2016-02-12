@@ -5,6 +5,8 @@ extern crate datetime;
 use datetime::{sys_timezone, TimeZone};
 use datetime::zone::TimeZoneSource;
 
+extern crate phf;
+
 mod data;
 pub use data::*;
 

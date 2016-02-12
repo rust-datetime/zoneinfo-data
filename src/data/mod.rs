@@ -6,6 +6,7 @@
 
 
 use datetime::zone::StaticTimeZone;
+use phf;
 
 pub mod Africa;
 pub mod America;
@@ -57,1296 +58,530 @@ pub use self::WET::ZONE as WET;
 
 
 
+static ZONES: phf::Map<&'static str, &'static StaticTimeZone<'static>> = ::phf::Map {
+    key: 1897749892740154578,
+    disps: &[
+        (0, 135),
+        (0, 5),
+        (0, 111),
+        (0, 1),
+        (0, 8),
+        (3, 386),
+        (0, 0),
+        (0, 427),
+        (0, 16),
+        (0, 1),
+        (0, 19),
+        (0, 409),
+        (0, 184),
+        (0, 157),
+        (0, 156),
+        (0, 216),
+        (0, 192),
+        (1, 26),
+        (0, 2),
+        (4, 88),
+        (0, 2),
+        (6, 312),
+        (1, 71),
+        (0, 157),
+        (6, 378),
+        (0, 16),
+        (0, 247),
+        (0, 200),
+        (0, 79),
+        (0, 5),
+        (2, 170),
+        (0, 342),
+        (0, 279),
+        (1, 383),
+        (1, 25),
+        (0, 178),
+        (1, 359),
+        (0, 277),
+        (0, 0),
+        (0, 7),
+        (0, 23),
+        (19, 245),
+        (6, 213),
+        (0, 1),
+        (0, 132),
+        (0, 3),
+        (0, 0),
+        (8, 301),
+        (0, 1),
+        (0, 0),
+        (1, 124),
+        (0, 6),
+        (7, 54),
+        (0, 0),
+        (0, 14),
+        (10, 303),
+        (0, 56),
+        (0, 6),
+        (6, 207),
+        (0, 2),
+        (1, 238),
+        (0, 7),
+        (0, 14),
+        (0, 69),
+        (0, 35),
+        (2, 144),
+        (6, 383),
+        (0, 268),
+        (32, 393),
+        (0, 34),
+        (0, 4),
+        (0, 5),
+        (0, 0),
+        (0, 4),
+        (2, 182),
+        (0, 94),
+        (0, 6),
+        (2, 87),
+        (0, 6),
+        (0, 39),
+        (0, 0),
+        (0, 59),
+        (7, 390),
+        (0, 36),
+        (1, 397),
+        (1, 271),
+    ],
+    entries: &[
+        ("Asia/Ulaanbaatar", &Asia::Ulaanbaatar),
+        ("America/St_Vincent", &America::St_Vincent),
+        ("Europe/Simferopol", &Europe::Simferopol),
+        ("Pacific/Port_Moresby", &Pacific::Port_Moresby),
+        ("Europe/Volgograd", &Europe::Volgograd),
+        ("Africa/Brazzaville", &Africa::Brazzaville),
+        ("Asia/Gaza", &Asia::Gaza),
+        ("America/Creston", &America::Creston),
+        ("Africa/Khartoum", &Africa::Khartoum),
+        ("America/Havana", &America::Havana),
+        ("Asia/Irkutsk", &Asia::Irkutsk),
+        ("America/Guayaquil", &America::Guayaquil),
+        ("America/North_Dakota/Center", &America::North_Dakota::Center),
+        ("Europe/Rome", &Europe::Rome),
+        ("Australia/Broken_Hill", &Australia::Broken_Hill),
+        ("Africa/Banjul", &Africa::Banjul),
+        ("MST", &MST),
+        ("Asia/Vladivostok", &Asia::Vladivostok),
+        ("CST6CDT", &CST6CDT),
+        ("Pacific/Palau", &Pacific::Palau),
+        ("Africa/Djibouti", &Africa::Djibouti),
+        ("America/St_Lucia", &America::St_Lucia),
+        ("Indian/Mauritius", &Indian::Mauritius),
+        ("Atlantic/Faroe", &Atlantic::Faroe),
+        ("Asia/Samarkand", &Asia::Samarkand),
+        ("PST8PDT", &PST8PDT),
+        ("Africa/El_Aaiun", &Africa::El_Aaiun),
+        ("Europe/Madrid", &Europe::Madrid),
+        ("Pacific/Fakaofo", &Pacific::Fakaofo),
+        ("Africa/Niamey", &Africa::Niamey),
+        ("Europe/Warsaw", &Europe::Warsaw),
+        ("America/Eirunepe", &America::Eirunepe),
+        ("Asia/Dushanbe", &Asia::Dushanbe),
+        ("Asia/Aqtobe", &Asia::Aqtobe),
+        ("Pacific/Noumea", &Pacific::Noumea),
+        ("Asia/Srednekolymsk", &Asia::Srednekolymsk),
+        ("Asia/Damascus", &Asia::Damascus),
+        ("Pacific/Kwajalein", &Pacific::Kwajalein),
+        ("America/Guatemala", &America::Guatemala),
+        ("Australia/Eucla", &Australia::Eucla),
+        ("Asia/Bangkok", &Asia::Bangkok),
+        ("America/Barbados", &America::Barbados),
+        ("Atlantic/St_Helena", &Atlantic::St_Helena),
+        ("America/North_Dakota/Beulah", &America::North_Dakota::Beulah),
+        ("Europe/Tirane", &Europe::Tirane),
+        ("Africa/Tripoli", &Africa::Tripoli),
+        ("Europe/Riga", &Europe::Riga),
+        ("America/Grenada", &America::Grenada),
+        ("Asia/Karachi", &Asia::Karachi),
+        ("America/Panama", &America::Panama),
+        ("Europe/Budapest", &Europe::Budapest),
+        ("America/Indiana/Winamac", &America::Indiana::Winamac),
+        ("Africa/Kampala", &Africa::Kampala),
+        ("America/Maceio", &America::Maceio),
+        ("Europe/Kiev", &Europe::Kiev),
+        ("America/Indiana/Tell_City", &America::Indiana::Tell_City),
+        ("Africa/Bujumbura", &Africa::Bujumbura),
+        ("America/El_Salvador", &America::El_Salvador),
+        ("Asia/Rangoon", &Asia::Rangoon),
+        ("Africa/Lusaka", &Africa::Lusaka),
+        ("Atlantic/Reykjavik", &Atlantic::Reykjavik),
+        ("Atlantic/Azores", &Atlantic::Azores),
+        ("America/Dominica", &America::Dominica),
+        ("Pacific/Tarawa", &Pacific::Tarawa),
+        ("America/St_Thomas", &America::St_Thomas),
+        ("Australia/Brisbane", &Australia::Brisbane),
+        ("Asia/Colombo", &Asia::Colombo),
+        ("America/Jamaica", &America::Jamaica),
+        ("Atlantic/Canary", &Atlantic::Canary),
+        ("America/Regina", &America::Regina),
+        ("Africa/Harare", &Africa::Harare),
+        ("Antarctica/Davis", &Antarctica::Davis),
+        ("Europe/Bucharest", &Europe::Bucharest),
+        ("Europe/Ljubljana", &Europe::Ljubljana),
+        ("America/Detroit", &America::Detroit),
+        ("Europe/Chisinau", &Europe::Chisinau),
+        ("Pacific/Marquesas", &Pacific::Marquesas),
+        ("America/Whitehorse", &America::Whitehorse),
+        ("America/Mazatlan", &America::Mazatlan),
+        ("Asia/Bahrain", &Asia::Bahrain),
+        ("Asia/Kabul", &Asia::Kabul),
+        ("America/Yakutat", &America::Yakutat),
+        ("Pacific/Pago_Pago", &Pacific::Pago_Pago),
+        ("Pacific/Efate", &Pacific::Efate),
+        ("America/Aruba", &America::Aruba),
+        ("America/Hermosillo", &America::Hermosillo),
+        ("America/Montserrat", &America::Montserrat),
+        ("Asia/Dhaka", &Asia::Dhaka),
+        ("Asia/Aden", &Asia::Aden),
+        ("Europe/Moscow", &Europe::Moscow),
+        ("America/Scoresbysund", &America::Scoresbysund),
+        ("MET", &MET),
+        ("America/Argentina/Salta", &America::Argentina::Salta),
+        ("America/Cayenne", &America::Cayenne),
+        ("Africa/Bamako", &Africa::Bamako),
+        ("America/Bahia", &America::Bahia),
+        ("Asia/Baghdad", &Asia::Baghdad),
+        ("America/Paramaribo", &America::Paramaribo),
+        ("Asia/Novokuznetsk", &Asia::Novokuznetsk),
+        ("America/Miquelon", &America::Miquelon),
+        ("America/Marigot", &America::Marigot),
+        ("Asia/Omsk", &Asia::Omsk),
+        ("Pacific/Pohnpei", &Pacific::Pohnpei),
+        ("US/Pacific-New", &US::Pacific_New),
+        ("Pacific/Funafuti", &Pacific::Funafuti),
+        ("Africa/Johannesburg", &Africa::Johannesburg),
+        ("Antarctica/Casey", &Antarctica::Casey),
+        ("America/St_Johns", &America::St_Johns),
+        ("Africa/Lagos", &Africa::Lagos),
+        ("America/Cancun", &America::Cancun),
+        ("Pacific/Enderbury", &Pacific::Enderbury),
+        ("Antarctica/Syowa", &Antarctica::Syowa),
+        ("Africa/Monrovia", &Africa::Monrovia),
+        ("Africa/Bissau", &Africa::Bissau),
+        ("Asia/Brunei", &Asia::Brunei),
+        ("America/Iqaluit", &America::Iqaluit),
+        ("Africa/Cairo", &Africa::Cairo),
+        ("America/Anchorage", &America::Anchorage),
+        ("Pacific/Bougainville", &Pacific::Bougainville),
+        ("America/Porto_Velho", &America::Porto_Velho),
+        ("Asia/Phnom_Penh", &Asia::Phnom_Penh),
+        ("America/Dawson", &America::Dawson),
+        ("Asia/Macau", &Asia::Macau),
+        ("America/Lima", &America::Lima),
+        ("America/Bahia_Banderas", &America::Bahia_Banderas),
+        ("Asia/Oral", &Asia::Oral),
+        ("Asia/Tokyo", &Asia::Tokyo),
+        ("Europe/Istanbul", &Europe::Istanbul),
+        ("Asia/Manila", &Asia::Manila),
+        ("Africa/Juba", &Africa::Juba),
+        ("Africa/Mogadishu", &Africa::Mogadishu),
+        ("Africa/Windhoek", &Africa::Windhoek),
+        ("America/Dawson_Creek", &America::Dawson_Creek),
+        ("Africa/Algiers", &Africa::Algiers),
+        ("Africa/Lubumbashi", &Africa::Lubumbashi),
+        ("Europe/Guernsey", &Europe::Guernsey),
+        ("America/Tijuana", &America::Tijuana),
+        ("America/Blanc-Sablon", &America::Blanc_Sablon),
+        ("Indian/Maldives", &Indian::Maldives),
+        ("Asia/Ho_Chi_Minh", &Asia::Ho_Chi_Minh),
+        ("MST7MDT", &MST7MDT),
+        ("America/Rio_Branco", &America::Rio_Branco),
+        ("Pacific/Galapagos", &Pacific::Galapagos),
+        ("America/Cambridge_Bay", &America::Cambridge_Bay),
+        ("America/Monterrey", &America::Monterrey),
+        ("Africa/Dar_es_Salaam", &Africa::Dar_es_Salaam),
+        ("Asia/Pontianak", &Asia::Pontianak),
+        ("America/Indiana/Indianapolis", &America::Indiana::Indianapolis),
+        ("Asia/Ust-Nera", &Asia::Ust_Nera),
+        ("Atlantic/South_Georgia", &Atlantic::South_Georgia),
+        ("CET", &CET),
+        ("Europe/Zagreb", &Europe::Zagreb),
+        ("America/St_Kitts", &America::St_Kitts),
+        ("Indian/Reunion", &Indian::Reunion),
+        ("Pacific/Tongatapu", &Pacific::Tongatapu),
+        ("Europe/Brussels", &Europe::Brussels),
+        ("America/Caracas", &America::Caracas),
+        ("Africa/Bangui", &Africa::Bangui),
+        ("Europe/Minsk", &Europe::Minsk),
+        ("America/La_Paz", &America::La_Paz),
+        ("America/Resolute", &America::Resolute),
+        ("Antarctica/Vostok", &Antarctica::Vostok),
+        ("Europe/Vienna", &Europe::Vienna),
+        ("Pacific/Johnston", &Pacific::Johnston),
+        ("Europe/Kaliningrad", &Europe::Kaliningrad),
+        ("America/Argentina/Mendoza", &America::Argentina::Mendoza),
+        ("America/Adak", &America::Adak),
+        ("Europe/Copenhagen", &Europe::Copenhagen),
+        ("Africa/Luanda", &Africa::Luanda),
+        ("America/Kentucky/Monticello", &America::Kentucky::Monticello),
+        ("Africa/Lome", &Africa::Lome),
+        ("Africa/Sao_Tome", &Africa::Sao_Tome),
+        ("Antarctica/Palmer", &Antarctica::Palmer),
+        ("EST", &EST),
+        ("Asia/Amman", &Asia::Amman),
+        ("Asia/Yakutsk", &Asia::Yakutsk),
+        ("America/Recife", &America::Recife),
+        ("America/North_Dakota/New_Salem", &America::North_Dakota::New_Salem),
+        ("Indian/Christmas", &Indian::Christmas),
+        ("America/Santarem", &America::Santarem),
+        ("Asia/Jakarta", &Asia::Jakarta),
+        ("Asia/Almaty", &Asia::Almaty),
+        ("Asia/Tashkent", &Asia::Tashkent),
+        ("America/Kentucky/Louisville", &America::Kentucky::Louisville),
+        ("Pacific/Gambier", &Pacific::Gambier),
+        ("Asia/Krasnoyarsk", &Asia::Krasnoyarsk),
+        ("America/Vancouver", &America::Vancouver),
+        ("Asia/Qyzylorda", &Asia::Qyzylorda),
+        ("Pacific/Chuuk", &Pacific::Chuuk),
+        ("Antarctica/Troll", &Antarctica::Troll),
+        ("Asia/Yerevan", &Asia::Yerevan),
+        ("Europe/Sarajevo", &Europe::Sarajevo),
+        ("Australia/Currie", &Australia::Currie),
+        ("America/Halifax", &America::Halifax),
+        ("Europe/Nicosia", &Europe::Nicosia),
+        ("America/Costa_Rica", &America::Costa_Rica),
+        ("America/Indiana/Vevay", &America::Indiana::Vevay),
+        ("America/Belize", &America::Belize),
+        ("America/Los_Angeles", &America::Los_Angeles),
+        ("America/Indiana/Knox", &America::Indiana::Knox),
+        ("Atlantic/Bermuda", &Atlantic::Bermuda),
+        ("Africa/Libreville", &Africa::Libreville),
+        ("Pacific/Honolulu", &Pacific::Honolulu),
+        ("America/Argentina/San_Juan", &America::Argentina::San_Juan),
+        ("Asia/Anadyr", &Asia::Anadyr),
+        ("Asia/Riyadh", &Asia::Riyadh),
+        ("America/Denver", &America::Denver),
+        ("America/Sitka", &America::Sitka),
+        ("America/Metlakatla", &America::Metlakatla),
+        ("Indian/Comoro", &Indian::Comoro),
+        ("Asia/Ashgabat", &Asia::Ashgabat),
+        ("Africa/Mbabane", &Africa::Mbabane),
+        ("Asia/Istanbul", &Asia::Istanbul),
+        ("America/Tegucigalpa", &America::Tegucigalpa),
+        ("Africa/Conakry", &Africa::Conakry),
+        ("Australia/Adelaide", &Australia::Adelaide),
+        ("Asia/Tbilisi", &Asia::Tbilisi),
+        ("Africa/Freetown", &Africa::Freetown),
+        ("America/New_York", &America::New_York),
+        ("Europe/Mariehamn", &Europe::Mariehamn),
+        ("America/Indiana/Petersburg", &America::Indiana::Petersburg),
+        ("Asia/Jerusalem", &Asia::Jerusalem),
+        ("Africa/Ceuta", &Africa::Ceuta),
+        ("Africa/Maputo", &Africa::Maputo),
+        ("Europe/Gibraltar", &Europe::Gibraltar),
+        ("America/Nome", &America::Nome),
+        ("Europe/Belgrade", &Europe::Belgrade),
+        ("Europe/Sofia", &Europe::Sofia),
+        ("America/Lower_Princes", &America::Lower_Princes),
+        ("Europe/Bratislava", &Europe::Bratislava),
+        ("America/Fort_Nelson", &America::Fort_Nelson),
+        ("Asia/Kuala_Lumpur", &Asia::Kuala_Lumpur),
+        ("Indian/Cocos", &Indian::Cocos),
+        ("Asia/Yekaterinburg", &Asia::Yekaterinburg),
+        ("Pacific/Nauru", &Pacific::Nauru),
+        ("Australia/Melbourne", &Australia::Melbourne),
+        ("America/Toronto", &America::Toronto),
+        ("America/Manaus", &America::Manaus),
+        ("Asia/Aqtau", &Asia::Aqtau),
+        ("America/Boise", &America::Boise),
+        ("Atlantic/Stanley", &Atlantic::Stanley),
+        ("America/Swift_Current", &America::Swift_Current),
+        ("Asia/Shanghai", &Asia::Shanghai),
+        ("America/Rainy_River", &America::Rainy_River),
+        ("Asia/Nicosia", &Asia::Nicosia),
+        ("Africa/Douala", &Africa::Douala),
+        ("Asia/Choibalsan", &Asia::Choibalsan),
+        ("America/Sao_Paulo", &America::Sao_Paulo),
+        ("Pacific/Guam", &Pacific::Guam),
+        ("Pacific/Easter", &Pacific::Easter),
+        ("Africa/Accra", &Africa::Accra),
+        ("Europe/Berlin", &Europe::Berlin),
+        ("Antarctica/Mawson", &Antarctica::Mawson),
+        ("Pacific/Wallis", &Pacific::Wallis),
+        ("Europe/Andorra", &Europe::Andorra),
+        ("Africa/Abidjan", &Africa::Abidjan),
+        ("America/Goose_Bay", &America::Goose_Bay),
+        ("Europe/Prague", &Europe::Prague),
+        ("Europe/Paris", &Europe::Paris),
+        ("Asia/Seoul", &Asia::Seoul),
+        ("America/Winnipeg", &America::Winnipeg),
+        ("America/Chicago", &America::Chicago),
+        ("America/Cayman", &America::Cayman),
+        ("America/Noronha", &America::Noronha),
+        ("Antarctica/Rothera", &Antarctica::Rothera),
+        ("Africa/Asmara", &Africa::Asmara),
+        ("Atlantic/Cape_Verde", &Atlantic::Cape_Verde),
+        ("Pacific/Fiji", &Pacific::Fiji),
+        ("Europe/Jersey", &Europe::Jersey),
+        ("Asia/Hovd", &Asia::Hovd),
+        ("Pacific/Kosrae", &Pacific::Kosrae),
+        ("Asia/Makassar", &Asia::Makassar),
+        ("America/Inuvik", &America::Inuvik),
+        ("Indian/Mahe", &Indian::Mahe),
+        ("Indian/Kerguelen", &Indian::Kerguelen),
+        ("Indian/Antananarivo", &Indian::Antananarivo),
+        ("Pacific/Auckland", &Pacific::Auckland),
+        ("Asia/Vientiane", &Asia::Vientiane),
+        ("America/Godthab", &America::Godthab),
+        ("Asia/Kathmandu", &Asia::Kathmandu),
+        ("Europe/Samara", &Europe::Samara),
+        ("America/Moncton", &America::Moncton),
+        ("Europe/Oslo", &Europe::Oslo),
+        ("Europe/Skopje", &Europe::Skopje),
+        ("America/Grand_Turk", &America::Grand_Turk),
+        ("Africa/Ndjamena", &Africa::Ndjamena),
+        ("America/Guyana", &America::Guyana),
+        ("America/Mexico_City", &America::Mexico_City),
+        ("Africa/Kigali", &Africa::Kigali),
+        ("Pacific/Norfolk", &Pacific::Norfolk),
+        ("Asia/Muscat", &Asia::Muscat),
+        ("Pacific/Majuro", &Pacific::Majuro),
+        ("Asia/Beirut", &Asia::Beirut),
+        ("America/Yellowknife", &America::Yellowknife),
+        ("America/Kralendijk", &America::Kralendijk),
+        ("America/Pangnirtung", &America::Pangnirtung),
+        ("Pacific/Guadalcanal", &Pacific::Guadalcanal),
+        ("Asia/Baku", &Asia::Baku),
+        ("America/Puerto_Rico", &America::Puerto_Rico),
+        ("America/Managua", &America::Managua),
+        ("Asia/Novosibirsk", &Asia::Novosibirsk),
+        ("WET", &WET),
+        ("Africa/Nairobi", &Africa::Nairobi),
+        ("Africa/Blantyre", &Africa::Blantyre),
+        ("Europe/London", &Europe::London),
+        ("Asia/Hong_Kong", &Asia::Hong_Kong),
+        ("America/Fortaleza", &America::Fortaleza),
+        ("Asia/Urumqi", &Asia::Urumqi),
+        ("EST5EDT", &EST5EDT),
+        ("Africa/Ouagadougou", &Africa::Ouagadougou),
+        ("America/Glace_Bay", &America::Glace_Bay),
+        ("Europe/Vatican", &Europe::Vatican),
+        ("Europe/Uzhgorod", &Europe::Uzhgorod),
+        ("Asia/Dili", &Asia::Dili),
+        ("America/Tortola", &America::Tortola),
+        ("Asia/Qatar", &Asia::Qatar),
+        ("America/Campo_Grande", &America::Campo_Grande),
+        ("Asia/Tehran", &Asia::Tehran),
+        ("Africa/Malabo", &Africa::Malabo),
+        ("America/Curacao", &America::Curacao),
+        ("America/Indiana/Marengo", &America::Indiana::Marengo),
+        ("Asia/Kolkata", &Asia::Kolkata),
+        ("Africa/Dakar", &Africa::Dakar),
+        ("Africa/Addis_Ababa", &Africa::Addis_Ababa),
+        ("America/Chihuahua", &America::Chihuahua),
+        ("Australia/Lindeman", &Australia::Lindeman),
+        ("Australia/Darwin", &Australia::Darwin),
+        ("Europe/Monaco", &Europe::Monaco),
+        ("Asia/Kuching", &Asia::Kuching),
+        ("EET", &EET),
+        ("America/Atikokan", &America::Atikokan),
+        ("Antarctica/McMurdo", &Antarctica::McMurdo),
+        ("America/Argentina/Tucuman", &America::Argentina::Tucuman),
+        ("America/Bogota", &America::Bogota),
+        ("America/Argentina/San_Luis", &America::Argentina::San_Luis),
+        ("America/Matamoros", &America::Matamoros),
+        ("America/Edmonton", &America::Edmonton),
+        ("Asia/Kuwait", &Asia::Kuwait),
+        ("America/Argentina/Cordoba", &America::Argentina::Cordoba),
+        ("America/Nipigon", &America::Nipigon),
+        ("Australia/Sydney", &Australia::Sydney),
+        ("Pacific/Rarotonga", &Pacific::Rarotonga),
+        ("Europe/San_Marino", &Europe::San_Marino),
+        ("Pacific/Midway", &Pacific::Midway),
+        ("Australia/Hobart", &Australia::Hobart),
+        ("Pacific/Niue", &Pacific::Niue),
+        ("Europe/Athens", &Europe::Athens),
+        ("America/Phoenix", &America::Phoenix),
+        ("Europe/Dublin", &Europe::Dublin),
+        ("Indian/Mayotte", &Indian::Mayotte),
+        ("Europe/Malta", &Europe::Malta),
+        ("America/Nassau", &America::Nassau),
+        ("Australia/Perth", &Australia::Perth),
+        ("America/Argentina/Buenos_Aires", &America::Argentina::Buenos_Aires),
+        ("Pacific/Wake", &Pacific::Wake),
+        ("America/Argentina/La_Rioja", &America::Argentina::La_Rioja),
+        ("Australia/Lord_Howe", &Australia::Lord_Howe),
+        ("Pacific/Pitcairn", &Pacific::Pitcairn),
+        ("Europe/Stockholm", &Europe::Stockholm),
+        ("Asia/Taipei", &Asia::Taipei),
+        ("Indian/Chagos", &Indian::Chagos),
+        ("America/St_Barthelemy", &America::St_Barthelemy),
+        ("Europe/Zaporozhye", &Europe::Zaporozhye),
+        ("America/Martinique", &America::Martinique),
+        ("Africa/Porto-Novo", &Africa::Porto_Novo),
+        ("Asia/Pyongyang", &Asia::Pyongyang),
+        ("America/Santo_Domingo", &America::Santo_Domingo),
+        ("America/Port-au-Prince", &America::Port_au_Prince),
+        ("America/Indiana/Vincennes", &America::Indiana::Vincennes),
+        ("Asia/Dubai", &Asia::Dubai),
+        ("Atlantic/Madeira", &Atlantic::Madeira),
+        ("America/Araguaina", &America::Araguaina),
+        ("America/Argentina/Rio_Gallegos", &America::Argentina::Rio_Gallegos),
+        ("Antarctica/Macquarie", &Antarctica::Macquarie),
+        ("Africa/Casablanca", &Africa::Casablanca),
+        ("Asia/Jayapura", &Asia::Jayapura),
+        ("Africa/Nouakchott", &Africa::Nouakchott),
+        ("America/Juneau", &America::Juneau),
+        ("America/Boa_Vista", &America::Boa_Vista),
+        ("Europe/Vilnius", &Europe::Vilnius),
+        ("America/Montevideo", &America::Montevideo),
+        ("America/Menominee", &America::Menominee),
+        ("Pacific/Chatham", &Pacific::Chatham),
+        ("Europe/Helsinki", &Europe::Helsinki),
+        ("America/Port_of_Spain", &America::Port_of_Spain),
+        ("Asia/Singapore", &Asia::Singapore),
+        ("America/Cuiaba", &America::Cuiaba),
+        ("Pacific/Saipan", &Pacific::Saipan),
+        ("America/Argentina/Catamarca", &America::Argentina::Catamarca),
+        ("America/Argentina/Jujuy", &America::Argentina::Jujuy),
+        ("Asia/Chita", &Asia::Chita),
+        ("Europe/Amsterdam", &Europe::Amsterdam),
+        ("America/Antigua", &America::Antigua),
+        ("HST", &HST),
+        ("Asia/Hebron", &Asia::Hebron),
+        ("Europe/Isle_of_Man", &Europe::Isle_of_Man),
+        ("Asia/Magadan", &Asia::Magadan),
+        ("Asia/Thimphu", &Asia::Thimphu),
+        ("Asia/Sakhalin", &Asia::Sakhalin),
+        ("America/Rankin_Inlet", &America::Rankin_Inlet),
+        ("Africa/Gaborone", &Africa::Gaborone),
+        ("America/Santiago", &America::Santiago),
+        ("Europe/Podgorica", &Europe::Podgorica),
+        ("Antarctica/DumontDUrville", &Antarctica::DumontDUrville),
+        ("Asia/Khandyga", &Asia::Khandyga),
+        ("America/Thunder_Bay", &America::Thunder_Bay),
+        ("Africa/Maseru", &Africa::Maseru),
+        ("Africa/Tunis", &Africa::Tunis),
+        ("America/Asuncion", &America::Asuncion),
+        ("Europe/Luxembourg", &Europe::Luxembourg),
+        ("Africa/Kinshasa", &Africa::Kinshasa),
+        ("Europe/Busingen", &Europe::Busingen),
+        ("America/Danmarkshavn", &America::Danmarkshavn),
+        ("America/Ojinaga", &America::Ojinaga),
+        ("Pacific/Tahiti", &Pacific::Tahiti),
+        ("Pacific/Kiritimati", &Pacific::Kiritimati),
+        ("America/Merida", &America::Merida),
+        ("Europe/Zurich", &Europe::Zurich),
+        ("Arctic/Longyearbyen", &Arctic::Longyearbyen),
+        ("Asia/Bishkek", &Asia::Bishkek),
+        ("America/Anguilla", &America::Anguilla),
+        ("Europe/Tallinn", &Europe::Tallinn),
+        ("America/Thule", &America::Thule),
+        ("America/Belem", &America::Belem),
+        ("America/Argentina/Ushuaia", &America::Argentina::Ushuaia),
+        ("America/Guadeloupe", &America::Guadeloupe),
+        ("Pacific/Apia", &Pacific::Apia),
+        ("Europe/Vaduz", &Europe::Vaduz),
+        ("Europe/Lisbon", &Europe::Lisbon),
+        ("Asia/Kamchatka", &Asia::Kamchatka),
+    ]
+};
+
 pub fn lookup(input: &str) -> Option<&'static StaticTimeZone<'static>> {
-    if input == "Africa/Abidjan" {
-        return Some(&Africa::Abidjan);
-    }
-    if input == "Africa/Accra" {
-        return Some(&Africa::Accra);
-    }
-    if input == "Africa/Addis_Ababa" {
-        return Some(&Africa::Addis_Ababa);
-    }
-    if input == "Africa/Algiers" {
-        return Some(&Africa::Algiers);
-    }
-    if input == "Africa/Asmara" {
-        return Some(&Africa::Asmara);
-    }
-    if input == "Africa/Bamako" {
-        return Some(&Africa::Bamako);
-    }
-    if input == "Africa/Bangui" {
-        return Some(&Africa::Bangui);
-    }
-    if input == "Africa/Banjul" {
-        return Some(&Africa::Banjul);
-    }
-    if input == "Africa/Bissau" {
-        return Some(&Africa::Bissau);
-    }
-    if input == "Africa/Blantyre" {
-        return Some(&Africa::Blantyre);
-    }
-    if input == "Africa/Brazzaville" {
-        return Some(&Africa::Brazzaville);
-    }
-    if input == "Africa/Bujumbura" {
-        return Some(&Africa::Bujumbura);
-    }
-    if input == "Africa/Cairo" {
-        return Some(&Africa::Cairo);
-    }
-    if input == "Africa/Casablanca" {
-        return Some(&Africa::Casablanca);
-    }
-    if input == "Africa/Ceuta" {
-        return Some(&Africa::Ceuta);
-    }
-    if input == "Africa/Conakry" {
-        return Some(&Africa::Conakry);
-    }
-    if input == "Africa/Dakar" {
-        return Some(&Africa::Dakar);
-    }
-    if input == "Africa/Dar_es_Salaam" {
-        return Some(&Africa::Dar_es_Salaam);
-    }
-    if input == "Africa/Djibouti" {
-        return Some(&Africa::Djibouti);
-    }
-    if input == "Africa/Douala" {
-        return Some(&Africa::Douala);
-    }
-    if input == "Africa/El_Aaiun" {
-        return Some(&Africa::El_Aaiun);
-    }
-    if input == "Africa/Freetown" {
-        return Some(&Africa::Freetown);
-    }
-    if input == "Africa/Gaborone" {
-        return Some(&Africa::Gaborone);
-    }
-    if input == "Africa/Harare" {
-        return Some(&Africa::Harare);
-    }
-    if input == "Africa/Johannesburg" {
-        return Some(&Africa::Johannesburg);
-    }
-    if input == "Africa/Juba" {
-        return Some(&Africa::Juba);
-    }
-    if input == "Africa/Kampala" {
-        return Some(&Africa::Kampala);
-    }
-    if input == "Africa/Khartoum" {
-        return Some(&Africa::Khartoum);
-    }
-    if input == "Africa/Kigali" {
-        return Some(&Africa::Kigali);
-    }
-    if input == "Africa/Kinshasa" {
-        return Some(&Africa::Kinshasa);
-    }
-    if input == "Africa/Lagos" {
-        return Some(&Africa::Lagos);
-    }
-    if input == "Africa/Libreville" {
-        return Some(&Africa::Libreville);
-    }
-    if input == "Africa/Lome" {
-        return Some(&Africa::Lome);
-    }
-    if input == "Africa/Luanda" {
-        return Some(&Africa::Luanda);
-    }
-    if input == "Africa/Lubumbashi" {
-        return Some(&Africa::Lubumbashi);
-    }
-    if input == "Africa/Lusaka" {
-        return Some(&Africa::Lusaka);
-    }
-    if input == "Africa/Malabo" {
-        return Some(&Africa::Malabo);
-    }
-    if input == "Africa/Maputo" {
-        return Some(&Africa::Maputo);
-    }
-    if input == "Africa/Maseru" {
-        return Some(&Africa::Maseru);
-    }
-    if input == "Africa/Mbabane" {
-        return Some(&Africa::Mbabane);
-    }
-    if input == "Africa/Mogadishu" {
-        return Some(&Africa::Mogadishu);
-    }
-    if input == "Africa/Monrovia" {
-        return Some(&Africa::Monrovia);
-    }
-    if input == "Africa/Nairobi" {
-        return Some(&Africa::Nairobi);
-    }
-    if input == "Africa/Ndjamena" {
-        return Some(&Africa::Ndjamena);
-    }
-    if input == "Africa/Niamey" {
-        return Some(&Africa::Niamey);
-    }
-    if input == "Africa/Nouakchott" {
-        return Some(&Africa::Nouakchott);
-    }
-    if input == "Africa/Ouagadougou" {
-        return Some(&Africa::Ouagadougou);
-    }
-    if input == "Africa/Porto-Novo" {
-        return Some(&Africa::Porto_Novo);
-    }
-    if input == "Africa/Sao_Tome" {
-        return Some(&Africa::Sao_Tome);
-    }
-    if input == "Africa/Tripoli" {
-        return Some(&Africa::Tripoli);
-    }
-    if input == "Africa/Tunis" {
-        return Some(&Africa::Tunis);
-    }
-    if input == "Africa/Windhoek" {
-        return Some(&Africa::Windhoek);
-    }
-    if input == "America/Adak" {
-        return Some(&America::Adak);
-    }
-    if input == "America/Anchorage" {
-        return Some(&America::Anchorage);
-    }
-    if input == "America/Anguilla" {
-        return Some(&America::Anguilla);
-    }
-    if input == "America/Antigua" {
-        return Some(&America::Antigua);
-    }
-    if input == "America/Araguaina" {
-        return Some(&America::Araguaina);
-    }
-    if input == "America/Argentina/Buenos_Aires" {
-        return Some(&America::Argentina::Buenos_Aires);
-    }
-    if input == "America/Argentina/Catamarca" {
-        return Some(&America::Argentina::Catamarca);
-    }
-    if input == "America/Argentina/Cordoba" {
-        return Some(&America::Argentina::Cordoba);
-    }
-    if input == "America/Argentina/Jujuy" {
-        return Some(&America::Argentina::Jujuy);
-    }
-    if input == "America/Argentina/La_Rioja" {
-        return Some(&America::Argentina::La_Rioja);
-    }
-    if input == "America/Argentina/Mendoza" {
-        return Some(&America::Argentina::Mendoza);
-    }
-    if input == "America/Argentina/Rio_Gallegos" {
-        return Some(&America::Argentina::Rio_Gallegos);
-    }
-    if input == "America/Argentina/Salta" {
-        return Some(&America::Argentina::Salta);
-    }
-    if input == "America/Argentina/San_Juan" {
-        return Some(&America::Argentina::San_Juan);
-    }
-    if input == "America/Argentina/San_Luis" {
-        return Some(&America::Argentina::San_Luis);
-    }
-    if input == "America/Argentina/Tucuman" {
-        return Some(&America::Argentina::Tucuman);
-    }
-    if input == "America/Argentina/Ushuaia" {
-        return Some(&America::Argentina::Ushuaia);
-    }
-    if input == "America/Aruba" {
-        return Some(&America::Aruba);
-    }
-    if input == "America/Asuncion" {
-        return Some(&America::Asuncion);
-    }
-    if input == "America/Atikokan" {
-        return Some(&America::Atikokan);
-    }
-    if input == "America/Bahia" {
-        return Some(&America::Bahia);
-    }
-    if input == "America/Bahia_Banderas" {
-        return Some(&America::Bahia_Banderas);
-    }
-    if input == "America/Barbados" {
-        return Some(&America::Barbados);
-    }
-    if input == "America/Belem" {
-        return Some(&America::Belem);
-    }
-    if input == "America/Belize" {
-        return Some(&America::Belize);
-    }
-    if input == "America/Blanc-Sablon" {
-        return Some(&America::Blanc_Sablon);
-    }
-    if input == "America/Boa_Vista" {
-        return Some(&America::Boa_Vista);
-    }
-    if input == "America/Bogota" {
-        return Some(&America::Bogota);
-    }
-    if input == "America/Boise" {
-        return Some(&America::Boise);
-    }
-    if input == "America/Cambridge_Bay" {
-        return Some(&America::Cambridge_Bay);
-    }
-    if input == "America/Campo_Grande" {
-        return Some(&America::Campo_Grande);
-    }
-    if input == "America/Cancun" {
-        return Some(&America::Cancun);
-    }
-    if input == "America/Caracas" {
-        return Some(&America::Caracas);
-    }
-    if input == "America/Cayenne" {
-        return Some(&America::Cayenne);
-    }
-    if input == "America/Cayman" {
-        return Some(&America::Cayman);
-    }
-    if input == "America/Chicago" {
-        return Some(&America::Chicago);
-    }
-    if input == "America/Chihuahua" {
-        return Some(&America::Chihuahua);
-    }
-    if input == "America/Costa_Rica" {
-        return Some(&America::Costa_Rica);
-    }
-    if input == "America/Creston" {
-        return Some(&America::Creston);
-    }
-    if input == "America/Cuiaba" {
-        return Some(&America::Cuiaba);
-    }
-    if input == "America/Curacao" {
-        return Some(&America::Curacao);
-    }
-    if input == "America/Danmarkshavn" {
-        return Some(&America::Danmarkshavn);
-    }
-    if input == "America/Dawson" {
-        return Some(&America::Dawson);
-    }
-    if input == "America/Dawson_Creek" {
-        return Some(&America::Dawson_Creek);
-    }
-    if input == "America/Denver" {
-        return Some(&America::Denver);
-    }
-    if input == "America/Detroit" {
-        return Some(&America::Detroit);
-    }
-    if input == "America/Dominica" {
-        return Some(&America::Dominica);
-    }
-    if input == "America/Edmonton" {
-        return Some(&America::Edmonton);
-    }
-    if input == "America/Eirunepe" {
-        return Some(&America::Eirunepe);
-    }
-    if input == "America/El_Salvador" {
-        return Some(&America::El_Salvador);
-    }
-    if input == "America/Fort_Nelson" {
-        return Some(&America::Fort_Nelson);
-    }
-    if input == "America/Fortaleza" {
-        return Some(&America::Fortaleza);
-    }
-    if input == "America/Glace_Bay" {
-        return Some(&America::Glace_Bay);
-    }
-    if input == "America/Godthab" {
-        return Some(&America::Godthab);
-    }
-    if input == "America/Goose_Bay" {
-        return Some(&America::Goose_Bay);
-    }
-    if input == "America/Grand_Turk" {
-        return Some(&America::Grand_Turk);
-    }
-    if input == "America/Grenada" {
-        return Some(&America::Grenada);
-    }
-    if input == "America/Guadeloupe" {
-        return Some(&America::Guadeloupe);
-    }
-    if input == "America/Guatemala" {
-        return Some(&America::Guatemala);
-    }
-    if input == "America/Guayaquil" {
-        return Some(&America::Guayaquil);
-    }
-    if input == "America/Guyana" {
-        return Some(&America::Guyana);
-    }
-    if input == "America/Halifax" {
-        return Some(&America::Halifax);
-    }
-    if input == "America/Havana" {
-        return Some(&America::Havana);
-    }
-    if input == "America/Hermosillo" {
-        return Some(&America::Hermosillo);
-    }
-    if input == "America/Indiana/Indianapolis" {
-        return Some(&America::Indiana::Indianapolis);
-    }
-    if input == "America/Indiana/Knox" {
-        return Some(&America::Indiana::Knox);
-    }
-    if input == "America/Indiana/Marengo" {
-        return Some(&America::Indiana::Marengo);
-    }
-    if input == "America/Indiana/Petersburg" {
-        return Some(&America::Indiana::Petersburg);
-    }
-    if input == "America/Indiana/Tell_City" {
-        return Some(&America::Indiana::Tell_City);
-    }
-    if input == "America/Indiana/Vevay" {
-        return Some(&America::Indiana::Vevay);
-    }
-    if input == "America/Indiana/Vincennes" {
-        return Some(&America::Indiana::Vincennes);
-    }
-    if input == "America/Indiana/Winamac" {
-        return Some(&America::Indiana::Winamac);
-    }
-    if input == "America/Inuvik" {
-        return Some(&America::Inuvik);
-    }
-    if input == "America/Iqaluit" {
-        return Some(&America::Iqaluit);
-    }
-    if input == "America/Jamaica" {
-        return Some(&America::Jamaica);
-    }
-    if input == "America/Juneau" {
-        return Some(&America::Juneau);
-    }
-    if input == "America/Kentucky/Louisville" {
-        return Some(&America::Kentucky::Louisville);
-    }
-    if input == "America/Kentucky/Monticello" {
-        return Some(&America::Kentucky::Monticello);
-    }
-    if input == "America/Kralendijk" {
-        return Some(&America::Kralendijk);
-    }
-    if input == "America/La_Paz" {
-        return Some(&America::La_Paz);
-    }
-    if input == "America/Lima" {
-        return Some(&America::Lima);
-    }
-    if input == "America/Los_Angeles" {
-        return Some(&America::Los_Angeles);
-    }
-    if input == "America/Lower_Princes" {
-        return Some(&America::Lower_Princes);
-    }
-    if input == "America/Maceio" {
-        return Some(&America::Maceio);
-    }
-    if input == "America/Managua" {
-        return Some(&America::Managua);
-    }
-    if input == "America/Manaus" {
-        return Some(&America::Manaus);
-    }
-    if input == "America/Marigot" {
-        return Some(&America::Marigot);
-    }
-    if input == "America/Martinique" {
-        return Some(&America::Martinique);
-    }
-    if input == "America/Matamoros" {
-        return Some(&America::Matamoros);
-    }
-    if input == "America/Mazatlan" {
-        return Some(&America::Mazatlan);
-    }
-    if input == "America/Menominee" {
-        return Some(&America::Menominee);
-    }
-    if input == "America/Merida" {
-        return Some(&America::Merida);
-    }
-    if input == "America/Metlakatla" {
-        return Some(&America::Metlakatla);
-    }
-    if input == "America/Mexico_City" {
-        return Some(&America::Mexico_City);
-    }
-    if input == "America/Miquelon" {
-        return Some(&America::Miquelon);
-    }
-    if input == "America/Moncton" {
-        return Some(&America::Moncton);
-    }
-    if input == "America/Monterrey" {
-        return Some(&America::Monterrey);
-    }
-    if input == "America/Montevideo" {
-        return Some(&America::Montevideo);
-    }
-    if input == "America/Montserrat" {
-        return Some(&America::Montserrat);
-    }
-    if input == "America/Nassau" {
-        return Some(&America::Nassau);
-    }
-    if input == "America/New_York" {
-        return Some(&America::New_York);
-    }
-    if input == "America/Nipigon" {
-        return Some(&America::Nipigon);
-    }
-    if input == "America/Nome" {
-        return Some(&America::Nome);
-    }
-    if input == "America/Noronha" {
-        return Some(&America::Noronha);
-    }
-    if input == "America/North_Dakota/Beulah" {
-        return Some(&America::North_Dakota::Beulah);
-    }
-    if input == "America/North_Dakota/Center" {
-        return Some(&America::North_Dakota::Center);
-    }
-    if input == "America/North_Dakota/New_Salem" {
-        return Some(&America::North_Dakota::New_Salem);
-    }
-    if input == "America/Ojinaga" {
-        return Some(&America::Ojinaga);
-    }
-    if input == "America/Panama" {
-        return Some(&America::Panama);
-    }
-    if input == "America/Pangnirtung" {
-        return Some(&America::Pangnirtung);
-    }
-    if input == "America/Paramaribo" {
-        return Some(&America::Paramaribo);
-    }
-    if input == "America/Phoenix" {
-        return Some(&America::Phoenix);
-    }
-    if input == "America/Port-au-Prince" {
-        return Some(&America::Port_au_Prince);
-    }
-    if input == "America/Port_of_Spain" {
-        return Some(&America::Port_of_Spain);
-    }
-    if input == "America/Porto_Velho" {
-        return Some(&America::Porto_Velho);
-    }
-    if input == "America/Puerto_Rico" {
-        return Some(&America::Puerto_Rico);
-    }
-    if input == "America/Rainy_River" {
-        return Some(&America::Rainy_River);
-    }
-    if input == "America/Rankin_Inlet" {
-        return Some(&America::Rankin_Inlet);
-    }
-    if input == "America/Recife" {
-        return Some(&America::Recife);
-    }
-    if input == "America/Regina" {
-        return Some(&America::Regina);
-    }
-    if input == "America/Resolute" {
-        return Some(&America::Resolute);
-    }
-    if input == "America/Rio_Branco" {
-        return Some(&America::Rio_Branco);
-    }
-    if input == "America/Santarem" {
-        return Some(&America::Santarem);
-    }
-    if input == "America/Santiago" {
-        return Some(&America::Santiago);
-    }
-    if input == "America/Santo_Domingo" {
-        return Some(&America::Santo_Domingo);
-    }
-    if input == "America/Sao_Paulo" {
-        return Some(&America::Sao_Paulo);
-    }
-    if input == "America/Scoresbysund" {
-        return Some(&America::Scoresbysund);
-    }
-    if input == "America/Sitka" {
-        return Some(&America::Sitka);
-    }
-    if input == "America/St_Barthelemy" {
-        return Some(&America::St_Barthelemy);
-    }
-    if input == "America/St_Johns" {
-        return Some(&America::St_Johns);
-    }
-    if input == "America/St_Kitts" {
-        return Some(&America::St_Kitts);
-    }
-    if input == "America/St_Lucia" {
-        return Some(&America::St_Lucia);
-    }
-    if input == "America/St_Thomas" {
-        return Some(&America::St_Thomas);
-    }
-    if input == "America/St_Vincent" {
-        return Some(&America::St_Vincent);
-    }
-    if input == "America/Swift_Current" {
-        return Some(&America::Swift_Current);
-    }
-    if input == "America/Tegucigalpa" {
-        return Some(&America::Tegucigalpa);
-    }
-    if input == "America/Thule" {
-        return Some(&America::Thule);
-    }
-    if input == "America/Thunder_Bay" {
-        return Some(&America::Thunder_Bay);
-    }
-    if input == "America/Tijuana" {
-        return Some(&America::Tijuana);
-    }
-    if input == "America/Toronto" {
-        return Some(&America::Toronto);
-    }
-    if input == "America/Tortola" {
-        return Some(&America::Tortola);
-    }
-    if input == "America/Vancouver" {
-        return Some(&America::Vancouver);
-    }
-    if input == "America/Whitehorse" {
-        return Some(&America::Whitehorse);
-    }
-    if input == "America/Winnipeg" {
-        return Some(&America::Winnipeg);
-    }
-    if input == "America/Yakutat" {
-        return Some(&America::Yakutat);
-    }
-    if input == "America/Yellowknife" {
-        return Some(&America::Yellowknife);
-    }
-    if input == "Antarctica/Casey" {
-        return Some(&Antarctica::Casey);
-    }
-    if input == "Antarctica/Davis" {
-        return Some(&Antarctica::Davis);
-    }
-    if input == "Antarctica/DumontDUrville" {
-        return Some(&Antarctica::DumontDUrville);
-    }
-    if input == "Antarctica/Macquarie" {
-        return Some(&Antarctica::Macquarie);
-    }
-    if input == "Antarctica/Mawson" {
-        return Some(&Antarctica::Mawson);
-    }
-    if input == "Antarctica/McMurdo" {
-        return Some(&Antarctica::McMurdo);
-    }
-    if input == "Antarctica/Palmer" {
-        return Some(&Antarctica::Palmer);
-    }
-    if input == "Antarctica/Rothera" {
-        return Some(&Antarctica::Rothera);
-    }
-    if input == "Antarctica/Syowa" {
-        return Some(&Antarctica::Syowa);
-    }
-    if input == "Antarctica/Troll" {
-        return Some(&Antarctica::Troll);
-    }
-    if input == "Antarctica/Vostok" {
-        return Some(&Antarctica::Vostok);
-    }
-    if input == "Arctic/Longyearbyen" {
-        return Some(&Arctic::Longyearbyen);
-    }
-    if input == "Asia/Aden" {
-        return Some(&Asia::Aden);
-    }
-    if input == "Asia/Almaty" {
-        return Some(&Asia::Almaty);
-    }
-    if input == "Asia/Amman" {
-        return Some(&Asia::Amman);
-    }
-    if input == "Asia/Anadyr" {
-        return Some(&Asia::Anadyr);
-    }
-    if input == "Asia/Aqtau" {
-        return Some(&Asia::Aqtau);
-    }
-    if input == "Asia/Aqtobe" {
-        return Some(&Asia::Aqtobe);
-    }
-    if input == "Asia/Ashgabat" {
-        return Some(&Asia::Ashgabat);
-    }
-    if input == "Asia/Baghdad" {
-        return Some(&Asia::Baghdad);
-    }
-    if input == "Asia/Bahrain" {
-        return Some(&Asia::Bahrain);
-    }
-    if input == "Asia/Baku" {
-        return Some(&Asia::Baku);
-    }
-    if input == "Asia/Bangkok" {
-        return Some(&Asia::Bangkok);
-    }
-    if input == "Asia/Beirut" {
-        return Some(&Asia::Beirut);
-    }
-    if input == "Asia/Bishkek" {
-        return Some(&Asia::Bishkek);
-    }
-    if input == "Asia/Brunei" {
-        return Some(&Asia::Brunei);
-    }
-    if input == "Asia/Chita" {
-        return Some(&Asia::Chita);
-    }
-    if input == "Asia/Choibalsan" {
-        return Some(&Asia::Choibalsan);
-    }
-    if input == "Asia/Colombo" {
-        return Some(&Asia::Colombo);
-    }
-    if input == "Asia/Damascus" {
-        return Some(&Asia::Damascus);
-    }
-    if input == "Asia/Dhaka" {
-        return Some(&Asia::Dhaka);
-    }
-    if input == "Asia/Dili" {
-        return Some(&Asia::Dili);
-    }
-    if input == "Asia/Dubai" {
-        return Some(&Asia::Dubai);
-    }
-    if input == "Asia/Dushanbe" {
-        return Some(&Asia::Dushanbe);
-    }
-    if input == "Asia/Gaza" {
-        return Some(&Asia::Gaza);
-    }
-    if input == "Asia/Hebron" {
-        return Some(&Asia::Hebron);
-    }
-    if input == "Asia/Ho_Chi_Minh" {
-        return Some(&Asia::Ho_Chi_Minh);
-    }
-    if input == "Asia/Hong_Kong" {
-        return Some(&Asia::Hong_Kong);
-    }
-    if input == "Asia/Hovd" {
-        return Some(&Asia::Hovd);
-    }
-    if input == "Asia/Irkutsk" {
-        return Some(&Asia::Irkutsk);
-    }
-    if input == "Asia/Istanbul" {
-        return Some(&Asia::Istanbul);
-    }
-    if input == "Asia/Jakarta" {
-        return Some(&Asia::Jakarta);
-    }
-    if input == "Asia/Jayapura" {
-        return Some(&Asia::Jayapura);
-    }
-    if input == "Asia/Jerusalem" {
-        return Some(&Asia::Jerusalem);
-    }
-    if input == "Asia/Kabul" {
-        return Some(&Asia::Kabul);
-    }
-    if input == "Asia/Kamchatka" {
-        return Some(&Asia::Kamchatka);
-    }
-    if input == "Asia/Karachi" {
-        return Some(&Asia::Karachi);
-    }
-    if input == "Asia/Kathmandu" {
-        return Some(&Asia::Kathmandu);
-    }
-    if input == "Asia/Khandyga" {
-        return Some(&Asia::Khandyga);
-    }
-    if input == "Asia/Kolkata" {
-        return Some(&Asia::Kolkata);
-    }
-    if input == "Asia/Krasnoyarsk" {
-        return Some(&Asia::Krasnoyarsk);
-    }
-    if input == "Asia/Kuala_Lumpur" {
-        return Some(&Asia::Kuala_Lumpur);
-    }
-    if input == "Asia/Kuching" {
-        return Some(&Asia::Kuching);
-    }
-    if input == "Asia/Kuwait" {
-        return Some(&Asia::Kuwait);
-    }
-    if input == "Asia/Macau" {
-        return Some(&Asia::Macau);
-    }
-    if input == "Asia/Magadan" {
-        return Some(&Asia::Magadan);
-    }
-    if input == "Asia/Makassar" {
-        return Some(&Asia::Makassar);
-    }
-    if input == "Asia/Manila" {
-        return Some(&Asia::Manila);
-    }
-    if input == "Asia/Muscat" {
-        return Some(&Asia::Muscat);
-    }
-    if input == "Asia/Nicosia" {
-        return Some(&Asia::Nicosia);
-    }
-    if input == "Asia/Novokuznetsk" {
-        return Some(&Asia::Novokuznetsk);
-    }
-    if input == "Asia/Novosibirsk" {
-        return Some(&Asia::Novosibirsk);
-    }
-    if input == "Asia/Omsk" {
-        return Some(&Asia::Omsk);
-    }
-    if input == "Asia/Oral" {
-        return Some(&Asia::Oral);
-    }
-    if input == "Asia/Phnom_Penh" {
-        return Some(&Asia::Phnom_Penh);
-    }
-    if input == "Asia/Pontianak" {
-        return Some(&Asia::Pontianak);
-    }
-    if input == "Asia/Pyongyang" {
-        return Some(&Asia::Pyongyang);
-    }
-    if input == "Asia/Qatar" {
-        return Some(&Asia::Qatar);
-    }
-    if input == "Asia/Qyzylorda" {
-        return Some(&Asia::Qyzylorda);
-    }
-    if input == "Asia/Rangoon" {
-        return Some(&Asia::Rangoon);
-    }
-    if input == "Asia/Riyadh" {
-        return Some(&Asia::Riyadh);
-    }
-    if input == "Asia/Sakhalin" {
-        return Some(&Asia::Sakhalin);
-    }
-    if input == "Asia/Samarkand" {
-        return Some(&Asia::Samarkand);
-    }
-    if input == "Asia/Seoul" {
-        return Some(&Asia::Seoul);
-    }
-    if input == "Asia/Shanghai" {
-        return Some(&Asia::Shanghai);
-    }
-    if input == "Asia/Singapore" {
-        return Some(&Asia::Singapore);
-    }
-    if input == "Asia/Srednekolymsk" {
-        return Some(&Asia::Srednekolymsk);
-    }
-    if input == "Asia/Taipei" {
-        return Some(&Asia::Taipei);
-    }
-    if input == "Asia/Tashkent" {
-        return Some(&Asia::Tashkent);
-    }
-    if input == "Asia/Tbilisi" {
-        return Some(&Asia::Tbilisi);
-    }
-    if input == "Asia/Tehran" {
-        return Some(&Asia::Tehran);
-    }
-    if input == "Asia/Thimphu" {
-        return Some(&Asia::Thimphu);
-    }
-    if input == "Asia/Tokyo" {
-        return Some(&Asia::Tokyo);
-    }
-    if input == "Asia/Ulaanbaatar" {
-        return Some(&Asia::Ulaanbaatar);
-    }
-    if input == "Asia/Urumqi" {
-        return Some(&Asia::Urumqi);
-    }
-    if input == "Asia/Ust-Nera" {
-        return Some(&Asia::Ust_Nera);
-    }
-    if input == "Asia/Vientiane" {
-        return Some(&Asia::Vientiane);
-    }
-    if input == "Asia/Vladivostok" {
-        return Some(&Asia::Vladivostok);
-    }
-    if input == "Asia/Yakutsk" {
-        return Some(&Asia::Yakutsk);
-    }
-    if input == "Asia/Yekaterinburg" {
-        return Some(&Asia::Yekaterinburg);
-    }
-    if input == "Asia/Yerevan" {
-        return Some(&Asia::Yerevan);
-    }
-    if input == "Atlantic/Azores" {
-        return Some(&Atlantic::Azores);
-    }
-    if input == "Atlantic/Bermuda" {
-        return Some(&Atlantic::Bermuda);
-    }
-    if input == "Atlantic/Canary" {
-        return Some(&Atlantic::Canary);
-    }
-    if input == "Atlantic/Cape_Verde" {
-        return Some(&Atlantic::Cape_Verde);
-    }
-    if input == "Atlantic/Faroe" {
-        return Some(&Atlantic::Faroe);
-    }
-    if input == "Atlantic/Madeira" {
-        return Some(&Atlantic::Madeira);
-    }
-    if input == "Atlantic/Reykjavik" {
-        return Some(&Atlantic::Reykjavik);
-    }
-    if input == "Atlantic/South_Georgia" {
-        return Some(&Atlantic::South_Georgia);
-    }
-    if input == "Atlantic/St_Helena" {
-        return Some(&Atlantic::St_Helena);
-    }
-    if input == "Atlantic/Stanley" {
-        return Some(&Atlantic::Stanley);
-    }
-    if input == "Australia/Adelaide" {
-        return Some(&Australia::Adelaide);
-    }
-    if input == "Australia/Brisbane" {
-        return Some(&Australia::Brisbane);
-    }
-    if input == "Australia/Broken_Hill" {
-        return Some(&Australia::Broken_Hill);
-    }
-    if input == "Australia/Currie" {
-        return Some(&Australia::Currie);
-    }
-    if input == "Australia/Darwin" {
-        return Some(&Australia::Darwin);
-    }
-    if input == "Australia/Eucla" {
-        return Some(&Australia::Eucla);
-    }
-    if input == "Australia/Hobart" {
-        return Some(&Australia::Hobart);
-    }
-    if input == "Australia/Lindeman" {
-        return Some(&Australia::Lindeman);
-    }
-    if input == "Australia/Lord_Howe" {
-        return Some(&Australia::Lord_Howe);
-    }
-    if input == "Australia/Melbourne" {
-        return Some(&Australia::Melbourne);
-    }
-    if input == "Australia/Perth" {
-        return Some(&Australia::Perth);
-    }
-    if input == "Australia/Sydney" {
-        return Some(&Australia::Sydney);
-    }
-    if input == "CET" {
-        return Some(&CET);
-    }
-    if input == "CST6CDT" {
-        return Some(&CST6CDT);
-    }
-    if input == "EET" {
-        return Some(&EET);
-    }
-    if input == "EST" {
-        return Some(&EST);
-    }
-    if input == "EST5EDT" {
-        return Some(&EST5EDT);
-    }
-    if input == "Europe/Amsterdam" {
-        return Some(&Europe::Amsterdam);
-    }
-    if input == "Europe/Andorra" {
-        return Some(&Europe::Andorra);
-    }
-    if input == "Europe/Athens" {
-        return Some(&Europe::Athens);
-    }
-    if input == "Europe/Belgrade" {
-        return Some(&Europe::Belgrade);
-    }
-    if input == "Europe/Berlin" {
-        return Some(&Europe::Berlin);
-    }
-    if input == "Europe/Bratislava" {
-        return Some(&Europe::Bratislava);
-    }
-    if input == "Europe/Brussels" {
-        return Some(&Europe::Brussels);
-    }
-    if input == "Europe/Bucharest" {
-        return Some(&Europe::Bucharest);
-    }
-    if input == "Europe/Budapest" {
-        return Some(&Europe::Budapest);
-    }
-    if input == "Europe/Busingen" {
-        return Some(&Europe::Busingen);
-    }
-    if input == "Europe/Chisinau" {
-        return Some(&Europe::Chisinau);
-    }
-    if input == "Europe/Copenhagen" {
-        return Some(&Europe::Copenhagen);
-    }
-    if input == "Europe/Dublin" {
-        return Some(&Europe::Dublin);
-    }
-    if input == "Europe/Gibraltar" {
-        return Some(&Europe::Gibraltar);
-    }
-    if input == "Europe/Guernsey" {
-        return Some(&Europe::Guernsey);
-    }
-    if input == "Europe/Helsinki" {
-        return Some(&Europe::Helsinki);
-    }
-    if input == "Europe/Isle_of_Man" {
-        return Some(&Europe::Isle_of_Man);
-    }
-    if input == "Europe/Istanbul" {
-        return Some(&Europe::Istanbul);
-    }
-    if input == "Europe/Jersey" {
-        return Some(&Europe::Jersey);
-    }
-    if input == "Europe/Kaliningrad" {
-        return Some(&Europe::Kaliningrad);
-    }
-    if input == "Europe/Kiev" {
-        return Some(&Europe::Kiev);
-    }
-    if input == "Europe/Lisbon" {
-        return Some(&Europe::Lisbon);
-    }
-    if input == "Europe/Ljubljana" {
-        return Some(&Europe::Ljubljana);
-    }
-    if input == "Europe/London" {
-        return Some(&Europe::London);
-    }
-    if input == "Europe/Luxembourg" {
-        return Some(&Europe::Luxembourg);
-    }
-    if input == "Europe/Madrid" {
-        return Some(&Europe::Madrid);
-    }
-    if input == "Europe/Malta" {
-        return Some(&Europe::Malta);
-    }
-    if input == "Europe/Mariehamn" {
-        return Some(&Europe::Mariehamn);
-    }
-    if input == "Europe/Minsk" {
-        return Some(&Europe::Minsk);
-    }
-    if input == "Europe/Monaco" {
-        return Some(&Europe::Monaco);
-    }
-    if input == "Europe/Moscow" {
-        return Some(&Europe::Moscow);
-    }
-    if input == "Europe/Nicosia" {
-        return Some(&Europe::Nicosia);
-    }
-    if input == "Europe/Oslo" {
-        return Some(&Europe::Oslo);
-    }
-    if input == "Europe/Paris" {
-        return Some(&Europe::Paris);
-    }
-    if input == "Europe/Podgorica" {
-        return Some(&Europe::Podgorica);
-    }
-    if input == "Europe/Prague" {
-        return Some(&Europe::Prague);
-    }
-    if input == "Europe/Riga" {
-        return Some(&Europe::Riga);
-    }
-    if input == "Europe/Rome" {
-        return Some(&Europe::Rome);
-    }
-    if input == "Europe/Samara" {
-        return Some(&Europe::Samara);
-    }
-    if input == "Europe/San_Marino" {
-        return Some(&Europe::San_Marino);
-    }
-    if input == "Europe/Sarajevo" {
-        return Some(&Europe::Sarajevo);
-    }
-    if input == "Europe/Simferopol" {
-        return Some(&Europe::Simferopol);
-    }
-    if input == "Europe/Skopje" {
-        return Some(&Europe::Skopje);
-    }
-    if input == "Europe/Sofia" {
-        return Some(&Europe::Sofia);
-    }
-    if input == "Europe/Stockholm" {
-        return Some(&Europe::Stockholm);
-    }
-    if input == "Europe/Tallinn" {
-        return Some(&Europe::Tallinn);
-    }
-    if input == "Europe/Tirane" {
-        return Some(&Europe::Tirane);
-    }
-    if input == "Europe/Uzhgorod" {
-        return Some(&Europe::Uzhgorod);
-    }
-    if input == "Europe/Vaduz" {
-        return Some(&Europe::Vaduz);
-    }
-    if input == "Europe/Vatican" {
-        return Some(&Europe::Vatican);
-    }
-    if input == "Europe/Vienna" {
-        return Some(&Europe::Vienna);
-    }
-    if input == "Europe/Vilnius" {
-        return Some(&Europe::Vilnius);
-    }
-    if input == "Europe/Volgograd" {
-        return Some(&Europe::Volgograd);
-    }
-    if input == "Europe/Warsaw" {
-        return Some(&Europe::Warsaw);
-    }
-    if input == "Europe/Zagreb" {
-        return Some(&Europe::Zagreb);
-    }
-    if input == "Europe/Zaporozhye" {
-        return Some(&Europe::Zaporozhye);
-    }
-    if input == "Europe/Zurich" {
-        return Some(&Europe::Zurich);
-    }
-    if input == "HST" {
-        return Some(&HST);
-    }
-    if input == "Indian/Antananarivo" {
-        return Some(&Indian::Antananarivo);
-    }
-    if input == "Indian/Chagos" {
-        return Some(&Indian::Chagos);
-    }
-    if input == "Indian/Christmas" {
-        return Some(&Indian::Christmas);
-    }
-    if input == "Indian/Cocos" {
-        return Some(&Indian::Cocos);
-    }
-    if input == "Indian/Comoro" {
-        return Some(&Indian::Comoro);
-    }
-    if input == "Indian/Kerguelen" {
-        return Some(&Indian::Kerguelen);
-    }
-    if input == "Indian/Mahe" {
-        return Some(&Indian::Mahe);
-    }
-    if input == "Indian/Maldives" {
-        return Some(&Indian::Maldives);
-    }
-    if input == "Indian/Mauritius" {
-        return Some(&Indian::Mauritius);
-    }
-    if input == "Indian/Mayotte" {
-        return Some(&Indian::Mayotte);
-    }
-    if input == "Indian/Reunion" {
-        return Some(&Indian::Reunion);
-    }
-    if input == "MET" {
-        return Some(&MET);
-    }
-    if input == "MST" {
-        return Some(&MST);
-    }
-    if input == "MST7MDT" {
-        return Some(&MST7MDT);
-    }
-    if input == "PST8PDT" {
-        return Some(&PST8PDT);
-    }
-    if input == "Pacific/Apia" {
-        return Some(&Pacific::Apia);
-    }
-    if input == "Pacific/Auckland" {
-        return Some(&Pacific::Auckland);
-    }
-    if input == "Pacific/Bougainville" {
-        return Some(&Pacific::Bougainville);
-    }
-    if input == "Pacific/Chatham" {
-        return Some(&Pacific::Chatham);
-    }
-    if input == "Pacific/Chuuk" {
-        return Some(&Pacific::Chuuk);
-    }
-    if input == "Pacific/Easter" {
-        return Some(&Pacific::Easter);
-    }
-    if input == "Pacific/Efate" {
-        return Some(&Pacific::Efate);
-    }
-    if input == "Pacific/Enderbury" {
-        return Some(&Pacific::Enderbury);
-    }
-    if input == "Pacific/Fakaofo" {
-        return Some(&Pacific::Fakaofo);
-    }
-    if input == "Pacific/Fiji" {
-        return Some(&Pacific::Fiji);
-    }
-    if input == "Pacific/Funafuti" {
-        return Some(&Pacific::Funafuti);
-    }
-    if input == "Pacific/Galapagos" {
-        return Some(&Pacific::Galapagos);
-    }
-    if input == "Pacific/Gambier" {
-        return Some(&Pacific::Gambier);
-    }
-    if input == "Pacific/Guadalcanal" {
-        return Some(&Pacific::Guadalcanal);
-    }
-    if input == "Pacific/Guam" {
-        return Some(&Pacific::Guam);
-    }
-    if input == "Pacific/Honolulu" {
-        return Some(&Pacific::Honolulu);
-    }
-    if input == "Pacific/Johnston" {
-        return Some(&Pacific::Johnston);
-    }
-    if input == "Pacific/Kiritimati" {
-        return Some(&Pacific::Kiritimati);
-    }
-    if input == "Pacific/Kosrae" {
-        return Some(&Pacific::Kosrae);
-    }
-    if input == "Pacific/Kwajalein" {
-        return Some(&Pacific::Kwajalein);
-    }
-    if input == "Pacific/Majuro" {
-        return Some(&Pacific::Majuro);
-    }
-    if input == "Pacific/Marquesas" {
-        return Some(&Pacific::Marquesas);
-    }
-    if input == "Pacific/Midway" {
-        return Some(&Pacific::Midway);
-    }
-    if input == "Pacific/Nauru" {
-        return Some(&Pacific::Nauru);
-    }
-    if input == "Pacific/Niue" {
-        return Some(&Pacific::Niue);
-    }
-    if input == "Pacific/Norfolk" {
-        return Some(&Pacific::Norfolk);
-    }
-    if input == "Pacific/Noumea" {
-        return Some(&Pacific::Noumea);
-    }
-    if input == "Pacific/Pago_Pago" {
-        return Some(&Pacific::Pago_Pago);
-    }
-    if input == "Pacific/Palau" {
-        return Some(&Pacific::Palau);
-    }
-    if input == "Pacific/Pitcairn" {
-        return Some(&Pacific::Pitcairn);
-    }
-    if input == "Pacific/Pohnpei" {
-        return Some(&Pacific::Pohnpei);
-    }
-    if input == "Pacific/Port_Moresby" {
-        return Some(&Pacific::Port_Moresby);
-    }
-    if input == "Pacific/Rarotonga" {
-        return Some(&Pacific::Rarotonga);
-    }
-    if input == "Pacific/Saipan" {
-        return Some(&Pacific::Saipan);
-    }
-    if input == "Pacific/Tahiti" {
-        return Some(&Pacific::Tahiti);
-    }
-    if input == "Pacific/Tarawa" {
-        return Some(&Pacific::Tarawa);
-    }
-    if input == "Pacific/Tongatapu" {
-        return Some(&Pacific::Tongatapu);
-    }
-    if input == "Pacific/Wake" {
-        return Some(&Pacific::Wake);
-    }
-    if input == "Pacific/Wallis" {
-        return Some(&Pacific::Wallis);
-    }
-    if input == "US/Pacific-New" {
-        return Some(&US::Pacific_New);
-    }
-    if input == "WET" {
-        return Some(&WET);
-    }
-    return None;
+    ZONES.get(input).cloned()
 }
