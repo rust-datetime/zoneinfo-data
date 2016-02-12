@@ -342,6 +342,11 @@ pub static ZONE: StaticTimeZone<'static> = StaticTimeZone {
             is_dst: false,
             name:   Cow::Borrowed("IRKT"),
         }),
+        (1459015200, FixedTimespan {  // 2016-03-26T18:00:00.000 UTC
+            offset: 32400,  // UTC offset 32400, DST offset 0
+            is_dst: false,
+            name:   Cow::Borrowed("YAKT"),
+        }),
     ]},
 };
 

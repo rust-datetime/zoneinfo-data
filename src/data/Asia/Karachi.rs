@@ -42,12 +42,12 @@ pub static ZONE: StaticTimeZone<'static> = StaticTimeZone {
             is_dst: false,
             name:   Cow::Borrowed("PKT"),
         }),
-        (1018119660, FixedTimespan {  // 2002-04-06T19:01:00.000 UTC
+        (1018119600, FixedTimespan {  // 2002-04-06T19:00:00.000 UTC
             offset: 21600,  // UTC offset 18000, DST offset 3600
             is_dst: true,
             name:   Cow::Borrowed("PKST"),
         }),
-        (1033840860, FixedTimespan {  // 2002-10-05T18:01:00.000 UTC
+        (1033840800, FixedTimespan {  // 2002-10-05T18:00:00.000 UTC
             offset: 18000,  // UTC offset 18000, DST offset 0
             is_dst: false,
             name:   Cow::Borrowed("PKT"),
