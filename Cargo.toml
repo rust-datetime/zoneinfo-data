@@ -1,7 +1,14 @@
 [package]
 name = "zoneinfo_data"
+description = "Compiled tables containing time zone data"
+
+authors = ["Benjamin Sago <ogham@bsago.me>"]
+documentation = "https://docs.rs/zoneinfo_data/"
+exclude = ["/README.md", "/LICENCE", "/.rustfmt.toml", "/.travis.yml"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/rust-datetime/zoneinfo-data/"
 version = "0.1.0"
-authors = ["Ben S <ogham@bsago.me>"]
 
 [lib]
 name = "zoneinfo_data"
